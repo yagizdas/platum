@@ -42,15 +42,14 @@ h1 { font-size: clamp(112px, 13.2vw, 210px); font-weight: 800; line-height: .85;
 .cta span { font-size: 24px; line-height: 1; }
 .hero-art { position: relative; display: grid; place-items: center; min-width: 0; }
 .hero-art::before { content: ''; position: absolute; width: 88%; height: 14%; bottom: 5%; left: 16%; background: var(--ink); opacity: .16; border-radius: 50%; filter: blur(28px); transform: rotate(-7deg); }
-.hero-float { width: min(69vw, 1100px); animation: float 7s ease-in-out infinite; }
-.hero-art img { width: 100%; max-width: none; transform: rotate(-7deg); }
-.hero-float, .goal-card img, .pick-art img { mix-blend-mode: multiply; }
+.hero-float { width: min(69vw, 1100px); animation: float 7s ease-in-out infinite; mix-blend-mode: multiply; }
+.hero-art .artwork { width: 100%; transform: rotate(-7deg); }
 .section { padding-inline: var(--page-gutter); }
 .goals-section { padding-top: 120px; scroll-margin-top: 40px; }
 .section-title { margin-bottom: 40px; font-size: clamp(54px, 6.7vw, 104px); line-height: .98; font-weight: 700; letter-spacing: -.055em; }
 .goal-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .goal-card { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 24px; min-height: 330px; padding: 46px 16px 30px; border: 0; border-radius: var(--radius); background: var(--surface); color: var(--ink); }
-.goal-card img { width: 100%; min-width: 120px; height: 180px; object-fit: contain; }
+.goal-card .artwork { width: min(100%, calc(180px * var(--art-aspect))); min-width: 120px; }
 .goal-card > span:last-child { font-size: clamp(32px, 3.2vw, 48px); font-weight: 600; letter-spacing: -.05em; line-height: 1; }
 .goal-card[aria-pressed='true'] { background: var(--pick-surface); color: var(--accent); }
 .goal-card:hover:not([aria-pressed='true']) { background: var(--pick-surface); }
@@ -59,7 +58,7 @@ h1 { font-size: clamp(112px, 13.2vw, 210px); font-weight: 800; line-height: .85;
 .pick-section { padding-top: 144px; padding-bottom: 80px; }
 .pick-card { display: grid; grid-template-columns: 48% 52%; align-items: center; gap: 16px; min-height: 480px; padding: 32px 56px 32px 20px; border-radius: var(--radius); background: var(--pick-surface); }
 .pick-art { min-width: 0; }
-.pick-art img { width: 100%; }
+.pick-art .artwork { width: 100%; }
 .pick-content { padding-block: 24px; }
 .pick-content h3 { max-width: 21ch; font-size: clamp(32px, 3.2vw, 48px); line-height: 1.04; font-weight: 600; letter-spacing: -.05em; overflow-wrap: anywhere; text-wrap: balance; }
 .pick-price { margin-top: 20px; font-size: clamp(32px, 3.2vw, 48px); font-weight: 500; line-height: 1.2; letter-spacing: -.045em; font-variant-numeric: tabular-nums; }
@@ -76,7 +75,7 @@ h1 { font-size: clamp(112px, 13.2vw, 210px); font-weight: 800; line-height: .85;
   .cta { font-size: 20px; }
   .goal-grid { gap: 12px; }
   .goal-card { min-height: 280px; padding-inline: 10px; }
-  .goal-card img { height: 140px; }
+  .goal-card .artwork { width: min(100%, calc(140px * var(--art-aspect))); }
   .pick-card { min-height: 400px; padding: 24px; }
   .pick-content h3, .pick-price { font-size: 32px; }
   .macros { margin-top: 40px; gap: 24px; }
@@ -87,14 +86,14 @@ h1 { font-size: clamp(112px, 13.2vw, 210px); font-weight: 800; line-height: .85;
   h1 { grid-row: 1; font-size: clamp(82px, 25vw, 148px); line-height: .85; letter-spacing: -.05em; }
   .hero-art { grid-row: 2; align-self: center; padding-top: 16px; }
   .hero-float { width: 124vw; max-width: 650px; }
-  .hero-art img { transform: rotate(-7deg); }
+  .hero-art .artwork { transform: rotate(-7deg); }
   .hero-copy p { grid-row: 3; margin: 8px 0 0; font-size: 20px; }
   .cta { grid-row: 4; justify-self: start; margin-top: 22px; padding: 16px 26px; min-height: 60px; }
   .goals-section { padding-top: 96px; }
   .section-title { margin-bottom: 28px; font-size: clamp(45px, 12.5vw, 72px); }
   .goal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .goal-card { min-height: 226px; gap: 18px; padding: 30px 8px 24px; border-radius: 24px; }
-  .goal-card img { height: 132px; }
+  .goal-card .artwork { width: min(100%, calc(132px * var(--art-aspect))); }
   .goal-card > span:last-child { font-size: 32px; }
   .selected-mark { top: 12px; right: 16px; font-size: 24px; }
   .pick-section { padding-top: 96px; padding-bottom: 24px; }

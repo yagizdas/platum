@@ -16,3 +16,4 @@ jobs:
           cache: pip
       - run: python -m pip install -r requirements-dev.txt
       - run: python -m pytest -q
+      - run: node --test tests/test_dish_icons.cjs

@@ -25,6 +25,7 @@ jobs:
           cache: pip
       - run: python -m pip install -r requirements-dev.txt
       - run: python -m pytest -q
+      - run: node --test tests/test_dish_icons.cjs
       - run: python scrape.py --week
       - name: Tag new dishes with Gemini 3.8 Flash
         env:
@@ -53,13 +54,15 @@ jobs:
         run: |
           mkdir -p dist/data
           cp index.html dist/index.html
-          cp menu.html menu.css landing.css landing.js dist/
+          cp menu.html menu.css landing.css landing.js dish-icons.js dist/
           cp -R assets dist/assets
           cp data/today.json dist/data/today.json
           cp data/week.json dist/data/week.json
           cp -R data/days dist/data/days
           cp manifest.webmanifest dist/manifest.webmanifest
-          cp -R icons dist/icons
+          mkdir -p dist/icons
+          cp icons/artwork.css dist/icons/artwork.css
+          cp -R icons/ui dist/icons/ui
           touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v4
         with:

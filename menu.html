@@ -7,9 +7,10 @@
   <meta name="description" content="A lunch plate for your goal at Mensa Arcisstraße. Student prices, simple scoops, and estimated nutrition.">
   <title>Mensa Plate — Arcisstraße</title>
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="./icons/plate.svg">
-  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="icon" type="image/webp" href="./icons/ui/tray.webp">
+  <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./icons/artwork.css">
   <link rel="stylesheet" href="./menu.css">
 </head>
 <body>
@@ -25,15 +26,15 @@
       </div>
       <div class="controls">
         <div class="goals" role="group" aria-label="Lunch goal">
-          <button type="button" data-goal="bulk" aria-pressed="true"><img src="./icons/dumbells.png" width="728" height="504" alt=""><span>Bulk</span><span class="goal-check" aria-hidden="true"></span></button>
-          <button type="button" data-goal="cut" aria-pressed="false"><img src="./icons/bowl.png" width="710" height="524" alt=""><span>Cut</span><span class="goal-check" aria-hidden="true"></span></button>
-          <button type="button" data-goal="budget" aria-pressed="false"><img src="./icons/euros.png" width="676" height="518" alt=""><span>Budget</span><span class="goal-check" aria-hidden="true"></span></button>
+          <button type="button" data-goal="bulk" aria-pressed="true"><span class="artwork art-dumbbell" data-icon="dumbbell"><img src="./icons/ui/dumbbell.webp" width="640" height="640" alt="" decoding="async"></span><span>Bulk</span><span class="goal-check" aria-hidden="true"></span></button>
+          <button type="button" data-goal="cut" aria-pressed="false"><span class="artwork art-tape" data-icon="tape"><img src="./icons/ui/tape.webp" width="640" height="640" alt="" decoding="async"></span><span>Cut</span><span class="goal-check" aria-hidden="true"></span></button>
+          <button type="button" data-goal="budget" aria-pressed="false"><span class="artwork art-coins" data-icon="coins"><img src="./icons/ui/coins.webp" width="640" height="640" alt="" decoding="async"></span><span>Budget</span><span class="goal-check" aria-hidden="true"></span></button>
         </div>
-        <label class="toggle"><input id="vegan" type="checkbox" role="switch"><span class="vegan-face"><img src="./icons/vegan.png" width="752" height="504" alt=""><span>Vegan</span><span class="switch" aria-hidden="true"></span></span></label>
+        <label class="toggle"><input id="vegan" type="checkbox" role="switch"><span class="vegan-face"><span class="artwork art-leaf" data-icon="leaf"><img src="./icons/ui/leaf.webp" width="640" height="640" alt="" decoding="async"></span><span>Vegan</span><span class="switch" aria-hidden="true"></span></span></label>
       </div>
       <section class="receipt" aria-labelledby="plate-title" aria-busy="true" id="plate">
         <div class="plate-overview">
-          <div class="plate-art" id="plate-art"><img src="./icons/tray.png" width="874" height="552" alt="Illustrated canteen tray"></div>
+          <div class="plate-art" id="plate-art"><span id="plate-illustration" class="artwork art-tray" data-icon="tray"><img src="./icons/ui/tray.webp" width="1254" height="1254" alt="" decoding="async"></span></div>
           <div class="plate-summary">
             <h2 id="plate-title">Your plate</h2>
             <p class="plate-side" id="plate-side" hidden></p>
@@ -56,14 +57,14 @@
         </div>
       </section>
       <div class="secondary-actions" id="secondary-actions" hidden>
-        <details class="disclosure" id="plate-details">
-          <summary>Details<span class="disclosure-mark" aria-hidden="true">+</span></summary>
-          <div class="disclosure-content">
+        <section class="ingredient-panel" id="plate-details" aria-labelledby="ingredients-title">
+          <h2 class="ingredients-title" id="ingredients-title">Details</h2>
+          <div class="ingredient-content">
             <p class="reason" id="reason" hidden></p>
             <ul class="items" id="items"></ul>
             <p class="details" id="details" hidden></p>
           </div>
-        </details>
+        </section>
         <details class="disclosure" id="extras-wrap">
           <summary id="extras-title">Add to tray<span class="disclosure-mark" aria-hidden="true">+</span></summary>
           <div class="disclosure-content"><div class="extra-chips" id="extras" role="group" aria-label="Optional soup and dessert"></div></div>
@@ -78,6 +79,7 @@
       <a href="https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html" target="_blank" rel="noopener noreferrer">Official menu ↗</a>
     </footer>
   </div>
+  <script src="./dish-icons.js"></script>
   <script>
     'use strict';
     const $ = id => document.getElementById(id);
@@ -107,12 +109,13 @@
     }
     function saveAndRender() {
       try {localStorage.setItem('mensa-plate',JSON.stringify(selection));} catch(_) {}
-      $('plate-details').open=false;$('extras-wrap').open=false;
+      $('extras-wrap').open=false;
       plateIndex=0;selectedExtras.clear();syncControls();
       if(data) render();
     }
-    function empty(title,text) {
+    function empty(title,text,icon='empty') {
       $('plate').classList.add('is-empty');$('secondary-actions').hidden=true;$('plate-side').hidden=true;
+      DishIcons.apply($('plate-illustration'),icon);
       $('items').replaceChildren();$('plate-title').textContent='Your plate';$('reason').hidden=true;
       for(const id of ['totals','details','relaxed-note','plate-actions','extras-wrap']) $(id).hidden=true;
       $('empty').hidden=false;$('empty-title').textContent=title;$('empty-text').textContent=text || '';
@@ -137,19 +140,42 @@
       $('extras').replaceChildren();$('extras-wrap').hidden=availableExtras().length===0;
       availableExtras().forEach((extra,index)=>{
         const button=document.createElement('button');button.type='button';button.className='extra-chip';
+        const art=document.createElement('span');art.className='extra-icon';art.append(DishIcons.create(DishIcons.classify(extra)));
         const name=document.createElement('span');name.className='extra-name';name.textContent=briefDish(extra);
         const price=document.createElement('span');price.className='extra-price';price.textContent=money(extra.price_cents);
         const mark=document.createElement('span');mark.className='extra-add';mark.setAttribute('aria-hidden','true');mark.textContent=selectedExtras.has(index)?'−':'+';
-        button.append(name,price,mark);
+        button.append(art,name,price,mark);
         button.setAttribute('aria-label',extra.name_en+' · '+extra.serving+' · '+money(extra.price_cents)+' · '+rounded(extra.protein_g)+'g protein, estimated');
         button.setAttribute('aria-pressed',String(selectedExtras.has(index)));
         button.addEventListener('click',()=>{
           if(selectedExtras.has(index)) selectedExtras.delete(index);else selectedExtras.add(index);
           mark.textContent=selectedExtras.has(index)?'−':'+';
-          button.setAttribute('aria-pressed',String(selectedExtras.has(index)));renderTotals(true);
+          button.setAttribute('aria-pressed',String(selectedExtras.has(index)));renderItems();renderTotals(true);
         });
         $('extras').append(button);
       });
+    }
+    function renderItems() {
+      const p=currentPlate();
+      $('items').replaceChildren();
+      for(const item of [...p.items,...activeExtras()]) {
+        const li=document.createElement('li');li.className='item';
+        const art=document.createElement('div');art.className='item-icon';art.append(DishIcons.create(DishIcons.classify(item)));
+        const portion=document.createElement('div');portion.className='serving';
+        if(Number.isFinite(item.count)) {
+          const count=document.createElement('span');count.className='count';count.textContent=item.count;
+          portion.append(count,document.createTextNode(item.unit+(item.count===1?'':'s')));
+        } else portion.textContent=item.serving || rounded(item.weight_g)+'g';
+        const description=document.createElement('div');description.className='item-description';
+        const name=document.createElement('p');name.className='dish-name';name.lang='de';name.textContent=item.name;
+        const en=document.createElement('span');en.className='english';en.textContent=item.name_en;
+        const meta=document.createElement('span');meta.className='meta';
+        meta.textContent=(item.standing?'Beilagen counter · usually there':item.station==='Unspecified'?'Main':item.station)+' · '+rounded(item.weight_g)+'g';
+        const tag=document.createElement('span');tag.className='diet-tag';tag.textContent=dietLabels[item.diet] || '';
+        description.append(name,en,meta,tag);
+        const price=document.createElement('span');price.className='item-price';price.textContent=money(item.price_cents);
+        li.append(art,portion,description,price);$('items').append(li);
+      }
     }
     function render() {
       if(stale) return empty(selectedDate && selectedDate!==berlinDate()?'That day’s plates aren’t ready.':'Today’s plates aren’t ready.','The published menu does not match '+(selectedDate || berlinDate())+'. Check the official menu for that day.');
@@ -159,26 +185,12 @@
       if(v.state!=='ready' || !v.plates.length) return empty('No plate fits this goal today.',v.message);
       const p=currentPlate();$('empty').hidden=true;$('plate').classList.remove('is-empty');$('secondary-actions').hidden=false;
       const main=p.items.find(item=>item.role==='main') || p.items[0],title=briefDish(main);
+      DishIcons.apply($('plate-illustration'),DishIcons.classify(main));
       $('plate-title').textContent=title;$('plate-title').lang=main.name_en?'en':'de';
       $('plate-title').classList.toggle('is-long',title.length>30);
       $('plate-side').textContent=p.items.filter(item=>item!==main).map(briefDish).join(' + ');$('plate-side').hidden=p.items.length<2;
       $('reason').textContent=p.reason || '';$('reason').hidden=!p.reason;
-      $('items').replaceChildren();
-      for(const item of p.items) {
-        const li=document.createElement('li');li.className='item';
-        const portion=document.createElement('div');portion.className='serving';
-        const count=document.createElement('span');count.className='count';count.textContent=item.count;
-        portion.append(count,document.createTextNode(item.unit+(item.count===1?'':'s')));
-        const description=document.createElement('div');
-        const name=document.createElement('p');name.className='dish-name';name.lang='de';name.textContent=item.name;
-        const en=document.createElement('span');en.className='english';en.textContent=item.name_en;
-        const meta=document.createElement('span');meta.className='meta';
-        meta.textContent=(item.standing?'Beilagen counter · usually there':item.station==='Unspecified'?'Main':item.station)+' · '+rounded(item.weight_g)+'g';
-        const tag=document.createElement('span');tag.className='diet-tag';tag.textContent=dietLabels[item.diet] || '';
-        description.append(name,en,meta,tag);
-        const price=document.createElement('span');price.className='item-price';price.textContent=money(item.price_cents);
-        li.append(portion,description,price);$('items').append(li);
-      }
+      renderItems();
       $('totals').hidden=false;$('details').hidden=false;
       $('relaxed-note').textContent=v.note || '';$('relaxed-note').hidden=!v.relaxed || !v.note;
       $('plate-actions').hidden=false;$('alternatives').hidden=v.plates.length<2;
@@ -264,15 +276,15 @@
     }
     async function selectDay(row) {
       const token=++loadToken;selectedDate=row.date;plateIndex=0;selectedExtras.clear();data=undefined;stale=false;
-      $('plate-details').open=false;$('extras-wrap').open=false;
-      renderDays();dateLabel(row.date);empty('Getting the menu…','');$('plate').setAttribute('aria-busy','true');
+      $('extras-wrap').open=false;
+      renderDays();dateLabel(row.date);empty('Getting the menu…','','tray');$('plate').setAttribute('aria-busy','true');
       try {
         const response=await fetch('./'+row.file,{cache:'no-store'});
         if(!response.ok) throw new Error('Menu request failed');
         const payload=validateDay(await response.json());
         if(token!==loadToken) return;
         data=payload;stale=data.date!==row.date;render();$('notice').textContent=(data.warnings || []).join(' ');
-      } catch(_) {if(token===loadToken){data=undefined;empty('A little trouble in the kitchen.','Please choose another day or check the official menu below.');}}
+      } catch(_) {if(token===loadToken){data=undefined;empty('A little trouble in the kitchen.','Please choose another day or check the official menu below.','error');}}
       finally {if(token===loadToken) $('plate').setAttribute('aria-busy','false');}
     }
     async function loadToday() {
@@ -295,7 +307,7 @@
         await selectDay(day);
       } catch(_) {
         weekIndex=undefined;$('days').hidden=true;
-        try {await loadToday();} catch(_) {data=undefined;empty('A little trouble in the kitchen.','Please reload in a moment, or check the official menu below.');}
+        try {await loadToday();} catch(_) {data=undefined;empty('A little trouble in the kitchen.','Please reload in a moment, or check the official menu below.','error');}
       } finally {if(!weekIndex) $('plate').setAttribute('aria-busy','false');}
     }
     load();

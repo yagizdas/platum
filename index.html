@@ -6,12 +6,14 @@
   <meta name="theme-color" content="#f5f5f1">
   <meta name="description" content="Your lunch, sorted. Mensa Plate at Arcisstraße.">
   <title>Mensa Plate</title>
-  <link rel="icon" type="image/svg+xml" href="./icons/plate.svg">
-  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="icon" type="image/webp" href="./icons/ui/tray.webp">
+  <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="./icons/tray.png" as="image" fetchpriority="high">
+  <link rel="preload" href="./icons/ui/tray.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="./icons/artwork.css">
   <link rel="stylesheet" href="./landing.css">
+  <script src="./dish-icons.js" defer></script>
   <script src="./landing.js" defer></script>
 </head>
 <body>
@@ -24,7 +26,7 @@
       </div>
       <div class="hero-art">
         <div class="hero-float">
-          <img src="./icons/tray.png" width="874" height="552" alt="A canteen tray of pasta, vegetables and strawberries" fetchpriority="high" decoding="async">
+          <span class="artwork art-tray" data-icon="tray"><img src="./icons/ui/tray.webp" width="1254" height="1254" alt="Illustrated canteen tray" decoding="async"></span>
         </div>
       </div>
     </section>
@@ -34,22 +36,22 @@
       <div class="goal-grid" role="group" aria-label="Lunch goal">
         <button class="goal-card reveal" type="button" data-goal="bulk" aria-pressed="true">
           <span class="selected-mark" aria-hidden="true">↗</span>
-          <img src="./icons/dumbells.png" width="728" height="504" alt="" loading="lazy" decoding="async">
+          <span class="artwork art-dumbbell" data-icon="dumbbell"><img src="./icons/ui/dumbbell.webp" width="640" height="640" alt="" decoding="async"></span>
           <span>Bulk</span>
         </button>
         <button class="goal-card reveal" type="button" data-goal="cut" aria-pressed="false">
           <span class="selected-mark" aria-hidden="true">↗</span>
-          <img src="./icons/bowl.png" width="710" height="524" alt="" loading="lazy" decoding="async">
+          <span class="artwork art-tape" data-icon="tape"><img src="./icons/ui/tape.webp" width="640" height="640" alt="" decoding="async"></span>
           <span>Cut</span>
         </button>
         <button class="goal-card reveal" type="button" data-goal="budget" aria-pressed="false">
           <span class="selected-mark" aria-hidden="true">↗</span>
-          <img src="./icons/euros.png" width="676" height="518" alt="" loading="lazy" decoding="async">
+          <span class="artwork art-coins" data-icon="coins"><img src="./icons/ui/coins.webp" width="640" height="640" alt="" decoding="async"></span>
           <span>Budget</span>
         </button>
         <button class="goal-card reveal" type="button" data-goal="vegan" aria-pressed="false">
           <span class="selected-mark" aria-hidden="true">↗</span>
-          <img src="./icons/vegan.png" width="752" height="504" alt="" loading="lazy" decoding="async">
+          <span class="artwork art-leaf" data-icon="leaf"><img src="./icons/ui/leaf.webp" width="640" height="640" alt="" decoding="async"></span>
           <span>Vegan</span>
         </button>
       </div>
@@ -58,7 +60,7 @@
     <section class="pick-section section" id="pick" aria-labelledby="pick-title">
       <h2 class="section-title reveal" id="pick-title">Today's pick</h2>
       <a class="pick-card reveal" id="pick-link" href="./menu.html?goal=bulk" aria-busy="true">
-        <div class="pick-art"><img src="./icons/bowl.png" width="710" height="524" alt="" loading="lazy" decoding="async"></div>
+        <div class="pick-art"><span id="pick-illustration" class="artwork art-tray" data-icon="tray"><img src="./icons/ui/tray.webp" width="1254" height="1254" alt="" decoding="async"></span></div>
         <div class="pick-content">
           <h3 id="plate-name">Your plate</h3>
           <p class="pick-price" id="plate-price" hidden></p>

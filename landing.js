@@ -15,7 +15,8 @@
     for (const button of buttons) button.setAttribute('aria-pressed', String(button.dataset.goal === selected));
     byId('pick-link').href = './menu.html?goal=' + (selected === 'vegan' ? 'bulk&vegan=1' : selected) + '&date=' + date;
   }
-  function empty(message) {
+  function empty(message,icon='empty') {
+    DishIcons.apply(byId('pick-illustration'),icon);
     byId('plate-name').textContent = message;
     byId('plate-price').hidden = true;
     byId('macros').hidden = true;
@@ -32,6 +33,8 @@
     if (variant?.state !== 'ready' || !plate) return empty('No plate fits this goal today.');
     const total = plate.total;
     if (!total || !['price_cents', 'protein_g', 'carbs_g', 'fat_g'].every(key => Number.isFinite(total[key]))) return empty('Plates are on the way.');
+    const main=plate.items.find(item=>item.role==='main') || plate.items[0];
+    DishIcons.apply(byId('pick-illustration'),DishIcons.classify(main));
     byId('plate-name').textContent = plate.title;
     byId('plate-name').lang = 'de';
     byId('plate-price').textContent = '€' + (total.price_cents / 100).toFixed(2);
@@ -61,7 +64,7 @@
         const response = await fetch('./data/today.json', { cache: 'no-store' });
         if (!response.ok) throw new Error('Menu unavailable');
         menu = await response.json();
-      } catch (_) { empty('A little trouble in the kitchen.'); }
+      } catch (_) { empty('A little trouble in the kitchen.','error'); }
     } finally {
       render();
       byId('pick-link').setAttribute('aria-busy', 'false');
