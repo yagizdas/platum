@@ -3,6 +3,7 @@ import argparse
 import json
 import math
 import os
+import re
 import sys
 import time
 from datetime import date
@@ -59,7 +60,11 @@ def number(value, low, high):
     return type(value) in (int, float) and math.isfinite(value) and low <= value <= high
 
 
-def validate_tag(tag):
+def single_piece_name(name):
+    return bool(re.search(r"\(\s*1\s*Stück\s*\)", name, flags=re.I))
+
+
+def validate_tag(tag, *, name=None):
     if not isinstance(tag, dict) or set(tag) != FIELDS:
         raise ValueError("Tag must contain exactly the requested fields")
     if not isinstance(tag["name_en"], str) or not tag["name_en"].strip():
@@ -84,6 +89,8 @@ def validate_tag(tag):
             raise ValueError("Piece weight must fall within the portion range")
     elif tag["piece_weight_g"] is not None:
         raise ValueError("Non-piece dishes must have null piece_weight_g")
+    if name is not None and single_piece_name(name) and not tag["is_per_piece"]:
+        raise ValueError("An explicitly single-piece dish cannot be scoop-served")
     return tag
 
 
@@ -117,7 +124,11 @@ def generate_json(prompt, payload, schema, model, api_key, *, temperature=None):
 
 
 def call_gemini(dish, model, api_key):
-    return generate_json(PROMPT, {"name": dish["name"], "station": dish["station"]}, TAG_SCHEMA, model, api_key)
+    schema = TAG_SCHEMA
+    if single_piece_name(dish["name"]):
+        schema = {**TAG_SCHEMA, "properties": {**TAG_SCHEMA["properties"],
+                  "is_per_piece": {"type": "boolean", "enum": [True]}}}
+    return generate_json(PROMPT, {"name": dish["name"], "station": dish["station"]}, schema, model, api_key)
 
 
 def tag_menu(menu, cache_path, model, api_key=None, caller=call_gemini):
@@ -127,14 +138,14 @@ def tag_menu(menu, cache_path, model, api_key=None, caller=call_gemini):
     for dish in menu["dishes"]:
         key = normalize(dish["name"])
         if key in cache:
-            validate_tag(cache[key])
+            validate_tag(cache[key], name=dish["name"])
             continue
         if not api_key:
             raise RuntimeError("GEMINI_API_KEY is required for uncached dishes. Set it in the environment; no estimates were invented.")
         other_failures = 0
         for attempt in range(1, MAX_GEMINI_ATTEMPTS + 1):
             try:
-                tag = validate_tag(caller(dish, model, api_key))
+                tag = validate_tag(caller(dish, model, api_key), name=dish["name"])
                 break
             except (ValueError, TypeError, KeyError, OSError) as exc:
                 overloaded = isinstance(exc, GeminiAPIError) and exc.status_code == 503

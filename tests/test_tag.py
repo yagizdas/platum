@@ -59,6 +59,30 @@ def test_missing_key_cannot_invent_tags(tmp_path, make_dish):
     assert tag_menu({"dishes": []}, tmp_path / "cache.json", "gemini-3.8-flash") == {}
 
 
+@pytest.mark.parametrize("name", ["Schnitzel (1 Stück) mit Sauce", "Seelachsfilet (1Stück)"])
+def test_explicit_single_piece_cannot_be_tagged_as_scoops(name, make_dish, monkeypatch):
+    dish, tag = make_dish(name)
+    with pytest.raises(ValueError, match="single-piece"):
+        validate_tag(tag, name=name)
+    tag.update(is_per_piece=True, piece_weight_g=200)
+    assert validate_tag(tag, name=name) == tag
+    requests = []
+    def generate(prompt, payload, schema, model, key):
+        requests.append(schema)
+        return tag
+    monkeypatch.setattr("tag.generate_json", generate)
+    assert call_gemini(dish, "test-model", "test-key") == tag
+    assert requests[0]["properties"]["is_per_piece"]["enum"] == [True]
+
+
+def test_explicit_single_piece_rejects_bad_cached_tag(tmp_path, make_dish):
+    dish, tag = make_dish("Schnitzel (1 Stück)")
+    path = tmp_path / "cache.json"
+    path.write_text(json.dumps({normalize(dish["name"]): tag}))
+    with pytest.raises(ValueError, match="single-piece"):
+        tag_menu({"dishes": [dish]}, path, "test-model")
+
+
 def test_gemini_request_schema_header_and_response(monkeypatch, make_dish):
     """Check the real adapter contract without a network call or secret."""
     d, t = make_dish()

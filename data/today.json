@@ -176,77 +176,67 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Fleischpflanzerl (Frikadelle) + Graupen-Gemüse-Eintopf",
+          "title": "Seelachsfilet + Gemüsecurry",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Fleischpflanzerl (Frikadelle)",
-              "name_en": "German meatball (Frikadelle)",
-              "station": "Unspecified",
+              "name": "Seelachsfilet (1Stück)",
+              "name_en": "Pollock fillet (1 piece)",
+              "station": "Fisch",
               "role": "main",
               "texture": "dry",
               "count": 1,
               "unit": "piece",
-              "weight_g": 125.0,
-              "price_cents": 213,
+              "weight_g": 150,
+              "price_cents": 285,
               "is_vegan": false,
-              "markers": [
-                "R",
-                "S"
-              ],
+              "markers": [],
               "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Sf"
+                "Fi"
               ],
-              "additives": [
-                "Kn"
-              ],
+              "additives": [],
               "standing": false,
-              "diet": "meat",
+              "diet": "fish",
               "serving": "1 piece",
               "price_source": "config",
-              "kcal": 287.5,
-              "protein_g": 20.0
+              "kcal": 172.5,
+              "protein_g": 27.75
             },
             {
-              "name": "Graupen-Gemüse-Eintopf",
-              "name_en": "Pearl barley and vegetable stew",
-              "station": "Studitopf",
+              "name": "Gemüsecurry aus Blumenkohl und Broccoli",
+              "name_en": "Vegetable curry with cauliflower and broccoli",
+              "station": "Wok",
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 149,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "Sl"
+              "allergens": [],
+              "additives": [
+                "Kn"
               ],
-              "additives": [],
               "standing": false,
               "diet": "vegan",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 292.5,
-              "protein_g": 10.35
+              "kcal": 382.5,
+              "protein_g": 11.25
             }
           ],
           "total": {
-            "price_cents": 362,
-            "price_eur": 3.62,
-            "weight_g": 575.0,
-            "kcal": 580.0,
-            "protein_g": 30.35,
-            "carbs_g": 61.75,
-            "fat_g": 23.7
+            "price_cents": 690,
+            "price_eur": 6.9,
+            "weight_g": 600,
+            "kcal": 555.0,
+            "protein_g": 39.0,
+            "carbs_g": 27.75,
+            "fat_g": 31.05
           },
           "has_estimated_prices": true
         }
@@ -259,6 +249,71 @@
       "relaxed": false,
       "note": null,
       "plates": [
+        {
+          "title": "Seelachsfilet + Gemüsecurry",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Seelachsfilet (1Stück)",
+              "name_en": "Pollock fillet (1 piece)",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Fi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "fish",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 27.75
+            },
+            {
+              "name": "Gemüsecurry aus Blumenkohl und Broccoli",
+              "name_en": "Vegetable curry with cauliflower and broccoli",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 11.25
+            }
+          ],
+          "total": {
+            "price_cents": 690,
+            "price_eur": 6.9,
+            "weight_g": 600,
+            "kcal": 555.0,
+            "protein_g": 39.0,
+            "carbs_g": 27.75,
+            "fat_g": 31.05
+          },
+          "has_estimated_prices": true
+        },
         {
           "title": "Seelachsfilet + Asia-Reisbällchen",
           "reason": null,
@@ -333,154 +388,65 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Fleischpflanzerl (Frikadelle) + Graupen-Gemüse-Eintopf",
+          "title": "Seelachsfilet + Kartoffelsalat",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Fleischpflanzerl (Frikadelle)",
-              "name_en": "German meatball (Frikadelle)",
-              "station": "Unspecified",
+              "name": "Seelachsfilet (1Stück)",
+              "name_en": "Pollock fillet (1 piece)",
+              "station": "Fisch",
               "role": "main",
               "texture": "dry",
               "count": 1,
               "unit": "piece",
-              "weight_g": 125.0,
-              "price_cents": 213,
+              "weight_g": 150,
+              "price_cents": 285,
               "is_vegan": false,
-              "markers": [
-                "R",
-                "S"
-              ],
+              "markers": [],
               "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Sf"
+                "Fi"
               ],
-              "additives": [
-                "Kn"
-              ],
+              "additives": [],
               "standing": false,
-              "diet": "meat",
+              "diet": "fish",
               "serving": "1 piece",
               "price_source": "config",
-              "kcal": 287.5,
-              "protein_g": 20.0
+              "kcal": 172.5,
+              "protein_g": 27.75
             },
             {
-              "name": "Graupen-Gemüse-Eintopf",
-              "name_en": "Pearl barley and vegetable stew",
-              "station": "Studitopf",
-              "role": "main",
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
               "texture": "saucy",
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
-              "price_cents": 99,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "Sl"
-              ],
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
               "additives": [],
-              "standing": false,
-              "diet": "vegan",
+              "standing": true,
+              "diet": "meat",
               "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 195.0,
-              "protein_g": 6.9
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
             }
           ],
           "total": {
-            "price_cents": 312,
-            "price_eur": 3.12,
-            "weight_g": 425.0,
-            "kcal": 482.5,
-            "protein_g": 26.9,
-            "carbs_g": 44.5,
-            "fat_g": 22.05
+            "price_cents": 555,
+            "price_eur": 5.55,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 33.15,
+            "carbs_g": 44.25,
+            "fat_g": 21.9
           },
           "has_estimated_prices": true
-        },
-        {
-          "title": "Käsekrainer + Graupen-Gemüse-Eintopf",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Käsekrainer (1 Stück)",
-              "name_en": "Cheese Krainer sausage (1 piece)",
-              "station": "Grill",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140,
-              "price_cents": 226,
-              "is_vegan": false,
-              "markers": [
-                "R",
-                "S"
-              ],
-              "allergens": [
-                "Mi",
-                "Sf"
-              ],
-              "additives": [
-                "2",
-                "3",
-                "8"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 434.0,
-              "protein_g": 20.3
-            },
-            {
-              "name": "Graupen-Gemüse-Eintopf",
-              "name_en": "Pearl barley and vegetable stew",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 99,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 195.0,
-              "protein_g": 6.9
-            }
-          ],
-          "total": {
-            "price_cents": 325,
-            "price_eur": 3.25,
-            "weight_g": 440,
-            "kcal": 629.0,
-            "protein_g": 27.2,
-            "carbs_g": 36.6,
-            "fat_g": 41.8
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -691,6 +657,117 @@
       "note": "No vegan lunch reaches 30g protein today; the protein target is relaxed.",
       "plates": [
         {
+          "title": "Vegane Maultaschen",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Vegane Maultaschen mit Zwiebelmarmelade",
+              "name_en": "Vegan German filled pasta pockets with onion jam",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 24.75,
+            "carbs_g": 121.5,
+            "fat_g": 26.1
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Gemüsecurry + Reis",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gemüsecurry aus Blumenkohl und Broccoli",
+              "name_en": "Vegetable curry with cauliflower and broccoli",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 255.0,
+              "protein_g": 7.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 645.0,
+            "protein_g": 15.6,
+            "carbs_g": 102.0,
+            "fat_g": 17.4
+          },
+          "has_estimated_prices": true
+        },
+        {
           "title": "Asia-Reisbällchen",
           "reason": null,
           "picked_by": "rules",
@@ -739,117 +816,6 @@
             "fat_g": 15.75
           },
           "has_estimated_prices": false
-        },
-        {
-          "title": "Vegane Maultaschen",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Vegane Maultaschen mit Zwiebelmarmelade",
-              "name_en": "Vegan German filled pasta pockets with onion jam",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 16.5
-            }
-          ],
-          "total": {
-            "price_cents": 270,
-            "price_eur": 2.7,
-            "weight_g": 300,
-            "kcal": 555.0,
-            "protein_g": 16.5,
-            "carbs_g": 81.0,
-            "fat_g": 17.4
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Gemüsecurry + Reis",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Gemüsecurry aus Blumenkohl und Broccoli",
-              "name_en": "Vegetable curry with cauliflower and broccoli",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 255.0,
-              "protein_g": 7.5
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 450.0,
-            "protein_g": 11.55,
-            "carbs_g": 60.0,
-            "fat_g": 16.95
-          },
-          "has_estimated_prices": true
         }
       ]
     },
@@ -917,10 +883,10 @@
               "station": "Wok",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -931,10 +897,10 @@
               ],
               "standing": false,
               "diet": "vegan",
-              "serving": "2 scoops",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 255.0,
-              "protein_g": 7.5
+              "kcal": 382.5,
+              "protein_g": 11.25
             },
             {
               "name": "Reis",
@@ -961,13 +927,13 @@
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 450.0,
-            "protein_g": 11.55,
-            "carbs_g": 60.0,
-            "fat_g": 16.95
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 577.5,
+            "protein_g": 15.3,
+            "carbs_g": 69.0,
+            "fat_g": 25.2
           },
           "has_estimated_prices": true
         },
@@ -1075,6 +1041,71 @@
             "fat_g": 17.4
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Gemüsecurry + Reis",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gemüsecurry aus Blumenkohl und Broccoli",
+              "name_en": "Vegetable curry with cauliflower and broccoli",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 255.0,
+              "protein_g": 7.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 645.0,
+            "protein_g": 15.6,
+            "carbs_g": 102.0,
+            "fat_g": 17.4
+          },
+          "has_estimated_prices": true
         }
       ]
     }

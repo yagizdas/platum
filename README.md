@@ -49,8 +49,8 @@ All calls use the existing urllib Gemini client and gemini_model; no extra model
 A plate is one complete main, or two different compatible dishes: two mains or one main with a standing side. Pair score must meet pairing.min_score. Score 3 means classic, 2 normal, 1 odd, 0 incompatible.
 
 - No soups, liquid dishes, desserts, or pairs of standing sides.
-- At most one per-piece dish, always exactly one piece. Pizza/Pinsa never pairs.
-- Scoop dishes use one to three configured scoops, within their typical maximum.
+- At most one per-piece dish, always exactly one piece. Explicit “(1 Stück)” menu names must have a per-piece tag; contradictory model responses or cached tags are rejected. Pizza/Pinsa never pairs.
+- Scoop mains use one to three scoops, capped at 450g; scoop sides are capped at 300g. These caps come from config rather than model-estimated serving maxima.
 - A single dish also respects the typical minimum. Two-dish combinations may use smaller accompaniment portions.
 - Maximum 650g per plate. **No price cap** for any goal.
 - Prices are rounded per dish to cents, then summed. Nutrition is estimated per 100g.
@@ -88,11 +88,14 @@ goals:
 portions:
   default_scoop_g: 150
   station_scoop_g: {}
+  max_scoop_g_by_role: {main: 450, side: 300}
   max_plate_g: 650
 standing_sides:
   - {name: Reis, name_en: Rice, station: Beilagen, is_vegan: true}
   - {name: Kartoffelsalat, name_en: Potato salad, station: Beilagen, is_vegan: false}
 ~~~
+
+max_scoop_g_by_role overrides the cached typical maximum for non-piece dishes of the named roles. At the default 150g scoop size, mains allow up to three scoops and sides up to two. The cached typical minimum still applies to a single-dish lunch. Roles without a configured cap (soups and desserts) use their cached range; per-piece dishes always retain their cached piece weight and range. The three-scoop and 650g whole-plate limits still apply. Editing these caps requires rerunning pick.py, not retagging food or editing caches.
 
 Price rules: €0.90/100g default, Studitopf €0.33/100g, meat base €1, fish base €1.50, Pizza €5 flat. Matched eat-api student prices take precedence for official dishes. Standing sides always use the default configured rate.
 
@@ -134,5 +137,7 @@ python pick.py --no-llm \
 ~~~
 
 The original saved HTML has 12 dishes; the later official menu snapshot includes Fleischpflanzerl, bringing it to 13. The dated golden fixture adds the two configured counter sides. Its side kcal/protein values and pairing knowledge are **user-supplied test mocks**, not production model results; unused side carb/fat fields are test placeholders. Other dish estimates are a snapshot of the existing cache. The raw HTML fixture remains unmodified.
+
+Replay results follow the active portion policy. Configured scoop caps can add lunches or change their order compared with the original v2 prototype, which used model-estimated maxima. Tests cover both policies; the original policy can be replayed with max_scoop_g_by_role: {} in a separate config file passed with --config.
 
 Tests cover real parsing, authority/closed states, prices, pairing schema/cache/fallbacks, standing-side guarantees, plate rules, distinct-lunch pools, golden rankings, judge validation and per-variant fallback. Browser checks cover six variants, alternatives, extras, safe text rendering, share, responsive layout, storage and stale/error states.

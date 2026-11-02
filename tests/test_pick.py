@@ -12,7 +12,10 @@ def menu(dishes):
             "source": "official", "source_url": "https://example.org", "fetched_at": "2026-11-02T07:30:00Z", "warnings": [], "dishes": dishes}
 
 
-def test_golden_lunches(config, fixture_menu, pairing):
+@pytest.mark.parametrize("fixed_caps", [False, True], ids=["original-model-limits", "configured-caps"])
+def test_golden_lunches(config, fixture_menu, pairing, fixed_caps):
+    if not fixed_caps:
+        config["portions"]["max_scoop_g_by_role"] = {} # preserve the original v2 prototype replay
     m, tags = fixture_menu
     result = build_today(m, tags, config, pairing=pairing, no_llm=True)
     bulk = result["variants"]["bulk_all"]["plates"][0]
@@ -22,15 +25,20 @@ def test_golden_lunches(config, fixture_menu, pairing):
     assert bulk["total"]["kcal"] == 780
     assert bulk["total"]["protein_g"] == 42.15
     cut = result["variants"]["cut_all"]["plates"]
-    assert [p["items"][1]["name"] for p in cut] == ["Asia-Reisbällchen auf Teriyakigemüse", "Reis", "Kartoffelsalat"]
-    assert all(p["items"][0]["name"].startswith("Seelachs") and p["items"][1]["count"] == 2 for p in cut)
+    expected_sides = (["Gemüsecurry aus Blumenkohl und Broccoli", "Asia-Reisbällchen auf Teriyakigemüse", "Reis"]
+                      if fixed_caps else ["Asia-Reisbällchen auf Teriyakigemüse", "Reis", "Kartoffelsalat"])
+    assert [p["items"][1]["name"] for p in cut] == expected_sides
+    assert all(p["items"][0]["name"].startswith("Seelachs") for p in cut)
+    assert [p["items"][1]["count"] for p in cut] == ([3, 2, 2] if fixed_caps else [2, 2, 2])
     budget = result["variants"]["budget_all"]["plates"]
     sets = [{i["name"] for i in p["items"]} for p in budget]
     assert any(any(n.startswith("Käsekrainer") for n in s) and "Graupen-Gemüse-Eintopf" in s for s in sets)
     assert any(any(n.startswith("Käsekrainer") for n in s) and "Kartoffelsalat" in s for s in sets)
     vegan = result["variants"]["bulk_vegan"]
     assert vegan["relaxed"] and vegan["note"]
-    assert {i["name"] for i in vegan["plates"][0]["items"]} == {"Gemüsecurry aus Blumenkohl und Broccoli", "Asia-Reisbällchen auf Teriyakigemüse"}
+    expected_vegan = ({"Vegane Maultaschen mit Zwiebelmarmelade"} if fixed_caps else
+                      {"Gemüsecurry aus Blumenkohl und Broccoli", "Asia-Reisbällchen auf Teriyakigemüse"})
+    assert {i["name"] for i in vegan["plates"][0]["items"]} == expected_vegan
     assert result["schema_version"] == 2
     for v in result["variants"].values():
         for p in v["plates"]:
@@ -101,6 +109,7 @@ def test_invalid_single_pairs_and_pizza(config, fixture_menu, pairing):
 
 
 def test_paired_portions_ignore_minimum_but_not_max(config, make_dish):
+    config["portions"]["max_scoop_g_by_role"] = {} # exercise the cached range without an override
     d, t = make_dish(min_g=250, max_g=400)
     assert [i["count"] for i in portion_options(d, t, config)] == [2]
     assert [i["count"] for i in portion_options(d, t, config, paired=True)] == [1, 2]
@@ -109,6 +118,56 @@ def test_paired_portions_ignore_minimum_but_not_max(config, make_dish):
     config["portions"]["station_scoop_g"]["Wok"] = 0
     with pytest.raises(ValueError, match="Scoop"):
         portion_options(d, t, config)
+
+
+def test_fixed_scoop_caps_replace_cached_maxima(config, make_dish):
+    d, t = make_dish(max_g=250)
+    before = copy.deepcopy(t)
+    assert [i["weight_g"] for i in portion_options(d, t, config)] == [150, 300, 450]
+    d, side_tag = make_dish("Rice", role="side", max_g=250)
+    assert [i["weight_g"] for i in portion_options(d, side_tag, config)] == [150, 300]
+    assert t == before # cached estimates are not rewritten
+    config["portions"]["max_scoop_g_by_role"]["side"] = 150
+    assert [i["weight_g"] for i in portion_options(d, side_tag, config)] == [150]
+
+
+def test_fixed_caps_keep_piece_weights_and_unconfigured_roles(config, make_dish):
+    d, t = make_dish("Pinsa", station="Pizza", piece=True, piece_g=250, max_g=300)
+    options = portion_options(d, t, config)
+    assert [(i["count"], i["weight_g"], i["unit"]) for i in options] == [(1, 250, "piece")]
+    d, t = make_dish("Soup", role="soup", texture="liquid", max_g=250)
+    assert [i["weight_g"] for i in portion_options(d, t, config)] == [150]
+
+
+@pytest.mark.parametrize("maximum", [0, -1, True, "300", float("inf"), float("nan")])
+def test_invalid_configured_scoop_caps(config, make_dish, maximum):
+    config["portions"]["max_scoop_g_by_role"]["main"] = maximum
+    d, t = make_dish()
+    with pytest.raises(ValueError, match="Portion caps"):
+        portion_options(d, t, config)
+
+
+def test_friday_fish_can_reach_goals_with_two_scoops_of_rice(config, make_dish):
+    fish, fish_tag = make_dish("Fish fillet", station="Fisch", vegan=False,
+                             piece=True, piece_g=140, min_g=120, max_g=160,
+                             kcal=115, protein=18.5)
+    rice, rice_tag = make_dish("Rice", role="side", max_g=250, kcal=130, protein=2.7)
+    tags = {normalize(fish["name"]): fish_tag, normalize(rice["name"]): rice_tag}
+    values = list(candidates([fish, rice], tags, config))
+    for goal in ("bulk", "cut", "budget"):
+        value = choose(values, goal, config)
+        assert value is not None and valid_plate(value["items"], config)
+        assert value["items"][0]["weight_g"] == 140
+        assert value["items"][1]["count"] == 2
+        assert value["kcal"] == 551
+        assert value["protein"] == 34
+    # Both dishes individually fit, but the whole-plate cap still rejects 750g.
+    a, at = make_dish("Main A")
+    b, bt = make_dish("Main B")
+    a = portion_options(a, at, config)[-1]
+    b = portion_options(b, bt, config)[1]
+    pairing = {"pairs": {pair_key(a, b): {"score": 3}}}
+    assert not valid_plate([a, b], config, pairing)
 
 
 def test_no_price_cap(config, make_dish):

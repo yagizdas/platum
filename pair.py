@@ -39,7 +39,7 @@ def load_pairing(path):
 
 
 def food(dish, cache):
-    tag = validate_tag(cache[normalize(dish["name"])])
+    tag = validate_tag(cache[normalize(dish["name"])], name=dish["name"])
     if dish.get("standing"):
         tag = {**tag, "role": "side", "is_per_piece": False, "piece_weight_g": None,
                "name_en": dish.get("name_en", tag["name_en"])}

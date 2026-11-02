@@ -27,6 +27,17 @@ def scoop_size(dish, config):
     return size
 
 
+def portion_max_g(item, config):
+    """Configured scoop caps replace model maxima; piece weights keep their range."""
+    maximum = item["typical_portion_g"]["max"]
+    if not item["is_per_piece"]:
+        role = "side" if item.get("standing") else item["role"]
+        maximum = config["portions"].get("max_scoop_g_by_role", {}).get(role, maximum)
+    if type(maximum) not in (int, float) or not math.isfinite(maximum) or maximum <= 0:
+        raise ValueError("Portion caps must be finite positive grams")
+    return maximum
+
+
 def diet(item, config):
     if item.get("is_vegan") is True:
         return "vegan"
@@ -46,7 +57,7 @@ def portion_options(dish, tag, config, paired=False):
     item = {**dish, **tag, "standing": dish.get("standing") is True}
     if item["standing"]:
         item.update(role="side", is_per_piece=False, piece_weight_g=None)
-    lo, hi = item["typical_portion_g"]["min"], item["typical_portion_g"]["max"]
+    lo, hi = item["typical_portion_g"]["min"], portion_max_g(item, config)
     limit = min(hi, config["portions"]["max_plate_g"])
     size = scoop_size(item, config)
     if item["is_per_piece"]:
@@ -79,7 +90,7 @@ def valid_plate(items, config, pairing=None):
         elif (i["unit"] != "scoop" or type(i["count"]) is not int or not 1 <= i["count"] <= 3
               or i["weight_g"] != i["count"] * scoop_size(i, config)):
             return False
-        if i["weight_g"] > i["typical_portion_g"]["max"]:
+        if i["weight_g"] > portion_max_g(i, config):
             return False
     if len(items) == 1:
         return stands_alone(items[0], pairing) and items[0]["weight_g"] >= items[0]["typical_portion_g"]["min"]

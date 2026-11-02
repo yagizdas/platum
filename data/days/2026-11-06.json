@@ -28,63 +28,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Pasta with Smoked Tofu",
-          "reason": "Hearty pasta loaded with smoked tofu provides solid fuel and protein",
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Vegane Pasta mit Räuchertofu",
-              "name_en": "Vegan pasta with smoked tofu",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 697.5,
-              "protein_g": 30.6
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 697.5,
-            "protein_g": 30.6,
-            "carbs_g": 95.4,
-            "fat_g": 20.7
-          },
-          "has_estimated_prices": false
-        }
-      ]
-    },
-    "cut_all": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Pasta with Smoked Tofu",
-          "reason": "Delivers the highest protein content among the available choices",
-          "picked_by": "llm",
+          "title": "Vegane Pasta",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Vegane Pasta mit Räuchertofu",
@@ -127,52 +73,314 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Caprese Pinsa",
+          "title": "Mariniertes Zanderfilet + Reis",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
-              "name": "PINSA Caprese mit Tomaten und Mozzarella",
-              "name_en": "Caprese Pinsa with Tomatoes and Mozzarella",
-              "station": "Pizza",
+              "name": "Mariniertes Zanderfilet (1 Stück) mit Zitrone, Chilli und Koriander",
+              "name_en": "Marinated pike-perch fillet (1 piece) with lemon, chili and coriander",
+              "station": "Fisch",
               "role": "main",
               "texture": "dry",
               "count": 1,
               "unit": "piece",
-              "weight_g": 300.0,
-              "price_cents": 500,
+              "weight_g": 140.0,
+              "price_cents": 276,
               "is_vegan": false,
               "markers": [],
               "allergens": [
-                "Ei",
+                "Fi",
                 "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
+                "GlW"
               ],
-              "additives": [
-                "2",
-                "15"
-              ],
+              "additives": [],
               "standing": false,
-              "diet": "meat",
+              "diet": "fish",
               "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 25.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "2 scoops",
               "price_source": "config",
-              "kcal": 675.0,
-              "protein_g": 25.5
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 500,
-            "price_eur": 5.0,
-            "weight_g": 300.0,
-            "kcal": 675.0,
-            "protein_g": 25.5,
-            "carbs_g": 84.0,
-            "fat_g": 26.4
+            "price_cents": 546,
+            "price_eur": 5.46,
+            "weight_g": 440.0,
+            "kcal": 551.0,
+            "protein_g": 34.0,
+            "carbs_g": 85.4,
+            "fat_g": 6.5
           },
           "has_estimated_prices": true
+        },
+        {
+          "title": "Mariniertes Zanderfilet + Kartoffelsalat",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Mariniertes Zanderfilet (1 Stück) mit Zitrone, Chilli und Koriander",
+              "name_en": "Marinated pike-perch fillet (1 piece) with lemon, chili and coriander",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 276,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Fi",
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "fish",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 25.9
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 546,
+            "price_eur": 5.46,
+            "weight_g": 440.0,
+            "kcal": 506.0,
+            "protein_g": 31.3,
+            "carbs_g": 44.9,
+            "fat_g": 21.2
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Mariniertes Zanderfilet + Kartoffelsalat",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Mariniertes Zanderfilet (1 Stück) mit Zitrone, Chilli und Koriander",
+              "name_en": "Marinated pike-perch fillet (1 piece) with lemon, chili and coriander",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 276,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Fi",
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "fish",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 25.9
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 546,
+            "price_eur": 5.46,
+            "weight_g": 440.0,
+            "kcal": 506.0,
+            "protein_g": 31.3,
+            "carbs_g": 44.9,
+            "fat_g": 21.2
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Mariniertes Zanderfilet + Reis",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Mariniertes Zanderfilet (1 Stück) mit Zitrone, Chilli und Koriander",
+              "name_en": "Marinated pike-perch fillet (1 piece) with lemon, chili and coriander",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 276,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Fi",
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "fish",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 25.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 546,
+            "price_eur": 5.46,
+            "weight_g": 440.0,
+            "kcal": 551.0,
+            "protein_g": 34.0,
+            "carbs_g": 85.4,
+            "fat_g": 6.5
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Vegane Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 30.6,
+            "carbs_g": 95.4,
+            "fat_g": 20.7
+          },
+          "has_estimated_prices": false
         }
       ]
     },
@@ -184,9 +392,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Curd Strudel with Vanilla Sauce",
-          "reason": "The most affordable and comforting option on the menu",
-          "picked_by": "llm",
+          "title": "Topfenstrudel",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Topfenstrudel mit Birnen und Vanillesauce (ohne Rosinen)",
@@ -229,9 +437,9 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Pasta with Smoked Tofu",
+          "title": "Vegane Pasta",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Vegane Pasta mit Räuchertofu",
@@ -274,52 +482,46 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Caprese Pinsa",
+          "title": "Gnocchi Alfredo",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
-              "name": "PINSA Caprese mit Tomaten und Mozzarella",
-              "name_en": "Caprese Pinsa with Tomatoes and Mozzarella",
-              "station": "Pizza",
+              "name": "Gnocchi Alfredo mit Gemüse",
+              "name_en": "Gnocchi Alfredo with vegetables",
+              "station": "Vegetarisch/fleischlos",
               "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 300.0,
-              "price_cents": 500,
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": false,
-              "markers": [],
+              "markers": [
+                "f"
+              ],
               "allergens": [
-                "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
+                "Mi"
               ],
-              "additives": [
-                "2",
-                "15"
-              ],
+              "additives": [],
               "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "config",
-              "kcal": 675.0,
-              "protein_g": 25.5
+              "diet": "vegetarian",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 17.1
             }
           ],
           "total": {
-            "price_cents": 500,
-            "price_eur": 5.0,
-            "weight_g": 300.0,
-            "kcal": 675.0,
-            "protein_g": 25.5,
-            "carbs_g": 84.0,
-            "fat_g": 26.4
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 17.1,
+            "carbs_g": 87.75,
+            "fat_g": 26.1
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         }
       ]
     },
@@ -331,9 +533,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Pasta with Smoked Tofu",
-          "reason": "A wholesome vegan pasta bowl packed with energy and plant protein",
-          "picked_by": "llm",
+          "title": "Vegane Pasta",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Vegane Pasta mit Räuchertofu",
@@ -385,9 +587,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Pasta with Smoked Tofu",
-          "reason": "Satisfying plant-based option rich in tofu protein",
-          "picked_by": "llm",
+          "title": "Vegane Pasta",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Vegane Pasta mit Räuchertofu",
@@ -439,9 +641,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Pasta with Smoked Tofu",
-          "reason": "Great plant-based value offering a complete meal",
-          "picked_by": "llm",
+          "title": "Vegane Pasta",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Vegane Pasta mit Räuchertofu",

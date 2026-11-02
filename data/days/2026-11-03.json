@@ -28,9 +28,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Pork Schnitzel with Cheese Spaetzle",
-          "reason": "Massive hearty combination loaded with protein and filling energy for bulking.",
-          "picked_by": "llm",
+          "title": "Schweineschnitzel Wiener Art + Schweizer Knöpflepfanne",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Schweineschnitzel Wiener Art (1 Stück)",
@@ -101,9 +101,9 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Meatball with Cheesy Spaetzle",
+          "title": "Fleischpflanzerl (Frikadelle) + Schweizer Knöpflepfanne",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Fleischpflanzerl (Frikadelle)",
@@ -179,9 +179,9 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Pork Schnitzel with Broccoli Gratin",
+          "title": "Schweineschnitzel Wiener Art + Kartoffel-Broccoli-Gratin",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Schweineschnitzel Wiener Art (1 Stück)",
@@ -215,10 +215,10 @@
               "station": "Vegan",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": false,
               "markers": [
                 "f"
@@ -231,20 +231,20 @@
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
-              "serving": "2 scoops",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 345.0,
-              "protein_g": 8.4
+              "kcal": 517.5,
+              "protein_g": 12.6
             }
           ],
           "total": {
-            "price_cents": 514,
-            "price_eur": 5.14,
-            "weight_g": 460,
-            "kcal": 721.0,
-            "protein_g": 39.6,
-            "carbs_g": 55.1,
-            "fat_g": 37.4
+            "price_cents": 649,
+            "price_eur": 6.49,
+            "weight_g": 610,
+            "kcal": 893.5,
+            "protein_g": 43.8,
+            "carbs_g": 73.85,
+            "fat_g": 46.1
           },
           "has_estimated_prices": false
         }
@@ -258,9 +258,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Pork Schnitzel with Cheesy Spaetzle",
-          "reason": "Excellent protein density offering lean meat alongside a moderate spaetzle portion.",
-          "picked_by": "llm",
+          "title": "Schweineschnitzel Wiener Art + Schweizer Knöpflepfanne",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Schweineschnitzel Wiener Art (1 Stück)",
@@ -331,9 +331,9 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Pork Schnitzel with Broccoli Gratin",
+          "title": "Schweineschnitzel Wiener Art + Kartoffel-Broccoli-Gratin",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Schweineschnitzel Wiener Art (1 Stück)",
@@ -401,80 +401,66 @@
           "has_estimated_prices": false
         },
         {
-          "title": "German Meatball with Spaetzle",
+          "title": "Schweineschnitzel Wiener Art + Kartoffelsalat",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
-              "name": "Fleischpflanzerl (Frikadelle)",
-              "name_en": "German meatball (Frikadelle)",
-              "station": "Grill",
+              "name": "Schweineschnitzel Wiener Art (1 Stück)",
+              "name_en": "Breaded pork schnitzel Viennese style (1 piece)",
+              "station": "Fleisch",
               "role": "main",
               "texture": "dry",
               "count": 1,
               "unit": "piece",
-              "weight_g": 125.0,
-              "price_cents": 213,
+              "weight_g": 160,
+              "price_cents": 244,
               "is_vegan": false,
               "markers": [
-                "R",
                 "S"
               ],
               "allergens": [
-                "Ei",
                 "Gl",
-                "GlW",
-                "Sf"
+                "GlW"
               ],
-              "additives": [
-                "Kn"
-              ],
+              "additives": [],
               "standing": false,
               "diet": "meat",
               "serving": "1 piece",
-              "price_source": "config",
-              "kcal": 287.5,
-              "protein_g": 20.0
+              "price_source": "eat-api",
+              "kcal": 376.0,
+              "protein_g": 31.2
             },
             {
-              "name": "Schweizer Knöpflepfanne mit feinem Gemüse und Käse",
-              "name_en": "Swiss-style spaetzle pan with mixed vegetables and cheese",
-              "station": "Pasta",
-              "role": "main",
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
               "texture": "saucy",
               "count": 1,
               "unit": "scoop",
               "weight_g": 150,
               "price_cents": 135,
               "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlD",
-                "GlW",
-                "Mi",
-                "Sl"
-              ],
+              "markers": [],
+              "allergens": [],
               "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
+              "standing": true,
+              "diet": "meat",
               "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 277.5,
-              "protein_g": 11.25
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
             }
           ],
           "total": {
-            "price_cents": 348,
-            "price_eur": 3.48,
-            "weight_g": 275.0,
-            "kcal": 565.0,
-            "protein_g": 31.25,
-            "carbs_g": 38.5,
-            "fat_g": 31.95
+            "price_cents": 379,
+            "price_eur": 3.79,
+            "weight_g": 310,
+            "kcal": 548.5,
+            "protein_g": 33.9,
+            "carbs_g": 39.35,
+            "fat_g": 27.8
           },
           "has_estimated_prices": true
         }
@@ -488,9 +474,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Cheesy Vegetable Spaetzle Pan",
-          "reason": "Warm and filling cheesy pasta dish delivering solid satisfaction at the best price.",
-          "picked_by": "llm",
+          "title": "Schweizer Knöpflepfanne",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Schweizer Knöpflepfanne mit feinem Gemüse und Käse",
@@ -535,9 +521,58 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Meatball with Cheesy Spaetzle",
+          "title": "Tomate-Mozzarella-Strudel",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Tomate-Mozzarella-Strudel mit Tomatenragout",
+              "name_en": "Tomato and mozzarella strudel with tomato ragout",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlR",
+                "GlW",
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 16.5
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 555.0,
+            "protein_g": 16.5,
+            "carbs_g": 48.0,
+            "fat_g": 33.0
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Fleischpflanzerl (Frikadelle) + Schweizer Knöpflepfanne",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Fleischpflanzerl (Frikadelle)",
@@ -611,55 +646,6 @@
             "fat_g": 31.95
           },
           "has_estimated_prices": true
-        },
-        {
-          "title": "Tomato Mozzarella Strudel",
-          "reason": null,
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Tomate-Mozzarella-Strudel mit Tomatenragout",
-              "name_en": "Tomato and mozzarella strudel with tomato ragout",
-              "station": "Vegetarisch/fleischlos",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlR",
-                "GlW",
-                "Mi",
-                "Sf"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 16.5
-            }
-          ],
-          "total": {
-            "price_cents": 270,
-            "price_eur": 2.7,
-            "weight_g": 300,
-            "kcal": 555.0,
-            "protein_g": 16.5,
-            "carbs_g": 48.0,
-            "fat_g": 33.0
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -671,9 +657,9 @@
       "note": "No vegan lunch reaches 30g protein today; the protein target is relaxed.",
       "plates": [
         {
-          "title": "Warm Beetroot and Potato Stew",
-          "reason": "Comforting warm vegan stew packed with nourishing root vegetables.",
-          "picked_by": "llm",
+          "title": "Veganer Eintopf",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Veganer Eintopf mit Kraut, Kartoffeln und Roter Beete",

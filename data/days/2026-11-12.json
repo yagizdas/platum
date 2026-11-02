@@ -28,74 +28,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Turkey Steak with Spicy Millet",
-          "reason": "Massive protein and calorie blend to power hard training sessions easily",
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Putensteak (1 Stück) mit Chimichuri aus Koriander, Tomate und Petersilie",
-              "name_en": "Turkey steak (1 piece) with coriander, tomato, and parsley chimichurri",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 180,
-              "price_cents": 262,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "config",
-              "kcal": 261.0,
-              "protein_g": 36.9
-            },
-            {
-              "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
-              "name_en": "Spicy millet with black beans and vegetables",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Sl"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "3 scoops",
-              "price_source": "config",
-              "kcal": 562.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 411,
-            "price_eur": 4.11,
-            "weight_g": 630,
-            "kcal": 823.5,
-            "protein_g": 57.15,
-            "carbs_g": 88.2,
-            "fat_g": 25.2
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Falafel with Spicy Millet",
+          "title": "Falafel + Pikante Hirse",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Falafel mit Hummus",
@@ -103,10 +38,10 @@
               "station": "Vegan",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -121,10 +56,10 @@
               ],
               "standing": false,
               "diet": "vegan",
-              "serving": "2 scoops",
+              "serving": "3 scoops",
               "price_source": "config",
-              "kcal": 735.0,
-              "protein_g": 27.6
+              "kcal": 1102.5,
+              "protein_g": 41.4
             },
             {
               "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
@@ -132,10 +67,10 @@
               "station": "Studitopf",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 99,
+              "weight_g": 150,
+              "price_cents": 50,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -148,92 +83,163 @@
               ],
               "standing": false,
               "diet": "vegan",
-              "serving": "2 scoops",
+              "serving": "1 scoop",
               "price_source": "config",
-              "kcal": 375.0,
-              "protein_g": 13.5
+              "kcal": 187.5,
+              "protein_g": 6.75
             }
           ],
           "total": {
-            "price_cents": 369,
-            "price_eur": 3.69,
+            "price_cents": 455,
+            "price_eur": 4.55,
             "weight_g": 600,
-            "kcal": 1110.0,
-            "protein_g": 41.1,
-            "carbs_g": 124.5,
-            "fat_g": 48.0
+            "kcal": 1290.0,
+            "protein_g": 48.15,
+            "carbs_g": 129.75,
+            "fat_g": 63.0
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Beef Stroganoff with Millet",
+          "title": "Falafel + Reis",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
-              "name": "Boeuf Stroganoff mit Senf, Schnitzelgurken und Champignons",
-              "name_en": "Beef Stroganoff with mustard, pickles and mushrooms",
-              "station": "Fleisch",
+              "name": "Falafel mit Hummus",
+              "name_en": "Falafel with hummus",
+              "station": "Vegan",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [
-                "R"
-              ],
-              "allergens": [
-                "Mi",
-                "Sf"
-              ],
-              "additives": [
-                "9"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 405.0,
-              "protein_g": 34.5
-            },
-            {
-              "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
-              "name_en": "Spicy millet with black beans and vegetables",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 99,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [
-                "Sl"
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "config",
+              "kcal": 1102.5,
+              "protein_g": 41.4
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1297.5,
+            "protein_g": 45.45,
+            "carbs_g": 143.25,
+            "fat_g": 58.95
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Falafel + Buntes Gemüse",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Falafel mit Hummus",
+              "name_en": "Falafel with hummus",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "config",
+              "kcal": 1102.5,
+              "protein_g": 41.4
+            },
+            {
+              "name": "Buntes Gemüse in scharfer Kokosmilch",
+              "name_en": "Colorful vegetables in spicy coconut milk",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se",
+                "Sf"
               ],
               "additives": [
                 "2"
               ],
               "standing": false,
               "diet": "vegan",
-              "serving": "2 scoops",
+              "serving": "1 scoop",
               "price_source": "config",
-              "kcal": 375.0,
-              "protein_g": 13.5
+              "kcal": 142.5,
+              "protein_g": 3.15
             }
           ],
           "total": {
-            "price_cents": 469,
-            "price_eur": 4.69,
+            "price_cents": 540,
+            "price_eur": 5.4,
             "weight_g": 600,
-            "kcal": 780.0,
-            "protein_g": 48.0,
-            "carbs_g": 67.5,
-            "fat_g": 33.0
+            "kcal": 1245.0,
+            "protein_g": 44.55,
+            "carbs_g": 109.5,
+            "fat_g": 69.3
           },
           "has_estimated_prices": true
         }
@@ -247,9 +253,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Turkey Steak with Steamed Rice",
-          "reason": "Exceptional lean protein density with minimal calories to stay on cut",
-          "picked_by": "llm",
+          "title": "Putensteak + Reis",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Putensteak (1 Stück) mit Chimichuri aus Koriander, Tomate und Petersilie",
@@ -308,9 +314,9 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Turkey Steak with Spicy Millet",
+          "title": "Putensteak + Pikante Hirse",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Putensteak (1 Stück) mit Chimichuri aus Koriander, Tomate und Petersilie",
@@ -373,74 +379,68 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Beef Stroganoff with Millet",
+          "title": "Putensteak + Buntes Gemüse",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
-              "name": "Boeuf Stroganoff mit Senf, Schnitzelgurken und Champignons",
-              "name_en": "Beef Stroganoff with mustard, pickles and mushrooms",
-              "station": "Fleisch",
+              "name": "Putensteak (1 Stück) mit Chimichuri aus Koriander, Tomate und Petersilie",
+              "name_en": "Turkey steak (1 piece) with coriander, tomato, and parsley chimichurri",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 180,
+              "price_cents": 262,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 261.0,
+              "protein_g": 36.9
+            },
+            {
+              "name": "Buntes Gemüse in scharfer Kokosmilch",
+              "name_en": "Colorful vegetables in spicy coconut milk",
+              "station": "Wok",
               "role": "main",
               "texture": "saucy",
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [
-                "R"
-              ],
-              "allergens": [
-                "Mi",
-                "Sf"
-              ],
-              "additives": [
-                "9"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 405.0,
-              "protein_g": 34.5
-            },
-            {
-              "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
-              "name_en": "Spicy millet with black beans and vegetables",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 50,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [
-                "Sl"
+                "Se",
+                "Sf"
               ],
               "additives": [
                 "2"
               ],
               "standing": false,
               "diet": "vegan",
-              "serving": "1 scoop",
+              "serving": "2 scoops",
               "price_source": "config",
-              "kcal": 187.5,
-              "protein_g": 6.75
+              "kcal": 285.0,
+              "protein_g": 6.3
             }
           ],
           "total": {
-            "price_cents": 420,
-            "price_eur": 4.2,
-            "weight_g": 450,
-            "kcal": 592.5,
-            "protein_g": 41.25,
-            "carbs_g": 39.0,
-            "fat_g": 28.5
+            "price_cents": 532,
+            "price_eur": 5.32,
+            "weight_g": 480,
+            "kcal": 546.0,
+            "protein_g": 43.2,
+            "carbs_g": 19.2,
+            "fat_g": 33.3
           },
           "has_estimated_prices": true
         }
@@ -454,9 +454,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Spicy Millet with Beans",
-          "reason": "Unbeatable value providing plenty of energy and nutrition for cheap",
-          "picked_by": "llm",
+          "title": "Pikante Hirse",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
@@ -498,9 +498,9 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Falafel and Millet Combo",
+          "title": "Falafel + Pikante Hirse",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Falafel mit Hummus",
@@ -571,20 +571,104 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Spicy Millet with Coconut Veggies",
+          "title": "Falafel",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
+            {
+              "name": "Falafel mit Hummus",
+              "name_en": "Falafel with hummus",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 735.0,
+              "protein_g": 27.6
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 735.0,
+            "protein_g": 27.6,
+            "carbs_g": 67.5,
+            "fat_g": 39.0
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Falafel + Pikante Hirse",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Falafel mit Hummus",
+              "name_en": "Falafel with hummus",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "config",
+              "kcal": 1102.5,
+              "protein_g": 41.4
+            },
             {
               "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
               "name_en": "Spicy millet with black beans and vegetables",
               "station": "Studitopf",
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
+              "weight_g": 150,
+              "price_cents": 50,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -597,10 +681,125 @@
               ],
               "standing": false,
               "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 187.5,
+              "protein_g": 6.75
+            }
+          ],
+          "total": {
+            "price_cents": 455,
+            "price_eur": 4.55,
+            "weight_g": 600,
+            "kcal": 1290.0,
+            "protein_g": 48.15,
+            "carbs_g": 129.75,
+            "fat_g": 63.0
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Falafel + Reis",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Falafel mit Hummus",
+              "name_en": "Falafel with hummus",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
               "serving": "3 scoops",
               "price_source": "config",
-              "kcal": 562.5,
-              "protein_g": 20.25
+              "kcal": 1102.5,
+              "protein_g": 41.4
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1297.5,
+            "protein_g": 45.45,
+            "carbs_g": 143.25,
+            "fat_g": 58.95
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Falafel + Buntes Gemüse",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Falafel mit Hummus",
+              "name_en": "Falafel with hummus",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "config",
+              "kcal": 1102.5,
+              "protein_g": 41.4
             },
             {
               "name": "Buntes Gemüse in scharfer Kokosmilch",
@@ -632,238 +831,13 @@
             }
           ],
           "total": {
-            "price_cents": 284,
-            "price_eur": 2.84,
-            "weight_g": 600,
-            "kcal": 705.0,
-            "protein_g": 23.4,
-            "carbs_g": 93.75,
-            "fat_g": 24.3
-          },
-          "has_estimated_prices": true
-        }
-      ]
-    },
-    "bulk_vegan": {
-      "state": "ready",
-      "goal": "bulk",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Falafel with Spicy Millet",
-          "reason": "Top vegan choice packed with high calories and solid plant protein",
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Falafel mit Hummus",
-              "name_en": "Falafel with hummus",
-              "station": "Vegan",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 735.0,
-              "protein_g": 27.6
-            },
-            {
-              "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
-              "name_en": "Spicy millet with black beans and vegetables",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 99,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Sl"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 375.0,
-              "protein_g": 13.5
-            }
-          ],
-          "total": {
-            "price_cents": 369,
-            "price_eur": 3.69,
-            "weight_g": 600,
-            "kcal": 1110.0,
-            "protein_g": 41.1,
-            "carbs_g": 124.5,
-            "fat_g": 48.0
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Falafel with Coconut Veggies",
-          "reason": null,
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Buntes Gemüse in scharfer Kokosmilch",
-              "name_en": "Colorful vegetables in spicy coconut milk",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Se",
-                "Sf"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 285.0,
-              "protein_g": 6.3
-            },
-            {
-              "name": "Falafel mit Hummus",
-              "name_en": "Falafel with hummus",
-              "station": "Vegan",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 735.0,
-              "protein_g": 27.6
-            }
-          ],
-          "total": {
             "price_cents": 540,
             "price_eur": 5.4,
             "weight_g": 600,
-            "kcal": 1020.0,
-            "protein_g": 33.9,
-            "carbs_g": 84.0,
-            "fat_g": 60.6
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Falafel with Steamed Rice",
-          "reason": null,
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Falafel mit Hummus",
-              "name_en": "Falafel with hummus",
-              "station": "Vegan",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 735.0,
-              "protein_g": 27.6
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 930.0,
-            "protein_g": 31.65,
+            "kcal": 1245.0,
+            "protein_g": 44.55,
             "carbs_g": 109.5,
-            "fat_g": 39.45
+            "fat_g": 69.3
           },
           "has_estimated_prices": true
         }
@@ -877,9 +851,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Double Falafel with Hummus",
-          "reason": "Best protein per calorie ratio among the available vegan dishes",
-          "picked_by": "llm",
+          "title": "Falafel",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Falafel mit Hummus",
@@ -923,9 +897,9 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Falafel with Spicy Millet",
+          "title": "Falafel + Pikante Hirse",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Falafel mit Hummus",
@@ -933,10 +907,10 @@
               "station": "Vegan",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -951,10 +925,10 @@
               ],
               "standing": false,
               "diet": "vegan",
-              "serving": "2 scoops",
+              "serving": "3 scoops",
               "price_source": "config",
-              "kcal": 735.0,
-              "protein_g": 27.6
+              "kcal": 1102.5,
+              "protein_g": 41.4
             },
             {
               "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
@@ -985,20 +959,20 @@
             }
           ],
           "total": {
-            "price_cents": 320,
-            "price_eur": 3.2,
-            "weight_g": 450,
-            "kcal": 922.5,
-            "protein_g": 34.35,
-            "carbs_g": 96.0,
-            "fat_g": 43.5
+            "price_cents": 455,
+            "price_eur": 4.55,
+            "weight_g": 600,
+            "kcal": 1290.0,
+            "protein_g": 48.15,
+            "carbs_g": 129.75,
+            "fat_g": 63.0
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Falafel with Coconut Veggies",
+          "title": "Falafel + Buntes Gemüse",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Falafel mit Hummus",
@@ -1006,10 +980,10 @@
               "station": "Vegan",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -1024,10 +998,10 @@
               ],
               "standing": false,
               "diet": "vegan",
-              "serving": "2 scoops",
+              "serving": "3 scoops",
               "price_source": "config",
-              "kcal": 735.0,
-              "protein_g": 27.6
+              "kcal": 1102.5,
+              "protein_g": 41.4
             },
             {
               "name": "Buntes Gemüse in scharfer Kokosmilch",
@@ -1059,13 +1033,13 @@
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 877.5,
-            "protein_g": 30.75,
-            "carbs_g": 75.75,
-            "fat_g": 49.8
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1245.0,
+            "protein_g": 44.55,
+            "carbs_g": 109.5,
+            "fat_g": 69.3
           },
           "has_estimated_prices": true
         }
@@ -1079,9 +1053,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Hearty Spicy Millet",
-          "reason": "Super cheap meal that easily satisfies hungry students on a budget",
-          "picked_by": "llm",
+          "title": "Pikante Hirse",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
@@ -1123,9 +1097,9 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Falafel with Spicy Millet",
+          "title": "Falafel + Pikante Hirse",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Falafel mit Hummus",
@@ -1196,74 +1170,48 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Millet with Coconut Veggies",
+          "title": "Falafel",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
-              "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
-              "name_en": "Spicy millet with black beans and vegetables",
-              "station": "Studitopf",
+              "name": "Falafel mit Hummus",
+              "name_en": "Falafel with hummus",
+              "station": "Vegan",
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [
-                "Sl"
+                "Gl",
+                "GlW",
+                "Se"
               ],
               "additives": [
-                "2"
+                "Kn"
               ],
               "standing": false,
               "diet": "vegan",
-              "serving": "3 scoops",
+              "serving": "2 scoops",
               "price_source": "config",
-              "kcal": 562.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Buntes Gemüse in scharfer Kokosmilch",
-              "name_en": "Colorful vegetables in spicy coconut milk",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Se",
-                "Sf"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 142.5,
-              "protein_g": 3.15
+              "kcal": 735.0,
+              "protein_g": 27.6
             }
           ],
           "total": {
-            "price_cents": 284,
-            "price_eur": 2.84,
-            "weight_g": 600,
-            "kcal": 705.0,
-            "protein_g": 23.4,
-            "carbs_g": 93.75,
-            "fat_g": 24.3
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 735.0,
+            "protein_g": 27.6,
+            "carbs_g": 67.5,
+            "fat_g": 39.0
           },
           "has_estimated_prices": true
         }

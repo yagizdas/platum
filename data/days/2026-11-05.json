@@ -28,46 +28,20 @@
       "note": null,
       "plates": [
         {
-          "title": "Bulgur with Beans and Chipotle Stripes",
-          "reason": "Packed with protein and high calories to keep you energized through lectures",
-          "picked_by": "llm",
+          "title": "Chipotle Stripes (aus Erbsenprotein) + Reis",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
-            {
-              "name": "Bulgur mit roten Linsen, Bohnen und Tomaten",
-              "name_en": "Bulgur with red lentils, beans, and tomatoes",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 99,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 345.0,
-              "protein_g": 14.4
-            },
             {
               "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
               "name_en": "Chipotle stripes made from pea protein with black beans",
               "station": "Vegan",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -80,51 +54,10 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "serving": "2 scoops",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 435.0,
-              "protein_g": 31.5
-            }
-          ],
-          "total": {
-            "price_cents": 369,
-            "price_eur": 3.69,
-            "weight_g": 600,
-            "kcal": 780.0,
-            "protein_g": 45.9,
-            "carbs_g": 87.6,
-            "fat_g": 23.4
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Turkey Cutlet with Rice",
-          "reason": null,
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Truthahnschnitzel (1 Stück) mit Paprikasauce",
-              "name_en": "Turkey cutlet (1 piece) with bell pepper sauce",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 495.0,
-              "protein_g": 43.5
+              "kcal": 652.5,
+              "protein_g": 47.25
             },
             {
               "name": "Reis",
@@ -151,20 +84,90 @@
             }
           ],
           "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 690.0,
-            "protein_g": 47.55,
-            "carbs_g": 70.5,
-            "fat_g": 22.95
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 847.5,
+            "protein_g": 51.3,
+            "carbs_g": 96.0,
+            "fat_g": 25.2
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Spinach Ricotta Pizza",
+          "title": "Chipotle Stripes (aus Erbsenprotein) + Bulgur",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
+              "name_en": "Chipotle stripes made from pea protein with black beans",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 47.25
+            },
+            {
+              "name": "Bulgur mit roten Linsen, Bohnen und Tomaten",
+              "name_en": "Bulgur with red lentils, beans, and tomatoes",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 50,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 172.5,
+              "protein_g": 7.2
+            }
+          ],
+          "total": {
+            "price_cents": 455,
+            "price_eur": 4.55,
+            "weight_g": 600,
+            "kcal": 825.0,
+            "protein_g": 54.45,
+            "carbs_g": 79.8,
+            "fat_g": 28.2
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Pizza mit Spinat und Ricotta",
@@ -217,135 +220,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Turkey Cutlet with Potato Salad",
-          "reason": "Outstanding protein density with hearty turkey cutlet and classic sides",
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Truthahnschnitzel (1 Stück) mit Paprikasauce",
-              "name_en": "Turkey cutlet (1 piece) with bell pepper sauce",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 495.0,
-              "protein_g": 43.5
-            },
-            {
-              "name": "Kartoffelsalat",
-              "name_en": "Potato salad",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "meat",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 172.5,
-              "protein_g": 2.7
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 667.5,
-            "protein_g": 46.2,
-            "carbs_g": 50.25,
-            "fat_g": 30.3
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Turkey Cutlet with Rice",
+          "title": "Chipotle Stripes (aus Erbsenprotein) + Bulgur",
           "reason": null,
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Truthahnschnitzel (1 Stück) mit Paprikasauce",
-              "name_en": "Turkey cutlet (1 piece) with bell pepper sauce",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 495.0,
-              "protein_g": 43.5
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 690.0,
-            "protein_g": 47.55,
-            "carbs_g": 70.5,
-            "fat_g": 22.95
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Chipotle Stripes and Bulgur Bowl",
-          "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
@@ -353,10 +230,10 @@
               "station": "Vegan",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -369,10 +246,10 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "serving": "2 scoops",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 435.0,
-              "protein_g": 31.5
+              "kcal": 652.5,
+              "protein_g": 47.25
             },
             {
               "name": "Bulgur mit roten Linsen, Bohnen und Tomaten",
@@ -402,15 +279,141 @@
             }
           ],
           "total": {
-            "price_cents": 320,
-            "price_eur": 3.2,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 38.7,
-            "carbs_g": 61.8,
-            "fat_g": 19.95
+            "price_cents": 455,
+            "price_eur": 4.55,
+            "weight_g": 600,
+            "kcal": 825.0,
+            "protein_g": 54.45,
+            "carbs_g": 79.8,
+            "fat_g": 28.2
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Truthahnschnitzel + Kartoffelsalat",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Truthahnschnitzel (1 Stück) mit Paprikasauce",
+              "name_en": "Turkey schnitzel (1 piece) with bell pepper sauce",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 240.0,
+              "price_cents": 316,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 396.0,
+              "protein_g": 34.8
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 451,
+            "price_eur": 4.51,
+            "weight_g": 390.0,
+            "kcal": 568.5,
+            "protein_g": 37.5,
+            "carbs_g": 44.55,
+            "fat_g": 25.8
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Truthahnschnitzel + Reis",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Truthahnschnitzel (1 Stück) mit Paprikasauce",
+              "name_en": "Turkey schnitzel (1 piece) with bell pepper sauce",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 240.0,
+              "price_cents": 316,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 396.0,
+              "protein_g": 34.8
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 451,
+            "price_eur": 4.51,
+            "weight_g": 390.0,
+            "kcal": 591.0,
+            "protein_g": 38.85,
+            "carbs_g": 64.8,
+            "fat_g": 18.45
+          },
+          "has_estimated_prices": true
         }
       ]
     },
@@ -422,9 +425,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Budget Bulgur and Chipotle Stripes",
-          "reason": "Extremely inexpensive student meal that delivers solid nutrition",
-          "picked_by": "llm",
+          "title": "Bulgur + Chipotle Stripes (aus Erbsenprotein)",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Bulgur mit roten Linsen, Bohnen und Tomaten",
@@ -492,9 +495,9 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Chipotle Stripes with Rice",
+          "title": "Chipotle Stripes (aus Erbsenprotein) + Reis",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
@@ -559,9 +562,9 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Baked Ricotta Spinach Cannelloni",
+          "title": "Cannelloni",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Cannelloni mit Ricotta-Spinat-Füllung und Tomatensauce",
@@ -613,79 +616,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Bulgur with Beans and Chipotle Stripes",
-          "reason": "Massive plant protein and filling grains ideal for muscle building",
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Bulgur mit roten Linsen, Bohnen und Tomaten",
-              "name_en": "Bulgur with red lentils, beans, and tomatoes",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 99,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 345.0,
-              "protein_g": 14.4
-            },
-            {
-              "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
-              "name_en": "Chipotle stripes made from pea protein with black beans",
-              "station": "Vegan",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 435.0,
-              "protein_g": 31.5
-            }
-          ],
-          "total": {
-            "price_cents": 369,
-            "price_eur": 3.69,
-            "weight_g": 600,
-            "kcal": 780.0,
-            "protein_g": 45.9,
-            "carbs_g": 87.6,
-            "fat_g": 23.4
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Chipotle Pea Stripes with Rice",
+          "title": "Chipotle Stripes (aus Erbsenprotein) + Reis",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
@@ -693,10 +626,10 @@
               "station": "Vegan",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -709,10 +642,10 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "serving": "2 scoops",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 435.0,
-              "protein_g": 31.5
+              "kcal": 652.5,
+              "protein_g": 47.25
             },
             {
               "name": "Reis",
@@ -739,29 +672,20 @@
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 630.0,
-            "protein_g": 35.55,
-            "carbs_g": 78.0,
-            "fat_g": 16.95
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 847.5,
+            "protein_g": 51.3,
+            "carbs_g": 96.0,
+            "fat_g": 25.2
           },
           "has_estimated_prices": true
-        }
-      ]
-    },
-    "cut_vegan": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
-      "plates": [
+        },
         {
-          "title": "Chipotle Pea Stripes with Bulgur",
-          "reason": "Lean plant-based protein combination with fewer overall calories",
-          "picked_by": "llm",
+          "title": "Chipotle Stripes (aus Erbsenprotein) + Bulgur",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
@@ -769,10 +693,10 @@
               "station": "Vegan",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -785,10 +709,10 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "serving": "2 scoops",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 435.0,
-              "protein_g": 31.5
+              "kcal": 652.5,
+              "protein_g": 47.25
             },
             {
               "name": "Bulgur mit roten Linsen, Bohnen und Tomaten",
@@ -818,20 +742,29 @@
             }
           ],
           "total": {
-            "price_cents": 320,
-            "price_eur": 3.2,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 38.7,
-            "carbs_g": 61.8,
-            "fat_g": 19.95
+            "price_cents": 455,
+            "price_eur": 4.55,
+            "weight_g": 600,
+            "kcal": 825.0,
+            "protein_g": 54.45,
+            "carbs_g": 79.8,
+            "fat_g": 28.2
           },
           "has_estimated_prices": false
-        },
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
         {
-          "title": "Chipotle Pea Stripes with Rice",
+          "title": "Chipotle Stripes (aus Erbsenprotein) + Bulgur",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
@@ -839,10 +772,10 @@
               "station": "Vegan",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -855,10 +788,80 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "serving": "2 scoops",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 435.0,
-              "protein_g": 31.5
+              "kcal": 652.5,
+              "protein_g": 47.25
+            },
+            {
+              "name": "Bulgur mit roten Linsen, Bohnen und Tomaten",
+              "name_en": "Bulgur with red lentils, beans, and tomatoes",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 50,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 172.5,
+              "protein_g": 7.2
+            }
+          ],
+          "total": {
+            "price_cents": 455,
+            "price_eur": 4.55,
+            "weight_g": 600,
+            "kcal": 825.0,
+            "protein_g": 54.45,
+            "carbs_g": 79.8,
+            "fat_g": 28.2
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Chipotle Stripes (aus Erbsenprotein) + Reis",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
+              "name_en": "Chipotle stripes made from pea protein with black beans",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 47.25
             },
             {
               "name": "Reis",
@@ -885,13 +888,13 @@
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 630.0,
-            "protein_g": 35.55,
-            "carbs_g": 78.0,
-            "fat_g": 16.95
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 847.5,
+            "protein_g": 51.3,
+            "carbs_g": 96.0,
+            "fat_g": 25.2
           },
           "has_estimated_prices": true
         }
@@ -905,9 +908,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Budget Bulgur and Chipotle Stripes",
-          "reason": "Super cheap hearty plant-based meal perfect for saving money",
-          "picked_by": "llm",
+          "title": "Bulgur + Chipotle Stripes (aus Erbsenprotein)",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Bulgur mit roten Linsen, Bohnen und Tomaten",
@@ -975,9 +978,9 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Chipotle Pea Stripes with Rice",
+          "title": "Chipotle Stripes (aus Erbsenprotein) + Reis",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
@@ -1042,9 +1045,9 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Root Vegetable Goulash Stew",
+          "title": "Veganer Gulaschtopf + Reis",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Veganer Gulaschtopf mit Kartoffeln, Wurzelgemüse und Schwarzbier",

@@ -28,113 +28,20 @@
       "note": null,
       "plates": [
         {
-          "title": "Currywurst and Potato Chili",
-          "reason": "Hearty combo offering the highest calories and protein for bulking",
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Currywurst mit Honig-Ingwer-Ketchup (1 Stück)",
-              "name_en": "Currywurst with honey-ginger ketchup (1 piece)",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 200,
-              "price_cents": 230,
-              "is_vegan": false,
-              "markers": [
-                "R",
-                "S"
-              ],
-              "allergens": [
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "8",
-                "11"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 470.0,
-              "protein_g": 22.0
-            },
-            {
-              "name": "Pikantes Kartoffelchili",
-              "name_en": "Spicy potato chili",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 382.5,
-              "protein_g": 12.6
-            }
-          ],
-          "total": {
-            "price_cents": 379,
-            "price_eur": 3.79,
-            "weight_g": 650,
-            "kcal": 852.5,
-            "protein_g": 34.6,
-            "carbs_g": 87.75,
-            "fat_g": 38.1
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Cevapcici with Potato Chili",
+          "title": "Cevapcici (5 Stück) + Reis",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
-            {
-              "name": "Pikantes Kartoffelchili",
-              "name_en": "Spicy potato chili",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 382.5,
-              "protein_g": 12.6
-            },
             {
               "name": "Cevapcici (5 Stück) mit Ajvar",
               "name_en": "Cevapcici (5 pieces) with ajvar",
               "station": "Fleisch",
               "role": "main",
               "texture": "saucy",
-              "count": 1,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 235,
+              "weight_g": 450,
+              "price_cents": 505,
               "is_vegan": false,
               "markers": [
                 "R"
@@ -152,22 +59,189 @@
               ],
               "standing": false,
               "diet": "meat",
-              "serving": "1 scoop",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 322.5,
-              "protein_g": 20.25
+              "kcal": 967.5,
+              "protein_g": 60.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 384,
-            "price_eur": 3.84,
+            "price_cents": 640,
+            "price_eur": 6.4,
             "weight_g": 600,
-            "kcal": 705.0,
-            "protein_g": 32.85,
-            "carbs_g": 68.25,
-            "fat_g": 31.35
+            "kcal": 1162.5,
+            "protein_g": 64.8,
+            "carbs_g": 64.5,
+            "fat_g": 70.2
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Cevapcici (5 Stück) + Gegrillte Süßkartoffeln",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Cevapcici (5 Stück) mit Ajvar",
+              "name_en": "Cevapcici (5 pieces) with ajvar",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Sf",
+                "Sl",
+                "So"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 967.5,
+              "protein_g": 60.75
+            },
+            {
+              "name": "Gegrillte Süßkartoffeln mit Gemüse",
+              "name_en": "Grilled sweet potatoes with vegetables",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 172.5,
+              "protein_g": 3.3
+            }
+          ],
+          "total": {
+            "price_cents": 640,
+            "price_eur": 6.4,
+            "weight_g": 600,
+            "kcal": 1140.0,
+            "protein_g": 64.05,
+            "carbs_g": 50.25,
+            "fat_g": 74.85
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Cevapcici (5 Stück) + Kartoffelsalat",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Cevapcici (5 Stück) mit Ajvar",
+              "name_en": "Cevapcici (5 pieces) with ajvar",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Sf",
+                "Sl",
+                "So"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 967.5,
+              "protein_g": 60.75
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 640,
+            "price_eur": 6.4,
+            "weight_g": 600,
+            "kcal": 1140.0,
+            "protein_g": 63.45,
+            "carbs_g": 44.25,
+            "fat_g": 77.55
+          },
+          "has_estimated_prices": true
         }
       ]
     },
@@ -179,43 +253,20 @@
       "note": null,
       "plates": [
         {
-          "title": "Cevapcici with Potato Chili",
-          "reason": "Top protein density with moderate calories and good lean protein",
-          "picked_by": "llm",
+          "title": "Cevapcici (5 Stück) + Pikantes Kartoffelchili",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
-            {
-              "name": "Pikantes Kartoffelchili",
-              "name_en": "Spicy potato chili",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 99,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 255.0,
-              "protein_g": 8.4
-            },
             {
               "name": "Cevapcici (5 Stück) mit Ajvar",
               "name_en": "Cevapcici (5 pieces) with ajvar",
               "station": "Fleisch",
               "role": "main",
               "texture": "saucy",
-              "count": 1,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 235,
+              "weight_g": 450,
+              "price_cents": 505,
               "is_vegan": false,
               "markers": [
                 "R"
@@ -233,57 +284,10 @@
               ],
               "standing": false,
               "diet": "meat",
-              "serving": "1 scoop",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 322.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 334,
-            "price_eur": 3.34,
-            "weight_g": 450,
-            "kcal": 577.5,
-            "protein_g": 28.65,
-            "carbs_g": 48.0,
-            "fat_g": 28.65
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Currywurst with Potato Chili",
-          "reason": null,
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Currywurst mit Honig-Ingwer-Ketchup (1 Stück)",
-              "name_en": "Currywurst with honey-ginger ketchup (1 piece)",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 200,
-              "price_cents": 230,
-              "is_vegan": false,
-              "markers": [
-                "R",
-                "S"
-              ],
-              "allergens": [
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "8",
-                "11"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 470.0,
-              "protein_g": 22.0
+              "kcal": 967.5,
+              "protein_g": 60.75
             },
             {
               "name": "Pikantes Kartoffelchili",
@@ -310,56 +314,31 @@
             }
           ],
           "total": {
-            "price_cents": 280,
-            "price_eur": 2.8,
-            "weight_g": 350,
-            "kcal": 597.5,
-            "protein_g": 26.2,
-            "carbs_g": 47.25,
-            "fat_g": 32.7
+            "price_cents": 555,
+            "price_eur": 5.55,
+            "weight_g": 600,
+            "kcal": 1095.0,
+            "protein_g": 64.95,
+            "carbs_g": 42.75,
+            "fat_g": 72.45
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Grilled Sweet Potatoes with Cevapcici",
+          "title": "Cevapcici (5 Stück) + Gegrillte Süßkartoffeln",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
-            {
-              "name": "Gegrillte Süßkartoffeln mit Gemüse",
-              "name_en": "Grilled sweet potatoes with vegetables",
-              "station": "Vegetarisch/fleischlos",
-              "role": "main",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 345.0,
-              "protein_g": 6.6
-            },
             {
               "name": "Cevapcici (5 Stück) mit Ajvar",
               "name_en": "Cevapcici (5 pieces) with ajvar",
               "station": "Fleisch",
               "role": "main",
               "texture": "saucy",
-              "count": 1,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 235,
+              "weight_g": 450,
+              "price_cents": 505,
               "is_vegan": false,
               "markers": [
                 "R"
@@ -377,22 +356,119 @@
               ],
               "standing": false,
               "diet": "meat",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 967.5,
+              "protein_g": 60.75
+            },
+            {
+              "name": "Gegrillte Süßkartoffeln mit Gemüse",
+              "name_en": "Grilled sweet potatoes with vegetables",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
               "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 322.5,
-              "protein_g": 20.25
+              "kcal": 172.5,
+              "protein_g": 3.3
             }
           ],
           "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 667.5,
-            "protein_g": 26.85,
-            "carbs_g": 63.0,
-            "fat_g": 33.45
+            "price_cents": 640,
+            "price_eur": 6.4,
+            "weight_g": 600,
+            "kcal": 1140.0,
+            "protein_g": 64.05,
+            "carbs_g": 50.25,
+            "fat_g": 74.85
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Cevapcici (5 Stück) + Reis",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Cevapcici (5 Stück) mit Ajvar",
+              "name_en": "Cevapcici (5 pieces) with ajvar",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Sf",
+                "Sl",
+                "So"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 967.5,
+              "protein_g": 60.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 640,
+            "price_eur": 6.4,
+            "weight_g": 600,
+            "kcal": 1162.5,
+            "protein_g": 64.8,
+            "carbs_g": 64.5,
+            "fat_g": 70.2
+          },
+          "has_estimated_prices": true
         }
       ]
     },
@@ -404,9 +480,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Currywurst with Potato Chili",
-          "reason": "Lowest price while packing excellent protein and satisfying energy",
-          "picked_by": "llm",
+          "title": "Currywurst + Pikantes Kartoffelchili",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Currywurst mit Honig-Ingwer-Ketchup (1 Stück)",
@@ -474,9 +550,9 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Potato Chili with Rice",
+          "title": "Pikantes Kartoffelchili + Reis",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Pikantes Kartoffelchili",
@@ -537,9 +613,9 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Cevapcici with Potato Chili",
+          "title": "Pikantes Kartoffelchili + Cevapcici (5 Stück)",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Pikantes Kartoffelchili",
@@ -618,9 +694,9 @@
       "note": "No vegan lunch reaches 30g protein today; the protein target is relaxed.",
       "plates": [
         {
-          "title": "Potato Chili with Rice",
-          "reason": "Best calorie and protein option among all vegan meals",
-          "picked_by": "llm",
+          "title": "Pikantes Kartoffelchili + Reis",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Pikantes Kartoffelchili",
@@ -628,10 +704,10 @@
               "station": "Studitopf",
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
+              "weight_g": 300,
+              "price_cents": 99,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -640,10 +716,10 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "serving": "3 scoops",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 382.5,
-              "protein_g": 12.6
+              "kcal": 255.0,
+              "protein_g": 8.4
             },
             {
               "name": "Reis",
@@ -651,10 +727,10 @@
               "station": "Beilagen",
               "role": "side",
               "texture": "dry",
-              "count": 1,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -663,27 +739,69 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
-              "serving": "1 scoop",
+              "serving": "2 scoops",
               "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 284,
-            "price_eur": 2.84,
+            "price_cents": 369,
+            "price_eur": 3.69,
             "weight_g": 600,
-            "kcal": 577.5,
-            "protein_g": 16.65,
-            "carbs_g": 102.75,
-            "fat_g": 8.55
+            "kcal": 645.0,
+            "protein_g": 16.5,
+            "carbs_g": 124.5,
+            "fat_g": 6.3
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Spicy Potato Chili",
+          "title": "Gegrillte Süßkartoffeln",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gegrillte Süßkartoffeln mit Gemüse",
+              "name_en": "Grilled sweet potatoes with vegetables",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "dry",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 9.9
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 9.9,
+            "carbs_g": 83.25,
+            "fat_g": 15.3
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pikantes Kartoffelchili",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Pikantes Kartoffelchili",
@@ -719,48 +837,6 @@
             "fat_g": 8.1
           },
           "has_estimated_prices": false
-        },
-        {
-          "title": "Grilled Sweet Potatoes",
-          "reason": null,
-          "picked_by": "llm",
-          "items": [
-            {
-              "name": "Gegrillte Süßkartoffeln mit Gemüse",
-              "name_en": "Grilled sweet potatoes with vegetables",
-              "station": "Vegetarisch/fleischlos",
-              "role": "main",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 345.0,
-              "protein_g": 6.6
-            }
-          ],
-          "total": {
-            "price_cents": 270,
-            "price_eur": 2.7,
-            "weight_g": 300,
-            "kcal": 345.0,
-            "protein_g": 6.6,
-            "carbs_g": 55.5,
-            "fat_g": 10.2
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -772,9 +848,9 @@
       "note": "No vegan lunch reaches 25g protein today; the protein target is relaxed.",
       "plates": [
         {
-          "title": "Potato Chili with Rice",
-          "reason": "Only candidate offering the highest protein content",
-          "picked_by": "llm",
+          "title": "Pikantes Kartoffelchili + Reis",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Pikantes Kartoffelchili",
@@ -833,6 +909,48 @@
             "fat_g": 8.55
           },
           "has_estimated_prices": true
+        },
+        {
+          "title": "Gegrillte Süßkartoffeln",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gegrillte Süßkartoffeln mit Gemüse",
+              "name_en": "Grilled sweet potatoes with vegetables",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "dry",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 9.9
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 9.9,
+            "carbs_g": 83.25,
+            "fat_g": 15.3
+          },
+          "has_estimated_prices": false
         }
       ]
     },
@@ -844,9 +962,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Potato Chili with Rice",
-          "reason": "Only candidate providing a hearty complete meal on a budget",
-          "picked_by": "llm",
+          "title": "Pikantes Kartoffelchili + Reis",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Pikantes Kartoffelchili",

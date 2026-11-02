@@ -28,9 +28,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Pollock and Cauliflower Casserole",
-          "reason": "Hearty combination offering high protein and satisfying substance for bulking",
-          "picked_by": "llm",
+          "title": "Panierter Seelachs + Blumenkohlauflauf",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
@@ -68,10 +68,10 @@
               "station": "Vegetarisch/fleischlos",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": false,
               "markers": [
                 "f"
@@ -91,20 +91,90 @@
               ],
               "standing": false,
               "diet": "vegetarian",
+              "serving": "3 scoops",
+              "price_source": "config",
+              "kcal": 517.5,
+              "protein_g": 23.4
+            }
+          ],
+          "total": {
+            "price_cents": 735,
+            "price_eur": 7.35,
+            "weight_g": 650,
+            "kcal": 957.5,
+            "protein_g": 46.4,
+            "carbs_g": 63.1,
+            "fat_g": 56.6
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Panierter Seelachs + Reis",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+              "name_en": "Breaded pollock (1 piece) with remoulade sauce",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 330,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "9"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 440.0,
+              "protein_g": 23.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
               "serving": "2 scoops",
               "price_source": "config",
-              "kcal": 345.0,
-              "protein_g": 15.6
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
             "price_cents": 600,
             "price_eur": 6.0,
             "weight_g": 500,
-            "kcal": 785.0,
-            "protein_g": 38.6,
-            "carbs_g": 51.4,
-            "fat_g": 46.4
+            "kcal": 830.0,
+            "protein_g": 31.1,
+            "carbs_g": 112.0,
+            "fat_g": 26.9
           },
           "has_estimated_prices": true
         }
@@ -118,9 +188,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Pollock with Cauliflower Casserole",
-          "reason": "Delivers the highest protein content among all options with low calorie density",
-          "picked_by": "llm",
+          "title": "Panierter Seelachs + Blumenkohlauflauf",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
@@ -199,9 +269,9 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Breaded Pollock with Rice",
+          "title": "Panierter Seelachs + Reis",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
@@ -269,9 +339,9 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Pollock with Potato Salad",
+          "title": "Panierter Seelachs + Kartoffelsalat",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
@@ -346,9 +416,9 @@
       "note": null,
       "plates": [
         {
-          "title": "Pasta with Gorgonzola and Pear",
-          "reason": "The most affordable and filling option on the menu today",
-          "picked_by": "llm",
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Pasta mit Gorgonzola-Sauce mit Birne",
@@ -390,9 +460,9 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Pollock with Cauliflower Casserole",
+          "title": "Panierter Seelachs + Blumenkohlauflauf",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
@@ -471,9 +541,9 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Breaded Pollock with Rice",
+          "title": "Panierter Seelachs + Reis",
           "reason": null,
-          "picked_by": "llm",
+          "picked_by": "rules",
           "items": [
             {
               "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
@@ -550,9 +620,9 @@
       "note": "No vegan lunch reaches 30g protein today; the protein target is relaxed.",
       "plates": [
         {
-          "title": "Hearty Farmer Stew",
-          "reason": "Wholesome and budget-friendly vegan option for building mass",
-          "picked_by": "llm",
+          "title": "Bauerneintopf",
+          "reason": null,
+          "picked_by": "rules",
           "items": [
             {
               "name": "Bauerneintopf",
