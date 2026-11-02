@@ -1,0 +1,26 @@
+timezone: Europe/Berlin
+official_url: https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html
+eat_api_url: https://tum-dev.github.io/eat-api/mensa-arcisstr/{year}/{week:02d}.json
+gemini_model: gemini-3.8-flash
+
+prices:
+  default_per_100g: 0.90
+  station_per_100g:
+    Studitopf: 0.33
+  meat_base: 1.00
+  fish_base: 1.50
+  flat_by_station:
+    Pizza: 5.00
+  meat_markers: [R, S, G, K, L, W]
+  meat_name_pattern: '(?i)fleisch|wurst|würst|krainer|schnitzel|hähnchen|hühn|pute|schwein|rind|lamm|speck|schinken|salami'
+  fish_name_pattern: '(?i)fisch|lachs|kabeljau|forelle|thunfisch|zander|seelachs'
+
+portions:
+  default_scoop_g: 150
+  station_scoop_g: {}  # e.g. {Studitopf: 150, Dessert (Glas): 100}
+  max_plate_g: 650
+
+goals:
+  bulk_max_eur: 7.00
+  cut_min_protein_g: 25
+  budget_min_kcal: 550
