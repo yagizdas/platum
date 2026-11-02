@@ -3,163 +3,78 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f3f1">
+  <meta name="theme-color" content="#f5f5f1">
   <meta name="description" content="A lunch plate for your goal at Mensa Arcisstraße. Student prices, simple scoops, and estimated nutrition.">
   <title>Mensa Plate — Arcisstraße</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" type="image/svg+xml" href="./icons/plate.svg">
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root { color-scheme: light; --ground:#f4f3f1; --ink:#171717; --muted:#62615e; --line:#e6e4e0; --paper:#fff; --blue:#1d5fbf; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--ground); color:var(--ink); font:400 16px/1.5 'Geist',sans-serif; }
-    button,input { font:inherit; }
-    button,a,input,label { -webkit-tap-highlight-color:transparent; }
-    button { cursor:pointer; }
-    a { color:inherit; text-underline-offset:4px; }
-    a:hover { text-decoration-thickness:2px; }
-    :focus-visible { outline:3px solid var(--blue); outline-offset:4px; }
-    .shell { max-width:808px; margin:0 auto; padding:0 24px; }
-    header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:28px 0; border-bottom:1px solid var(--line); }
-    .brand { display:flex; gap:10px; align-items:center; font-weight:500; font-size:18px; }
-    .brand svg { width:28px; height:28px; }
-    .location { text-align:right; color:var(--muted); font-size:12px; }
-    .location strong { display:block; color:var(--ink); font-weight:500; font-size:14px; }
-    main { padding:36px 0 24px; }
-    .heading { display:flex; gap:12px; align-items:baseline; justify-content:space-between; margin-bottom:20px; }
-    h1 { font-size:24px; line-height:1.25; letter-spacing:-.02em; font-weight:500; margin:0; }
-    .date { font-size:12px; color:var(--muted); }
-    .intro { margin:8px 0 24px; color:var(--muted); font-size:14px; }
-    .controls { display:flex; gap:24px; flex-wrap:wrap; align-items:center; justify-content:space-between; margin-bottom:24px; }
-    .goals { display:flex; padding:4px; gap:4px; background:#e9e7e3; border-radius:8px; }
-    .goals button { border:0; border-radius:6px; background:transparent; color:#4a4947; padding:8px 24px; min-height:44px; font-size:14px; }
-    .goals button[aria-pressed="true"] { background:var(--ink); color:white; }
-    .goals button:hover:not([aria-pressed="true"]) { background:#dddbd7; }
-    .toggle { display:flex; gap:10px; align-items:center; min-height:44px; font-size:14px; cursor:pointer; }
-    .toggle input { position:absolute; opacity:0; width:36px; height:24px; }
-    .switch { width:36px; height:22px; border-radius:99px; background:#aaa8a4; padding:3px; transition:background 120ms; }
-    .switch::after { content:''; display:block; height:16px; width:16px; background:white; border-radius:50%; transition:transform 120ms; }
-    .toggle input:checked + .switch { background:var(--ink); }
-    .toggle input:checked + .switch::after { transform:translateX(14px); }
-    .toggle input:focus-visible + .switch { outline:3px solid var(--blue); outline-offset:4px; }
-    .receipt { background:var(--paper); border:1px solid var(--line); border-radius:8px; padding:24px; touch-action:pan-y pinch-zoom; }
-    .receipt-top { display:flex; gap:12px; justify-content:space-between; align-items:center; }
-    h2 { font-size:18px; font-weight:500; margin:0; }
-    .scope { color:var(--muted); font-size:12px; white-space:nowrap; }
-    .reason { font-size:14px; color:var(--muted); margin:8px 0 0; }
-    .items { list-style:none; padding:0; margin:20px 0 0; }
-    .item { display:grid; grid-template-columns:72px minmax(0,1fr) 62px; gap:12px; padding:20px 0; border-top:1px solid var(--line); }
-    .serving { color:var(--blue); font-size:14px; font-weight:500; }
-    .serving .count { display:block; font-size:30px; line-height:1; font-weight:400; margin-bottom:4px; }
-    .dish-name { margin:0; font-size:16px; font-weight:500; overflow-wrap:anywhere; }
-    .english { display:block; margin-top:4px; color:var(--muted); font-size:13px; }
-    .meta { display:block; color:var(--muted); font-size:12px; margin-top:8px; }
-    .item-price { text-align:right; font-size:14px; font-variant-numeric:tabular-nums; }
-    .totals { display:grid; grid-template-columns:1fr 1fr 1fr; border-top:1px solid var(--line); padding-top:20px; gap:12px; font-variant-numeric:tabular-nums; }
-    .total-value { font-size:24px; font-weight:400; line-height:1.25; display:block; }
-    .total-price { font-size:30px; font-weight:700; }
-    .total-label { color:var(--muted); font-size:12px; display:block; margin-top:4px; }
-    .details { font-size:13px; color:var(--muted); margin:20px 0 0; }
-    .empty { padding:24px 0 12px; border-top:1px solid var(--line); }
-    .empty h3 { font-size:18px; font-weight:500; margin:0 0 8px; }
-    .empty p { font-size:14px; margin:0; max-width:50ch; color:var(--muted); }
-    .notice { padding:12px 0 0; font-size:14px; color:var(--muted); }
-    .notice:empty { display:none; }
-    footer { border-top:1px solid var(--line); padding:20px 0 32px; color:var(--muted); font-size:12px; display:flex; gap:12px; flex-wrap:wrap; justify-content:space-between; }
-    footer p { margin:0; }
-    footer a { color:var(--ink); }
-    .fine { display:block; margin-top:6px; }
-    .day-strip { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:4px; margin:0 0 16px; }
-    .day-button { min-height:48px; padding:4px; color:var(--muted); border:0; border-bottom:2px solid transparent; background:transparent; font-size:14px; }
-    .day-button[aria-pressed="true"] { color:var(--ink); border-bottom-color:var(--ink); }
-    .day-date { display:block; font-size:12px; }
-    .plate-actions { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-top:20px; }
-    .alternatives { display:flex; flex-wrap:wrap; gap:8px; align-items:center; color:var(--muted); font-size:12px; }
-    .arrow { min-width:44px; min-height:44px; background:white; border:1px solid #d4d4d4; border-radius:6px; color:var(--ink); font-size:18px; }
-    .arrow:hover { background:var(--ground); }
-    .text-button { padding:8px 0; min-height:44px; border:0; background:transparent; color:var(--ink); text-decoration:underline; text-underline-offset:4px; font-size:14px; }
-    .extras { margin-top:20px; padding-top:20px; border-top:1px solid var(--line); }
-    .extras h3 { margin:0 0 12px; font-size:14px; font-weight:500; }
-    .extra-chips { display:flex; flex-wrap:wrap; gap:8px; }
-    .extra-chip { padding:10px 12px; min-height:44px; max-width:100%; border:1px solid #d4d4d4; border-radius:6px; background:white; color:var(--muted); font-size:12px; text-align:left; }
-    .extra-chip[aria-pressed="true"] { color:var(--ink); background:#e9e7e3; border-color:#8a8782; }
-    .diet-tag { display:inline-block; color:var(--muted); font-size:12px; margin-top:4px; }
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-    [hidden] { display:none !important; }
-    @media(max-width:520px) {
-      .shell { padding:0 16px; }
-      header { padding:20px 0; }
-      main { padding-top:28px; }
-      .heading { display:block; }
-      .date { display:block; margin-top:8px; }
-      .controls { gap:12px; }
-      .goals { flex:1; }
-      .goals button { flex:1; padding:8px 16px; }
-      .receipt { padding:20px 16px; }
-      .receipt-top { align-items:baseline; }
-      .scope { font-size:11px; }
-      .item { grid-template-columns:50px minmax(0,1fr) 52px; gap:8px; }
-      .dish-name { font-size:14px; }
-      .total-value { font-size:20px; }
-      .total-price { font-size:28px; }
-    }
-    @media(prefers-reduced-motion:reduce) { *,*::after { transition:none !important; } }
-  </style>
+  <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./menu.css">
 </head>
 <body>
   <div class="shell">
     <header>
-      <a class="brand" href="./" style="text-decoration:none">
-        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M16 8v8l7 4" stroke="currentColor" stroke-width="1.5"/></svg>
-        Mensa Plate
-      </a>
-      <div class="location"><strong>Arcisstraße</strong>For TUM students</div>
+      <a class="brand" href="./">Mensa Plate<span aria-hidden="true">.</span></a>
+      <span class="location">Arcisstraße</span>
     </header>
     <main>
-      <div class="heading"><h1>Your lunch, sorted.</h1><time id="date" class="date"></time></div>
-      <div id="days" class="day-strip" role="group" aria-label="Menu day" hidden></div>
+      <div class="heading">
+        <div><h1>Your plate</h1><time id="date" class="date"></time></div>
+        <div id="days" class="day-strip" role="group" aria-label="Menu day" hidden></div>
+      </div>
       <div class="controls">
         <div class="goals" role="group" aria-label="Lunch goal">
-          <button type="button" data-goal="bulk" aria-pressed="true">Bulk</button>
-          <button type="button" data-goal="cut" aria-pressed="false">Cut</button>
-          <button type="button" data-goal="budget" aria-pressed="false">Budget</button>
+          <button type="button" data-goal="bulk" aria-pressed="true"><img src="./icons/dumbells.png" width="728" height="504" alt=""><span>Bulk</span><span class="goal-check" aria-hidden="true"></span></button>
+          <button type="button" data-goal="cut" aria-pressed="false"><img src="./icons/bowl.png" width="710" height="524" alt=""><span>Cut</span><span class="goal-check" aria-hidden="true"></span></button>
+          <button type="button" data-goal="budget" aria-pressed="false"><img src="./icons/euros.png" width="676" height="518" alt=""><span>Budget</span><span class="goal-check" aria-hidden="true"></span></button>
         </div>
-        <label class="toggle"><input id="vegan" type="checkbox" role="switch"><span class="switch" aria-hidden="true"></span>Vegan</label>
+        <label class="toggle"><input id="vegan" type="checkbox" role="switch"><span class="vegan-face"><img src="./icons/vegan.png" width="752" height="504" alt=""><span>Vegan</span><span class="switch" aria-hidden="true"></span></span></label>
       </div>
       <section class="receipt" aria-labelledby="plate-title" aria-busy="true" id="plate">
-        <h2 id="plate-title">Your plate</h2>
-        <p class="reason" id="reason">Getting today’s menu…</p>
-        <ul class="items" id="items"></ul>
-        <div class="totals" id="totals" hidden>
-          <div><span id="price" class="total-value total-price"></span><span class="total-label">Student price</span><span id="includes-extras" class="total-label" hidden>incl. extras</span></div>
-          <div><span id="kcal" class="total-value"></span><span class="total-label">kcal, estimated</span></div>
-          <div><span id="protein" class="total-value"></span><span class="total-label">g protein, estimated</span></div>
+        <div class="plate-overview">
+          <div class="plate-art" id="plate-art"><img src="./icons/tray.png" width="874" height="552" alt="Illustrated canteen tray"></div>
+          <div class="plate-summary">
+            <h2 id="plate-title">Your plate</h2>
+            <p class="plate-side" id="plate-side" hidden></p>
+            <div class="totals" id="totals" hidden>
+              <div><span id="price" class="total-value total-price"></span><span class="total-label">Student price</span><span id="includes-extras" class="total-label" hidden>incl. extras</span></div>
+              <div><span id="kcal" class="total-value"></span><span class="total-label">kcal</span></div>
+              <div><span id="protein" class="total-value"></span><span class="total-label">g protein</span></div>
+            </div>
+            <p class="details relaxed-note" id="relaxed-note" hidden></p>
+            <div class="empty" id="empty" hidden><h3 id="empty-title"></h3><p id="empty-text"></p></div>
+          </div>
         </div>
-        <p class="details" id="relaxed-note" hidden></p>
-        <p class="details" id="details" hidden></p>
         <div class="plate-actions" id="plate-actions" hidden>
           <div class="alternatives" id="alternatives">
-            <span id="option-status">Other options · 1 / 3</span>
             <button class="arrow" id="previous" type="button" aria-label="Previous lunch">←</button>
+            <span id="option-status" aria-live="off">1 / 3</span>
             <button class="arrow" id="next" type="button" aria-label="Next lunch">→</button>
           </div>
-          <button class="text-button" id="share" type="button">Share plate</button>
+          <button class="text-button" id="share" type="button">Share plate <span aria-hidden="true">↗</span></button>
         </div>
-        <section class="extras" id="extras-wrap" aria-labelledby="extras-title" hidden>
-          <h3 id="extras-title">Add to tray</h3>
-          <div class="extra-chips" id="extras" role="group" aria-label="Optional soup and dessert"></div>
-        </section>
-        <div class="empty" id="empty" hidden><h3 id="empty-title"></h3><p id="empty-text"></p></div>
       </section>
+      <div class="secondary-actions" id="secondary-actions" hidden>
+        <details class="disclosure" id="plate-details">
+          <summary>Details<span class="disclosure-mark" aria-hidden="true">+</span></summary>
+          <div class="disclosure-content">
+            <p class="reason" id="reason" hidden></p>
+            <ul class="items" id="items"></ul>
+            <p class="details" id="details" hidden></p>
+          </div>
+        </details>
+        <details class="disclosure" id="extras-wrap">
+          <summary id="extras-title">Add to tray<span class="disclosure-mark" aria-hidden="true">+</span></summary>
+          <div class="disclosure-content"><div class="extra-chips" id="extras" role="group" aria-label="Optional soup and dessert"></div></div>
+        </details>
+      </div>
       <p id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></p>
       <p id="notice" class="notice" role="status"></p>
       <noscript><p>Enable JavaScript to choose a plate, or visit the official menu below.</p></noscript>
     </main>
     <footer>
-      <p>Nutrition values are estimates.<span class="fine">Independent student project · Mensa Arcisstraße only</span></p>
+      <p>Nutrition values are estimates.</p>
       <a href="https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html" target="_blank" rel="noopener noreferrer">Official menu ↗</a>
     </footer>
   </div>
@@ -192,10 +107,12 @@
     }
     function saveAndRender() {
       try {localStorage.setItem('mensa-plate',JSON.stringify(selection));} catch(_) {}
+      $('plate-details').open=false;$('extras-wrap').open=false;
       plateIndex=0;selectedExtras.clear();syncControls();
       if(data) render();
     }
     function empty(title,text) {
+      $('plate').classList.add('is-empty');$('secondary-actions').hidden=true;$('plate-side').hidden=true;
       $('items').replaceChildren();$('plate-title').textContent='Your plate';$('reason').hidden=true;
       for(const id of ['totals','details','relaxed-note','plate-actions','extras-wrap']) $(id).hidden=true;
       $('empty').hidden=false;$('empty-title').textContent=title;$('empty-text').textContent=text || '';
@@ -220,10 +137,15 @@
       $('extras').replaceChildren();$('extras-wrap').hidden=availableExtras().length===0;
       availableExtras().forEach((extra,index)=>{
         const button=document.createElement('button');button.type='button';button.className='extra-chip';
-        button.textContent=extra.name+' · '+money(extra.price_cents)+' · +'+rounded(extra.protein_g)+'g protein';
+        const name=document.createElement('span');name.className='extra-name';name.textContent=briefDish(extra);
+        const price=document.createElement('span');price.className='extra-price';price.textContent=money(extra.price_cents);
+        const mark=document.createElement('span');mark.className='extra-add';mark.setAttribute('aria-hidden','true');mark.textContent=selectedExtras.has(index)?'−':'+';
+        button.append(name,price,mark);
+        button.setAttribute('aria-label',extra.name_en+' · '+extra.serving+' · '+money(extra.price_cents)+' · '+rounded(extra.protein_g)+'g protein, estimated');
         button.setAttribute('aria-pressed',String(selectedExtras.has(index)));
         button.addEventListener('click',()=>{
           if(selectedExtras.has(index)) selectedExtras.delete(index);else selectedExtras.add(index);
+          mark.textContent=selectedExtras.has(index)?'−':'+';
           button.setAttribute('aria-pressed',String(selectedExtras.has(index)));renderTotals(true);
         });
         $('extras').append(button);
@@ -235,7 +157,11 @@
       if(data.state==='closed') return empty('No menu today.',v.message);
       if(data.state==='unavailable') return empty('Plates are on the way.',data.reason || v.message);
       if(v.state!=='ready' || !v.plates.length) return empty('No plate fits this goal today.',v.message);
-      const p=currentPlate();$('empty').hidden=true;$('plate-title').textContent=p.title;
+      const p=currentPlate();$('empty').hidden=true;$('plate').classList.remove('is-empty');$('secondary-actions').hidden=false;
+      const main=p.items.find(item=>item.role==='main') || p.items[0],title=briefDish(main);
+      $('plate-title').textContent=title;$('plate-title').lang=main.name_en?'en':'de';
+      $('plate-title').classList.toggle('is-long',title.length>30);
+      $('plate-side').textContent=p.items.filter(item=>item!==main).map(briefDish).join(' + ');$('plate-side').hidden=p.items.length<2;
       $('reason').textContent=p.reason || '';$('reason').hidden=!p.reason;
       $('items').replaceChildren();
       for(const item of p.items) {
@@ -256,7 +182,8 @@
       $('totals').hidden=false;$('details').hidden=false;
       $('relaxed-note').textContent=v.note || '';$('relaxed-note').hidden=!v.relaxed || !v.note;
       $('plate-actions').hidden=false;$('alternatives').hidden=v.plates.length<2;
-      $('option-status').textContent='Other options · '+(plateIndex+1)+' / '+v.plates.length;
+      $('option-status').textContent=(plateIndex+1)+' / '+v.plates.length;
+      $('option-status').setAttribute('aria-label','Lunch option '+(plateIndex+1)+' of '+v.plates.length);
       $('announcement').textContent='Option '+(plateIndex+1)+' of '+v.plates.length+': '+p.title;
       $('share').textContent='Share plate';renderExtras();renderTotals();
     }
@@ -266,6 +193,9 @@
       plateIndex=(plateIndex+direction+count)%count;render();
     }
     function shortName(name) {return name.replace(/\s*\(1\s*Stück\)/gi,'').split(/\s+(?:mit|auf|aus|in|an)\s+/i)[0];}
+    function briefDish(item) {
+      return (item.name_en || item.name).replace(/\s*\([^)]*\)/g,'').split(/\s+(?:with|on|served|in|made from)\s+/i)[0].trim();
+    }
     function shareText() {
       const entries=currentPlate().items.map(item=>(item.unit==='piece'?'':item.count+' scoop'+(item.count===1?'':'s')+' ')+shortName(item.name));
       for(const extra of activeExtras()) entries.push(extra.serving+' '+shortName(extra.name));
@@ -316,7 +246,7 @@
     }
     function dateLabel(day) {
       $('date').dateTime=day;
-      $('date').textContent=new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'short',year:'numeric',timeZone:'Europe/Berlin'}).format(new Date(day+'T12:00:00Z'));
+      $('date').textContent=new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'short',timeZone:'Europe/Berlin'}).format(new Date(day+'T12:00:00Z'));
     }
     function renderDays() {
       $('days').replaceChildren();$('days').hidden=!weekIndex;
@@ -326,7 +256,7 @@
         const date=new Date(row.date+'T12:00:00Z');
         button.append(document.createTextNode(new Intl.DateTimeFormat('en-GB',{weekday:'short',timeZone:'Europe/Berlin'}).format(date)));
         const label=document.createElement('span');label.className='day-date';
-        label.textContent=new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',timeZone:'Europe/Berlin'}).format(date);
+        label.textContent=new Intl.DateTimeFormat('en-GB',{day:'numeric',timeZone:'Europe/Berlin'}).format(date);
         button.append(label);button.setAttribute('aria-pressed',String(row.date===selectedDate));button.dataset.date=row.date;
         button.setAttribute('aria-label',row.date+(row.state==='closed'?' · no menu':' menu'));
         button.addEventListener('click',()=>selectDay(row));$('days').append(button);
@@ -334,6 +264,7 @@
     }
     async function selectDay(row) {
       const token=++loadToken;selectedDate=row.date;plateIndex=0;selectedExtras.clear();data=undefined;stale=false;
+      $('plate-details').open=false;$('extras-wrap').open=false;
       renderDays();dateLabel(row.date);empty('Getting the menu…','');$('plate').setAttribute('aria-busy','true');
       try {
         const response=await fetch('./'+row.file,{cache:'no-store'});
