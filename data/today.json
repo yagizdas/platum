@@ -2,12 +2,12 @@
   "schema_version": 1,
   "date": "2026-11-02",
   "mensa": "Mensa Arcisstraße",
-  "state": "unavailable",
+  "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-02T10:34:57.714714+00:00",
+  "fetched_at": "2026-11-02T12:42:46.321396+00:00",
   "warnings": [],
-  "menu_count": 12,
+  "menu_count": 13,
   "goals": {
     "bulk_max_eur": 7.0,
     "cut_min_protein_g": 25,
@@ -18,54 +18,279 @@
   "nutrition_note": "Nutrition values are estimates.",
   "variants": {
     "bulk_all": {
-      "state": "unavailable",
+      "state": "ready",
       "goal": "bulk",
       "vegan": false,
-      "reason": "Today's menu is here. Plate recommendations are waiting for nutrition estimates."
+      "items": [
+        {
+          "name": "Seelachsfilet (1Stück)",
+          "name_en": "Pollock fillet (1 piece)",
+          "station": "Fisch",
+          "role": "main",
+          "texture": "dry",
+          "count": 1,
+          "unit": "piece",
+          "weight_g": 150,
+          "price_cents": 285,
+          "is_vegan": false,
+          "markers": [],
+          "allergens": [
+            "Fi"
+          ],
+          "additives": [],
+          "price_source": "config",
+          "serving": "1 piece",
+          "kcal": 172.5,
+          "protein_g": 27.75
+        },
+        {
+          "name": "Cremige Kürbissuppe",
+          "name_en": "Creamy pumpkin soup",
+          "station": "Unspecified",
+          "role": "soup",
+          "texture": "liquid",
+          "count": 2,
+          "unit": "scoop",
+          "weight_g": 300,
+          "price_cents": 270,
+          "is_vegan": false,
+          "markers": [],
+          "allergens": [
+            "Mi"
+          ],
+          "additives": [],
+          "price_source": "config",
+          "serving": "2 scoops",
+          "kcal": 174.0,
+          "protein_g": 3.3
+        },
+        {
+          "name": "Topfencreme mit Himbeeren",
+          "name_en": "Quark cream with raspberries",
+          "station": "Dessert (Glas)",
+          "role": "dessert",
+          "texture": "saucy",
+          "count": 1,
+          "unit": "piece",
+          "weight_g": 140.0,
+          "price_cents": 126,
+          "is_vegan": false,
+          "markers": [
+            "f"
+          ],
+          "allergens": [
+            "En",
+            "Gl",
+            "GlG",
+            "GlH",
+            "GlW",
+            "Mi",
+            "Sc",
+            "ScC",
+            "ScH",
+            "ScM",
+            "ScW",
+            "Se",
+            "So"
+          ],
+          "additives": [],
+          "price_source": "config",
+          "serving": "1 piece",
+          "kcal": 189.0,
+          "protein_g": 10.5
+        }
+      ],
+      "total": {
+        "price_cents": 681,
+        "price_eur": 6.81,
+        "weight_g": 590.0,
+        "kcal": 535.5,
+        "protein_g": 41.55,
+        "carbs_g": 39.55,
+        "fat_g": 22.6
+      },
+      "has_estimated_prices": true,
+      "summary": "1 piece Seelachsfilet (1Stück) + 2 scoops Cremige Kürbissuppe + 1 piece Topfencreme mit Himbeeren → €6.81 · ~536 kcal · ~42g protein"
     },
     "cut_all": {
-      "state": "unavailable",
+      "state": "ready",
       "goal": "cut",
       "vegan": false,
-      "reason": "Today's menu is here. Plate recommendations are waiting for nutrition estimates."
+      "items": [
+        {
+          "name": "Seelachsfilet (1Stück)",
+          "name_en": "Pollock fillet (1 piece)",
+          "station": "Fisch",
+          "role": "main",
+          "texture": "dry",
+          "count": 1,
+          "unit": "piece",
+          "weight_g": 150,
+          "price_cents": 285,
+          "is_vegan": false,
+          "markers": [],
+          "allergens": [
+            "Fi"
+          ],
+          "additives": [],
+          "price_source": "config",
+          "serving": "1 piece",
+          "kcal": 172.5,
+          "protein_g": 27.75
+        }
+      ],
+      "total": {
+        "price_cents": 285,
+        "price_eur": 2.85,
+        "weight_g": 150,
+        "kcal": 172.5,
+        "protein_g": 27.75,
+        "carbs_g": 0.75,
+        "fat_g": 6.3
+      },
+      "has_estimated_prices": true,
+      "summary": "1 piece Seelachsfilet (1Stück) → €2.85 · ~172 kcal · ~28g protein"
     },
     "budget_all": {
-      "state": "unavailable",
+      "state": "ready",
       "goal": "budget",
       "vegan": false,
-      "reason": "Today's menu is here. Plate recommendations are waiting for nutrition estimates."
+      "items": [
+        {
+          "name": "Vegane Maultaschen mit Zwiebelmarmelade",
+          "name_en": "Vegan German filled pasta pockets with onion jam",
+          "station": "Pasta",
+          "role": "main",
+          "texture": "saucy",
+          "count": 2,
+          "unit": "scoop",
+          "weight_g": 300,
+          "price_cents": 270,
+          "is_vegan": true,
+          "markers": [
+            "v"
+          ],
+          "allergens": [
+            "Ei",
+            "Gl",
+            "GlW",
+            "Mi",
+            "Sl"
+          ],
+          "additives": [],
+          "price_source": "eat-api",
+          "serving": "2 scoops",
+          "kcal": 555.0,
+          "protein_g": 16.5
+        }
+      ],
+      "total": {
+        "price_cents": 270,
+        "price_eur": 2.7,
+        "weight_g": 300,
+        "kcal": 555.0,
+        "protein_g": 16.5,
+        "carbs_g": 81.0,
+        "fat_g": 17.4
+      },
+      "has_estimated_prices": false,
+      "summary": "2 scoops Vegane Maultaschen mit Zwiebelmarmelade → €2.70 · ~555 kcal · ~16g protein"
     },
     "bulk_vegan": {
-      "state": "unavailable",
+      "state": "ready",
       "goal": "bulk",
       "vegan": true,
-      "reason": "Today's menu is here. Plate recommendations are waiting for nutrition estimates."
+      "items": [
+        {
+          "name": "Vegane Maultaschen mit Zwiebelmarmelade",
+          "name_en": "Vegan German filled pasta pockets with onion jam",
+          "station": "Pasta",
+          "role": "main",
+          "texture": "saucy",
+          "count": 2,
+          "unit": "scoop",
+          "weight_g": 300,
+          "price_cents": 270,
+          "is_vegan": true,
+          "markers": [
+            "v"
+          ],
+          "allergens": [
+            "Ei",
+            "Gl",
+            "GlW",
+            "Mi",
+            "Sl"
+          ],
+          "additives": [],
+          "price_source": "eat-api",
+          "serving": "2 scoops",
+          "kcal": 555.0,
+          "protein_g": 16.5
+        }
+      ],
+      "total": {
+        "price_cents": 270,
+        "price_eur": 2.7,
+        "weight_g": 300,
+        "kcal": 555.0,
+        "protein_g": 16.5,
+        "carbs_g": 81.0,
+        "fat_g": 17.4
+      },
+      "has_estimated_prices": false,
+      "summary": "2 scoops Vegane Maultaschen mit Zwiebelmarmelade → €2.70 · ~555 kcal · ~16g protein"
     },
     "cut_vegan": {
       "state": "unavailable",
       "goal": "cut",
       "vegan": true,
-      "reason": "Today's menu is here. Plate recommendations are waiting for nutrition estimates."
+      "reason": "Vegan: No valid plate reaches 25g protein."
     },
     "budget_vegan": {
-      "state": "unavailable",
+      "state": "ready",
       "goal": "budget",
       "vegan": true,
-      "reason": "Today's menu is here. Plate recommendations are waiting for nutrition estimates."
+      "items": [
+        {
+          "name": "Vegane Maultaschen mit Zwiebelmarmelade",
+          "name_en": "Vegan German filled pasta pockets with onion jam",
+          "station": "Pasta",
+          "role": "main",
+          "texture": "saucy",
+          "count": 2,
+          "unit": "scoop",
+          "weight_g": 300,
+          "price_cents": 270,
+          "is_vegan": true,
+          "markers": [
+            "v"
+          ],
+          "allergens": [
+            "Ei",
+            "Gl",
+            "GlW",
+            "Mi",
+            "Sl"
+          ],
+          "additives": [],
+          "price_source": "eat-api",
+          "serving": "2 scoops",
+          "kcal": 555.0,
+          "protein_g": 16.5
+        }
+      ],
+      "total": {
+        "price_cents": 270,
+        "price_eur": 2.7,
+        "weight_g": 300,
+        "kcal": 555.0,
+        "protein_g": 16.5,
+        "carbs_g": 81.0,
+        "fat_g": 17.4
+      },
+      "has_estimated_prices": false,
+      "summary": "2 scoops Vegane Maultaschen mit Zwiebelmarmelade → €2.70 · ~555 kcal · ~16g protein"
     }
-  },
-  "reason": "Today's menu is here. Plate recommendations are waiting for nutrition estimates.",
-  "missing_tags": [
-    "PINSA Funghi mit frischen Champignons",
-    "Käsekrainer (1 Stück)",
-    "Gemüsecurry aus Blumenkohl und Broccoli",
-    "Graupen-Gemüse-Eintopf",
-    "Cremige Kürbissuppe",
-    "Gefüllte Paprikaschote",
-    "Seelachsfilet (1Stück)",
-    "Asia-Reisbällchen auf Teriyakigemüse",
-    "Vanillecreme mit Erdbeersauce",
-    "Topfencreme mit Himbeeren",
-    "Cappuccinocreme"
-  ]
+  }
 }
