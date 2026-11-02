@@ -97,6 +97,8 @@ A valid official menu without today's block writes `closed`. No key is needed on
 
 `.github/workflows/test.yml` runs the offline suite for code pushes and pull requests. Tests never need a key. No GitHub remote, repository secret, or Pages setting is created by the local scripts.
 
+**Publish the interface independently:** run **Actions → Publish current site → Run workflow**. This deploys the committed `index.html` and `data/today.json` without calling Gemini. It is useful for the first preview or frontend updates while the model service is unavailable. Pending estimates remain explicitly unavailable in the UI; this action does not manufacture plate data. The daily workflow still requires successful generation before deploying new recommendations. Both publishing paths share a concurrency lock.
+
 ## Tests and fixture replay
 
 ```sh
