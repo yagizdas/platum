@@ -6,7 +6,7 @@ import os
 import sys
 import time
 from pathlib import Path
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 
@@ -15,7 +15,7 @@ from dotenv import dotenv_values
 from common import ROOT, load_config, normalize, read_json, write_json
 
 MAX_GEMINI_ATTEMPTS = 10
-OVERLOAD_RETRY_DELAY_SECONDS = 30
+SERVICE_RETRY_DELAY_SECONDS = 30
 
 
 class GeminiAPIError(ValueError):
@@ -129,19 +129,22 @@ def tag_menu(menu, cache_path, model, api_key=None, caller=call_gemini):
                 break
             except (ValueError, TypeError, KeyError, OSError) as exc:
                 overloaded = isinstance(exc, GeminiAPIError) and exc.status_code == 503
-                if not overloaded:
+                timed_out = isinstance(exc, TimeoutError) or (isinstance(exc, URLError) and isinstance(exc.reason, TimeoutError))
+                retry_service = overloaded or timed_out
+                if not retry_service:
                     other_failures += 1
                 if attempt == MAX_GEMINI_ATTEMPTS or other_failures == 2:
                     raise RuntimeError(f"Could not tag {dish['name']!r} after {attempt} attempts: {str(exc).replace(api_key, '[redacted]')}") from None
-                delay = OVERLOAD_RETRY_DELAY_SECONDS if overloaded else 1
-                if overloaded:
-                    print(f"Gemini HTTP 503 for {dish['name']!r} (attempt {attempt}/{MAX_GEMINI_ATTEMPTS}); retrying in {delay}s.",
+                delay = SERVICE_RETRY_DELAY_SECONDS if retry_service else 1
+                if retry_service:
+                    failure = "HTTP 503" if overloaded else "request timed out"
+                    print(f"Gemini {failure} for {dish['name']!r} (attempt {attempt}/{MAX_GEMINI_ATTEMPTS}); retrying in {delay}s.",
                           file=sys.stderr, flush=True)
                 time.sleep(delay)
         cache[key] = tag
         # Persist every success so a later failure won't charge for it again.
         write_json(cache_path, cache)
-        print(f"Tagged: {dish['name']}")
+        print(f"Tagged: {dish['name']}", flush=True)
     return cache
 
 

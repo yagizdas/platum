@@ -1,6 +1,6 @@
 import json
 from io import BytesIO
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 
 import pytest
 
@@ -95,14 +95,15 @@ def test_gemini_error_explains_service_failure_without_leaking_key(monkeypatch, 
 
 
 @pytest.mark.parametrize("overload_count", [2, 9])
-def test_503_waits_thirty_seconds_then_caches_success(tmp_path, make_dish, monkeypatch, overload_count):
+@pytest.mark.parametrize("failure", [GeminiAPIError(503, "High demand"), TimeoutError("Read timed out"), URLError(TimeoutError("Connection timed out"))], ids=["503", "timeout", "wrapped-timeout"])
+def test_service_failures_wait_thirty_seconds_then_cache_success(tmp_path, make_dish, monkeypatch, overload_count, failure):
     d, t = make_dish()
     calls, waits = [], []
     monkeypatch.setattr("tag.time.sleep", waits.append)
     def caller(*args):
         calls.append(1)
         if len(calls) <= overload_count:
-            raise GeminiAPIError(503, "High demand")
+            raise failure
         return t
     path = tmp_path / "cache.json"
     tag_menu({"dishes": [d]}, path, "gemini-3.8-flash", "test-key", caller)
@@ -113,22 +114,23 @@ def test_503_waits_thirty_seconds_then_caches_success(tmp_path, make_dish, monke
     assert len(calls) == overload_count + 1 # successful tags are never requested again
 
 
-def test_503_stops_after_ten_total_attempts_without_final_sleep(tmp_path, make_dish, monkeypatch):
+@pytest.mark.parametrize("failure", [GeminiAPIError(503, "High demand"), TimeoutError("Read timed out"), URLError(TimeoutError("Connection timed out"))], ids=["503", "timeout", "wrapped-timeout"])
+def test_service_failures_stop_after_ten_total_attempts_without_final_sleep(tmp_path, make_dish, monkeypatch, failure):
     d, t = make_dish()
     calls, waits = [], []
     monkeypatch.setattr("tag.time.sleep", waits.append)
     def overloaded(*args):
         calls.append(1)
-        raise GeminiAPIError(503, "High demand")
+        raise failure
     path = tmp_path / "cache.json"
-    with pytest.raises(RuntimeError, match="after 10 attempts: Gemini HTTP 503"):
+    with pytest.raises(RuntimeError, match="after 10 attempts"):
         tag_menu({"dishes": [d]}, path, "gemini-3.8-flash", "test-key", overloaded)
     assert len(calls) == 10
     assert waits == [30] * 9
     assert not path.exists()
 
 
-@pytest.mark.parametrize("error", [GeminiAPIError(429, "Quota"), GeminiAPIError(400, "Bad request"), TimeoutError("Timed out"), ValueError("Invalid JSON")])
+@pytest.mark.parametrize("error", [GeminiAPIError(429, "Quota"), GeminiAPIError(400, "Bad request"), ValueError("Invalid JSON")])
 def test_other_failures_keep_original_single_retry(tmp_path, make_dish, monkeypatch, error):
     d, t = make_dish()
     calls, waits = [], []
@@ -153,3 +155,18 @@ def test_mixed_failures_preserve_single_validation_retry(tmp_path, make_dish, mo
         tag_menu({"dishes": [d]}, tmp_path / "cache.json", "gemini-3.8-flash", "test-key", failing)
     assert not errors
     assert waits == [1, 30]
+
+
+def test_alternating_503_and_timeout_share_ten_attempt_limit(tmp_path, make_dish, monkeypatch):
+    d, t = make_dish()
+    calls, waits = [], []
+    monkeypatch.setattr("tag.time.sleep", waits.append)
+    def failing(*args):
+        calls.append(1)
+        if len(calls) % 2:
+            raise GeminiAPIError(503, "High demand")
+        raise TimeoutError("Read timed out")
+    with pytest.raises(RuntimeError, match="after 10 attempts"):
+        tag_menu({"dishes": [d]}, tmp_path / "cache.json", "gemini-3.8-flash", "test-key", failing)
+    assert len(calls) == 10
+    assert waits == [30] * 9
