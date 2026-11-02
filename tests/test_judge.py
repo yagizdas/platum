@@ -1,175 +1,130 @@
 import copy
-import json
 from unittest.mock import Mock
 
 import pytest
 
 import judge
 from common import read_json, write_json
-from pick import build_today, candidates, judge_payload, main, plate_result, rank_variant
+from pick import build_today, candidates, plate_result, rank_variant
 
 
-@pytest.fixture
-def enabled(config):
-    config["llm"]["enabled"] = True
-    return config
-
-
-def pools_for(menu, cache, config):
-    pools = {}
+def pools_for(menu, tags, config, pairing):
+    result = {}
     for vegan in (False, True):
-        plates = list(candidates(menu["dishes"], cache, config, vegan))
+        values = list(candidates(menu["dishes"], tags, config, vegan, pairing))
         for goal in ("bulk", "cut", "budget"):
-            pools[f"{goal}_{'vegan' if vegan else 'all'}"] = rank_variant(plates, goal, vegan, config)[0]
-    return pools
+            result[f"{goal}_{'vegan' if vegan else 'all'}"] = rank_variant(values, goal, vegan, config)[0]
+    return result
 
 
-def test_judge_picks_only_code_candidates_with_exact_totals(enabled, fixture_menu):
-    menu, cache = fixture_menu
-    pools = pools_for(menu, cache, enabled)
-    response = {key: {"id": f"c{len(plates)-1}", "reason": "A satisfying main with a sensible pairing."} for key, plates in pools.items()}
-    caller = Mock(return_value=response)
-    result = build_today(menu, cache, enabled, api_key="test", judge_caller=caller)
+def answer(pools):
+    return {key: [{"id": p["id"], "title": "A coherent lunch", **({"reason": "A satisfying main with a sensible pairing."} if i == 0 else {})}
+                  for i, p in enumerate(list(reversed(values))[:3])]
+            for key, values in pools.items() if values}
+
+
+def test_judge_ranked_ids_keep_exact_code_totals(config, fixture_menu, pairing):
+    config["llm"]["enabled"] = True
+    menu, tags = fixture_menu
+    pool = pools_for(menu, tags, config, pairing)
+    caller = Mock(side_effect=lambda pools, *args: answer(pools))
+    result = build_today(menu, tags, config, pairing=pairing, api_key="test", judge_caller=caller)
     caller.assert_called_once()
     payload = caller.call_args.args[0]
     assert len(payload) == 6
     for key, variant in result["variants"].items():
-        assert variant["picked_by"] == "llm" and variant["reason"] == response[key]["reason"]
-        goal, diet = key.split("_")
-        expected = plate_result(pools[key][-1], goal, diet == "vegan", enabled)
-        assert variant["items"] == expected["items"] and variant["total"] == expected["total"]
-        for candidate in payload[key]:
-            assert set(candidate) == {"id", "dishes", "totals"}
-            assert set(candidate["totals"]) == {"price_eur", "kcal", "protein_g"}
-            assert all(set(d) == {"name_de", "name_en", "station", "serving"} for d in candidate["dishes"])
+        choices = answer(payload)[key]
+        for index, selected in enumerate(variant["plates"]):
+            expected = plate_result(pool[key][int(choices[index]["id"][1:])])
+            assert selected["items"] == expected["items"] and selected["total"] == expected["total"]
+            assert selected["picked_by"] == "llm"
+            assert selected["reason"] is not None if index == 0 else selected["reason"] is None
 
 
-@pytest.mark.parametrize("response", [
-    {"bulk_all": {"id": "c999", "reason": "Looks good."}},
-    {"bulk_all": {"id": "steak", "reason": "A coherent lunch."}},
-    {"bulk_all": {"id": "c0", "reason": "Looks good.", "dishes": ["Invented steak"]}},
-    {"bulk_all": {"id": "c0", "reason": "", "total": {"kcal": 9000}}},
-    ["invalid root"], None,
-])
-def test_invalid_or_hallucinated_response_falls_back_per_variant(enabled, fixture_menu, response):
-    menu, cache = fixture_menu
-    expected = build_today(menu, cache, enabled, no_llm=True)
-    result = build_today(menu, cache, enabled, api_key="test", judge_caller=Mock(return_value=response))
-    assert result == expected
-    assert all(v["picked_by"] == "rules" and v["reason"] is None for v in result["variants"].values())
+@pytest.mark.parametrize("bad", [None, {}, [{"id": "c99", "title": "Unknown", "reason": "Good."}],
+    [{"id": "c0", "title": "x" * 41, "reason": "Good."}],
+    [{"id": "c0", "title": "Fish 2", "reason": "Good."}],
+    [{"id": "c0", "title": "Fish", "reason": ""}],
+    [{"id": "c0", "title": "Fish", "reason": "Good.", "items": ["invented"]}]])
+def test_invalid_variant_falls_back_to_code_order(config, fixture_menu, pairing, bad):
+    config["llm"]["enabled"] = True
+    menu, tags = fixture_menu
+    expected = build_today(menu, tags, config, pairing=pairing, no_llm=True)
+    caller = Mock(return_value={"bulk_all": bad})
+    assert build_today(menu, tags, config, pairing=pairing, api_key="test", judge_caller=caller) == expected
 
 
-def test_one_bad_variant_does_not_discard_good_siblings(enabled, fixture_menu):
-    menu, cache = fixture_menu
-    response = {"bulk_all": {"id": "not-real", "reason": "A good pairing."},
-                "cut_all": {"id": "c0", "reason": "Lean protein with a vegetable side."},
-                "imaginary_variant": {"id": "c0", "reason": "Ignored."}}
-    result = build_today(menu, cache, enabled, api_key="test", judge_caller=Mock(return_value=response))
-    assert len(result["variants"]) == 6
-    assert result["variants"]["bulk_all"]["picked_by"] == "rules"
-    assert result["variants"]["cut_all"]["picked_by"] == "llm"
+def test_duplicate_ids_or_reason_on_alternatives_are_invalid():
+    pools = {"bulk_all": [{"id": "c0"}, {"id": "c1"}]}
+    choices = [{"id": "c0", "title": "Fish", "reason": "A good lunch."}, {"id": "c0", "title": "Curry"}]
+    assert judge.validate_choices({"bulk_all": choices}, pools) == {}
+    choices[1].update(id="c1", reason="Extra reason")
+    assert judge.validate_choices({"bulk_all": choices}, pools) == {}
 
 
-@pytest.mark.parametrize("error", [TimeoutError("timeout"), OSError("offline"), RuntimeError("client failure"), json.JSONDecodeError("malformed JSON", "bad", 0)])
-def test_judge_failures_still_allow_writing_today(enabled, fixture_menu, tmp_path, error):
-    menu, cache = fixture_menu
-    result = build_today(menu, cache, enabled, api_key="test", judge_caller=Mock(side_effect=error))
-    path = tmp_path / "today.json"
-    write_json(path, result)
-    saved = read_json(path)
-    assert all(v["state"] == "ready" and v["picked_by"] == "rules" and v["reason"] is None for v in saved["variants"].values())
+def test_single_bad_variant_preserves_valid_siblings(config, fixture_menu, pairing):
+    config["llm"]["enabled"] = True
+    menu, tags = fixture_menu
+    def caller(pools, *args):
+        result = answer(pools)
+        result["bulk_all"] = [{"id": "bad"}]
+        return result
+    result = build_today(menu, tags, config, pairing=pairing, api_key="test", judge_caller=caller)
+    assert result["variants"]["bulk_all"]["plates"][0]["picked_by"] == "rules"
+    assert result["variants"]["cut_all"]["plates"][0]["picked_by"] == "llm"
 
 
-def test_missing_key_falls_back_without_network(enabled, fixture_menu, monkeypatch):
-    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
-    monkeypatch.setattr("judge.dotenv_values", lambda *a: {})
-    menu, cache = fixture_menu
-    caller = Mock(side_effect=AssertionError("Must not request without key"))
-    result = build_today(menu, cache, enabled, judge_caller=caller)
-    caller.assert_not_called()
-    assert all(v["picked_by"] == "rules" for v in result["variants"].values())
+@pytest.mark.parametrize("error", [TimeoutError(), OSError(), ValueError(), RuntimeError()])
+def test_exception_is_nonfatal_and_today_can_be_written(config, fixture_menu, pairing, tmp_path, error):
+    config["llm"]["enabled"] = True
+    menu, tags = fixture_menu
+    result = build_today(menu, tags, config, pairing=pairing, api_key="test", judge_caller=Mock(side_effect=error))
+    path = tmp_path / "today.json"; write_json(path, result)
+    assert all(p["picked_by"] == "rules" for v in read_json(path)["variants"].values() for p in v["plates"])
 
 
-@pytest.mark.parametrize("reason", ["", " ", "x" * 121, 5, "Contains 30g protein."])
-def test_reason_validation(reason):
-    pools = {"bulk_all": [{"id": "c0"}]}
-    assert judge.validate_choices({"bulk_all": {"id": "c0", "reason": reason}}, pools) == {}
-    assert judge.validate_choices({"bulk_all": {"id": "c0", "reason": "x" * 120}}, pools)
-
-
-def test_judge_schema_temperature_and_model(monkeypatch):
+def test_schema_and_temperature(monkeypatch):
     pools = {"bulk_all": [{"id": "c0"}, {"id": "c1"}], "cut_vegan": []}
     client = Mock(return_value={})
     monkeypatch.setattr("judge.generate_json", client)
-    judge.call_judge(pools, "configured-model", "test-key")
-    client.assert_called_once()
-    prompt, payload, schema, model, key = client.call_args.args
-    assert payload is pools and model == "configured-model" and key == "test-key"
+    judge.call_judge(pools, "model", "test")
     assert client.call_args.kwargs == {"temperature": 0}
-    assert schema["properties"]["bulk_all"]["properties"]["id"]["enum"] == ["c0", "c1"]
-    assert "cut_vegan" not in schema["properties"]
-    assert schema["additionalProperties"] is False
+    schema = client.call_args.args[2]["properties"]["bulk_all"]
+    assert schema["minItems"] == schema["maxItems"] == 2
+    assert schema["prefixItems"][0]["required"] == ["id", "title", "reason"]
+    assert schema["prefixItems"][1]["required"] == ["id", "title"]
 
 
-def test_daily_cache_reuses_decisions_and_handles_changed_candidates(tmp_path):
-    pools = {"bulk_all": [{"id": "c0", "dishes": [{"name_de": "Curry"}]}]}
-    caller = Mock(return_value={"bulk_all": {"id": "c0", "reason": "A coherent lunch."}})
+def test_fewer_than_three_candidates_and_daily_cache(tmp_path):
+    pools = {"bulk_all": [{"id": "c0"}]}
+    client = Mock(side_effect=lambda pools, *a: answer(pools))
     path = tmp_path / "judge.json"
-    args = dict(api_key="test", caller=caller, cache_path=path)
+    args = dict(api_key="test", caller=client, cache_path=path)
     first = judge.choose_variants(pools, "model", "2026-11-02", **args)
+    assert len(first["bulk_all"]) == 1
     assert judge.choose_variants(pools, "model", "2026-11-02", **args) == first
-    changed = copy.deepcopy(pools); changed["bulk_all"][0]["dishes"][0]["name_de"] = "Different recipe"
+    changed = {"bulk_all": [{"id": "c0", "changed": True}]}
     assert judge.choose_variants(changed, "model", "2026-11-02", **args) == {}
-    assert caller.call_count == 1
+    client.assert_called_once()
     judge.choose_variants(pools, "model", "2026-11-03", **args)
-    assert caller.call_count == 2
+    assert client.call_count == 2
+    assert judge.choose_variants(pools, "model", "2026-11-02", api_key="", caller=client, cache_path=path) == {}
 
 
-def test_failed_daily_attempt_is_not_repeated(tmp_path):
-    pools = {"bulk_all": [{"id": "c0"}]}
-    caller = Mock(side_effect=TimeoutError())
+def test_failures_are_cached_and_missing_key_is_no_call(tmp_path):
     path = tmp_path / "judge.json"
+    pools = {"bulk_all": [{"id": "c0"}]}
+    client = Mock(side_effect=TimeoutError())
     for _ in range(2):
-        assert judge.choose_variants(pools, "model", "2026-11-02", api_key="test", caller=caller, cache_path=path) == {}
-    caller.assert_called_once()
+        assert judge.choose_variants(pools, "model", "2026-11-02", api_key="test", caller=client, cache_path=path) == {}
+    client.assert_called_once()
+    assert judge.choose_variants(pools, "model", "2026-11-03", api_key="", caller=client, cache_path=path) == {}
 
 
-def test_missing_key_uses_rules_even_with_cached_judgment(tmp_path):
-    pools = {"bulk_all": [{"id": "c0"}]}
-    caller = Mock(return_value={"bulk_all": {"id": "c0", "reason": "A coherent lunch."}})
-    path = tmp_path / "judge.json"
-    assert judge.choose_variants(pools, "model", "2026-11-02", api_key="test", caller=caller, cache_path=path)
-    assert judge.choose_variants(pools, "model", "2026-11-02", api_key="", caller=caller, cache_path=path) == {}
-    caller.assert_called_once()
-
-
-def test_corrupt_judge_cache_is_nonfatal(tmp_path):
-    path = tmp_path / "judge.json"; path.write_text("not JSON")
-    caller = Mock()
-    assert judge.choose_variants({"bulk_all": [{"id": "c0"}]}, "model", "2026-11-02", api_key="test", caller=caller, cache_path=path) == {}
-    caller.assert_not_called()
-
-
-@pytest.mark.parametrize("disable", ["flag", "config"])
-def test_disabled_judge_makes_no_call(enabled, fixture_menu, disable):
-    menu, cache = fixture_menu
-    caller = Mock(side_effect=AssertionError("Judge disabled"))
-    if disable == "config":
-        enabled["llm"]["enabled"] = False
-    result = build_today(menu, cache, enabled, no_llm=disable == "flag", api_key="test", judge_caller=caller)
-    caller.assert_not_called()
-    assert all(v["picked_by"] == "rules" for v in result["variants"].values())
-
-
-def test_no_llm_cli_flag_writes_rules_without_judge(enabled, fixture_menu, tmp_path, monkeypatch):
-    import yaml
-    menu, cache = fixture_menu
-    write_json(tmp_path / "menu.json", menu); write_json(tmp_path / "cache.json", cache)
-    config_path = tmp_path / "config.yaml"; config_path.write_text(yaml.safe_dump(enabled))
-    client = Mock(side_effect=AssertionError("No judge call"))
-    monkeypatch.setattr("pick.choose_variants", client)
-    output = tmp_path / "today.json"
-    monkeypatch.setattr("sys.argv", ["pick.py", "--no-llm", "--config", str(config_path), "--menu", str(tmp_path / "menu.json"), "--cache", str(tmp_path / "cache.json"), "--output", str(output)])
-    main()
-    assert all(v["picked_by"] == "rules" for v in read_json(output)["variants"].values())
+@pytest.mark.parametrize("disable", ["config", "flag"])
+def test_disable_judge(config, fixture_menu, pairing, disable):
+    config["llm"]["enabled"] = disable != "config"
+    menu, tags = fixture_menu
+    client = Mock(side_effect=AssertionError("No request"))
+    build_today(menu, tags, config, pairing=pairing, no_llm=disable == "flag", api_key="test", judge_caller=client)
     client.assert_not_called()

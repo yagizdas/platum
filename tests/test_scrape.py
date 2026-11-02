@@ -48,7 +48,7 @@ def test_markers_allergens_additives_and_unknown(html):
 def test_prices_official_superset_is_preserved(html, api, config):
     result = scrape(DAY, config, html, api)
     d = result["dishes"]
-    assert result["source"] == "official" and len(d) == 12
+    assert result["source"] == "official" and len(d) == 14
     assert d[0]["price"] == {"base_eur": 0., "per_100g_eur": .9, "source": "eat-api"}
     assert d[1]["price"] == {"base_eur": 5., "per_100g_eur": 0, "source": "config"}
     assert d[2]["price"]["base_eur"] == 1.
@@ -74,7 +74,7 @@ def test_no_menu_is_closed_and_api_does_not_override(html, api, config):
 def test_unavailable_official_uses_labeled_api_fallback(api, config):
     result = scrape(DAY, config, "<h1>maintenance</h1>", api)
     assert result["state"] == "open" and result["source"] == "eat-api"
-    assert len(result["dishes"]) == 6 and result["warnings"]
+    assert len(result["dishes"]) == 8 and result["warnings"]
     assert result["dishes"][0]["is_vegan"] is True
 
 
@@ -93,7 +93,7 @@ def test_missing_api_uses_config_prices(html, config):
     def failed(url):
         raise OSError("network offline")
     result = scrape(DAY, config, html=html, fetcher=failed)
-    assert len(result["dishes"]) == 12
+    assert len(result["dishes"]) == 14
     assert all(d["price"]["source"] == "config" for d in result["dishes"])
     assert result["dishes"][4]["price"]["per_100g_eur"] == .33
 
@@ -116,3 +116,17 @@ def test_iso_week_uses_iso_year(html, config):
         return '{"days": []}'
     scrape(date(2027, 1, 1), config, html=html, fetcher=capture)
     assert urls == [config["eat_api_url"].format(year=2026, week=53)]
+
+
+def test_standing_sides_only_on_open_days_and_use_config(html, api, config):
+    from common import normalize
+    opened = scrape(DAY, config, html, api)
+    sides = [d for d in opened["dishes"] if d.get("standing")]
+    assert {d["name"] for d in sides} == {"Reis", "Kartoffelsalat"}
+    assert next(d for d in sides if d["name"] == "Reis")["is_vegan"] is True
+    assert next(d for d in sides if d["name"] == "Kartoffelsalat")["is_vegan"] is False
+    assert all(d["price"]["source"] == "config" and d["price"]["per_100g_eur"] == .9 for d in sides)
+    assert not scrape(date(2026, 11, 8), config, html, api)["dishes"]
+    config["standing_sides"][0]["is_vegan"] = False
+    sides = [d for d in scrape(DAY, config, html, api)["dishes"] if d.get("standing")]
+    assert all(d["is_vegan"] is False for d in sides)

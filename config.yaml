@@ -4,7 +4,18 @@ eat_api_url: https://tum-dev.github.io/eat-api/mensa-arcisstr/{year}/{week:02d}.
 gemini_model: gemini-3.8-flash
 llm:
   enabled: true
-  top_k: 10
+  top_k: 8
+pairing:
+  min_score: 2
+standing_sides:
+  - name: Reis
+    name_en: Rice
+    station: Beilagen
+    is_vegan: true
+  - name: Kartoffelsalat
+    name_en: Potato salad
+    station: Beilagen
+    is_vegan: false
 
 prices:
   default_per_100g: 0.90
@@ -24,8 +35,9 @@ portions:
   max_plate_g: 650
 
 goals:
-  bulk_max_eur: 7.00
   bulk_min_protein_g: 30
+  bulk_protein_weight: 4
   cut_min_protein_g: 25
-  cut_min_kcal: 400
+  cut_min_kcal: 450
   budget_min_kcal: 550
+  budget_min_protein_g: 15

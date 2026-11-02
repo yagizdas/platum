@@ -147,6 +147,26 @@ def from_api(entries):
     return dishes
 
 
+def append_standing_sides(dishes, config):
+    """Only augment a real open menu; counter staples cannot manufacture an open day."""
+    if not dishes:
+        return dishes
+    names = {normalize(d["name"]) for d in dishes}
+    for side in config.get("standing_sides", []):
+        if normalize(side["name"]) in names:
+            continue
+        vegan = side.get("is_vegan") is True
+        dishes.append({"name": side["name"], "name_en": side["name_en"], "station": side["station"],
+                       "station_raw": side["station"], "standing": True, "is_vegan": vegan,
+                       "is_vegetarian": vegan or side.get("is_vegetarian") is True,
+                       "markers": ["v"] if vegan else [], "allergens": [], "additives": [],
+                       "dietary_source": "config", "source": "config", "api_labels": [],
+                       "price_source": "config", "price": {"base_eur": 0,
+                       "per_100g_eur": config["prices"]["default_per_100g"], "source": "config"}})
+        names.add(normalize(side["name"]))
+    return dishes
+
+
 def scrape(day, config, html=None, api_payload=None, fetcher=fetch):
     warnings = []
     iso = day.isocalendar()
@@ -170,6 +190,7 @@ def scrape(day, config, html=None, api_payload=None, fetcher=fetch):
     if dishes is None:
         dishes = from_api(api)
     enrich_prices(dishes, api, config)
+    append_standing_sides(dishes, config)
     return {"schema_version": 1, "date": day.isoformat(), "mensa": "Mensa Arcisstraße",
             "state": "open" if dishes else "closed", "source": "eat-api" if official_error else "official",
             "source_url": config["official_url"], "price_source_url": api_url,

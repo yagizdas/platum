@@ -1,16 +1,17 @@
-"""Brute-force scoop portions and precompute the six goal/diet variants."""
+"""Build coherent one/two-dish lunches, diverse alternatives, and optional extras."""
 import argparse
 import itertools
 import math
+import re
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
 from common import ROOT, load_config, normalize, read_json, write_json
 from judge import choose_variants
-from tag import validate_tag
+from pair import food, load_pairing, pair_score, stands_alone
 
 GOALS = ("bulk", "cut", "budget")
-ROLES = ("main", "side", "soup", "dessert")
+SCHEMA_VERSION = 2
 
 
 def price_cents(price, grams):
@@ -19,115 +20,135 @@ def price_cents(price, grams):
 
 
 def scoop_size(dish, config):
-    scoop = config["portions"]["station_scoop_g"].get(dish["station"], config["portions"]["default_scoop_g"])
-    if type(scoop) not in (int, float) or not math.isfinite(scoop) or scoop <= 0:
+    size = config["portions"]["station_scoop_g"].get(dish["station"], config["portions"]["default_scoop_g"])
+    if type(size) not in (int, float) or not math.isfinite(size) or size <= 0:
         raise ValueError("Scoop sizes must be finite positive grams")
-    return scoop
+    return size
 
 
-def portion_options(dish, tag, config, secondary=False):
-    lo, hi = tag["typical_portion_g"]["min"], tag["typical_portion_g"]["max"]
+def diet(item, config):
+    if item.get("is_vegan") is True:
+        return "vegan"
+    if item.get("is_vegetarian") is True or "f" in item.get("markers", []):
+        return "vegetarian"
+    p = config["prices"]
+    if item["station"] == "Fisch" or re.search(p["fish_name_pattern"], item["name"]) or "FISH" in item.get("api_labels", []):
+        return "fish"
+    if (set(item.get("markers", [])) & set(p["meat_markers"]) or item["station"] in {"Fleisch", "Grill"}
+            or re.search(p["meat_name_pattern"], item["name"])):
+        return "meat"
+    # Unknown dietary status (including unconfirmed broth) never implies meatless.
+    return "meat"
+
+
+def portion_options(dish, tag, config, paired=False):
+    item = {**dish, **tag, "standing": dish.get("standing") is True}
+    if item["standing"]:
+        item.update(role="side", is_per_piece=False, piece_weight_g=None)
+    lo, hi = item["typical_portion_g"]["min"], item["typical_portion_g"]["max"]
     limit = min(hi, config["portions"]["max_plate_g"])
-    scoop = scoop_size(dish, config)
-    if secondary:
-        if tag["role"] != "main" or tag["is_per_piece"] or tag["texture"] == "liquid":
-            return []
-        # A side scoop is smaller than a full main's usual minimum portion.
-        portions = [(1, scoop, "scoop")] if scoop <= limit else []
-    elif tag["is_per_piece"]:
-        portions = [(1, tag["piece_weight_g"], "piece")] if lo <= tag["piece_weight_g"] <= limit else []
+    size = scoop_size(item, config)
+    if item["is_per_piece"]:
+        portions = [(1, item["piece_weight_g"], "piece")] if item["piece_weight_g"] <= limit else []
     else:
-        portions = [(count, count * scoop, "scoop") for count in range(max(1, math.ceil(lo / scoop)), math.floor(limit / scoop) + 1)]
-    result = []
+        first = 1 if paired else max(1, math.ceil(lo / size))
+        portions = [(n, n * size, "scoop") for n in range(first, min(3, math.floor(limit / size)) + 1)]
+    options = []
     for count, grams, unit in portions:
-        item = {**dish, **tag, "role": "main_side" if secondary else tag["role"], "count": count, "unit": unit, "weight_g": grams,
-                "price_cents": price_cents(dish["price"], grams)}
-        for nutrient in ("kcal", "protein", "carbs", "fat"):
-            item[nutrient] = tag[f"{nutrient}_per_100g"] * grams / 100
-        result.append(item)
+        options.append({**item, "count": count, "unit": unit, "weight_g": grams,
+                        "price_cents": price_cents(item["price"], grams), "diet": diet(item, config),
+                        **{n: item[f"{n}_per_100g"] * grams / 100 for n in ("kcal", "protein", "carbs", "fat")}})
+    return options
+
+
+def valid_plate(items, config, pairing=None):
+    pairing = pairing or {}
+    if not 1 <= len(items) <= 2 or len({normalize(i["name"]) for i in items}) != len(items):
+        return False
+    if any((i["role"] != "main" and not i.get("standing")) or i["texture"] == "liquid" for i in items):
+        return False
+    if sum(i.get("standing", False) for i in items) > 1 or all(i.get("standing") for i in items):
+        return False
+    if sum(i["is_per_piece"] for i in items) > 1 or sum(i["weight_g"] for i in items) > config["portions"]["max_plate_g"]:
+        return False
+    for i in items:
+        if i["is_per_piece"]:
+            if i["count"] != 1 or i["unit"] != "piece" or i["weight_g"] != i["piece_weight_g"]:
+                return False
+        elif (i["unit"] != "scoop" or type(i["count"]) is not int or not 1 <= i["count"] <= 3
+              or i["weight_g"] != i["count"] * scoop_size(i, config)):
+            return False
+        if i["weight_g"] > i["typical_portion_g"]["max"]:
+            return False
+    if len(items) == 1:
+        return stands_alone(items[0], pairing) and items[0]["weight_g"] >= items[0]["typical_portion_g"]["min"]
+    return all(i["station"] != "Pizza" for i in items) and pair_score(*items, pairing) >= config["pairing"]["min_score"]
+
+
+def ordered_items(items):
+    return sorted(items, key=lambda i: (not i["is_per_piece"], -i["weight_g"], normalize(i["name"])))
+
+
+def plate(items):
+    return {"items": ordered_items(items), "price_cents": sum(i["price_cents"] for i in items),
+            "weight_g": sum(i["weight_g"] for i in items),
+            **{n: sum(i[n] for i in items) for n in ("kcal", "protein", "carbs", "fat")}}
+
+
+def candidates(dishes, cache, config, vegan=False, pairing=None):
+    items = [food(d, cache) for d in dishes if not vegan or d.get("is_vegan") is True]
+    items = [i for i in items if (i["role"] == "main" or i["standing"]) and i["texture"] != "liquid"]
+    for item in items:
+        for option in portion_options(item, item, config):
+            if valid_plate([option], config, pairing):
+                yield plate([option])
+    for a, b in itertools.combinations(items, 2):
+        if a["station"] == "Pizza" or b["station"] == "Pizza" or pair_score(a, b, pairing or {}) < config["pairing"]["min_score"]:
+            continue
+        for combo in itertools.product(portion_options(a, a, config, paired=True), portion_options(b, b, config, paired=True)):
+            if valid_plate(combo, config, pairing):
+                yield plate(combo)
+
+
+def top_plates(plates, goal, config, top_k=8, relax_protein=False):
+    g = config["goals"]
+    floor = g[f"{goal}_min_protein_g"]
+    valid = [p for p in plates if (relax_protein or p["protein"] >= floor)
+             and (goal == "bulk" or p["kcal"] >= g[f"{goal}_min_kcal"])]
+    if goal == "bulk":
+        rank = lambda p: (-(p["kcal"] + g["bulk_protein_weight"] * p["protein"]), p["price_cents"], p["weight_g"])
+    elif goal == "cut":
+        rank = lambda p: (-p["protein"] / max(p["kcal"], 1), p["price_cents"], p["weight_g"])
+    elif goal == "budget":
+        rank = lambda p: (p["price_cents"], -p["protein"], p["weight_g"])
+    else:
+        raise ValueError(f"Unknown goal: {goal}")
+    seen, result = set(), []
+    for p in sorted(valid, key=rank):
+        dish_set = tuple(sorted(normalize(i["name"]) for i in p["items"]))
+        if dish_set not in seen:
+            seen.add(dish_set)
+            result.append(p)
+            if len(result) >= top_k:
+                break
     return result
 
 
-def valid_plate(items, config):
-    roles = [item["role"] for item in items]
-    mains = [item for item in items if item["role"] == "main"]
-    secondary = [item for item in items if item["role"] == "main_side"]
-    # Also accept unmarked input with two mains: the second must satisfy side rules.
-    if len(mains) == 2 and not secondary:
-        mains, secondary = mains[:1], mains[1:]
-    if (len(mains) != 1 or len(secondary) > 1
-            or any(roles.count(role) > 1 for role in ("side", "soup", "dessert"))
-            or any(role not in ROLES + ("main_side",) for role in roles)):
-        return False
-    if secondary:
-        item = secondary[0]
-        if (item["count"] != 1 or item["unit"] != "scoop" or item.get("is_per_piece", False)
-                or item["texture"] == "liquid" or item["weight_g"] != scoop_size(item, config)):
-            return False
-    names = [normalize(item["name"]) for item in items]
-    return (len(names) == len(set(names))
-            and sum(item["texture"] == "liquid" for item in items) <= 1
-            and sum(item["weight_g"] for item in items) <= config["portions"]["max_plate_g"])
-
-
-def candidates(dishes, cache, config, vegan=False):
-    groups = {role: [] for role in ROLES}
-    secondary = []
-    for dish in dishes:
-        if vegan and dish["is_vegan"] is not True:
-            continue
-        tag = validate_tag(cache[normalize(dish["name"])])
-        groups[tag["role"]].extend(portion_options(dish, tag, config))
-        secondary.extend(portion_options(dish, tag, config, secondary=True))
-    seen = set()
-    for combo in itertools.product(groups["main"], [None] + secondary, [None] + groups["side"], [None] + groups["soup"], [None] + groups["dessert"]):
-        items = [item for item in combo if item is not None]
-        if valid_plate(items, config):
-            signature = tuple(sorted((normalize(i["name"]), i["weight_g"], i["unit"]) for i in items))
-            if signature in seen:
-                continue
-            seen.add(signature)
-            yield {"items": items, "price_cents": sum(item["price_cents"] for item in items),
-                   "weight_g": sum(item["weight_g"] for item in items),
-                   **{key: sum(item[key] for item in items) for key in ("kcal", "protein", "carbs", "fat")}}
-
-
-def top_plates(plates, goal, config, top_k=10, relax_protein=False):
-    """Filter and rank candidates entirely in code; no judge can bypass these rules."""
-    g = config["goals"]
-    if goal == "bulk":
-        valid = [p for p in plates if p["price_cents"] <= round(g["bulk_max_eur"] * 100)
-                 and (relax_protein or p["protein"] >= g["bulk_min_protein_g"])]
-        key = lambda p: (-p["kcal"], -p["protein"], p["price_cents"], p["weight_g"])
-    elif goal == "cut":
-        valid = [p for p in plates if p["kcal"] >= g["cut_min_kcal"] and p["kcal"] > 0
-                 and (relax_protein or p["protein"] >= g["cut_min_protein_g"])]
-        key = lambda p: (-p["protein"] / p["kcal"], p["price_cents"], p["weight_g"])
-    elif goal == "budget":
-        valid = [p for p in plates if p["kcal"] >= g["budget_min_kcal"]]
-        key = lambda p: (p["price_cents"], -p["protein"], p["weight_g"])
-    else:
-        raise ValueError(f"Unknown goal: {goal}")
-    return sorted(valid, key=key)[:top_k]
-
-
 def choose(plates, goal, config, relax_protein=False):
-    ranked = top_plates(plates, goal, config, top_k=1, relax_protein=relax_protein)
+    ranked = top_plates(plates, goal, config, 1, relax_protein)
     return ranked[0] if ranked else None
 
 
 def rank_variant(plates, goal, vegan, config):
-    top_k = config.get("llm", {}).get("top_k", 10)
-    if type(top_k) is not int or not 1 <= top_k <= 10:
-        raise ValueError("llm.top_k must be an integer from 1 to 10")
-    ranked = top_plates(plates, goal, config, top_k)
+    k = config["llm"]["top_k"]
+    if type(k) is not int or k < 1:
+        raise ValueError("llm.top_k must be a positive integer")
+    ranked = top_plates(plates, goal, config, k)
     relaxed, note = False, None
-    if vegan and not ranked and goal in {"bulk", "cut"}:
-        ranked = top_plates(plates, goal, config, top_k, relax_protein=True)
+    if vegan and not ranked:
+        ranked = top_plates(plates, goal, config, k, True)
         relaxed = True
-        floor = config["goals"][f"{goal}_min_protein_g"]
-        ending = "showing a filling lunch with that target relaxed." if ranked else "no plate meets the remaining requirements."
-        note = f"No vegan plate reaches {floor:g}g protein today; {ending}"
+        note = f"No vegan lunch reaches {config['goals'][f'{goal}_min_protein_g']:g}g protein today; the protein target is relaxed."
     return ranked, relaxed, note
 
 
@@ -135,82 +156,82 @@ def serving(item):
     return f"{item['count']} {item['unit']}{'s' if item['count'] != 1 else ''}"
 
 
-def plate_result(plate, goal, vegan, config):
-    if plate is None:
-        message = {"bulk": f"No valid plate reaches {config['goals']['bulk_min_protein_g']:g}g protein within €{config['goals']['bulk_max_eur']:.2f}.",
-                  "cut": f"No valid plate reaches {config['goals']['cut_min_kcal']:g} kcal and {config['goals']['cut_min_protein_g']:g}g protein.",
-                  "budget": f"No valid plate reaches {config['goals']['budget_min_kcal']:g} kcal."}[goal]
-        return {"state": "unavailable", "goal": goal, "vegan": vegan,
-                "message": ("Vegan: " if vegan else "") + message, "reason": None, "picked_by": "rules"}
+def short_name(name):
+    name = re.sub(r"\s*\(1\s*Stück\)", "", name, flags=re.I)
+    return re.split(r"\s+(?:mit|auf|aus|in|an)\s+", name, maxsplit=1, flags=re.I)[0].strip()
+
+
+def plate_result(value, goal=None, vegan=None, config=None):
     items = []
-    for item in plate["items"]:
-        items.append({key: item[key] for key in ("name", "name_en", "station", "role", "texture", "count", "unit",
-                     "weight_g", "price_cents", "is_vegan", "markers", "allergens", "additives")}
-                     | {"price_source": item["price"]["source"], "serving": serving(item),
-                        "kcal": round(item["kcal"], 2), "protein_g": round(item["protein"], 2)})
-    total = {"price_cents": plate["price_cents"], "price_eur": plate["price_cents"] / 100,
-             "weight_g": plate["weight_g"], "kcal": round(plate["kcal"], 2),
-             **{f"{key}_g": round(plate[key], 2) for key in ("protein", "carbs", "fat")}}
-    summary = " + ".join(f"{item['serving']} {item['name']}" for item in items)
-    summary += f" → €{total['price_eur']:.2f} · ~{round(total['kcal'])} kcal · ~{round(total['protein_g'])}g protein"
-    return {"state": "ready", "goal": goal, "vegan": vegan, "items": items, "total": total,
-            "has_estimated_prices": any(item["price_source"] == "config" for item in items), "summary": summary,
-            "reason": None, "picked_by": "rules"}
+    for i in value["items"]:
+        items.append({k: i[k] for k in ("name", "name_en", "station", "role", "texture", "count", "unit", "weight_g",
+                                        "price_cents", "is_vegan", "markers", "allergens", "additives", "standing", "diet")}
+                     | {"serving": serving(i), "price_source": i["price"]["source"], "kcal": round(i["kcal"], 2), "protein_g": round(i["protein"], 2)})
+    total = {"price_cents": value["price_cents"], "price_eur": value["price_cents"] / 100, "weight_g": value["weight_g"],
+             "kcal": round(value["kcal"], 2), **{f"{n}_g": round(value[n], 2) for n in ("protein", "carbs", "fat")}}
+    return {"title": " + ".join(short_name(i["name"]) for i in value["items"]), "reason": None, "picked_by": "rules",
+            "items": items, "total": total, "has_estimated_prices": any(i["price_source"] == "config" for i in items)}
+
+
+def extras(dishes, cache, config):
+    all_extras = []
+    for d in dishes:
+        item = food(d, cache)
+        if item["role"] not in {"soup", "dessert"} or item["standing"]:
+            continue
+        options = portion_options(item, item, config)
+        if options:
+            i = options[0]
+            all_extras.append({k: i[k] for k in ("name", "name_en", "station", "weight_g", "price_cents", "is_vegan", "diet")}
+                              | {"serving": serving(i), "kcal": round(i["kcal"], 2), "protein_g": round(i["protein"], 2), "price_source": i["price"]["source"]})
+    return {"all": all_extras, "vegan": [i for i in all_extras if i["is_vegan"] is True]}
 
 
 def judge_payload(ranked, config):
-    """Supply only names, portions and the same rounded totals used by plate_result."""
-    payload = {}
-    for key, plates in ranked.items():
-        goal, diet = key.split("_")
-        payload[key] = []
-        for index, plate in enumerate(plates):
-            total = plate_result(plate, goal, diet == "vegan", config)["total"]
-            payload[key].append({"id": f"c{index}", "dishes": [
-                {"name_de": i["name"], "name_en": i["name_en"], "station": i["station"], "serving": serving(i)}
-                for i in plate["items"]], "totals": {key: total[key] for key in ("price_eur", "kcal", "protein_g")}})
-    return payload
+    result = {}
+    for key, values in ranked.items():
+        result[key] = []
+        for index, value in enumerate(values):
+            p = plate_result(value)
+            result[key].append({"id": f"c{index}", "dishes": [{k: i[k] for k in ("name", "name_en", "station", "serving")} for i in p["items"]],
+                                "totals": {k: p["total"][k] for k in ("price_eur", "kcal", "protein_g")}})
+    return result
 
 
-def build_today(menu, cache, config, allow_missing=False, *, no_llm=False, api_key=None, judge_caller=None, judge_cache_path=None):
-    missing = [dish["name"] for dish in menu["dishes"] if normalize(dish["name"]) not in cache]
+def build_today(menu, cache, config, allow_missing=False, *, pairing=None, no_llm=False, api_key=None, judge_caller=None, judge_cache_path=None):
+    missing = [d["name"] for d in menu["dishes"] if normalize(d["name"]) not in cache]
     if missing and not allow_missing:
         raise ValueError(f"{len(missing)} dishes need tagging; run tag.py first. Refusing to pick from a partial menu.")
-    result = {key: menu[key] for key in ("schema_version", "date", "mensa", "state", "source", "source_url", "fetched_at", "warnings")}
-    result["menu_count"] = len(menu["dishes"])
-    result["goals"] = config["goals"]
-    result["max_plate_g"] = config["portions"]["max_plate_g"]
-    result["default_scoop_g"] = config["portions"]["default_scoop_g"]
-    result["nutrition_note"] = "Nutrition values are estimates."
-    result["variants"] = {}
+    result = {k: menu[k] for k in ("date", "mensa", "state", "source", "source_url", "fetched_at", "warnings")}
+    result.update(schema_version=SCHEMA_VERSION, menu_count=len(menu["dishes"]), goals=config["goals"],
+                  max_plate_g=config["portions"]["max_plate_g"], default_scoop_g=config["portions"]["default_scoop_g"],
+                  nutrition_note="Nutrition values are estimates.", variants={}, extras={"all": [], "vegan": []})
     if missing:
-        result["state"] = "unavailable"
-        result["reason"] = "Today's menu is here. Plate recommendations are waiting for nutrition estimates."
-        result["missing_tags"] = missing
+        result.update(state="unavailable", reason="Today's menu is here. Plate recommendations are waiting for nutrition estimates.", missing_tags=missing)
     ranked = {}
+    if result["state"] == "open":
+        result["extras"] = extras(menu["dishes"], cache, config)
     for vegan in (False, True):
-        plates = list(candidates(menu["dishes"], cache, config, vegan)) if menu["state"] == "open" and not missing else []
+        values = list(candidates(menu["dishes"], cache, config, vegan, pairing)) if result["state"] == "open" else []
         for goal in GOALS:
-            variant_key = f"{goal}_{'vegan' if vegan else 'all'}"
-            if result["state"] in {"closed", "unavailable"}:
-                result["variants"][variant_key] = {"state": result["state"], "goal": goal, "vegan": vegan,
-                    "message": result.get("reason", "No menu is published for this date. Check the official menu before heading over."),
-                    "reason": None, "picked_by": "rules", "relaxed": False, "note": None}
-            else:
-                selected, relaxed, note = rank_variant(plates, goal, vegan, config)
-                ranked[variant_key] = selected
-                result["variants"][variant_key] = plate_result(selected[0] if selected else None, goal, vegan, config)
-                result["variants"][variant_key].update(relaxed=relaxed, note=note)
-    if not no_llm and config.get("llm", {}).get("enabled", False) and ranked:
+            key = f"{goal}_{'vegan' if vegan else 'all'}"
+            pool, relaxed, note = rank_variant(values, goal, vegan, config) if result["state"] == "open" else ([], False, None)
+            ranked[key] = pool
+            state = ("ready" if pool else "unavailable") if result["state"] == "open" else result["state"]
+            result["variants"][key] = {"state": state, "goal": goal, "vegan": vegan, "relaxed": relaxed, "note": note,
+                                       "plates": [plate_result(p) for p in pool[:3]]}
+            if not pool:
+                result["variants"][key]["message"] = result.get("reason") or ("No menu is published for this date." if state == "closed" else "No lunch meets this goal's remaining requirements today.")
+    if not no_llm and config["llm"]["enabled"]:
         choices = choose_variants(judge_payload(ranked, config), config["gemini_model"], menu["date"],
                                   api_key=api_key, caller=judge_caller, cache_path=judge_cache_path)
-        for key, choice in choices.items():
-            goal, diet = key.split("_")
-            variant = result["variants"][key]
-            # Resolve the ID into the original code candidate, never LLM-supplied values.
-            selected = ranked[key][int(choice["id"][1:])]
-            result["variants"][key] = plate_result(selected, goal, diet == "vegan", config)
-            result["variants"][key].update(reason=choice["reason"], picked_by="llm", relaxed=variant["relaxed"], note=variant["note"])
+        for key, selection in choices.items():
+            plates = []
+            for index, choice in enumerate(selection):
+                selected = plate_result(ranked[key][int(choice["id"][1:])])
+                selected.update(title=choice["title"], reason=choice.get("reason") if index == 0 else None, picked_by="llm")
+                plates.append(selected)
+            result["variants"][key]["plates"] = plates
     return result
 
 
@@ -218,20 +239,21 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--menu", type=Path, default=ROOT / "data/menu.json")
     parser.add_argument("--cache", type=Path, default=ROOT / "data/dish_cache.json")
+    parser.add_argument("--pairing-cache", type=Path, default=ROOT / "data/pairing_cache.json")
     parser.add_argument("--output", type=Path, default=ROOT / "data/today.json")
     parser.add_argument("--config", type=Path)
-    parser.add_argument("--allow-missing-tags", action="store_true", help="Publish an honest unavailable state for first-run setup")
-    parser.add_argument("--no-llm", action="store_true", help="Use the rule-based top plate without a judge call")
+    parser.add_argument("--allow-missing-tags", action="store_true")
+    parser.add_argument("--no-llm", action="store_true")
     args = parser.parse_args()
-    menu = read_json(args.menu)
-    if menu is None:
-        raise ValueError("Run scrape.py first")
-    result = build_today(menu, read_json(args.cache, {}), load_config(args.config), args.allow_missing_tags,
-                         no_llm=args.no_llm, judge_cache_path=ROOT / "data/judge_cache.json")
+    result = build_today(read_json(args.menu), read_json(args.cache, {}), load_config(args.config), args.allow_missing_tags,
+                         pairing=load_pairing(args.pairing_cache), no_llm=args.no_llm, judge_cache_path=ROOT / "data/judge_cache.json")
     write_json(args.output, result)
-    print(f"{result['date']}: {result['state']}")
-    for key, plate in result["variants"].items():
-        print(f"{key}: {plate.get('summary', plate.get('message'))}")
+    for key, variant in result["variants"].items():
+        for p in variant["plates"]:
+            t = p["total"]
+            print(f"{key}: {p['title']} → €{t['price_eur']:.2f} · ~{round(t['kcal'])} kcal · ~{round(t['protein_g'])}g protein")
+        if not variant["plates"]:
+            print(f"{key}: {variant['message']}")
 
 
 if __name__ == "__main__":

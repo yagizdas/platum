@@ -1,145 +1,126 @@
 # Mensa Plate
 
-A tiny static lunch picker for TUM students at **Mensa Arcisstraße**. Choose Bulk, Cut, or Budget and optionally Vegan. Every recommendation uses one primary main, an optional secondary scoop, and optional side, soup, and dessert, served in whole scoops or one piece.
+A static lunch picker for TUM students at **Mensa Arcisstraße**. Bulk, Cut, Budget, and Vegan produce up to three coherent lunches. Python computes every portion, price and total; optional models provide cached food estimates, pairing knowledge and lunch titles.
 
-Python generates JSON; a single vanilla `index.html` reads it. No server, accounts, or runtime API calls from the browser. Nutrition tagging uses **Gemini 3.8 Flash** (`gemini-3.8-flash`), per the updated model choice.
+## Setup
 
-## Local setup
+Python 3.12+, with GEMINI_API_KEY in the environment or a git-ignored local .env:
 
-Use Python 3.12+ (including timezone data) and a Gemini API key with access to `gemini-3.8-flash`.
-
-```sh
+~~~sh
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-dev.txt
-
-# Read the key without putting it in shell history (Bash or zsh):
-read -rs GEMINI_API_KEY
-export GEMINI_API_KEY
-
 python scrape.py
 python tag.py
+python pair.py
 python pick.py
 python -m http.server 8000 --bind 127.0.0.1
-```
+~~~
 
-Open <http://127.0.0.1:8000>. Serve over HTTP; opening `index.html` directly cannot fetch JSON reliably. The site works at a GitHub Pages repository subpath because its fetch URL is relative.
+Open <http://127.0.0.1:8000>. The app works under a GitHub Pages repository subpath. No backend, accounts, service worker, or browser API key.
 
-Alternatively, put `GEMINI_API_KEY=your-key` in a local **`.env`** at the repository root. It is git-ignored and read only by the Python tagger and optional judge. An exported environment variable takes precedence. Never put the key in `config.yaml`, JSON data, or the frontend. To make it available to an already running coding-agent session, the local `.env` method avoids depending on environment changes in a separate terminal.
+## Pipeline and caches
 
-`scrape.py` defaults to today's **Europe/Berlin** date. All script file defaults resolve from this repository, regardless of your working directory. All three commands must succeed before deploying.
+~~~text
+official HTML + eat-api prices + configured counter sides
+  → scrape.py → menu.json
+  → tag.py    → dish_cache.json
+  → pair.py   → pairing_cache.json
+  → pick.py + optional judge.py → today.json → index.html
+                              ↳ judge_cache.json
+~~~
 
-## Data flow and files
+The official menu defines listed dishes. eat-api supplies student prices only for a conservative normalized-name match. Official source failures may use the explicitly flagged smaller API menu. Both sources failing stops the scrape; a missing date in a valid menu is closed.
 
-```text
-official HTML + eat-api prices → scrape.py → data/menu.json
-                       Gemini → tag.py    → data/dish_cache.json
-             menu + tag cache → pick.py   → data/today.json → index.html
-```
+Rice and potato salad are explicit **standing sides** from the unlisted Beilagen counter. They are appended only to a successfully obtained open menu, marked standing, priced at the configured default weight rate, and labeled as usually available. They never manufacture an open day. Their vegan status comes solely from config; unconfirmed potato salad is not vegan. Official duplicate names are not appended twice.
 
-`data/menu.json` retains names, station, raw station, deterministic vegan/vegetarian status, markers, allergen/additive codes, source labels, and prices. It includes only the requested date. `data/dish_cache.json` maps normalized names to validated tag objects; keep it committed so repeated dishes do not make more paid calls. `data/today.json` contains six variants (`bulk_all`, `cut_all`, `budget_all`, `bulk_vegan`, `cut_vegan`, `budget_vegan`), plate items, totals, and a one-line summary.
+Keep all model caches committed:
 
-The tagger calls Gemini for each new normalized name. When Gemini returns **HTTP 503** or a request **times out**, it waits **30 seconds** before retrying, with a shared limit of **10 total attempts per dish**. This includes read timeouts and connection timeouts wrapped by urllib. Ten consecutive service failures mean nine waits (4½ minutes), plus API response time; each request can itself take up to 90 seconds. Retry progress and successful tags appear immediately in the Actions log. Other errors, including invalid JSON, retain one retry; mixed failures still cannot exceed ten total attempts. These limits are defined by `MAX_GEMINI_ATTEMPTS` and `SERVICE_RETRY_DELAY_SECONDS` in `tag.py` and apply to both daily Actions and local runs.
+- **dish_cache.json**: per-normalized-name estimates and translations. Each valid tag is saved immediately. Tagging retries HTTP 503 and timeouts up to ten total attempts, with 30 seconds between failures; other failures get one retry. Request duration is additional to waiting time.
+- **pairing_cache.json**: dishes maps names to stands_alone, pairs maps sorted normA||normB to scores, and attempts records each date. One Gemini call per date requests only missing knowledge. Types, scores and requested keys are validated; invalid entries are not saved. Failures never stop picking. Without knowledge, a non-piece dish or Pizza can stand alone, and a non-pizza piece pairs only with a non-piece, non-liquid dish. Standing sides are always partner-only and never per-piece.
+- **judge_cache.json**: at most one call per menu date, including failed attempts. One request covers all six variants. The judge ranks up to three candidate IDs with short English titles; only the first has a reason. It cannot add food or return totals. Invalid variants fall back independently to code order. Cache fingerprints prevent stale IDs being reused when the model, prompt or candidates change. Missing keys use rules.
 
-Structured JSON is validated again locally, including types, finite nutrition values, role/texture, and portion bounds. Each successful tag is saved immediately and atomically, even if a later dish fails. The cache key uses Unicode normalization, case folding, and punctuation/whitespace normalization. Recipe changes with the same name reuse the estimate; delete that exact cache entry to intentionally retag it. Changing model does not invalidate existing entries.
-
-The [official menu](https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html) defines which dishes exist. eat-api adds prices only for a conservative normalized-name match; there is no fuzzy matching. If the official source fails or its expected structure changes, the smaller eat-api menu is an explicitly flagged fallback. If eat-api fails, official dishes still work with configured prices. Both sources failing stops the pipeline instead of inventing a closed day.
-
-The saved official HTML uses `#c-schedule .c-schedule__item`, `.c-schedule__header`, `li.c-menu-dish-list__item`, `.c-menu-dish__title`, and `.stwm-artname`. These selectors were inspected in the actual downloaded HTML before implementation. Vegan means official `data-essen-fleischlos="2"`, its vegan icon, or an explicit `v` marker; unknown is false. On an API-only fallback, only its `VEGAN` label qualifies. The LLM never decides vegan status. Blank official station labels are retained; only explicitly grouped dessert rows inherit the Dessert station.
-
-## Prices and scoops
-
-Edit **`config.yaml`**, then rerun `scrape.py` and `pick.py`. No retagging is needed for price or scoop changes.
-
-```yaml
-prices:
-  default_per_100g: 0.90
-  station_per_100g:
-    Studitopf: 0.33
-  meat_base: 1.00
-  fish_base: 1.50
-  flat_by_station:
-    Pizza: 5.00
-
-portions:
-  default_scoop_g: 150
-  station_scoop_g:
-    Studitopf: 150
-    Dessert (Glas): 100
-  max_plate_g: 650
-```
-
-The checked-in station scoop overrides are initially empty. eat-api student prices take precedence; its `base_price` is charged once per dish, plus the weight rate. Unknown or malformed billing units fall back to category rules. With category rules, fish takes its base surcharge and meat takes its base surcharge; marked vegetarian/vegan dishes do not get a meat surcharge based on a word like “Schnitzel.” An unlabeled dish uses the default rate. Dessert fallback prices are therefore weight estimates unless eat-api supplies a fixed price. No unlisted generic rice, bread, or side is invented.
-
-Costs are rounded **per dish** to euro cents, then summed. Nutrition is a rough estimate; portion size, recipe, and the actual checkout weight can differ.
+All calls use the existing urllib Gemini client and gemini_model; no extra model SDK is needed. Tests mock every call and never need a key. A closed menu makes no model call. Delete a cache entry only when intentionally requesting it again.
 
 ## Plate rules
 
-Brute force considers every allowed whole-scoop portion within each dish's typical range and every valid combination. Per-piece food is always one piece and must also be within that range. Every plate has one primary main and may add one different main as **exactly one non-liquid, non-piece scoop**, marked `main_side`. This secondary serving can be smaller than the usual full-main minimum (for example, a 150g curry scoop instead of a 250g main), but cannot exceed its maximum. A station's scoop override applies. Plates still allow at most one side/soup/dessert, at most one liquid item, and at most 650g total (configurable). Duplicate dishes and duplicate physical combinations are excluded.
+A plate is one complete main, or two different compatible dishes: two mains or one main with a standing side. Pair score must meet pairing.min_score. Score 3 means classic, 2 normal, 1 odd, 0 incompatible.
 
-| Goal | Objective | Constraint | Remaining tie breaks |
-| --- | --- | --- | --- |
-| Bulk | Highest kcal, then highest protein | At most €7 and at least 30g protein | Lower price, lower weight |
-| Cut | Highest protein/kcal ratio | At least 400 kcal and 25g protein | Lower price, lower weight |
-| Budget | Lowest price | At least 550 kcal | Higher protein, lower kcal, lower weight |
+- No soups, liquid dishes, desserts, or pairs of standing sides.
+- At most one per-piece dish, always exactly one piece. Pizza/Pinsa never pairs.
+- Scoop dishes use one to three configured scoops, within their typical maximum.
+- A single dish also respects the typical minimum. Two-dish combinations may use smaller accompaniment portions.
+- Maximum 650g per plate. **No price cap** for any goal.
+- Prices are rounded per dish to cents, then summed. Nutrition is estimated per 100g.
+- For each goal, keep only the best portioning per distinct dish set before taking the top candidates.
 
-All thresholds are in `config.yaml`. Vegan filters dishes **before** enumeration. If a vegan Bulk or Cut variant cannot reach its protein floor, it retries without that floor, retaining the price, calorie, portion, and weight rules. The variant has `relaxed: true` and a visible explanatory `note`. Other unavailable goals remain unavailable. There is no extra price limit for Cut or Budget.
+| Goal | Required | Rank |
+| --- | --- | --- |
+| Bulk | ≥30g protein | kcal + 4 × protein grams, then lower price |
+| Cut | ≥450 kcal and ≥25g protein | protein/kcal, then lower price |
+| Budget | ≥550 kcal and ≥15g protein | lower price, then higher protein |
 
-```yaml
-goals:
-  bulk_max_eur: 7.00
-  bulk_min_protein_g: 30
-  cut_min_protein_g: 25
-  cut_min_kcal: 400
-  budget_min_kcal: 550
+Vegan filters by explicit menu/config status before enumeration; unknown is not vegan. If a vegan goal has no qualifying lunch, only its protein floor is relaxed and a visible note explains it. Other constraints remain.
+
+The judge ranks only the code-built shortlist. Every final number comes from plate_result(), even after model selection. Disable it with llm.enabled: false or run python pick.py --no-llm.
+
+Soups and desserts are exported separately as extras.all and extras.vegan, each with a code-computed serving and totals. Adding an extra is a personal tray choice, outside the plate optimizer and its weight cap. Diet labels use official positive vegan/vegetarian markers and meat/fish patterns; unknown broth is conservatively non-meatless.
+
+## Configuration
+
+Edit config.yaml; price/scoop changes require no retagging.
+
+~~~yaml
+pairing:
+  min_score: 2
 llm:
   enabled: true
-  top_k: 10 # 1–10 code-ranked candidates per variant
-```
+  top_k: 8
+goals:
+  bulk_min_protein_g: 30
+  bulk_protein_weight: 4
+  cut_min_protein_g: 25
+  cut_min_kcal: 450
+  budget_min_kcal: 550
+  budget_min_protein_g: 15
+portions:
+  default_scoop_g: 150
+  station_scoop_g: {}
+  max_plate_g: 650
+standing_sides:
+  - {name: Reis, name_en: Rice, station: Beilagen, is_vegan: true}
+  - {name: Kartoffelsalat, name_en: Potato salad, station: Beilagen, is_vegan: false}
+~~~
 
-`judge.py` makes **one Gemini call covering all six variants**. It sees only candidate IDs, German/English names, stations, servings, and code-computed price/kcal/protein totals. It selects a coherent lunch from each variant's top candidates and returns a short English reason. It cannot add dishes or supply numbers. `plate_result()` always computes the final items and totals from the selected original candidate.
+Price rules: €0.90/100g default, Studitopf €0.33/100g, meat base €1, fish base €1.50, Pizza €5 flat. Matched eat-api student prices take precedence for official dishes. Standing sides always use the default configured rate.
 
-Each variant records `picked_by: "llm" | "rules"` and `reason` (a string or null). Invalid/missing IDs, extra dish or total fields, invalid reasons, missing keys, malformed JSON, and request errors fall back independently to the rule-based top plate. Judge failures never stop the pipeline; status explanations for unavailable variants use `message`. The UI renders reasons and relaxation notes as text.
+## Data and states
 
-`data/judge_cache.json` records the attempt per menu date, including failed calls, so manual reruns do not make another daily judge call. Results are reused only when model, prompt, and candidates match; a changed menu or price set uses rules instead of stale IDs. Missing keys and closed menus do not consume a daily attempt. Delete that date's entry only when intentionally requesting another judgment. The judge uses the existing urllib Gemini client, temperature zero, and a JSON response schema; it has no retry loop. Disable it with `llm.enabled: false` or run `python pick.py --no-llm` for deterministic offline output.
+today.json schema **2** contains six goal/diet variants. A ready variant has plates (up to three), plus relaxed and note. Each plate has title, reason, picked_by, items, total, and price-estimate metadata. Each item includes code-derived diet and standing. Only the first plate has a reason.
 
-A valid official menu without today's block writes `closed`. Tagging needs no key on closed days or when every dish is cached; the optional judge falls back to rules without a key. For an initial setup without a key, `python pick.py --allow-missing-tags` writes an honest unavailable state; this option is never used by the daily workflow. The UI also handles fetch failures and refuses to present an old menu as today's after a missed run, on weekends, or on holidays. Goal and Vegan choices persist in guarded `localStorage`; blocked storage does not break the app.
+Closed, unavailable, request-error and stale-menu states remain explicit. No partial menu is silently optimized; --allow-missing-tags is only for an honest first-run unavailable state.
 
-## GitHub Pages automation
+## GitHub Pages
 
-1. Push these files to a GitHub repository on its default branch.
-2. In **Settings → Secrets and variables → Actions**, add **`GEMINI_API_KEY`** as a repository secret.
-3. In **Settings → Pages → Build and deployment**, select **GitHub Actions**.
-4. Allow GitHub Actions to write repository contents. If branch protection forbids the bot's data commits, allow that workflow or adapt the data commit step to your policy.
-5. Run **Actions → Daily menu and GitHub Pages → Run workflow** for the first deployment.
+Set repository secret GEMINI_API_KEY and select **GitHub Actions** under Settings → Pages. The daily workflow runs weekdays at **07:30 UTC**, in this order:
 
-`.github/workflows/daily.yml` runs on weekdays at **07:30 UTC** (08:30 Munich in winter, 09:30 in summer). It runs tests, scrape → tag → pick, commits `data/`, uploads only `index.html` and `data/today.json`, and deploys with the official GitHub Pages actions. `GEMINI_API_KEY` is passed to both tag and pick. A tagging failure prevents deployment; an optional judge failure still deploys the rule-based choices. A final persistence step retains successful cache additions after a later failure, preventing repeat paid calls on the next run. Runs are serialized. GitHub schedules can be delayed; manual dispatch is also available.
+~~~text
+pytest → scrape → tag → pair → pick → commit data → deploy
+~~~
 
-`.github/workflows/test.yml` runs the offline suite for code pushes and pull requests. Tests never need a key. No GitHub remote, repository secret, or Pages setting is created by the local scripts.
+Pairing and judging are optional and never fail deployment. Mandatory tagging failures stop deployment, while the final persistence step saves successful tags and attempt records. Runs share a concurrency lock with the manual **Publish current site** workflow, which publishes committed data without model calls.
 
-**Publish the interface independently:** run **Actions → Publish current site → Run workflow**. This deploys the committed `index.html` and `data/today.json` without calling Gemini. It is useful for the first preview or frontend updates while the model service is unavailable. Pending estimates remain explicitly unavailable in the UI; this action does not manufacture plate data. The daily workflow still requires successful generation before deploying new recommendations. Both publishing paths share a concurrency lock.
+## Offline tests and golden replay
 
-## Tests and fixture replay
-
-```sh
+~~~sh
 python -m pytest -q
+python pick.py --no-llm \
+  --menu tests/fixtures/menu-2026-11-02.json \
+  --cache tests/fixtures/dish-cache-2026-11-02.json \
+  --pairing-cache tests/fixtures/pairing-2026-11-02.json \
+  --output /tmp/mensa-golden.json
+~~~
 
-# Reproduce the real menu from Monday, 2 November 2026, offline:
-python scrape.py --date 2026-11-02 \
-  --html tests/fixtures/arcisstr.html \
-  --api-json tests/fixtures/eat-api-2026-45.json
-python tag.py    # uses Gemini only for names missing from the cache
-python pick.py
+The original saved HTML has 12 dishes; the later official menu snapshot includes Fleischpflanzerl, bringing it to 13. The dated golden fixture adds the two configured counter sides. Its side kcal/protein values and pairing knowledge are **user-supplied test mocks**, not production model results; unused side carb/fat fields are test placeholders. Other dish estimates are a snapshot of the existing cache. The raw HTML fixture remains unmodified.
 
-# Fully offline picker (no judge request):
-python pick.py --no-llm
-
-# Refresh the official fixture deliberately; adjust parser assertions if needed:
-python scrape.py --save-html tests/fixtures/arcisstr.html
-```
-
-Fixtures are unmodified responses fetched from the official URL and [eat-api week 45](https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/45.json) on **2026-11-02**. That day's official menu has **12 dishes**; eat-api has **6**. Tests check the real parser, official superset, closed days, deterministic diet markers, source failure behavior, ISO week-year boundaries, price units, all plate constraints and goal ordering, piece weights, station scoop overrides, cache reuse, Gemini request shape, JSON validation, and retry behavior. Synthetic estimates in tests are separate from the production cache.
-
-The offline suite covers real fixture parsing, ranking and lunch minimums, secondary scoops, vegan relaxation, all judge fallbacks, strict candidate selection, daily judge caching, and tagger 503/timeout retry limits. Every model call in tests is mocked; test configuration disables the judge unless a test explicitly injects a mock. Browser checks cover all six selections, persistence, blocked storage, closed/stale/error states, and responsive layouts. Nutrition remains estimated even when the judge selects a plate.
-
-Gemini request/schema implementation follows Google's [model documentation](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash) and [structured output reference](https://ai.google.dev/gemini-api/docs/generate-content/structured-output). The model can be changed through `gemini_model` in `config.yaml`.
+Tests cover real parsing, authority/closed states, prices, pairing schema/cache/fallbacks, standing-side guarantees, plate rules, distinct-lunch pools, golden rankings, judge validation and per-variant fallback. Browser checks cover six variants, alternatives, extras, safe text rendering, share, responsive layout, storage and stale/error states.

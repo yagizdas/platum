@@ -30,6 +30,10 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python tag.py
+      - name: Cache lunch pairing knowledge
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python pair.py
       - name: Pick plates and judge lunch pairings
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
