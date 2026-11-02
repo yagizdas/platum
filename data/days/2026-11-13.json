@@ -1,0 +1,647 @@
+{
+  "date": "2026-11-13",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "fetched_at": "2026-11-02T18:28:49.087600+00:00",
+  "warnings": [],
+  "schema_version": 2,
+  "menu_count": 8,
+  "goals": {
+    "bulk_min_protein_g": 30,
+    "bulk_protein_weight": 4,
+    "cut_min_protein_g": 25,
+    "cut_min_kcal": 450,
+    "budget_min_kcal": 550,
+    "budget_min_protein_g": 15
+  },
+  "max_plate_g": 650,
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pollock and Cauliflower Casserole",
+          "reason": "Hearty combination offering high protein and satisfying substance for bulking",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+              "name_en": "Breaded pollock (1 piece) with remoulade sauce",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 330,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "9"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 440.0,
+              "protein_g": 23.0
+            },
+            {
+              "name": "Blumenkohlauflauf mit Currydip",
+              "name_en": "Cauliflower casserole with curry dip",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1",
+                "9"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 15.6
+            }
+          ],
+          "total": {
+            "price_cents": 600,
+            "price_eur": 6.0,
+            "weight_g": 500,
+            "kcal": 785.0,
+            "protein_g": 38.6,
+            "carbs_g": 51.4,
+            "fat_g": 46.4
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pollock with Cauliflower Casserole",
+          "reason": "Delivers the highest protein content among all options with low calorie density",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+              "name_en": "Breaded pollock (1 piece) with remoulade sauce",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 330,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "9"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 440.0,
+              "protein_g": 23.0
+            },
+            {
+              "name": "Blumenkohlauflauf mit Currydip",
+              "name_en": "Cauliflower casserole with curry dip",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1",
+                "9"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 7.8
+            }
+          ],
+          "total": {
+            "price_cents": 465,
+            "price_eur": 4.65,
+            "weight_g": 350,
+            "kcal": 612.5,
+            "protein_g": 30.8,
+            "carbs_g": 39.7,
+            "fat_g": 36.2
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Breaded Pollock with Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+              "name_en": "Breaded pollock (1 piece) with remoulade sauce",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 330,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "9"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 440.0,
+              "protein_g": 23.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 465,
+            "price_eur": 4.65,
+            "weight_g": 350,
+            "kcal": 635.0,
+            "protein_g": 27.05,
+            "carbs_g": 70.0,
+            "fat_g": 26.45
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pollock with Potato Salad",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+              "name_en": "Breaded pollock (1 piece) with remoulade sauce",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 330,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "9"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 440.0,
+              "protein_g": 23.0
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 465,
+            "price_eur": 4.65,
+            "weight_g": 350,
+            "kcal": 612.5,
+            "protein_g": 25.7,
+            "carbs_g": 49.75,
+            "fat_g": 33.8
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pasta with Gorgonzola and Pear",
+          "reason": "The most affordable and filling option on the menu today",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Pasta mit Gorgonzola-Sauce mit Birne",
+              "name_en": "Pasta with gorgonzola sauce and pear",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "15"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "3 scoops",
+              "price_source": "config",
+              "kcal": 787.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 787.5,
+            "protein_g": 24.75,
+            "carbs_g": 94.5,
+            "fat_g": 33.75
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pollock with Cauliflower Casserole",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+              "name_en": "Breaded pollock (1 piece) with remoulade sauce",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 330,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "9"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 440.0,
+              "protein_g": 23.0
+            },
+            {
+              "name": "Blumenkohlauflauf mit Currydip",
+              "name_en": "Cauliflower casserole with curry dip",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1",
+                "9"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 7.8
+            }
+          ],
+          "total": {
+            "price_cents": 465,
+            "price_eur": 4.65,
+            "weight_g": 350,
+            "kcal": 612.5,
+            "protein_g": 30.8,
+            "carbs_g": 39.7,
+            "fat_g": 36.2
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Breaded Pollock with Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+              "name_en": "Breaded pollock (1 piece) with remoulade sauce",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 330,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "9"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 440.0,
+              "protein_g": 23.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 465,
+            "price_eur": 4.65,
+            "weight_g": 350,
+            "kcal": 635.0,
+            "protein_g": 27.05,
+            "carbs_g": 70.0,
+            "fat_g": 26.45
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": true,
+      "note": "No vegan lunch reaches 30g protein today; the protein target is relaxed.",
+      "plates": [
+        {
+          "title": "Hearty Farmer Stew",
+          "reason": "Wholesome and budget-friendly vegan option for building mass",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Bauerneintopf",
+              "name_en": "Farmer's stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "config",
+              "kcal": 382.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 382.5,
+            "protein_g": 20.25,
+            "carbs_g": 36.0,
+            "fat_g": 17.1
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "unavailable",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": true,
+      "note": "No vegan lunch reaches 25g protein today; the protein target is relaxed.",
+      "plates": [],
+      "message": "No lunch meets this goal's remaining requirements today."
+    },
+    "budget_vegan": {
+      "state": "unavailable",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": true,
+      "note": "No vegan lunch reaches 15g protein today; the protein target is relaxed.",
+      "plates": [],
+      "message": "No lunch meets this goal's remaining requirements today."
+    }
+  },
+  "extras": {
+    "all": [
+      {
+        "name": "Apfelstrudel mit Vanillesauce",
+        "name_en": "Apple strudel with vanilla sauce",
+        "station": "Süßspeise",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "serving": "2 scoops",
+        "kcal": 495.0,
+        "protein_g": 7.5,
+        "price_source": "config"
+      },
+      {
+        "name": "Vanillecreme",
+        "name_en": "Vanilla cream dessert",
+        "station": "Dessert (Glas)",
+        "weight_g": 135.0,
+        "price_cents": 122,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "serving": "1 piece",
+        "kcal": 182.25,
+        "protein_g": 4.05,
+        "price_source": "config"
+      }
+    ],
+    "vegan": []
+  },
+  "generated_on": "2026-11-02"
+}

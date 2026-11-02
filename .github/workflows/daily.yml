@@ -25,19 +25,19 @@ jobs:
           cache: pip
       - run: python -m pip install -r requirements-dev.txt
       - run: python -m pytest -q
-      - run: python scrape.py
+      - run: python scrape.py --week
       - name: Tag new dishes with Gemini 3.8 Flash
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python tag.py
+        run: python tag.py --week
       - name: Cache lunch pairing knowledge
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python pair.py
+        run: python pair.py --week
       - name: Pick plates and judge lunch pairings
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python pick.py
+        run: python pick.py --week
       - name: Persist data and successful tags (also after a later failure)
         if: always()
         run: |
@@ -54,6 +54,8 @@ jobs:
           mkdir -p dist/data
           cp index.html dist/index.html
           cp data/today.json dist/data/today.json
+          cp data/week.json dist/data/week.json
+          cp -R data/days dist/data/days
           cp manifest.webmanifest dist/manifest.webmanifest
           cp -R icons dist/icons
           touch dist/.nojekyll

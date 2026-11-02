@@ -8,7 +8,7 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from common import ROOT, fetch, load_config, normalize, today, write_json
+from common import ROOT, fetch, load_config, normalize, today, week_dates, write_json
 
 
 class MenuParseError(ValueError):
@@ -197,9 +197,30 @@ def scrape(day, config, html=None, api_payload=None, fetcher=fetch):
             "fetched_at": datetime.now(timezone.utc).isoformat(), "warnings": warnings, "dishes": dishes}
 
 
+def scrape_week(day, config, html=None, api_payloads=None, fetcher=fetch, weeks=2):
+    """Reuse each source response across dates; retain all normal scrape failure rules."""
+    responses = {}
+    def cached_fetch(url):
+        if url not in responses:
+            try:
+                responses[url] = fetcher(url)
+            except OSError as exc:
+                responses[url] = exc
+        if isinstance(responses[url], Exception):
+            raise responses[url]
+        return responses[url]
+    menus = {}
+    for target in week_dates(day, weeks):
+        iso = target.isocalendar()
+        payload = (api_payloads or {}).get((iso.year, iso.week))
+        menus[target.isoformat()] = scrape(target, config, html, payload, cached_fetch)
+    return menus
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--date", type=date.fromisoformat)
+    parser.add_argument("--week", action="store_true", help="Current and following weekdays for lunch/weekend planning")
     parser.add_argument("--html", type=Path, help="Read saved official HTML (offline/replay)")
     parser.add_argument("--api-json", type=Path, help="Read saved eat-api JSON")
     parser.add_argument("--save-html", type=Path, help="Save freshly fetched HTML as a fixture")
@@ -213,7 +234,15 @@ def main():
         args.save_html.parent.mkdir(parents=True, exist_ok=True)
         args.save_html.write_text(html)
     payload = json.loads(args.api_json.read_text()) if args.api_json else None
-    result = scrape(args.date or today(config), config, html, payload)
+    target = args.date or today(config)
+    if args.week:
+        iso = target.isocalendar()
+        menus = scrape_week(target, config, html, {(iso.year, iso.week): payload} if payload is not None else None)
+        for day, menu in menus.items():
+            write_json(ROOT / "data/menus" / f"{day}.json", menu)
+        result = menus.get(target.isoformat()) or scrape(target, config, html, payload)
+    else:
+        result = scrape(target, config, html, payload)
     write_json(args.output, result)
     print(f"{result['date']}: {result['state']}, {len(result['dishes'])} dishes ({result['source']})")
     for warning in result["warnings"]:

@@ -1,0 +1,910 @@
+{
+  "date": "2026-11-10",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "fetched_at": "2026-11-02T18:28:49.007688+00:00",
+  "warnings": [],
+  "schema_version": 2,
+  "menu_count": 9,
+  "goals": {
+    "bulk_min_protein_g": 30,
+    "bulk_protein_weight": 4,
+    "cut_min_protein_g": 25,
+    "cut_min_kcal": 450,
+    "budget_min_kcal": 550,
+    "budget_min_protein_g": 15
+  },
+  "max_plate_g": 650,
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Chicken Breast with Broccoli Curry",
+          "reason": "Packed with high protein and hearty energy to fuel an intensive workout",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
+              "name_en": "Marinated chicken breast Caipirinha style (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 160.0,
+              "price_cents": 244,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 232.0,
+              "protein_g": 39.2
+            },
+            {
+              "name": "Broccolicurry mit roter Paprika in Kokosmilch",
+              "name_en": "Broccoli curry with red bell pepper in coconut milk",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 285.0,
+              "protein_g": 7.5
+            }
+          ],
+          "total": {
+            "price_cents": 514,
+            "price_eur": 5.14,
+            "weight_g": 460.0,
+            "kcal": 517.0,
+            "protein_g": 46.7,
+            "carbs_g": 20.4,
+            "fat_g": 26.6
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Chicken Breast with Mushroom Ragout",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
+              "name_en": "Marinated chicken breast Caipirinha style (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 160.0,
+              "price_cents": 244,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 232.0,
+              "protein_g": 39.2
+            },
+            {
+              "name": "Gekräutertes Pilzragout (Champignons, Egerlingen und Austernpilzen)",
+              "name_en": "Herbed mushroom ragout (button mushrooms, portobello and oyster mushrooms)",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 204.0,
+              "protein_g": 7.2
+            }
+          ],
+          "total": {
+            "price_cents": 514,
+            "price_eur": 5.14,
+            "weight_g": 460.0,
+            "kcal": 436.0,
+            "protein_g": 46.4,
+            "carbs_g": 17.1,
+            "fat_g": 19.1
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Chicken Breast with Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
+              "name_en": "Marinated chicken breast Caipirinha style (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 160.0,
+              "price_cents": 244,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 232.0,
+              "protein_g": 39.2
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 379,
+            "price_eur": 3.79,
+            "weight_g": 310.0,
+            "kcal": 427.0,
+            "protein_g": 43.25,
+            "carbs_g": 46.8,
+            "fat_g": 6.05
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Chicken Breast with Broccoli Curry",
+          "reason": "Exceptional protein content paired with nutritious vegetables for leaning down",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
+              "name_en": "Marinated chicken breast Caipirinha style (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 160.0,
+              "price_cents": 244,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 232.0,
+              "protein_g": 39.2
+            },
+            {
+              "name": "Broccolicurry mit roter Paprika in Kokosmilch",
+              "name_en": "Broccoli curry with red bell pepper in coconut milk",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 285.0,
+              "protein_g": 7.5
+            }
+          ],
+          "total": {
+            "price_cents": 514,
+            "price_eur": 5.14,
+            "weight_g": 460.0,
+            "kcal": 517.0,
+            "protein_g": 46.7,
+            "carbs_g": 20.4,
+            "fat_g": 26.6
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta with Soy Bolognese",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Pasta mit Sojabolognese",
+              "name_en": "Pasta with soy Bolognese",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 29.25,
+            "carbs_g": 90.0,
+            "fat_g": 13.5
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Cabbage Roll with Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Krautwickerl (1 Stück) mit Speck-Zwiebel-Sauce",
+              "name_en": "Cabbage roll (1 piece) with bacon and onion sauce",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300.0,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 405.0,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450.0,
+            "kcal": 600.0,
+            "protein_g": 26.55,
+            "carbs_g": 55.5,
+            "fat_g": 28.95
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pasta with Soy Bolognese",
+          "reason": "The most wallet friendly high protein meal option",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Pasta mit Sojabolognese",
+              "name_en": "Pasta with soy Bolognese",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 29.25,
+            "carbs_g": 90.0,
+            "fat_g": 13.5
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Cabbage Roll with Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Krautwickerl (1 Stück) mit Speck-Zwiebel-Sauce",
+              "name_en": "Cabbage roll (1 piece) with bacon and onion sauce",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300.0,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 405.0,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450.0,
+            "kcal": 600.0,
+            "protein_g": 26.55,
+            "carbs_g": 55.5,
+            "fat_g": 28.95
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Cabbage Roll with Potato Salad",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Krautwickerl (1 Stück) mit Speck-Zwiebel-Sauce",
+              "name_en": "Cabbage roll (1 piece) with bacon and onion sauce",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300.0,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 405.0,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450.0,
+            "kcal": 577.5,
+            "protein_g": 25.2,
+            "carbs_g": 35.25,
+            "fat_g": 36.3
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": true,
+      "note": "No vegan lunch reaches 30g protein today; the protein target is relaxed.",
+      "plates": [
+        {
+          "title": "Pasta with Soy Bolognese",
+          "reason": "Substantial calories and the strongest vegan protein source on the menu",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Pasta mit Sojabolognese",
+              "name_en": "Pasta with soy Bolognese",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 29.25,
+            "carbs_g": 90.0,
+            "fat_g": 13.5
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Broccoli Curry with Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Broccolicurry mit roter Paprika in Kokosmilch",
+              "name_en": "Broccoli curry with red bell pepper in coconut milk",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 285.0,
+              "protein_g": 7.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 480.0,
+            "protein_g": 11.55,
+            "carbs_g": 57.6,
+            "fat_g": 21.45
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Mushroom Ragout with Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Gekräutertes Pilzragout (Champignons, Egerlingen und Austernpilzen)",
+              "name_en": "Herbed mushroom ragout (button mushrooms, portobello and oyster mushrooms)",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 204.0,
+              "protein_g": 7.2
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 399.0,
+            "protein_g": 11.25,
+            "carbs_g": 54.3,
+            "fat_g": 13.95
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pasta with Soy Bolognese",
+          "reason": "Delivers solid plant protein while keeping ingredients balanced",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Pasta mit Sojabolognese",
+              "name_en": "Pasta with soy Bolognese",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 29.25,
+            "carbs_g": 90.0,
+            "fat_g": 13.5
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pasta with Soy Bolognese",
+          "reason": "Delicious and filling plant based pasta at great value",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Pasta mit Sojabolognese",
+              "name_en": "Pasta with soy Bolognese",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 29.25,
+            "carbs_g": 90.0,
+            "fat_g": 13.5
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "extras": {
+    "all": [
+      {
+        "name": "Topfencreme mit Zwetschgenröster",
+        "name_en": "Quark cream with stewed plums",
+        "station": "Dessert (Glas)",
+        "weight_g": 140,
+        "price_cents": 126,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "serving": "1 piece",
+        "kcal": 203.0,
+        "protein_g": 9.1,
+        "price_source": "eat-api"
+      }
+    ],
+    "vegan": []
+  },
+  "generated_on": "2026-11-02"
+}

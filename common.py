@@ -2,7 +2,7 @@
 import json
 import re
 import unicodedata
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
@@ -24,6 +24,11 @@ def load_config(path=None):
 
 def today(config):
     return datetime.now(ZoneInfo(config["timezone"])).date()
+
+
+def week_dates(day, weeks=2):
+    monday = day - timedelta(days=day.weekday())
+    return [monday + timedelta(days=n) for n in range(weeks * 7) if n % 7 < 5]
 
 
 def read_json(path, default=None):

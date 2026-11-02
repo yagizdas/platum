@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/45.json",
+  "fetched_at": "2026-11-02T18:28:48.772111+00:00",
+  "warnings": [],
+  "dishes": [
+    {
+      "name": "Cannelloni mit Ricotta-Spinat-Füllung und Tomatensauce",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Pizza mit Spinat und Ricotta",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Truthahnschnitzel (1 Stück) mit Paprikasauce",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Veganer Gulaschtopf mit Kartoffeln, Wurzelgemüse und Schwarzbier",
+      "station": "Wok",
+      "station_raw": "Wok",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Sl",
+        "So"
+      ],
+      "additives": [
+        "99"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ALCOHOL",
+        "BARLEY",
+        "CELERY",
+        "CEREAL",
+        "GLUTEN",
+        "SOY",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Bulgur mit roten Linsen, Bohnen und Tomaten",
+      "station": "Studitopf",
+      "station_raw": "Studitopf",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Ezo Gelin (Türkische Linsensuppe mit Chili- Minzöl)",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Veganes Shakshuka mit Couscous",
+      "station": "Vegan",
+      "station_raw": "Vegan",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GARLIC",
+        "GLUTEN",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
+      "station": "Vegan",
+      "station_raw": "Vegan",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "SOY",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Bayerisch Creme mit Waldbeeren",
+      "station": "Dessert (Glas)",
+      "station_raw": "Dessert (Glas)",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [
+        "14"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "GELATIN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Reis",
+      "name_en": "Rice",
+      "station": "Beilagen",
+      "station_raw": "Beilagen",
+      "standing": true,
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [],
+      "dietary_source": "config",
+      "source": "config",
+      "api_labels": [],
+      "price_source": "config",
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Kartoffelsalat",
+      "name_en": "Potato salad",
+      "station": "Beilagen",
+      "station_raw": "Beilagen",
+      "standing": true,
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "markers": [],
+      "allergens": [],
+      "additives": [],
+      "dietary_source": "config",
+      "source": "config",
+      "api_labels": [],
+      "price_source": "config",
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    }
+  ]
+}

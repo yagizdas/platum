@@ -92,6 +92,12 @@ def test_invalid_single_pairs_and_pizza(config, fixture_menu, pairing):
     assert not valid_plate([f, r], config, bad)
     assert not valid_plate([f, {**r, "count": 4, "weight_g": 600}], config, pairing)
     assert not valid_plate([f, {**r, "is_per_piece": True}], config, pairing)
+    potato = values["Kartoffelsalat"]
+    k = portion_options(potato, potato, config)[0]
+    bad["pairs"][pair_key(r, k)] = {"score": 3}
+    bad["pairs"][pair_key(f, p)] = {"score": 3}
+    assert not valid_plate([r, k], config, bad) # model scores cannot create a main-less plate
+    assert not valid_plate([f, p], config, bad) # model scores cannot override the pizza ban
 
 
 def test_paired_portions_ignore_minimum_but_not_max(config, make_dish):
@@ -145,6 +151,13 @@ def test_standing_overrides_model_role_and_piece(config, make_dish):
     assert item["role"] == "side" and item["is_per_piece"] is False
     assert not stands_alone(item, {"dishes": {normalize(d["name"]): {"stands_alone": True}}})
     assert not list(candidates([d], {normalize(d["name"]): t}, config))
+
+
+def test_liquid_main_is_an_extra_not_a_plate(config, make_dish):
+    d, t = make_dish("Substantial soup", role="main", texture="liquid")
+    result = build_today(menu([d]), {normalize(d["name"]): t}, config)
+    assert len(result["extras"]["all"]) == 1
+    assert not any(v["plates"] for v in result["variants"].values())
 
 
 def test_diet_is_code_derived_and_conservative(config, make_dish):

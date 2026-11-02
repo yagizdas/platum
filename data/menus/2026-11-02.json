@@ -1,0 +1,441 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/45.json",
+  "fetched_at": "2026-11-02T18:28:48.696871+00:00",
+  "warnings": [],
+  "dishes": [
+    {
+      "name": "Vegane Maultaschen mit Zwiebelmarmelade",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "PINSA Funghi mit frischen Champignons",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Käsekrainer (1 Stück)",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [
+        "R",
+        "S"
+      ],
+      "allergens": [
+        "Mi",
+        "Sf"
+      ],
+      "additives": [
+        "2",
+        "3",
+        "8"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "BEEF",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "MUSTARD",
+        "PHOSPHATES",
+        "PORK",
+        "PRESERVATIVES"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Fleischpflanzerl (Frikadelle)",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "R",
+        "S"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Sf"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Gemüsecurry aus Blumenkohl und Broccoli",
+      "station": "Wok",
+      "station_raw": "Wok",
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "GARLIC",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Graupen-Gemüse-Eintopf",
+      "station": "Studitopf",
+      "station_raw": "Studitopf",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "BARLEY",
+        "CELERY",
+        "CEREAL",
+        "GLUTEN",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Cremige Kürbissuppe",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Gefüllte Paprikaschote",
+      "station": "Vegetarisch/fleischlos",
+      "station_raw": "Vegetarisch/fleischlos",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlD",
+        "Mi"
+      ],
+      "additives": [
+        "2",
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GARLIC",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "PRESERVATIVES",
+        "SPELT",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Seelachsfilet (1Stück)",
+      "station": "Fisch",
+      "station_raw": "Fisch",
+      "markers": [],
+      "allergens": [
+        "Fi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.5,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Asia-Reisbällchen auf Teriyakigemüse",
+      "station": "Vegan",
+      "station_raw": "Vegan",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Se",
+        "So",
+        "Sw"
+      ],
+      "additives": [
+        "2",
+        "Kn",
+        "5"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GARLIC",
+        "GLUTEN",
+        "PRESERVATIVES",
+        "SESAME",
+        "SHELL_FRUITS",
+        "SOY",
+        "SULFITES",
+        "SULPHURS",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Vanillecreme mit Erdbeersauce",
+      "station": "Dessert (Glas)",
+      "station_raw": "Dessert (Glas)",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Topfencreme mit Himbeeren",
+      "station": "Dessert (Glas)",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "En",
+        "Gl",
+        "GlG",
+        "GlH",
+        "GlW",
+        "Mi",
+        "Sc",
+        "ScC",
+        "ScH",
+        "ScM",
+        "ScW",
+        "Se",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Cappuccinocreme",
+      "station": "Dessert (Glas)",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sw"
+      ],
+      "additives": [
+        "5",
+        "14"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Reis",
+      "name_en": "Rice",
+      "station": "Beilagen",
+      "station_raw": "Beilagen",
+      "standing": true,
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [],
+      "dietary_source": "config",
+      "source": "config",
+      "api_labels": [],
+      "price_source": "config",
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Kartoffelsalat",
+      "name_en": "Potato salad",
+      "station": "Beilagen",
+      "station_raw": "Beilagen",
+      "standing": true,
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "markers": [],
+      "allergens": [],
+      "additives": [],
+      "dietary_source": "config",
+      "source": "config",
+      "api_labels": [],
+      "price_source": "config",
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    }
+  ]
+}

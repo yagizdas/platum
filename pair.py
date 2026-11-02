@@ -2,9 +2,10 @@
 import argparse
 import itertools
 import sys
+from datetime import date
 from pathlib import Path
 
-from common import ROOT, normalize, read_json, write_json, load_config
+from common import ROOT, normalize, read_json, write_json, load_config, today, week_dates
 from tag import generate_json, validate_tag
 from judge import api_key_value
 
@@ -139,10 +140,18 @@ def build_pairing(menu, tags, config, cache_path, *, api_key=None, caller=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--menu", type=Path, default=ROOT / "data/menu.json")
+    parser.add_argument("--week", action="store_true")
+    parser.add_argument("--date", type=date.fromisoformat)
     parser.add_argument("--tags", type=Path, default=ROOT / "data/dish_cache.json")
     parser.add_argument("--cache", type=Path, default=ROOT / "data/pairing_cache.json")
     args = parser.parse_args()
-    build_pairing(read_json(args.menu), read_json(args.tags, {}), load_config(), args.cache)
+    config = load_config()
+    paths = [ROOT / "data/menus" / f"{day.isoformat()}.json" for day in week_dates(args.date or today(config))] if args.week else [args.menu]
+    tags = read_json(args.tags, {})
+    for path in paths:
+        menu = read_json(path)
+        build_pairing(menu, tags, config, args.cache)
+        print(f"{menu['date']}: pairing ready (cached or rules)", flush=True)
 
 
 if __name__ == "__main__":

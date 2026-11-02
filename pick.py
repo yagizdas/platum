@@ -3,10 +3,11 @@ import argparse
 import itertools
 import math
 import re
+from datetime import date
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
-from common import ROOT, load_config, normalize, read_json, write_json
+from common import ROOT, load_config, normalize, read_json, today, week_dates, write_json
 from judge import choose_variants
 from pair import food, load_pairing, pair_score, stands_alone
 
@@ -177,7 +178,7 @@ def extras(dishes, cache, config):
     all_extras = []
     for d in dishes:
         item = food(d, cache)
-        if item["role"] not in {"soup", "dessert"} or item["standing"]:
+        if (item["role"] not in {"soup", "dessert"} and item["texture"] != "liquid") or item["standing"]:
             continue
         options = portion_options(item, item, config)
         if options:
@@ -235,9 +236,23 @@ def build_today(menu, cache, config, allow_missing=False, *, pairing=None, no_ll
     return result
 
 
+def build_week(reference, menus, cache, config, **options):
+    days = {}
+    for name, menu in sorted(menus.items()):
+        days[name] = build_today(menu, cache, config, **options)
+        days[name]["generated_on"] = reference.isoformat()
+    names = sorted(days)
+    index = {"schema_version": SCHEMA_VERSION, "generated_on": reference.isoformat(),
+             "week_start": names[0], "valid_through": names[-1], "lunch_cutoff": "14:30",
+             "days": [{"date": name, "state": days[name]["state"], "file": f"data/days/{name}.json"} for name in names]}
+    return days, index
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--menu", type=Path, default=ROOT / "data/menu.json")
+    parser.add_argument("--week", action="store_true")
+    parser.add_argument("--date", type=date.fromisoformat)
     parser.add_argument("--cache", type=Path, default=ROOT / "data/dish_cache.json")
     parser.add_argument("--pairing-cache", type=Path, default=ROOT / "data/pairing_cache.json")
     parser.add_argument("--output", type=Path, default=ROOT / "data/today.json")
@@ -245,8 +260,19 @@ def main():
     parser.add_argument("--allow-missing-tags", action="store_true")
     parser.add_argument("--no-llm", action="store_true")
     args = parser.parse_args()
-    result = build_today(read_json(args.menu), read_json(args.cache, {}), load_config(args.config), args.allow_missing_tags,
-                         pairing=load_pairing(args.pairing_cache), no_llm=args.no_llm, judge_cache_path=ROOT / "data/judge_cache.json")
+    config = load_config(args.config)
+    reference = args.date or today(config)
+    tags = read_json(args.cache, {})
+    options = {"pairing": load_pairing(args.pairing_cache), "no_llm": args.no_llm, "judge_cache_path": ROOT / "data/judge_cache.json"}
+    if args.week:
+        menus = {day.isoformat(): read_json(ROOT / "data/menus" / f"{day.isoformat()}.json") for day in week_dates(reference)}
+        days, index = build_week(reference, menus, tags, config, **options)
+        for name, data in days.items():
+            write_json(ROOT / "data/days" / f"{name}.json", data)
+        write_json(ROOT / "data/week.json", index)
+        result = days.get(reference.isoformat()) or build_today(read_json(args.menu), tags, config, **options)
+    else:
+        result = build_today(read_json(args.menu), tags, config, args.allow_missing_tags, **options)
     write_json(args.output, result)
     for key, variant in result["variants"].items():
         for p in variant["plates"]:

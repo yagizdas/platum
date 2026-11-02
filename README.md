@@ -19,6 +19,8 @@ python -m http.server 8000 --bind 127.0.0.1
 
 Open <http://127.0.0.1:8000>. The app works under a GitHub Pages repository subpath. No backend, accounts, service worker, or browser API key.
 
+For the full week view, add --week to scrape.py, tag.py, pair.py and pick.py. Each command also accepts --date YYYY-MM-DD for a deterministic reference date. Scraping fetches the official page once and caches the API response per ISO week. It writes per-date inputs under data/menus/. Picking writes data/days/YYYY-MM-DD.json, data/week.json and the backward-compatible today.json entry point. The index includes the current and following workweek, so Friday afternoons and weekends can default to the next open Monday. Closed dates have no standing sides or model calls.
+
 ## Pipeline and caches
 
 ~~~text
@@ -106,6 +108,8 @@ Use the “Other options” buttons, left/right arrow keys, or a horizontal swip
 
 “Add to tray” chips add optional soup or dessert to the displayed totals immediately. An “incl. extras” label identifies the larger tray. Share plate uses native sharing when available, otherwise copies the chosen lunch and selected extras with their computed totals and the site URL. Counter staples are labeled “Beilagen counter · usually there.”
 
+The Monday–Friday strip defaults to today's open menu before 14:30 Europe/Berlin, otherwise the next open day, including holidays and weekends. Selecting a day resets extras and the alternative index. Day JSON must match the requested date; an expired week index or mismatched response cannot display a different date's meal. In-flight requests are sequenced to prevent a slow older selection replacing the current one.
+
 The web manifest and logo-derived icons support installation. There is deliberately no service worker or offline menu cache, so installation does not create an offline copy of a stale menu.
 
 ## GitHub Pages
@@ -116,7 +120,7 @@ Set repository secret GEMINI_API_KEY and select **GitHub Actions** under Setting
 pytest → scrape → tag → pair → pick → commit data → deploy
 ~~~
 
-Pairing and judging are optional and never fail deployment. Mandatory tagging failures stop deployment, while the final persistence step saves successful tags and attempt records. Runs share a concurrency lock with the manual **Publish current site** workflow, which publishes committed data without model calls.
+The daily commands use --week, and both publishing workflows upload data/days/ and week.json along with today.json and the install assets. Pairing and judging are optional and never fail deployment. Mandatory tagging failures stop deployment, while the final persistence step saves successful tags and attempt records. Runs share a concurrency lock with the manual **Publish current site** workflow, which publishes committed data without model calls.
 
 ## Offline tests and golden replay
 

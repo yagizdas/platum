@@ -5,6 +5,7 @@ import math
 import os
 import sys
 import time
+from datetime import date
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote
@@ -12,7 +13,7 @@ from urllib.request import Request, urlopen
 
 from dotenv import dotenv_values
 
-from common import ROOT, load_config, normalize, read_json, write_json
+from common import ROOT, load_config, normalize, read_json, today, week_dates, write_json
 
 MAX_GEMINI_ATTEMPTS = 10
 SERVICE_RETRY_DELAY_SECONDS = 30
@@ -159,15 +160,20 @@ def tag_menu(menu, cache_path, model, api_key=None, caller=call_gemini):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--menu", type=Path, default=ROOT / "data/menu.json")
+    parser.add_argument("--week", action="store_true")
+    parser.add_argument("--date", type=date.fromisoformat)
     parser.add_argument("--cache", type=Path, default=ROOT / "data/dish_cache.json")
     parser.add_argument("--config", type=Path)
     args = parser.parse_args()
-    menu = read_json(args.menu)
-    if menu is None:
-        raise RuntimeError("Run scrape.py first")
+    config = load_config(args.config)
+    paths = [ROOT / "data/menus" / f"{day.isoformat()}.json" for day in week_dates(args.date or today(config))] if args.week else [args.menu]
     key = os.getenv("GEMINI_API_KEY") or dotenv_values(ROOT / ".env").get("GEMINI_API_KEY")
-    cache = tag_menu(menu, args.cache, load_config(args.config)["gemini_model"], key)
-    print(f"Ready: {len(menu['dishes'])} dishes; {len(cache)} cached names")
+    for path in paths:
+        menu = read_json(path)
+        if menu is None:
+            raise RuntimeError("Run scrape.py --week first")
+        cache = tag_menu(menu, args.cache, config["gemini_model"], key)
+        print(f"{menu['date']}: ready; {len(cache)} cached names", flush=True)
 
 
 if __name__ == "__main__":

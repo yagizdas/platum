@@ -29,7 +29,7 @@
     .location { text-align:right; color:var(--muted); font-size:12px; }
     .location strong { display:block; color:var(--ink); font-weight:500; font-size:14px; }
     main { padding:36px 0 24px; }
-    .heading { display:flex; gap:12px; align-items:baseline; justify-content:space-between; }
+    .heading { display:flex; gap:12px; align-items:baseline; justify-content:space-between; margin-bottom:20px; }
     h1 { font-size:24px; line-height:1.25; letter-spacing:-.02em; font-weight:500; margin:0; }
     .date { font-size:12px; color:var(--muted); }
     .intro { margin:8px 0 24px; color:var(--muted); font-size:14px; }
@@ -72,6 +72,10 @@
     footer p { margin:0; }
     footer a { color:var(--ink); }
     .fine { display:block; margin-top:6px; }
+    .day-strip { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:4px; margin:0 0 16px; }
+    .day-button { min-height:48px; padding:4px; color:var(--muted); border:0; border-bottom:2px solid transparent; background:transparent; font-size:14px; }
+    .day-button[aria-pressed="true"] { color:var(--ink); border-bottom-color:var(--ink); }
+    .day-date { display:block; font-size:12px; }
     .plate-actions { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-top:20px; }
     .alternatives { display:flex; flex-wrap:wrap; gap:8px; align-items:center; color:var(--muted); font-size:12px; }
     .arrow { min-width:44px; min-height:44px; background:white; border:1px solid #d4d4d4; border-radius:6px; color:var(--ink); font-size:18px; }
@@ -115,8 +119,8 @@
       <div class="location"><strong>Arcisstraße</strong>For TUM students</div>
     </header>
     <main>
-      <div class="heading"><h1>Today’s lunch, sorted.</h1><time id="date" class="date"></time></div>
-      <p class="intro">One plate for your goal. Measured in scoops.</p>
+      <div class="heading"><h1>Your lunch, sorted.</h1><time id="date" class="date"></time></div>
+      <div id="days" class="day-strip" role="group" aria-label="Menu day" hidden></div>
       <div class="controls">
         <div class="goals" role="group" aria-label="Lunch goal">
           <button type="button" data-goal="bulk" aria-pressed="true">Bulk</button>
@@ -168,6 +172,7 @@
     const SITE_URL = 'https://yagizdas.github.io/platum/';
     let selection = {goal:'bulk',vegan:false};
     let data, stale=false, plateIndex=0, selectedExtras=new Set(), shareTimer;
+    let weekIndex, selectedDate, loadToken=0;
     try {
       const saved=JSON.parse(localStorage.getItem('mensa-plate') || 'null');
       if(saved && goals.includes(saved.goal) && typeof saved.vegan==='boolean') selection=saved;
@@ -201,12 +206,13 @@
       }
       return total;
     }
-    function renderTotals() {
+    function renderTotals(announce=false) {
       const total=totals();
       $('price').textContent=money(total.price_cents);$('kcal').textContent='~'+rounded(total.kcal);$('protein').textContent='~'+rounded(total.protein_g);
       $('includes-extras').hidden=selectedExtras.size===0;
       const estimated=currentPlate().has_estimated_prices || activeExtras().some(e=>e.price_source==='config');
       $('details').textContent=rounded(total.weight_g)+'g total · Scoops are approximate; weighed at checkout.'+(estimated?' Some prices use category estimates.':'');
+      if(announce) $('announcement').textContent='Tray total '+money(total.price_cents)+', approximately '+rounded(total.kcal)+' calories and '+rounded(total.protein_g)+' grams protein.';
     }
     function renderExtras() {
       $('extras').replaceChildren();$('extras-wrap').hidden=availableExtras().length===0;
@@ -216,13 +222,13 @@
         button.setAttribute('aria-pressed',String(selectedExtras.has(index)));
         button.addEventListener('click',()=>{
           if(selectedExtras.has(index)) selectedExtras.delete(index);else selectedExtras.add(index);
-          button.setAttribute('aria-pressed',String(selectedExtras.has(index)));renderTotals();
+          button.setAttribute('aria-pressed',String(selectedExtras.has(index)));renderTotals(true);
         });
         $('extras').append(button);
       });
     }
     function render() {
-      if(stale) return empty('Today’s plates aren’t ready.','The last update was '+data.date+'. Check the official menu for today’s dishes.');
+      if(stale) return empty(selectedDate && selectedDate!==berlinDate()?'That day’s plates aren’t ready.':'Today’s plates aren’t ready.','The published menu does not match '+(selectedDate || berlinDate())+'. Check the official menu for that day.');
       const v=variant();
       if(data.state==='closed') return empty('No menu today.',v.message);
       if(data.state==='unavailable') return empty('Plates are on the way.',data.reason || v.message);
@@ -292,16 +298,72 @@
     $('plate').addEventListener('touchstart',event=>{const p=event.touches[0];touch={x:p.clientX,y:p.clientY};},{passive:true});
     $('plate').addEventListener('touchend',event=>{if(!touch) return;const p=event.changedTouches[0],dx=p.clientX-touch.x,dy=p.clientY-touch.y;touch=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.2) cycle(dx<0?1:-1);},{passive:true});
     syncControls();
+    function mondayOf(text) {
+      const day=new Date(text+'T12:00:00Z');
+      day.setUTCDate(day.getUTCDate()-(day.getUTCDay()+6)%7);
+      return day.toISOString().slice(0,10);
+    }
+    function defaultMenuDay(index,now=new Date()) {
+      const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
+      const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Berlin',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(now);
+      const number=type=>Number(parts.find(p=>p.type===type).value);
+      const cutoff=(index.lunch_cutoff || '14:30').split(':').map(Number);
+      const late=number('hour')*60+number('minute')>=cutoff[0]*60+cutoff[1];
+      if(!late) {const current=index.days.find(row=>row.date===today && row.state==='open');if(current) return current;}
+      return index.days.find(row=>row.date>today && row.state==='open') || index.days.find(row=>row.date===today) || index.days.find(row=>row.date>today);
+    }
+    function dateLabel(day) {
+      $('date').dateTime=day;
+      $('date').textContent=new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'short',year:'numeric',timeZone:'Europe/Berlin'}).format(new Date(day+'T12:00:00Z'));
+    }
+    function renderDays() {
+      $('days').replaceChildren();$('days').hidden=!weekIndex;
+      if(!weekIndex) return;
+      for(const row of weekIndex.days.filter(row=>mondayOf(row.date)===mondayOf(selectedDate))) {
+        const button=document.createElement('button');button.type='button';button.className='day-button';
+        const date=new Date(row.date+'T12:00:00Z');
+        button.append(document.createTextNode(new Intl.DateTimeFormat('en-GB',{weekday:'short',timeZone:'Europe/Berlin'}).format(date)));
+        const label=document.createElement('span');label.className='day-date';
+        label.textContent=new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',timeZone:'Europe/Berlin'}).format(date);
+        button.append(label);button.setAttribute('aria-pressed',String(row.date===selectedDate));button.dataset.date=row.date;
+        button.setAttribute('aria-label',row.date+(row.state==='closed'?' · no menu':' menu'));
+        button.addEventListener('click',()=>selectDay(row));$('days').append(button);
+      }
+    }
+    async function selectDay(row) {
+      const token=++loadToken;selectedDate=row.date;plateIndex=0;selectedExtras.clear();data=undefined;stale=false;
+      renderDays();dateLabel(row.date);empty('Getting the menu…','');$('plate').setAttribute('aria-busy','true');
+      try {
+        const response=await fetch('./'+row.file,{cache:'no-store'});
+        if(!response.ok) throw new Error('Menu request failed');
+        const payload=validateDay(await response.json());
+        if(token!==loadToken) return;
+        data=payload;stale=data.date!==row.date;render();$('notice').textContent=(data.warnings || []).join(' ');
+      } catch(_) {if(token===loadToken){data=undefined;empty('A little trouble in the kitchen.','Please choose another day or check the official menu below.');}}
+      finally {if(token===loadToken) $('plate').setAttribute('aria-busy','false');}
+    }
+    async function loadToday() {
+      const response=await fetch('./data/today.json',{cache:'no-store'});
+      if(!response.ok) throw new Error('Menu request failed');
+      data=validateDay(await response.json());selectedDate=berlinDate();stale=data.date!==selectedDate;
+      dateLabel(data.date);render();$('notice').textContent=(data.warnings || []).join(' ');
+    }
     async function load() {
       try {
-        const response=await fetch('./data/today.json',{cache:'no-store'});
-        if(!response.ok) throw new Error('Menu request failed');
-        data=validateDay(await response.json());stale=data.date!==berlinDate();
-        $('date').dateTime=data.date;
-        $('date').textContent=new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'short',year:'numeric',timeZone:'Europe/Berlin'}).format(new Date(data.date+'T12:00:00Z'));
-        render();$('notice').textContent=(data.warnings || []).join(' ');
-      } catch(_) {data=undefined;empty('A little trouble in the kitchen.','Please reload in a moment, or check the official menu below.');}
-      finally {$('plate').setAttribute('aria-busy','false');}
+        const response=await fetch('./data/week.json',{cache:'no-store'});
+        if(!response.ok) throw new Error('No week index');
+        const index=await response.json(),today=berlinDate();
+        if(index.schema_version!==2 || !Array.isArray(index.days) || !index.days.length ||
+           !/^\d{4}-\d{2}-\d{2}$/.test(index.week_start) || !/^\d{4}-\d{2}-\d{2}$/.test(index.valid_through) ||
+           today<index.week_start || today>index.valid_through ||
+           !index.days.every(row=>row && /^\d{4}-\d{2}-\d{2}$/.test(row.date) && ['open','closed','unavailable'].includes(row.state) && row.file==='data/days/'+row.date+'.json')) throw new Error('Stale week');
+        index.days.sort((a,b)=>a.date.localeCompare(b.date));weekIndex=index;
+        const day=defaultMenuDay(index);if(!day) throw new Error('No upcoming menu');
+        await selectDay(day);
+      } catch(_) {
+        weekIndex=undefined;$('days').hidden=true;
+        try {await loadToday();} catch(_) {data=undefined;empty('A little trouble in the kitchen.','Please reload in a moment, or check the official menu below.');}
+      } finally {if(!weekIndex) $('plate').setAttribute('aria-busy','false');}
     }
     load();
   </script>

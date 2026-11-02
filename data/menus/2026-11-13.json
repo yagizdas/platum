@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
+  "fetched_at": "2026-11-02T18:28:49.087600+00:00",
+  "warnings": [],
+  "dishes": [
+    {
+      "name": "Pasta mit Gorgonzola-Sauce mit Birne",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [
+        "15"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Bauerneintopf",
+      "station": "Studitopf",
+      "station_raw": "Studitopf",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.33,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Blumenkohlauflauf mit Currydip",
+      "station": "Vegetarisch/fleischlos",
+      "station_raw": "Vegetarisch/fleischlos",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "Sf",
+        "Sl"
+      ],
+      "additives": [
+        "1",
+        "9"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+      "station": "Fisch",
+      "station_raw": "Fisch",
+      "markers": [],
+      "allergens": [
+        "Ei",
+        "Fi",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sf"
+      ],
+      "additives": [
+        "9"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.5,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Apfelstrudel mit Vanillesauce",
+      "station": "Süßspeise",
+      "station_raw": "Süßspeise",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Vanillecreme",
+      "station": "Dessert (Glas)",
+      "station_raw": "Dessert (Glas)",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Reis",
+      "name_en": "Rice",
+      "station": "Beilagen",
+      "station_raw": "Beilagen",
+      "standing": true,
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [],
+      "dietary_source": "config",
+      "source": "config",
+      "api_labels": [],
+      "price_source": "config",
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Kartoffelsalat",
+      "name_en": "Potato salad",
+      "station": "Beilagen",
+      "station_raw": "Beilagen",
+      "standing": true,
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "markers": [],
+      "allergens": [],
+      "additives": [],
+      "dietary_source": "config",
+      "source": "config",
+      "api_labels": [],
+      "price_source": "config",
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    }
+  ]
+}

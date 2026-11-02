@@ -1,0 +1,1099 @@
+{
+  "date": "2026-11-11",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "fetched_at": "2026-11-02T18:28:49.035733+00:00",
+  "warnings": [],
+  "schema_version": 2,
+  "menu_count": 9,
+  "goals": {
+    "bulk_min_protein_g": 30,
+    "bulk_protein_weight": 4,
+    "cut_min_protein_g": 25,
+    "cut_min_kcal": 450,
+    "budget_min_kcal": 550,
+    "budget_min_protein_g": 15
+  },
+  "max_plate_g": 650,
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Duck Leg with Rice",
+          "reason": "Offers an immense amount of protein and calories to power serious muscle growth.",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Entenkeule (1 Stück) mit Bratenssauce",
+              "name_en": "Duck leg (1 piece) with gravy",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300.0,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 630.0,
+              "protein_g": 55.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450.0,
+            "kcal": 825.0,
+            "protein_g": 59.55,
+            "carbs_g": 49.5,
+            "fat_g": 42.45
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Duck Leg with Potato Salad",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Entenkeule (1 Stück) mit Bratenssauce",
+              "name_en": "Duck leg (1 piece) with gravy",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300.0,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 630.0,
+              "protein_g": 55.5
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450.0,
+            "kcal": 802.5,
+            "protein_g": 58.2,
+            "carbs_g": 29.25,
+            "fat_g": 49.8
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Meat Patty and Hearty Stew",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Fleischpflanzerl (1 Stück) mit Kümmelsauce",
+              "name_en": "Bavarian meat patty (1 piece) with caraway gravy",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Sf"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 25.0
+            },
+            {
+              "name": "Eintopf mit Reis, Bohnen und Gemüse",
+              "name_en": "Stew with rice, beans, and vegetables",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "config",
+              "kcal": 427.5,
+              "protein_g": 17.1
+            }
+          ],
+          "total": {
+            "price_cents": 429,
+            "price_eur": 4.29,
+            "weight_g": 650,
+            "kcal": 817.5,
+            "protein_g": 42.1,
+            "carbs_g": 81.1,
+            "fat_g": 34.5
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Duck Leg with Grilled Zucchini",
+          "reason": "Lean roasted meat paired with tender vegetables provides top-tier protein density.",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Entenkeule (1 Stück) mit Bratenssauce",
+              "name_en": "Duck leg (1 piece) with gravy",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300.0,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 630.0,
+              "protein_g": 55.5
+            },
+            {
+              "name": "Gegrillte Zucchini mit Tomaten-Paprika-Ragout",
+              "name_en": "Grilled zucchini with tomato and bell pepper ragout",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 87.0,
+              "protein_g": 2.4
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450.0,
+            "kcal": 717.0,
+            "protein_g": 57.9,
+            "carbs_g": 14.7,
+            "fat_g": 46.8
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Duck Leg with Potato Salad",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Entenkeule (1 Stück) mit Bratenssauce",
+              "name_en": "Duck leg (1 piece) with gravy",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300.0,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 630.0,
+              "protein_g": 55.5
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450.0,
+            "kcal": 802.5,
+            "protein_g": 58.2,
+            "carbs_g": 29.25,
+            "fat_g": 49.8
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Meat Patty with Grilled Zucchini",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Fleischpflanzerl (1 Stück) mit Kümmelsauce",
+              "name_en": "Bavarian meat patty (1 piece) with caraway gravy",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Sf"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 25.0
+            },
+            {
+              "name": "Gegrillte Zucchini mit Tomaten-Paprika-Ragout",
+              "name_en": "Grilled zucchini with tomato and bell pepper ragout",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 87.0,
+              "protein_g": 2.4
+            }
+          ],
+          "total": {
+            "price_cents": 415,
+            "price_eur": 4.15,
+            "weight_g": 350,
+            "kcal": 477.0,
+            "protein_g": 27.4,
+            "carbs_g": 20.8,
+            "fat_g": 31.2
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Meat Patty with Vegetable Stew",
+          "reason": "Inexpensive, hearty combo delivering solid protein and calories for very little cash.",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Fleischpflanzerl (1 Stück) mit Kümmelsauce",
+              "name_en": "Bavarian meat patty (1 piece) with caraway gravy",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Sf"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 25.0
+            },
+            {
+              "name": "Eintopf mit Reis, Bohnen und Gemüse",
+              "name_en": "Stew with rice, beans, and vegetables",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 285.0,
+              "protein_g": 11.4
+            }
+          ],
+          "total": {
+            "price_cents": 379,
+            "price_eur": 3.79,
+            "weight_g": 500,
+            "kcal": 675.0,
+            "protein_g": 36.4,
+            "carbs_g": 58.6,
+            "fat_g": 31.8
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Butter Chunks Curry with Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Makhani - Butter Chunks",
+              "name_en": "Makhani style butter chunks curry",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "1",
+                "3"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 435.0,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 630.0,
+            "protein_g": 26.55,
+            "carbs_g": 62.4,
+            "fat_g": 29.85
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Meat Patty with Steamed Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Fleischpflanzerl (1 Stück) mit Kümmelsauce",
+              "name_en": "Bavarian meat patty (1 piece) with caraway gravy",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Sf"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 25.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 415,
+            "price_eur": 4.15,
+            "weight_g": 350,
+            "kcal": 585.0,
+            "protein_g": 29.05,
+            "carbs_g": 55.6,
+            "fat_g": 26.85
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": true,
+      "note": "No vegan lunch reaches 30g protein today; the protein target is relaxed.",
+      "plates": [
+        {
+          "title": "Butter Chunks Curry with Rice",
+          "reason": "Heartiest vegan option packing the most plant protein and fuel for training.",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Makhani - Butter Chunks",
+              "name_en": "Makhani style butter chunks curry",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "1",
+                "3"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 435.0,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 630.0,
+            "protein_g": 26.55,
+            "carbs_g": 62.4,
+            "fat_g": 29.85
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Dim Sum Dumplings with Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Dim Sum: Asian Dumplings mit Asiagemüse",
+              "name_en": "Dim Sum: Asian dumplings with Asian vegetables",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se",
+                "So"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 435.0,
+              "protein_g": 15.6
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 630.0,
+            "protein_g": 19.65,
+            "carbs_g": 97.5,
+            "fat_g": 17.85
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Triple Bean and Rice Stew",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Eintopf mit Reis, Bohnen und Gemüse",
+              "name_en": "Stew with rice, beans, and vegetables",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "config",
+              "kcal": 427.5,
+              "protein_g": 17.1
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 17.1,
+            "carbs_g": 67.5,
+            "fat_g": 8.1
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Butter Chunks Curry with Rice",
+          "reason": "Only plant-based dish meeting lean macros with substantial protein content.",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Makhani - Butter Chunks",
+              "name_en": "Makhani style butter chunks curry",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "1",
+                "3"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 435.0,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 630.0,
+            "protein_g": 26.55,
+            "carbs_g": 62.4,
+            "fat_g": 29.85
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Butter Chunks Curry with Rice",
+          "reason": "Delicious savory curry delivering superior plant protein at a student-friendly price.",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Makhani - Butter Chunks",
+              "name_en": "Makhani style butter chunks curry",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "1",
+                "3"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 435.0,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 630.0,
+            "protein_g": 26.55,
+            "carbs_g": 62.4,
+            "fat_g": 29.85
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Dim Sum Dumplings with Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Dim Sum: Asian Dumplings mit Asiagemüse",
+              "name_en": "Dim Sum: Asian dumplings with Asian vegetables",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se",
+                "So"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 435.0,
+              "protein_g": 15.6
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 630.0,
+            "protein_g": 19.65,
+            "carbs_g": 97.5,
+            "fat_g": 17.85
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    }
+  },
+  "extras": {
+    "all": [
+      {
+        "name": "Faschingskrapfen mit Vierfruchtfüllung",
+        "name_en": "Carnival doughnut with four-fruit jam filling",
+        "station": "Dessert (Glas)",
+        "weight_g": 85,
+        "price_cents": 77,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "serving": "1 piece",
+        "kcal": 289.0,
+        "protein_g": 5.53,
+        "price_source": "config"
+      }
+    ],
+    "vegan": []
+  },
+  "generated_on": "2026-11-02"
+}

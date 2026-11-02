@@ -1,0 +1,1130 @@
+{
+  "date": "2026-11-04",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "fetched_at": "2026-11-02T18:28:48.747195+00:00",
+  "warnings": [],
+  "schema_version": 2,
+  "menu_count": 10,
+  "goals": {
+    "bulk_min_protein_g": 30,
+    "bulk_protein_weight": 4,
+    "cut_min_protein_g": 25,
+    "cut_min_kcal": 450,
+    "budget_min_kcal": 550,
+    "budget_min_protein_g": 15
+  },
+  "max_plate_g": 650,
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Roast Beef with Ebly Wheat",
+          "reason": "Packed with substantial calories and the highest protein to fuel intense bulking",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
+              "name_en": "Roast beef (1 slice) with red wine sauce",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 180,
+              "price_cents": 262,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 261.0,
+              "protein_g": 31.5
+            },
+            {
+              "name": "Zartweizen mit Tomaten, Zucchini und Auberginen",
+              "name_en": "Ebly wheat with tomatoes, zucchini and eggplant",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 15.75
+            }
+          ],
+          "total": {
+            "price_cents": 411,
+            "price_eur": 4.11,
+            "weight_g": 630,
+            "kcal": 778.5,
+            "protein_g": 47.25,
+            "carbs_g": 86.76,
+            "fat_g": 24.84
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Roast Beef with Cauliflower",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
+              "name_en": "Roast beef (1 slice) with red wine sauce",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 180,
+              "price_cents": 262,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 261.0,
+              "protein_g": 31.5
+            },
+            {
+              "name": "Gegrillte Blumenkohlröschen mit Kräuterdip",
+              "name_en": "Grilled cauliflower florets with herb dip",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 285.0,
+              "protein_g": 8.4
+            }
+          ],
+          "total": {
+            "price_cents": 532,
+            "price_eur": 5.32,
+            "weight_g": 480,
+            "kcal": 546.0,
+            "protein_g": 39.9,
+            "carbs_g": 21.96,
+            "fat_g": 32.64
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Roast Beef with Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
+              "name_en": "Roast beef (1 slice) with red wine sauce",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 180,
+              "price_cents": 262,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 261.0,
+              "protein_g": 31.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 397,
+            "price_eur": 3.97,
+            "weight_g": 330,
+            "kcal": 456.0,
+            "protein_g": 35.55,
+            "carbs_g": 47.76,
+            "fat_g": 12.69
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Roast Beef with Rice",
+          "reason": "Lean protein source paired with a clean carbohydrate side for cutting",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
+              "name_en": "Roast beef (1 slice) with red wine sauce",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 180,
+              "price_cents": 262,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 261.0,
+              "protein_g": 31.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 397,
+            "price_eur": 3.97,
+            "weight_g": 330,
+            "kcal": 456.0,
+            "protein_g": 35.55,
+            "carbs_g": 47.76,
+            "fat_g": 12.69
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Roast Beef with Ebly Wheat",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
+              "name_en": "Roast beef (1 slice) with red wine sauce",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 180,
+              "price_cents": 262,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 261.0,
+              "protein_g": 31.5
+            },
+            {
+              "name": "Zartweizen mit Tomaten, Zucchini und Auberginen",
+              "name_en": "Ebly wheat with tomatoes, zucchini and eggplant",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 361,
+            "price_eur": 3.61,
+            "weight_g": 480,
+            "kcal": 606.0,
+            "protein_g": 42.0,
+            "carbs_g": 59.76,
+            "fat_g": 20.64
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Roast Beef with Cauliflower",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
+              "name_en": "Roast beef (1 slice) with red wine sauce",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 180,
+              "price_cents": 262,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 261.0,
+              "protein_g": 31.5
+            },
+            {
+              "name": "Gegrillte Blumenkohlröschen mit Kräuterdip",
+              "name_en": "Grilled cauliflower florets with herb dip",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 285.0,
+              "protein_g": 8.4
+            }
+          ],
+          "total": {
+            "price_cents": 532,
+            "price_eur": 5.32,
+            "weight_g": 480,
+            "kcal": 546.0,
+            "protein_g": 39.9,
+            "carbs_g": 21.96,
+            "fat_g": 32.64
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Spinach Pastry Spiral",
+          "reason": "Extremely pocket-friendly and filling lunch option for frugal students",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 16.5
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 555.0,
+            "protein_g": 16.5,
+            "carbs_g": 58.5,
+            "fat_g": 27.6
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Roast Beef with Ebly Wheat",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
+              "name_en": "Roast beef (1 slice) with red wine sauce",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 180,
+              "price_cents": 262,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 261.0,
+              "protein_g": 31.5
+            },
+            {
+              "name": "Zartweizen mit Tomaten, Zucchini und Auberginen",
+              "name_en": "Ebly wheat with tomatoes, zucchini and eggplant",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 361,
+            "price_eur": 3.61,
+            "weight_g": 480,
+            "kcal": 606.0,
+            "protein_g": 42.0,
+            "carbs_g": 59.76,
+            "fat_g": 20.64
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta with Vegetable Bolognese",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Pasta mit Gemüsebolognese",
+              "name_en": "Pasta with vegetable bolognese",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 99.0,
+            "fat_g": 13.5
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": true,
+      "note": "No vegan lunch reaches 30g protein today; the protein target is relaxed.",
+      "plates": [
+        {
+          "title": "Pasta with Vegetable Bolognese",
+          "reason": "Generous portion of hearty pasta delivering the most calories and protein",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Pasta mit Gemüsebolognese",
+              "name_en": "Pasta with vegetable bolognese",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 99.0,
+            "fat_g": 13.5
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Red Curry with Tofu and Rice",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Rotes Gemüsecurry mit Tofu",
+              "name_en": "Red vegetable curry with tofu",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 540.0,
+            "protein_g": 17.55,
+            "carbs_g": 61.5,
+            "fat_g": 22.95
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Spinach Pastry Spiral",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 16.5
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 555.0,
+            "protein_g": 16.5,
+            "carbs_g": 58.5,
+            "fat_g": 27.6
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": true,
+      "note": "No vegan lunch reaches 25g protein today; the protein target is relaxed.",
+      "plates": [
+        {
+          "title": "Red Curry with Tofu and Rice",
+          "reason": "Balanced plant protein from tofu with moderate calories for cutting",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Rotes Gemüsecurry mit Tofu",
+              "name_en": "Red vegetable curry with tofu",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 540.0,
+            "protein_g": 17.55,
+            "carbs_g": 61.5,
+            "fat_g": 22.95
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pasta with Vegetable Bolognese",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Pasta mit Gemüsebolognese",
+              "name_en": "Pasta with vegetable bolognese",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 99.0,
+            "fat_g": 13.5
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Ebly Wheat with Vegetables",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Zartweizen mit Tomaten, Zucchini und Auberginen",
+              "name_en": "Ebly wheat with tomatoes, zucchini and eggplant",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 15.75
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 15.75,
+            "carbs_g": 81.0,
+            "fat_g": 12.6
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Spinach Pastry Spiral",
+          "reason": "Inexpensive savory pastry offering great taste and value",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 16.5
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 555.0,
+            "protein_g": 16.5,
+            "carbs_g": 58.5,
+            "fat_g": 27.6
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta with Vegetable Bolognese",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Pasta mit Gemüsebolognese",
+              "name_en": "Pasta with vegetable bolognese",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 99.0,
+            "fat_g": 13.5
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "extras": {
+    "all": [
+      {
+        "name": "Schokoladen-Seidentofu-Creme mit Agavendicksaft",
+        "name_en": "Chocolate silken tofu cream with agave syrup",
+        "station": "Dessert (Glas)",
+        "weight_g": 125.0,
+        "price_cents": 113,
+        "is_vegan": true,
+        "diet": "vegan",
+        "serving": "1 piece",
+        "kcal": 181.25,
+        "protein_g": 5.62,
+        "price_source": "eat-api"
+      }
+    ],
+    "vegan": [
+      {
+        "name": "Schokoladen-Seidentofu-Creme mit Agavendicksaft",
+        "name_en": "Chocolate silken tofu cream with agave syrup",
+        "station": "Dessert (Glas)",
+        "weight_g": 125.0,
+        "price_cents": 113,
+        "is_vegan": true,
+        "diet": "vegan",
+        "serving": "1 piece",
+        "kcal": 181.25,
+        "protein_g": 5.62,
+        "price_source": "eat-api"
+      }
+    ]
+  },
+  "generated_on": "2026-11-02"
+}

@@ -1,0 +1,508 @@
+{
+  "date": "2026-11-06",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "fetched_at": "2026-11-02T18:28:48.802003+00:00",
+  "warnings": [],
+  "schema_version": 2,
+  "menu_count": 9,
+  "goals": {
+    "bulk_min_protein_g": 30,
+    "bulk_protein_weight": 4,
+    "cut_min_protein_g": 25,
+    "cut_min_kcal": 450,
+    "budget_min_kcal": 550,
+    "budget_min_protein_g": 15
+  },
+  "max_plate_g": 650,
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pasta with Smoked Tofu",
+          "reason": "Hearty pasta loaded with smoked tofu provides solid fuel and protein",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 30.6,
+            "carbs_g": 95.4,
+            "fat_g": 20.7
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pasta with Smoked Tofu",
+          "reason": "Delivers the highest protein content among the available choices",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 30.6,
+            "carbs_g": 95.4,
+            "fat_g": 20.7
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Caprese Pinsa",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "PINSA Caprese mit Tomaten und Mozzarella",
+              "name_en": "Caprese Pinsa with Tomatoes and Mozzarella",
+              "station": "Pizza",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "15"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 675.0,
+              "protein_g": 25.5
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 300.0,
+            "kcal": 675.0,
+            "protein_g": 25.5,
+            "carbs_g": 84.0,
+            "fat_g": 26.4
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Curd Strudel with Vanilla Sauce",
+          "reason": "The most affordable and comforting option on the menu",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Topfenstrudel mit Birnen und Vanillesauce (ohne Rosinen)",
+              "name_en": "Curd strudel with pears and vanilla sauce (without raisins)",
+              "station": "Süßspeise",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 17.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 555.0,
+            "protein_g": 17.4,
+            "carbs_g": 73.5,
+            "fat_g": 21.0
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta with Smoked Tofu",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 30.6,
+            "carbs_g": 95.4,
+            "fat_g": 20.7
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Caprese Pinsa",
+          "reason": null,
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "PINSA Caprese mit Tomaten und Mozzarella",
+              "name_en": "Caprese Pinsa with Tomatoes and Mozzarella",
+              "station": "Pizza",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "15"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 675.0,
+              "protein_g": 25.5
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 300.0,
+            "kcal": 675.0,
+            "protein_g": 25.5,
+            "carbs_g": 84.0,
+            "fat_g": 26.4
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pasta with Smoked Tofu",
+          "reason": "A wholesome vegan pasta bowl packed with energy and plant protein",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 30.6,
+            "carbs_g": 95.4,
+            "fat_g": 20.7
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pasta with Smoked Tofu",
+          "reason": "Satisfying plant-based option rich in tofu protein",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 30.6,
+            "carbs_g": 95.4,
+            "fat_g": 20.7
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pasta with Smoked Tofu",
+          "reason": "Great plant-based value offering a complete meal",
+          "picked_by": "llm",
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 30.6,
+            "carbs_g": 95.4,
+            "fat_g": 20.7
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "extras": {
+    "all": [
+      {
+        "name": "Latte Macchiato Creme - koffeinhaltig",
+        "name_en": "Latte Macchiato Dessert Cream (with caffeine)",
+        "station": "Dessert (Glas)",
+        "weight_g": 125,
+        "price_cents": 213,
+        "is_vegan": false,
+        "diet": "meat",
+        "serving": "1 piece",
+        "kcal": 206.25,
+        "protein_g": 4.0,
+        "price_source": "eat-api"
+      }
+    ],
+    "vegan": []
+  },
+  "generated_on": "2026-11-02"
+}
