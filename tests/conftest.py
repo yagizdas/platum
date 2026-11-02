@@ -1,15 +1,30 @@
 from pathlib import Path
+from datetime import date
+import json
 
 import pytest
 
-from common import load_config
+from common import ROOT, load_config, read_json
+from scrape import scrape
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
 
 @pytest.fixture
 def config():
-    return load_config()
+    config = load_config()
+    # Ordinary picker tests stay deterministic even when a local .env has a real key.
+    config["llm"]["enabled"] = False
+    return config
+
+
+@pytest.fixture
+def fixture_menu(config):
+    """Real saved menu plus the committed, once-tagged nutrition estimates."""
+    menu = scrape(date(2026, 11, 2), config,
+                  (FIXTURES / "arcisstr.html").read_text(),
+                  json.loads((FIXTURES / "eat-api-2026-45.json").read_text()))
+    return menu, read_json(ROOT / "data/dish_cache.json")
 
 
 @pytest.fixture

@@ -10,7 +10,9 @@
   "menu_count": 13,
   "goals": {
     "bulk_max_eur": 7.0,
+    "bulk_min_protein_g": 30,
     "cut_min_protein_g": 25,
+    "cut_min_kcal": 400,
     "budget_min_kcal": 550
   },
   "max_plate_g": 650,
@@ -20,6 +22,109 @@
     "bulk_all": {
       "state": "ready",
       "goal": "bulk",
+      "vegan": false,
+      "items": [
+        {
+          "name": "PINSA Funghi mit frischen Champignons",
+          "name_en": "Pinsa Funghi with fresh mushrooms",
+          "station": "Pizza",
+          "role": "main",
+          "texture": "dry",
+          "count": 1,
+          "unit": "piece",
+          "weight_g": 310,
+          "price_cents": 500,
+          "is_vegan": false,
+          "markers": [
+            "f"
+          ],
+          "allergens": [
+            "Gl",
+            "GlW",
+            "Mi",
+            "So"
+          ],
+          "additives": [],
+          "price_source": "config",
+          "serving": "1 piece",
+          "kcal": 666.5,
+          "protein_g": 26.35
+        },
+        {
+          "name": "Graupen-Gemüse-Eintopf",
+          "name_en": "Pearl barley and vegetable stew",
+          "station": "Studitopf",
+          "role": "main_side",
+          "texture": "saucy",
+          "count": 1,
+          "unit": "scoop",
+          "weight_g": 150,
+          "price_cents": 50,
+          "is_vegan": true,
+          "markers": [
+            "v"
+          ],
+          "allergens": [
+            "Gl",
+            "GlG",
+            "Sl"
+          ],
+          "additives": [],
+          "price_source": "eat-api",
+          "serving": "1 scoop",
+          "kcal": 97.5,
+          "protein_g": 3.45
+        },
+        {
+          "name": "Cappuccinocreme",
+          "name_en": "Cappuccino cream",
+          "station": "Dessert (Glas)",
+          "role": "dessert",
+          "texture": "saucy",
+          "count": 1,
+          "unit": "piece",
+          "weight_g": 120.0,
+          "price_cents": 108,
+          "is_vegan": false,
+          "markers": [
+            "f"
+          ],
+          "allergens": [
+            "Ei",
+            "Gl",
+            "GlW",
+            "Mi",
+            "Sw"
+          ],
+          "additives": [
+            "5",
+            "14"
+          ],
+          "price_source": "config",
+          "serving": "1 piece",
+          "kcal": 222.0,
+          "protein_g": 3.84
+        }
+      ],
+      "total": {
+        "price_cents": 658,
+        "price_eur": 6.58,
+        "weight_g": 580.0,
+        "kcal": 986.0,
+        "protein_g": 33.64,
+        "carbs_g": 129.25,
+        "fat_g": 36.66
+      },
+      "has_estimated_prices": true,
+      "summary": "1 piece PINSA Funghi mit frischen Champignons + 1 scoop Graupen-Gemüse-Eintopf + 1 piece Cappuccinocreme → €6.58 · ~986 kcal · ~34g protein",
+      "reason": null,
+      "picked_by": "rules",
+      "relaxed": false,
+      "note": null
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
       "vegan": false,
       "items": [
         {
@@ -44,25 +149,29 @@
           "protein_g": 27.75
         },
         {
-          "name": "Cremige Kürbissuppe",
-          "name_en": "Creamy pumpkin soup",
-          "station": "Unspecified",
-          "role": "soup",
-          "texture": "liquid",
-          "count": 2,
+          "name": "Graupen-Gemüse-Eintopf",
+          "name_en": "Pearl barley and vegetable stew",
+          "station": "Studitopf",
+          "role": "main_side",
+          "texture": "saucy",
+          "count": 1,
           "unit": "scoop",
-          "weight_g": 300,
-          "price_cents": 270,
-          "is_vegan": false,
-          "markers": [],
+          "weight_g": 150,
+          "price_cents": 50,
+          "is_vegan": true,
+          "markers": [
+            "v"
+          ],
           "allergens": [
-            "Mi"
+            "Gl",
+            "GlG",
+            "Sl"
           ],
           "additives": [],
-          "price_source": "config",
-          "serving": "2 scoops",
-          "kcal": 174.0,
-          "protein_g": 3.3
+          "price_source": "eat-api",
+          "serving": "1 scoop",
+          "kcal": 97.5,
+          "protein_g": 3.45
         },
         {
           "name": "Topfencreme mit Himbeeren",
@@ -101,55 +210,20 @@
         }
       ],
       "total": {
-        "price_cents": 681,
-        "price_eur": 6.81,
-        "weight_g": 590.0,
-        "kcal": 535.5,
-        "protein_g": 41.55,
-        "carbs_g": 39.55,
-        "fat_g": 22.6
+        "price_cents": 461,
+        "price_eur": 4.61,
+        "weight_g": 440.0,
+        "kcal": 459.0,
+        "protein_g": 41.7,
+        "carbs_g": 37.6,
+        "fat_g": 14.95
       },
       "has_estimated_prices": true,
-      "summary": "1 piece Seelachsfilet (1Stück) + 2 scoops Cremige Kürbissuppe + 1 piece Topfencreme mit Himbeeren → €6.81 · ~536 kcal · ~42g protein"
-    },
-    "cut_all": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": false,
-      "items": [
-        {
-          "name": "Seelachsfilet (1Stück)",
-          "name_en": "Pollock fillet (1 piece)",
-          "station": "Fisch",
-          "role": "main",
-          "texture": "dry",
-          "count": 1,
-          "unit": "piece",
-          "weight_g": 150,
-          "price_cents": 285,
-          "is_vegan": false,
-          "markers": [],
-          "allergens": [
-            "Fi"
-          ],
-          "additives": [],
-          "price_source": "config",
-          "serving": "1 piece",
-          "kcal": 172.5,
-          "protein_g": 27.75
-        }
-      ],
-      "total": {
-        "price_cents": 285,
-        "price_eur": 2.85,
-        "weight_g": 150,
-        "kcal": 172.5,
-        "protein_g": 27.75,
-        "carbs_g": 0.75,
-        "fat_g": 6.3
-      },
-      "has_estimated_prices": true,
-      "summary": "1 piece Seelachsfilet (1Stück) → €2.85 · ~172 kcal · ~28g protein"
+      "summary": "1 piece Seelachsfilet (1Stück) + 1 scoop Graupen-Gemüse-Eintopf + 1 piece Topfencreme mit Himbeeren → €4.61 · ~459 kcal · ~42g protein",
+      "reason": null,
+      "picked_by": "rules",
+      "relaxed": false,
+      "note": null
     },
     "budget_all": {
       "state": "ready",
@@ -194,7 +268,11 @@
         "fat_g": 17.4
       },
       "has_estimated_prices": false,
-      "summary": "2 scoops Vegane Maultaschen mit Zwiebelmarmelade → €2.70 · ~555 kcal · ~16g protein"
+      "summary": "2 scoops Vegane Maultaschen mit Zwiebelmarmelade → €2.70 · ~555 kcal · ~16g protein",
+      "reason": null,
+      "picked_by": "rules",
+      "relaxed": false,
+      "note": null
     },
     "bulk_vegan": {
       "state": "ready",
@@ -202,15 +280,46 @@
       "vegan": true,
       "items": [
         {
+          "name": "Asia-Reisbällchen auf Teriyakigemüse",
+          "name_en": "Asian rice balls on teriyaki vegetables",
+          "station": "Vegan",
+          "role": "main",
+          "texture": "saucy",
+          "count": 3,
+          "unit": "scoop",
+          "weight_g": 450,
+          "price_cents": 405,
+          "is_vegan": true,
+          "markers": [
+            "v"
+          ],
+          "allergens": [
+            "Gl",
+            "GlW",
+            "Se",
+            "So",
+            "Sw"
+          ],
+          "additives": [
+            "2",
+            "5",
+            "Kn"
+          ],
+          "price_source": "eat-api",
+          "serving": "3 scoops",
+          "kcal": 607.5,
+          "protein_g": 14.4
+        },
+        {
           "name": "Vegane Maultaschen mit Zwiebelmarmelade",
           "name_en": "Vegan German filled pasta pockets with onion jam",
           "station": "Pasta",
-          "role": "main",
+          "role": "main_side",
           "texture": "saucy",
-          "count": 2,
+          "count": 1,
           "unit": "scoop",
-          "weight_g": 300,
-          "price_cents": 270,
+          "weight_g": 150,
+          "price_cents": 135,
           "is_vegan": true,
           "markers": [
             "v"
@@ -224,28 +333,96 @@
           ],
           "additives": [],
           "price_source": "eat-api",
-          "serving": "2 scoops",
-          "kcal": 555.0,
-          "protein_g": 16.5
+          "serving": "1 scoop",
+          "kcal": 277.5,
+          "protein_g": 8.25
         }
       ],
       "total": {
-        "price_cents": 270,
-        "price_eur": 2.7,
-        "weight_g": 300,
-        "kcal": 555.0,
-        "protein_g": 16.5,
-        "carbs_g": 81.0,
-        "fat_g": 17.4
+        "price_cents": 540,
+        "price_eur": 5.4,
+        "weight_g": 600,
+        "kcal": 885.0,
+        "protein_g": 22.65,
+        "carbs_g": 139.5,
+        "fat_g": 24.45
       },
       "has_estimated_prices": false,
-      "summary": "2 scoops Vegane Maultaschen mit Zwiebelmarmelade → €2.70 · ~555 kcal · ~16g protein"
+      "summary": "3 scoops Asia-Reisbällchen auf Teriyakigemüse + 1 scoop Vegane Maultaschen mit Zwiebelmarmelade → €5.40 · ~885 kcal · ~23g protein",
+      "reason": null,
+      "picked_by": "rules",
+      "relaxed": true,
+      "note": "No vegan plate reaches 30g protein today; showing the most filling one."
     },
     "cut_vegan": {
-      "state": "unavailable",
+      "state": "ready",
       "goal": "cut",
       "vegan": true,
-      "reason": "Vegan: No valid plate reaches 25g protein."
+      "items": [
+        {
+          "name": "Graupen-Gemüse-Eintopf",
+          "name_en": "Pearl barley and vegetable stew",
+          "station": "Studitopf",
+          "role": "main",
+          "texture": "saucy",
+          "count": 3,
+          "unit": "scoop",
+          "weight_g": 450,
+          "price_cents": 149,
+          "is_vegan": true,
+          "markers": [
+            "v"
+          ],
+          "allergens": [
+            "Gl",
+            "GlG",
+            "Sl"
+          ],
+          "additives": [],
+          "price_source": "eat-api",
+          "serving": "3 scoops",
+          "kcal": 292.5,
+          "protein_g": 10.35
+        },
+        {
+          "name": "Gemüsecurry aus Blumenkohl und Broccoli",
+          "name_en": "Vegetable curry with cauliflower and broccoli",
+          "station": "Wok",
+          "role": "main_side",
+          "texture": "saucy",
+          "count": 1,
+          "unit": "scoop",
+          "weight_g": 150,
+          "price_cents": 135,
+          "is_vegan": true,
+          "markers": [
+            "v"
+          ],
+          "allergens": [],
+          "additives": [
+            "Kn"
+          ],
+          "price_source": "eat-api",
+          "serving": "1 scoop",
+          "kcal": 127.5,
+          "protein_g": 3.75
+        }
+      ],
+      "total": {
+        "price_cents": 284,
+        "price_eur": 2.84,
+        "weight_g": 600,
+        "kcal": 420.0,
+        "protein_g": 14.1,
+        "carbs_g": 60.75,
+        "fat_g": 13.2
+      },
+      "has_estimated_prices": false,
+      "summary": "3 scoops Graupen-Gemüse-Eintopf + 1 scoop Gemüsecurry aus Blumenkohl und Broccoli → €2.84 · ~420 kcal · ~14g protein",
+      "reason": null,
+      "picked_by": "rules",
+      "relaxed": true,
+      "note": "No vegan plate reaches 25g protein today; showing the best protein-density lunch available."
     },
     "budget_vegan": {
       "state": "ready",
@@ -290,7 +467,11 @@
         "fat_g": 17.4
       },
       "has_estimated_prices": false,
-      "summary": "2 scoops Vegane Maultaschen mit Zwiebelmarmelade → €2.70 · ~555 kcal · ~16g protein"
+      "summary": "2 scoops Vegane Maultaschen mit Zwiebelmarmelade → €2.70 · ~555 kcal · ~16g protein",
+      "reason": null,
+      "picked_by": "rules",
+      "relaxed": false,
+      "note": null
     }
   }
 }

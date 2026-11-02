@@ -86,12 +86,16 @@ def validate_tag(tag):
     return tag
 
 
-def call_gemini(dish, model, api_key):
+def generate_json(prompt, payload, schema, model, api_key, *, temperature=None):
+    """One structured Gemini request; callers own their retry/fallback policy."""
+    generation = {"maxOutputTokens": 4096, "thinkingConfig": {"thinkingLevel": "LOW"},
+                  "responseMimeType": "application/json", "responseJsonSchema": schema}
+    if temperature is not None:
+        generation["temperature"] = temperature
     body = {
-        "systemInstruction": {"parts": [{"text": PROMPT}]},
-        "contents": [{"role": "user", "parts": [{"text": json.dumps({"name": dish["name"], "station": dish["station"]}, ensure_ascii=False)}]}],
-        "generationConfig": {"maxOutputTokens": 4096, "thinkingConfig": {"thinkingLevel": "LOW"},
-                             "responseMimeType": "application/json", "responseJsonSchema": TAG_SCHEMA},
+        "systemInstruction": {"parts": [{"text": prompt}]},
+        "contents": [{"role": "user", "parts": [{"text": json.dumps(payload, ensure_ascii=False)}]}],
+        "generationConfig": generation,
     }
     request = Request(f"https://generativelanguage.googleapis.com/v1beta/models/{quote(model, safe='')}:generateContent",
                       data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": api_key}, method="POST")
@@ -109,6 +113,10 @@ def call_gemini(dish, model, api_key):
         raise ValueError("Incomplete or refused model response")
     content = "".join(part["text"] for part in candidates[0].get("content", {}).get("parts", []) if "text" in part and not part.get("thought"))
     return json.loads(content)
+
+
+def call_gemini(dish, model, api_key):
+    return generate_json(PROMPT, {"name": dish["name"], "station": dish["station"]}, TAG_SCHEMA, model, api_key)
 
 
 def tag_menu(menu, cache_path, model, api_key=None, caller=call_gemini):

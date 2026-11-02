@@ -119,6 +119,8 @@
           <div><span id="kcal" class="total-value"></span><span class="total-label">kcal, estimated</span></div>
           <div><span id="protein" class="total-value"></span><span class="total-label">g protein, estimated</span></div>
         </div>
+        <p class="details" id="judge-reason" hidden></p>
+        <p class="details" id="relaxed-note" hidden></p>
         <div class="empty" id="empty" hidden><h3 id="empty-title"></h3><p id="empty-text"></p></div>
         <p class="details" id="details" hidden></p>
       </section>
@@ -155,7 +157,14 @@
     }
     function empty(title,text) {
       $('items').replaceChildren(); $('totals').hidden = true; $('details').hidden = true;
+      $('judge-reason').hidden = true; $('relaxed-note').hidden = true;
       $('empty').hidden = false; $('empty-title').textContent = title; $('empty-text').textContent = text;
+    }
+    function annotations(variant) {
+      $('judge-reason').textContent = variant.reason || '';
+      $('judge-reason').hidden = variant.picked_by !== 'llm' || !variant.reason;
+      $('relaxed-note').textContent = variant.relaxed ? variant.note || '' : '';
+      $('relaxed-note').hidden = !variant.relaxed || !variant.note;
     }
     function render() {
       if (stale) {
@@ -165,10 +174,14 @@
       const variant = data.variants[selection.goal + (selection.vegan ? '_vegan' : '_all')];
       $('plate-title').textContent = (selection.vegan ? 'Vegan ' + titles[selection.goal].toLowerCase() : titles[selection.goal]) + ' plate';
       const g = data.goals;
-      $('reason').textContent = {bulk:`Most protein, up to €${g.bulk_max_eur.toFixed(2)}.`,cut:`Fewest calories, at least ${g.cut_min_protein_g}g protein.`,budget:`Lowest price, at least ${g.budget_min_kcal} kcal.`}[selection.goal];
-      if (data.state === 'closed') return empty('No menu today.',variant.reason);
+      $('reason').textContent = {bulk:variant.relaxed ? `Most filling plate, up to €${g.bulk_max_eur.toFixed(2)}.` : `Most calories, at least ${g.bulk_min_protein_g ?? 30}g protein, up to €${g.bulk_max_eur.toFixed(2)}.`,cut:`Best protein per calorie, at least ${g.cut_min_kcal ?? 400} kcal${variant.relaxed ? '' : ` and ${g.cut_min_protein_g}g protein`}.`,budget:`Lowest price, at least ${g.budget_min_kcal} kcal.`}[selection.goal];
+      if (data.state === 'closed') return empty('No menu today.',variant.message || variant.reason);
       if (data.state === 'unavailable') return empty('Plates are on the way.',data.reason || variant.reason);
-      if (variant.state !== 'ready') return empty('No plate fits this goal today.',variant.reason);
+      if (variant.state !== 'ready') {
+        empty('No plate fits this goal today.',variant.message || variant.reason);
+        annotations(variant);
+        return;
+      }
       $('empty').hidden = true;
       $('items').replaceChildren();
       for (const item of variant.items) {
@@ -179,7 +192,7 @@
         const description = document.createElement('div');
         const name = document.createElement('p'); name.className = 'dish-name'; name.lang = 'de'; name.textContent = item.name;
         const en = document.createElement('span'); en.className = 'english'; en.textContent = item.name_en;
-        const meta = document.createElement('span'); meta.className = 'meta'; meta.textContent = `${item.station === 'Unspecified' ? item.role : item.station} · ${rounded(item.weight_g)}g`;
+        const meta = document.createElement('span'); meta.className = 'meta'; meta.textContent = `${item.role === 'main_side' ? 'Side scoop · ' : ''}${item.station === 'Unspecified' ? (item.role === 'main_side' ? 'Side' : item.role) : item.station} · ${rounded(item.weight_g)}g`;
         description.append(name,en,meta);
         const price = document.createElement('span'); price.className = 'item-price'; price.textContent = money(item.price_cents);
         li.append(portion,description,price); $('items').append(li);
@@ -187,6 +200,7 @@
       const total = variant.total;
       $('price').textContent = money(total.price_cents); $('kcal').textContent = '~' + rounded(total.kcal); $('protein').textContent = '~' + rounded(total.protein_g);
       $('totals').hidden = false; $('details').hidden = false;
+      annotations(variant);
       $('details').textContent = `${rounded(total.weight_g)}g total · Scoops are approximate; weighed at checkout.${variant.has_estimated_prices ? ' Some prices use category estimates.' : ''}`;
     }
     document.querySelectorAll('[data-goal]').forEach(button => button.addEventListener('click',() => {selection.goal = button.dataset.goal; saveAndRender();}));

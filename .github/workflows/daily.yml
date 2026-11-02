@@ -30,7 +30,10 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python tag.py
-      - run: python pick.py
+      - name: Pick plates and judge lunch pairings
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python pick.py
       - name: Persist data and successful tags (also after a later failure)
         if: always()
         run: |
