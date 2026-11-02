@@ -100,6 +100,14 @@ today.json schema **2** contains six goal/diet variants. A ready variant has pla
 
 Closed, unavailable, request-error and stale-menu states remain explicit. No partial menu is silently optimized; --allow-missing-tags is only for an honest first-run unavailable state.
 
+## Using a plate
+
+Use the “Other options” buttons, left/right arrow keys, or a horizontal swipe to cycle through up to three different lunches. The selected title is announced for screen readers. Changing goal or Vegan resets the option and extras.
+
+“Add to tray” chips add optional soup or dessert to the displayed totals immediately. An “incl. extras” label identifies the larger tray. Share plate uses native sharing when available, otherwise copies the chosen lunch and selected extras with their computed totals and the site URL. Counter staples are labeled “Beilagen counter · usually there.”
+
+The web manifest and logo-derived icons support installation. There is deliberately no service worker or offline menu cache, so installation does not create an offline copy of a stale menu.
+
 ## GitHub Pages
 
 Set repository secret GEMINI_API_KEY and select **GitHub Actions** under Settings → Pages. The daily workflow runs weekdays at **07:30 UTC**, in this order:

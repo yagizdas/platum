@@ -54,6 +54,8 @@ jobs:
           mkdir -p dist/data
           cp index.html dist/index.html
           cp data/today.json dist/data/today.json
+          cp manifest.webmanifest dist/manifest.webmanifest
+          cp -R icons dist/icons
           touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v4
         with:
