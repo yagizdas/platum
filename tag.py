@@ -14,6 +14,16 @@ from dotenv import dotenv_values
 
 from common import ROOT, load_config, normalize, read_json, write_json
 
+MAX_GEMINI_ATTEMPTS = 10
+OVERLOAD_RETRY_DELAY_SECONDS = 30
+
+
+class GeminiAPIError(ValueError):
+    def __init__(self, status_code, message):
+        self.status_code = status_code
+        super().__init__(f"Gemini HTTP {status_code}: {message}")
+
+
 FIELDS = {"name_en", "role", "texture", "kcal_per_100g", "protein_per_100g", "carbs_per_100g",
           "fat_per_100g", "typical_portion_g", "is_per_piece", "piece_weight_g"}
 TAG_SCHEMA = {
@@ -93,7 +103,7 @@ def call_gemini(dish, model, api_key):
             message = json.loads(exc.read()).get("error", {}).get("message", exc.reason)
         except (ValueError, AttributeError):
             message = exc.reason
-        raise ValueError(f"Gemini HTTP {exc.code}: {str(message).replace(api_key, '[redacted]')[:500]}") from None
+        raise GeminiAPIError(exc.code, str(message).replace(api_key, '[redacted]')[:500]) from None
     candidates = result.get("candidates", [])
     if len(candidates) != 1 or candidates[0].get("finishReason") != "STOP":
         raise ValueError("Incomplete or refused model response")
@@ -112,14 +122,22 @@ def tag_menu(menu, cache_path, model, api_key=None, caller=call_gemini):
             continue
         if not api_key:
             raise RuntimeError("GEMINI_API_KEY is required for uncached dishes. Set it in the environment; no estimates were invented.")
-        for attempt in range(2):
+        other_failures = 0
+        for attempt in range(1, MAX_GEMINI_ATTEMPTS + 1):
             try:
                 tag = validate_tag(caller(dish, model, api_key))
                 break
             except (ValueError, TypeError, KeyError, OSError) as exc:
-                if attempt == 1:
-                    raise RuntimeError(f"Could not tag {dish['name']!r} after two attempts: {str(exc).replace(api_key, '[redacted]')}") from None
-                time.sleep(1)
+                overloaded = isinstance(exc, GeminiAPIError) and exc.status_code == 503
+                if not overloaded:
+                    other_failures += 1
+                if attempt == MAX_GEMINI_ATTEMPTS or other_failures == 2:
+                    raise RuntimeError(f"Could not tag {dish['name']!r} after {attempt} attempts: {str(exc).replace(api_key, '[redacted]')}") from None
+                delay = OVERLOAD_RETRY_DELAY_SECONDS if overloaded else 1
+                if overloaded:
+                    print(f"Gemini HTTP 503 for {dish['name']!r} (attempt {attempt}/{MAX_GEMINI_ATTEMPTS}); retrying in {delay}s.",
+                          file=sys.stderr, flush=True)
+                time.sleep(delay)
         cache[key] = tag
         # Persist every success so a later failure won't charge for it again.
         write_json(cache_path, cache)

@@ -5,7 +5,7 @@ from urllib.error import HTTPError
 import pytest
 
 from common import normalize, read_json
-from tag import call_gemini, tag_menu, validate_tag
+from tag import GeminiAPIError, call_gemini, tag_menu, validate_tag
 
 
 def test_once_per_normalized_name_and_cache_survives_rerun(tmp_path, make_dish):
@@ -35,7 +35,7 @@ def test_retry_once_and_persist_success_before_next_failure(tmp_path, make_dish)
     def invalid(*args):
         calls.append(1)
         return {}
-    with pytest.raises(RuntimeError, match="two attempts"):
+    with pytest.raises(RuntimeError, match="2 attempts"):
         tag_menu({"dishes": [d, {**d, "name": "Other dish"}]}, path, "gemini-3.8-flash", "test", invalid)
     assert len(calls) == 4
     assert read_json(path)[normalize(d["name"])] == t
@@ -88,6 +88,68 @@ def test_gemini_error_explains_service_failure_without_leaking_key(monkeypatch, 
         body = json.dumps({"error": {"message": "Model overloaded; test-secret"}}).encode()
         raise HTTPError(request.full_url, 503, "Service Unavailable", {}, BytesIO(body))
     monkeypatch.setattr("tag.urlopen", overloaded)
-    with pytest.raises(ValueError, match="Gemini HTTP 503") as error:
+    with pytest.raises(GeminiAPIError, match="Gemini HTTP 503") as error:
         call_gemini(d, "gemini-3.8-flash", "test-secret")
+    assert error.value.status_code == 503
     assert "test-secret" not in str(error.value)
+
+
+@pytest.mark.parametrize("overload_count", [2, 9])
+def test_503_waits_thirty_seconds_then_caches_success(tmp_path, make_dish, monkeypatch, overload_count):
+    d, t = make_dish()
+    calls, waits = [], []
+    monkeypatch.setattr("tag.time.sleep", waits.append)
+    def caller(*args):
+        calls.append(1)
+        if len(calls) <= overload_count:
+            raise GeminiAPIError(503, "High demand")
+        return t
+    path = tmp_path / "cache.json"
+    tag_menu({"dishes": [d]}, path, "gemini-3.8-flash", "test-key", caller)
+    assert len(calls) == overload_count + 1
+    assert waits == [30] * overload_count
+    assert read_json(path) == {normalize(d["name"]): t}
+    tag_menu({"dishes": [d]}, path, "gemini-3.8-flash", None, caller)
+    assert len(calls) == overload_count + 1 # successful tags are never requested again
+
+
+def test_503_stops_after_ten_total_attempts_without_final_sleep(tmp_path, make_dish, monkeypatch):
+    d, t = make_dish()
+    calls, waits = [], []
+    monkeypatch.setattr("tag.time.sleep", waits.append)
+    def overloaded(*args):
+        calls.append(1)
+        raise GeminiAPIError(503, "High demand")
+    path = tmp_path / "cache.json"
+    with pytest.raises(RuntimeError, match="after 10 attempts: Gemini HTTP 503"):
+        tag_menu({"dishes": [d]}, path, "gemini-3.8-flash", "test-key", overloaded)
+    assert len(calls) == 10
+    assert waits == [30] * 9
+    assert not path.exists()
+
+
+@pytest.mark.parametrize("error", [GeminiAPIError(429, "Quota"), GeminiAPIError(400, "Bad request"), TimeoutError("Timed out"), ValueError("Invalid JSON")])
+def test_other_failures_keep_original_single_retry(tmp_path, make_dish, monkeypatch, error):
+    d, t = make_dish()
+    calls, waits = [], []
+    monkeypatch.setattr("tag.time.sleep", waits.append)
+    def failing(*args):
+        calls.append(1)
+        raise error
+    with pytest.raises(RuntimeError, match="after 2 attempts"):
+        tag_menu({"dishes": [d]}, tmp_path / "cache.json", "gemini-3.8-flash", "test-key", failing)
+    assert len(calls) == 2
+    assert waits == [1]
+
+
+def test_mixed_failures_preserve_single_validation_retry(tmp_path, make_dish, monkeypatch):
+    d, t = make_dish()
+    errors = [ValueError("Invalid JSON"), GeminiAPIError(503, "High demand"), ValueError("Still invalid")]
+    waits = []
+    monkeypatch.setattr("tag.time.sleep", waits.append)
+    def failing(*args):
+        raise errors.pop(0)
+    with pytest.raises(RuntimeError, match="after 3 attempts"):
+        tag_menu({"dishes": [d]}, tmp_path / "cache.json", "gemini-3.8-flash", "test-key", failing)
+    assert not errors
+    assert waits == [1, 30]
