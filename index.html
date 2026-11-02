@@ -3,369 +3,74 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f3f1">
-  <meta name="description" content="A lunch plate for your goal at Mensa Arcisstraße. Student prices, simple scoops, and estimated nutrition.">
-  <title>Mensa Plate — Arcisstraße</title>
-  <link rel="manifest" href="./manifest.webmanifest">
+  <meta name="theme-color" content="#f5f5f1">
+  <meta name="description" content="Your lunch, sorted. Mensa Plate at Arcisstraße.">
+  <title>Mensa Plate</title>
   <link rel="icon" type="image/svg+xml" href="./icons/plate.svg">
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root { color-scheme: light; --ground:#f4f3f1; --ink:#171717; --muted:#62615e; --line:#e6e4e0; --paper:#fff; --blue:#1d5fbf; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--ground); color:var(--ink); font:400 16px/1.5 'Geist',sans-serif; }
-    button,input { font:inherit; }
-    button,a,input,label { -webkit-tap-highlight-color:transparent; }
-    button { cursor:pointer; }
-    a { color:inherit; text-underline-offset:4px; }
-    a:hover { text-decoration-thickness:2px; }
-    :focus-visible { outline:3px solid var(--blue); outline-offset:4px; }
-    .shell { max-width:808px; margin:0 auto; padding:0 24px; }
-    header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:28px 0; border-bottom:1px solid var(--line); }
-    .brand { display:flex; gap:10px; align-items:center; font-weight:500; font-size:18px; }
-    .brand svg { width:28px; height:28px; }
-    .location { text-align:right; color:var(--muted); font-size:12px; }
-    .location strong { display:block; color:var(--ink); font-weight:500; font-size:14px; }
-    main { padding:36px 0 24px; }
-    .heading { display:flex; gap:12px; align-items:baseline; justify-content:space-between; margin-bottom:20px; }
-    h1 { font-size:24px; line-height:1.25; letter-spacing:-.02em; font-weight:500; margin:0; }
-    .date { font-size:12px; color:var(--muted); }
-    .intro { margin:8px 0 24px; color:var(--muted); font-size:14px; }
-    .controls { display:flex; gap:24px; flex-wrap:wrap; align-items:center; justify-content:space-between; margin-bottom:24px; }
-    .goals { display:flex; padding:4px; gap:4px; background:#e9e7e3; border-radius:8px; }
-    .goals button { border:0; border-radius:6px; background:transparent; color:#4a4947; padding:8px 24px; min-height:44px; font-size:14px; }
-    .goals button[aria-pressed="true"] { background:var(--ink); color:white; }
-    .goals button:hover:not([aria-pressed="true"]) { background:#dddbd7; }
-    .toggle { display:flex; gap:10px; align-items:center; min-height:44px; font-size:14px; cursor:pointer; }
-    .toggle input { position:absolute; opacity:0; width:36px; height:24px; }
-    .switch { width:36px; height:22px; border-radius:99px; background:#aaa8a4; padding:3px; transition:background 120ms; }
-    .switch::after { content:''; display:block; height:16px; width:16px; background:white; border-radius:50%; transition:transform 120ms; }
-    .toggle input:checked + .switch { background:var(--ink); }
-    .toggle input:checked + .switch::after { transform:translateX(14px); }
-    .toggle input:focus-visible + .switch { outline:3px solid var(--blue); outline-offset:4px; }
-    .receipt { background:var(--paper); border:1px solid var(--line); border-radius:8px; padding:24px; touch-action:pan-y pinch-zoom; }
-    .receipt-top { display:flex; gap:12px; justify-content:space-between; align-items:center; }
-    h2 { font-size:18px; font-weight:500; margin:0; }
-    .scope { color:var(--muted); font-size:12px; white-space:nowrap; }
-    .reason { font-size:14px; color:var(--muted); margin:8px 0 0; }
-    .items { list-style:none; padding:0; margin:20px 0 0; }
-    .item { display:grid; grid-template-columns:72px minmax(0,1fr) 62px; gap:12px; padding:20px 0; border-top:1px solid var(--line); }
-    .serving { color:var(--blue); font-size:14px; font-weight:500; }
-    .serving .count { display:block; font-size:30px; line-height:1; font-weight:400; margin-bottom:4px; }
-    .dish-name { margin:0; font-size:16px; font-weight:500; overflow-wrap:anywhere; }
-    .english { display:block; margin-top:4px; color:var(--muted); font-size:13px; }
-    .meta { display:block; color:var(--muted); font-size:12px; margin-top:8px; }
-    .item-price { text-align:right; font-size:14px; font-variant-numeric:tabular-nums; }
-    .totals { display:grid; grid-template-columns:1fr 1fr 1fr; border-top:1px solid var(--line); padding-top:20px; gap:12px; font-variant-numeric:tabular-nums; }
-    .total-value { font-size:24px; font-weight:400; line-height:1.25; display:block; }
-    .total-price { font-size:30px; font-weight:700; }
-    .total-label { color:var(--muted); font-size:12px; display:block; margin-top:4px; }
-    .details { font-size:13px; color:var(--muted); margin:20px 0 0; }
-    .empty { padding:24px 0 12px; border-top:1px solid var(--line); }
-    .empty h3 { font-size:18px; font-weight:500; margin:0 0 8px; }
-    .empty p { font-size:14px; margin:0; max-width:50ch; color:var(--muted); }
-    .notice { padding:12px 0 0; font-size:14px; color:var(--muted); }
-    .notice:empty { display:none; }
-    footer { border-top:1px solid var(--line); padding:20px 0 32px; color:var(--muted); font-size:12px; display:flex; gap:12px; flex-wrap:wrap; justify-content:space-between; }
-    footer p { margin:0; }
-    footer a { color:var(--ink); }
-    .fine { display:block; margin-top:6px; }
-    .day-strip { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:4px; margin:0 0 16px; }
-    .day-button { min-height:48px; padding:4px; color:var(--muted); border:0; border-bottom:2px solid transparent; background:transparent; font-size:14px; }
-    .day-button[aria-pressed="true"] { color:var(--ink); border-bottom-color:var(--ink); }
-    .day-date { display:block; font-size:12px; }
-    .plate-actions { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-top:20px; }
-    .alternatives { display:flex; flex-wrap:wrap; gap:8px; align-items:center; color:var(--muted); font-size:12px; }
-    .arrow { min-width:44px; min-height:44px; background:white; border:1px solid #d4d4d4; border-radius:6px; color:var(--ink); font-size:18px; }
-    .arrow:hover { background:var(--ground); }
-    .text-button { padding:8px 0; min-height:44px; border:0; background:transparent; color:var(--ink); text-decoration:underline; text-underline-offset:4px; font-size:14px; }
-    .extras { margin-top:20px; padding-top:20px; border-top:1px solid var(--line); }
-    .extras h3 { margin:0 0 12px; font-size:14px; font-weight:500; }
-    .extra-chips { display:flex; flex-wrap:wrap; gap:8px; }
-    .extra-chip { padding:10px 12px; min-height:44px; max-width:100%; border:1px solid #d4d4d4; border-radius:6px; background:white; color:var(--muted); font-size:12px; text-align:left; }
-    .extra-chip[aria-pressed="true"] { color:var(--ink); background:#e9e7e3; border-color:#8a8782; }
-    .diet-tag { display:inline-block; color:var(--muted); font-size:12px; margin-top:4px; }
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-    [hidden] { display:none !important; }
-    @media(max-width:520px) {
-      .shell { padding:0 16px; }
-      header { padding:20px 0; }
-      main { padding-top:28px; }
-      .heading { display:block; }
-      .date { display:block; margin-top:8px; }
-      .controls { gap:12px; }
-      .goals { flex:1; }
-      .goals button { flex:1; padding:8px 16px; }
-      .receipt { padding:20px 16px; }
-      .receipt-top { align-items:baseline; }
-      .scope { font-size:11px; }
-      .item { grid-template-columns:50px minmax(0,1fr) 52px; gap:8px; }
-      .dish-name { font-size:14px; }
-      .total-value { font-size:20px; }
-      .total-price { font-size:28px; }
-    }
-    @media(prefers-reduced-motion:reduce) { *,*::after { transition:none !important; } }
-  </style>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./icons/tray.png" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="./landing.css">
+  <script src="./landing.js" defer></script>
 </head>
 <body>
-  <div class="shell">
-    <header>
-      <div class="brand">
-        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M16 8v8l7 4" stroke="currentColor" stroke-width="1.5"/></svg>
-        Mensa Plate
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Mensa<br>Plate</h1>
+        <p>Your lunch, sorted.</p>
+        <a class="cta" href="#goals">Your plate <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="location"><strong>Arcisstraße</strong>For TUM students</div>
-    </header>
-    <main>
-      <div class="heading"><h1>Your lunch, sorted.</h1><time id="date" class="date"></time></div>
-      <div id="days" class="day-strip" role="group" aria-label="Menu day" hidden></div>
-      <div class="controls">
-        <div class="goals" role="group" aria-label="Lunch goal">
-          <button type="button" data-goal="bulk" aria-pressed="true">Bulk</button>
-          <button type="button" data-goal="cut" aria-pressed="false">Cut</button>
-          <button type="button" data-goal="budget" aria-pressed="false">Budget</button>
+      <div class="hero-art">
+        <div class="hero-float">
+          <img src="./icons/tray.png" width="874" height="552" alt="A canteen tray of pasta, vegetables and strawberries" fetchpriority="high" decoding="async">
         </div>
-        <label class="toggle"><input id="vegan" type="checkbox" role="switch"><span class="switch" aria-hidden="true"></span>Vegan</label>
       </div>
-      <section class="receipt" aria-labelledby="plate-title" aria-busy="true" id="plate">
-        <h2 id="plate-title">Your plate</h2>
-        <p class="reason" id="reason">Getting today’s menu…</p>
-        <ul class="items" id="items"></ul>
-        <div class="totals" id="totals" hidden>
-          <div><span id="price" class="total-value total-price"></span><span class="total-label">Student price</span><span id="includes-extras" class="total-label" hidden>incl. extras</span></div>
-          <div><span id="kcal" class="total-value"></span><span class="total-label">kcal, estimated</span></div>
-          <div><span id="protein" class="total-value"></span><span class="total-label">g protein, estimated</span></div>
+    </section>
+
+    <section class="goals-section section" id="goals" aria-labelledby="goals-title">
+      <h2 class="section-title reveal" id="goals-title">Goal selector</h2>
+      <div class="goal-grid" role="group" aria-label="Lunch goal">
+        <button class="goal-card reveal" type="button" data-goal="bulk" aria-pressed="true">
+          <span class="selected-mark" aria-hidden="true">↗</span>
+          <img src="./icons/dumbells.png" width="728" height="504" alt="" loading="lazy" decoding="async">
+          <span>Bulk</span>
+        </button>
+        <button class="goal-card reveal" type="button" data-goal="cut" aria-pressed="false">
+          <span class="selected-mark" aria-hidden="true">↗</span>
+          <img src="./icons/bowl.png" width="710" height="524" alt="" loading="lazy" decoding="async">
+          <span>Cut</span>
+        </button>
+        <button class="goal-card reveal" type="button" data-goal="budget" aria-pressed="false">
+          <span class="selected-mark" aria-hidden="true">↗</span>
+          <img src="./icons/euros.png" width="676" height="518" alt="" loading="lazy" decoding="async">
+          <span>Budget</span>
+        </button>
+        <button class="goal-card reveal" type="button" data-goal="vegan" aria-pressed="false">
+          <span class="selected-mark" aria-hidden="true">↗</span>
+          <img src="./icons/vegan.png" width="752" height="504" alt="" loading="lazy" decoding="async">
+          <span>Vegan</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="pick-section section" id="pick" aria-labelledby="pick-title">
+      <h2 class="section-title reveal" id="pick-title">Today's pick</h2>
+      <a class="pick-card reveal" id="pick-link" href="./menu.html?goal=bulk" aria-busy="true">
+        <div class="pick-art"><img src="./icons/bowl.png" width="710" height="524" alt="" loading="lazy" decoding="async"></div>
+        <div class="pick-content">
+          <h3 id="plate-name">Your plate</h3>
+          <p class="pick-price" id="plate-price" hidden></p>
+          <dl class="macros" id="macros" aria-label="Estimated macros in grams" hidden>
+            <div><dt class="sr-only">Protein</dt><dd id="protein"></dd></div>
+            <div><dt class="sr-only">Carbohydrates</dt><dd id="carbs"></dd></div>
+            <div><dt class="sr-only">Fat</dt><dd id="fat"></dd></div>
+          </dl>
         </div>
-        <p class="details" id="relaxed-note" hidden></p>
-        <p class="details" id="details" hidden></p>
-        <div class="plate-actions" id="plate-actions" hidden>
-          <div class="alternatives" id="alternatives">
-            <span id="option-status">Other options · 1 / 3</span>
-            <button class="arrow" id="previous" type="button" aria-label="Previous lunch">←</button>
-            <button class="arrow" id="next" type="button" aria-label="Next lunch">→</button>
-          </div>
-          <button class="text-button" id="share" type="button">Share plate</button>
-        </div>
-        <section class="extras" id="extras-wrap" aria-labelledby="extras-title" hidden>
-          <h3 id="extras-title">Add to tray</h3>
-          <div class="extra-chips" id="extras" role="group" aria-label="Optional soup and dessert"></div>
-        </section>
-        <div class="empty" id="empty" hidden><h3 id="empty-title"></h3><p id="empty-text"></p></div>
-      </section>
-      <p id="announcement" class="sr-only" aria-live="polite" aria-atomic="true"></p>
-      <p id="notice" class="notice" role="status"></p>
-      <noscript><p>Enable JavaScript to choose a plate, or visit the official menu below.</p></noscript>
-    </main>
-    <footer>
-      <p>Nutrition values are estimates.<span class="fine">Independent student project · Mensa Arcisstraße only</span></p>
-      <a href="https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html" target="_blank" rel="noopener noreferrer">Official menu ↗</a>
-    </footer>
-  </div>
-  <script>
-    'use strict';
-    const $ = id => document.getElementById(id);
-    const goals = ['bulk','cut','budget'];
-    const titles = {bulk:'Bulk',cut:'Cut',budget:'Budget'};
-    const dietLabels = {fish:'Fish',meat:'Meat',vegetarian:'Veg',vegan:'Vegan'};
-    const SITE_URL = 'https://yagizdas.github.io/platum/';
-    let selection = {goal:'bulk',vegan:false};
-    let data, stale=false, plateIndex=0, selectedExtras=new Set(), shareTimer;
-    let weekIndex, selectedDate, loadToken=0;
-    try {
-      const saved=JSON.parse(localStorage.getItem('mensa-plate') || 'null');
-      if(saved && goals.includes(saved.goal) && typeof saved.vegan==='boolean') selection=saved;
-    } catch(_) {}
-    const money=cents=>'€'+(cents/100).toFixed(2);
-    const rounded=value=>Math.round(value).toLocaleString('en-GB');
-    const berlinDate=()=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
-    const variant=()=>data.variants[selection.goal+(selection.vegan?'_vegan':'_all')];
-    const currentPlate=()=>variant().plates[plateIndex];
-    const availableExtras=()=>data.extras[selection.vegan?'vegan':'all'];
-    const activeExtras=()=>availableExtras().filter((_,index)=>selectedExtras.has(index));
-    function syncControls() {
-      document.querySelectorAll('[data-goal]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.goal===selection.goal)));
-      $('vegan').checked=selection.vegan;
-    }
-    function saveAndRender() {
-      try {localStorage.setItem('mensa-plate',JSON.stringify(selection));} catch(_) {}
-      plateIndex=0;selectedExtras.clear();syncControls();
-      if(data) render();
-    }
-    function empty(title,text) {
-      $('items').replaceChildren();$('plate-title').textContent='Your plate';$('reason').hidden=true;
-      for(const id of ['totals','details','relaxed-note','plate-actions','extras-wrap']) $(id).hidden=true;
-      $('empty').hidden=false;$('empty-title').textContent=title;$('empty-text').textContent=text || '';
-      $('announcement').textContent=title;
-    }
-    function totals() {
-      const total={...currentPlate().total};
-      for(const extra of activeExtras()) {
-        total.price_cents+=extra.price_cents;total.kcal+=extra.kcal;total.protein_g+=extra.protein_g;total.weight_g+=extra.weight_g;
-      }
-      return total;
-    }
-    function renderTotals(announce=false) {
-      const total=totals();
-      $('price').textContent=money(total.price_cents);$('kcal').textContent='~'+rounded(total.kcal);$('protein').textContent='~'+rounded(total.protein_g);
-      $('includes-extras').hidden=selectedExtras.size===0;
-      const estimated=currentPlate().has_estimated_prices || activeExtras().some(e=>e.price_source==='config');
-      $('details').textContent=rounded(total.weight_g)+'g total · Scoops are approximate; weighed at checkout.'+(estimated?' Some prices use category estimates.':'');
-      if(announce) $('announcement').textContent='Tray total '+money(total.price_cents)+', approximately '+rounded(total.kcal)+' calories and '+rounded(total.protein_g)+' grams protein.';
-    }
-    function renderExtras() {
-      $('extras').replaceChildren();$('extras-wrap').hidden=availableExtras().length===0;
-      availableExtras().forEach((extra,index)=>{
-        const button=document.createElement('button');button.type='button';button.className='extra-chip';
-        button.textContent=extra.name+' · '+money(extra.price_cents)+' · +'+rounded(extra.protein_g)+'g protein';
-        button.setAttribute('aria-pressed',String(selectedExtras.has(index)));
-        button.addEventListener('click',()=>{
-          if(selectedExtras.has(index)) selectedExtras.delete(index);else selectedExtras.add(index);
-          button.setAttribute('aria-pressed',String(selectedExtras.has(index)));renderTotals(true);
-        });
-        $('extras').append(button);
-      });
-    }
-    function render() {
-      if(stale) return empty(selectedDate && selectedDate!==berlinDate()?'That day’s plates aren’t ready.':'Today’s plates aren’t ready.','The published menu does not match '+(selectedDate || berlinDate())+'. Check the official menu for that day.');
-      const v=variant();
-      if(data.state==='closed') return empty('No menu today.',v.message);
-      if(data.state==='unavailable') return empty('Plates are on the way.',data.reason || v.message);
-      if(v.state!=='ready' || !v.plates.length) return empty('No plate fits this goal today.',v.message);
-      const p=currentPlate();$('empty').hidden=true;$('plate-title').textContent=p.title;
-      $('reason').textContent=p.reason || '';$('reason').hidden=!p.reason;
-      $('items').replaceChildren();
-      for(const item of p.items) {
-        const li=document.createElement('li');li.className='item';
-        const portion=document.createElement('div');portion.className='serving';
-        const count=document.createElement('span');count.className='count';count.textContent=item.count;
-        portion.append(count,document.createTextNode(item.unit+(item.count===1?'':'s')));
-        const description=document.createElement('div');
-        const name=document.createElement('p');name.className='dish-name';name.lang='de';name.textContent=item.name;
-        const en=document.createElement('span');en.className='english';en.textContent=item.name_en;
-        const meta=document.createElement('span');meta.className='meta';
-        meta.textContent=(item.standing?'Beilagen counter · usually there':item.station==='Unspecified'?'Main':item.station)+' · '+rounded(item.weight_g)+'g';
-        const tag=document.createElement('span');tag.className='diet-tag';tag.textContent=dietLabels[item.diet] || '';
-        description.append(name,en,meta,tag);
-        const price=document.createElement('span');price.className='item-price';price.textContent=money(item.price_cents);
-        li.append(portion,description,price);$('items').append(li);
-      }
-      $('totals').hidden=false;$('details').hidden=false;
-      $('relaxed-note').textContent=v.note || '';$('relaxed-note').hidden=!v.relaxed || !v.note;
-      $('plate-actions').hidden=false;$('alternatives').hidden=v.plates.length<2;
-      $('option-status').textContent='Other options · '+(plateIndex+1)+' / '+v.plates.length;
-      $('announcement').textContent='Option '+(plateIndex+1)+' of '+v.plates.length+': '+p.title;
-      $('share').textContent='Share plate';renderExtras();renderTotals();
-    }
-    function cycle(direction) {
-      if(!data || stale || variant().state!=='ready') return;
-      const count=variant().plates.length;
-      plateIndex=(plateIndex+direction+count)%count;render();
-    }
-    function shortName(name) {return name.replace(/\s*\(1\s*Stück\)/gi,'').split(/\s+(?:mit|auf|aus|in|an)\s+/i)[0];}
-    function shareText() {
-      const entries=currentPlate().items.map(item=>(item.unit==='piece'?'':item.count+' scoop'+(item.count===1?'':'s')+' ')+shortName(item.name));
-      for(const extra of activeExtras()) entries.push(extra.serving+' '+shortName(extra.name));
-      const t=totals();
-      return 'Lunch at Arcisstraße ('+(selection.vegan?'Vegan ':'')+titles[selection.goal]+'): '+entries.join(' + ')+' · '+money(t.price_cents)+' · ~'+rounded(t.kcal)+' kcal · ~'+rounded(t.protein_g)+'g protein · '+SITE_URL;
-    }
-    async function share() {
-      const text=shareText();
-      if(navigator.share) {
-        try {await navigator.share({title:'Mensa Plate',text});return;} catch(error) {if(error.name==='AbortError') return;}
-      }
-      try {await navigator.clipboard.writeText(text);$('share').textContent='Copied';}
-      catch(_) {$('share').textContent='Copy unavailable';}
-      clearTimeout(shareTimer);shareTimer=setTimeout(()=>{$('share').textContent='Share plate';},2000);
-    }
-    function validateDay(payload) {
-      if(payload.schema_version!==2 || !/^\d{4}-\d{2}-\d{2}$/.test(payload.date) || !payload.variants || !payload.extras) throw new Error('Invalid menu');
-      for(const goal of goals) for(const diet of ['all','vegan']) {
-        const v=payload.variants[goal+'_'+diet];
-        if(!v || !Array.isArray(v.plates) || (v.state==='ready' && !v.plates.length)) throw new Error('Invalid variant');
-        for(const p of v.plates) if(!Array.isArray(p.items) || !p.total || !['price_cents','kcal','protein_g','weight_g'].every(k=>Number.isFinite(p.total[k]))) throw new Error('Invalid totals');
-      }
-      if(!Array.isArray(payload.extras.all) || !Array.isArray(payload.extras.vegan)) throw new Error('Invalid extras');
-      return payload;
-    }
-    document.querySelectorAll('[data-goal]').forEach(button=>button.addEventListener('click',()=>{selection.goal=button.dataset.goal;saveAndRender();}));
-    $('vegan').addEventListener('change',()=>{selection.vegan=$('vegan').checked;saveAndRender();});
-    $('previous').addEventListener('click',()=>cycle(-1));$('next').addEventListener('click',()=>cycle(1));
-    $('alternatives').addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();cycle(event.key==='ArrowRight'?1:-1);}});
-    $('share').addEventListener('click',share);
-    let touch;
-    $('plate').addEventListener('touchstart',event=>{const p=event.touches[0];touch={x:p.clientX,y:p.clientY};},{passive:true});
-    $('plate').addEventListener('touchend',event=>{if(!touch) return;const p=event.changedTouches[0],dx=p.clientX-touch.x,dy=p.clientY-touch.y;touch=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.2) cycle(dx<0?1:-1);},{passive:true});
-    syncControls();
-    function mondayOf(text) {
-      const day=new Date(text+'T12:00:00Z');
-      day.setUTCDate(day.getUTCDate()-(day.getUTCDay()+6)%7);
-      return day.toISOString().slice(0,10);
-    }
-    function defaultMenuDay(index,now=new Date()) {
-      const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
-      const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Berlin',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(now);
-      const number=type=>Number(parts.find(p=>p.type===type).value);
-      const cutoff=(index.lunch_cutoff || '14:30').split(':').map(Number);
-      const late=number('hour')*60+number('minute')>=cutoff[0]*60+cutoff[1];
-      if(!late) {const current=index.days.find(row=>row.date===today && row.state==='open');if(current) return current;}
-      return index.days.find(row=>row.date>today && row.state==='open') || index.days.find(row=>row.date===today) || index.days.find(row=>row.date>today);
-    }
-    function dateLabel(day) {
-      $('date').dateTime=day;
-      $('date').textContent=new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'short',year:'numeric',timeZone:'Europe/Berlin'}).format(new Date(day+'T12:00:00Z'));
-    }
-    function renderDays() {
-      $('days').replaceChildren();$('days').hidden=!weekIndex;
-      if(!weekIndex) return;
-      for(const row of weekIndex.days.filter(row=>mondayOf(row.date)===mondayOf(selectedDate))) {
-        const button=document.createElement('button');button.type='button';button.className='day-button';
-        const date=new Date(row.date+'T12:00:00Z');
-        button.append(document.createTextNode(new Intl.DateTimeFormat('en-GB',{weekday:'short',timeZone:'Europe/Berlin'}).format(date)));
-        const label=document.createElement('span');label.className='day-date';
-        label.textContent=new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',timeZone:'Europe/Berlin'}).format(date);
-        button.append(label);button.setAttribute('aria-pressed',String(row.date===selectedDate));button.dataset.date=row.date;
-        button.setAttribute('aria-label',row.date+(row.state==='closed'?' · no menu':' menu'));
-        button.addEventListener('click',()=>selectDay(row));$('days').append(button);
-      }
-    }
-    async function selectDay(row) {
-      const token=++loadToken;selectedDate=row.date;plateIndex=0;selectedExtras.clear();data=undefined;stale=false;
-      renderDays();dateLabel(row.date);empty('Getting the menu…','');$('plate').setAttribute('aria-busy','true');
-      try {
-        const response=await fetch('./'+row.file,{cache:'no-store'});
-        if(!response.ok) throw new Error('Menu request failed');
-        const payload=validateDay(await response.json());
-        if(token!==loadToken) return;
-        data=payload;stale=data.date!==row.date;render();$('notice').textContent=(data.warnings || []).join(' ');
-      } catch(_) {if(token===loadToken){data=undefined;empty('A little trouble in the kitchen.','Please choose another day or check the official menu below.');}}
-      finally {if(token===loadToken) $('plate').setAttribute('aria-busy','false');}
-    }
-    async function loadToday() {
-      const response=await fetch('./data/today.json',{cache:'no-store'});
-      if(!response.ok) throw new Error('Menu request failed');
-      data=validateDay(await response.json());selectedDate=berlinDate();stale=data.date!==selectedDate;
-      dateLabel(data.date);render();$('notice').textContent=(data.warnings || []).join(' ');
-    }
-    async function load() {
-      try {
-        const response=await fetch('./data/week.json',{cache:'no-store'});
-        if(!response.ok) throw new Error('No week index');
-        const index=await response.json(),today=berlinDate();
-        if(index.schema_version!==2 || !Array.isArray(index.days) || !index.days.length ||
-           !/^\d{4}-\d{2}-\d{2}$/.test(index.week_start) || !/^\d{4}-\d{2}-\d{2}$/.test(index.valid_through) ||
-           today<index.week_start || today>index.valid_through ||
-           !index.days.every(row=>row && /^\d{4}-\d{2}-\d{2}$/.test(row.date) && ['open','closed','unavailable'].includes(row.state) && row.file==='data/days/'+row.date+'.json')) throw new Error('Stale week');
-        index.days.sort((a,b)=>a.date.localeCompare(b.date));weekIndex=index;
-        const day=defaultMenuDay(index);if(!day) throw new Error('No upcoming menu');
-        await selectDay(day);
-      } catch(_) {
-        weekIndex=undefined;$('days').hidden=true;
-        try {await loadToday();} catch(_) {data=undefined;empty('A little trouble in the kitchen.','Please reload in a moment, or check the official menu below.');}
-      } finally {if(!weekIndex) $('plate').setAttribute('aria-busy','false');}
-    }
-    load();
-  </script>
+      </a>
+      <p class="sr-only" id="announcement" aria-live="polite" aria-atomic="true"></p>
+    </section>
+  </main>
 </body>
 </html>

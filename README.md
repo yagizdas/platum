@@ -2,6 +2,10 @@
 
 A static lunch picker for TUM students at **Mensa Arcisstraße**. Bulk, Cut, Budget, and Vegan produce up to three coherent lunches. Python computes every portion, price and total; optional models provide cached food estimates, pairing knowledge and lunch titles.
 
+The landing page is `index.html`, with `landing.css`, `landing.js`, the supplied PNGs in `icons/`, and a locally served Bricolage Grotesque display font in `assets/fonts/`. It contains only a tray hero, four goal cards, and today's pick. The three macro numbers are protein, carbohydrates, and fat in grams, with accessible names and hover descriptions. Today's pick reads the current Berlin date's generated JSON and never substitutes a stale day's plate. Clicking the pick opens the complete app at `menu.html`, retaining the selected goal and menu date. Both publishing workflows package these files and assets.
+
+A private Sites snapshot is published at <https://mensa-plate-lunch.quickcarol1.chatgpt.site>. Its source and hosting identity are retained under the git-ignored `site-preview/mensa-plate/` directory; refresh that snapshot before publishing later source or menu updates. The existing daily GitHub Pages pipeline continues to update the repository's site.
+
 ## Setup
 
 Python 3.12+, with GEMINI_API_KEY in the environment or a git-ignored local .env:

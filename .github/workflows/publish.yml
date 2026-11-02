@@ -27,6 +27,8 @@ jobs:
         run: |
           mkdir -p dist/data
           cp index.html dist/index.html
+          cp menu.html landing.css landing.js dist/
+          cp -R assets dist/assets
           cp data/today.json dist/data/today.json
           cp data/week.json dist/data/week.json
           cp -R data/days dist/data/days
