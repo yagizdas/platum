@@ -126,7 +126,7 @@ def rank_variant(plates, goal, vegan, config):
         ranked = top_plates(plates, goal, config, top_k, relax_protein=True)
         relaxed = True
         floor = config["goals"][f"{goal}_min_protein_g"]
-        ending = ("showing the most filling one." if goal == "bulk" else "showing the best protein-density lunch available.") if ranked else "no plate meets the remaining requirements."
+        ending = "showing a filling lunch with that target relaxed." if ranked else "no plate meets the remaining requirements."
         note = f"No vegan plate reaches {floor:g}g protein today; {ending}"
     return ranked, relaxed, note
 
