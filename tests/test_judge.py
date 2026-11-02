@@ -134,6 +134,15 @@ def test_failed_daily_attempt_is_not_repeated(tmp_path):
     caller.assert_called_once()
 
 
+def test_missing_key_uses_rules_even_with_cached_judgment(tmp_path):
+    pools = {"bulk_all": [{"id": "c0"}]}
+    caller = Mock(return_value={"bulk_all": {"id": "c0", "reason": "A coherent lunch."}})
+    path = tmp_path / "judge.json"
+    assert judge.choose_variants(pools, "model", "2026-11-02", api_key="test", caller=caller, cache_path=path)
+    assert judge.choose_variants(pools, "model", "2026-11-02", api_key="", caller=caller, cache_path=path) == {}
+    caller.assert_called_once()
+
+
 def test_corrupt_judge_cache_is_nonfatal(tmp_path):
     path = tmp_path / "judge.json"; path.write_text("not JSON")
     caller = Mock()

@@ -61,15 +61,15 @@ def choose_variants(pools, model, day, *, api_key=None, caller=None, cache_path=
     if not any(pools.values()):
         return {}
     try:
+        key = api_key if api_key is not None else (os.getenv("GEMINI_API_KEY") or dotenv_values(ROOT / ".env").get("GEMINI_API_KEY"))
+        if not key:
+            return {}
         fingerprint = hashlib.sha256(json.dumps(
             {"model": model, "prompt": PROMPT, "pools": pools}, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
         cache = read_json(cache_path, {}) if cache_path is not None else {}
         if day in cache:
             entry = cache[day]
             return validate_choices(entry["choices"], pools) if entry["fingerprint"] == fingerprint else {}
-        key = api_key if api_key is not None else (os.getenv("GEMINI_API_KEY") or dotenv_values(ROOT / ".env").get("GEMINI_API_KEY"))
-        if not key:
-            return {}
         # Reserve the day's attempt before the request, including interrupted runs.
         cache[day] = {"fingerprint": fingerprint, "choices": {}}
         if cache_path is not None:
