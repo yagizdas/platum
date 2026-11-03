@@ -4,10 +4,10 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-02T19:37:13.228108+00:00",
+  "fetched_at": "2026-11-03T15:26:17.417784+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 10,
+  "menu_count": 15,
   "goals": {
     "bulk_min_protein_g": 30,
     "bulk_protein_weight": 4,
@@ -28,54 +28,23 @@
       "note": null,
       "plates": [
         {
-          "title": "Rinderbraten (1 Scheibe) + Zartweizen",
+          "title": "Schweineschnitzel Wiener Art + Lammhacksteaks (2 Stück)",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
-              "name_en": "Roast beef (1 slice) with red wine sauce",
+              "name": "Schweineschnitzel Wiener Art (1 Stück)",
+              "name_en": "Breaded pork schnitzel Viennese style (1 piece)",
               "station": "Fleisch",
               "role": "main",
-              "texture": "saucy",
+              "texture": "dry",
               "count": 1,
               "unit": "piece",
-              "weight_g": 180,
-              "price_cents": 262,
+              "weight_g": 160,
+              "price_cents": 244,
               "is_vegan": false,
               "markers": [
-                "R"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl",
-                "Sw"
-              ],
-              "additives": [
-                "5",
-                "99"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 261.0,
-              "protein_g": 31.5
-            },
-            {
-              "name": "Zartweizen mit Tomaten, Zucchini und Auberginen",
-              "name_en": "Ebly wheat with tomatoes, zucchini and eggplant",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
+                "S"
               ],
               "allergens": [
                 "Gl",
@@ -83,101 +52,58 @@
               ],
               "additives": [],
               "standing": false,
-              "diet": "vegan",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 517.5,
-              "protein_g": 15.75
-            }
-          ],
-          "total": {
-            "price_cents": 411,
-            "price_eur": 4.11,
-            "weight_g": 630,
-            "kcal": 778.5,
-            "protein_g": 47.25,
-            "carbs_g": 86.76,
-            "fat_g": 24.84
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Rinderbraten (1 Scheibe) + Gegrillte Blumenkohlröschen",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
-              "name_en": "Roast beef (1 slice) with red wine sauce",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 180,
-              "price_cents": 262,
-              "is_vegan": false,
-              "markers": [
-                "R"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl",
-                "Sw"
-              ],
-              "additives": [
-                "5",
-                "99"
-              ],
-              "standing": false,
               "diet": "meat",
               "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 261.0,
-              "protein_g": 31.5
+              "price_source": "config",
+              "kcal": 376.0,
+              "protein_g": 31.2
             },
             {
-              "name": "Gegrillte Blumenkohlröschen mit Kräuterdip",
-              "name_en": "Grilled cauliflower florets with herb dip",
+              "name": "Lammhacksteaks (2 Stück) mit Tsatsiki",
+              "name_en": "Minced lamb steaks (2 pieces) with tzatziki",
               "station": "Grill",
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 405,
+              "price_cents": 505,
               "is_vegan": false,
-              "markers": [
-                "f"
-              ],
+              "markers": [],
               "allergens": [
-                "Mi"
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
               ],
               "additives": [
+                "1",
+                "3",
+                "5",
                 "Kn"
               ],
               "standing": false,
-              "diet": "vegetarian",
+              "diet": "meat",
               "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 427.5,
-              "protein_g": 12.6
+              "price_source": "config",
+              "kcal": 967.5,
+              "protein_g": 65.25
             }
           ],
           "total": {
-            "price_cents": 667,
-            "price_eur": 6.67,
-            "weight_g": 630,
-            "kcal": 688.5,
-            "protein_g": 44.1,
-            "carbs_g": 30.06,
-            "fat_g": 42.84
+            "price_cents": 749,
+            "price_eur": 7.49,
+            "weight_g": 610,
+            "kcal": 1343.5,
+            "protein_g": 96.45,
+            "carbs_g": 35.6,
+            "fat_g": 89.75
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         },
         {
-          "title": "Rinderbraten (1 Scheibe) + Reis",
+          "title": "Rinderbraten (1 Scheibe) + Lammhacksteaks (2 Stück)",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -213,37 +139,127 @@
               "protein_g": 31.5
             },
             {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
+              "name": "Lammhacksteaks (2 Stück) mit Tsatsiki",
+              "name_en": "Minced lamb steaks (2 pieces) with tzatziki",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
               ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "serving": "2 scoops",
+              "additives": [
+                "1",
+                "3",
+                "5",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "3 scoops",
               "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
+              "kcal": 967.5,
+              "protein_g": 65.25
             }
           ],
           "total": {
-            "price_cents": 532,
-            "price_eur": 5.32,
-            "weight_g": 480,
-            "kcal": 651.0,
-            "protein_g": 39.6,
-            "carbs_g": 89.76,
-            "fat_g": 13.14
+            "price_cents": 767,
+            "price_eur": 7.67,
+            "weight_g": 630,
+            "kcal": 1228.5,
+            "protein_g": 96.75,
+            "carbs_g": 23.76,
+            "fat_g": 81.99
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "PINSA Flammkuchenstyle + Lammhacksteaks (2 Stück)",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "PINSA Flammkuchenstyle mit Sauerrahm, Zwiebeln, geräuchertem Tofu und Käse",
+              "name_en": "Flammkuchen-style pinsa with sour cream, onions, smoked tofu and cheese",
+              "station": "Unspecified",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8",
+                "15"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 675.0,
+              "protein_g": 25.5
+            },
+            {
+              "name": "Lammhacksteaks (2 Stück) mit Tsatsiki",
+              "name_en": "Minced lamb steaks (2 pieces) with tzatziki",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 645.0,
+              "protein_g": 43.5
+            }
+          ],
+          "total": {
+            "price_cents": 740,
+            "price_eur": 7.4,
+            "weight_g": 600,
+            "kcal": 1320.0,
+            "protein_g": 69.0,
+            "carbs_g": 93.0,
+            "fat_g": 72.9
           },
           "has_estimated_prices": true
         }
@@ -256,6 +272,86 @@
       "relaxed": false,
       "note": null,
       "plates": [
+        {
+          "title": "Rinderbraten (1 Scheibe) + Lammhacksteaks (2 Stück)",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
+              "name_en": "Roast beef (1 slice) with red wine sauce",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 180,
+              "price_cents": 262,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 261.0,
+              "protein_g": 31.5
+            },
+            {
+              "name": "Lammhacksteaks (2 Stück) mit Tsatsiki",
+              "name_en": "Minced lamb steaks (2 pieces) with tzatziki",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 235,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 322.5,
+              "protein_g": 21.75
+            }
+          ],
+          "total": {
+            "price_cents": 497,
+            "price_eur": 4.97,
+            "weight_g": 330,
+            "kcal": 583.5,
+            "protein_g": 53.25,
+            "carbs_g": 11.76,
+            "fat_g": 35.49
+          },
+          "has_estimated_prices": true
+        },
         {
           "title": "Rinderbraten (1 Scheibe) + Reis",
           "reason": null,
@@ -328,129 +424,23 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Rinderbraten (1 Scheibe) + Gegrillte Blumenkohlröschen",
+          "title": "Schweineschnitzel Wiener Art + Lammhacksteaks (2 Stück)",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
-              "name_en": "Roast beef (1 slice) with red wine sauce",
+              "name": "Schweineschnitzel Wiener Art (1 Stück)",
+              "name_en": "Breaded pork schnitzel Viennese style (1 piece)",
               "station": "Fleisch",
               "role": "main",
-              "texture": "saucy",
+              "texture": "dry",
               "count": 1,
               "unit": "piece",
-              "weight_g": 180,
-              "price_cents": 262,
+              "weight_g": 160,
+              "price_cents": 244,
               "is_vegan": false,
               "markers": [
-                "R"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl",
-                "Sw"
-              ],
-              "additives": [
-                "5",
-                "99"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 261.0,
-              "protein_g": 31.5
-            },
-            {
-              "name": "Gegrillte Blumenkohlröschen mit Kräuterdip",
-              "name_en": "Grilled cauliflower florets with herb dip",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 285.0,
-              "protein_g": 8.4
-            }
-          ],
-          "total": {
-            "price_cents": 532,
-            "price_eur": 5.32,
-            "weight_g": 480,
-            "kcal": 546.0,
-            "protein_g": 39.9,
-            "carbs_g": 21.96,
-            "fat_g": 32.64
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Rinderbraten (1 Scheibe) + Zartweizen",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
-              "name_en": "Roast beef (1 slice) with red wine sauce",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 180,
-              "price_cents": 262,
-              "is_vegan": false,
-              "markers": [
-                "R"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl",
-                "Sw"
-              ],
-              "additives": [
-                "5",
-                "99"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 261.0,
-              "protein_g": 31.5
-            },
-            {
-              "name": "Zartweizen mit Tomaten, Zucchini und Auberginen",
-              "name_en": "Ebly wheat with tomatoes, zucchini and eggplant",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 99,
-              "is_vegan": true,
-              "markers": [
-                "v"
+                "S"
               ],
               "allergens": [
                 "Gl",
@@ -458,23 +448,55 @@
               ],
               "additives": [],
               "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 345.0,
-              "protein_g": 10.5
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 376.0,
+              "protein_g": 31.2
+            },
+            {
+              "name": "Lammhacksteaks (2 Stück) mit Tsatsiki",
+              "name_en": "Minced lamb steaks (2 pieces) with tzatziki",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 235,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 322.5,
+              "protein_g": 21.75
             }
           ],
           "total": {
-            "price_cents": 361,
-            "price_eur": 3.61,
-            "weight_g": 480,
-            "kcal": 606.0,
-            "protein_g": 42.0,
-            "carbs_g": 59.76,
-            "fat_g": 20.64
+            "price_cents": 479,
+            "price_eur": 4.79,
+            "weight_g": 310,
+            "kcal": 698.5,
+            "protein_g": 52.95,
+            "carbs_g": 23.6,
+            "fat_g": 43.25
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         }
       ]
     },
@@ -536,6 +558,75 @@
           "has_estimated_prices": false
         },
         {
+          "title": "Schweineschnitzel Wiener Art + Zartweizen",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Schweineschnitzel Wiener Art (1 Stück)",
+              "name_en": "Breaded pork schnitzel Viennese style (1 piece)",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 160,
+              "price_cents": 244,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 376.0,
+              "protein_g": 31.2
+            },
+            {
+              "name": "Zartweizen mit Tomaten, Zucchini und Auberginen",
+              "name_en": "Ebly wheat with tomatoes, zucchini and eggplant",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 343,
+            "price_eur": 3.43,
+            "weight_g": 460,
+            "kcal": 721.0,
+            "protein_g": 41.7,
+            "carbs_g": 71.6,
+            "fat_g": 28.4
+          },
+          "has_estimated_prices": true
+        },
+        {
           "title": "Rinderbraten (1 Scheibe) + Zartweizen",
           "reason": null,
           "picked_by": "rules",
@@ -606,50 +697,6 @@
             "protein_g": 42.0,
             "carbs_g": 59.76,
             "fat_g": 20.64
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pasta",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta mit Gemüsebolognese",
-              "name_en": "Pasta with vegetable bolognese",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 99.0,
-            "fat_g": 13.5
           },
           "has_estimated_prices": false
         }
@@ -758,8 +805,8 @@
                 "So"
               ],
               "additives": [
-                "2",
-                "Kn"
+                "Kn",
+                "2"
               ],
               "standing": false,
               "diet": "vegan",
@@ -856,8 +903,8 @@
                 "So"
               ],
               "additives": [
-                "2",
-                "Kn"
+                "Kn",
+                "2"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1114,8 +1161,8 @@
                 "So"
               ],
               "additives": [
-                "2",
-                "Kn"
+                "Kn",
+                "2"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1165,34 +1212,47 @@
   "extras": {
     "all": [
       {
-        "name": "Schokoladen-Seidentofu-Creme mit Agavendicksaft",
-        "name_en": "Chocolate silken tofu cream with agave syrup",
+        "name": "Tom Kha Gai (Scharfe Suppe mit Hühnerfleisch)",
+        "name_en": "Tom Kha Gai (spicy chicken soup)",
+        "station": "Wok",
+        "weight_g": 300,
+        "price_cents": 370,
+        "is_vegan": false,
+        "diet": "meat",
+        "serving": "2 scoops",
+        "kcal": 255.0,
+        "protein_g": 16.5,
+        "price_source": "config"
+      },
+      {
+        "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+        "name_en": "Vegan chia pudding with coconut milk and mango puree",
         "station": "Dessert (Glas)",
-        "weight_g": 125.0,
-        "price_cents": 113,
+        "weight_g": 150,
+        "price_cents": 135,
         "is_vegan": true,
         "diet": "vegan",
         "serving": "1 piece",
-        "kcal": 181.25,
-        "protein_g": 5.62,
-        "price_source": "eat-api"
+        "kcal": 202.5,
+        "protein_g": 4.2,
+        "price_source": "config"
       }
     ],
     "vegan": [
       {
-        "name": "Schokoladen-Seidentofu-Creme mit Agavendicksaft",
-        "name_en": "Chocolate silken tofu cream with agave syrup",
+        "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+        "name_en": "Vegan chia pudding with coconut milk and mango puree",
         "station": "Dessert (Glas)",
-        "weight_g": 125.0,
-        "price_cents": 113,
+        "weight_g": 150,
+        "price_cents": 135,
         "is_vegan": true,
         "diet": "vegan",
         "serving": "1 piece",
-        "kcal": 181.25,
-        "protein_g": 5.62,
-        "price_source": "eat-api"
+        "kcal": 202.5,
+        "protein_g": 4.2,
+        "price_source": "config"
       }
     ]
   },
-  "generated_on": "2026-11-02"
+  "generated_on": "2026-11-03"
 }

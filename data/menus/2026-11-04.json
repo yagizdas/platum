@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/45.json",
-  "fetched_at": "2026-11-02T19:37:13.228108+00:00",
+  "fetched_at": "2026-11-03T15:26:17.417784+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -72,6 +72,64 @@
       }
     },
     {
+      "name": "PINSA Flammkuchenstyle mit Sauerrahm, Zwiebeln, geräuchertem Tofu und Käse",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [
+        "2",
+        "3",
+        "8",
+        "15"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Lammhacksteaks (2 Stück) mit Tsatsiki",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sw"
+      ],
+      "additives": [
+        "1",
+        "3",
+        "5",
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
       "name": "Gegrillte Blumenkohlröschen mit Kräuterdip",
       "station": "Grill",
       "station_raw": "Grill",
@@ -101,6 +159,29 @@
       }
     },
     {
+      "name": "Tom Kha Gai (Scharfe Suppe mit Hühnerfleisch)",
+      "station": "Wok",
+      "station_raw": "Wok",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [
+        "2"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
       "name": "Rotes Gemüsecurry mit Tofu",
       "station": "Wok",
       "station_raw": "Wok",
@@ -111,8 +192,8 @@
         "So"
       ],
       "additives": [
-        "2",
-        "Kn"
+        "Kn",
+        "2"
       ],
       "is_vegan": true,
       "is_vegetarian": true,
@@ -199,6 +280,58 @@
       }
     },
     {
+      "name": "Lammhacksteaks (2 Stück) mit Tsatsiki",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sw"
+      ],
+      "additives": [
+        "Kn",
+        "1",
+        "3",
+        "5"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Schweineschnitzel Wiener Art (1 Stück)",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
       "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
       "station": "Vegan",
       "station_raw": "Vegan",
@@ -242,29 +375,23 @@
       }
     },
     {
-      "name": "Schokoladen-Seidentofu-Creme mit Agavendicksaft",
+      "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
       "markers": [
         "v"
       ],
-      "allergens": [
-        "So"
-      ],
+      "allergens": [],
       "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "SOY",
-        "VEGAN",
-        "VEGETARIAN"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {
