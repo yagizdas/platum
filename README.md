@@ -2,7 +2,9 @@
 
 A static lunch picker for TUM students at **Mensa Arcisstraße**. Bulk, Cut, Budget, and Vegan produce up to three coherent lunches. Python computes every portion, price and total; optional models provide cached food estimates, pairing knowledge and lunch titles.
 
-The landing page is `index.html`, with `landing.css`, `landing.js`, the optimized supplied artwork in `icons/ui/`, and a locally served Bricolage Grotesque display font in `assets/fonts/`. It contains only a tray hero, four goal cards, and today's pick. The three macro numbers are protein, carbohydrates, and fat in grams, with accessible names and hover descriptions. Today's pick reads the current Berlin date's generated JSON and never substitutes a stale day's plate. Clicking the pick opens the complete app at `menu.html`, retaining the selected goal and menu date. The main screen shares its font, illustrations, and TUM Blue accent (`#0065BD`); `menu.css` styles the roomy plate summary, illustrated goal controls, and independent Vegan switch. Details is always visible, with an icon beside every dish and selected extra. Optional extras stay under Add to tray. `dish-icons.js` maps German and English dish names to the new food categories and supplies a generic fallback for future dishes. Original PNGs stay in `icons/new_icons/`; only the smaller web assets and CSS crops are published. Both publishing workflows package these files and assets.
+The landing page is `index.html`, with `landing.css`, `landing.js`, the supplied artwork in `icons/ui/`, and a locally served Bricolage Grotesque display font in `assets/fonts/`. The original tray hero leads into a short scrolling introduction to the daily Arcisstraße menu, lunch goals, portions, student prices, and estimated nutrition. Illustrations float gently and drift slightly with native scrolling. Both “Your plate” links open `menu.html` directly; there are no goal selectors or menu requests on the landing page. Content and links work without JavaScript, and reduced motion disables all floating, scroll drift, and reveal animations.
+
+The main app shares its font, illustrations, and TUM Blue accent (`#0065BD`); `menu.css` styles the plate summary, goal controls, and independent Vegan switch. Details is always visible, with an icon beside every dish and selected extra. Optional extras stay under Add to tray. `dish-icons.js` maps German and English dish names to food categories and composes the main with up to two smaller companions. Original PNGs stay in `icons/new_icons/`; only the smaller web assets and CSS crops are published. Both publishing workflows package these files and assets.
 
 A private Sites snapshot is published at <https://mensa-plate-lunch.quickcarol1.chatgpt.site>. Its source and hosting identity are retained under the git-ignored `site-preview/mensa-plate/` directory; refresh that snapshot before publishing later source or menu updates. The existing daily GitHub Pages pipeline continues to update the repository's site.
 
@@ -32,7 +34,7 @@ official HTML + eat-api prices + configured counter sides
   → scrape.py → menu.json
   → tag.py    → dish_cache.json
   → pair.py   → pairing_cache.json
-  → pick.py + optional judge.py → today.json → index.html
+  → pick.py + optional judge.py → today.json → menu.html
                               ↳ judge_cache.json
 ~~~
 

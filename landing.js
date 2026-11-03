@@ -1,89 +1,60 @@
 'use strict';
 (() => {
-  const byId = id => document.getElementById(id);
-  const buttons = [...document.querySelectorAll('[data-goal]')];
-  const choices = { bulk: 'bulk_all', cut: 'cut_all', budget: 'budget_all', vegan: 'bulk_vegan' };
-  const date = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Berlin', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
-  let selected = 'bulk';
-  let menu;
-  try {
-    const saved = JSON.parse(localStorage.getItem('mensa-plate') || 'null');
-    if (saved?.vegan) selected = 'vegan';
-    else if (saved && Object.hasOwn(choices, saved.goal)) selected = saved.goal;
-  } catch (_) {}
-  function sync() {
-    for (const button of buttons) button.setAttribute('aria-pressed', String(button.dataset.goal === selected));
-    byId('pick-link').href = './menu.html?goal=' + (selected === 'vegan' ? 'bulk&vegan=1' : selected) + '&date=' + date;
-  }
-  function empty(message,icon='empty') {
-    DishIcons.compose(document.querySelector('.pick-art'),[],{fallback:icon});
-    byId('plate-name').textContent = message;
-    byId('pick-side').hidden = true;
-    byId('plate-price').hidden = true;
-    byId('macros').hidden = true;
-    byId('announcement').textContent = message;
-  }
-  function render() {
-    sync();
-    if (!menu) return;
-    if (menu.date !== date) return empty('Today’s plates aren’t ready.');
-    if (menu.state === 'closed') return empty('No menu today.');
-    if (menu.state !== 'open') return empty('Plates are on the way.');
-    const variant = menu.variants?.[choices[selected]];
-    const plate = variant?.plates?.[0];
-    if (variant?.state !== 'ready' || !plate) return empty('No plate fits this goal today.');
-    const total = plate.total;
-    if (!total || !['price_cents', 'protein_g', 'carbs_g', 'fat_g'].every(key => Number.isFinite(total[key]))) return empty('Plates are on the way.');
-    DishIcons.compose(document.querySelector('.pick-art'),plate.items);
-    const [title,...sides]=plate.title.split(' + ');
-    byId('plate-name').textContent = title;
-    byId('plate-name').classList.toggle('is-long',title.length>30);
-    byId('plate-name').lang = 'de';
-    byId('pick-side').textContent = sides.join(' + ');
-    byId('pick-side').hidden = sides.length===0;
-    byId('plate-price').textContent = '€' + (total.price_cents / 100).toFixed(2);
-    byId('plate-price').hidden = false;
-    for (const [id, key, label] of [['protein', 'protein_g', 'protein'], ['carbs', 'carbs_g', 'carbohydrates'], ['fat', 'fat_g', 'fat']]) {
-      const value = String(Math.round(total[key]));
-      byId(id).textContent = value;
-      byId(id).setAttribute('aria-label', value + ' grams ' + label + ', estimated');
-      byId(id).title = label + ': ' + value + 'g, estimated';
-    }
-    byId('macros').hidden = false;
-    byId('announcement').textContent = plate.title + ', ' + byId('plate-price').textContent;
-  }
-  for (const button of buttons) button.addEventListener('click', () => {
-    selected = button.dataset.goal;
-    try { localStorage.setItem('mensa-plate', JSON.stringify({ goal: selected === 'vegan' ? 'bulk' : selected, vegan: selected === 'vegan' })); } catch (_) {}
-    render();
-  });
-  sync();
-  async function load() {
-    try {
-      const response = await fetch('./data/days/' + date + '.json', { cache: 'no-store' });
-      if (!response.ok) throw new Error('Menu unavailable');
-      menu = await response.json();
-    } catch (_) {
-      try {
-        const response = await fetch('./data/today.json', { cache: 'no-store' });
-        if (!response.ok) throw new Error('Menu unavailable');
-        menu = await response.json();
-      } catch (_) { empty('A little trouble in the kitchen.','error'); }
-    } finally {
-      render();
-      byId('pick-link').setAttribute('aria-busy', 'false');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const animations = new Set();
+  const orbits = [...document.querySelectorAll('[data-parallax]')];
+  let frame;
+
+  // Native scrolling stays in charge. Only the decorative illustrations move.
+  function moveArtwork() {
+    frame = undefined;
+    if (reducedMotion.matches) return;
+    for (const orbit of orbits) {
+      const section = orbit.closest('section').getBoundingClientRect();
+      if (section.bottom < 0 || section.top > innerHeight) continue;
+      const distance = innerHeight / 2 - (section.top + section.height / 2);
+      const shift = Math.max(-18, Math.min(18, distance * Number(orbit.dataset.parallax)));
+      orbit.style.transform = 'translate3d(0,' + shift.toFixed(2) + 'px,0)';
     }
   }
-  load();
-  // Content remains visible without JavaScript or IntersectionObserver.
-  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  function requestMove() {
+    if (!reducedMotion.matches && frame === undefined) frame = requestAnimationFrame(moveArtwork);
+  }
+  function resetMotion() {
+    if (frame !== undefined) cancelAnimationFrame(frame);
+    frame = undefined;
+    for (const animation of animations) animation.cancel();
+    animations.clear();
+    for (const orbit of orbits) orbit.style.removeProperty('transform');
+    requestMove();
+  }
+
+  // Content stays visible when JavaScript or observers are unavailable.
+  if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
-      for (const entry of entries) if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
         observer.unobserve(entry.target);
+        if (reducedMotion.matches || typeof entry.target.animate !== 'function') continue;
+        const kind = entry.target.dataset.reveal;
+        const travel = kind === 'heading' ? 24 : kind === 'row' ? 12 : 16;
+        const animation = entry.target.animate([
+          {opacity: 0, transform: 'translateY(' + travel + 'px)'},
+          {opacity: 1, transform: 'translateY(0)'}
+        ], {
+          duration: kind === 'heading' ? 900 : 750,
+          delay: kind === 'copy' ? 70 : kind === 'action' ? 130 : 0,
+          easing: 'cubic-bezier(.16,1,.3,1)'
+        });
+        animations.add(animation);
+        animation.onfinish = () => animations.delete(animation);
       }
-    }, { threshold: .08 });
-    document.documentElement.classList.add('motion-ready');
-    for (const element of document.querySelectorAll('.reveal')) observer.observe(element);
+    }, {threshold: .16});
+    document.querySelectorAll('[data-reveal]').forEach(element => observer.observe(element));
   }
+
+  addEventListener('scroll', requestMove, {passive: true});
+  addEventListener('resize', requestMove, {passive: true});
+  reducedMotion.addEventListener('change', resetMotion);
+  requestMove();
 })();
