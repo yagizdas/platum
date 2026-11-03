@@ -34,7 +34,7 @@
       </div>
       <section class="receipt" aria-labelledby="plate-title" aria-busy="true" id="plate">
         <div class="plate-overview">
-          <div class="plate-art" id="plate-art"><span id="plate-illustration" class="artwork art-tray" data-icon="tray"><img src="./icons/ui/tray.webp" width="1254" height="1254" alt="" decoding="async"></span></div>
+          <div class="plate-art dish-scene" id="plate-art"><span id="plate-illustration" class="artwork art-tray" data-icon="tray"><img src="./icons/ui/tray.webp" width="1254" height="1254" alt="" decoding="async"></span></div>
           <div class="plate-summary">
             <h2 id="plate-title">Your plate</h2>
             <p class="plate-side" id="plate-side" hidden></p>
@@ -90,6 +90,22 @@
     let selection = {goal:'bulk',vegan:false};
     let data, stale=false, plateIndex=0, selectedExtras=new Set(), shareTimer;
     let weekIndex, selectedDate, loadToken=0;
+    const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+    let plateAnimations=[];
+    function stopPlateAnimations() {
+      plateAnimations.forEach(animation=>animation.cancel());plateAnimations=[];
+    }
+    function animatePlateChange(direction) {
+      if(reducedMotion.matches || typeof $('plate-art').animate!=='function') return;
+      const timing={duration:360,easing:'cubic-bezier(.22,1,.36,1)'};
+      for(const [target,distance] of [[$('plate-art'),22],[$('plate').querySelector('.plate-summary'),14],[$('items'),10]]) {
+        plateAnimations.push(target.animate([
+          {opacity:0,transform:'translateX('+(direction*distance)+'px)'},
+          {opacity:1,transform:'translateX(0)'}
+        ],timing));
+      }
+    }
+    reducedMotion.addEventListener('change',stopPlateAnimations);
     try {
       const saved=JSON.parse(localStorage.getItem('mensa-plate') || 'null');
       if(saved && goals.includes(saved.goal) && typeof saved.vegan==='boolean') selection=saved;
@@ -114,8 +130,9 @@
       if(data) render();
     }
     function empty(title,text,icon='empty') {
+      stopPlateAnimations();
       $('plate').classList.add('is-empty');$('secondary-actions').hidden=true;$('plate-side').hidden=true;
-      DishIcons.apply($('plate-illustration'),icon);
+      DishIcons.compose($('plate-art'),[],{fallback:icon});
       $('items').replaceChildren();$('plate-title').textContent='Your plate';$('reason').hidden=true;
       for(const id of ['totals','details','relaxed-note','plate-actions','extras-wrap']) $(id).hidden=true;
       $('empty').hidden=false;$('empty-title').textContent=title;$('empty-text').textContent=text || '';
@@ -150,7 +167,7 @@
         button.addEventListener('click',()=>{
           if(selectedExtras.has(index)) selectedExtras.delete(index);else selectedExtras.add(index);
           mark.textContent=selectedExtras.has(index)?'−':'+';
-          button.setAttribute('aria-pressed',String(selectedExtras.has(index)));renderItems();renderTotals(true);
+          button.setAttribute('aria-pressed',String(selectedExtras.has(index)));renderIllustration();renderItems();renderTotals(true);
         });
         $('extras').append(button);
       });
@@ -177,7 +194,11 @@
         li.append(art,portion,description,price);$('items').append(li);
       }
     }
+    function renderIllustration() {
+      DishIcons.compose($('plate-art'),[...currentPlate().items,...activeExtras()]);
+    }
     function render() {
+      stopPlateAnimations();
       if(stale) return empty(selectedDate && selectedDate!==berlinDate()?'That day’s plates aren’t ready.':'Today’s plates aren’t ready.','The published menu does not match '+(selectedDate || berlinDate())+'. Check the official menu for that day.');
       const v=variant();
       if(data.state==='closed') return empty('No menu today.',v.message);
@@ -185,7 +206,7 @@
       if(v.state!=='ready' || !v.plates.length) return empty('No plate fits this goal today.',v.message);
       const p=currentPlate();$('empty').hidden=true;$('plate').classList.remove('is-empty');$('secondary-actions').hidden=false;
       const main=p.items.find(item=>item.role==='main') || p.items[0],title=briefDish(main);
-      DishIcons.apply($('plate-illustration'),DishIcons.classify(main));
+      renderIllustration();
       $('plate-title').textContent=title;$('plate-title').lang=main.name_en?'en':'de';
       $('plate-title').classList.toggle('is-long',title.length>30);
       $('plate-side').textContent=p.items.filter(item=>item!==main).map(briefDish).join(' + ');$('plate-side').hidden=p.items.length<2;
@@ -202,7 +223,8 @@
     function cycle(direction) {
       if(!data || stale || variant().state!=='ready') return;
       const count=variant().plates.length;
-      plateIndex=(plateIndex+direction+count)%count;render();
+      if(count<2) return;
+      plateIndex=(plateIndex+direction+count)%count;render();animatePlateChange(direction);
     }
     function shortName(name) {return name.replace(/\s*\(1\s*Stück\)/gi,'').split(/\s+(?:mit|auf|aus|in|an)\s+/i)[0];}
     function briefDish(item) {

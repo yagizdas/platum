@@ -1,6 +1,16 @@
 /* Supplied PNG artwork, web-optimized without removing its background. White margins are clipped only in CSS. */
 .artwork { position:relative; display:block; aspect-ratio:var(--art-aspect,1); overflow:hidden; mix-blend-mode:multiply; }
 .artwork > img { position:absolute; display:block; width:var(--art-size,100%); max-width:none; height:auto; left:var(--art-left,0%); top:var(--art-top,0%); }
+/* Blend the complete scene too: a faded/animated parent isolates its children's blending. */
+.dish-scene { --dish-height:280px; position:relative; display:grid; grid-template-columns:minmax(0,1fr); align-items:center; justify-items:center; gap:12px; min-width:0; min-height:var(--dish-height); mix-blend-mode:multiply; }
+.dish-scene > .artwork { width:min(100%,calc(var(--dish-height) * var(--art-aspect))); transform:rotate(-4deg); }
+.dish-scene[data-companions='1'] { grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr); column-gap:0; }
+.dish-scene > .dish-companion { width:min(100%,calc(var(--dish-height) * .6 * var(--art-aspect))); transform:translate(-12%,18%) rotate(5deg); }
+/* One meal on a table: the first side sits right; the next sits left, just touching the main. */
+.dish-scene[data-companions='2'] { grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr) minmax(0,.8fr); column-gap:0; }
+.dish-scene[data-companions='2'] > .artwork:first-child { grid-column:2; grid-row:1; width:min(110%,calc(var(--dish-height) * var(--art-aspect))); }
+.dish-scene[data-companions='2'] > .dish-companion { grid-column:3; grid-row:1; width:min(100%,calc(var(--dish-height) * .55 * var(--art-aspect))); transform:translate(-10%,18%) rotate(5deg); }
+.dish-scene[data-companions='2'] > .dish-companion:last-child { grid-column:1; transform:translate(10%,18%) rotate(-5deg); }
 .art-dumplings { --art-aspect:1.346715; --art-size:113.27913%; --art-left:-6.59440%; --art-top:-29.80535%; }
 .art-broccoli { --art-aspect:0.927374; --art-size:125.90361%; --art-left:-12.44980%; --art-top:-6.79702%; }
 .art-cake { --art-aspect:0.863179; --art-size:146.15385%; --art-left:-22.96037%; --art-top:-13.17907%; }

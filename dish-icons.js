@@ -56,7 +56,25 @@
   }
 
   function create(key, options) { return apply(document.createElement('span'), key, options); }
-  const api = Object.freeze({ keys, classify, apply, create });
+
+  function compose(target, items = [], options = {}) {
+    const main = items.find(item => item.role === 'main') || items[0];
+    let primary = target.querySelector('.artwork:not(.dish-companion)');
+    if (!primary) { primary = create('tray'); target.append(primary); }
+    apply(primary, main ? classify(main) : options.fallback);
+    target.querySelectorAll('.dish-companion').forEach(art => art.remove());
+    const companions = items.filter(item => item !== main).slice(0, 2);
+    target.dataset.companions = String(companions.length);
+    for (const item of companions) {
+      const art = create(classify(item));
+      art.classList.add('dish-companion');
+      art.setAttribute('aria-hidden', 'true');
+      target.append(art);
+    }
+    return target;
+  }
+
+  const api = Object.freeze({ keys, classify, apply, create, compose });
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.DishIcons = api;
 })(typeof globalThis === 'undefined' ? this : globalThis);

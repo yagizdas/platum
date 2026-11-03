@@ -16,8 +16,9 @@
     byId('pick-link').href = './menu.html?goal=' + (selected === 'vegan' ? 'bulk&vegan=1' : selected) + '&date=' + date;
   }
   function empty(message,icon='empty') {
-    DishIcons.apply(byId('pick-illustration'),icon);
+    DishIcons.compose(document.querySelector('.pick-art'),[],{fallback:icon});
     byId('plate-name').textContent = message;
+    byId('pick-side').hidden = true;
     byId('plate-price').hidden = true;
     byId('macros').hidden = true;
     byId('announcement').textContent = message;
@@ -33,10 +34,13 @@
     if (variant?.state !== 'ready' || !plate) return empty('No plate fits this goal today.');
     const total = plate.total;
     if (!total || !['price_cents', 'protein_g', 'carbs_g', 'fat_g'].every(key => Number.isFinite(total[key]))) return empty('Plates are on the way.');
-    const main=plate.items.find(item=>item.role==='main') || plate.items[0];
-    DishIcons.apply(byId('pick-illustration'),DishIcons.classify(main));
-    byId('plate-name').textContent = plate.title;
+    DishIcons.compose(document.querySelector('.pick-art'),plate.items);
+    const [title,...sides]=plate.title.split(' + ');
+    byId('plate-name').textContent = title;
+    byId('plate-name').classList.toggle('is-long',title.length>30);
     byId('plate-name').lang = 'de';
+    byId('pick-side').textContent = sides.join(' + ');
+    byId('pick-side').hidden = sides.length===0;
     byId('plate-price').textContent = '€' + (total.price_cents / 100).toFixed(2);
     byId('plate-price').hidden = false;
     for (const [id, key, label] of [['protein', 'protein_g', 'protein'], ['carbs', 'carbs_g', 'carbohydrates'], ['fat', 'fat_g', 'fat']]) {

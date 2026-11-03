@@ -61,8 +61,7 @@ h1 { font-size: clamp(40px, 4vw, 60px); font-weight: 700; line-height: 1; letter
 .toggle input:focus-visible + .vegan-face { outline: 3px solid var(--accent); outline-offset: 5px; }
 .receipt { padding: 32px 40px 24px; border-radius: var(--radius); background: var(--plate); touch-action: pan-y pinch-zoom; }
 .plate-overview { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 48px; min-height: 316px; }
-.plate-art { min-width: 0; display: grid; place-items: center; }
-.plate-art .artwork { width: min(100%, calc(280px * var(--art-aspect))); transform: rotate(-4deg); }
+.plate-art { width: 100%; }
 .plate-summary { padding-block: 24px; }
 h2 { max-width: 24ch; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.05; font-weight: 600; letter-spacing: -.045em; text-wrap: balance; }
 h2.is-long { font-size: clamp(28px, 2.6vw, 36px); }
@@ -90,6 +89,8 @@ details[open] .disclosure-mark { transform: rotate(45deg); }
 .disclosure-content { padding: 0 28px 28px; }
 .disclosure:not([open]) .disclosure-content { display: none; }
 .items { list-style: none; padding: 0; margin: 0; }
+/* Keep white-backed icons blended while the item list fades between options. */
+#items { mix-blend-mode: multiply; }
 .item { display: grid; grid-template-columns: 112px 54px minmax(0, 1fr) auto; align-items: center; gap: 24px; padding: 24px 0; }
 .item-icon { display: grid; place-items: center; width: 112px; height: 112px; }
 .item-icon .artwork { width: min(100%, calc(112px * var(--art-aspect))); }
@@ -115,8 +116,7 @@ details[open] .disclosure-mark { transform: rotate(45deg); }
 .empty h3 { font-size: 28px; font-weight: 500; line-height: 1.15; letter-spacing: -.035em; }
 .empty p { margin-top: 16px; font-size: 16px; color: var(--muted); }
 .receipt.is-empty .plate-summary > h2 { display: none; }
-.receipt.is-empty .plate-art { opacity: .65; }
-.receipt.is-empty .plate-art .artwork { width: min(100%, calc(180px * var(--art-aspect))); }
+.receipt.is-empty .plate-art { --dish-height: 180px; opacity: .65; }
 .notice { margin-top: 24px; color: var(--muted); font-size: 14px; }
 .notice:empty { display: none; }
 footer { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 40px 0 32px; font-size: 13px; color: var(--muted); }
@@ -157,8 +157,7 @@ footer a:hover { text-decoration: underline; }
   .vegan-face .artwork { margin-top: 8px; width: min(64px, calc(40px * var(--art-aspect))); }
   .receipt { padding: 20px 24px 20px; }
   .plate-overview { grid-template-columns: 1fr; gap: 12px; min-height: 0; }
-  .plate-art { max-width: 430px; width: 100%; margin: 0 auto; }
-  .plate-art .artwork { width: min(100%, calc(210px * var(--art-aspect))); transform: rotate(-3deg); }
+  .plate-art { --dish-height: 210px; max-width: 430px; margin: 0 auto; }
   .plate-summary { padding: 4px 0 0; }
   h2 { font-size: 32px; max-width: 24ch; }
   h2.is-long { font-size: 28px; }
