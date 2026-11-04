@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/45.json",
-  "fetched_at": "2026-11-03T15:26:17.417784+00:00",
+  "fetched_at": "2026-11-04T15:42:19.441308+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -192,8 +192,8 @@
         "So"
       ],
       "additives": [
-        "Kn",
-        "2"
+        "2",
+        "Kn"
       ],
       "is_vegan": true,
       "is_vegetarian": true,
@@ -239,6 +239,29 @@
         "base_eur": 0.0,
         "per_100g_eur": 0.33,
         "source": "eat-api"
+      }
+    },
+    {
+      "name": "Schweineschnitzel Wiener Art (1 Stück)",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {
@@ -297,29 +320,6 @@
         "3",
         "5"
       ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      }
-    },
-    {
-      "name": "Schweineschnitzel Wiener Art (1 Stück)",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [
-        "S"
-      ],
-      "allergens": [
-        "Gl",
-        "GlW"
-      ],
-      "additives": [],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",

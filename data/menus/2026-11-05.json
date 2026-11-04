@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/45.json",
-  "fetched_at": "2026-11-03T15:26:17.484745+00:00",
+  "fetched_at": "2026-11-04T15:42:19.512569+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -43,7 +43,7 @@
       }
     },
     {
-      "name": "Pizza mit Spinat und Ricotta",
+      "name": "PINSA mit Spinat und Ricotta",
       "station": "Pizza",
       "station_raw": "Pizza",
       "markers": [
@@ -69,7 +69,36 @@
       }
     },
     {
-      "name": "Truthahnschnitzel (1 Stück) mit Paprikasauce",
+      "name": "Lammhacksteaks (2 Stück) mit Tsatsiki",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sw"
+      ],
+      "additives": [
+        "3",
+        "Kn",
+        "1",
+        "5"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Truthahnschnitzel (1 Stück) mit Ajvar und Kartoffeln aus dem Ofen",
       "station": "Grill",
       "station_raw": "Grill",
       "markers": [],
@@ -77,21 +106,18 @@
         "Gl",
         "GlW"
       ],
-      "additives": [],
+      "additives": [
+        "Kn"
+      ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "GLUTEN",
-        "MEAT",
-        "WHEAT"
-      ],
+      "api_labels": [],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {
@@ -184,35 +210,23 @@
       }
     },
     {
-      "name": "Veganes Shakshuka mit Couscous",
+      "name": "Gebratener Kürbis",
       "station": "Vegan",
       "station_raw": "Vegan",
       "markers": [
         "v"
       ],
-      "allergens": [
-        "Gl",
-        "GlW"
-      ],
-      "additives": [
-        "Kn"
-      ],
+      "allergens": [],
+      "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "GARLIC",
-        "GLUTEN",
-        "VEGAN",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {
@@ -247,12 +261,10 @@
       }
     },
     {
-      "name": "Bayerisch Creme mit Waldbeeren",
+      "name": "Rhabarberrdbeermousse mit Brombeersauce",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
-      "markers": [
-        "f"
-      ],
+      "markers": [],
       "allergens": [
         "Mi"
       ],
@@ -260,19 +272,14 @@
         "14"
       ],
       "is_vegan": false,
-      "is_vegetarian": true,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "GELATIN",
-        "LACTOSE",
-        "MILK",
-        "VEGETARIAN"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {

@@ -1,41 +1,36 @@
 {
   "schema_version": 1,
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/45.json",
-  "fetched_at": "2026-11-03T15:26:17.364794+00:00",
+  "fetched_at": "2026-11-04T15:42:19.441308+00:00",
   "warnings": [],
   "dishes": [
     {
-      "name": "Schweizer Knöpflepfanne mit feinem Gemüse und Käse",
+      "name": "Pasta mit Gemüsebolognese",
       "station": "Pasta",
       "station_raw": "Pasta",
       "markers": [
-        "f"
+        "v"
       ],
       "allergens": [
-        "Ei",
         "Gl",
-        "GlD",
         "GlW",
-        "Mi",
         "Sl"
       ],
       "additives": [],
-      "is_vegan": false,
+      "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
         "CELERY",
         "CEREAL",
-        "CHICKEN_EGGS",
         "GLUTEN",
-        "LACTOSE",
-        "MILK",
+        "VEGAN",
         "VEGETARIAN",
         "WHEAT"
       ],
@@ -46,18 +41,24 @@
       }
     },
     {
-      "name": "PINSA mit roten Zwiebeln, Oliven und Hirtenkäse",
+      "name": "PINSA Flammkuchenstyle mit Sauerrahm, Speck und roten Zwiebeln",
       "station": "Pizza",
       "station_raw": "Pizza",
-      "markers": [],
+      "markers": [
+        "S"
+      ],
       "allergens": [
         "Gl",
+        "GlG",
         "GlW",
         "Mi",
         "So"
       ],
       "additives": [
-        "6"
+        "2",
+        "3",
+        "8",
+        "15"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
@@ -71,20 +72,50 @@
       }
     },
     {
-      "name": "Fleischpflanzerl (Frikadelle)",
+      "name": "PINSA Flammkuchenstyle mit Sauerrahm, Zwiebeln, geräuchertem Tofu und Käse",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [
+        "2",
+        "3",
+        "8",
+        "15"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Lammhacksteaks (2 Stück) mit Tsatsiki",
       "station": "Grill",
       "station_raw": "Grill",
-      "markers": [
-        "R",
-        "S"
-      ],
+      "markers": [],
       "allergens": [
         "Ei",
         "Gl",
         "GlW",
-        "Sf"
+        "Mi",
+        "Sw"
       ],
       "additives": [
+        "1",
+        "3",
+        "5",
         "Kn"
       ],
       "is_vegan": false,
@@ -96,6 +127,35 @@
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
         "source": "config"
+      }
+    },
+    {
+      "name": "Gegrillte Blumenkohlröschen mit Kräuterdip",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "GARLIC",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
       }
     },
     {
@@ -114,72 +174,6 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "GLUTEN",
-        "MEAT",
-        "PRESERVATIVES",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Veganer Eintopf mit Kraut, Kartoffeln und Roter Beete",
-      "station": "Studitopf",
-      "station_raw": "Studitopf",
-      "markers": [
-        "v"
-      ],
-      "allergens": [
-        "Sw"
-      ],
-      "additives": [
-        "1",
-        "3",
-        "5",
-        "9"
-      ],
-      "is_vegan": true,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "ANTIOXIDANTS",
-        "DYESTUFF",
-        "SULFITES",
-        "SULPHURS",
-        "SWEETENERS",
-        "VEGAN",
-        "VEGETARIAN"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.33,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Leberknödelsuppe",
-      "station": "Unspecified",
-      "station_raw": "",
-      "markers": [
-        "S"
-      ],
-      "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
-        "Sl"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
       "api_labels": [],
       "price": {
         "base_eur": 1.0,
@@ -188,42 +182,62 @@
       }
     },
     {
-      "name": "Tomate-Mozzarella-Strudel mit Tomatenragout",
-      "station": "Vegetarisch/fleischlos",
-      "station_raw": "Vegetarisch/fleischlos",
+      "name": "Rotes Gemüsecurry mit Tofu",
+      "station": "Wok",
+      "station_raw": "Wok",
       "markers": [
-        "f"
+        "v"
       ],
       "allergens": [
-        "Gl",
-        "GlG",
-        "GlR",
-        "GlW",
-        "Mi",
-        "Sf"
+        "So"
       ],
       "additives": [
+        "2",
         "Kn"
       ],
-      "is_vegan": false,
+      "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "BARLEY",
-        "CEREAL",
         "GARLIC",
+        "PRESERVATIVES",
+        "SOY",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Zartweizen mit Tomaten, Zucchini und Auberginen",
+      "station": "Studitopf",
+      "station_raw": "Studitopf",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
         "GLUTEN",
-        "LACTOSE",
-        "MILK",
-        "MUSTARD",
-        "RYE",
+        "VEGAN",
         "VEGETARIAN",
         "WHEAT"
       ],
       "price": {
         "base_eur": 0.0,
-        "per_100g_eur": 0.9,
+        "per_100g_eur": 0.33,
         "source": "eat-api"
       }
     },
@@ -243,11 +257,43 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sl",
+        "Sw"
+      ],
+      "additives": [
+        "5",
+        "99"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
       "api_labels": [
+        "ALCOHOL",
+        "BEEF",
+        "CELERY",
         "CEREAL",
         "GLUTEN",
         "MEAT",
-        "PORK",
+        "SULFITES",
+        "SULPHURS",
         "WHEAT"
       ],
       "price": {
@@ -257,28 +303,70 @@
       }
     },
     {
-      "name": "Kartoffel-Broccoli-Gratin",
+      "name": "Lammhacksteaks (2 Stück) mit Tsatsiki",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sw"
+      ],
+      "additives": [
+        "Kn",
+        "1",
+        "3",
+        "5"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
       "station": "Vegan",
       "station_raw": "Vegan",
       "markers": [
-        "f"
+        "v"
       ],
       "allergens": [
-        "Ei",
-        "Sc",
-        "ScM"
+        "Gl",
+        "GlW",
+        "Sl",
+        "So",
+        "Sw"
       ],
-      "additives": [],
-      "is_vegan": false,
+      "additives": [
+        "2",
+        "3",
+        "4"
+      ],
+      "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "ALMONDS",
-        "CHICKEN_EGGS",
-        "SHELLFISH",
-        "SHELL_FRUITS",
-        "VEGETARIAN"
+        "ANTIOXIDANTS",
+        "CELERY",
+        "CEREAL",
+        "FLAVOR_ENHANCER",
+        "GLUTEN",
+        "PRESERVATIVES",
+        "SOY",
+        "SULFITES",
+        "SULPHURS",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
       ],
       "price": {
         "base_eur": 0.0,
