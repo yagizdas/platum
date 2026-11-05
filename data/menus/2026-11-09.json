@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-04T15:42:19.742090+00:00",
+  "fetched_at": "2026-11-05T15:44:50.969660+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -129,29 +129,47 @@
       }
     },
     {
-      "name": "Gegrillte Süßkartoffeln mit Gemüse",
+      "name": "Vegane Kürbiscremesuppe",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Gegrillte Süßkartoffeln aus dem Ofen mit Kräuterdip",
       "station": "Vegetarisch/fleischlos",
       "station_raw": "Vegetarisch/fleischlos",
       "markers": [
         "v"
       ],
-      "allergens": [],
-      "additives": [
-        "Kn"
+      "allergens": [
+        "Mi"
       ],
+      "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "GARLIC",
-        "VEGAN",
-        "VEGETARIAN"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {
@@ -195,34 +213,47 @@
       }
     },
     {
-      "name": "Kirsch-Mascarpone-Creme",
+      "name": "Panna Cotta mit Himbeersauce",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
-      "markers": [
-        "f"
-      ],
+      "markers": [],
       "allergens": [
-        "Mi",
-        "Sc",
-        "ScM"
+        "Mi"
       ],
-      "additives": [],
+      "additives": [
+        "14"
+      ],
       "is_vegan": false,
-      "is_vegetarian": true,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "ALMONDS",
-        "LACTOSE",
-        "MILK",
-        "SHELLFISH",
-        "SHELL_FRUITS",
-        "VEGETARIAN"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
+      }
+    },
+    {
+      "name": "Mousse Heidelbeermousse",
+      "station": "Dessert (Glas)",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [
+        "14"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {

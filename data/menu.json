@@ -1,36 +1,40 @@
 {
   "schema_version": 1,
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/45.json",
-  "fetched_at": "2026-11-04T15:42:19.441308+00:00",
+  "fetched_at": "2026-11-05T15:44:50.813954+00:00",
   "warnings": [],
   "dishes": [
     {
-      "name": "Pasta mit Gemüsebolognese",
+      "name": "Cannelloni mit Ricotta-Spinat-Füllung und Tomatensauce",
       "station": "Pasta",
       "station_raw": "Pasta",
       "markers": [
-        "v"
+        "f"
       ],
       "allergens": [
+        "Ei",
         "Gl",
         "GlW",
-        "Sl"
+        "Mi"
       ],
-      "additives": [],
-      "is_vegan": true,
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CELERY",
         "CEREAL",
+        "CHICKEN_EGGS",
         "GLUTEN",
-        "VEGAN",
+        "LACTOSE",
+        "MILK",
         "VEGETARIAN",
         "WHEAT"
       ],
@@ -41,11 +45,11 @@
       }
     },
     {
-      "name": "PINSA Flammkuchenstyle mit Sauerrahm, Speck und roten Zwiebeln",
+      "name": "PINSA mit Spinat und Ricotta",
       "station": "Pizza",
       "station_raw": "Pizza",
       "markers": [
-        "S"
+        "f"
       ],
       "allergens": [
         "Gl",
@@ -54,50 +58,25 @@
         "Mi",
         "So"
       ],
-      "additives": [
-        "2",
-        "3",
-        "8",
-        "15"
-      ],
+      "additives": [],
       "is_vegan": false,
-      "is_vegetarian": false,
+      "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "BARLEY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "SOY",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 5.0,
+        "base_eur": 4.5,
         "per_100g_eur": 0,
-        "source": "config"
-      }
-    },
-    {
-      "name": "PINSA Flammkuchenstyle mit Sauerrahm, Zwiebeln, geräuchertem Tofu und Käse",
-      "station": "Unspecified",
-      "station_raw": "",
-      "markers": [],
-      "allergens": [
-        "Gl",
-        "GlG",
-        "GlW",
-        "Mi",
-        "So"
-      ],
-      "additives": [
-        "2",
-        "3",
-        "8",
-        "15"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -113,98 +92,96 @@
         "Sw"
       ],
       "additives": [
-        "1",
         "3",
-        "5",
-        "Kn"
+        "Kn",
+        "1",
+        "5"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "DYESTUFF",
+        "GARLIC",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "SULFITES",
+        "SULPHURS",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      }
-    },
-    {
-      "name": "Gegrillte Blumenkohlröschen mit Kräuterdip",
-      "station": "Grill",
-      "station_raw": "Grill",
-      "markers": [
-        "f"
-      ],
-      "allergens": [
-        "Mi"
-      ],
-      "additives": [
-        "Kn"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "GARLIC",
-        "LACTOSE",
-        "MILK",
-        "VEGETARIAN"
-      ],
-      "price": {
-        "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       }
     },
     {
-      "name": "Tom Kha Gai (Scharfe Suppe mit Hühnerfleisch)",
-      "station": "Wok",
-      "station_raw": "Wok",
+      "name": "Truthahnschnitzel (1 Stück) mit Ajvar und Kartoffeln aus dem Ofen",
+      "station": "Grill",
+      "station_raw": "Grill",
       "markers": [],
       "allergens": [
         "Gl",
         "GlW"
       ],
       "additives": [
-        "2"
+        "Kn"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CEREAL",
+        "GARLIC",
+        "GLUTEN",
+        "MEAT",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
-      "name": "Rotes Gemüsecurry mit Tofu",
+      "name": "Veganer Gulaschtopf mit Kartoffeln, Wurzelgemüse und Schwarzbier",
       "station": "Wok",
       "station_raw": "Wok",
       "markers": [
         "v"
       ],
       "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Sf",
+        "Sl",
         "So"
       ],
       "additives": [
-        "2",
-        "Kn"
+        "99"
       ],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "GARLIC",
-        "PRESERVATIVES",
+        "ALCOHOL",
+        "BARLEY",
+        "CELERY",
+        "CEREAL",
+        "GLUTEN",
         "SOY",
         "VEGAN",
-        "VEGETARIAN"
+        "VEGETARIAN",
+        "WHEAT"
       ],
       "price": {
         "base_eur": 0.0,
@@ -213,7 +190,7 @@
       }
     },
     {
-      "name": "Zartweizen mit Tomaten, Zucchini und Auberginen",
+      "name": "Bulgur mit roten Linsen, Bohnen und Tomaten",
       "station": "Studitopf",
       "station_raw": "Studitopf",
       "markers": [
@@ -242,97 +219,58 @@
       }
     },
     {
-      "name": "Schweineschnitzel Wiener Art (1 Stück)",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [
-        "S"
-      ],
+      "name": "Ezo Gelin (Türkische Linsensuppe mit Chili- Minzöl)",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
       "allergens": [
         "Gl",
-        "GlW"
+        "GlW",
+        "Sl"
       ],
       "additives": [],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      }
-    },
-    {
-      "name": "Rinderbraten (1 Scheibe) mit Rotweinsauce",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [
-        "R"
-      ],
-      "allergens": [
-        "Gl",
-        "GlW",
-        "Sl",
-        "Sw"
-      ],
-      "additives": [
-        "5",
-        "99"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
       "api_labels": [
-        "ALCOHOL",
-        "BEEF",
         "CELERY",
         "CEREAL",
         "GLUTEN",
         "MEAT",
-        "SULFITES",
-        "SULPHURS",
         "WHEAT"
       ],
       "price": {
-        "base_eur": 1.0,
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Gebratener Kürbis",
+      "station": "Vegan",
+      "station_raw": "Vegan",
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       }
     },
     {
-      "name": "Lammhacksteaks (2 Stück) mit Tsatsiki",
-      "station": "Unspecified",
-      "station_raw": "",
-      "markers": [],
-      "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
-        "Mi",
-        "Sw"
-      ],
-      "additives": [
-        "Kn",
-        "1",
-        "3",
-        "5"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      }
-    },
-    {
-      "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+      "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
       "station": "Vegan",
       "station_raw": "Vegan",
       "markers": [
@@ -341,29 +279,17 @@
       "allergens": [
         "Gl",
         "GlW",
-        "Sl",
-        "So",
-        "Sw"
+        "So"
       ],
-      "additives": [
-        "2",
-        "3",
-        "4"
-      ],
+      "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "ANTIOXIDANTS",
-        "CELERY",
         "CEREAL",
-        "FLAVOR_ENHANCER",
         "GLUTEN",
-        "PRESERVATIVES",
         "SOY",
-        "SULFITES",
-        "SULPHURS",
         "VEGAN",
         "VEGETARIAN",
         "WHEAT"
@@ -375,23 +301,30 @@
       }
     },
     {
-      "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+      "name": "Rhabarberrdbeermousse mit Brombeersauce",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
-      "markers": [
-        "v"
+      "markers": [],
+      "allergens": [
+        "Mi"
       ],
-      "allergens": [],
-      "additives": [],
-      "is_vegan": true,
-      "is_vegetarian": true,
+      "additives": [
+        "14"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "GELATIN",
+        "LACTOSE",
+        "MEAT",
+        "MILK"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {

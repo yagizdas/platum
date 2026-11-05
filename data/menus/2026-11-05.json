@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/45.json",
-  "fetched_at": "2026-11-04T15:42:19.512569+00:00",
+  "fetched_at": "2026-11-05T15:44:50.813954+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -22,7 +22,9 @@
         "GlW",
         "Mi"
       ],
-      "additives": [],
+      "additives": [
+        "Kn"
+      ],
       "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
@@ -61,11 +63,20 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "BARLEY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "SOY",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 5.0,
+        "base_eur": 4.5,
         "per_100g_eur": 0,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -90,11 +101,24 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "DYESTUFF",
+        "GARLIC",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "SULFITES",
+        "SULPHURS",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -113,11 +137,17 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CEREAL",
+        "GARLIC",
+        "GLUTEN",
+        "MEAT",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -131,6 +161,7 @@
         "Gl",
         "GlG",
         "GlW",
+        "Sf",
         "Sl",
         "So"
       ],
@@ -202,11 +233,17 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CELERY",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 0,
-        "per_100g_eur": 0.9,
-        "source": "config"
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
       }
     },
     {
@@ -222,11 +259,14 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "VEGAN",
+        "VEGETARIAN"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -275,11 +315,16 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "GELATIN",
+        "LACTOSE",
+        "MEAT",
+        "MILK"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {

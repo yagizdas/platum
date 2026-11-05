@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-04T15:42:19.991155+00:00",
+  "fetched_at": "2026-11-05T15:44:51.166760+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -26,11 +26,18 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -48,11 +55,15 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CELERY",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.33,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -79,11 +90,24 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "BARLEY",
+        "CELERY",
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "DYESTUFF",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "MUSTARD",
+        "SWEETENERS",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -106,11 +130,21 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "FISH",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "MUSTARD",
+        "SWEETENERS",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 1.5,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -130,11 +164,18 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -152,11 +193,15 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
