@@ -5,6 +5,7 @@ from unittest.mock import Mock
 
 from common import week_dates, read_json
 from pick import build_week
+from proposals import fallback_proposals
 from scrape import scrape_week
 from conftest import FIXTURES
 
@@ -46,10 +47,11 @@ def test_week_output_and_judge_calls_remain_per_date(config, fixture_menu, pairi
         m = copy.deepcopy(menu);m["date"] = day.isoformat();menus[m["date"]] = m
     menus["2026-11-04"].update(state="closed", dishes=[])
     def respond(pools, *args):
-        return {key: [{"id": p["id"], "title": "A coherent lunch", **({"reason": "A satisfying pairing."} if i == 0 else {})}
-                      for i, p in enumerate(values[:3])] for key, values in pools.items() if values}
+        return {key: [{"id": p["id"], "title": "A coherent lunch", "reason": "A satisfying pairing."}
+                      for p in values] for key, values in pools.items() if values}
     caller = Mock(side_effect=respond)
-    args = dict(pairing=pairing, api_key="test", judge_caller=caller, judge_cache_path=tmp_path / "judge.json")
+    args = dict(pairing=pairing, api_key="test", judge_caller=caller, judge_cache_path=tmp_path / "judge.json",
+                proposal_caller=lambda items, *a, **kw: {"combos": fallback_proposals(items)}, proposals_dir=tmp_path / "proposals")
     days, index = build_week(date(2026, 11, 2), menus, tags, config, **args)
     assert caller.call_count == 9
     build_week(date(2026, 11, 2), menus, tags, config, **args)
@@ -63,3 +65,30 @@ def test_week_output_and_judge_calls_remain_per_date(config, fixture_menu, pairi
         assert days[row["date"]]["schema_version"] == 2
         assert days[row["date"]]["generated_on"] == "2026-11-02"
     assert days["2026-11-04"]["extras"] == {"all": [], "vegan": []}
+
+
+def test_single_failing_tag_in_ten_day_window_keeps_all_other_plates(config, fixture_menu):
+    from common import normalize
+    menu, tags = fixture_menu
+    menus = {}
+    for day in week_dates(date(2026, 11, 6)):
+        menus[day.isoformat()] = {**copy.deepcopy(menu), "date": day.isoformat()}
+    broken = copy.deepcopy(menu["dishes"][0]);broken["name"] = "Unrepairable model response"
+    menus["2026-11-06"]["dishes"].insert(0, broken)
+    days, index = build_week(date(2026, 11, 6), menus, tags, config, no_llm=True)
+    assert len(days) == len(index["days"]) == 10
+    assert all(day["variants"]["bulk_all"]["plates"] for day in days.values())
+    assert days["2026-11-06"]["missing_tags"] == [broken["name"]]
+    assert days["2026-11-06"]["warnings"]
+    assert normalize(broken["name"]) not in tags
+
+
+def test_missing_menu_file_is_isolated_to_one_day(config, fixture_menu):
+    menu, tags = fixture_menu
+    menus = {day.isoformat(): {**copy.deepcopy(menu), "date": day.isoformat()}
+             for day in week_dates(date(2026, 11, 6))}
+    menus["2026-11-06"] = None
+    days, index = build_week(date(2026, 11, 6), menus, tags, config, no_llm=True)
+    assert days["2026-11-06"]["state"] == "unavailable"
+    assert days["2026-11-06"]["warnings"]
+    assert all(day["variants"]["bulk_all"]["plates"] for name, day in days.items() if name != "2026-11-06")

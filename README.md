@@ -1,149 +1,101 @@
 # Mensa Plate
 
-A static lunch picker for TUM students at **Mensa Arcisstraße**. Bulk, Cut, Budget, and Vegan produce up to three coherent lunches. Python computes every portion, price and total; optional models provide cached food estimates, pairing knowledge and lunch titles.
+A static lunch picker for TUM students at **Mensa Arcisstraße**. Choose Bulk, Cut or Budget, with an independent Vegan option. Each variant offers up to five lunches with different mains. Python computes portions, student prices, nutrition estimates and ranking; models propose plausible trays and describe the final choices.
 
-The landing page is `index.html`, with `landing.css`, `landing.js`, the supplied artwork in `icons/ui/`, and a locally served Bricolage Grotesque display font in `assets/fonts/`. The original tray hero leads into a short scrolling introduction to the daily Arcisstraße menu, lunch goals, portions, student prices, and estimated nutrition. Illustrations float gently and drift slightly with native scrolling. Both “Your plate” links open `menu.html` directly; there are no goal selectors or menu requests on the landing page. Content and links work without JavaScript, and reduced motion disables all floating, scroll drift, and reveal animations.
+The landing page is `index.html`; the picker is `menu.html`. Both retain the Bricolage Grotesque type, TUM Blue, supplied illustrations and reduced-motion behavior documented in `DESIGN.md`. The site works under a GitHub Pages repository subpath and has no browser API key or service worker.
 
-The main app shares its font, illustrations, and TUM Blue accent (`#0065BD`); `menu.css` styles the plate summary, goal controls, and independent Vegan switch. Details is always visible, with an icon beside every dish and selected extra. Optional extras stay under Add to tray. `dish-icons.js` maps German and English dish names to food categories and composes the main with up to two smaller companions. Original PNGs stay in `icons/new_icons/`; only the smaller web assets and CSS crops are published. Both publishing workflows package these files and assets.
+## Run locally
 
-A private Sites snapshot is published at <https://mensa-plate-lunch.quickcarol1.chatgpt.site>. Its source and hosting identity are retained under the git-ignored `site-preview/mensa-plate/` directory; refresh that snapshot before publishing later source or menu updates. The existing daily GitHub Pages pipeline continues to update the repository's site.
+Python 3.12+, Node 22+ for the JavaScript tests. Set `GEMINI_API_KEY` in the environment or a git-ignored `.env`.
 
-## Setup
-
-Python 3.12+, with GEMINI_API_KEY in the environment or a git-ignored local .env:
-
-~~~sh
+```sh
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-dev.txt
-python scrape.py
-python tag.py
-python pair.py
-python pick.py
+python scrape.py --week
+python tag.py --week
+python pick.py --week
 python -m http.server 8000 --bind 127.0.0.1
-~~~
+```
 
-Open <http://127.0.0.1:8000>. The app works under a GitHub Pages repository subpath. No backend, accounts, service worker, or browser API key.
+Open <http://127.0.0.1:8000>. `--date YYYY-MM-DD` fixes the reference date. `--no-llm` uses cached proposals or deterministic fallback trays and English item names. `pair.py --week` remains available for legacy pairing knowledge; it does not decide the new plate ranking.
 
-For the full week view, add --week to scrape.py, tag.py, pair.py and pick.py. Each command also accepts --date YYYY-MM-DD for a deterministic reference date. Scraping fetches the official page once and caches the API response per ISO week. It writes per-date inputs under data/menus/. Picking writes data/days/YYYY-MM-DD.json, data/week.json and the backward-compatible today.json entry point. The index includes the current and following workweek, so Friday afternoons and weekends can default to the next open Monday. Closed dates have no standing sides or model calls.
+## Pipeline and history
 
-## Pipeline and caches
+The official menu supplies dishes and dietary markers. eat-api supplies prices only for a conservative normalized-name match. Source failures are labeled; two failed sources never manufacture a closed day. Configured rice and potato salad are appended only to real open menus. Unknown dietary status is never vegan.
 
-~~~text
-official HTML + eat-api prices + configured counter sides
-  → scrape.py → menu.json
-  → tag.py    → dish_cache.json
-  → pair.py   → pairing_cache.json
-  → pick.py + optional judge.py → today.json → menu.html
-                              ↳ judge_cache.json
-~~~
+`tag.py` repairs **fresh** model responses before validation: an explicit “(1 Stück)” forces per-piece service with the portion-range midpoint, and finite out-of-range piece weights are clamped. Existing cache entries are never repaired, re-tagged or migrated. Every new success is saved immediately. A bad dish is skipped after its retries, and later dishes and dates continue. `data/tag_failures.json` records skipped names and errors. The command succeeds if any new dish was tagged or all dishes were cached; an entirely unsuccessful tagging run still reports failure.
 
-The official menu defines listed dishes. eat-api supplies student prices only for a conservative normalized-name match. Official source failures may use the explicitly flagged smaller API menu. Both sources failing stops the scrape; a missing date in a valid menu is closed.
+`pick.py --week` omits missing tags with a warning and isolates errors by date. `scrape.py` preserves existing past-date menus if a source now calls them closed or empty, using the current Berlin date. The week index, dated plates and `today.json` are written under `data/`.
 
-Rice and potato salad are explicit **standing sides** from the unlisted Beilagen counter. They are appended only to a successfully obtained open menu, marked standing, priced at the configured default weight rate, and labeled as usually available. They never manufacture an open day. Their vegan status comes solely from config; unconfirmed potato salad is not vegan. Official duplicate names are not appended twice.
+On load, `menu-days.js` opens today's open menu before **14:30 Europe/Berlin**, otherwise the next open date. A valid week's older `generated_on` does not expire its individual dates. Past dates require explicit selection or `?date=YYYY-MM-DD`; fallback data cannot silently show an old meal.
 
-Keep all model caches committed:
+## Proposals and scoring
 
-- **dish_cache.json**: per-normalized-name estimates and translations. Each valid tag is saved immediately. Tagging retries HTTP 503 and timeouts up to ten total attempts, with 30 seconds between failures; other failures get one retry. Request duration is additional to waiting time.
-- **pairing_cache.json**: dishes maps names to stands_alone, pairs maps sorted normA||normB to scores, and attempts records each date. One Gemini call per date requests only missing knowledge. Types, scores and requested keys are validated; invalid entries are not saved. Failures never stop picking. Without knowledge, a non-piece dish or Pizza can stand alone, and a non-pizza piece pairs only with a non-piece, non-liquid dish. Standing sides are always partner-only and never per-piece.
-- **judge_cache.json**: at most one call per menu date, including failed attempts. One request covers all six variants. The judge ranks up to three candidate IDs with short English titles; only the first has a reason. It cannot add food or return totals. Invalid variants fall back independently to code order. Cache fingerprints prevent stale IDs being reused when the model, prompt or candidates change. Missing keys use rules.
+For every open day there are **six separate proposal calls**: `bulk_all`, `cut_all`, `budget_all`, `bulk_vegan`, `cut_vegan`, `budget_vegan`. Goal instructions live in `config.yaml` under `proposals.instructions`. Vegan calls receive only confirmed vegan dishes and vegan standing sides. Inputs contain stable dish IDs, English names, roles and stations, without nutrition or prices. Each call requests 8–12 unranked combinations of one to three IDs.
 
-All calls use the existing urllib Gemini client and gemini_model; no extra model SDK is needed. Tests mock every call and never need a key. A closed menu makes no model call. Delete a cache entry only when intentionally requesting it again.
+Each variant is cached at `data/proposals/YYYY-MM-DD/<variant>.json`. An existing file prevents another call, including after failure or when no key is available. Failed calls cache the fallback: every main alone and every main with each eligible standing side. Unknown IDs, repeated dishes, multiple soups, dessert-only trays and non-vegan items in vegan variants are discarded. Keep these caches committed; remove a file only when intentionally requesting new proposals.
 
-## Plate rules
+For each combination, code tries one to three scoops per scoop-served item. Configured role/station scoop caps and the 650g whole-plate cap still apply; pieces retain their cached weight and one-piece count. There are **no hard energy or protein floors**.
 
-A plate is one complete main, or two different compatible dishes: two mains or one main with a standing side. Pair score must meet pairing.min_score. Score 3 means classic, 2 normal, 1 odd, 0 incompatible.
+With `e` = euros, `k` = kcal, `p` = protein grams and `h(x;u,d) = u*x` for nonnegative `x`, otherwise `d*x`:
 
-- No soups, liquid dishes, desserts, or pairs of standing sides.
-- At most one per-piece dish, always exactly one piece. Explicit “(1 Stück)” menu names must have a per-piece tag; contradictory model responses or cached tags are rejected. Pizza/Pinsa never pairs.
-- Scoop mains use one to three scoops, capped at 450g; scoop sides are capped at 300g. These caps come from config rather than model-estimated serving maxima.
-- A single dish also respects the typical minimum. Two-dish combinations may use smaller accompaniment portions.
-- Maximum 650g per plate. **No price cap** for any goal.
-- Prices are rounded per dish to cents, then summed. Nutrition is estimated per 100g.
-- For each goal, keep only the best portioning per distinct dish set before taking the top candidates.
+```text
+Bulk   = 2*(k/e)/250 + (p/e)/12 + h(k-500;1,3)/300
+Cut    = 2*(p/k*100)/8 + .5*(p/e)/12 + h(p-30;.5,3)/15 + h(700-k;0,2)/200
+Budget = -2*e/4 + (k/e)/250 + h(k-550;.2,3)/300 + h(p-20;.2,3)/15
+```
 
-| Goal | Required | Rank |
-| --- | --- | --- |
-| Bulk | ≥30g protein | kcal + 4 × protein grams, then lower price |
-| Cut | ≥450 kcal and ≥25g protein | protein/kcal, then lower price |
-| Budget | ≥550 kcal and ≥15g protein | lower price, then higher protein |
+Every weight, normalizer, pivot and asymmetric slope lives under `scoring.<goal>` in `config.yaml`. Sort by score rounded to four decimals descending, price ascending, then sorted dish IDs. Keep the best portioning and up to five plates, with no repeated main in a variant. Fewer distinct mains means fewer alternatives. Score terms and total are saved under each plate's `score` and never displayed.
 
-Vegan filters by explicit menu/config status before enumeration; unknown is not vegan. If a vegan goal has no qualifying lunch, only its protein floor is relaxed and a visible note explains it. Other constraints remain.
+`judge.py` now writes only a short English title and reason for **every final plate**. `data/title_cache.json` caches this optional daily call; IDs apply copy to the existing order. Missing, invalid or failed copy cannot change plates, portions, totals or ranking. Fallback titles use short English item names. The old pairing and judge caches are retained; pairing values no longer constrain plate selection.
 
-The judge ranks only the code-built shortlist. Every final number comes from plate_result(), even after model selection. Disable it with llm.enabled: false or run python pick.py --no-llm.
+## Impossible-plate reports
 
-Soups and desserts are exported separately as extras.all and extras.vegan, each with a code-computed serving and totals. Adding an extra is a personal tray choice, outside the plate optimizer and its weight cap. Diet labels use official positive vegan/vegetarian markers and meat/fish patterns; unknown broth is conservatively non-meatless.
+Reporting is optional. `report-config.js` contains the single `MENSA_REPORT_ENDPOINT` setting; an empty string hides the button and makes no backend requests. A configured endpoint enables **“Can't get this plate?”** below the plate. The sheet lists short English dish names and “Something else”, traps keyboard focus, closes on Escape, adapts to dark mode and has targets at least 44px tall. After a successful report, this device skips that plate, including after reload. The confirmation is announced and the next available plate appears.
 
-## Configuration
+`worker/` contains a Cloudflare Worker with D1 storage. No cookies, accounts, IP addresses or contact data are stored. The browser keeps a random UUID in `localStorage`, with an in-memory fallback when storage is blocked.
 
-Edit config.yaml; price/scoop changes require no retagging.
+- `POST /report`: `{date, variant, plate_dish_ids, tapped_dish_id, device_id}`; the tapped value is an item ID or `"other"`.
+- `GET /broken?date=YYYY-MM-DD`: `{date, broken: [plate_key, ...]}`.
+- Keys are sorted dish IDs joined with `|`. Portions and variant do not change a physical tray's key; raw reports retain their variant.
+- Maximum three accepted reports per device per **submission day in Berlin**, across menu dates. A single conditional SQL insert enforces this under concurrent requests.
+- `BROKEN_THRESHOLD` in `worker/wrangler.toml` defaults to two distinct devices. Repeated reports by one device cannot increase its vote.
+- Every accepted raw report retains menu date, variant, dish IDs, tapped dish, random device ID and submission time from day one.
 
-~~~yaml
-pairing:
-  min_score: 2
-llm:
-  enabled: true
-  top_k: 8
-goals:
-  bulk_min_protein_g: 30
-  bulk_protein_weight: 4
-  cut_min_protein_g: 25
-  cut_min_kcal: 450
-  budget_min_kcal: 550
-  budget_min_protein_g: 15
-portions:
-  default_scoop_g: 150
-  station_scoop_g: {}
-  max_scoop_g_by_role: {main: 450, side: 300}
-  max_plate_g: 650
-standing_sides:
-  - {name: Reis, name_en: Rice, station: Beilagen, is_vegan: true}
-  - {name: Kartoffelsalat, name_en: Potato salad, station: Beilagen, is_vegan: false}
-~~~
+The client fetches broken keys for the selected date and skips them. If all alternatives are broken, it uses the existing “No plate fits this goal today” state. An unreachable Worker never blocks lunch selection; unsuccessful submissions remain retryable.
 
-max_scoop_g_by_role overrides the cached typical maximum for non-piece dishes of the named roles. At the default 150g scoop size, mains allow up to three scoops and sides up to two. The cached typical minimum still applies to a single-dish lunch. Roles without a configured cap (soups and desserts) use their cached range; per-piece dishes always retain their cached piece weight and range. The three-scoop and 650g whole-plate limits still apply. Editing these caps requires rerunning pick.py, not retagging food or editing caches.
+### Deploy or test the Worker
 
-Price rules: €0.90/100g default, Studitopf €0.33/100g, meat base €1, fish base €1.50, Pizza €5 flat. Matched eat-api student prices take precedence for official dishes. Standing sides always use the default configured rate.
+```sh
+cd worker
+npm ci
+npm run migrate:local
+npm run dev
+```
 
-## Data and states
+For a local browser test, temporarily set `MENSA_REPORT_ENDPOINT` to `http://127.0.0.1:8787` and serve the static site on port 8000. The Worker defaults to local storage; no Cloudflare account is required for this test.
 
-today.json schema **2** contains six goal/diet variants. A ready variant has plates (up to three), plus relaxed and note. Each plate has title, reason, picked_by, items, total, and price-estimate metadata. Each item includes code-derived diet and standing. Only the first plate has a reason.
+For production:
 
-Closed, unavailable, request-error and stale-menu states remain explicit. No partial menu is silently optimized; --allow-missing-tags is only for an honest first-run unavailable state.
+```sh
+npx wrangler login
+npx wrangler d1 create mensa-plate-reports
+# Replace database_id in wrangler.toml with the returned ID.
+npx wrangler d1 migrations apply DB --remote
+npx wrangler deploy
+```
 
-## Using a plate
+Set `MENSA_REPORT_ENDPOINT` to the returned HTTPS Worker URL, include the site's origin in `ALLOWED_ORIGINS`, and republish the static site. The repository ships with reporting disabled until a production endpoint is configured. See [Cloudflare's D1 local-development guide](https://developers.cloudflare.com/d1/best-practices/local-development/) and [D1 migrations](https://developers.cloudflare.com/d1/reference/migrations/).
 
-Use the “Other options” buttons, left/right arrow keys, or a horizontal swipe to cycle through up to three different lunches. The selected title is announced for screen readers. Changing goal or Vegan resets the option and extras.
+## GitHub Pages and tests
 
-“Add to tray” chips add optional soup or dessert to the displayed totals immediately. An “incl. extras” label identifies the larger tray. Share plate uses native sharing when available, otherwise copies the chosen lunch and selected extras with their computed totals and the site URL. Counter staples are labeled “Beilagen counter · usually there.”
+Set repository secret `GEMINI_API_KEY` and select **GitHub Actions** in Settings → Pages. `daily.yml` runs weekdays at 07:30 UTC. Scrape, tag, optional pair knowledge and pick run independently of previous generation failures. Packaging and artifact upload still run, and the deploy job accepts an uploaded artifact even if generation failed. A final failing generation status keeps partial failures visible. `publish.yml` deploys committed data without model calls. Raw reports, credentials and private model caches are never included in the static artifact.
 
-The Monday–Friday strip defaults to today's open menu before 14:30 Europe/Berlin, otherwise the next open day, including holidays and weekends. Selecting a day resets extras and the alternative index. Day JSON must match the requested date; an expired week index or mismatched response cannot display a different date's meal. In-flight requests are sequenced to prevent a slow older selection replacing the current one.
-
-The web manifest and tray-derived icons support installation. There is deliberately no service worker or offline menu cache, so installation does not create an offline copy of a stale menu.
-
-## GitHub Pages
-
-Set repository secret GEMINI_API_KEY and select **GitHub Actions** under Settings → Pages. The daily workflow runs weekdays at **07:30 UTC**, in this order:
-
-~~~text
-pytest → scrape → tag → pair → pick → commit data → deploy
-~~~
-
-The daily commands use --week, and both publishing workflows upload data/days/ and week.json along with today.json and the install assets. Pairing and judging are optional and never fail deployment. Mandatory tagging failures stop deployment, while the final persistence step saves successful tags and attempt records. Runs share a concurrency lock with the manual **Publish current site** workflow, which publishes committed data without model calls.
-
-## Offline tests and golden replay
-
-~~~sh
+```sh
 python -m pytest -q
-python pick.py --no-llm \
-  --menu tests/fixtures/menu-2026-11-02.json \
-  --cache tests/fixtures/dish-cache-2026-11-02.json \
-  --pairing-cache tests/fixtures/pairing-2026-11-02.json \
-  --output /tmp/mensa-golden.json
-~~~
+node --test tests/*.cjs
+cd worker && npm ci && npm test
+```
 
-The original saved HTML has 12 dishes; the later official menu snapshot includes Fleischpflanzerl, bringing it to 13. The dated golden fixture adds the two configured counter sides. Its side kcal/protein values and pairing knowledge are **user-supplied test mocks**, not production model results; unused side carb/fat fields are test placeholders. Other dish estimates are a snapshot of the existing cache. The raw HTML fixture remains unmodified.
-
-Replay results follow the active portion policy. Configured scoop caps can add lunches or change their order compared with the original v2 prototype, which used model-estimated maxima. Tests cover both policies; the original policy can be replayed with max_scoop_g_by_role: {} in a separate config file passed with --config.
-
-Tests cover real parsing, authority/closed states, prices, pairing schema/cache/fallbacks, standing-side guarantees, plate rules, distinct-lunch pools, golden rankings, judge validation and per-variant fallback. Browser checks cover six variants, alternatives, extras, safe text rendering, share, responsive layout, storage and stale/error states.
+Tests mock model calls. Coverage includes parsing and source authority, immutable existing tags, repair and retry behavior, ten-day failure isolation, exact golden winners for all six variants, hand-computed equations, byte-identical reruns, six independent proposal caches, Berlin default dates, report fail-open behavior, and an actual `wrangler dev`/D1 integration test with concurrent rate limits and distinct-device votes. The existing fixture estimates remain test data, separate from production caches.

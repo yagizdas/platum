@@ -130,3 +130,18 @@ def test_standing_sides_only_on_open_days_and_use_config(html, api, config):
     config["standing_sides"][0]["is_vegan"] = False
     sides = [d for d in scrape(DAY, config, html, api)["dishes"] if d.get("standing")]
     assert all(d["is_vegan"] is False for d in sides)
+
+
+@pytest.mark.parametrize("state,dishes", [("closed", []), ("open", [])])
+def test_past_menu_history_is_not_overwritten(tmp_path, config, state, dishes):
+    from common import read_json, write_json
+    from scrape import save_menu
+    path = tmp_path / "2026-11-02.json"
+    original = {"date": "2026-11-02", "state": "open", "dishes": [{"name": "Recorded lunch"}]}
+    write_json(path, original)
+    before = path.read_bytes()
+    assert save_menu(path, {**original, "state": state, "dishes": dishes}, date(2026, 11, 6)) == original
+    assert path.read_bytes() == before
+    # A current closure remains authoritative.
+    save_menu(path, {**original, "state": "closed", "dishes": []}, date(2026, 11, 2))
+    assert read_json(path)["state"] == "closed"

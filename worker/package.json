@@ -1,0 +1,11 @@
+{
+  "name": "mensa-plate-reports",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "migrate:local": "wrangler d1 migrations apply DB --local",
+    "test": "node --test test/*.test.mjs"
+  },
+  "devDependencies": {"wrangler": "^4.0.0"}
+}

@@ -1,5 +1,6 @@
 """Small shared I/O helpers. All script paths are relative to this repository."""
 import json
+import hashlib
 import re
 import unicodedata
 from datetime import datetime, timedelta
@@ -10,6 +11,11 @@ from zoneinfo import ZoneInfo
 import yaml
 
 ROOT = Path(__file__).resolve().parent
+
+
+def dish_id(dish):
+    """Stable across dates, portions, translations and ordering."""
+    return hashlib.sha256(normalize(dish["name"]).encode()).hexdigest()[:16]
 
 
 def normalize(name):

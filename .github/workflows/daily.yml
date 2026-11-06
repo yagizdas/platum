@@ -15,6 +15,8 @@ jobs:
     permissions:
       contents: write
       pages: read
+    outputs:
+      artifact_uploaded: ${{ steps.artifact.outcome }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -25,17 +27,25 @@ jobs:
           cache: pip
       - run: python -m pip install -r requirements-dev.txt
       - run: python -m pytest -q
-      - run: node --test tests/test_dish_icons.cjs
+      - run: node --test tests/*.cjs
       - run: python scrape.py --week
+        id: scrape
+        continue-on-error: true
       - name: Tag new dishes with Gemini 3.8 Flash
+        id: tag
+        continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python tag.py --week
       - name: Cache lunch pairing knowledge
+        id: pair
+        continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python pair.py --week
-      - name: Pick plates and judge lunch pairings
+      - name: Propose lunches and score plates
+        id: pick
+        continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python pick.py --week
@@ -50,11 +60,14 @@ jobs:
             git push origin HEAD:${{ github.event.repository.default_branch }}
           fi
       - uses: actions/configure-pages@v5
+        if: always()
       - name: Package only public static files
+        id: package
+        if: always()
         run: |
           mkdir -p dist/data
           cp index.html dist/index.html
-          cp menu.html menu.css landing.css landing.js dish-icons.js dist/
+          cp menu.html menu.css landing.css landing.js dish-icons.js menu-days.js report-config.js report-client.js dist/
           cp -R assets dist/assets
           cp data/today.json dist/data/today.json
           cp data/week.json dist/data/week.json
@@ -65,11 +78,17 @@ jobs:
           cp -R icons/ui dist/icons/ui
           touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v4
+        id: artifact
+        if: always() && steps.package.outcome == 'success'
         with:
           path: dist
+      - name: Surface generation failures after packaging
+        if: always() && (steps.scrape.outcome == 'failure' || steps.tag.outcome == 'failure' || steps.pair.outcome == 'failure' || steps.pick.outcome == 'failure')
+        run: exit 1
 
   deploy:
     needs: generate
+    if: always() && needs.generate.outputs.artifact_uploaded == 'success'
     runs-on: ubuntu-latest
     permissions:
       pages: write

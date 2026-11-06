@@ -2,7 +2,8 @@ import copy
 
 import pytest
 
-from common import normalize
+from common import dish_id, normalize, read_json
+from conftest import FIXTURES
 from pair import food, pair_key, pair_score, stands_alone
 from pick import build_today, candidates, choose, diet, plate_result, portion_options, price_cents, top_plates, valid_plate
 
@@ -17,32 +18,26 @@ def test_golden_lunches(config, fixture_menu, pairing, fixed_caps):
     if not fixed_caps:
         config["portions"]["max_scoop_g_by_role"] = {} # preserve the original v2 prototype replay
     m, tags = fixture_menu
-    result = build_today(m, tags, config, pairing=pairing, no_llm=True)
-    bulk = result["variants"]["bulk_all"]["plates"][0]
-    assert [i["name"].split(" (")[0] for i in bulk["items"]] == ["Seelachsfilet", "Asia-Reisbällchen auf Teriyakigemüse"]
-    assert bulk["items"][1]["count"] == 3
-    assert bulk["total"]["price_cents"] == 690
-    assert bulk["total"]["kcal"] == 780
-    assert bulk["total"]["protein_g"] == 42.15
-    cut = result["variants"]["cut_all"]["plates"]
-    expected_sides = (["Gemüsecurry aus Blumenkohl und Broccoli", "Asia-Reisbällchen auf Teriyakigemüse", "Reis"]
-                      if fixed_caps else ["Asia-Reisbällchen auf Teriyakigemüse", "Reis", "Kartoffelsalat"])
-    assert [p["items"][1]["name"] for p in cut] == expected_sides
-    assert all(p["items"][0]["name"].startswith("Seelachs") for p in cut)
-    assert [p["items"][1]["count"] for p in cut] == ([3, 2, 2] if fixed_caps else [2, 2, 2])
-    budget = result["variants"]["budget_all"]["plates"]
-    sets = [{i["name"] for i in p["items"]} for p in budget]
-    assert any(any(n.startswith("Käsekrainer") for n in s) and "Graupen-Gemüse-Eintopf" in s for s in sets)
-    assert any(any(n.startswith("Käsekrainer") for n in s) and "Kartoffelsalat" in s for s in sets)
-    vegan = result["variants"]["bulk_vegan"]
-    assert vegan["relaxed"] and vegan["note"]
-    expected_vegan = ({"Vegane Maultaschen mit Zwiebelmarmelade"} if fixed_caps else
-                      {"Gemüsecurry aus Blumenkohl und Broccoli", "Asia-Reisbällchen auf Teriyakigemüse"})
-    assert {i["name"] for i in vegan["plates"][0]["items"]} == expected_vegan
+    result = build_today(m, tags, config, pairing=pairing, no_llm=True, proposals=read_json(FIXTURES / "proposals-v4.json"))
+    expected = {
+        "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 1)], 540, 3.725) if fixed_caps else
+                    ([('PINSA Funghi mit frischen Champignons', 1), ('Reis', 2)], 770, 3.3255),
+        "cut_all": ([('Seelachsfilet (1Stück)', 1)], 285, 3.9774),
+        "budget_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 405, -.9511) if fixed_caps else
+                      ([('Käsekrainer (1 Stück)', 1), ('Reis', 1)], 361, -.9974),
+        "bulk_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Asia-Reisbällchen auf Teriyakigemüse', 1)], 540, 3.7727) if fixed_caps else
+                      ([('Asia-Reisbällchen auf Teriyakigemüse', 2), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 540, 3.3583),
+        "cut_vegan": ([('Graupen-Gemüse-Eintopf', 2), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 369, -.7758),
+        "budget_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Graupen-Gemüse-Eintopf', 1)], 320, -.726),
+    }
+    for key, (items, price, score) in expected.items():
+        p = result["variants"][key]["plates"][0]
+        assert [(i["name"], i["count"]) for i in p["items"]] == items
+        assert p["total"]["price_cents"] == price
+        assert p["score"]["total"] == score
     assert result["schema_version"] == 2
     for v in result["variants"].values():
         for p in v["plates"]:
-            assert all(i["role"] not in {"soup", "dessert"} and i["texture"] != "liquid" for i in p["items"])
             assert p["total"]["price_cents"] == sum(i["price_cents"] for i in p["items"])
             assert p["total"]["weight_g"] <= 650
 
@@ -56,13 +51,10 @@ def test_every_candidate_meets_rules(config, fixture_menu, pairing):
         assert valid_plate(items, config, pairing)
         assert len(items) in (1, 2) and len({i["name"] for i in items}) == len(items)
         assert not any(i["role"] in {"soup", "dessert"} or i["texture"] == "liquid" for i in items)
-        assert sum(i["is_per_piece"] for i in items) <= 1
         if len(items) == 1:
-            assert stands_alone(items[0], pairing)
             assert not items[0]["standing"]
         else:
-            assert all(i["station"] != "Pizza" for i in items)
-            assert pair_score(*items, pairing) >= config["pairing"]["min_score"]
+            assert any(i["standing"] for i in items) # deterministic fallback is main + standing side
         assert p["weight_g"] <= config["portions"]["max_plate_g"]
 
 
@@ -72,14 +64,29 @@ def test_pool_has_one_portioning_per_lunch(config, fixture_menu, pairing):
     for goal in ("bulk", "cut", "budget"):
         pool = top_plates(values, goal, config)
         sets = [tuple(sorted(i["name"] for i in p["items"])) for p in pool]
-        assert len(pool) <= 8 and len(sets) == len(set(sets))
+        assert len(pool) <= 5 and len(sets) == len(set(sets))
         assert choose(values, goal, config) == pool[0]
-        if goal == "bulk":
-            scores = [p["kcal"] + config["goals"]["bulk_protein_weight"] * p["protein"] for p in pool]
-            assert scores == sorted(scores, reverse=True)
-        if goal == "cut":
-            ratios = [p["protein"] / p["kcal"] for p in pool]
-            assert ratios == sorted(ratios, reverse=True)
+        scores = [p["score"]["total"] for p in pool]
+        assert scores == sorted(scores, reverse=True)
+        mains = [dish_id(i) for p in pool for i in p["items"] if i["role"] == "main" and not i["standing"]]
+        assert len(mains) == len(set(mains))
+
+
+def test_equal_scores_use_price_then_sorted_dish_ids(config, make_dish):
+    for term in config["scoring"]["bulk"].values():
+        if "weight" in term:
+            term["weight"] = 0
+        else:
+            term.update(up=0, down=0)
+    dishes, tags = [], {}
+    for name, price in [("Main A", 1), ("Main B", 1), ("Main C", 2)]:
+        d, t = make_dish(name, base=price, rate=0)
+        dishes.append(d);tags[normalize(name)] = t
+    values = list(candidates(dishes, tags, config))
+    ranked = top_plates(reversed(values), "bulk", config)
+    actual = [(p["price_cents"], tuple(sorted(dish_id(i) for i in p["items"]))) for p in ranked]
+    assert actual == sorted(actual)
+    assert len(ranked) == 3
 
 
 def test_invalid_single_pairs_and_pizza(config, fixture_menu, pairing):
@@ -91,13 +98,13 @@ def test_invalid_single_pairs_and_pizza(config, fixture_menu, pairing):
     f = portion_options(fish, fish, config)[0]
     p = portion_options(pinsa, pinsa, config)[0]
     r = portion_options(rice, rice, config)[0]
-    assert not valid_plate([f], config, pairing)
+    assert valid_plate([f], config, pairing) # proposals decide completeness, not old pair scores
     assert not valid_plate([r], config, pairing)
-    assert not valid_plate([f, p], config, pairing)
+    assert valid_plate([f, p], config, pairing)
     assert not valid_plate([f, f], config, pairing)
     assert not valid_plate([f, r, r], config, pairing)
     bad = copy.deepcopy(pairing); bad["pairs"][pair_key(f, r)]["score"] = 1
-    assert not valid_plate([f, r], config, bad)
+    assert valid_plate([f, r], config, bad)
     assert not valid_plate([f, {**r, "count": 4, "weight_g": 600}], config, pairing)
     assert not valid_plate([f, {**r, "is_per_piece": True}], config, pairing)
     potato = values["Kartoffelsalat"]
@@ -105,7 +112,7 @@ def test_invalid_single_pairs_and_pizza(config, fixture_menu, pairing):
     bad["pairs"][pair_key(r, k)] = {"score": 3}
     bad["pairs"][pair_key(f, p)] = {"score": 3}
     assert not valid_plate([r, k], config, bad) # model scores cannot create a main-less plate
-    assert not valid_plate([f, p], config, bad) # model scores cannot override the pizza ban
+    assert valid_plate([f, p], config, bad)
 
 
 def test_paired_portions_ignore_minimum_but_not_max(config, make_dish):
@@ -154,13 +161,16 @@ def test_friday_fish_can_reach_goals_with_two_scoops_of_rice(config, make_dish):
     rice, rice_tag = make_dish("Rice", role="side", max_g=250, kcal=130, protein=2.7)
     tags = {normalize(fish["name"]): fish_tag, normalize(rice["name"]): rice_tag}
     values = list(candidates([fish, rice], tags, config))
+    # Score each portioning of the same proposed fish + rice tray.
+    values = [p for p in values if len(p["items"]) == 2]
     for goal in ("bulk", "cut", "budget"):
         value = choose(values, goal, config)
         assert value is not None and valid_plate(value["items"], config)
         assert value["items"][0]["weight_g"] == 140
-        assert value["items"][1]["count"] == 2
-        assert value["kcal"] == 551
-        assert value["protein"] == 34
+        count = 1 if goal == "cut" else 2
+        assert value["items"][1]["count"] == count
+        assert value["kcal"] == (356 if goal == "cut" else 551)
+        assert value["protein"] == (29.95 if goal == "cut" else 34)
     # Both dishes individually fit, but the whole-plate cap still rejects 750g.
     a, at = make_dish("Main A")
     b, bt = make_dish("Main B")
@@ -173,22 +183,19 @@ def test_friday_fish_can_reach_goals_with_two_scoops_of_rice(config, make_dish):
 def test_no_price_cap(config, make_dish):
     d, t = make_dish("Expensive pasta", protein=20, base=20, rate=5)
     values = list(candidates([d], {normalize(d["name"]): t}, config))
-    config["goals"]["bulk_max_eur"] = 7 # even an obsolete config field cannot reinstate a cap
+    config["goals"] = {"bulk_max_eur": 7} # an obsolete field cannot reinstate a cap
     assert all(choose(values, g, config)["price_cents"] > 700 for g in ("bulk", "cut", "budget"))
 
 
 def test_vegan_relaxation_applies_to_all_three_goals(config, fixture_menu, pairing):
     m, tags = fixture_menu
-    for goal in ("bulk", "cut", "budget"):
-        config["goals"][goal + "_min_protein_g"] = 1000
+    config["goals"] = {goal + "_min_protein_g": 1000 for goal in ("bulk", "cut", "budget")}
     result = build_today(m, tags, config, pairing=pairing)
     for goal in ("bulk", "cut", "budget"):
         v = result["variants"][goal + "_vegan"]
-        assert v["relaxed"] and v["note"] and v["plates"]
+        assert not v["relaxed"] and v["note"] is None and v["plates"]
         assert all(i["is_vegan"] is True for p in v["plates"] for i in p["items"])
-        if goal != "bulk":
-            assert all(p["total"]["kcal"] >= config["goals"][goal + "_min_kcal"] for p in v["plates"])
-        assert not result["variants"][goal + "_all"]["plates"]
+        assert result["variants"][goal + "_all"]["plates"] # soft scores have no floors to relax
 
 
 def test_extras_are_separate_and_vegan_filtered(config, fixture_menu, pairing):
@@ -216,7 +223,7 @@ def test_liquid_main_is_an_extra_not_a_plate(config, make_dish):
     d, t = make_dish("Substantial soup", role="main", texture="liquid")
     result = build_today(menu([d]), {normalize(d["name"]): t}, config)
     assert len(result["extras"]["all"]) == 1
-    assert not any(v["plates"] for v in result["variants"].values())
+    assert all(v["plates"] for v in result["variants"].values()) # a substantial soup can be a main proposal
 
 
 def test_diet_is_code_derived_and_conservative(config, make_dish):

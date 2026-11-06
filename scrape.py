@@ -8,7 +8,7 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-from common import ROOT, fetch, load_config, normalize, today, week_dates, write_json
+from common import ROOT, fetch, load_config, normalize, read_json, today, week_dates, write_json
 
 
 class MenuParseError(ValueError):
@@ -217,6 +217,16 @@ def scrape_week(day, config, html=None, api_payloads=None, fetcher=fetch, weeks=
     return menus
 
 
+def save_menu(path, menu, current_day):
+    """The source drops past dates; absence must never erase recorded history."""
+    existing = read_json(path)
+    if (menu["date"] < current_day.isoformat() and (menu["state"] == "closed" or not menu["dishes"])
+            and existing and existing.get("date") == menu["date"]):
+        return existing
+    write_json(path, menu)
+    return menu
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--date", type=date.fromisoformat)
@@ -239,11 +249,11 @@ def main():
         iso = target.isocalendar()
         menus = scrape_week(target, config, html, {(iso.year, iso.week): payload} if payload is not None else None)
         for day, menu in menus.items():
-            write_json(ROOT / "data/menus" / f"{day}.json", menu)
+            menus[day] = save_menu(ROOT / "data/menus" / f"{day}.json", menu, today(config))
         result = menus.get(target.isoformat()) or scrape(target, config, html, payload)
     else:
         result = scrape(target, config, html, payload)
-    write_json(args.output, result)
+    result = save_menu(args.output, result, today(config))
     print(f"{result['date']}: {result['state']}, {len(result['dishes'])} dishes ({result['source']})")
     for warning in result["warnings"]:
         print(warning, file=sys.stderr)

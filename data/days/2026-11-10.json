@@ -4,17 +4,83 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-03T15:26:17.752642+00:00",
+  "fetched_at": "2026-11-06T15:18:46.801045+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 9,
-  "goals": {
-    "bulk_min_protein_g": 30,
-    "bulk_protein_weight": 4,
-    "cut_min_protein_g": 25,
-    "cut_min_kcal": 450,
-    "budget_min_kcal": 550,
-    "budget_min_protein_g": 15
+  "menu_count": 12,
+  "scoring": {
+    "bulk": {
+      "energy_value": {
+        "metric": "kcal_per_euro",
+        "weight": 2,
+        "normalizer": 250
+      },
+      "protein_value": {
+        "metric": "protein_per_euro",
+        "weight": 1,
+        "normalizer": 12
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 500,
+        "up": 1,
+        "down": 3,
+        "normalizer": 300
+      }
+    },
+    "cut": {
+      "protein_density": {
+        "metric": "protein_per_100kcal",
+        "weight": 2,
+        "normalizer": 8
+      },
+      "protein_value": {
+        "metric": "protein_per_euro",
+        "weight": 0.5,
+        "normalizer": 12
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 30,
+        "up": 0.5,
+        "down": 3,
+        "normalizer": 15
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 700,
+        "reverse": true,
+        "up": 0,
+        "down": 2,
+        "normalizer": 200
+      }
+    },
+    "budget": {
+      "price": {
+        "metric": "price",
+        "weight": -2,
+        "normalizer": 4
+      },
+      "energy_value": {
+        "metric": "kcal_per_euro",
+        "weight": 1,
+        "normalizer": 250
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 550,
+        "up": 0.2,
+        "down": 3,
+        "normalizer": 300
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 20,
+        "up": 0.2,
+        "down": 3,
+        "normalizer": 15
+      }
+    }
   },
   "max_plate_g": 650,
   "default_scoop_g": 150,
@@ -28,404 +94,93 @@
       "note": null,
       "plates": [
         {
-          "title": "Krautwickerl + Reis",
+          "title": "Salami Pizza + Quark cream",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Krautwickerl (1 Stück) mit Speck-Zwiebel-Sauce",
-              "name_en": "Cabbage roll (1 piece) with bacon and onion sauce",
-              "station": "Fleisch",
+              "name": "Pizza Salami",
+              "name_en": "Salami Pizza",
+              "station": "Pizza",
               "role": "main",
-              "texture": "saucy",
+              "texture": "dry",
               "count": 1,
               "unit": "piece",
-              "weight_g": 300.0,
-              "price_cents": 370,
+              "weight_g": 400,
+              "price_cents": 500,
               "is_vegan": false,
               "markers": [
                 "S"
               ],
               "allergens": [
                 "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2",
-                "3",
-                "8"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 405.0,
-              "protein_g": 22.5
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 640,
-            "price_eur": 6.4,
-            "weight_g": 600.0,
-            "kcal": 795.0,
-            "protein_g": 30.6,
-            "carbs_g": 97.5,
-            "fat_g": 29.4
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Marinierte Hähnchenbrust Caipirinha Art + Broccolicurry",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
-              "name_en": "Marinated chicken breast Caipirinha style (1 piece)",
-              "station": "Grill",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 160.0,
-              "price_cents": 244,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 232.0,
-              "protein_g": 39.2
-            },
-            {
-              "name": "Broccolicurry mit roter Paprika in Kokosmilch",
-              "name_en": "Broccoli curry with red bell pepper in coconut milk",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 427.5,
-              "protein_g": 11.25
-            }
-          ],
-          "total": {
-            "price_cents": 649,
-            "price_eur": 6.49,
-            "weight_g": 610.0,
-            "kcal": 659.5,
-            "protein_g": 50.45,
-            "carbs_g": 28.2,
-            "fat_g": 37.1
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Marinierte Hähnchenbrust Caipirinha Art + Reis",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
-              "name_en": "Marinated chicken breast Caipirinha style (1 piece)",
-              "station": "Grill",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 160.0,
-              "price_cents": 244,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 232.0,
-              "protein_g": 39.2
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 514,
-            "price_eur": 5.14,
-            "weight_g": 460.0,
-            "kcal": 622.0,
-            "protein_g": 47.3,
-            "carbs_g": 88.8,
-            "fat_g": 6.5
-          },
-          "has_estimated_prices": true
-        }
-      ]
-    },
-    "cut_all": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Marinierte Hähnchenbrust Caipirinha Art + Gekräutertes Pilzragout (Champignons, Egerlingen und Austernpilzen)",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
-              "name_en": "Marinated chicken breast Caipirinha style (1 piece)",
-              "station": "Grill",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 160.0,
-              "price_cents": 244,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 232.0,
-              "protein_g": 39.2
-            },
-            {
-              "name": "Gekräutertes Pilzragout (Champignons, Egerlingen und Austernpilzen)",
-              "name_en": "Herbed mushroom ragout (button mushrooms, portobello and oyster mushrooms)",
-              "station": "Vegan",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
+                "GlG",
+                "GlW",
+                "Mi",
                 "So"
               ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 306.0,
-              "protein_g": 10.8
-            }
-          ],
-          "total": {
-            "price_cents": 649,
-            "price_eur": 6.49,
-            "weight_g": 610.0,
-            "kcal": 538.0,
-            "protein_g": 50.0,
-            "carbs_g": 23.25,
-            "fat_g": 25.85
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Marinierte Hähnchenbrust Caipirinha Art + Broccolicurry",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
-              "name_en": "Marinated chicken breast Caipirinha style (1 piece)",
-              "station": "Grill",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 160.0,
-              "price_cents": 244,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 232.0,
-              "protein_g": 39.2
-            },
-            {
-              "name": "Broccolicurry mit roter Paprika in Kokosmilch",
-              "name_en": "Broccoli curry with red bell pepper in coconut milk",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
               "additives": [
-                "Kn"
+                "Kn",
+                "1",
+                "2",
+                "3"
               ],
               "standing": false,
-              "diet": "vegan",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 285.0,
-              "protein_g": 7.5
-            }
-          ],
-          "total": {
-            "price_cents": 514,
-            "price_eur": 5.14,
-            "weight_g": 460.0,
-            "kcal": 517.0,
-            "protein_g": 46.7,
-            "carbs_g": 20.4,
-            "fat_g": 26.6
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Marinierte Hähnchenbrust Caipirinha Art + Kartoffelsalat",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
-              "name_en": "Marinated chicken breast Caipirinha style (1 piece)",
-              "station": "Grill",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 160.0,
-              "price_cents": 244,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
               "diet": "meat",
+              "id": "ec4bc949aeeec7f1",
               "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 232.0,
-              "protein_g": 39.2
+              "price_source": "config",
+              "kcal": 1060.0,
+              "protein_g": 44.0
             },
             {
-              "name": "Kartoffelsalat",
-              "name_en": "Potato salad",
-              "station": "Beilagen",
-              "role": "side",
+              "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+              "name_en": "Quark cream with stewed plums and cashew nuts",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
               "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": false,
-              "markers": [],
-              "allergens": [],
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi",
+                "Sc",
+                "ScC"
+              ],
               "additives": [],
-              "standing": true,
-              "diet": "meat",
-              "serving": "2 scoops",
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "381685b996b26202",
+              "serving": "1 piece",
               "price_source": "config",
-              "kcal": 345.0,
-              "protein_g": 5.4
+              "kcal": 232.5,
+              "protein_g": 9.75
             }
           ],
           "total": {
-            "price_cents": 514,
-            "price_eur": 5.14,
-            "weight_g": 460.0,
-            "kcal": 577.0,
-            "protein_g": 44.6,
-            "carbs_g": 48.3,
-            "fat_g": 21.2
+            "price_cents": 635,
+            "price_eur": 6.35,
+            "weight_g": 550,
+            "kcal": 1292.5,
+            "protein_g": 53.75,
+            "carbs_g": 147.5,
+            "fat_g": 53.4
+          },
+          "score": {
+            "energy_value": 1.6283464566929136,
+            "protein_value": 0.7053805774278216,
+            "energy": 2.6416666666666666,
+            "total": 4.9754
           },
           "has_estimated_prices": true
-        }
-      ]
-    },
-    "budget_all": {
-      "state": "ready",
-      "goal": "budget",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
+        },
         {
-          "title": "Pasta",
+          "title": "Pasta + Quark cream",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -452,25 +207,157 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
+              "id": "18b9fa402226e454",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 607.5,
               "protein_g": 29.25
+            },
+            {
+              "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+              "name_en": "Quark cream with stewed plums and cashew nuts",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi",
+                "Sc",
+                "ScC"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "381685b996b26202",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 232.5,
+              "protein_g": 9.75
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 29.25,
-            "carbs_g": 90.0,
-            "fat_g": 13.5
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 840.0,
+            "protein_g": 39.0,
+            "carbs_g": 115.5,
+            "fat_g": 23.7
           },
-          "has_estimated_prices": false
+          "score": {
+            "energy_value": 1.2444444444444442,
+            "protein_value": 0.6018518518518517,
+            "energy": 1.1333333333333333,
+            "total": 2.9796
+          },
+          "has_estimated_prices": true
         },
         {
-          "title": "Krautwickerl + Reis",
+          "title": "Marinated chicken breast Caipirinha style + Quark cream + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
+              "name_en": "Marinated chicken breast Caipirinha style (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 160.0,
+              "price_cents": 244,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "id": "c9f1f09a9d4de28f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 232.0,
+              "protein_g": 39.2
+            },
+            {
+              "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+              "name_en": "Quark cream with stewed plums and cashew nuts",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi",
+                "Sc",
+                "ScC"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "381685b996b26202",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 232.5,
+              "protein_g": 9.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 649,
+            "price_eur": 6.49,
+            "weight_g": 610.0,
+            "kcal": 854.5,
+            "protein_g": 57.05,
+            "carbs_g": 114.3,
+            "fat_g": 16.7
+          },
+          "score": {
+            "energy_value": 1.0533127889060092,
+            "protein_value": 0.732537236774525,
+            "energy": 1.1816666666666666,
+            "total": 2.9675
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Cabbage roll + Quark cream + Potato salad",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -499,10 +386,194 @@
               ],
               "standing": false,
               "diet": "meat",
+              "id": "1d58ff3f8d5eced9",
               "serving": "1 piece",
               "price_source": "eat-api",
               "kcal": 405.0,
               "protein_g": 22.5
+            },
+            {
+              "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+              "name_en": "Quark cream with stewed plums and cashew nuts",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi",
+                "Sc",
+                "ScC"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "381685b996b26202",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 232.5,
+              "protein_g": 9.75
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 640,
+            "price_eur": 6.4,
+            "weight_g": 600.0,
+            "kcal": 810.0,
+            "protein_g": 34.95,
+            "carbs_g": 60.75,
+            "fat_g": 46.5
+          },
+          "score": {
+            "energy_value": 1.0125,
+            "protein_value": 0.455078125,
+            "energy": 1.0333333333333334,
+            "total": 2.5009
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Barley stew + Quark cream",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gersteneintopf",
+              "name_en": "Barley stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "3200e2c908590445",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 337.5,
+              "protein_g": 11.25
+            },
+            {
+              "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+              "name_en": "Quark cream with stewed plums and cashew nuts",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi",
+                "Sc",
+                "ScC"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "381685b996b26202",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 232.5,
+              "protein_g": 9.75
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 21.0,
+            "carbs_g": 79.5,
+            "fat_g": 16.95
+          },
+          "score": {
+            "energy_value": 1.6056338028169015,
+            "protein_value": 0.6161971830985916,
+            "energy": 0.23333333333333334,
+            "total": 2.4552
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Marinated chicken breast Caipirinha style + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
+              "name_en": "Marinated chicken breast Caipirinha style (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 160.0,
+              "price_cents": 244,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "id": "c9f1f09a9d4de28f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 232.0,
+              "protein_g": 39.2
             },
             {
               "name": "Reis",
@@ -522,6 +593,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
               "serving": "1 scoop",
               "price_source": "config",
               "kcal": 195.0,
@@ -529,18 +601,104 @@
             }
           ],
           "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450.0,
-            "kcal": 600.0,
-            "protein_g": 26.55,
-            "carbs_g": 55.5,
-            "fat_g": 28.95
+            "price_cents": 379,
+            "price_eur": 3.79,
+            "weight_g": 310.0,
+            "kcal": 427.0,
+            "protein_g": 43.25,
+            "carbs_g": 46.8,
+            "fat_g": 6.05
+          },
+          "score": {
+            "protein_density": 2.532201405152225,
+            "protein_value": 0.4754837291116974,
+            "protein": 0.44166666666666665,
+            "energy": 0.0,
+            "total": 3.4494
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Krautwickerl + Kartoffelsalat",
+          "title": "Pasta + Carrot ginger soup",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pasta mit Sojabolognese",
+              "name_en": "Pasta with soy Bolognese",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "18b9fa402226e454",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Karotten-Ingwersuppe",
+              "name_en": "Carrot ginger soup",
+              "station": "Unspecified",
+              "role": "soup",
+              "texture": "liquid",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "id": "c285071f26cdac0c",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 63.0,
+              "protein_g": 1.35
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 670.5,
+            "protein_g": 30.6,
+            "carbs_g": 98.7,
+            "fat_g": 15.9
+          },
+          "score": {
+            "protein_density": 1.1409395973154364,
+            "protein_value": 0.23611111111111113,
+            "protein": 0.02000000000000005,
+            "energy": 0.0,
+            "total": 1.3971
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Cabbage roll + Potato salad",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -569,6 +727,7 @@
               ],
               "standing": false,
               "diet": "meat",
+              "id": "1d58ff3f8d5eced9",
               "serving": "1 piece",
               "price_source": "eat-api",
               "kcal": 405.0,
@@ -590,6 +749,7 @@
               "additives": [],
               "standing": true,
               "diet": "meat",
+              "id": "73bbe2bb9698caf4",
               "serving": "1 scoop",
               "price_source": "config",
               "kcal": 172.5,
@@ -605,19 +765,97 @@
             "carbs_g": 35.25,
             "fat_g": 36.3
           },
+          "score": {
+            "protein_density": 1.0909090909090908,
+            "protein_value": 0.2079207920792079,
+            "protein": -0.9600000000000002,
+            "energy": 0.0,
+            "total": 0.3388
+          },
           "has_estimated_prices": true
-        }
-      ]
-    },
-    "bulk_vegan": {
-      "state": "ready",
-      "goal": "bulk",
-      "vegan": true,
-      "relaxed": true,
-      "note": "No vegan lunch reaches 30g protein today; the protein target is relaxed.",
-      "plates": [
+        },
         {
-          "title": "Broccolicurry + Reis",
+          "title": "Barley stew + Quark cream",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gersteneintopf",
+              "name_en": "Barley stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "3200e2c908590445",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 337.5,
+              "protein_g": 11.25
+            },
+            {
+              "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+              "name_en": "Quark cream with stewed plums and cashew nuts",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi",
+                "Sc",
+                "ScC"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "381685b996b26202",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 232.5,
+              "protein_g": 9.75
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 21.0,
+            "carbs_g": 79.5,
+            "fat_g": 16.95
+          },
+          "score": {
+            "protein_density": 0.9210526315789472,
+            "protein_value": 0.3080985915492958,
+            "protein": -1.8,
+            "energy": 0.0,
+            "total": -0.5708
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Broccoli curry + Quark cream + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -641,10 +879,39 @@
               ],
               "standing": false,
               "diet": "vegan",
+              "id": "54fbe6d1a5e793e8",
               "serving": "2 scoops",
               "price_source": "eat-api",
               "kcal": 285.0,
               "protein_g": 7.5
+            },
+            {
+              "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+              "name_en": "Quark cream with stewed plums and cashew nuts",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi",
+                "Sc",
+                "ScC"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "381685b996b26202",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 232.5,
+              "protein_g": 9.75
             },
             {
               "name": "Reis",
@@ -652,10 +919,10 @@
               "station": "Beilagen",
               "role": "side",
               "texture": "dry",
-              "count": 2,
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -664,25 +931,469 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
-              "serving": "2 scoops",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
               "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
             "price_cents": 540,
             "price_eur": 5.4,
             "weight_g": 600,
-            "kcal": 675.0,
-            "protein_g": 15.6,
-            "carbs_g": 99.6,
-            "fat_g": 21.9
+            "kcal": 712.5,
+            "protein_g": 21.3,
+            "carbs_g": 83.1,
+            "fat_g": 31.65
+          },
+          "score": {
+            "protein_density": 0.7473684210526317,
+            "protein_value": 0.16435185185185183,
+            "protein": -1.7399999999999998,
+            "energy": -0.125,
+            "total": -0.9533
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Barley stew + Quark cream",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gersteneintopf",
+              "name_en": "Barley stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "3200e2c908590445",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 337.5,
+              "protein_g": 11.25
+            },
+            {
+              "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+              "name_en": "Quark cream with stewed plums and cashew nuts",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi",
+                "Sc",
+                "ScC"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "381685b996b26202",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 232.5,
+              "protein_g": 9.75
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 21.0,
+            "carbs_g": 79.5,
+            "fat_g": 16.95
+          },
+          "score": {
+            "price": -1.42,
+            "energy_value": 0.8028169014084507,
+            "energy": 0.013333333333333334,
+            "protein": 0.013333333333333334,
+            "total": -0.5905
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Pasta",
+          "title": "Pasta + Quark cream",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pasta mit Sojabolognese",
+              "name_en": "Pasta with soy Bolognese",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "18b9fa402226e454",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 405.0,
+              "protein_g": 19.5
+            },
+            {
+              "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+              "name_en": "Quark cream with stewed plums and cashew nuts",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi",
+                "Sc",
+                "ScC"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "381685b996b26202",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 232.5,
+              "protein_g": 9.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 637.5,
+            "protein_g": 29.25,
+            "carbs_g": 85.5,
+            "fat_g": 19.2
+          },
+          "score": {
+            "price": -2.025,
+            "energy_value": 0.6296296296296297,
+            "energy": 0.058333333333333334,
+            "protein": 0.12333333333333334,
+            "total": -1.2137
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Salami Pizza + Quark cream",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pizza Salami",
+              "name_en": "Salami Pizza",
+              "station": "Pizza",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [
+                "Kn",
+                "1",
+                "2",
+                "3"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "ec4bc949aeeec7f1",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 1060.0,
+              "protein_g": 44.0
+            },
+            {
+              "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+              "name_en": "Quark cream with stewed plums and cashew nuts",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi",
+                "Sc",
+                "ScC"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "381685b996b26202",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 232.5,
+              "protein_g": 9.75
+            }
+          ],
+          "total": {
+            "price_cents": 635,
+            "price_eur": 6.35,
+            "weight_g": 550,
+            "kcal": 1292.5,
+            "protein_g": 53.75,
+            "carbs_g": 147.5,
+            "fat_g": 53.4
+          },
+          "score": {
+            "price": -3.175,
+            "energy_value": 0.8141732283464568,
+            "energy": 0.495,
+            "protein": 0.45,
+            "total": -1.4158
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Marinated chicken breast Caipirinha style + Potato salad",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
+              "name_en": "Marinated chicken breast Caipirinha style (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 160.0,
+              "price_cents": 244,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "id": "c9f1f09a9d4de28f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 232.0,
+              "protein_g": 39.2
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 514,
+            "price_eur": 5.14,
+            "weight_g": 460.0,
+            "kcal": 577.0,
+            "protein_g": 44.6,
+            "carbs_g": 48.3,
+            "fat_g": 21.2
+          },
+          "score": {
+            "price": -2.57,
+            "energy_value": 0.4490272373540856,
+            "energy": 0.018000000000000002,
+            "protein": 0.32800000000000007,
+            "total": -1.775
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Broccoli curry + Quark cream + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Broccolicurry mit roter Paprika in Kokosmilch",
+              "name_en": "Broccoli curry with red bell pepper in coconut milk",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "54fbe6d1a5e793e8",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 142.5,
+              "protein_g": 3.75
+            },
+            {
+              "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+              "name_en": "Quark cream with stewed plums and cashew nuts",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi",
+                "Sc",
+                "ScC"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "381685b996b26202",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 232.5,
+              "protein_g": 9.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 570.0,
+            "protein_g": 17.55,
+            "carbs_g": 75.3,
+            "fat_g": 21.15
+          },
+          "score": {
+            "price": -2.025,
+            "energy_value": 0.5629629629629629,
+            "energy": 0.013333333333333334,
+            "protein": -0.4899999999999999,
+            "total": -1.9387
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pasta + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -709,25 +1420,204 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
+              "id": "18b9fa402226e454",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 607.5,
               "protein_g": 29.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 29.25,
-            "carbs_g": 90.0,
-            "fat_g": 13.5
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 33.3,
+            "carbs_g": 132.0,
+            "fat_g": 13.95
           },
-          "has_estimated_prices": false
+          "score": {
+            "energy_value": 1.1888888888888889,
+            "protein_value": 0.5138888888888888,
+            "energy": 1.0083333333333333,
+            "total": 2.7111
+          },
+          "has_estimated_prices": true
         },
         {
-          "title": "Gekräutertes Pilzragout (Champignons, Egerlingen und Austernpilzen) + Reis",
+          "title": "Barley stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gersteneintopf",
+              "name_en": "Barley stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "3200e2c908590445",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 7.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 369,
+            "price_eur": 3.69,
+            "weight_g": 600,
+            "kcal": 615.0,
+            "protein_g": 15.6,
+            "carbs_g": 120.0,
+            "fat_g": 5.4
+          },
+          "score": {
+            "energy_value": 1.3333333333333333,
+            "protein_value": 0.3523035230352303,
+            "energy": 0.38333333333333336,
+            "total": 2.069
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Broccoli curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Broccolicurry mit roter Paprika in Kokosmilch",
+              "name_en": "Broccoli curry with red bell pepper in coconut milk",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "54fbe6d1a5e793e8",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 285.0,
+              "protein_g": 7.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 675.0,
+            "protein_g": 15.6,
+            "carbs_g": 99.6,
+            "fat_g": 21.9
+          },
+          "score": {
+            "energy_value": 0.9999999999999999,
+            "protein_value": 0.24074074074074073,
+            "energy": 0.5833333333333334,
+            "total": 1.8241
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Herbed mushroom ragout + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -751,6 +1641,7 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
+              "id": "b89865f7746b30be",
               "serving": "2 scoops",
               "price_source": "eat-api",
               "kcal": 204.0,
@@ -774,6 +1665,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
               "serving": "2 scoops",
               "price_source": "config",
               "kcal": 390.0,
@@ -788,6 +1680,12 @@
             "protein_g": 15.3,
             "carbs_g": 96.3,
             "fat_g": 14.4
+          },
+          "score": {
+            "energy_value": 0.8799999999999999,
+            "protein_value": 0.23611111111111113,
+            "energy": 0.31333333333333335,
+            "total": 1.4294
           },
           "has_estimated_prices": true
         }
@@ -828,6 +1726,7 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
+              "id": "18b9fa402226e454",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 607.5,
@@ -843,7 +1742,238 @@
             "carbs_g": 90.0,
             "fat_g": 13.5
           },
+          "score": {
+            "protein_density": 1.2037037037037037,
+            "protein_value": 0.30092592592592593,
+            "protein": -0.15,
+            "energy": 0.0,
+            "total": 1.3546
+          },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Barley stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gersteneintopf",
+              "name_en": "Barley stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "3200e2c908590445",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 337.5,
+              "protein_g": 11.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 532.5,
+            "protein_g": 15.3,
+            "carbs_g": 96.0,
+            "fat_g": 7.2
+          },
+          "score": {
+            "protein_density": 0.7183098591549296,
+            "protein_value": 0.2244718309859155,
+            "protein": -2.9399999999999995,
+            "energy": 0.0,
+            "total": -1.9972
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Herbed mushroom ragout + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gekräutertes Pilzragout (Champignons, Egerlingen und Austernpilzen)",
+              "name_en": "Herbed mushroom ragout (button mushrooms, portobello and oyster mushrooms)",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "b89865f7746b30be",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 306.0,
+              "protein_g": 10.8
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 501.0,
+            "protein_g": 14.85,
+            "carbs_g": 60.45,
+            "fat_g": 20.7
+          },
+          "score": {
+            "protein_density": 0.7410179640718564,
+            "protein_value": 0.11458333333333333,
+            "protein": -3.03,
+            "energy": 0.0,
+            "total": -2.1744
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Broccoli curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Broccolicurry mit roter Paprika in Kokosmilch",
+              "name_en": "Broccoli curry with red bell pepper in coconut milk",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "54fbe6d1a5e793e8",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 285.0,
+              "protein_g": 7.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 675.0,
+            "protein_g": 15.6,
+            "carbs_g": 99.6,
+            "fat_g": 21.9
+          },
+          "score": {
+            "protein_density": 0.5777777777777777,
+            "protein_value": 0.12037037037037036,
+            "protein": -2.8800000000000003,
+            "energy": 0.0,
+            "total": -2.1819
+          },
+          "has_estimated_prices": true
         }
       ]
     },
@@ -882,6 +2012,7 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
+              "id": "18b9fa402226e454",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 607.5,
@@ -897,10 +2028,93 @@
             "carbs_g": 90.0,
             "fat_g": 13.5
           },
+          "score": {
+            "price": -2.025,
+            "energy_value": 0.6,
+            "energy": 0.03833333333333333,
+            "protein": 0.12333333333333334,
+            "total": -1.2633
+          },
           "has_estimated_prices": false
         },
         {
-          "title": "Broccolicurry + Reis",
+          "title": "Barley stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gersteneintopf",
+              "name_en": "Barley stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "3200e2c908590445",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 337.5,
+              "protein_g": 11.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 532.5,
+            "protein_g": 15.3,
+            "carbs_g": 96.0,
+            "fat_g": 7.2
+          },
+          "score": {
+            "price": -1.42,
+            "energy_value": 0.75,
+            "energy": -0.175,
+            "protein": -0.9399999999999998,
+            "total": -1.785
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Broccoli curry + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -924,6 +2138,7 @@
               ],
               "standing": false,
               "diet": "vegan",
+              "id": "54fbe6d1a5e793e8",
               "serving": "2 scoops",
               "price_source": "eat-api",
               "kcal": 285.0,
@@ -947,6 +2162,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
               "serving": "2 scoops",
               "price_source": "config",
               "kcal": 390.0,
@@ -962,10 +2178,17 @@
             "carbs_g": 99.6,
             "fat_g": 21.9
           },
+          "score": {
+            "price": -2.7,
+            "energy_value": 0.49999999999999994,
+            "energy": 0.08333333333333333,
+            "protein": -0.8800000000000001,
+            "total": -2.9967
+          },
           "has_estimated_prices": true
         },
         {
-          "title": "Gekräutertes Pilzragout (Champignons, Egerlingen und Austernpilzen) + Reis",
+          "title": "Herbed mushroom ragout + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -989,6 +2212,7 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
+              "id": "b89865f7746b30be",
               "serving": "2 scoops",
               "price_source": "eat-api",
               "kcal": 204.0,
@@ -1012,6 +2236,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
               "serving": "2 scoops",
               "price_source": "config",
               "kcal": 390.0,
@@ -1027,6 +2252,13 @@
             "carbs_g": 96.3,
             "fat_g": 14.4
           },
+          "score": {
+            "price": -2.7,
+            "energy_value": 0.43999999999999995,
+            "energy": 0.029333333333333336,
+            "protein": -0.9399999999999998,
+            "total": -3.1707
+          },
           "has_estimated_prices": true
         }
       ]
@@ -1035,20 +2267,33 @@
   "extras": {
     "all": [
       {
-        "name": "Topfencreme mit Zwetschgenröster",
-        "name_en": "Quark cream with stewed plums",
+        "name": "Karotten-Ingwersuppe",
+        "name_en": "Carrot ginger soup",
+        "station": "Unspecified",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": false,
+        "diet": "meat",
+        "serving": "2 scoops",
+        "kcal": 126.0,
+        "protein_g": 2.7,
+        "price_source": "config"
+      },
+      {
+        "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+        "name_en": "Quark cream with stewed plums and cashew nuts",
         "station": "Dessert (Glas)",
-        "weight_g": 140,
-        "price_cents": 126,
+        "weight_g": 150,
+        "price_cents": 135,
         "is_vegan": false,
         "diet": "vegetarian",
         "serving": "1 piece",
-        "kcal": 203.0,
-        "protein_g": 9.1,
-        "price_source": "eat-api"
+        "kcal": 232.5,
+        "protein_g": 9.75,
+        "price_source": "config"
       }
     ],
     "vegan": []
   },
-  "generated_on": "2026-11-03"
+  "generated_on": "2026-11-06"
 }

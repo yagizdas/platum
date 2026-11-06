@@ -5,7 +5,7 @@ from urllib.error import HTTPError, URLError
 import pytest
 
 from common import normalize, read_json
-from tag import GeminiAPIError, call_gemini, tag_menu, validate_tag
+from tag import GeminiAPIError, call_gemini, repair_tag, tag_menu, validate_tag
 
 
 def test_once_per_normalized_name_and_cache_survives_rerun(tmp_path, make_dish):
@@ -194,3 +194,63 @@ def test_alternating_503_and_timeout_share_ten_attempt_limit(tmp_path, make_dish
         tag_menu({"dishes": [d]}, tmp_path / "cache.json", "gemini-3.8-flash", "test-key", failing)
     assert len(calls) == 10
     assert waits == [30] * 9
+
+
+@pytest.mark.parametrize("name", [
+    "Truthahnschnitzel (1 Stück) mit Ajvar und Kartoffeln aus dem Ofen",
+    "Französische Zwiebelsuppe mit Croûtons", "Gebratene Gnocchi mit Gemüse",
+    "Panna Cotta mit Himbeersauce", "Mousse Heidelbeermousse",
+    "Pizza Funghi mit frischen Champignons", "Vegane Kürbiscremesuppe",
+    "Gegrillte Süßkartoffeln aus dem Ofen mit Kräuterdip", "Mousse Heidelbeer-Geschmack",
+    "Pizza Salami", "Karotten-Ingwersuppe", "Frische Rahmschwammerl",
+    "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+])
+def test_problem_dishes_repair_fresh_piece_outputs(tmp_path, make_dish, name):
+    dish, tag = make_dish(name)
+    # Schnitzel contradicts its explicit name; other mocks have out-of-range weights.
+    if "(1 Stück)" not in name:
+        tag.update(is_per_piece=True, piece_weight_g=2500)
+    original = dict(tag)
+    result = tag_menu({"dishes": [dish]}, tmp_path / "cache.json", "model", "test", lambda *a: tag)
+    repaired = result[normalize(name)]
+    assert repaired["is_per_piece"] is True
+    assert repaired["piece_weight_g"] == (300 if "(1 Stück)" in name else 450)
+    assert tag == original
+
+
+def test_failing_first_dish_does_not_block_following_success(tmp_path, make_dish, monkeypatch):
+    monkeypatch.setattr("tag.time.sleep", lambda _: None)
+    bad, _ = make_dish("Bad estimate")
+    good, tag = make_dish("Good estimate")
+    failures = []
+    def model(dish, *args):
+        return {} if dish["name"] == bad["name"] else tag
+    result = tag_menu({"date": "2026-11-06", "dishes": [bad, good]}, tmp_path / "cache.json", "model", "test", model, failures=failures)
+    assert result == {normalize(good["name"]): tag}
+    assert len(failures) == 1 and failures[0]["name"] == bad["name"]
+
+
+def test_unrepairable_range_is_rejected_without_guessing(make_dish):
+    _, tag = make_dish("Schnitzel (1 Stück)", min_g=400, max_g=100)
+    with pytest.raises(ValueError, match="portion"):
+        validate_tag(repair_tag(tag, name="Schnitzel (1 Stück)"))
+
+
+def test_week_cli_records_skipped_names_and_preserves_successes(tmp_path, make_dish, config, monkeypatch):
+    import tag as module
+    from common import week_dates, write_json
+    from datetime import date
+    good, estimate = make_dish("Good lunch")
+    bad, _ = make_dish("Unrepairable lunch")
+    for index, day in enumerate(week_dates(date(2026, 11, 6))):
+        write_json(tmp_path / "data/menus" / f"{day}.json", {"date": day.isoformat(), "dishes": [bad, good] if index == 0 else [good]})
+    monkeypatch.setattr(module, "ROOT", tmp_path)
+    monkeypatch.setattr(module, "load_config", lambda _: config)
+    monkeypatch.setattr(module, "generate_json", lambda prompt, payload, *a: {} if payload["name"] == bad["name"] else estimate)
+    monkeypatch.setattr(module.time, "sleep", lambda _: None)
+    monkeypatch.setenv("GEMINI_API_KEY", "test")
+    monkeypatch.setattr("sys.argv", ["tag.py", "--week", "--date", "2026-11-06", "--cache", str(tmp_path / "cache.json")])
+    module.main()
+    failure = read_json(tmp_path / "data/tag_failures.json")
+    assert [entry["name"] for entry in failure["skipped"]] == [bad["name"]]
+    assert read_json(tmp_path / "cache.json") == {normalize(good["name"]): estimate}

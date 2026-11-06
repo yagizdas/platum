@@ -1,0 +1,14 @@
+name = "mensa-plate-reports"
+main = "src/index.js"
+compatibility_date = "2026-11-06"
+
+[vars]
+BROKEN_THRESHOLD = "2"
+ALLOWED_ORIGINS = "https://yagizdas.github.io,http://127.0.0.1:8000,http://localhost:8000"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mensa-plate-reports"
+# Local development works with this placeholder. Replace with `wrangler d1 create` output.
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"

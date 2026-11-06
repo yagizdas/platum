@@ -94,6 +94,27 @@ def validate_tag(tag, *, name=None):
     return tag
 
 
+def repair_tag(tag, *, name):
+    """Repair only fresh model output; existing cached estimates are immutable."""
+    if not isinstance(tag, dict):
+        return tag
+    tag = dict(tag)
+    portion = tag.get("typical_portion_g")
+    if (not isinstance(portion, dict) or not number(portion.get("min"), 1, 2000)
+            or not number(portion.get("max"), portion["min"], 2000)):
+        return tag  # No defensible weight can be inferred from an invalid range.
+    forced = single_piece_name(name) and tag.get("is_per_piece") is False
+    if forced:
+        tag.update(is_per_piece=True, piece_weight_g=(portion["min"] + portion["max"]) / 2)
+    if tag.get("is_per_piece") is True:
+        weight = tag.get("piece_weight_g")
+        if weight is None:
+            tag["piece_weight_g"] = (portion["min"] + portion["max"]) / 2
+        elif type(weight) in (int, float) and math.isfinite(weight):
+            tag["piece_weight_g"] = max(portion["min"], min(weight, portion["max"]))
+    return tag
+
+
 def generate_json(prompt, payload, schema, model, api_key, *, temperature=None):
     """One structured Gemini request; callers own their retry/fallback policy."""
     generation = {"maxOutputTokens": 4096, "thinkingConfig": {"thinkingLevel": "LOW"},
@@ -131,21 +152,25 @@ def call_gemini(dish, model, api_key):
     return generate_json(PROMPT, {"name": dish["name"], "station": dish["station"]}, schema, model, api_key)
 
 
-def tag_menu(menu, cache_path, model, api_key=None, caller=call_gemini):
+def tag_menu(menu, cache_path, model, api_key=None, caller=call_gemini, *, failures=None):
     cache = read_json(cache_path, {})
     if not isinstance(cache, dict):
         raise ValueError("Dish cache must be a JSON object")
+    skipped, tagged = [], 0
     for dish in menu["dishes"]:
         key = normalize(dish["name"])
         if key in cache:
             validate_tag(cache[key], name=dish["name"])
             continue
         if not api_key:
-            raise RuntimeError("GEMINI_API_KEY is required for uncached dishes. Set it in the environment; no estimates were invented.")
+            skipped.append({"date": menu.get("date"), "name": dish["name"], "error": "GEMINI_API_KEY is required for uncached dishes; no estimates were invented."})
+            continue
+        succeeded = False
         other_failures = 0
         for attempt in range(1, MAX_GEMINI_ATTEMPTS + 1):
             try:
-                tag = validate_tag(caller(dish, model, api_key), name=dish["name"])
+                tag = validate_tag(repair_tag(caller(dish, model, api_key), name=dish["name"]), name=dish["name"])
+                succeeded = True
                 break
             except (ValueError, TypeError, KeyError, OSError) as exc:
                 overloaded = isinstance(exc, GeminiAPIError) and exc.status_code == 503
@@ -154,17 +179,29 @@ def tag_menu(menu, cache_path, model, api_key=None, caller=call_gemini):
                 if not retry_service:
                     other_failures += 1
                 if attempt == MAX_GEMINI_ATTEMPTS or other_failures == 2:
-                    raise RuntimeError(f"Could not tag {dish['name']!r} after {attempt} attempts: {str(exc).replace(api_key, '[redacted]')}") from None
+                    message = f"Could not tag {dish['name']!r} after {attempt} attempts: {str(exc).replace(api_key, '[redacted]')}"
+                    skipped.append({"date": menu.get("date"), "name": dish["name"], "error": message})
+                    print(message + "; skipping.", file=sys.stderr, flush=True)
+                    break
                 delay = SERVICE_RETRY_DELAY_SECONDS if retry_service else 1
                 if retry_service:
                     failure = "HTTP 503" if overloaded else "request timed out"
                     print(f"Gemini {failure} for {dish['name']!r} (attempt {attempt}/{MAX_GEMINI_ATTEMPTS}); retrying in {delay}s.",
                           file=sys.stderr, flush=True)
                 time.sleep(delay)
+        if not succeeded:
+            continue
         cache[key] = tag
+        tagged += 1
         # Persist every success so a later failure won't charge for it again.
         write_json(cache_path, cache)
         print(f"Tagged: {dish['name']}", flush=True)
+    if failures is not None:
+        failures.extend(skipped)
+    if skipped:
+        print(f"Skipped {len(skipped)} dish(es): " + "; ".join(d["name"] for d in skipped), file=sys.stderr)
+        if not tagged:
+            raise RuntimeError(skipped[-1]["error"])
     return cache
 
 
@@ -179,12 +216,23 @@ def main():
     config = load_config(args.config)
     paths = [ROOT / "data/menus" / f"{day.isoformat()}.json" for day in week_dates(args.date or today(config))] if args.week else [args.menu]
     key = os.getenv("GEMINI_API_KEY") or dotenv_values(ROOT / ".env").get("GEMINI_API_KEY")
+    failures, errors = [], []
+    before = len(read_json(args.cache, {}))
     for path in paths:
-        menu = read_json(path)
-        if menu is None:
-            raise RuntimeError("Run scrape.py --week first")
-        cache = tag_menu(menu, args.cache, config["gemini_model"], key)
-        print(f"{menu['date']}: ready; {len(cache)} cached names", flush=True)
+        try:
+            menu = read_json(path)
+            if menu is None:
+                raise RuntimeError(f"Missing menu {path.name}; run scrape.py --week first")
+            cache = tag_menu(menu, args.cache, config["gemini_model"], key, failures=failures)
+            print(f"{menu['date']}: ready; {len(cache)} cached names", flush=True)
+        except (RuntimeError, ValueError) as exc:
+            errors.append(str(exc))
+            print(str(exc), file=sys.stderr)
+    write_json(ROOT / "data/tag_failures.json", {"date": (args.date or today(config)).isoformat(),
+                                               "skipped": failures, "errors": errors})
+    print(f"Tagging finished: {len(failures)} skipped dish(es).", flush=True)
+    if errors and len(read_json(args.cache, {})) == before:
+        raise RuntimeError("No new dishes could be tagged; see data/tag_failures.json")
 
 
 if __name__ == "__main__":

@@ -55,7 +55,14 @@
           </div>
           <button class="text-button" id="share" type="button">Share plate <span aria-hidden="true">↗</span></button>
         </div>
+        <button class="text-button report-button" id="report-plate" type="button" aria-haspopup="dialog" aria-controls="report-sheet" hidden>Can't get this plate?</button>
       </section>
+      <dialog id="report-sheet" class="report-sheet" aria-labelledby="report-title">
+        <h2 id="report-title">Which dish was at another counter?</h2>
+        <div id="report-dishes" class="report-dishes"></div>
+        <p id="report-error" class="details" role="status"></p>
+        <button class="text-button" id="report-close" type="button">Cancel</button>
+      </dialog>
       <div class="secondary-actions" id="secondary-actions" hidden>
         <section class="ingredient-panel" id="plate-details" aria-labelledby="ingredients-title">
           <h2 class="ingredients-title" id="ingredients-title">Details</h2>
@@ -80,6 +87,9 @@
     </footer>
   </div>
   <script src="./dish-icons.js"></script>
+  <script src="./menu-days.js"></script>
+  <script src="./report-config.js"></script>
+  <script src="./report-client.js"></script>
   <script>
     'use strict';
     const $ = id => document.getElementById(id);
@@ -90,6 +100,8 @@
     let selection = {goal:'bulk',vegan:false};
     let data, stale=false, plateIndex=0, selectedExtras=new Set(), shareTimer;
     let weekIndex, selectedDate, loadToken=0;
+    const reports=PlateReports.create(globalThis.MENSA_REPORT_ENDPOINT);
+    let brokenKeys=new Set();
     const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
     let plateAnimations=[];
     function stopPlateAnimations() {
@@ -114,9 +126,14 @@
     if(goals.includes(requested.get('goal'))) selection={goal:requested.get('goal'),vegan:requested.get('vegan')==='1'};
     const money=cents=>'€'+(cents/100).toFixed(2);
     const rounded=value=>Math.round(value).toLocaleString('en-GB');
-    const berlinDate=()=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+    const berlinDate=MenuDays.berlinDate;
+    const defaultMenuDay=MenuDays.defaultMenuDay;
     const variant=()=>data.variants[selection.goal+(selection.vegan?'_vegan':'_all')];
-    const currentPlate=()=>variant().plates[plateIndex];
+    const visiblePlates=()=>variant().plates.filter(p=>{
+      const key=PlateReports.plateKey(p.items.map(i=>i.id));
+      return !brokenKeys.has(key) && !reports.isHidden(selectedDate,key);
+    });
+    const currentPlate=()=>visiblePlates()[plateIndex];
     const availableExtras=()=>data.extras[selection.vegan?'vegan':'all'];
     const activeExtras=()=>availableExtras().filter((_,index)=>selectedExtras.has(index));
     function syncControls() {
@@ -134,7 +151,7 @@
       $('plate').classList.add('is-empty');$('secondary-actions').hidden=true;$('plate-side').hidden=true;
       DishIcons.compose($('plate-art'),[],{fallback:icon});
       $('items').replaceChildren();$('plate-title').textContent='Your plate';$('reason').hidden=true;
-      for(const id of ['totals','details','relaxed-note','plate-actions','extras-wrap']) $(id).hidden=true;
+      for(const id of ['totals','details','relaxed-note','plate-actions','extras-wrap','report-plate']) $(id).hidden=true;
       $('empty').hidden=false;$('empty-title').textContent=title;$('empty-text').textContent=text || '';
       $('announcement').textContent=title;
     }
@@ -203,7 +220,9 @@
       const v=variant();
       if(data.state==='closed') return empty('No menu today.',v.message);
       if(data.state==='unavailable') return empty('Plates are on the way.',data.reason || v.message);
-      if(v.state!=='ready' || !v.plates.length) return empty('No plate fits this goal today.',v.message);
+      const plates=visiblePlates();
+      if(v.state!=='ready' || !plates.length) return empty('No plate fits this goal today.',v.message);
+      plateIndex=Math.min(plateIndex,plates.length-1);
       const p=currentPlate();$('empty').hidden=true;$('plate').classList.remove('is-empty');$('secondary-actions').hidden=false;
       const main=p.items.find(item=>item.role==='main') || p.items[0],title=briefDish(main);
       renderIllustration();
@@ -214,15 +233,16 @@
       renderItems();
       $('totals').hidden=false;$('details').hidden=false;
       $('relaxed-note').textContent=v.note || '';$('relaxed-note').hidden=!v.relaxed || !v.note;
-      $('plate-actions').hidden=false;$('alternatives').hidden=v.plates.length<2;
-      $('option-status').textContent=(plateIndex+1)+' / '+v.plates.length;
-      $('option-status').setAttribute('aria-label','Lunch option '+(plateIndex+1)+' of '+v.plates.length);
-      $('announcement').textContent='Option '+(plateIndex+1)+' of '+v.plates.length+': '+p.title;
+      $('plate-actions').hidden=false;$('alternatives').hidden=plates.length<2;
+      $('option-status').textContent=(plateIndex+1)+' / '+plates.length;
+      $('option-status').setAttribute('aria-label','Lunch option '+(plateIndex+1)+' of '+plates.length);
+      $('announcement').textContent='Option '+(plateIndex+1)+' of '+plates.length+': '+p.title;
+      $('report-plate').hidden=!reports.enabled || p.items.some(i=>!i.id);
       $('share').textContent='Share plate';renderExtras();renderTotals();
     }
     function cycle(direction) {
       if(!data || stale || variant().state!=='ready') return;
-      const count=variant().plates.length;
+      const count=visiblePlates().length;
       if(count<2) return;
       plateIndex=(plateIndex+direction+count)%count;render();animatePlateChange(direction);
     }
@@ -260,6 +280,41 @@
     $('previous').addEventListener('click',()=>cycle(-1));$('next').addEventListener('click',()=>cycle(1));
     $('alternatives').addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();cycle(event.key==='ArrowRight'?1:-1);}});
     $('share').addEventListener('click',share);
+    $('report-close').addEventListener('click',()=>$('report-sheet').close());
+    $('report-sheet').addEventListener('keydown',event=>{
+      if(event.key==='Escape') {event.preventDefault();$('report-sheet').close();return;}
+      if(event.key!=='Tab') return;
+      const buttons=[...$('report-sheet').querySelectorAll('button:not(:disabled)')];
+      const first=buttons[0],last=buttons.at(-1);
+      if(event.shiftKey && document.activeElement===first) {event.preventDefault();last.focus();}
+      else if(!event.shiftKey && document.activeElement===last) {event.preventDefault();first.focus();}
+    });
+    $('report-sheet').addEventListener('close',()=>{
+      if(!$('report-plate').hidden) $('report-plate').focus();
+      else {$('plate-title').tabIndex=-1;$('plate-title').focus();}
+    });
+    $('report-plate').addEventListener('click',()=>{
+      const p=currentPlate(),date=selectedDate,key=selection.goal+(selection.vegan?'_vegan':'_all');
+      $('report-dishes').replaceChildren();$('report-error').textContent='';
+      for(const item of [...p.items,{id:'other',name_en:'Something else'}]) {
+        const button=document.createElement('button');button.type='button';button.className='report-dish';button.textContent=briefDish(item);
+        button.addEventListener('click',async()=>{
+          const buttons=[...$('report-dishes').querySelectorAll('button')];buttons.forEach(b=>b.disabled=true);
+          $('report-sheet').setAttribute('aria-busy','true');
+          try {
+            await reports.report({date,variant:key,plate_dish_ids:p.items.map(i=>i.id),tapped_dish_id:item.id});
+            $('report-sheet').close();
+            if(data && selectedDate===date && key===selection.goal+(selection.vegan?'_vegan':'_all')) {
+              selectedExtras.clear();plateIndex=plateIndex%Math.max(visiblePlates().length,1);render();
+              $('notice').textContent="Thanks, we'll swap it.";
+            }
+          } catch(error) {$('report-error').textContent=error.message || 'Couldn’t send. Please try again.';}
+          finally {buttons.forEach(b=>b.disabled=false);$('report-sheet').setAttribute('aria-busy','false');}
+        });
+        $('report-dishes').append(button);
+      }
+      $('report-sheet').showModal();
+    });
     let touch;
     $('plate').addEventListener('touchstart',event=>{const p=event.touches[0];touch={x:p.clientX,y:p.clientY};},{passive:true});
     $('plate').addEventListener('touchend',event=>{if(!touch) return;const p=event.changedTouches[0],dx=p.clientX-touch.x,dy=p.clientY-touch.y;touch=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.2) cycle(dx<0?1:-1);},{passive:true});
@@ -268,15 +323,6 @@
       const day=new Date(text+'T12:00:00Z');
       day.setUTCDate(day.getUTCDate()-(day.getUTCDay()+6)%7);
       return day.toISOString().slice(0,10);
-    }
-    function defaultMenuDay(index,now=new Date()) {
-      const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
-      const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Berlin',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(now);
-      const number=type=>Number(parts.find(p=>p.type===type).value);
-      const cutoff=(index.lunch_cutoff || '14:30').split(':').map(Number);
-      const late=number('hour')*60+number('minute')>=cutoff[0]*60+cutoff[1];
-      if(!late) {const current=index.days.find(row=>row.date===today && row.state==='open');if(current) return current;}
-      return index.days.find(row=>row.date>today && row.state==='open') || index.days.find(row=>row.date===today) || index.days.find(row=>row.date>today);
     }
     function dateLabel(day) {
       $('date').dateTime=day;
@@ -297,7 +343,8 @@
       }
     }
     async function selectDay(row) {
-      const token=++loadToken;selectedDate=row.date;plateIndex=0;selectedExtras.clear();data=undefined;stale=false;
+      if($('report-sheet').open) $('report-sheet').close();
+      const token=++loadToken;selectedDate=row.date;plateIndex=0;selectedExtras.clear();data=undefined;stale=false;brokenKeys=new Set();
       $('extras-wrap').open=false;
       renderDays();dateLabel(row.date);empty('Getting the menu…','','tray');$('plate').setAttribute('aria-busy','true');
       try {
@@ -306,30 +353,46 @@
         const payload=validateDay(await response.json());
         if(token!==loadToken) return;
         data=payload;stale=data.date!==row.date;render();$('notice').textContent=(data.warnings || []).join(' ');
+        const broken=await reports.broken(row.date);
+        if(token===loadToken) {
+          const previous=currentPlate();
+          brokenKeys=new Set(broken);
+          const next=previous?visiblePlates().findIndex(p=>p===previous):-1;
+          plateIndex=next>=0?next:0;render();
+        }
       } catch(_) {if(token===loadToken){data=undefined;empty('A little trouble in the kitchen.','Please choose another day or check the official menu below.','error');}}
       finally {if(token===loadToken) $('plate').setAttribute('aria-busy','false');}
     }
     async function loadToday() {
       const response=await fetch('./data/today.json',{cache:'no-store'});
       if(!response.ok) throw new Error('Menu request failed');
-      data=validateDay(await response.json());selectedDate=berlinDate();stale=data.date!==selectedDate;
-      dateLabel(data.date);render();$('notice').textContent=(data.warnings || []).join(' ');
+      data=validateDay(await response.json());
+      const explicit=requested.get('date');
+      const row={date:data.date,state:data.state};
+      selectedDate=explicit || (defaultMenuDay({days:[row]}) || {date:berlinDate()}).date;
+      stale=data.date!==selectedDate || (!explicit && !defaultMenuDay({days:[row]}));
+      dateLabel(selectedDate);brokenKeys=new Set(await reports.broken(selectedDate));render();$('notice').textContent=(data.warnings || []).join(' ');
     }
     async function load() {
       try {
         const response=await fetch('./data/week.json',{cache:'no-store'});
         if(!response.ok) throw new Error('No week index');
-        const index=await response.json(),today=berlinDate();
-        if(index.schema_version!==2 || !Array.isArray(index.days) || !index.days.length ||
-           !/^\d{4}-\d{2}-\d{2}$/.test(index.week_start) || !/^\d{4}-\d{2}-\d{2}$/.test(index.valid_through) ||
-           today<index.week_start || today>index.valid_through ||
-           !index.days.every(row=>row && /^\d{4}-\d{2}-\d{2}$/.test(row.date) && ['open','closed','unavailable'].includes(row.state) && row.file==='data/days/'+row.date+'.json')) throw new Error('Stale week');
+        const index=await response.json();
+        if(!MenuDays.validWeek(index,new Date(),requested.get('date'))) throw new Error('Stale week');
         index.days.sort((a,b)=>a.date.localeCompare(b.date));weekIndex=index;
-        const day=index.days.find(row=>row.date===requested.get('date')) || defaultMenuDay(index);if(!day) throw new Error('No upcoming menu');
+        const explicit=requested.get('date');
+        const day=/^\d{4}-\d{2}-\d{2}$/.test(explicit || '')
+          ? index.days.find(row=>row.date===explicit) || {date:explicit,file:'data/days/'+explicit+'.json'}
+          : defaultMenuDay(index);
+        if(!day) throw new Error('No upcoming menu');
         await selectDay(day);
       } catch(_) {
         weekIndex=undefined;$('days').hidden=true;
-        try {await loadToday();} catch(_) {data=undefined;empty('A little trouble in the kitchen.','Please reload in a moment, or check the official menu below.','error');}
+        try {
+          const explicit=requested.get('date');
+          if(/^\d{4}-\d{2}-\d{2}$/.test(explicit || '')) await selectDay({date:explicit,file:'data/days/'+explicit+'.json'});
+          else await loadToday();
+        } catch(_) {data=undefined;empty('A little trouble in the kitchen.','Please reload in a moment, or check the official menu below.','error');}
       } finally {if(!weekIndex) $('plate').setAttribute('aria-busy','false');}
     }
     load();

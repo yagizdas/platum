@@ -6,6 +6,12 @@ import pytest
 import judge
 from common import read_json, write_json
 from pick import build_today, candidates, plate_result, rank_variant
+from proposals import fallback_proposals
+
+
+@pytest.fixture(autouse=True)
+def mock_proposals(monkeypatch):
+    monkeypatch.setattr("proposals.call_proposals", lambda items, *a, **kw: {"combos": fallback_proposals(items)})
 
 
 def pools_for(menu, tags, config, pairing):
@@ -18,8 +24,8 @@ def pools_for(menu, tags, config, pairing):
 
 
 def answer(pools):
-    return {key: [{"id": p["id"], "title": "A coherent lunch", **({"reason": "A satisfying main with a sensible pairing."} if i == 0 else {})}
-                  for i, p in enumerate(list(reversed(values))[:3])]
+    return {key: [{"id": p["id"], "title": "A coherent lunch", "reason": "A satisfying main with a sensible pairing."}
+                  for p in reversed(values)]
             for key, values in pools.items() if values}
 
 
@@ -33,12 +39,12 @@ def test_judge_ranked_ids_keep_exact_code_totals(config, fixture_menu, pairing):
     payload = caller.call_args.args[0]
     assert len(payload) == 6
     for key, variant in result["variants"].items():
-        choices = answer(payload)[key]
         for index, selected in enumerate(variant["plates"]):
-            expected = plate_result(pool[key][int(choices[index]["id"][1:])])
+            expected = plate_result(pool[key][index])
             assert selected["items"] == expected["items"] and selected["total"] == expected["total"]
-            assert selected["picked_by"] == "llm"
-            assert selected["reason"] is not None if index == 0 else selected["reason"] is None
+            assert selected["picked_by"] == "rules" # copy cannot select or reorder
+            assert selected["reason"] is not None
+            assert selected["score"] == expected["score"]
 
 
 @pytest.mark.parametrize("bad", [None, {}, [{"id": "c99", "title": "Unknown", "reason": "Good."}],
@@ -54,12 +60,12 @@ def test_invalid_variant_falls_back_to_code_order(config, fixture_menu, pairing,
     assert build_today(menu, tags, config, pairing=pairing, api_key="test", judge_caller=caller) == expected
 
 
-def test_duplicate_ids_or_reason_on_alternatives_are_invalid():
+def test_duplicate_ids_are_invalid_and_every_final_plate_has_a_reason():
     pools = {"bulk_all": [{"id": "c0"}, {"id": "c1"}]}
     choices = [{"id": "c0", "title": "Fish", "reason": "A good lunch."}, {"id": "c0", "title": "Curry"}]
     assert judge.validate_choices({"bulk_all": choices}, pools) == {}
     choices[1].update(id="c1", reason="Extra reason")
-    assert judge.validate_choices({"bulk_all": choices}, pools) == {}
+    assert judge.validate_choices({"bulk_all": choices}, pools)["bulk_all"] == choices
 
 
 def test_single_bad_variant_preserves_valid_siblings(config, fixture_menu, pairing):
@@ -71,7 +77,8 @@ def test_single_bad_variant_preserves_valid_siblings(config, fixture_menu, pairi
         return result
     result = build_today(menu, tags, config, pairing=pairing, api_key="test", judge_caller=caller)
     assert result["variants"]["bulk_all"]["plates"][0]["picked_by"] == "rules"
-    assert result["variants"]["cut_all"]["plates"][0]["picked_by"] == "llm"
+    assert result["variants"]["cut_all"]["plates"][0]["title"] == "A coherent lunch"
+    assert result["variants"]["cut_all"]["plates"][0]["picked_by"] == "rules"
 
 
 @pytest.mark.parametrize("error", [TimeoutError(), OSError(), ValueError(), RuntimeError()])
@@ -92,7 +99,7 @@ def test_schema_and_temperature(monkeypatch):
     schema = client.call_args.args[2]["properties"]["bulk_all"]
     assert schema["minItems"] == schema["maxItems"] == 2
     assert schema["prefixItems"][0]["required"] == ["id", "title", "reason"]
-    assert schema["prefixItems"][1]["required"] == ["id", "title"]
+    assert schema["prefixItems"][1]["required"] == ["id", "title", "reason"]
 
 
 def test_fewer_than_three_candidates_and_daily_cache(tmp_path):
@@ -108,7 +115,7 @@ def test_fewer_than_three_candidates_and_daily_cache(tmp_path):
     client.assert_called_once()
     judge.choose_variants(pools, "model", "2026-11-03", **args)
     assert client.call_count == 2
-    assert judge.choose_variants(pools, "model", "2026-11-02", api_key="", caller=client, cache_path=path) == {}
+    assert judge.choose_variants(pools, "model", "2026-11-02", api_key="", caller=client, cache_path=path) == first
 
 
 def test_failures_are_cached_and_missing_key_is_no_call(tmp_path):

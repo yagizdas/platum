@@ -1,83 +1,2532 @@
 {
   "date": "2026-11-02",
   "mensa": "Mensa Arcisstraße",
-  "state": "closed",
+  "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-03T15:26:17.312988+00:00",
+  "fetched_at": "2026-11-02T19:37:13.057175+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 0,
-  "goals": {
-    "bulk_min_protein_g": 30,
-    "bulk_protein_weight": 4,
-    "cut_min_protein_g": 25,
-    "cut_min_kcal": 450,
-    "budget_min_kcal": 550,
-    "budget_min_protein_g": 15
+  "menu_count": 15,
+  "scoring": {
+    "bulk": {
+      "energy_value": {
+        "metric": "kcal_per_euro",
+        "weight": 2,
+        "normalizer": 250
+      },
+      "protein_value": {
+        "metric": "protein_per_euro",
+        "weight": 1,
+        "normalizer": 12
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 500,
+        "up": 1,
+        "down": 3,
+        "normalizer": 300
+      }
+    },
+    "cut": {
+      "protein_density": {
+        "metric": "protein_per_100kcal",
+        "weight": 2,
+        "normalizer": 8
+      },
+      "protein_value": {
+        "metric": "protein_per_euro",
+        "weight": 0.5,
+        "normalizer": 12
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 30,
+        "up": 0.5,
+        "down": 3,
+        "normalizer": 15
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 700,
+        "reverse": true,
+        "up": 0,
+        "down": 2,
+        "normalizer": 200
+      }
+    },
+    "budget": {
+      "price": {
+        "metric": "price",
+        "weight": -2,
+        "normalizer": 4
+      },
+      "energy_value": {
+        "metric": "kcal_per_euro",
+        "weight": 1,
+        "normalizer": 250
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 550,
+        "up": 0.2,
+        "down": 3,
+        "normalizer": 300
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 20,
+        "up": 0.2,
+        "down": 3,
+        "normalizer": 15
+      }
+    }
   },
   "max_plate_g": 650,
   "default_scoop_g": 150,
   "nutrition_note": "Nutrition values are estimates.",
   "variants": {
     "bulk_all": {
-      "state": "closed",
+      "state": "ready",
       "goal": "bulk",
       "vegan": false,
       "relaxed": false,
       "note": null,
-      "plates": [],
-      "message": "No menu is published for this date."
+      "plates": [
+        {
+          "title": "Hearty Pasta and Potato Salad",
+          "reason": "Hearty German pasta pockets paired with classic potato salad for solid energy.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Vegane Maultaschen mit Zwiebelmarmelade",
+              "name_en": "Vegan German filled pasta pockets with onion jam",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "c56721990a2b4535",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1005.0,
+            "protein_g": 27.45,
+            "carbs_g": 143.25,
+            "fat_g": 33.9
+          },
+          "score": {
+            "energy_value": 1.4888888888888887,
+            "protein_value": 0.4236111111111111,
+            "energy": 1.6833333333333333,
+            "total": 3.5958
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Sausage, Salad and Dessert",
+          "reason": "Savory cheese sausage complemented by tangy potato salad and sweet vanilla cream.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Käsekrainer (1 Stück)",
+              "name_en": "Cheese Krainer sausage (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 226,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "2b1f00d50ddc74f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 434.0,
+              "protein_g": 20.3
+            },
+            {
+              "name": "Vanillecreme mit Erdbeersauce",
+              "name_en": "Vanilla cream with strawberry sauce",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "687436745cdfbdad",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 189.0,
+              "protein_g": 3.92
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 622,
+            "price_eur": 6.22,
+            "weight_g": 580.0,
+            "kcal": 968.0,
+            "protein_g": 29.62,
+            "carbs_g": 71.5,
+            "fat_g": 61.8
+          },
+          "score": {
+            "energy_value": 1.2450160771704182,
+            "protein_value": 0.39683815648445875,
+            "energy": 1.56,
+            "total": 3.2019
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Mushroom Pinsa and Quark Cream",
+          "reason": "Crisp mushroom pinsa joined by refreshing raspberry quark for balanced satisfaction.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "PINSA Funghi mit frischen Champignons",
+              "name_en": "Pinsa Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 310,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "a168a2e645305788",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 666.5,
+              "protein_g": 26.35
+            },
+            {
+              "name": "Topfencreme mit Himbeeren",
+              "name_en": "Quark cream with raspberries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlG",
+                "GlH",
+                "GlW",
+                "Mi",
+                "Sc",
+                "ScC",
+                "ScH",
+                "ScM",
+                "ScW",
+                "Se",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "245f1d1a817aefdf",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 189.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 626,
+            "price_eur": 6.26,
+            "weight_g": 450.0,
+            "kcal": 855.5,
+            "protein_g": 36.85,
+            "carbs_g": 106.4,
+            "fat_g": 30.25
+          },
+          "score": {
+            "energy_value": 1.093290734824281,
+            "protein_value": 0.4905484558040469,
+            "energy": 1.185,
+            "total": 2.7688
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "German Meatball and Potato Salad",
+          "reason": "Traditional meatball meal with double potato salad and a creamy fruit dessert.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Fleischpflanzerl (Frikadelle)",
+              "name_en": "German meatball (Frikadelle)",
+              "station": "Unspecified",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 125.0,
+              "price_cents": 213,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Sf"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "108bcb7cea32f164",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 287.5,
+              "protein_g": 20.0
+            },
+            {
+              "name": "Topfencreme mit Himbeeren",
+              "name_en": "Quark cream with raspberries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlG",
+                "GlH",
+                "GlW",
+                "Mi",
+                "Sc",
+                "ScC",
+                "ScH",
+                "ScM",
+                "ScW",
+                "Se",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "245f1d1a817aefdf",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 189.0,
+              "protein_g": 10.5
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 609,
+            "price_eur": 6.09,
+            "weight_g": 565.0,
+            "kcal": 821.5,
+            "protein_g": 35.9,
+            "carbs_g": 73.1,
+            "fat_g": 41.35
+          },
+          "score": {
+            "energy_value": 1.0791461412151069,
+            "protein_value": 0.4912424740010947,
+            "energy": 1.0716666666666668,
+            "total": 2.6421
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Stuffed Bell Pepper with Rice",
+          "reason": "Tender stuffed pepper served with fluffy rice and sweet berry quark cream.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gefüllte Paprikaschote",
+              "name_en": "Vegetarian stuffed bell pepper",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlD",
+                "Mi"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "bc2c117e9021623b",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 10.5
+            },
+            {
+              "name": "Topfencreme mit Himbeeren",
+              "name_en": "Quark cream with raspberries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlG",
+                "GlH",
+                "GlW",
+                "Mi",
+                "Sc",
+                "ScC",
+                "ScH",
+                "ScM",
+                "ScW",
+                "Se",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "245f1d1a817aefdf",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 189.0,
+              "protein_g": 10.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 729.0,
+            "protein_g": 25.05,
+            "carbs_g": 100.6,
+            "fat_g": 22.45
+          },
+          "score": {
+            "energy_value": 1.0983050847457627,
+            "protein_value": 0.3931261770244821,
+            "energy": 0.7633333333333333,
+            "total": 2.2548
+          },
+          "has_estimated_prices": true
+        }
+      ]
     },
     "cut_all": {
-      "state": "closed",
+      "state": "ready",
       "goal": "cut",
       "vegan": false,
       "relaxed": false,
       "note": null,
-      "plates": [],
-      "message": "No menu is published for this date."
+      "plates": [
+        {
+          "title": "Pollock Fillet and Berry Cream",
+          "reason": "Lean fish fillet with steamed rice and berry quark offering high protein.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Seelachsfilet (1Stück)",
+              "name_en": "Pollock fillet (1 piece)",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Fi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "fish",
+              "id": "c36418f583e188a8",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 27.75
+            },
+            {
+              "name": "Topfencreme mit Himbeeren",
+              "name_en": "Quark cream with raspberries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlG",
+                "GlH",
+                "GlW",
+                "Mi",
+                "Sc",
+                "ScC",
+                "ScH",
+                "ScM",
+                "ScW",
+                "Se",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "245f1d1a817aefdf",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 189.0,
+              "protein_g": 10.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 546,
+            "price_eur": 5.46,
+            "weight_g": 440.0,
+            "kcal": 556.5,
+            "protein_g": 42.3,
+            "carbs_g": 62.35,
+            "fat_g": 13.75
+          },
+          "score": {
+            "protein_density": 1.9002695417789757,
+            "protein_value": 0.32280219780219777,
+            "protein": 0.4099999999999999,
+            "energy": 0.0,
+            "total": 2.6331
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Meatball, Rice and Sweet Quark",
+          "reason": "Wholesome meatball paired with rice and a fruit cream cup for a lighter plate.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Fleischpflanzerl (Frikadelle)",
+              "name_en": "German meatball (Frikadelle)",
+              "station": "Unspecified",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 125.0,
+              "price_cents": 213,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Sf"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "108bcb7cea32f164",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 287.5,
+              "protein_g": 20.0
+            },
+            {
+              "name": "Topfencreme mit Himbeeren",
+              "name_en": "Quark cream with raspberries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlG",
+                "GlH",
+                "GlW",
+                "Mi",
+                "Sc",
+                "ScC",
+                "ScH",
+                "ScM",
+                "ScW",
+                "Se",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "245f1d1a817aefdf",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 189.0,
+              "protein_g": 10.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 474,
+            "price_eur": 4.74,
+            "weight_g": 415.0,
+            "kcal": 671.5,
+            "protein_g": 34.55,
+            "carbs_g": 71.6,
+            "fat_g": 26.2
+          },
+          "score": {
+            "protein_density": 1.2862993298585255,
+            "protein_value": 0.3037095639943741,
+            "protein": 0.15166666666666656,
+            "energy": 0.0,
+            "total": 1.7417
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pinsa Funghi with Dessert",
+          "reason": "Baked pinsa flatbread paired with cool raspberry quark for a flavorful lunch.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "PINSA Funghi mit frischen Champignons",
+              "name_en": "Pinsa Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 310,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "a168a2e645305788",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 666.5,
+              "protein_g": 26.35
+            },
+            {
+              "name": "Topfencreme mit Himbeeren",
+              "name_en": "Quark cream with raspberries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlG",
+                "GlH",
+                "GlW",
+                "Mi",
+                "Sc",
+                "ScC",
+                "ScH",
+                "ScM",
+                "ScW",
+                "Se",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "245f1d1a817aefdf",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 189.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 626,
+            "price_eur": 6.26,
+            "weight_g": 450.0,
+            "kcal": 855.5,
+            "protein_g": 36.85,
+            "carbs_g": 106.4,
+            "fat_g": 30.25
+          },
+          "score": {
+            "protein_density": 1.0768556399766218,
+            "protein_value": 0.24527422790202344,
+            "protein": 0.2283333333333334,
+            "energy": -1.555,
+            "total": -0.0045
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Barley Stew and Berry Cream",
+          "reason": "Warm vegetable barley stew matched with sweet fruit quark at low calories.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Graupen-Gemüse-Eintopf",
+              "name_en": "Pearl barley and vegetable stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "2008b80459c15a26",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 292.5,
+              "protein_g": 10.35
+            },
+            {
+              "name": "Topfencreme mit Himbeeren",
+              "name_en": "Quark cream with raspberries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlG",
+                "GlH",
+                "GlW",
+                "Mi",
+                "Sc",
+                "ScC",
+                "ScH",
+                "ScM",
+                "ScW",
+                "Se",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "245f1d1a817aefdf",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 189.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590.0,
+            "kcal": 481.5,
+            "protein_g": 20.85,
+            "carbs_g": 71.35,
+            "fat_g": 11.95
+          },
+          "score": {
+            "protein_density": 1.0825545171339566,
+            "protein_value": 0.3159090909090909,
+            "protein": -1.8299999999999996,
+            "energy": 0.0,
+            "total": -0.4315
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Stuffed Pepper with Quark",
+          "reason": "Savory vegetarian stuffed pepper served simply with fruit quark dessert.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gefüllte Paprikaschote",
+              "name_en": "Vegetarian stuffed bell pepper",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlD",
+                "Mi"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "bc2c117e9021623b",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 10.5
+            },
+            {
+              "name": "Topfencreme mit Himbeeren",
+              "name_en": "Quark cream with raspberries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlG",
+                "GlH",
+                "GlW",
+                "Mi",
+                "Sc",
+                "ScC",
+                "ScH",
+                "ScM",
+                "ScW",
+                "Se",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "245f1d1a817aefdf",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 189.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 396,
+            "price_eur": 3.96,
+            "weight_g": 440.0,
+            "kcal": 534.0,
+            "protein_g": 21.0,
+            "carbs_g": 58.6,
+            "fat_g": 22.0
+          },
+          "score": {
+            "protein_density": 0.9831460674157303,
+            "protein_value": 0.22095959595959594,
+            "protein": -1.8,
+            "energy": 0.0,
+            "total": -0.5959
+          },
+          "has_estimated_prices": true
+        }
+      ]
     },
     "budget_all": {
-      "state": "closed",
+      "state": "ready",
       "goal": "budget",
       "vegan": false,
       "relaxed": false,
       "note": null,
-      "plates": [],
-      "message": "No menu is published for this date."
+      "plates": [
+        {
+          "title": "Cheese Sausage and Potato Salad",
+          "reason": "Rich grilled sausage with potato salad and raspberry cream under budget.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Käsekrainer (1 Stück)",
+              "name_en": "Cheese Krainer sausage (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 226,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "2b1f00d50ddc74f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 434.0,
+              "protein_g": 20.3
+            },
+            {
+              "name": "Topfencreme mit Himbeeren",
+              "name_en": "Quark cream with raspberries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlG",
+                "GlH",
+                "GlW",
+                "Mi",
+                "Sc",
+                "ScC",
+                "ScH",
+                "ScM",
+                "ScW",
+                "Se",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "245f1d1a817aefdf",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 189.0,
+              "protein_g": 10.5
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 487,
+            "price_eur": 4.87,
+            "weight_g": 430.0,
+            "kcal": 795.5,
+            "protein_g": 33.5,
+            "carbs_g": 43.45,
+            "fat_g": 53.3
+          },
+          "score": {
+            "price": -2.435,
+            "energy_value": 0.653388090349076,
+            "energy": 0.16366666666666668,
+            "protein": 0.18000000000000002,
+            "total": -1.4379
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pasta Pockets and Pumpkin Soup",
+          "reason": "Filling vegan pasta pockets combined with comforting pumpkin soup.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Vegane Maultaschen mit Zwiebelmarmelade",
+              "name_en": "Vegan German filled pasta pockets with onion jam",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "c56721990a2b4535",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Cremige Kürbissuppe",
+              "name_en": "Creamy pumpkin soup",
+              "station": "Unspecified",
+              "role": "soup",
+              "texture": "liquid",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "id": "f3e69c98395d2dcd",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 87.0,
+              "protein_g": 1.65
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 919.5,
+            "protein_g": 26.4,
+            "carbs_g": 131.1,
+            "fat_g": 30.75
+          },
+          "score": {
+            "price": -2.7,
+            "energy_value": 0.6811111111111111,
+            "energy": 0.24633333333333335,
+            "protein": 0.08533333333333332,
+            "total": -1.6872
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Meatball with Double Potato Salad",
+          "reason": "Hearty meatball plate with plenty of potato salad at an affordable cost.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Fleischpflanzerl (Frikadelle)",
+              "name_en": "German meatball (Frikadelle)",
+              "station": "Unspecified",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 125.0,
+              "price_cents": 213,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Sf"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "108bcb7cea32f164",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 287.5,
+              "protein_g": 20.0
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 483,
+            "price_eur": 4.83,
+            "weight_g": 425.0,
+            "kcal": 632.5,
+            "protein_g": 25.4,
+            "carbs_g": 53.5,
+            "fat_g": 34.35
+          },
+          "score": {
+            "price": -2.415,
+            "energy_value": 0.5238095238095238,
+            "energy": 0.055,
+            "protein": 0.072,
+            "total": -1.7642
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Stuffed Pepper and Coffee Cream",
+          "reason": "Nutritious stuffed pepper with rice plus an indulgent cappuccino cream dessert.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gefüllte Paprikaschote",
+              "name_en": "Vegetarian stuffed bell pepper",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlD",
+                "Mi"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "bc2c117e9021623b",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 10.5
+            },
+            {
+              "name": "Cappuccinocreme",
+              "name_en": "Cappuccino cream",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 120.0,
+              "price_cents": 108,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "14"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "8466c09541b6db9f",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 222.0,
+              "protein_g": 3.84
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 513,
+            "price_eur": 5.13,
+            "weight_g": 570.0,
+            "kcal": 762.0,
+            "protein_g": 18.39,
+            "carbs_g": 106.2,
+            "fat_g": 27.21
+          },
+          "score": {
+            "price": -2.565,
+            "energy_value": 0.5941520467836258,
+            "energy": 0.14133333333333334,
+            "protein": -0.3219999999999999,
+            "total": -2.1515
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Mushroom Pinsa with Dessert",
+          "reason": "Warm baked pinsa complemented by raspberry cream for a complete meal.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "PINSA Funghi mit frischen Champignons",
+              "name_en": "Pinsa Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 310,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "a168a2e645305788",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 666.5,
+              "protein_g": 26.35
+            },
+            {
+              "name": "Topfencreme mit Himbeeren",
+              "name_en": "Quark cream with raspberries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlG",
+                "GlH",
+                "GlW",
+                "Mi",
+                "Sc",
+                "ScC",
+                "ScH",
+                "ScM",
+                "ScW",
+                "Se",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "245f1d1a817aefdf",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 189.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 626,
+            "price_eur": 6.26,
+            "weight_g": 450.0,
+            "kcal": 855.5,
+            "protein_g": 36.85,
+            "carbs_g": 106.4,
+            "fat_g": 30.25
+          },
+          "score": {
+            "price": -3.13,
+            "energy_value": 0.5466453674121405,
+            "energy": 0.20366666666666666,
+            "protein": 0.2246666666666667,
+            "total": -2.155
+          },
+          "has_estimated_prices": true
+        }
+      ]
     },
     "bulk_vegan": {
-      "state": "closed",
+      "state": "ready",
       "goal": "bulk",
       "vegan": true,
       "relaxed": false,
       "note": null,
-      "plates": [],
-      "message": "No menu is published for this date."
+      "plates": [
+        {
+          "title": "Pasta Pockets and Rice",
+          "reason": "Generous serving of vegan pasta pockets with steamed rice for maximum fuel.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Vegane Maultaschen mit Zwiebelmarmelade",
+              "name_en": "Vegan German filled pasta pockets with onion jam",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "c56721990a2b4535",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1027.5,
+            "protein_g": 28.8,
+            "carbs_g": 163.5,
+            "fat_g": 26.55
+          },
+          "score": {
+            "energy_value": 1.5222222222222221,
+            "protein_value": 0.4444444444444444,
+            "energy": 1.7583333333333333,
+            "total": 3.725
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Teriyaki Veggies with Rice Balls",
+          "reason": "Flavorful teriyaki vegetables and rice balls with an extra portion of rice.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Asia-Reisbällchen auf Teriyakigemüse",
+              "name_en": "Asian rice balls on teriyaki vegetables",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "Kn",
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "3330bf1ee3364ac3",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 14.4
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 18.45,
+            "carbs_g": 141.0,
+            "fat_g": 16.2
+          },
+          "score": {
+            "energy_value": 1.1888888888888889,
+            "protein_value": 0.2847222222222222,
+            "energy": 1.0083333333333333,
+            "total": 2.4819
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Barley Stew with Double Rice",
+          "reason": "Nutritious barley stew matched with a double scoop of fluffy rice.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Graupen-Gemüse-Eintopf",
+              "name_en": "Pearl barley and vegetable stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "2008b80459c15a26",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 195.0,
+              "protein_g": 6.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 369,
+            "price_eur": 3.69,
+            "weight_g": 600,
+            "kcal": 585.0,
+            "protein_g": 15.0,
+            "carbs_g": 118.5,
+            "fat_g": 4.2
+          },
+          "score": {
+            "energy_value": 1.2682926829268293,
+            "protein_value": 0.33875338753387535,
+            "energy": 0.2833333333333333,
+            "total": 1.8904
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Vegetable Curry and Rice",
+          "reason": "Aromatic broccoli and cauliflower curry served over double steamed rice.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gemüsecurry aus Blumenkohl und Broccoli",
+              "name_en": "Vegetable curry with cauliflower and broccoli",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "a704f4e977f93cbe",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 255.0,
+              "protein_g": 7.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 645.0,
+            "protein_g": 15.6,
+            "carbs_g": 102.0,
+            "fat_g": 17.4
+          },
+          "score": {
+            "energy_value": 0.9555555555555555,
+            "protein_value": 0.24074074074074073,
+            "energy": 0.48333333333333334,
+            "total": 1.6796
+          },
+          "has_estimated_prices": true
+        }
+      ]
     },
     "cut_vegan": {
-      "state": "closed",
+      "state": "ready",
       "goal": "cut",
       "vegan": true,
       "relaxed": false,
       "note": null,
-      "plates": [],
-      "message": "No menu is published for this date."
+      "plates": [
+        {
+          "title": "Vegan Pasta Pockets",
+          "reason": "Simple and filling German pasta pockets garnished with sweet onion jam.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Vegane Maultaschen mit Zwiebelmarmelade",
+              "name_en": "Vegan German filled pasta pockets with onion jam",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "c56721990a2b4535",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 24.75,
+            "carbs_g": 121.5,
+            "fat_g": 26.1
+          },
+          "score": {
+            "protein_density": 0.7432432432432433,
+            "protein_value": 0.25462962962962965,
+            "protein": -1.05,
+            "energy": -1.325,
+            "total": -1.3771
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Curry Bowl with Rice",
+          "reason": "Nutrient-dense vegetable curry served alongside tender steamed white rice.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gemüsecurry aus Blumenkohl und Broccoli",
+              "name_en": "Vegetable curry with cauliflower and broccoli",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "a704f4e977f93cbe",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 255.0,
+              "protein_g": 7.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 645.0,
+            "protein_g": 15.6,
+            "carbs_g": 102.0,
+            "fat_g": 17.4
+          },
+          "score": {
+            "protein_density": 0.6046511627906976,
+            "protein_value": 0.12037037037037036,
+            "protein": -2.8800000000000003,
+            "energy": 0.0,
+            "total": -2.155
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Warm Barley Stew and Rice",
+          "reason": "Wholesome barley and vegetable stew served with a modest serving of rice.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Graupen-Gemüse-Eintopf",
+              "name_en": "Pearl barley and vegetable stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "2008b80459c15a26",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 292.5,
+              "protein_g": 10.35
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 487.5,
+            "protein_g": 14.4,
+            "carbs_g": 93.75,
+            "fat_g": 5.4
+          },
+          "score": {
+            "protein_density": 0.7384615384615384,
+            "protein_value": 0.21126760563380279,
+            "protein": -3.12,
+            "energy": 0.0,
+            "total": -2.1703
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Teriyaki Veggie Rice Balls",
+          "reason": "Light meal of Asian rice balls combined with crisp teriyaki vegetables.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Asia-Reisbällchen auf Teriyakigemüse",
+              "name_en": "Asian rice balls on teriyaki vegetables",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "Kn",
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "3330bf1ee3364ac3",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 14.4
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 14.4,
+            "carbs_g": 99.0,
+            "fat_g": 15.75
+          },
+          "score": {
+            "protein_density": 0.5925925925925927,
+            "protein_value": 0.14814814814814817,
+            "protein": -3.1199999999999997,
+            "energy": 0.0,
+            "total": -2.3793
+          },
+          "has_estimated_prices": false
+        }
+      ]
     },
     "budget_vegan": {
-      "state": "closed",
+      "state": "ready",
       "goal": "budget",
       "vegan": true,
       "relaxed": false,
       "note": null,
-      "plates": [],
-      "message": "No menu is published for this date."
+      "plates": [
+        {
+          "title": "German Pasta Pockets",
+          "reason": "Savory vegan pasta pockets topped with onion jam for great everyday value.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Vegane Maultaschen mit Zwiebelmarmelade",
+              "name_en": "Vegan German filled pasta pockets with onion jam",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "c56721990a2b4535",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 24.75,
+            "carbs_g": 121.5,
+            "fat_g": 26.1
+          },
+          "score": {
+            "price": -2.025,
+            "energy_value": 0.8222222222222223,
+            "energy": 0.18833333333333332,
+            "protein": 0.06333333333333334,
+            "total": -0.9511
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Barley Stew and Rice Combo",
+          "reason": "Budget-friendly vegetable barley stew accompanied by plenty of rice.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Graupen-Gemüse-Eintopf",
+              "name_en": "Pearl barley and vegetable stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "2008b80459c15a26",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 195.0,
+              "protein_g": 6.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 369,
+            "price_eur": 3.69,
+            "weight_g": 600,
+            "kcal": 585.0,
+            "protein_g": 15.0,
+            "carbs_g": 118.5,
+            "fat_g": 4.2
+          },
+          "score": {
+            "price": -1.845,
+            "energy_value": 0.6341463414634146,
+            "energy": 0.023333333333333334,
+            "protein": -1.0,
+            "total": -2.1875
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Teriyaki Rice Balls with Extra Rice",
+          "reason": "Flavorful teriyaki vegetables and rice balls paired with extra steamed rice.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Asia-Reisbällchen auf Teriyakigemüse",
+              "name_en": "Asian rice balls on teriyaki vegetables",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "Kn",
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "3330bf1ee3364ac3",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 14.4
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 18.45,
+            "carbs_g": 141.0,
+            "fat_g": 16.2
+          },
+          "score": {
+            "price": -2.7,
+            "energy_value": 0.5944444444444444,
+            "energy": 0.16833333333333333,
+            "protein": -0.31000000000000016,
+            "total": -2.2472
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Broccoli Cauliflower Curry",
+          "reason": "Tender vegetables simmered in curry sauce served over double rice.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gemüsecurry aus Blumenkohl und Broccoli",
+              "name_en": "Vegetable curry with cauliflower and broccoli",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "a704f4e977f93cbe",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 255.0,
+              "protein_g": 7.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 645.0,
+            "protein_g": 15.6,
+            "carbs_g": 102.0,
+            "fat_g": 17.4
+          },
+          "score": {
+            "price": -2.7,
+            "energy_value": 0.47777777777777775,
+            "energy": 0.06333333333333334,
+            "protein": -0.8800000000000001,
+            "total": -3.0389
+          },
+          "has_estimated_prices": true
+        }
+      ]
     }
   },
   "extras": {
-    "all": [],
+    "all": [
+      {
+        "name": "Cremige Kürbissuppe",
+        "name_en": "Creamy pumpkin soup",
+        "station": "Unspecified",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": false,
+        "diet": "meat",
+        "serving": "2 scoops",
+        "kcal": 174.0,
+        "protein_g": 3.3,
+        "price_source": "config"
+      },
+      {
+        "name": "Vanillecreme mit Erdbeersauce",
+        "name_en": "Vanilla cream with strawberry sauce",
+        "station": "Dessert (Glas)",
+        "weight_g": 140.0,
+        "price_cents": 126,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "serving": "1 piece",
+        "kcal": 189.0,
+        "protein_g": 3.92,
+        "price_source": "config"
+      },
+      {
+        "name": "Topfencreme mit Himbeeren",
+        "name_en": "Quark cream with raspberries",
+        "station": "Dessert (Glas)",
+        "weight_g": 140.0,
+        "price_cents": 126,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "serving": "1 piece",
+        "kcal": 189.0,
+        "protein_g": 10.5,
+        "price_source": "config"
+      },
+      {
+        "name": "Cappuccinocreme",
+        "name_en": "Cappuccino cream",
+        "station": "Dessert (Glas)",
+        "weight_g": 120.0,
+        "price_cents": 108,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "serving": "1 piece",
+        "kcal": 222.0,
+        "protein_g": 3.84,
+        "price_source": "config"
+      }
+    ],
     "vegan": []
   },
-  "generated_on": "2026-11-03"
+  "generated_on": "2026-11-06"
 }

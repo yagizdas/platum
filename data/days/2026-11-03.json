@@ -8,13 +8,79 @@
   "warnings": [],
   "schema_version": 2,
   "menu_count": 12,
-  "goals": {
-    "bulk_min_protein_g": 30,
-    "bulk_protein_weight": 4,
-    "cut_min_protein_g": 25,
-    "cut_min_kcal": 450,
-    "budget_min_kcal": 550,
-    "budget_min_protein_g": 15
+  "scoring": {
+    "bulk": {
+      "energy_value": {
+        "metric": "kcal_per_euro",
+        "weight": 2,
+        "normalizer": 250
+      },
+      "protein_value": {
+        "metric": "protein_per_euro",
+        "weight": 1,
+        "normalizer": 12
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 500,
+        "up": 1,
+        "down": 3,
+        "normalizer": 300
+      }
+    },
+    "cut": {
+      "protein_density": {
+        "metric": "protein_per_100kcal",
+        "weight": 2,
+        "normalizer": 8
+      },
+      "protein_value": {
+        "metric": "protein_per_euro",
+        "weight": 0.5,
+        "normalizer": 12
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 30,
+        "up": 0.5,
+        "down": 3,
+        "normalizer": 15
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 700,
+        "reverse": true,
+        "up": 0,
+        "down": 2,
+        "normalizer": 200
+      }
+    },
+    "budget": {
+      "price": {
+        "metric": "price",
+        "weight": -2,
+        "normalizer": 4
+      },
+      "energy_value": {
+        "metric": "kcal_per_euro",
+        "weight": 1,
+        "normalizer": 250
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 550,
+        "up": 0.2,
+        "down": 3,
+        "normalizer": 300
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 20,
+        "up": 0.2,
+        "down": 3,
+        "normalizer": 15
+      }
+    }
   },
   "max_plate_g": 650,
   "default_scoop_g": 150,
@@ -28,36 +94,10 @@
       "note": null,
       "plates": [
         {
-          "title": "Schweineschnitzel Wiener Art + Schweizer Knöpflepfanne",
-          "reason": null,
+          "title": "Spaetzle Pan with Chia Pudding",
+          "reason": "Hearty cheesy pasta paired with a sweet tropical chia pudding dessert.",
           "picked_by": "rules",
           "items": [
-            {
-              "name": "Schweineschnitzel Wiener Art (1 Stück)",
-              "name_en": "Breaded pork schnitzel Viennese style (1 piece)",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 160,
-              "price_cents": 244,
-              "is_vegan": false,
-              "markers": [
-                "S"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 376.0,
-              "protein_g": 31.2
-            },
             {
               "name": "Schweizer Knöpflepfanne mit feinem Gemüse und Käse",
               "name_en": "Swiss-style spaetzle pan with mixed vegetables and cheese",
@@ -83,26 +123,309 @@
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
+              "id": "00ff55eac09268ca",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 832.5,
               "protein_g": 33.75
+            },
+            {
+              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+              "name_en": "Vegan chia pudding with coconut milk and mango puree",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "823f80f7c6201433",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 202.5,
+              "protein_g": 4.2
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1035.0,
+            "protein_g": 37.95,
+            "carbs_g": 107.25,
+            "fat_g": 50.4
+          },
+          "score": {
+            "energy_value": 1.5333333333333332,
+            "protein_value": 0.5856481481481481,
+            "energy": 1.7833333333333334,
+            "total": 3.9023
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Tomato Strudel with Chia Dessert",
+          "reason": "Savory baked mozzarella strudel complemented by refreshing mango pudding.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Tomate-Mozzarella-Strudel mit Tomatenragout",
+              "name_en": "Tomato and mozzarella strudel with tomato ragout",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlR",
+                "GlW",
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "75e97ae21d90b041",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+              "name_en": "Vegan chia pudding with coconut milk and mango puree",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "823f80f7c6201433",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 202.5,
+              "protein_g": 4.2
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1035.0,
+            "protein_g": 28.95,
+            "carbs_g": 93.75,
+            "fat_g": 60.3
+          },
+          "score": {
+            "energy_value": 1.5333333333333332,
+            "protein_value": 0.44675925925925924,
+            "energy": 1.7833333333333334,
+            "total": 3.7634
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Mediterranean Pinsa and Pudding",
+          "reason": "Crisp pinsa topped with cheese and olives served with chia dessert.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "PINSA mit roten Zwiebeln, Oliven und Hirtenkäse",
+              "name_en": "Pinsa with red onions, olives and shepherd's cheese",
+              "station": "Pizza",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 350,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [
+                "6"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "fad9af80d8c55911",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 822.5,
+              "protein_g": 29.75
+            },
+            {
+              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+              "name_en": "Vegan chia pudding with coconut milk and mango puree",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "823f80f7c6201433",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 202.5,
+              "protein_g": 4.2
+            }
+          ],
+          "total": {
+            "price_cents": 635,
+            "price_eur": 6.35,
+            "weight_g": 500,
+            "kcal": 1025.0,
+            "protein_g": 33.95,
+            "carbs_g": 119.75,
+            "fat_g": 44.05
+          },
+          "score": {
+            "energy_value": 1.2913385826771655,
+            "protein_value": 0.44553805774278227,
+            "energy": 1.75,
+            "total": 3.4869
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Schnitzel Potato Salad and Pudding",
+          "reason": "Classic breaded cutlet with potato salad and sweet chia dessert.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Schweineschnitzel Wiener Art (1 Stück)",
+              "name_en": "Breaded pork schnitzel Viennese style (1 piece)",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 160,
+              "price_cents": 244,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "id": "89ecdb27dd2ad6cc",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 376.0,
+              "protein_g": 31.2
+            },
+            {
+              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+              "name_en": "Vegan chia pudding with coconut milk and mango puree",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "823f80f7c6201433",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 202.5,
+              "protein_g": 4.2
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
             }
           ],
           "total": {
             "price_cents": 649,
             "price_eur": 6.49,
             "weight_g": 610,
-            "kcal": 1208.5,
-            "protein_g": 64.95,
-            "carbs_g": 103.1,
-            "fat_g": 59.6
+            "kcal": 923.5,
+            "protein_g": 40.8,
+            "carbs_g": 82.85,
+            "fat_g": 46.4
           },
-          "has_estimated_prices": false
+          "score": {
+            "energy_value": 1.138366718027735,
+            "protein_value": 0.5238828967642527,
+            "energy": 1.4116666666666666,
+            "total": 3.0739
+          },
+          "has_estimated_prices": true
         },
         {
-          "title": "Fleischpflanzerl (Frikadelle) + Schweizer Knöpflepfanne",
-          "reason": null,
+          "title": "Meatball Rice and Chia Pudding",
+          "reason": "Savory pan-fried meatball with fluffy rice and mango chia pudding.",
           "picked_by": "rules",
           "items": [
             {
@@ -131,122 +454,77 @@
               ],
               "standing": false,
               "diet": "meat",
+              "id": "108bcb7cea32f164",
               "serving": "1 piece",
               "price_source": "config",
               "kcal": 287.5,
               "protein_g": 20.0
             },
             {
-              "name": "Schweizer Knöpflepfanne mit feinem Gemüse und Käse",
-              "name_en": "Swiss-style spaetzle pan with mixed vegetables and cheese",
-              "station": "Pasta",
-              "role": "main",
+              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+              "name_en": "Vegan chia pudding with coconut milk and mango puree",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
               "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlD",
-                "GlW",
-                "Mi",
-                "Sl"
-              ],
+              "allergens": [],
               "additives": [],
               "standing": false,
-              "diet": "vegetarian",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 832.5,
-              "protein_g": 33.75
+              "diet": "vegan",
+              "id": "823f80f7c6201433",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 202.5,
+              "protein_g": 4.2
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
             "price_cents": 618,
             "price_eur": 6.18,
             "weight_g": 575.0,
-            "kcal": 1120.0,
-            "protein_g": 53.75,
-            "carbs_g": 95.5,
-            "fat_g": 58.35
+            "kcal": 880.0,
+            "protein_g": 32.3,
+            "carbs_g": 115.75,
+            "fat_g": 30.45
+          },
+          "score": {
+            "energy_value": 1.1391585760517802,
+            "protein_value": 0.4355447680690399,
+            "energy": 1.2666666666666666,
+            "total": 2.8414
           },
           "has_estimated_prices": true
-        },
-        {
-          "title": "Schweineschnitzel Wiener Art + Kartoffel-Broccoli-Gratin",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Schweineschnitzel Wiener Art (1 Stück)",
-              "name_en": "Breaded pork schnitzel Viennese style (1 piece)",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 160,
-              "price_cents": 244,
-              "is_vegan": false,
-              "markers": [
-                "S"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 376.0,
-              "protein_g": 31.2
-            },
-            {
-              "name": "Kartoffel-Broccoli-Gratin",
-              "name_en": "Potato and broccoli gratin",
-              "station": "Vegan",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Sc",
-                "ScM"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 517.5,
-              "protein_g": 12.6
-            }
-          ],
-          "total": {
-            "price_cents": 649,
-            "price_eur": 6.49,
-            "weight_g": 610,
-            "kcal": 893.5,
-            "protein_g": 43.8,
-            "carbs_g": 73.85,
-            "fat_g": 46.1
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -258,81 +536,93 @@
       "note": null,
       "plates": [
         {
-          "title": "Schweineschnitzel Wiener Art + Schweizer Knöpflepfanne",
-          "reason": null,
+          "title": "Meatball and Liver Dumpling Soup",
+          "reason": "Satisfying protein-packed combo of traditional meatball and warm soup.",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Schweineschnitzel Wiener Art (1 Stück)",
-              "name_en": "Breaded pork schnitzel Viennese style (1 piece)",
-              "station": "Fleisch",
+              "name": "Fleischpflanzerl (Frikadelle)",
+              "name_en": "German meatball (Frikadelle)",
+              "station": "Grill",
               "role": "main",
               "texture": "dry",
               "count": 1,
               "unit": "piece",
-              "weight_g": 160,
-              "price_cents": 244,
+              "weight_g": 125.0,
+              "price_cents": 213,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Sf"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "108bcb7cea32f164",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 287.5,
+              "protein_g": 20.0
+            },
+            {
+              "name": "Leberknödelsuppe",
+              "name_en": "Liver dumpling soup",
+              "station": "Unspecified",
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
               "is_vegan": false,
               "markers": [
                 "S"
               ],
               "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 376.0,
-              "protein_g": 31.2
-            },
-            {
-              "name": "Schweizer Knöpflepfanne mit feinem Gemüse und Käse",
-              "name_en": "Swiss-style spaetzle pan with mixed vegetables and cheese",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
                 "Ei",
                 "Gl",
-                "GlD",
                 "GlW",
-                "Mi",
                 "Sl"
               ],
               "additives": [],
               "standing": false,
-              "diet": "vegetarian",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 277.5,
-              "protein_g": 11.25
+              "diet": "meat",
+              "id": "bf4fd176ed6e80e9",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 13.5
             }
           ],
           "total": {
-            "price_cents": 379,
-            "price_eur": 3.79,
-            "weight_g": 310,
-            "kcal": 653.5,
-            "protein_g": 42.45,
-            "carbs_g": 46.1,
-            "fat_g": 33.2
+            "price_cents": 583,
+            "price_eur": 5.83,
+            "weight_g": 425.0,
+            "kcal": 482.5,
+            "protein_g": 33.5,
+            "carbs_g": 22.0,
+            "fat_g": 28.35
           },
-          "has_estimated_prices": false
+          "score": {
+            "protein_density": 1.7357512953367875,
+            "protein_value": 0.2394225271583762,
+            "protein": 0.11666666666666667,
+            "energy": 0.0,
+            "total": 2.0918
+          },
+          "has_estimated_prices": true
         },
         {
-          "title": "Schweineschnitzel Wiener Art + Kartoffel-Broccoli-Gratin",
-          "reason": null,
+          "title": "Pork Schnitzel and Potato Salad",
+          "reason": "Leaner portion of classic breaded schnitzel with tender potato salad.",
           "picked_by": "rules",
           "items": [
             {
@@ -356,76 +646,7 @@
               "additives": [],
               "standing": false,
               "diet": "meat",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 376.0,
-              "protein_g": 31.2
-            },
-            {
-              "name": "Kartoffel-Broccoli-Gratin",
-              "name_en": "Potato and broccoli gratin",
-              "station": "Vegan",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Sc",
-                "ScM"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 172.5,
-              "protein_g": 4.2
-            }
-          ],
-          "total": {
-            "price_cents": 379,
-            "price_eur": 3.79,
-            "weight_g": 310,
-            "kcal": 548.5,
-            "protein_g": 35.4,
-            "carbs_g": 36.35,
-            "fat_g": 28.7
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Schweineschnitzel Wiener Art + Kartoffelsalat",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Schweineschnitzel Wiener Art (1 Stück)",
-              "name_en": "Breaded pork schnitzel Viennese style (1 piece)",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 160,
-              "price_cents": 244,
-              "is_vegan": false,
-              "markers": [
-                "S"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
+              "id": "89ecdb27dd2ad6cc",
               "serving": "1 piece",
               "price_source": "eat-api",
               "kcal": 376.0,
@@ -447,6 +668,7 @@
               "additives": [],
               "standing": true,
               "diet": "meat",
+              "id": "73bbe2bb9698caf4",
               "serving": "1 scoop",
               "price_source": "config",
               "kcal": 172.5,
@@ -462,20 +684,192 @@
             "carbs_g": 39.35,
             "fat_g": 27.8
           },
+          "score": {
+            "protein_density": 1.5451230628988148,
+            "protein_value": 0.3726912928759894,
+            "protein": 0.12999999999999995,
+            "energy": 0.0,
+            "total": 2.0478
+          },
           "has_estimated_prices": true
-        }
-      ]
-    },
-    "budget_all": {
-      "state": "ready",
-      "goal": "budget",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
+        },
         {
-          "title": "Schweizer Knöpflepfanne",
-          "reason": null,
+          "title": "Spicy Chicken Soup with Rice",
+          "reason": "Aromatic Tom Kha Gai soup paired with a side of rice and pudding.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+              "name_en": "Vegan chia pudding with coconut milk and mango puree",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "823f80f7c6201433",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 202.5,
+              "protein_g": 4.2
+            },
+            {
+              "name": "Tom Kha Gai (Scharfe Suppe mit Hühnerfleisch)",
+              "name_en": "Tom Kha Gai (spicy chicken soup)",
+              "station": "Wok",
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "a0cefac39a3f1476",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 255.0,
+              "protein_g": 16.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 640,
+            "price_eur": 6.4,
+            "weight_g": 600,
+            "kcal": 652.5,
+            "protein_g": 24.75,
+            "carbs_g": 72.15,
+            "fat_g": 28.65
+          },
+          "score": {
+            "protein_density": 0.9482758620689655,
+            "protein_value": 0.1611328125,
+            "protein": -1.05,
+            "energy": 0.0,
+            "total": 0.0594
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Tom Kha Gai with Extra Rice",
+          "reason": "Flavorful coconut chicken soup served alongside double scoops of rice.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            },
+            {
+              "name": "Tom Kha Gai (Scharfe Suppe mit Hühnerfleisch)",
+              "name_en": "Tom Kha Gai (spicy chicken soup)",
+              "station": "Wok",
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "a0cefac39a3f1476",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 255.0,
+              "protein_g": 16.5
+            }
+          ],
+          "total": {
+            "price_cents": 640,
+            "price_eur": 6.4,
+            "weight_g": 600,
+            "kcal": 645.0,
+            "protein_g": 24.6,
+            "carbs_g": 92.4,
+            "fat_g": 18.3
+          },
+          "score": {
+            "protein_density": 0.9534883720930233,
+            "protein_value": 0.16015625,
+            "protein": -1.0799999999999996,
+            "energy": 0.0,
+            "total": 0.0336
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Spaetzle Pan and Chia Pudding",
+          "reason": "Moderate portion of cheesy spaetzle followed by light chia pudding.",
           "picked_by": "rules",
           "items": [
             {
@@ -503,26 +897,146 @@
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
+              "id": "00ff55eac09268ca",
               "serving": "2 scoops",
               "price_source": "eat-api",
               "kcal": 555.0,
               "protein_g": 22.5
+            },
+            {
+              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+              "name_en": "Vegan chia pudding with coconut milk and mango puree",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "823f80f7c6201433",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 202.5,
+              "protein_g": 4.2
             }
           ],
           "total": {
-            "price_cents": 270,
-            "price_eur": 2.7,
-            "weight_g": 300,
-            "kcal": 555.0,
-            "protein_g": 22.5,
-            "carbs_g": 57.0,
-            "fat_g": 26.4
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 757.5,
+            "protein_g": 26.7,
+            "carbs_g": 78.75,
+            "fat_g": 37.2
           },
-          "has_estimated_prices": false
+          "score": {
+            "protein_density": 0.8811881188118811,
+            "protein_value": 0.27469135802469136,
+            "protein": -0.6600000000000001,
+            "energy": -0.575,
+            "total": -0.0791
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Cheesy Spaetzle and Chia Pudding",
+          "reason": "Affordable comforting pasta dish paired with sweet mango chia dessert.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Schweizer Knöpflepfanne mit feinem Gemüse und Käse",
+              "name_en": "Swiss-style spaetzle pan with mixed vegetables and cheese",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlD",
+                "GlW",
+                "Mi",
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "00ff55eac09268ca",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+              "name_en": "Vegan chia pudding with coconut milk and mango puree",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "823f80f7c6201433",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 202.5,
+              "protein_g": 4.2
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 757.5,
+            "protein_g": 26.7,
+            "carbs_g": 78.75,
+            "fat_g": 37.2
+          },
+          "score": {
+            "price": -2.025,
+            "energy_value": 0.7481481481481481,
+            "energy": 0.13833333333333334,
+            "protein": 0.08933333333333332,
+            "total": -1.0492
+          },
+          "has_estimated_prices": true
         },
         {
-          "title": "Tomate-Mozzarella-Strudel",
-          "reason": null,
+          "title": "Tomato Strudel with Steamed Rice",
+          "reason": "Inexpensive savory pastry filled with mozzarella alongside warm rice.",
           "picked_by": "rules",
           "items": [
             {
@@ -552,26 +1066,131 @@
               ],
               "standing": false,
               "diet": "vegetarian",
+              "id": "75e97ae21d90b041",
               "serving": "2 scoops",
               "price_source": "eat-api",
               "kcal": 555.0,
               "protein_g": 16.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 270,
-            "price_eur": 2.7,
-            "weight_g": 300,
-            "kcal": 555.0,
-            "protein_g": 16.5,
-            "carbs_g": 48.0,
-            "fat_g": 33.0
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 750.0,
+            "protein_g": 20.55,
+            "carbs_g": 90.0,
+            "fat_g": 33.45
           },
-          "has_estimated_prices": false
+          "score": {
+            "price": -2.025,
+            "energy_value": 0.7407407407407408,
+            "energy": 0.13333333333333333,
+            "protein": 0.007333333333333344,
+            "total": -1.1436
+          },
+          "has_estimated_prices": true
         },
         {
-          "title": "Fleischpflanzerl (Frikadelle) + Schweizer Knöpflepfanne",
-          "reason": null,
+          "title": "Schnitzel and Potato Salad Deal",
+          "reason": "Great value traditional pork schnitzel served with potato salad.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Schweineschnitzel Wiener Art (1 Stück)",
+              "name_en": "Breaded pork schnitzel Viennese style (1 piece)",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 160,
+              "price_cents": 244,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "id": "89ecdb27dd2ad6cc",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 376.0,
+              "protein_g": 31.2
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 379,
+            "price_eur": 3.79,
+            "weight_g": 310,
+            "kcal": 548.5,
+            "protein_g": 33.9,
+            "carbs_g": 39.35,
+            "fat_g": 27.8
+          },
+          "score": {
+            "price": -1.895,
+            "energy_value": 0.578891820580475,
+            "energy": -0.015,
+            "protein": 0.18533333333333332,
+            "total": -1.1458
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Meatball with Potato Salad",
+          "reason": "Hearty meat patty matched with classic potato salad at a low cost.",
           "picked_by": "rules",
           "items": [
             {
@@ -600,50 +1219,127 @@
               ],
               "standing": false,
               "diet": "meat",
+              "id": "108bcb7cea32f164",
               "serving": "1 piece",
               "price_source": "config",
               "kcal": 287.5,
               "protein_g": 20.0
             },
             {
-              "name": "Schweizer Knöpflepfanne mit feinem Gemüse und Käse",
-              "name_en": "Swiss-style spaetzle pan with mixed vegetables and cheese",
-              "station": "Pasta",
-              "role": "main",
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
               "texture": "saucy",
-              "count": 1,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlD",
-                "GlW",
-                "Mi",
-                "Sl"
-              ],
+              "markers": [],
+              "allergens": [],
               "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 277.5,
-              "protein_g": 11.25
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
             }
           ],
           "total": {
-            "price_cents": 348,
-            "price_eur": 3.48,
-            "weight_g": 275.0,
-            "kcal": 565.0,
-            "protein_g": 31.25,
-            "carbs_g": 38.5,
-            "fat_g": 31.95
+            "price_cents": 483,
+            "price_eur": 4.83,
+            "weight_g": 425.0,
+            "kcal": 632.5,
+            "protein_g": 25.4,
+            "carbs_g": 53.5,
+            "fat_g": 34.35
+          },
+          "score": {
+            "price": -2.415,
+            "energy_value": 0.5238095238095238,
+            "energy": 0.055,
+            "protein": 0.072,
+            "total": -1.7642
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pinsa Delight with Chia Dessert",
+          "reason": "Flavorful baked pinsa combined with fruity coconut chia pudding.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "PINSA mit roten Zwiebeln, Oliven und Hirtenkäse",
+              "name_en": "Pinsa with red onions, olives and shepherd's cheese",
+              "station": "Pizza",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 350,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [
+                "6"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "fad9af80d8c55911",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 822.5,
+              "protein_g": 29.75
+            },
+            {
+              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+              "name_en": "Vegan chia pudding with coconut milk and mango puree",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "823f80f7c6201433",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 202.5,
+              "protein_g": 4.2
+            }
+          ],
+          "total": {
+            "price_cents": 635,
+            "price_eur": 6.35,
+            "weight_g": 500,
+            "kcal": 1025.0,
+            "protein_g": 33.95,
+            "carbs_g": 119.75,
+            "fat_g": 44.05
+          },
+          "score": {
+            "price": -3.175,
+            "energy_value": 0.6456692913385828,
+            "energy": 0.31666666666666665,
+            "protein": 0.18600000000000005,
+            "total": -2.0267
           },
           "has_estimated_prices": true
         }
@@ -653,12 +1349,12 @@
       "state": "ready",
       "goal": "bulk",
       "vegan": true,
-      "relaxed": true,
-      "note": "No vegan lunch reaches 30g protein today; the protein target is relaxed.",
+      "relaxed": false,
+      "note": null,
       "plates": [
         {
-          "title": "Veganer Eintopf",
-          "reason": null,
+          "title": "Beetroot Stew Rice and Pudding",
+          "reason": "Filling vegan vegetable stew paired with fluffy rice and chia dessert.",
           "picked_by": "rules",
           "items": [
             {
@@ -667,10 +1363,10 @@
               "station": "Studitopf",
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
+              "weight_g": 150,
+              "price_cents": 50,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -686,42 +1382,303 @@
               ],
               "standing": false,
               "diet": "vegan",
-              "serving": "3 scoops",
+              "id": "4a259733b6eebf1e",
+              "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 234.0,
-              "protein_g": 6.3
+              "kcal": 78.0,
+              "protein_g": 2.1
+            },
+            {
+              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+              "name_en": "Vegan chia pudding with coconut milk and mango puree",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "823f80f7c6201433",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 202.5,
+              "protein_g": 4.2
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
-            "weight_g": 450,
-            "kcal": 234.0,
-            "protein_g": 6.3,
-            "carbs_g": 38.25,
-            "fat_g": 5.4
+            "price_cents": 455,
+            "price_eur": 4.55,
+            "weight_g": 600,
+            "kcal": 670.5,
+            "protein_g": 14.4,
+            "carbs_g": 118.5,
+            "fat_g": 13.5
           },
-          "has_estimated_prices": false
+          "score": {
+            "energy_value": 1.178901098901099,
+            "protein_value": 0.26373626373626374,
+            "energy": 0.5683333333333334,
+            "total": 2.011
+          },
+          "has_estimated_prices": true
         }
       ]
     },
     "cut_vegan": {
-      "state": "unavailable",
+      "state": "ready",
       "goal": "cut",
       "vegan": true,
-      "relaxed": true,
-      "note": "No vegan lunch reaches 25g protein today; the protein target is relaxed.",
-      "plates": [],
-      "message": "No lunch meets this goal's remaining requirements today."
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Hearty Beet Stew Rice and Dessert",
+          "reason": "Nutritious plant-based vegetable stew with rice and sweet mango dessert.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Veganer Eintopf mit Kraut, Kartoffeln und Roter Beete",
+              "name_en": "Vegan stew with cabbage, potatoes and beetroot",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 50,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5",
+                "9"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "4a259733b6eebf1e",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 78.0,
+              "protein_g": 2.1
+            },
+            {
+              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+              "name_en": "Vegan chia pudding with coconut milk and mango puree",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "823f80f7c6201433",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 202.5,
+              "protein_g": 4.2
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 455,
+            "price_eur": 4.55,
+            "weight_g": 600,
+            "kcal": 670.5,
+            "protein_g": 14.4,
+            "carbs_g": 118.5,
+            "fat_g": 13.5
+          },
+          "score": {
+            "protein_density": 0.5369127516778524,
+            "protein_value": 0.13186813186813187,
+            "protein": -3.1199999999999997,
+            "energy": 0.0,
+            "total": -2.4512
+          },
+          "has_estimated_prices": true
+        }
+      ]
     },
     "budget_vegan": {
-      "state": "unavailable",
+      "state": "ready",
       "goal": "budget",
       "vegan": true,
-      "relaxed": true,
-      "note": "No vegan lunch reaches 15g protein today; the protein target is relaxed.",
-      "plates": [],
-      "message": "No lunch meets this goal's remaining requirements today."
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Value Vegan Stew Rice and Pudding",
+          "reason": "Budget-friendly comforting vegetable stew served with rice and dessert.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Veganer Eintopf mit Kraut, Kartoffeln und Roter Beete",
+              "name_en": "Vegan stew with cabbage, potatoes and beetroot",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 50,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5",
+                "9"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "4a259733b6eebf1e",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 78.0,
+              "protein_g": 2.1
+            },
+            {
+              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+              "name_en": "Vegan chia pudding with coconut milk and mango puree",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "823f80f7c6201433",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 202.5,
+              "protein_g": 4.2
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 455,
+            "price_eur": 4.55,
+            "weight_g": 600,
+            "kcal": 670.5,
+            "protein_g": 14.4,
+            "carbs_g": 118.5,
+            "fat_g": 13.5
+          },
+          "score": {
+            "price": -2.275,
+            "energy_value": 0.5894505494505495,
+            "energy": 0.08033333333333334,
+            "protein": -1.1199999999999999,
+            "total": -2.7252
+          },
+          "has_estimated_prices": true
+        }
+      ]
     }
   },
   "extras": {
@@ -782,5 +1739,5 @@
       }
     ]
   },
-  "generated_on": "2026-11-03"
+  "generated_on": "2026-11-06"
 }
