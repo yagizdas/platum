@@ -1,2 +1,2 @@
-// Set to the deployed Worker URL to enable reporting. Empty keeps reporting hidden.
-globalThis.MENSA_REPORT_ENDPOINT = '';
+// Public report API. Set to an empty string to disable reporting.
+globalThis.MENSA_REPORT_ENDPOINT = 'https://mensa-plate-reports.mensa-plate-reports.workers.dev';

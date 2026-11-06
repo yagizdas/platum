@@ -52,7 +52,7 @@ Every weight, normalizer, pivot and asymmetric slope lives under `scoring.<goal>
 
 ## Impossible-plate reports
 
-Reporting is optional. `report-config.js` contains the single `MENSA_REPORT_ENDPOINT` setting; an empty string hides the button and makes no backend requests. A configured endpoint enables **“Can't get this plate?”** below the plate. The sheet lists short English dish names and “Something else”, traps keyboard focus, closes on Escape, adapts to dark mode and has targets at least 44px tall. After a successful report, this device skips that plate, including after reload. The confirmation is announced and the next available plate appears.
+Reporting is enabled through the production Worker at `https://mensa-plate-reports.mensa-plate-reports.workers.dev`. `report-config.js` contains the single `MENSA_REPORT_ENDPOINT` setting; an empty string hides the button and makes no backend requests. A configured endpoint enables **“Can't get this plate?”** below the plate. The sheet lists short English dish names and “Something else”, traps keyboard focus, closes on Escape, adapts to dark mode and has targets at least 44px tall. After a successful report, this device skips that plate, including after reload. The confirmation is announced and the next available plate appears.
 
 `worker/` contains a Cloudflare Worker with D1 storage. No cookies, accounts, IP addresses or contact data are stored. The browser keeps a random UUID in `localStorage`, with an in-memory fallback when storage is blocked.
 
@@ -86,7 +86,7 @@ npx wrangler d1 migrations apply DB --remote
 npx wrangler deploy
 ```
 
-Set `MENSA_REPORT_ENDPOINT` to the returned HTTPS Worker URL, include the site's origin in `ALLOWED_ORIGINS`, and republish the static site. The repository ships with reporting disabled until a production endpoint is configured. See [Cloudflare's D1 local-development guide](https://developers.cloudflare.com/d1/best-practices/local-development/) and [D1 migrations](https://developers.cloudflare.com/d1/reference/migrations/).
+The production account and database IDs are retained in `worker/wrangler.toml`; a new deployment to another account must use its own IDs. Set `MENSA_REPORT_ENDPOINT` to the returned HTTPS Worker URL, include the site's origin in `ALLOWED_ORIGINS`, and republish the static site. Workers and D1 offer free allowances; this setup does not require enabling a paid subscription. If the localhost login callback is unavailable, use `npx wrangler login --device` to authorize through the browser with a device code. See [Cloudflare's D1 local-development guide](https://developers.cloudflare.com/d1/best-practices/local-development/) and [D1 migrations](https://developers.cloudflare.com/d1/reference/migrations/).
 
 ## GitHub Pages and tests
 
