@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-05T15:44:51.019394+00:00",
+  "fetched_at": "2026-11-06T15:18:46.801045+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -40,6 +40,37 @@
         "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
+      }
+    },
+    {
+      "name": "Pizza Salami",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [
+        "Kn",
+        "1",
+        "2",
+        "3"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "config"
       }
     },
     {
@@ -120,6 +151,28 @@
       }
     },
     {
+      "name": "Karotten-Ingwersuppe",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
       "name": "Krautwickerl (1 Stück) mit Speck-Zwiebel-Sauce",
       "station": "Fleisch",
       "station_raw": "Fleisch",
@@ -182,13 +235,15 @@
       }
     },
     {
-      "name": "Topfencreme mit Zwetschgenröster",
-      "station": "Dessert (Glas)",
-      "station_raw": "Dessert (Glas)",
+      "name": "Frische Rahmschwammerl",
+      "station": "Unspecified",
+      "station_raw": "",
       "markers": [
         "f"
       ],
       "allergens": [
+        "Gl",
+        "GlW",
         "Mi"
       ],
       "additives": [],
@@ -196,15 +251,35 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "LACTOSE",
-        "MILK",
-        "VEGETARIAN"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
+      }
+    },
+    {
+      "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+      "station": "Dessert (Glas)",
+      "station_raw": "Dessert (Glas)",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Mi",
+        "Sc",
+        "ScC"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {

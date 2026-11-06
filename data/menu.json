@@ -1,40 +1,38 @@
 {
   "schema_version": 1,
-  "date": "2026-11-05",
+  "date": "2026-11-06",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/45.json",
-  "fetched_at": "2026-11-05T15:44:50.813954+00:00",
+  "fetched_at": "2026-11-06T15:18:46.654159+00:00",
   "warnings": [],
   "dishes": [
     {
-      "name": "Cannelloni mit Ricotta-Spinat-Füllung und Tomatensauce",
+      "name": "Vegane Pasta mit Räuchertofu",
       "station": "Pasta",
       "station_raw": "Pasta",
       "markers": [
-        "f"
+        "v"
       ],
       "allergens": [
-        "Ei",
         "Gl",
         "GlW",
-        "Mi"
+        "Sl",
+        "So"
       ],
-      "additives": [
-        "Kn"
-      ],
-      "is_vegan": false,
+      "additives": [],
+      "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "CELERY",
         "CEREAL",
-        "CHICKEN_EGGS",
         "GLUTEN",
-        "LACTOSE",
-        "MILK",
+        "SOY",
+        "VEGAN",
         "VEGETARIAN",
         "WHEAT"
       ],
@@ -45,79 +43,77 @@
       }
     },
     {
-      "name": "PINSA mit Spinat und Ricotta",
-      "station": "Pizza",
-      "station_raw": "Pizza",
+      "name": "Pasta mit Speck und Gemüse",
+      "station": "Unspecified",
+      "station_raw": "",
       "markers": [
-        "f"
+        "v"
       ],
       "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [
+        "2",
+        "3",
+        "8"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "CEREAL",
+        "GLUTEN",
+        "PHOSPHATES",
+        "PRESERVATIVES",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "PINSA Caprese mit Tomaten und Mozzarella",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [],
+      "allergens": [
+        "Ei",
         "Gl",
         "GlG",
         "GlW",
         "Mi",
         "So"
       ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "BARLEY",
-        "CEREAL",
-        "GLUTEN",
-        "LACTOSE",
-        "MILK",
-        "SOY",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 4.5,
-        "per_100g_eur": 0,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Lammhacksteaks (2 Stück) mit Tsatsiki",
-      "station": "Grill",
-      "station_raw": "Grill",
-      "markers": [],
-      "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
-        "Mi",
-        "Sw"
-      ],
       "additives": [
-        "3",
-        "Kn",
-        "1",
-        "5"
+        "2",
+        "15"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "ANTIOXIDANTS",
+        "BARLEY",
         "CEREAL",
         "CHICKEN_EGGS",
-        "DYESTUFF",
-        "GARLIC",
         "GLUTEN",
         "LACTOSE",
         "MEAT",
         "MILK",
-        "SULFITES",
-        "SULPHURS",
+        "PRESERVATIVES",
+        "SOY",
         "WHEAT"
       ],
       "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
         "source": "eat-api"
       }
     },
@@ -137,12 +133,90 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Kartoffeleintopf mit Majoran",
+      "station": "Studitopf",
+      "station_raw": "Studitopf",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
       "api_labels": [
+        "CELERY",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Französische Zwiebelsuppe mit Croûtons",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sw"
+      ],
+      "additives": [
+        "5",
+        "99"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ALCOHOL",
         "CEREAL",
-        "GARLIC",
         "GLUTEN",
-        "MEAT",
+        "LACTOSE",
+        "MILK",
+        "SULFITES",
+        "SULPHURS",
+        "VEGETARIAN",
         "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Gebratene Gnocchi mit Gemüse",
+      "station": "Vegetarisch/fleischlos",
+      "station_raw": "Vegetarisch/fleischlos",
+      "markers": [],
+      "allergens": [],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "MEAT"
       ],
       "price": {
         "base_eur": 1.0,
@@ -151,82 +225,14 @@
       }
     },
     {
-      "name": "Veganer Gulaschtopf mit Kartoffeln, Wurzelgemüse und Schwarzbier",
-      "station": "Wok",
-      "station_raw": "Wok",
-      "markers": [
-        "v"
-      ],
-      "allergens": [
-        "Gl",
-        "GlG",
-        "GlW",
-        "Sf",
-        "Sl",
-        "So"
-      ],
-      "additives": [
-        "99"
-      ],
-      "is_vegan": true,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "ALCOHOL",
-        "BARLEY",
-        "CELERY",
-        "CEREAL",
-        "GLUTEN",
-        "SOY",
-        "VEGAN",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Bulgur mit roten Linsen, Bohnen und Tomaten",
-      "station": "Studitopf",
-      "station_raw": "Studitopf",
-      "markers": [
-        "v"
-      ],
-      "allergens": [
-        "Gl",
-        "GlW"
-      ],
-      "additives": [],
-      "is_vegan": true,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "GLUTEN",
-        "VEGAN",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.33,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Ezo Gelin (Türkische Linsensuppe mit Chili- Minzöl)",
-      "station": "Unspecified",
-      "station_raw": "",
+      "name": "Mariniertes Zanderfilet (1 Stück) mit Zitrone, Chilli und Koriander",
+      "station": "Fisch",
+      "station_raw": "Fisch",
       "markers": [],
       "allergens": [
+        "Fi",
         "Gl",
-        "GlW",
-        "Sl"
+        "GlW"
       ],
       "additives": [],
       "is_vegan": false,
@@ -234,63 +240,41 @@
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CELERY",
         "CEREAL",
+        "FISH",
         "GLUTEN",
-        "MEAT",
         "WHEAT"
       ],
       "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.33,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Gebratener Kürbis",
-      "station": "Vegan",
-      "station_raw": "Vegan",
-      "markers": [
-        "v"
-      ],
-      "allergens": [],
-      "additives": [],
-      "is_vegan": true,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "VEGAN",
-        "VEGETARIAN"
-      ],
-      "price": {
-        "base_eur": 0.0,
+        "base_eur": 1.5,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       }
     },
     {
-      "name": "Chipotle Stripes (aus Erbsenprotein) mit schwarzen Bohnen",
-      "station": "Vegan",
-      "station_raw": "Vegan",
+      "name": "Topfenstrudel mit Birnen und Vanillesauce (ohne Rosinen)",
+      "station": "Süßspeise",
+      "station_raw": "Süßspeise",
       "markers": [
-        "v"
+        "f"
       ],
       "allergens": [
+        "Ei",
         "Gl",
         "GlW",
-        "So"
+        "Mi"
       ],
       "additives": [],
-      "is_vegan": true,
+      "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
         "CEREAL",
+        "CHICKEN_EGGS",
         "GLUTEN",
-        "SOY",
-        "VEGAN",
+        "LACTOSE",
+        "MILK",
         "VEGETARIAN",
         "WHEAT"
       ],
@@ -301,9 +285,36 @@
       }
     },
     {
-      "name": "Rhabarberrdbeermousse mit Brombeersauce",
+      "name": "Panna Cotta mit Himbeersauce",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
+      "markers": [],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [
+        "14"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "GELATIN",
+        "LACTOSE",
+        "MEAT",
+        "MILK"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Mousse Heidelbeermousse",
+      "station": "Dessert (Glas)",
+      "station_raw": "",
       "markers": [],
       "allergens": [
         "Mi"
