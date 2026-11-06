@@ -88,6 +88,14 @@ npx wrangler deploy
 
 The production account and database IDs are retained in `worker/wrangler.toml`; a new deployment to another account must use its own IDs. Set `MENSA_REPORT_ENDPOINT` to the returned HTTPS Worker URL, include the site's origin in `ALLOWED_ORIGINS`, and republish the static site. Workers and D1 offer free allowances; this setup does not require enabling a paid subscription. If the localhost login callback is unavailable, use `npx wrangler login --device` to authorize through the browser with a device code. See [Cloudflare's D1 local-development guide](https://developers.cloudflare.com/d1/best-practices/local-development/) and [D1 migrations](https://developers.cloudflare.com/d1/reference/migrations/).
 
+## Website analytics
+
+Both the landing page and the plate picker load Cloudflare Web Analytics using the public site token registered for `yagizdas.github.io`. No secret analytics credential is included in the site. This uses Cloudflare's free, cookie-free analytics service and its existing dashboard; it adds no database tables or custom analytics server.
+
+Open [Cloudflare Web Analytics](https://dash.cloudflare.com/26098fbb1b3bb06b1719a1e6fb10684f/web-analytics) and select `yagizdas.github.io` to see visits, page views, referring sites, countries, browsers/devices and page performance. Cloudflare's **visits** count incoming visits, not identified unique people. One visit can include both the landing page and the picker. Counts begin after installation, and new data may take a few minutes to appear; blocked JavaScript or analytics blockers can reduce the measured counts. See [Cloudflare's metric definitions](https://developers.cloudflare.com/web-analytics/data-metrics/high-level-metrics/) and [Web Analytics overview](https://developers.cloudflare.com/web-analytics/about/).
+
+To move to a custom domain later, edit the hostname under Web Analytics → Manage site and keep the same site snippet. Also update `ALLOWED_ORIGINS` in `worker/wrangler.toml` so plate reporting accepts the new origin, update `SITE_URL` in `menu.html` for shared links, and redeploy the Worker and static site. See [Cloudflare's setup guide](https://developers.cloudflare.com/web-analytics/get-started/).
+
 ## GitHub Pages and tests
 
 Set repository secret `GEMINI_API_KEY` and select **GitHub Actions** in Settings → Pages. `daily.yml` runs weekdays at 07:30 UTC. Scrape, tag, optional pair knowledge and pick run independently of previous generation failures. Packaging and artifact upload still run, and the deploy job accepts an uploaded artifact even if generation failed. A final failing generation status keeps partial failures visible. `publish.yml` deploys committed data without model calls. Raw reports, credentials and private model caches are never included in the static artifact.
