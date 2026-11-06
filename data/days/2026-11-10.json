@@ -4,7 +4,7 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-06T15:18:46.801045+00:00",
+  "fetched_at": "2026-11-06T17:39:22.404445+00:00",
   "warnings": [],
   "schema_version": 2,
   "menu_count": 12,
@@ -120,8 +120,8 @@
                 "So"
               ],
               "additives": [
-                "Kn",
                 "1",
+                "Kn",
                 "2",
                 "3"
               ],
@@ -129,7 +129,7 @@
               "diet": "meat",
               "id": "ec4bc949aeeec7f1",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 1060.0,
               "protein_g": 44.0
             },
@@ -157,7 +157,7 @@
               "diet": "vegetarian",
               "id": "381685b996b26202",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 232.5,
               "protein_g": 9.75
             }
@@ -177,7 +177,7 @@
             "energy": 2.6416666666666666,
             "total": 4.9754
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         },
         {
           "title": "Pasta + Quark cream",
@@ -237,7 +237,7 @@
               "diet": "vegetarian",
               "id": "381685b996b26202",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 232.5,
               "protein_g": 9.75
             }
@@ -257,7 +257,7 @@
             "energy": 1.1333333333333333,
             "total": 2.9796
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         },
         {
           "title": "Marinated chicken breast Caipirinha style + Quark cream + Rice",
@@ -310,7 +310,7 @@
               "diet": "vegetarian",
               "id": "381685b996b26202",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 232.5,
               "protein_g": 9.75
             },
@@ -416,7 +416,7 @@
               "diet": "vegetarian",
               "id": "381685b996b26202",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 232.5,
               "protein_g": 9.75
             },
@@ -517,7 +517,7 @@
               "diet": "vegetarian",
               "id": "381685b996b26202",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 232.5,
               "protein_g": 9.75
             }
@@ -537,7 +537,7 @@
             "energy": 0.23333333333333334,
             "total": 2.4552
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         }
       ]
     },
@@ -661,7 +661,7 @@
               "count": 1,
               "unit": "scoop",
               "weight_g": 150,
-              "price_cents": 135,
+              "price_cents": 50,
               "is_vegan": false,
               "markers": [],
               "allergens": [
@@ -674,14 +674,14 @@
               "diet": "meat",
               "id": "c285071f26cdac0c",
               "serving": "1 scoop",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 63.0,
               "protein_g": 1.35
             }
           ],
           "total": {
-            "price_cents": 540,
-            "price_eur": 5.4,
+            "price_cents": 455,
+            "price_eur": 4.55,
             "weight_g": 600,
             "kcal": 670.5,
             "protein_g": 30.6,
@@ -690,12 +690,12 @@
           },
           "score": {
             "protein_density": 1.1409395973154364,
-            "protein_value": 0.23611111111111113,
+            "protein_value": 0.2802197802197803,
             "protein": 0.02000000000000005,
             "energy": 0.0,
-            "total": 1.3971
+            "total": 1.4412
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         },
         {
           "title": "Cabbage roll + Potato salad",
@@ -831,7 +831,7 @@
               "diet": "vegetarian",
               "id": "381685b996b26202",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 232.5,
               "protein_g": 9.75
             }
@@ -852,7 +852,7 @@
             "energy": 0.0,
             "total": -0.5708
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         },
         {
           "title": "Broccoli curry + Quark cream + Rice",
@@ -909,7 +909,7 @@
               "diet": "vegetarian",
               "id": "381685b996b26202",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 232.5,
               "protein_g": 9.75
             },
@@ -1022,7 +1022,7 @@
               "diet": "vegetarian",
               "id": "381685b996b26202",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 232.5,
               "protein_g": 9.75
             }
@@ -1043,7 +1043,7 @@
             "protein": 0.013333333333333334,
             "total": -0.5905
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         },
         {
           "title": "Pasta + Quark cream",
@@ -1103,7 +1103,7 @@
               "diet": "vegetarian",
               "id": "381685b996b26202",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 232.5,
               "protein_g": 9.75
             }
@@ -1124,7 +1124,7 @@
             "protein": 0.12333333333333334,
             "total": -1.2137
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         },
         {
           "title": "Salami Pizza + Quark cream",
@@ -1153,8 +1153,8 @@
                 "So"
               ],
               "additives": [
-                "Kn",
                 "1",
+                "Kn",
                 "2",
                 "3"
               ],
@@ -1162,7 +1162,7 @@
               "diet": "meat",
               "id": "ec4bc949aeeec7f1",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 1060.0,
               "protein_g": 44.0
             },
@@ -1190,7 +1190,7 @@
               "diet": "vegetarian",
               "id": "381685b996b26202",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 232.5,
               "protein_g": 9.75
             }
@@ -1211,10 +1211,10 @@
             "protein": 0.45,
             "total": -1.4158
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         },
         {
-          "title": "Marinated chicken breast Caipirinha style + Potato salad",
+          "title": "Marinated chicken breast Caipirinha style + Carrot ginger soup + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -1241,43 +1241,71 @@
               "protein_g": 39.2
             },
             {
-              "name": "Kartoffelsalat",
-              "name_en": "Potato salad",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "saucy",
+              "name": "Karotten-Ingwersuppe",
+              "name_en": "Carrot ginger soup",
+              "station": "Unspecified",
+              "role": "soup",
+              "texture": "liquid",
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
-              "price_cents": 270,
+              "price_cents": 99,
               "is_vegan": false,
               "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "id": "c285071f26cdac0c",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 126.0,
+              "protein_g": 2.7
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
               "allergens": [],
               "additives": [],
               "standing": true,
-              "diet": "meat",
-              "id": "73bbe2bb9698caf4",
-              "serving": "2 scoops",
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
               "price_source": "config",
-              "kcal": 345.0,
-              "protein_g": 5.4
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 514,
-            "price_eur": 5.14,
-            "weight_g": 460.0,
-            "kcal": 577.0,
-            "protein_g": 44.6,
-            "carbs_g": 48.3,
-            "fat_g": 21.2
+            "price_cents": 478,
+            "price_eur": 4.78,
+            "weight_g": 610.0,
+            "kcal": 553.0,
+            "protein_g": 45.95,
+            "carbs_g": 64.2,
+            "fat_g": 10.85
           },
           "score": {
-            "price": -2.57,
-            "energy_value": 0.4490272373540856,
-            "energy": 0.018000000000000002,
-            "protein": 0.32800000000000007,
-            "total": -1.775
+            "price": -2.39,
+            "energy_value": 0.4627615062761506,
+            "energy": 0.0020000000000000005,
+            "protein": 0.3460000000000001,
+            "total": -1.5792
           },
           "has_estimated_prices": true
         },
@@ -1336,7 +1364,7 @@
               "diet": "vegetarian",
               "id": "381685b996b26202",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 232.5,
               "protein_g": 9.75
             },
@@ -2271,13 +2299,13 @@
         "name_en": "Carrot ginger soup",
         "station": "Unspecified",
         "weight_g": 300,
-        "price_cents": 270,
+        "price_cents": 99,
         "is_vegan": false,
         "diet": "meat",
         "serving": "2 scoops",
         "kcal": 126.0,
         "protein_g": 2.7,
-        "price_source": "config"
+        "price_source": "eat-api"
       },
       {
         "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
@@ -2290,7 +2318,7 @@
         "serving": "1 piece",
         "kcal": 232.5,
         "protein_g": 9.75,
-        "price_source": "config"
+        "price_source": "eat-api"
       }
     ],
     "vegan": []

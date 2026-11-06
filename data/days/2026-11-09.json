@@ -4,7 +4,7 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-06T15:18:46.750724+00:00",
+  "fetched_at": "2026-11-06T17:39:22.343000+00:00",
   "warnings": [],
   "schema_version": 2,
   "menu_count": 12,
@@ -94,8 +94,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Hearty Cevapcici and Rice",
-          "reason": "Combines savory meat with satisfying rice and a sweet dessert treat",
+          "title": "Cevapcici + Panna Cotta + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -200,87 +200,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Mushroom Pizza and Blueberry Mousse",
-          "reason": "Offers an energizing pizza paired with light and fruity mousse",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pizza Funghi mit frischen Champignons",
-              "name_en": "Pizza Funghi with fresh mushrooms",
-              "station": "Pizza",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "0bf0f539fa194ad6",
-              "serving": "1 piece",
-              "price_source": "config",
-              "kcal": 860.0,
-              "protein_g": 34.0
-            },
-            {
-              "name": "Mousse Heidelbeer-Geschmack",
-              "name_en": "Blueberry-flavored mousse",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 120.0,
-              "price_cents": 108,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [
-                "14"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "35e11ec0c3c48e39",
-              "serving": "1 piece",
-              "price_source": "config",
-              "kcal": 174.0,
-              "protein_g": 3.6
-            }
-          ],
-          "total": {
-            "price_cents": 608,
-            "price_eur": 6.08,
-            "weight_g": 520.0,
-            "kcal": 1034.0,
-            "protein_g": 37.6,
-            "carbs_g": 133.6,
-            "fat_g": 38.4
-          },
-          "score": {
-            "energy_value": 1.3605263157894738,
-            "protein_value": 0.5153508771929824,
-            "energy": 1.78,
-            "total": 3.6559
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Currywurst with Potato Salad",
-          "reason": "Delivers rich grilled sausage alongside creamy potato salad and dessert",
+          "title": "Currywurst + Panna Cotta + Potato salad",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -381,8 +302,87 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Porcini Pasta and Pumpkin Soup",
-          "reason": "Provides a warm soup starter followed by savory stuffed pasta pockets",
+          "title": "Pizza Funghi + Blueberry-flavored mousse",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            },
+            {
+              "name": "Mousse Heidelbeer-Geschmack",
+              "name_en": "Blueberry-flavored mousse",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 120.0,
+              "price_cents": 208,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "14"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "35e11ec0c3c48e39",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 174.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 658,
+            "price_eur": 6.58,
+            "weight_g": 520.0,
+            "kcal": 1034.0,
+            "protein_g": 37.6,
+            "carbs_g": 133.6,
+            "fat_g": 38.4
+          },
+          "score": {
+            "energy_value": 1.2571428571428571,
+            "protein_value": 0.4761904761904762,
+            "energy": 1.78,
+            "total": 3.5133
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta pockets stuffed + Panna Cotta + Vegan pumpkin cream soup",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -487,8 +487,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Fried Rice with Creamy Dessert",
-          "reason": "Balances a flavorful wok dish with comforting soup and sweet panna cotta",
+          "title": "Asian fried rice + Panna Cotta + Vegan pumpkin cream soup",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -597,8 +597,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Cevapcici with Potato Salad",
-          "reason": "High protein main paired with potato salad for a filling lunch",
+          "title": "Cevapcici + Potato salad",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -676,8 +676,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Grilled Currywurst Plate",
-          "reason": "Classic sausage seasoned with tangy ketchup and served with potatoes",
+          "title": "Currywurst + Potato salad",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -753,8 +753,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Mushroom Pizza and Pumpkin Soup",
-          "reason": "Pairs a crisp mushroom pizza with a light vegetable soup",
+          "title": "Pizza Funghi + Vegan pumpkin cream soup",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -766,7 +766,7 @@
               "count": 1,
               "unit": "piece",
               "weight_g": 400,
-              "price_cents": 500,
+              "price_cents": 450,
               "is_vegan": false,
               "markers": [
                 "f"
@@ -783,7 +783,7 @@
               "diet": "vegetarian",
               "id": "0bf0f539fa194ad6",
               "serving": "1 piece",
-              "price_source": "config",
+              "price_source": "eat-api",
               "kcal": 860.0,
               "protein_g": 34.0
             },
@@ -815,8 +815,8 @@
             }
           ],
           "total": {
-            "price_cents": 550,
-            "price_eur": 5.5,
+            "price_cents": 500,
+            "price_eur": 5.0,
             "weight_g": 550,
             "kcal": 932.0,
             "protein_g": 35.65,
@@ -825,16 +825,16 @@
           },
           "score": {
             "protein_density": 0.9562768240343347,
-            "protein_value": 0.2700757575757576,
+            "protein_value": 0.2970833333333333,
             "protein": 0.1883333333333333,
             "energy": -2.32,
-            "total": -0.9053
+            "total": -0.8783
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         },
         {
-          "title": "Asian Fried Rice Bowl",
-          "reason": "Nutritious stir fry with egg accompanied by smooth pumpkin soup",
+          "title": "Asian fried rice + Vegan pumpkin cream soup",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -909,8 +909,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Spicy Potato Chili and Rice",
-          "reason": "Comforting spiced vegetable chili over a warm bed of rice",
+          "title": "Spicy potato chili + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -990,8 +990,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Currywurst with Potato Salad",
-          "reason": "Inexpensive grilled classic served with satisfying potatoes",
+          "title": "Currywurst + Potato salad",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1067,8 +1067,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Potato Chili with White Rice",
-          "reason": "Extremely economical and hearty warm plant-based chili",
+          "title": "Spicy potato chili + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1139,8 +1139,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Cevapcici with Steamed Rice",
-          "reason": "Affordable grilled spiced meat complemented by simple rice",
+          "title": "Cevapcici + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1220,89 +1220,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Mushroom Pasta and Mousse",
-          "reason": "Tender stuffed dumplings followed by an airy berry dessert",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Teigtaschen gefüllt mit Steinpilzen und Frischkäse in Kräutersauce",
-              "name_en": "Pasta pockets stuffed with porcini mushrooms and cream cheese in herb sauce",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "4e7896a856c2a20b",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 495.0,
-              "protein_g": 15.0
-            },
-            {
-              "name": "Mousse Heidelbeer-Geschmack",
-              "name_en": "Blueberry-flavored mousse",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 120.0,
-              "price_cents": 108,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [
-                "14"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "35e11ec0c3c48e39",
-              "serving": "1 piece",
-              "price_source": "config",
-              "kcal": 174.0,
-              "protein_g": 3.6
-            }
-          ],
-          "total": {
-            "price_cents": 378,
-            "price_eur": 3.78,
-            "weight_g": 420.0,
-            "kcal": 669.0,
-            "protein_g": 18.6,
-            "carbs_g": 80.1,
-            "fat_g": 30.9
-          },
-          "score": {
-            "price": -1.89,
-            "energy_value": 0.707936507936508,
-            "energy": 0.07933333333333334,
-            "protein": -0.2799999999999997,
-            "total": -1.3827
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Wok Rice with Pumpkin Soup",
-          "reason": "Budget-friendly veggie fried rice paired with a creamy soup",
+          "title": "Asian fried rice + Vegan pumpkin cream soup",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1375,6 +1294,87 @@
             "total": -1.5144
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta pockets stuffed + Blueberry-flavored mousse",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Teigtaschen gefüllt mit Steinpilzen und Frischkäse in Kräutersauce",
+              "name_en": "Pasta pockets stuffed with porcini mushrooms and cream cheese in herb sauce",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "4e7896a856c2a20b",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 495.0,
+              "protein_g": 15.0
+            },
+            {
+              "name": "Mousse Heidelbeer-Geschmack",
+              "name_en": "Blueberry-flavored mousse",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 120.0,
+              "price_cents": 208,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "14"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "35e11ec0c3c48e39",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 174.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 478,
+            "price_eur": 4.78,
+            "weight_g": 420.0,
+            "kcal": 669.0,
+            "protein_g": 18.6,
+            "carbs_g": 80.1,
+            "fat_g": 30.9
+          },
+          "score": {
+            "price": -2.39,
+            "energy_value": 0.5598326359832636,
+            "energy": 0.07933333333333334,
+            "protein": -0.2799999999999997,
+            "total": -2.0308
+          },
+          "has_estimated_prices": false
         }
       ]
     },
@@ -1386,8 +1386,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Roasted Sweet Potatoes and Rice",
-          "reason": "Nutrient-packed roasted sweet potatoes paired with extra rice",
+          "title": "Oven-roasted sweet potatoes + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1459,8 +1459,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Spicy Potato Chili with Rice",
-          "reason": "Flavorful potato chili served alongside fluffy steamed rice",
+          "title": "Spicy potato chili + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1539,8 +1539,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Potato Chili and White Rice",
-          "reason": "Satisfying and low-calorie plant-based chili with rice",
+          "title": "Spicy potato chili + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1611,8 +1611,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Sweet Potato and Double Rice",
-          "reason": "Tender roasted root vegetables balanced with two servings of rice",
+          "title": "Oven-roasted sweet potatoes + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1694,8 +1694,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Hearty Potato Chili Bowl",
-          "reason": "Very cheap spiced chili served with warm steamed rice",
+          "title": "Spicy potato chili + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1766,8 +1766,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Sweet Potatoes with Steamed Rice",
-          "reason": "Economical combination of roasted sweet potatoes and rice",
+          "title": "Oven-roasted sweet potatoes + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1875,13 +1875,13 @@
         "name_en": "Blueberry-flavored mousse",
         "station": "Dessert (Glas)",
         "weight_g": 120.0,
-        "price_cents": 108,
+        "price_cents": 208,
         "is_vegan": false,
         "diet": "meat",
         "serving": "1 piece",
         "kcal": 174.0,
         "protein_g": 3.6,
-        "price_source": "config"
+        "price_source": "eat-api"
       }
     ],
     "vegan": []
