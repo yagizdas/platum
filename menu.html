@@ -291,7 +291,10 @@
     });
     $('report-sheet').addEventListener('close',()=>{
       if(!$('report-plate').hidden) $('report-plate').focus();
-      else {$('plate-title').tabIndex=-1;$('plate-title').focus();}
+      else {
+        const target=$('empty').hidden?$('plate-title'):$('empty-title');
+        target.tabIndex=-1;target.focus();
+      }
     });
     $('report-plate').addEventListener('click',()=>{
       const p=currentPlate(),date=selectedDate,key=selection.goal+(selection.vegan?'_vegan':'_all');
