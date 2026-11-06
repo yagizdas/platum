@@ -42,7 +42,7 @@ portions:
 scoring:
   bulk:
     energy_value: {metric: kcal_per_euro, weight: 2, normalizer: 250}
-    protein_value: {metric: protein_per_euro, weight: 1, normalizer: 12}
+    protein_value: {metric: protein_per_euro, weight: 1.5, normalizer: 12}
     energy: {quantity: kcal, pivot: 500, up: 1, down: 3, normalizer: 300}
   cut:
     protein_density: {metric: protein_per_100kcal, weight: 2, normalizer: 8}
