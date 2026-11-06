@@ -33,20 +33,32 @@ test('dish identity wins over a sauce, garnish, protein, or translated side', ()
     ['Bulgur mit roten Linsen', 'Bulgur with red lentils', 'rice'],
     ['Käsekrainer', 'Cheese Krainer sausage', 'sausage'],
     ['Pommes', 'French fries', 'fries'],
-    ['Topfenstrudel mit Vanillesauce', 'Curd strudel with vanilla sauce', 'cake'],
-    ['Faschingskrapfen', 'Carnival doughnut', 'cake'],
+    ['Topfenstrudel mit Vanillesauce', 'Curd strudel with vanilla sauce', 'sweet-pastry'],
+    ['Faschingskrapfen', 'Carnival doughnut', 'sweet-pastry'],
     ['Schokoladen-Seidentofu-Creme', 'Chocolate silken tofu cream', 'dessert'],
     ['Vanillecreme', 'Vanilla cream', 'dessert'],
-    ['PINSA Caprese mit Tomaten', 'Pizza with tomato and mozzarella', 'tray'],
-    ['PINSA Flammkuchenstyle mit Sauerrahm und Speck', 'Pinsa in tarte flambee style with bacon', 'tray'],
-    ['Tomate-Mozzarella-Strudel mit Tomatenragout', 'Tomato and mozzarella strudel with tomato ragout', 'tray'],
-    ['Yufkateigschnecke mit Spinatfüllung', 'Yufka pastry spiral with spinach filling', 'tray'],
+    ['PINSA Caprese mit Tomaten', 'Pizza with tomato and mozzarella', 'pizza'],
+    ['PINSA Flammkuchenstyle mit Sauerrahm und Speck', 'Pinsa in tarte flambee style with bacon', 'pizza'],
+    ['Tomate-Mozzarella-Strudel mit Tomatenragout', 'Tomato and mozzarella strudel with tomato ragout', 'savory-pastry'],
+    ['Yufkateigschnecke mit Spinatfüllung', 'Yufka pastry spiral with spinach filling', 'savory-pastry'],
+    ['Apfelstrudel mit Vanillesauce', 'Apple strudel with vanilla sauce', 'sweet-pastry'],
+    ['Croissant', 'Croissant', 'sweet-pastry'],
+    ['Schinken-Käse-Croissant', 'Ham and cheese croissant', 'savory-pastry'],
+    ['Börek mit Spinat', 'Borek with spinach', 'savory-pastry'],
+    ['Schaschlik mit Reis', 'Shish kebabs with rice', 'kebabs'],
+    ['Hähnchenspieße mit Erdnusssauce', 'Chicken skewers with peanut sauce', 'kebabs'],
+    ['Gemüsespieße', 'Vegetable skewers', 'kebabs'],
+    ['Rindersteak mit Pommes', 'Beef steak with fries', 'steak'],
+    ['Rinderbraten (1 Scheibe) mit Rotweinsauce', 'Roast beef with red wine sauce', 'steak'],
+    ['Lammhacksteaks (2 Stück) mit Tsatsiki', 'Minced lamb steaks with tzatziki', 'meatballs'],
+    ['Schokoladenkuchen', 'Chocolate cake', 'cake'],
+    ['Krautwickerl', 'Cabbage rolls', 'tray'],
   ];
   for (const [name,name_en,key] of cases) assert.equal(icons.classify({name,name_en}),key,name);
 });
 
 test('unknown dishes have a stable category fallback without changing diet data', () => {
-  for (const [item,key] of [[null,'tray'],[{},'tray'],[{name:'New lunch'},'tray'],[{name:'New lunch',diet:'vegan'},'vegetables'],[{station:'Fisch'},'fish'],[{station:'Pasta'},'pasta'],[{station:'Dessert (Glas)'},'dessert']]) {
+  for (const [item,key] of [[null,'tray'],[{},'tray'],[{name:'New lunch'},'tray'],[{name:'New lunch',diet:'vegan'},'vegetables'],[{station:'Fisch'},'fish'],[{station:'Pasta'},'pasta'],[{station:'Pizza'},'pizza'],[{station:'Dessert (Glas)'},'dessert']]) {
     const before = JSON.stringify(item);
     assert.equal(icons.classify(item),key);
     assert.equal(JSON.stringify(item),before);
