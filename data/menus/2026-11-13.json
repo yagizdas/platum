@@ -6,11 +6,11 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-06T18:14:43.252914+00:00",
+  "fetched_at": "2026-11-09T17:45:56.958700+00:00",
   "warnings": [],
   "dishes": [
     {
-      "name": "Pasta mit Gorgonzola-Sauce mit Birne",
+      "name": "Pasta mit Gorgonzola-Sauce",
       "station": "Pasta",
       "station_raw": "Pasta",
       "markers": [],
@@ -26,18 +26,41 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "GLUTEN",
-        "LACTOSE",
-        "MEAT",
-        "MILK",
-        "WHEAT"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 1.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
+      }
+    },
+    {
+      "name": "Pizza Regina mit Putenschinken und Champignons",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [
+        "2",
+        "3",
+        "8"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "config"
       }
     },
     {

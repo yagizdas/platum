@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-18",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
+  "fetched_at": "2026-11-09T17:45:57.195924+00:00",
+  "warnings": [],
+  "dishes": [
+    {
+      "name": "Allgäuer Käsespätzle mit Röstzwiebeln",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Gebratener Räuchertofu mit Gemüse (scharf)",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "SOY",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Pikanter Pilztopf mit Kartoffeln und Kraut",
+      "station": "Studitopf",
+      "station_raw": "Studitopf",
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Quinoa-Grünkern-Strudel mit Sauerrahm-Dip",
+      "station": "Vegetarisch/fleischlos",
+      "station_raw": "Vegetarisch/fleischlos",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "Sf",
+        "Sl",
+        "So"
+      ],
+      "additives": [
+        "1",
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "BARLEY",
+        "CELERY",
+        "CEREAL",
+        "DYESTUFF",
+        "GARLIC",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "MUSTARD",
+        "SOY",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Schaschlik (1 Stück) mit Honig-Currysauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Sf",
+        "Sl"
+      ],
+      "additives": [
+        "11"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CELERY",
+        "MEAT",
+        "MUSTARD",
+        "PORK",
+        "SWEETENERS"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Lammgulasch mit Süßkartoffeln brasilianische Art",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Reis",
+      "name_en": "Rice",
+      "station": "Beilagen",
+      "station_raw": "Beilagen",
+      "standing": true,
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [],
+      "dietary_source": "config",
+      "source": "config",
+      "api_labels": [],
+      "price_source": "config",
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Kartoffelsalat",
+      "name_en": "Potato salad",
+      "station": "Beilagen",
+      "station_raw": "Beilagen",
+      "standing": true,
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "markers": [],
+      "allergens": [],
+      "additives": [],
+      "dietary_source": "config",
+      "source": "config",
+      "api_labels": [],
+      "price_source": "config",
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    }
+  ]
+}

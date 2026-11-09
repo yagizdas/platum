@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-06T18:14:42.975217+00:00",
+  "fetched_at": "2026-11-09T17:45:56.793481+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -58,9 +58,9 @@
       ],
       "additives": [
         "1",
-        "Kn",
         "2",
-        "3"
+        "3",
+        "Kn"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
@@ -88,23 +88,46 @@
       }
     },
     {
-      "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art",
+      "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art mit Kokos- Limettenreis",
       "station": "Grill",
       "station_raw": "Grill",
       "markers": [],
-      "allergens": [],
+      "allergens": [
+        "Mi"
+      ],
       "additives": [],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "MEAT"
-      ],
+      "api_labels": [],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
+      }
+    },
+    {
+      "name": "Mandel-Mango-Chutney",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Sc",
+        "ScM"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {
@@ -230,35 +253,9 @@
       }
     },
     {
-      "name": "Gekräutertes Pilzragout (Champignons, Egerlingen und Austernpilzen)",
+      "name": "Frische Rahmschwammerl",
       "station": "Vegan",
       "station_raw": "Vegan",
-      "markers": [
-        "v"
-      ],
-      "allergens": [
-        "So"
-      ],
-      "additives": [],
-      "is_vegan": true,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "SOY",
-        "VEGAN",
-        "VEGETARIAN"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Frische Rahmschwammerl",
-      "station": "Unspecified",
-      "station_raw": "",
       "markers": [
         "f"
       ],
@@ -287,34 +284,31 @@
       }
     },
     {
-      "name": "Topfencreme mit Zwetschgenröster mit Cashewkernen",
+      "name": "Tiramisu",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
-      "markers": [
-        "f"
-      ],
+      "markers": [],
       "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
         "Mi",
-        "Sc",
-        "ScC"
+        "Sw"
       ],
-      "additives": [],
+      "additives": [
+        "5",
+        "14",
+        "99"
+      ],
       "is_vegan": false,
-      "is_vegetarian": true,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "CASHEWS",
-        "LACTOSE",
-        "MILK",
-        "SHELLFISH",
-        "SHELL_FRUITS",
-        "VEGETARIAN"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {

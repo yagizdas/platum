@@ -4,10 +4,10 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-06T18:14:43.252914+00:00",
+  "fetched_at": "2026-11-09T17:45:56.958700+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 8,
+  "menu_count": 9,
   "scoring": {
     "bulk": {
       "price": {
@@ -134,8 +134,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Stew and Apple Strudel",
-          "reason": "Hearty vegetable stew combined with sweet warm apple strudel.",
+          "title": "Farmer's stew + Apple strudel",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -214,8 +214,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Crispy Pollock with Rice and Dessert",
-          "reason": "Tender fish fillet paired with rice and smooth vanilla cream.",
+          "title": "Breaded pollock + Vanilla cream dessert + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -321,8 +321,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Cauliflower Bake and Strudel",
-          "reason": "Savory baked cauliflower with curry sauce and sweet pastry.",
+          "title": "Cauliflower casserole + Rice + Apple strudel",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -432,86 +432,6 @@
             "total": 2.0231
           },
           "has_estimated_prices": true
-        },
-        {
-          "title": "Gorgonzola Pasta and Vanilla Cream",
-          "reason": "Rich cheesy pasta balanced by a light creamy dessert.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta mit Gorgonzola-Sauce mit Birne",
-              "name_en": "Pasta with gorgonzola sauce and pear",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [
-                "15"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "fde2ab36c6997e45",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 787.5,
-              "protein_g": 24.75
-            },
-            {
-              "name": "Vanillecreme",
-              "name_en": "Vanilla cream dessert",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 135.0,
-              "price_cents": 122,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "6ad333ffee28d7c6",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 182.25,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 627,
-            "price_eur": 6.27,
-            "weight_g": 585.0,
-            "kcal": 969.75,
-            "protein_g": 28.8,
-            "carbs_g": 118.8,
-            "fat_g": 41.17
-          },
-          "score": {
-            "price": -3.135,
-            "price_over_budget": 0.0,
-            "energy_value": 0.15466507177033495,
-            "protein_value": 0.19138755980861244,
-            "protein": 4.32,
-            "energy": 0.39145833333333335,
-            "total": 1.9225
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -523,8 +443,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Farmer Stew with Vanilla Cream",
-          "reason": "Wholesome vegetable stew finished with a small sweet treat.",
+          "title": "Farmer's stew + Vanilla cream dessert",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -601,8 +521,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Breaded Fish and Vanilla Cream",
-          "reason": "Crisp pollock fillet served alongside a light dessert.",
+          "title": "Breaded pollock + Vanilla cream dessert",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -684,8 +604,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Cauliflower Casserole with Dessert",
-          "reason": "Spiced vegetable casserole accompanied by a sweet dessert.",
+          "title": "Cauliflower casserole + Vanilla cream dessert",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -769,60 +689,6 @@
             "total": -0.6298
           },
           "has_estimated_prices": false
-        },
-        {
-          "title": "Gorgonzola and Pear Pasta",
-          "reason": "Savory pasta tossed with tangy gorgonzola and sweet pear.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta mit Gorgonzola-Sauce mit Birne",
-              "name_en": "Pasta with gorgonzola sauce and pear",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [
-                "15"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "fde2ab36c6997e45",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 787.5,
-              "protein_g": 24.75
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 787.5,
-            "protein_g": 24.75,
-            "carbs_g": 94.5,
-            "fat_g": 33.75
-          },
-          "score": {
-            "price": -1.2625,
-            "price_over_budget": 0.0,
-            "protein_density": 0.7857142857142858,
-            "protein_value": 0.2042079207920792,
-            "protein": -1.05,
-            "energy": -0.875,
-            "total": -2.1976
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -834,8 +700,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Economy Stew and Pastry",
-          "reason": "Warm stew paired with a small portion of apple strudel.",
+          "title": "Farmer's stew + Apple strudel",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -913,8 +779,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Veggie Casserole and Strudel",
-          "reason": "Curry cauliflower bake combined with a fruity pastry treat.",
+          "title": "Cauliflower casserole + Apple strudel",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1001,8 +867,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Fish Fillet and Rice",
-          "reason": "Simple combination of crispy breaded fish and fluffy rice.",
+          "title": "Breaded pollock + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1079,59 +945,6 @@
             "total": -1.6281
           },
           "has_estimated_prices": true
-        },
-        {
-          "title": "Classic Gorgonzola Pasta",
-          "reason": "Flavorful pasta plate coated in creamy gorgonzola sauce.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta mit Gorgonzola-Sauce mit Birne",
-              "name_en": "Pasta with gorgonzola sauce and pear",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [
-                "15"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "fde2ab36c6997e45",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 787.5,
-              "protein_g": 24.75
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 787.5,
-            "protein_g": 24.75,
-            "carbs_g": 94.5,
-            "fat_g": 33.75
-          },
-          "score": {
-            "price": -2.525,
-            "price_over_budget": 0.0,
-            "energy_value": 0.6237623762376238,
-            "energy": 0.15833333333333333,
-            "protein": 0.06333333333333334,
-            "total": -1.6796
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -1143,8 +956,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Hearty Stew with Steamed Rice",
-          "reason": "Filling portion of savory vegan stew served over white rice.",
+          "title": "Farmer's stew + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1228,8 +1041,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Pure Farmer Stew",
-          "reason": "Simple and clean bowl of comforting vegan vegetable stew.",
+          "title": "Farmer's stew",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1289,8 +1102,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Farmer Stew with Side Rice",
-          "reason": "Nutritious and affordable vegan stew served with rice.",
+          "title": "Farmer's stew + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {

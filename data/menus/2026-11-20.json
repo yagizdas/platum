@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
+  "fetched_at": "2026-11-09T17:45:57.335260+00:00",
+  "warnings": [],
+  "dishes": [
+    {
+      "name": "Teigtaschen aus Rote Beete und Süßkartoffeln auf Blattspinat",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GARLIC",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Gemüsecurry",
+      "station": "Wok",
+      "station_raw": "Wok",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "So"
+      ],
+      "additives": [
+        "Kn",
+        "2"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GARLIC",
+        "GLUTEN",
+        "PRESERVATIVES",
+        "SOY",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Linseneintopf mit Gemüse",
+      "station": "Studitopf",
+      "station_raw": "Studitopf",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Sl",
+        "Sw"
+      ],
+      "additives": [
+        "1",
+        "3",
+        "5"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "CELERY",
+        "DYESTUFF",
+        "SULFITES",
+        "SULPHURS",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Jambalaya Louisiana mit Shrimps und Hähnchenbrustfilet (1 Stück)",
+      "station": "Fisch",
+      "station_raw": "Fisch",
+      "markers": [],
+      "allergens": [
+        "Kr",
+        "Sl",
+        "Sw"
+      ],
+      "additives": [
+        "1",
+        "5"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CELERY",
+        "DYESTUFF",
+        "MEAT",
+        "SHELLFISH",
+        "SULFITES",
+        "SULPHURS"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Kaiserschmarrn mit Zwetschgenröstern",
+      "station": "Süßspeise",
+      "station_raw": "Süßspeise",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Reis",
+      "name_en": "Rice",
+      "station": "Beilagen",
+      "station_raw": "Beilagen",
+      "standing": true,
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [],
+      "dietary_source": "config",
+      "source": "config",
+      "api_labels": [],
+      "price_source": "config",
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Kartoffelsalat",
+      "name_en": "Potato salad",
+      "station": "Beilagen",
+      "station_raw": "Beilagen",
+      "standing": true,
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "markers": [],
+      "allergens": [],
+      "additives": [],
+      "dietary_source": "config",
+      "source": "config",
+      "api_labels": [],
+      "price_source": "config",
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    }
+  ]
+}

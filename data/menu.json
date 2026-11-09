@@ -1,168 +1,159 @@
 {
   "schema_version": 1,
-  "date": "2026-11-06",
+  "date": "2026-11-09",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/45.json",
-  "fetched_at": "2026-11-06T18:14:42.677266+00:00",
+  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
+  "fetched_at": "2026-11-09T17:45:56.743101+00:00",
   "warnings": [],
   "dishes": [
     {
-      "name": "Vegane Pasta mit Räuchertofu",
+      "name": "Teigtaschen gefüllt mit Steinpilzen und Frischkäse in Kräutersauce",
       "station": "Pasta",
       "station_raw": "Pasta",
       "markers": [
-        "v"
+        "f"
       ],
-      "allergens": [
-        "Gl",
-        "GlW",
-        "Sl",
-        "So"
-      ],
-      "additives": [],
-      "is_vegan": true,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "CELERY",
-        "CEREAL",
-        "GLUTEN",
-        "SOY",
-        "VEGAN",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Pasta mit Speck und Gemüse",
-      "station": "Unspecified",
-      "station_raw": "",
-      "markers": [
-        "v"
-      ],
-      "allergens": [
-        "Gl",
-        "GlW"
-      ],
-      "additives": [
-        "2",
-        "3",
-        "8"
-      ],
-      "is_vegan": true,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "ANTIOXIDANTS",
-        "CEREAL",
-        "GLUTEN",
-        "PHOSPHATES",
-        "PRESERVATIVES",
-        "VEGAN",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "PINSA Caprese mit Tomaten und Mozzarella",
-      "station": "Pizza",
-      "station_raw": "Pizza",
-      "markers": [],
       "allergens": [
         "Ei",
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GARLIC",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Pizza Funghi mit frischen Champignons",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
         "Gl",
         "GlG",
         "GlW",
         "Mi",
         "So"
       ],
-      "additives": [
-        "2",
-        "15"
-      ],
+      "additives": [],
       "is_vegan": false,
-      "is_vegetarian": false,
+      "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
         "BARLEY",
         "CEREAL",
-        "CHICKEN_EGGS",
         "GLUTEN",
         "LACTOSE",
-        "MEAT",
         "MILK",
-        "PRESERVATIVES",
         "SOY",
+        "VEGETARIAN",
         "WHEAT"
       ],
       "price": {
-        "base_eur": 5.0,
+        "base_eur": 4.5,
         "per_100g_eur": 0,
         "source": "eat-api"
       }
     },
     {
-      "name": "Truthahnschnitzel (1 Stück) mit Ajvar und Kartoffeln aus dem Ofen",
+      "name": "Currywurst mit Honig-Ingwer-Ketchup (1 Stück)",
       "station": "Grill",
       "station_raw": "Grill",
-      "markers": [],
+      "markers": [
+        "R",
+        "S"
+      ],
       "allergens": [
-        "Gl",
-        "GlW"
+        "Sf",
+        "Sl"
       ],
       "additives": [
-        "Kn"
+        "8",
+        "11"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CEREAL",
-        "GARLIC",
-        "GLUTEN",
+        "BEEF",
+        "CELERY",
         "MEAT",
-        "WHEAT"
+        "MUSTARD",
+        "PHOSPHATES",
+        "PORK",
+        "SWEETENERS"
       ],
       "price": {
-        "base_eur": 1.0,
+        "base_eur": 0.5,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       }
     },
     {
-      "name": "Kartoffeleintopf mit Majoran",
+      "name": "Asiatische Reispfanne mit Gemüse und Ei",
+      "station": "Wok",
+      "station_raw": "Wok",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CHICKEN_EGGS",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Pikantes Kartoffelchili",
       "station": "Studitopf",
       "station_raw": "Studitopf",
       "markers": [
         "v"
       ],
-      "allergens": [
-        "Sl"
-      ],
+      "allergens": [],
       "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CELERY",
         "VEGAN",
         "VEGETARIAN"
       ],
@@ -173,36 +164,23 @@
       }
     },
     {
-      "name": "Französische Zwiebelsuppe mit Croûtons",
+      "name": "Vegane Kürbiscremesuppe",
       "station": "Unspecified",
       "station_raw": "",
       "markers": [
         "f"
       ],
       "allergens": [
-        "Gl",
-        "GlW",
-        "Mi",
-        "Sw"
+        "So"
       ],
-      "additives": [
-        "5",
-        "99"
-      ],
+      "additives": [],
       "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "ALCOHOL",
-        "CEREAL",
-        "GLUTEN",
-        "LACTOSE",
-        "MILK",
-        "SULFITES",
-        "SULPHURS",
-        "VEGETARIAN",
-        "WHEAT"
+        "SOY",
+        "VEGETARIAN"
       ],
       "price": {
         "base_eur": 0.0,
@@ -211,81 +189,68 @@
       }
     },
     {
-      "name": "Gebratene Gnocchi mit Gemüse",
+      "name": "Gegrillte Süßkartoffeln aus dem Ofen mit Kräuterdip",
       "station": "Vegetarisch/fleischlos",
       "station_raw": "Vegetarisch/fleischlos",
-      "markers": [],
-      "allergens": [],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "MEAT"
-      ],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Mariniertes Zanderfilet (1 Stück) mit Zitrone, Chilli und Koriander",
-      "station": "Fisch",
-      "station_raw": "Fisch",
-      "markers": [],
-      "allergens": [
-        "Fi",
-        "Gl",
-        "GlW"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "FISH",
-        "GLUTEN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 1.5,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Topfenstrudel mit Birnen und Vanillesauce (ohne Rosinen)",
-      "station": "Süßspeise",
-      "station_raw": "Süßspeise",
       "markers": [
-        "f"
+        "v"
+      ],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "LACTOSE",
+        "MILK",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Cevapcici (5 Stück) mit Ajvar",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "R"
       ],
       "allergens": [
         "Ei",
         "Gl",
         "GlW",
-        "Mi"
+        "Sf",
+        "Sl",
+        "So"
       ],
-      "additives": [],
+      "additives": [
+        "Kn"
+      ],
       "is_vegan": false,
-      "is_vegetarian": true,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "BEEF",
+        "CELERY",
         "CEREAL",
         "CHICKEN_EGGS",
+        "GARLIC",
         "GLUTEN",
-        "LACTOSE",
-        "MILK",
-        "VEGETARIAN",
+        "MEAT",
+        "MUSTARD",
+        "SOY",
         "WHEAT"
       ],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       }
@@ -318,7 +283,7 @@
       }
     },
     {
-      "name": "Mousse Heidelbeermousse",
+      "name": "Mousse Heidelbeer-Geschmack",
       "station": "Dessert (Glas)",
       "station_raw": "",
       "markers": [],
