@@ -17,7 +17,7 @@ def score_plate(plate, goal, config):
         if "metric" in term:
             terms[name] = term["weight"] * metrics[term["metric"]] / term["normalizer"]
         else:
-            value = {"kcal": kcal, "protein": prot}[term["quantity"]]
+            value = {"kcal": kcal, "protein": prot, "price": euros}[term["quantity"]]
             delta = (term["pivot"] - value) if term.get("reverse") else (value - term["pivot"])
             terms[name] = h(delta, term["up"], term["down"]) / term["normalizer"]
     return {**terms, "total": round(sum(terms.values()), 4)}

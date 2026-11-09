@@ -1,34 +1,67 @@
 {
-  "date": "2026-11-06",
+  "date": "2026-11-09",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-06T18:14:42.677266+00:00",
+  "fetched_at": "2026-11-06T18:14:42.892041+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 13,
+  "menu_count": 12,
   "scoring": {
     "bulk": {
+      "price": {
+        "metric": "price",
+        "weight": -2,
+        "normalizer": 4
+      },
+      "price_over_budget": {
+        "quantity": "price",
+        "pivot": 7,
+        "reverse": true,
+        "up": 0,
+        "down": 1,
+        "normalizer": 1
+      },
       "energy_value": {
         "metric": "kcal_per_euro",
-        "weight": 2,
+        "weight": 0.25,
         "normalizer": 250
       },
       "protein_value": {
         "metric": "protein_per_euro",
-        "weight": 1,
+        "weight": 0.5,
         "normalizer": 12
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 0,
+        "up": 1.5,
+        "down": 1.5,
+        "normalizer": 10
       },
       "energy": {
         "quantity": "kcal",
         "pivot": 500,
-        "up": 1,
+        "up": 0.25,
         "down": 3,
         "normalizer": 300
       }
     },
     "cut": {
+      "price": {
+        "metric": "price",
+        "weight": -1,
+        "normalizer": 4
+      },
+      "price_over_budget": {
+        "quantity": "price",
+        "pivot": 7,
+        "reverse": true,
+        "up": 0,
+        "down": 1,
+        "normalizer": 1
+      },
       "protein_density": {
         "metric": "protein_per_100kcal",
         "weight": 2,
@@ -61,6 +94,14 @@
         "weight": -2,
         "normalizer": 4
       },
+      "price_over_budget": {
+        "quantity": "price",
+        "pivot": 7,
+        "reverse": true,
+        "up": 0,
+        "down": 1,
+        "normalizer": 1
+      },
       "energy_value": {
         "metric": "kcal_per_euro",
         "weight": 1,
@@ -82,7 +123,6 @@
       }
     }
   },
-  "max_plate_g": 650,
   "default_scoop_g": 150,
   "nutrition_note": "Nutrition values are estimates.",
   "variants": {
@@ -94,14 +134,310 @@
       "note": null,
       "plates": [
         {
-          "title": "Strudel and French Onion Soup",
-          "reason": "Hearty sweet pastry paired with rich warm onion soup for extra bulk",
+          "title": "Cevapcici Rice and Soup",
+          "reason": "Hearty grilled meat paired with warm soup and fluffy rice",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Topfenstrudel mit Birnen und Vanillesauce (ohne Rosinen)",
-              "name_en": "Curd strudel with pears and vanilla sauce (without raisins)",
-              "station": "Süßspeise",
+              "name": "Cevapcici (5 Stück) mit Ajvar",
+              "name_en": "Cevapcici (5 pieces) with ajvar",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 210.0,
+              "price_cents": 289,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Sf",
+                "Sl",
+                "So"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "82c13d752b1a4b66",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 451.5,
+              "protein_g": 28.35
+            },
+            {
+              "name": "Vegane Kürbiscremesuppe",
+              "name_en": "Vegan pumpkin cream soup",
+              "station": "Unspecified",
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "7771fe0214c22340",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 144.0,
+              "protein_g": 3.3
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 658,
+            "price_eur": 6.58,
+            "weight_g": 810.0,
+            "kcal": 985.5,
+            "protein_g": 39.75,
+            "carbs_g": 111.9,
+            "fat_g": 40.35
+          },
+          "score": {
+            "price": -3.29,
+            "price_over_budget": 0.0,
+            "energy_value": 0.14977203647416415,
+            "protein_value": 0.251709726443769,
+            "protein": 5.9625,
+            "energy": 0.40458333333333335,
+            "total": 3.4786
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Mushroom Pizza with Panna Cotta",
+          "reason": "Classic mushroom pizza completed by a sweet berry dessert",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            },
+            {
+              "name": "Panna Cotta mit Himbeersauce",
+              "name_en": "Panna Cotta with Raspberry Sauce",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 226,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "14"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "c8bc8349b78e459c",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 294.0,
+              "protein_g": 3.92
+            }
+          ],
+          "total": {
+            "price_cents": 676,
+            "price_eur": 6.76,
+            "weight_g": 540.0,
+            "kcal": 1154.0,
+            "protein_g": 37.92,
+            "carbs_g": 140.7,
+            "fat_g": 48.2
+          },
+          "score": {
+            "price": -3.38,
+            "price_over_budget": 0.0,
+            "energy_value": 0.17071005917159762,
+            "protein_value": 0.23372781065088757,
+            "protein": 5.688000000000001,
+            "energy": 0.545,
+            "total": 3.2574
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Currywurst and Soup Combo",
+          "reason": "Savory sausage served alongside pumpkin soup and potato salad",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Currywurst mit Honig-Ingwer-Ketchup (1 Stück)",
+              "name_en": "Currywurst with honey-ginger ketchup (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 230,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "8",
+                "11"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "6a0e523e2e635dcd",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 470.0,
+              "protein_g": 22.0
+            },
+            {
+              "name": "Vegane Kürbiscremesuppe",
+              "name_en": "Vegan pumpkin cream soup",
+              "station": "Unspecified",
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "7771fe0214c22340",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 144.0,
+              "protein_g": 3.3
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 464,
+            "price_eur": 4.64,
+            "weight_g": 650,
+            "kcal": 786.5,
+            "protein_g": 28.0,
+            "carbs_g": 66.15,
+            "fat_g": 44.7
+          },
+          "score": {
+            "price": -2.32,
+            "price_over_budget": 0.0,
+            "energy_value": 0.16950431034482757,
+            "protein_value": 0.2514367816091954,
+            "protein": 4.2,
+            "energy": 0.23875,
+            "total": 2.5397
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Porcini Pasta with Dessert",
+          "reason": "Creamy mushroom stuffed pasta paired with raspberry dessert",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Teigtaschen gefüllt mit Steinpilzen und Frischkäse in Kräutersauce",
+              "name_en": "Pasta pockets stuffed with porcini mushrooms and cream cheese in herb sauce",
+              "station": "Pasta",
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -118,100 +454,16 @@
                 "GlW",
                 "Mi"
               ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "2d189e5c5c52efeb",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 832.5,
-              "protein_g": 26.1
-            },
-            {
-              "name": "Französische Zwiebelsuppe mit Croûtons",
-              "name_en": "French onion soup with croutons",
-              "station": "Unspecified",
-              "role": "soup",
-              "texture": "liquid",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 50,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "Sw"
-              ],
               "additives": [
-                "5",
-                "99"
+                "Kn"
               ],
               "standing": false,
               "diet": "vegetarian",
-              "id": "4923698dab137b05",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 82.5,
-              "protein_g": 3.15
-            }
-          ],
-          "total": {
-            "price_cents": 455,
-            "price_eur": 4.55,
-            "weight_g": 600,
-            "kcal": 915.0,
-            "protein_g": 29.25,
-            "carbs_g": 120.75,
-            "fat_g": 34.5
-          },
-          "score": {
-            "energy_value": 1.6087912087912088,
-            "protein_value": 0.5357142857142857,
-            "energy": 1.3833333333333333,
-            "total": 3.5278
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pasta with Bacon and Panna Cotta",
-          "reason": "Savory comforting pasta complemented by a luscious berry cream dessert",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta mit Speck und Gemüse",
-              "name_en": "Pasta with bacon and vegetables",
-              "station": "Unspecified",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2",
-                "3",
-                "8"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "d70c31a3e695187e",
+              "id": "4e7896a856c2a20b",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 742.5,
-              "protein_g": 24.75
+              "protein_g": 22.5
             },
             {
               "name": "Panna Cotta mit Himbeersauce",
@@ -245,256 +497,96 @@
             "price_eur": 6.31,
             "weight_g": 590.0,
             "kcal": 1036.5,
-            "protein_g": 28.67,
-            "carbs_g": 123.2,
-            "fat_g": 47.45
+            "protein_g": 26.42,
+            "carbs_g": 116.45,
+            "fat_g": 51.95
           },
           "score": {
-            "energy_value": 1.3141045958795565,
-            "protein_value": 0.3786318013734813,
-            "energy": 1.7883333333333333,
-            "total": 3.4811
+            "price": -3.155,
+            "price_over_budget": 0.0,
+            "energy_value": 0.16426307448494457,
+            "protein_value": 0.1744585314315901,
+            "protein": 3.963,
+            "energy": 0.44708333333333333,
+            "total": 1.5938
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Tofu Pasta with Blueberry Mousse",
-          "reason": "High protein vegan pasta finished with a light fruity dessert",
+          "title": "Fried Rice and Panna Cotta",
+          "reason": "Wok fried rice balanced with a creamy sweet treat",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Vegane Pasta mit Räuchertofu",
-              "name_en": "Vegan pasta with smoked tofu",
-              "station": "Pasta",
+              "name": "Asiatische Reispfanne mit Gemüse und Ei",
+              "name_en": "Asian fried rice with vegetables and egg",
+              "station": "Wok",
               "role": "main",
-              "texture": "saucy",
+              "texture": "dry",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
               "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "69a95c68d4adfda1",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 697.5,
-              "protein_g": 30.6
-            },
-            {
-              "name": "Mousse Heidelbeermousse",
-              "name_en": "Blueberry mousse",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 125,
-              "price_cents": 213,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [
-                "14"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "0c2019e4871f1072",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 243.75,
-              "protein_g": 4.0
-            }
-          ],
-          "total": {
-            "price_cents": 618,
-            "price_eur": 6.18,
-            "weight_g": 575,
-            "kcal": 941.25,
-            "protein_g": 34.6,
-            "carbs_g": 122.28,
-            "fat_g": 34.45
-          },
-          "score": {
-            "energy_value": 1.2184466019417475,
-            "protein_value": 0.46655879180151033,
-            "energy": 1.4708333333333334,
-            "total": 3.1558
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Caprese Pinsa and Blueberry Mousse",
-          "reason": "Classic cheesy pinsa matched with a chilled sweet berry mousse",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "PINSA Caprese mit Tomaten und Mozzarella",
-              "name_en": "Caprese Pinsa with Tomatoes and Mozzarella",
-              "station": "Pizza",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 300.0,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [
-                "2",
-                "15"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "e10fd88f8aec310a",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 675.0,
-              "protein_g": 25.5
-            },
-            {
-              "name": "Mousse Heidelbeermousse",
-              "name_en": "Blueberry mousse",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 125,
-              "price_cents": 213,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [
-                "14"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "0c2019e4871f1072",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 243.75,
-              "protein_g": 4.0
-            }
-          ],
-          "total": {
-            "price_cents": 713,
-            "price_eur": 7.13,
-            "weight_g": 425.0,
-            "kcal": 918.75,
-            "protein_g": 29.5,
-            "carbs_g": 110.88,
-            "fat_g": 40.15
-          },
-          "score": {
-            "energy_value": 1.0308555399719497,
-            "protein_value": 0.34478728377746615,
-            "energy": 1.3958333333333333,
-            "total": 2.7715
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Turkey Schnitzel and Onion Soup",
-          "reason": "Lean turkey schnitzel alongside warm onion soup for high protein",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Truthahnschnitzel (1 Stück) mit Ajvar und Kartoffeln aus dem Ofen",
-              "name_en": "Turkey schnitzel (1 piece) with ajvar and oven-baked potatoes",
-              "station": "Grill",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400.0,
-              "price_cents": 460,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "56496800bf4857af",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 660.0,
-              "protein_g": 42.0
-            },
-            {
-              "name": "Französische Zwiebelsuppe mit Croûtons",
-              "name_en": "French onion soup with croutons",
-              "station": "Unspecified",
-              "role": "soup",
-              "texture": "liquid",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 50,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "Sw"
+                "Ei"
               ],
-              "additives": [
-                "5",
-                "99"
-              ],
+              "additives": [],
               "standing": false,
               "diet": "vegetarian",
-              "id": "4923698dab137b05",
-              "serving": "1 scoop",
+              "id": "6babe317f5f0f6c0",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 82.5,
-              "protein_g": 3.15
+              "kcal": 652.5,
+              "protein_g": 18.9
+            },
+            {
+              "name": "Panna Cotta mit Himbeersauce",
+              "name_en": "Panna Cotta with Raspberry Sauce",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 226,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "14"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "c8bc8349b78e459c",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 294.0,
+              "protein_g": 3.92
             }
           ],
           "total": {
-            "price_cents": 510,
-            "price_eur": 5.1,
-            "weight_g": 550.0,
-            "kcal": 742.5,
-            "protein_g": 45.15,
-            "carbs_g": 70.5,
-            "fat_g": 30.2
+            "price_cents": 631,
+            "price_eur": 6.31,
+            "weight_g": 590.0,
+            "kcal": 946.5,
+            "protein_g": 22.82,
+            "carbs_g": 125.45,
+            "fat_g": 38.9
           },
           "score": {
-            "energy_value": 1.1647058823529413,
-            "protein_value": 0.7377450980392157,
-            "energy": 0.8083333333333333,
-            "total": 2.7108
+            "price": -3.155,
+            "price_over_budget": 0.0,
+            "energy_value": 0.15,
+            "protein_value": 0.1506867406233492,
+            "protein": 3.4230000000000005,
+            "energy": 0.3720833333333333,
+            "total": 0.9408
           },
           "has_estimated_prices": false
         }
@@ -508,114 +600,46 @@
       "note": null,
       "plates": [
         {
-          "title": "Zander Fillet with Rice",
-          "reason": "Lean seasoned fish fillet served with plain rice for minimal calories",
+          "title": "Cevapcici and Pumpkin Soup",
+          "reason": "Spiced meat kebabs with a light portion of soup",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Mariniertes Zanderfilet (1 Stück) mit Zitrone, Chilli und Koriander",
-              "name_en": "Marinated pike-perch fillet (1 piece) with lemon, chili and coriander",
-              "station": "Fisch",
+              "name": "Cevapcici (5 Stück) mit Ajvar",
+              "name_en": "Cevapcici (5 pieces) with ajvar",
+              "station": "Fleisch",
               "role": "main",
-              "texture": "dry",
+              "texture": "saucy",
               "count": 1,
               "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 276,
+              "weight_g": 210.0,
+              "price_cents": 289,
               "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Fi",
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "fish",
-              "id": "ffb8eafedb67e7e1",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 161.0,
-              "protein_g": 25.9
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
               "markers": [
-                "v"
+                "R"
               ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 411,
-            "price_eur": 4.11,
-            "weight_g": 290.0,
-            "kcal": 356.0,
-            "protein_g": 29.95,
-            "carbs_g": 43.4,
-            "fat_g": 6.05
-          },
-          "score": {
-            "protein_density": 2.1032303370786516,
-            "protein_value": 0.3036293592862936,
-            "protein": -0.010000000000000142,
-            "energy": 0.0,
-            "total": 2.3969
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Turkey Schnitzel with Onion Soup",
-          "reason": "High protein poultry paired with light soup to maintain strict macros",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Truthahnschnitzel (1 Stück) mit Ajvar und Kartoffeln aus dem Ofen",
-              "name_en": "Turkey schnitzel (1 piece) with ajvar and oven-baked potatoes",
-              "station": "Grill",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400.0,
-              "price_cents": 460,
-              "is_vegan": false,
-              "markers": [],
               "allergens": [
+                "Ei",
                 "Gl",
-                "GlW"
+                "GlW",
+                "Sf",
+                "Sl",
+                "So"
               ],
               "additives": [
                 "Kn"
               ],
               "standing": false,
               "diet": "meat",
-              "id": "56496800bf4857af",
+              "id": "82c13d752b1a4b66",
               "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 660.0,
-              "protein_g": 42.0
+              "kcal": 451.5,
+              "protein_g": 28.35
             },
             {
-              "name": "Französische Zwiebelsuppe mit Croûtons",
-              "name_en": "French onion soup with croutons",
+              "name": "Vegane Kürbiscremesuppe",
+              "name_en": "Vegan pumpkin cream soup",
               "station": "Unspecified",
               "role": "soup",
               "texture": "liquid",
@@ -628,134 +652,77 @@
                 "f"
               ],
               "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "Sw"
-              ],
-              "additives": [
-                "5",
-                "99"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "4923698dab137b05",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 82.5,
-              "protein_g": 3.15
-            }
-          ],
-          "total": {
-            "price_cents": 510,
-            "price_eur": 5.1,
-            "weight_g": 550.0,
-            "kcal": 742.5,
-            "protein_g": 45.15,
-            "carbs_g": 70.5,
-            "fat_g": 30.2
-          },
-          "score": {
-            "protein_density": 1.52020202020202,
-            "protein_value": 0.36887254901960786,
-            "protein": 0.505,
-            "energy": -0.425,
-            "total": 1.9691
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Smoked Tofu Pasta",
-          "reason": "Straightforward plant based protein meal without unnecessary sides",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Vegane Pasta mit Räuchertofu",
-              "name_en": "Vegan pasta with smoked tofu",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl",
                 "So"
               ],
               "additives": [],
               "standing": false,
-              "diet": "vegan",
-              "id": "69a95c68d4adfda1",
-              "serving": "3 scoops",
+              "diet": "vegetarian",
+              "id": "7771fe0214c22340",
+              "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 697.5,
-              "protein_g": 30.6
+              "kcal": 72.0,
+              "protein_g": 1.65
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 697.5,
-            "protein_g": 30.6,
-            "carbs_g": 95.4,
-            "fat_g": 20.7
+            "price_cents": 339,
+            "price_eur": 3.39,
+            "weight_g": 360.0,
+            "kcal": 523.5,
+            "protein_g": 30.0,
+            "carbs_g": 19.2,
+            "fat_g": 36.0
           },
           "score": {
-            "protein_density": 1.0967741935483872,
-            "protein_value": 0.3148148148148148,
-            "protein": 0.02000000000000005,
+            "price": -0.8475,
+            "price_over_budget": 0.0,
+            "protein_density": 1.4326647564469914,
+            "protein_value": 0.3687315634218289,
+            "protein": 0.0,
             "energy": 0.0,
-            "total": 1.4316
+            "total": 0.9539
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Bacon Pasta with Onion Soup",
-          "reason": "Moderate portion of savory pasta balanced with warm savory broth",
+          "title": "Currywurst with Warm Soup",
+          "reason": "Saucy curry sausage matched with comforting pumpkin soup",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Pasta mit Speck und Gemüse",
-              "name_en": "Pasta with bacon and vegetables",
-              "station": "Unspecified",
+              "name": "Currywurst mit Honig-Ingwer-Ketchup (1 Stück)",
+              "name_en": "Currywurst with honey-ginger ketchup (1 piece)",
+              "station": "Grill",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 230,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "R",
+                "S"
               ],
               "allergens": [
-                "Gl",
-                "GlW"
+                "Sf",
+                "Sl"
               ],
               "additives": [
-                "2",
-                "3",
-                "8"
+                "8",
+                "11"
               ],
               "standing": false,
-              "diet": "vegan",
-              "id": "d70c31a3e695187e",
-              "serving": "2 scoops",
+              "diet": "meat",
+              "id": "6a0e523e2e635dcd",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 495.0,
-              "protein_g": 16.5
+              "kcal": 470.0,
+              "protein_g": 22.0
             },
             {
-              "name": "Französische Zwiebelsuppe mit Croûtons",
-              "name_en": "French onion soup with croutons",
+              "name": "Vegane Kürbiscremesuppe",
+              "name_en": "Vegan pumpkin cream soup",
               "station": "Unspecified",
               "role": "soup",
               "texture": "liquid",
@@ -768,60 +735,155 @@
                 "f"
               ],
               "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "Sw"
+                "So"
               ],
-              "additives": [
-                "5",
-                "99"
-              ],
+              "additives": [],
               "standing": false,
               "diet": "vegetarian",
-              "id": "4923698dab137b05",
+              "id": "7771fe0214c22340",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 165.0,
-              "protein_g": 6.3
+              "kcal": 144.0,
+              "protein_g": 3.3
             }
           ],
           "total": {
-            "price_cents": 369,
-            "price_eur": 3.69,
-            "weight_g": 600,
-            "kcal": 660.0,
-            "protein_g": 22.8,
-            "carbs_g": 84.0,
-            "fat_g": 25.5
+            "price_cents": 329,
+            "price_eur": 3.29,
+            "weight_g": 500,
+            "kcal": 614.0,
+            "protein_g": 25.3,
+            "carbs_g": 44.4,
+            "fat_g": 36.9
           },
           "score": {
-            "protein_density": 0.8636363636363636,
-            "protein_value": 0.25745257452574527,
-            "protein": -1.44,
+            "price": -0.8225,
+            "price_over_budget": 0.0,
+            "protein_density": 1.0301302931596092,
+            "protein_value": 0.32041540020263426,
+            "protein": -0.9399999999999998,
             "energy": 0.0,
-            "total": -0.3189
+            "total": -0.412
           },
           "has_estimated_prices": false
-        }
-      ]
-    },
-    "budget_all": {
-      "state": "ready",
-      "goal": "budget",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
+        },
         {
-          "title": "Sweet Strudel and Onion Soup",
-          "reason": "Very affordable pairing of warm soup and sweet baked pastry",
+          "title": "Mushroom Pizza Slice",
+          "reason": "Simple baked pizza topped with fresh mushrooms",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Topfenstrudel mit Birnen und Vanillesauce (ohne Rosinen)",
-              "name_en": "Curd strudel with pears and vanilla sauce (without raisins)",
-              "station": "Süßspeise",
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 450,
+            "price_eur": 4.5,
+            "weight_g": 400,
+            "kcal": 860.0,
+            "protein_g": 34.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "price": -1.125,
+            "price_over_budget": 0.0,
+            "protein_density": 0.9883720930232558,
+            "protein_value": 0.3148148148148148,
+            "protein": 0.13333333333333333,
+            "energy": -1.6,
+            "total": -1.2885
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable Fried Rice",
+          "reason": "Light pan fried rice with tender vegetables and egg",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Asiatische Reispfanne mit Gemüse und Ei",
+              "name_en": "Asian fried rice with vegetables and egg",
+              "station": "Wok",
+              "role": "main",
+              "texture": "dry",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "6babe317f5f0f6c0",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 18.9
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 18.9,
+            "carbs_g": 96.75,
+            "fat_g": 20.7
+          },
+          "score": {
+            "price": -1.0125,
+            "price_over_budget": 0.0,
+            "protein_density": 0.7241379310344828,
+            "protein_value": 0.19444444444444445,
+            "protein": -2.22,
+            "energy": 0.0,
+            "total": -2.3139
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Stuffed Pasta in Herb Sauce",
+          "reason": "Delicate pasta pockets paired with smooth pumpkin soup",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Teigtaschen gefüllt mit Steinpilzen und Frischkäse in Kräutersauce",
+              "name_en": "Pasta pockets stuffed with porcini mushrooms and cream cheese in herb sauce",
+              "station": "Pasta",
               "role": "main",
               "texture": "saucy",
               "count": 2,
@@ -838,262 +900,292 @@
                 "GlW",
                 "Mi"
               ],
-              "additives": [],
+              "additives": [
+                "Kn"
+              ],
               "standing": false,
               "diet": "vegetarian",
-              "id": "2d189e5c5c52efeb",
+              "id": "4e7896a856c2a20b",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 17.4
+              "kcal": 495.0,
+              "protein_g": 15.0
             },
             {
-              "name": "Französische Zwiebelsuppe mit Croûtons",
-              "name_en": "French onion soup with croutons",
+              "name": "Vegane Kürbiscremesuppe",
+              "name_en": "Vegan pumpkin cream soup",
               "station": "Unspecified",
               "role": "soup",
               "texture": "liquid",
-              "count": 1,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 50,
+              "weight_g": 300,
+              "price_cents": 99,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "Sw"
-              ],
-              "additives": [
-                "5",
-                "99"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "4923698dab137b05",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 82.5,
-              "protein_g": 3.15
-            }
-          ],
-          "total": {
-            "price_cents": 320,
-            "price_eur": 3.2,
-            "weight_g": 450,
-            "kcal": 637.5,
-            "protein_g": 20.55,
-            "carbs_g": 84.0,
-            "fat_g": 24.0
-          },
-          "score": {
-            "price": -1.6,
-            "energy_value": 0.796875,
-            "energy": 0.058333333333333334,
-            "protein": 0.007333333333333295,
-            "total": -0.7375
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Tofu Pasta with Onion Soup",
-          "reason": "Budget conscious hot pasta meal paired with classic savory soup",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Vegane Pasta mit Räuchertofu",
-              "name_en": "Vegan pasta with smoked tofu",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl",
                 "So"
               ],
               "additives": [],
               "standing": false,
-              "diet": "vegan",
-              "id": "69a95c68d4adfda1",
+              "diet": "vegetarian",
+              "id": "7771fe0214c22340",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 465.0,
-              "protein_g": 20.4
+              "kcal": 144.0,
+              "protein_g": 3.3
+            }
+          ],
+          "total": {
+            "price_cents": 369,
+            "price_eur": 3.69,
+            "weight_g": 600,
+            "kcal": 639.0,
+            "protein_g": 18.3,
+            "carbs_g": 75.9,
+            "fat_g": 29.4
+          },
+          "score": {
+            "price": -0.9225,
+            "price_over_budget": 0.0,
+            "protein_density": 0.715962441314554,
+            "protein_value": 0.20663956639566397,
+            "protein": -2.3399999999999994,
+            "energy": 0.0,
+            "total": -2.3399
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Currywurst with Rice",
+          "reason": "Affordable grilled sausage served with plain rice",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Currywurst mit Honig-Ingwer-Ketchup (1 Stück)",
+              "name_en": "Currywurst with honey-ginger ketchup (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 230,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "8",
+                "11"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "6a0e523e2e635dcd",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 470.0,
+              "protein_g": 22.0
             },
             {
-              "name": "Französische Zwiebelsuppe mit Croûtons",
-              "name_en": "French onion soup with croutons",
-              "station": "Unspecified",
-              "role": "soup",
-              "texture": "liquid",
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
               "count": 1,
               "unit": "scoop",
               "weight_g": 150,
-              "price_cents": 50,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 365,
+            "price_eur": 3.65,
+            "weight_g": 350,
+            "kcal": 665.0,
+            "protein_g": 26.05,
+            "carbs_g": 69.0,
+            "fat_g": 30.45
+          },
+          "score": {
+            "price": -1.825,
+            "price_over_budget": 0.0,
+            "energy_value": 0.7287671232876712,
+            "energy": 0.07666666666666666,
+            "protein": 0.08066666666666668,
+            "total": -0.9389
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Crispy Mushroom Pizza",
+          "reason": "Budget friendly full pizza topped with mushrooms",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
                 "Gl",
+                "GlG",
                 "GlW",
                 "Mi",
-                "Sw"
+                "So"
               ],
-              "additives": [
-                "5",
-                "99"
-              ],
+              "additives": [],
               "standing": false,
               "diet": "vegetarian",
-              "id": "4923698dab137b05",
-              "serving": "1 scoop",
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 82.5,
-              "protein_g": 3.15
+              "kcal": 860.0,
+              "protein_g": 34.0
             }
           ],
           "total": {
-            "price_cents": 320,
-            "price_eur": 3.2,
-            "weight_g": 450,
-            "kcal": 547.5,
-            "protein_g": 23.55,
-            "carbs_g": 74.1,
-            "fat_g": 16.8
+            "price_cents": 450,
+            "price_eur": 4.5,
+            "weight_g": 400,
+            "kcal": 860.0,
+            "protein_g": 34.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
           },
           "score": {
-            "price": -1.6,
-            "energy_value": 0.684375,
-            "energy": -0.025,
-            "protein": 0.047333333333333304,
-            "total": -0.8933
+            "price": -2.25,
+            "price_over_budget": 0.0,
+            "energy_value": 0.7644444444444445,
+            "energy": 0.20666666666666667,
+            "protein": 0.18666666666666668,
+            "total": -1.0922
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Bacon Pasta and Berry Mousse",
-          "reason": "Cost effective combination of rich pasta and a sweet chilled treat",
+          "title": "Porcini Stuffed Pasta",
+          "reason": "Creamy pasta pockets filling your plate affordably",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Pasta mit Speck und Gemüse",
-              "name_en": "Pasta with bacon and vegetables",
-              "station": "Unspecified",
+              "name": "Teigtaschen gefüllt mit Steinpilzen und Frischkäse in Kräutersauce",
+              "name_en": "Pasta pockets stuffed with porcini mushrooms and cream cheese in herb sauce",
+              "station": "Pasta",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "4e7896a856c2a20b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 742.5,
+            "protein_g": 22.5,
+            "carbs_g": 87.75,
+            "fat_g": 33.75
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.7333333333333334,
+            "energy": 0.12833333333333333,
+            "protein": 0.03333333333333333,
+            "total": -1.13
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato Chili and Rice",
+          "reason": "Spicy potato stew paired with simple white rice",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pikantes Kartoffelchili",
+              "name_en": "Spicy potato chili",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2",
-                "3",
-                "8"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "d70c31a3e695187e",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 495.0,
-              "protein_g": 16.5
-            },
-            {
-              "name": "Mousse Heidelbeermousse",
-              "name_en": "Blueberry mousse",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 125,
-              "price_cents": 213,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [
-                "14"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "0c2019e4871f1072",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 243.75,
-              "protein_g": 4.0
-            }
-          ],
-          "total": {
-            "price_cents": 483,
-            "price_eur": 4.83,
-            "weight_g": 425,
-            "kcal": 738.75,
-            "protein_g": 20.5,
-            "carbs_g": 89.88,
-            "fat_g": 33.25
-          },
-          "score": {
-            "price": -2.415,
-            "energy_value": 0.6118012422360248,
-            "energy": 0.12583333333333332,
-            "protein": 0.006666666666666667,
-            "total": -1.6707
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Fish Fillet with Extra Rice",
-          "reason": "Wholesome seafood plate filled out cheaply with double rice scoops",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Mariniertes Zanderfilet (1 Stück) mit Zitrone, Chilli und Koriander",
-              "name_en": "Marinated pike-perch fillet (1 piece) with lemon, chili and coriander",
-              "station": "Fisch",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 276,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Fi",
-                "Gl",
-                "GlW"
-              ],
+              "allergens": [],
               "additives": [],
               "standing": false,
-              "diet": "fish",
-              "id": "ffb8eafedb67e7e1",
-              "serving": "1 piece",
+              "diet": "vegan",
+              "id": "0c23b3d0fb93234b",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 161.0,
-              "protein_g": 25.9
+              "kcal": 382.5,
+              "protein_g": 12.6
             },
             {
               "name": "Reis",
@@ -1121,99 +1213,105 @@
             }
           ],
           "total": {
-            "price_cents": 546,
-            "price_eur": 5.46,
-            "weight_g": 440.0,
-            "kcal": 551.0,
-            "protein_g": 34.0,
-            "carbs_g": 85.4,
-            "fat_g": 6.5
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 772.5,
+            "protein_g": 20.7,
+            "carbs_g": 144.75,
+            "fat_g": 9.0
           },
           "score": {
-            "price": -2.73,
-            "energy_value": 0.40366300366300367,
-            "energy": 0.0006666666666666668,
-            "protein": 0.18666666666666668,
-            "total": -2.139
+            "price": -2.095,
+            "price_over_budget": 0.0,
+            "energy_value": 0.7374701670644391,
+            "energy": 0.14833333333333334,
+            "protein": 0.009333333333333325,
+            "total": -1.1999
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Turkey Schnitzel and Mousse",
-          "reason": "Filling poultry dish combined with dessert while maintaining low cost",
+          "title": "Cevapcici Plate with Rice",
+          "reason": "Tasty grilled meat kebabs paired with savory rice",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Truthahnschnitzel (1 Stück) mit Ajvar und Kartoffeln aus dem Ofen",
-              "name_en": "Turkey schnitzel (1 piece) with ajvar and oven-baked potatoes",
-              "station": "Grill",
+              "name": "Cevapcici (5 Stück) mit Ajvar",
+              "name_en": "Cevapcici (5 pieces) with ajvar",
+              "station": "Fleisch",
               "role": "main",
-              "texture": "dry",
+              "texture": "saucy",
               "count": 1,
               "unit": "piece",
-              "weight_g": 400.0,
-              "price_cents": 460,
+              "weight_g": 210.0,
+              "price_cents": 289,
               "is_vegan": false,
-              "markers": [],
+              "markers": [
+                "R"
+              ],
               "allergens": [
+                "Ei",
                 "Gl",
-                "GlW"
+                "GlW",
+                "Sf",
+                "Sl",
+                "So"
               ],
               "additives": [
                 "Kn"
               ],
               "standing": false,
               "diet": "meat",
-              "id": "56496800bf4857af",
+              "id": "82c13d752b1a4b66",
               "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 660.0,
-              "protein_g": 42.0
+              "kcal": 451.5,
+              "protein_g": 28.35
             },
             {
-              "name": "Mousse Heidelbeermousse",
-              "name_en": "Blueberry mousse",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
               "count": 1,
-              "unit": "piece",
-              "weight_g": 125,
-              "price_cents": 213,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Mi"
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
               ],
-              "additives": [
-                "14"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "0c2019e4871f1072",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 243.75,
-              "protein_g": 4.0
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 673,
-            "price_eur": 6.73,
-            "weight_g": 525.0,
-            "kcal": 903.75,
-            "protein_g": 46.0,
-            "carbs_g": 86.88,
-            "fat_g": 40.95
+            "price_cents": 424,
+            "price_eur": 4.24,
+            "weight_g": 360.0,
+            "kcal": 646.5,
+            "protein_g": 32.4,
+            "carbs_g": 52.5,
+            "fat_g": 33.0
           },
           "score": {
-            "price": -3.365,
-            "energy_value": 0.537147102526003,
-            "energy": 0.23583333333333334,
-            "protein": 0.3466666666666667,
-            "total": -2.2454
+            "price": -2.12,
+            "price_over_budget": 0.0,
+            "energy_value": 0.6099056603773585,
+            "energy": 0.06433333333333334,
+            "protein": 0.16533333333333333,
+            "total": -1.2804
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         }
       ]
     },
@@ -1225,189 +1323,59 @@
       "note": null,
       "plates": [
         {
-          "title": "Savory Pasta with Rice",
-          "reason": "Carb loaded meal combining savory pasta with an extra side of rice",
+          "title": "Loaded Sweet Potato Feast",
+          "reason": "Filling potato chili paired with roasted sweet potatoes and rice",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Pasta mit Speck und Gemüse",
-              "name_en": "Pasta with bacon and vegetables",
-              "station": "Unspecified",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2",
-                "3",
-                "8"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "d70c31a3e695187e",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 742.5,
-              "protein_g": 24.75
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 540,
-            "price_eur": 5.4,
-            "weight_g": 600,
-            "kcal": 937.5,
-            "protein_g": 28.8,
-            "carbs_g": 136.5,
-            "fat_g": 29.7
-          },
-          "score": {
-            "energy_value": 1.3888888888888886,
-            "protein_value": 0.4444444444444444,
-            "energy": 1.4583333333333333,
-            "total": 3.2917
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Smoked Tofu Pasta with Rice",
-          "reason": "High protein tofu pasta coupled with fluffy rice for heavy fuel",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Vegane Pasta mit Räuchertofu",
-              "name_en": "Vegan pasta with smoked tofu",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "69a95c68d4adfda1",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 697.5,
-              "protein_g": 30.6
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 540,
-            "price_eur": 5.4,
-            "weight_g": 600,
-            "kcal": 892.5,
-            "protein_g": 34.65,
-            "carbs_g": 137.4,
-            "fat_g": 21.15
-          },
-          "score": {
-            "energy_value": 1.3222222222222222,
-            "protein_value": 0.5347222222222222,
-            "energy": 1.3083333333333333,
-            "total": 3.1653
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Potato Stew with Rice",
-          "reason": "Filling hearty potato stew combined with double portions of rice",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Kartoffeleintopf mit Majoran",
-              "name_en": "Potato stew with marjoram",
+              "name": "Pikantes Kartoffelchili",
+              "name_en": "Spicy potato chili",
               "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "0c23b3d0fb93234b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 12.6
+            },
+            {
+              "name": "Gegrillte Süßkartoffeln aus dem Ofen mit Kräuterdip",
+              "name_en": "Oven-roasted sweet potatoes with herb dip",
+              "station": "Vegetarisch/fleischlos",
               "role": "main",
               "texture": "saucy",
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
-              "price_cents": 99,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [
-                "Sl"
+                "Mi"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "a9f9e701a2e7aeb0",
+              "id": "4f8496218f3725db",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 204.0,
-              "protein_g": 6.3
+              "kcal": 405.0,
+              "protein_g": 7.5
             },
             {
               "name": "Reis",
@@ -1435,19 +1403,22 @@
             }
           ],
           "total": {
-            "price_cents": 369,
-            "price_eur": 3.69,
-            "weight_g": 600,
-            "kcal": 594.0,
-            "protein_g": 14.4,
-            "carbs_g": 117.6,
-            "fat_g": 5.4
+            "price_cents": 689,
+            "price_eur": 6.89,
+            "weight_g": 1050,
+            "kcal": 1177.5,
+            "protein_g": 28.2,
+            "carbs_g": 198.75,
+            "fat_g": 25.5
           },
           "score": {
-            "energy_value": 1.2878048780487805,
-            "protein_value": 0.32520325203252026,
-            "energy": 0.31333333333333335,
-            "total": 1.9263
+            "price": -3.445,
+            "price_over_budget": 0.0,
+            "energy_value": 0.170899854862119,
+            "protein_value": 0.1705370101596517,
+            "protein": 4.2299999999999995,
+            "energy": 0.5645833333333333,
+            "total": 1.691
           },
           "has_estimated_prices": true
         }
@@ -1461,286 +1432,109 @@
       "note": null,
       "plates": [
         {
-          "title": "Smoked Tofu Pasta",
-          "reason": "Pure plant based protein pasta meal with no excess calorie additions",
+          "title": "Spicy Potato Chili with Rice",
+          "reason": "Light portion of spiced potato stew served with rice",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Vegane Pasta mit Räuchertofu",
-              "name_en": "Vegan pasta with smoked tofu",
-              "station": "Pasta",
+              "name": "Pikantes Kartoffelchili",
+              "name_en": "Spicy potato chili",
+              "station": "Studitopf",
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 405,
+              "price_cents": 149,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl",
-                "So"
-              ],
+              "allergens": [],
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "69a95c68d4adfda1",
+              "id": "0c23b3d0fb93234b",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 697.5,
-              "protein_g": 30.6
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 697.5,
-            "protein_g": 30.6,
-            "carbs_g": 95.4,
-            "fat_g": 20.7
-          },
-          "score": {
-            "protein_density": 1.0967741935483872,
-            "protein_value": 0.3148148148148148,
-            "protein": 0.02000000000000005,
-            "energy": 0.0,
-            "total": 1.4316
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Potato Stew and Pasta Mix",
-          "reason": "Balanced combination of warming stew and simple savory pasta",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Kartoffeleintopf mit Majoran",
-              "name_en": "Potato stew with marjoram",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 99,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "a9f9e701a2e7aeb0",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 204.0,
-              "protein_g": 6.3
+              "kcal": 382.5,
+              "protein_g": 12.6
             },
             {
-              "name": "Pasta mit Speck und Gemüse",
-              "name_en": "Pasta with bacon and vegetables",
-              "station": "Unspecified",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2",
-                "3",
-                "8"
-              ],
-              "standing": false,
+              "allergens": [],
+              "additives": [],
+              "standing": true,
               "diet": "vegan",
-              "id": "d70c31a3e695187e",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 495.0,
-              "protein_g": 16.5
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 369,
-            "price_eur": 3.69,
+            "price_cents": 284,
+            "price_eur": 2.84,
             "weight_g": 600,
-            "kcal": 699.0,
-            "protein_g": 22.8,
-            "carbs_g": 96.6,
-            "fat_g": 24.0
+            "kcal": 577.5,
+            "protein_g": 16.65,
+            "carbs_g": 102.75,
+            "fat_g": 8.55
           },
           "score": {
-            "protein_density": 0.8154506437768241,
-            "protein_value": 0.25745257452574527,
-            "protein": -1.44,
+            "price": -0.71,
+            "price_over_budget": 0.0,
+            "protein_density": 0.7207792207792207,
+            "protein_value": 0.2442781690140845,
+            "protein": -2.6700000000000004,
             "energy": 0.0,
-            "total": -0.3671
+            "total": -2.4149
           },
-          "has_estimated_prices": false
-        }
-      ]
-    },
-    "budget_vegan": {
-      "state": "ready",
-      "goal": "budget",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
-      "plates": [
+          "has_estimated_prices": true
+        },
         {
-          "title": "Smoked Tofu Pasta",
-          "reason": "Nutritious and very economical protein packed pasta plate",
+          "title": "Roasted Sweet Potato and Rice",
+          "reason": "Seasoned sweet potato scoop served over white rice",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Vegane Pasta mit Räuchertofu",
-              "name_en": "Vegan pasta with smoked tofu",
-              "station": "Pasta",
+              "name": "Gegrillte Süßkartoffeln aus dem Ofen mit Kräuterdip",
+              "name_en": "Oven-roasted sweet potatoes with herb dip",
+              "station": "Vegetarisch/fleischlos",
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [
-                "Gl",
-                "GlW",
-                "Sl",
-                "So"
+                "Mi"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "69a95c68d4adfda1",
-              "serving": "3 scoops",
+              "id": "4f8496218f3725db",
+              "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 697.5,
-              "protein_g": 30.6
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 697.5,
-            "protein_g": 30.6,
-            "carbs_g": 95.4,
-            "fat_g": 20.7
-          },
-          "score": {
-            "price": -2.025,
-            "energy_value": 0.6888888888888889,
-            "energy": 0.09833333333333333,
-            "protein": 0.14133333333333337,
-            "total": -1.0964
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Hearty Pasta Dish",
-          "reason": "Low cost generous portion of filling hot savory pasta",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta mit Speck und Gemüse",
-              "name_en": "Pasta with bacon and vegetables",
-              "station": "Unspecified",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2",
-                "3",
-                "8"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "d70c31a3e695187e",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 742.5,
-              "protein_g": 24.75
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 742.5,
-            "protein_g": 24.75,
-            "carbs_g": 94.5,
-            "fat_g": 29.25
-          },
-          "score": {
-            "price": -2.025,
-            "energy_value": 0.7333333333333334,
-            "energy": 0.12833333333333333,
-            "protein": 0.06333333333333334,
-            "total": -1.1
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Potato Stew with Rice",
-          "reason": "Inexpensive comforting stew paired with double rice portions",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Kartoffeleintopf mit Majoran",
-              "name_en": "Potato stew with marjoram",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 99,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "a9f9e701a2e7aeb0",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 204.0,
-              "protein_g": 6.3
+              "kcal": 202.5,
+              "protein_g": 3.75
             },
             {
               "name": "Reis",
@@ -1768,22 +1562,108 @@
             }
           ],
           "total": {
-            "price_cents": 369,
-            "price_eur": 3.69,
-            "weight_g": 600,
-            "kcal": 594.0,
-            "protein_g": 14.4,
-            "carbs_g": 117.6,
-            "fat_g": 5.4
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 592.5,
+            "protein_g": 11.85,
+            "carbs_g": 111.0,
+            "fat_g": 9.15
           },
           "score": {
-            "price": -1.845,
-            "energy_value": 0.6439024390243903,
-            "energy": 0.029333333333333336,
-            "protein": -1.1200000000000003,
-            "total": -2.2918
+            "price": -1.0125,
+            "price_over_budget": 0.0,
+            "protein_density": 0.5,
+            "protein_value": 0.12191358024691358,
+            "protein": -3.63,
+            "energy": 0.0,
+            "total": -4.0206
           },
           "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Hearty Potato Duo",
+          "reason": "Economical combination of spicy chili and roasted sweet potatoes",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pikantes Kartoffelchili",
+              "name_en": "Spicy potato chili",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "0c23b3d0fb93234b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 12.6
+            },
+            {
+              "name": "Gegrillte Süßkartoffeln aus dem Ofen mit Kräuterdip",
+              "name_en": "Oven-roasted sweet potatoes with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "4f8496218f3725db",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 405.0,
+              "protein_g": 7.5
+            }
+          ],
+          "total": {
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 787.5,
+            "protein_g": 20.1,
+            "carbs_g": 114.75,
+            "fat_g": 24.6
+          },
+          "score": {
+            "price": -2.095,
+            "price_over_budget": 0.0,
+            "energy_value": 0.7517899761336515,
+            "energy": 0.15833333333333333,
+            "protein": 0.0013333333333333524,
+            "total": -1.1835
+          },
+          "has_estimated_prices": false
         }
       ]
     }
@@ -1791,16 +1671,16 @@
   "extras": {
     "all": [
       {
-        "name": "Französische Zwiebelsuppe mit Croûtons",
-        "name_en": "French onion soup with croutons",
+        "name": "Vegane Kürbiscremesuppe",
+        "name_en": "Vegan pumpkin cream soup",
         "station": "Unspecified",
         "weight_g": 300,
         "price_cents": 99,
         "is_vegan": false,
         "diet": "vegetarian",
         "serving": "2 scoops",
-        "kcal": 165.0,
-        "protein_g": 6.3,
+        "kcal": 144.0,
+        "protein_g": 3.3,
         "price_source": "eat-api"
       },
       {
@@ -1817,20 +1697,20 @@
         "price_source": "eat-api"
       },
       {
-        "name": "Mousse Heidelbeermousse",
-        "name_en": "Blueberry mousse",
+        "name": "Mousse Heidelbeer-Geschmack",
+        "name_en": "Blueberry-flavored mousse",
         "station": "Dessert (Glas)",
-        "weight_g": 125,
-        "price_cents": 213,
+        "weight_g": 120.0,
+        "price_cents": 208,
         "is_vegan": false,
         "diet": "meat",
         "serving": "1 piece",
-        "kcal": 243.75,
-        "protein_g": 4.0,
+        "kcal": 174.0,
+        "protein_g": 3.6,
         "price_source": "eat-api"
       }
     ],
     "vegan": []
   },
-  "generated_on": "2026-11-06"
+  "generated_on": "2026-11-09"
 }

@@ -10,25 +10,58 @@
   "menu_count": 8,
   "scoring": {
     "bulk": {
+      "price": {
+        "metric": "price",
+        "weight": -2,
+        "normalizer": 4
+      },
+      "price_over_budget": {
+        "quantity": "price",
+        "pivot": 7,
+        "reverse": true,
+        "up": 0,
+        "down": 1,
+        "normalizer": 1
+      },
       "energy_value": {
         "metric": "kcal_per_euro",
-        "weight": 2,
+        "weight": 0.25,
         "normalizer": 250
       },
       "protein_value": {
         "metric": "protein_per_euro",
-        "weight": 1,
+        "weight": 0.5,
         "normalizer": 12
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 0,
+        "up": 1.5,
+        "down": 1.5,
+        "normalizer": 10
       },
       "energy": {
         "quantity": "kcal",
         "pivot": 500,
-        "up": 1,
+        "up": 0.25,
         "down": 3,
         "normalizer": 300
       }
     },
     "cut": {
+      "price": {
+        "metric": "price",
+        "weight": -1,
+        "normalizer": 4
+      },
+      "price_over_budget": {
+        "quantity": "price",
+        "pivot": 7,
+        "reverse": true,
+        "up": 0,
+        "down": 1,
+        "normalizer": 1
+      },
       "protein_density": {
         "metric": "protein_per_100kcal",
         "weight": 2,
@@ -61,6 +94,14 @@
         "weight": -2,
         "normalizer": 4
       },
+      "price_over_budget": {
+        "quantity": "price",
+        "pivot": 7,
+        "reverse": true,
+        "up": 0,
+        "down": 1,
+        "normalizer": 1
+      },
       "energy_value": {
         "metric": "kcal_per_euro",
         "weight": 1,
@@ -82,7 +123,6 @@
       }
     }
   },
-  "max_plate_g": 650,
   "default_scoop_g": 150,
   "nutrition_note": "Nutrition values are estimates.",
   "variants": {
@@ -94,8 +134,88 @@
       "note": null,
       "plates": [
         {
-          "title": "Pollock Strudel Lunch",
-          "reason": "Provides a very calorie-rich fish combo with a large dessert.",
+          "title": "Stew and Apple Strudel",
+          "reason": "Hearty vegetable stew combined with sweet warm apple strudel.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Bauerneintopf",
+              "name_en": "Farmer's stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "f5a8823296f309ab",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Apfelstrudel mit Vanillesauce",
+              "name_en": "Apple strudel with vanilla sauce",
+              "station": "Süßspeise",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "d6589b2de2f0b26c",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 495.0,
+              "protein_g": 7.5
+            }
+          ],
+          "total": {
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 877.5,
+            "protein_g": 27.75,
+            "carbs_g": 109.5,
+            "fat_g": 35.1
+          },
+          "score": {
+            "price": -2.095,
+            "price_over_budget": 0.0,
+            "energy_value": 0.20942720763723147,
+            "protein_value": 0.27595465393794744,
+            "protein": 4.1625,
+            "energy": 0.3145833333333333,
+            "total": 2.8675
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Crispy Pollock with Rice and Dessert",
+          "reason": "Tender fish fillet paired with rice and smooth vanilla cream.",
           "picked_by": "rules",
           "items": [
             {
@@ -128,272 +248,6 @@
               "price_source": "eat-api",
               "kcal": 440.0,
               "protein_g": 23.0
-            },
-            {
-              "name": "Apfelstrudel mit Vanillesauce",
-              "name_en": "Apple strudel with vanilla sauce",
-              "station": "Süßspeise",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "d6589b2de2f0b26c",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 495.0,
-              "protein_g": 7.5
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 735,
-            "price_eur": 7.35,
-            "weight_g": 650,
-            "kcal": 1130.0,
-            "protein_g": 34.55,
-            "carbs_g": 143.5,
-            "fat_g": 44.45
-          },
-          "score": {
-            "energy_value": 1.2299319727891156,
-            "protein_value": 0.39172335600907027,
-            "energy": 2.1,
-            "total": 3.7217
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Gorgonzola Pasta Feast",
-          "reason": "Rich pasta dish complemented with a warm apple pastry.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta mit Gorgonzola-Sauce mit Birne",
-              "name_en": "Pasta with gorgonzola sauce and pear",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [
-                "15"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "fde2ab36c6997e45",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 787.5,
-              "protein_g": 24.75
-            },
-            {
-              "name": "Apfelstrudel mit Vanillesauce",
-              "name_en": "Apple strudel with vanilla sauce",
-              "station": "Süßspeise",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "d6589b2de2f0b26c",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 247.5,
-              "protein_g": 3.75
-            }
-          ],
-          "total": {
-            "price_cents": 640,
-            "price_eur": 6.4,
-            "weight_g": 600,
-            "kcal": 1035.0,
-            "protein_g": 28.5,
-            "carbs_g": 131.25,
-            "fat_g": 42.75
-          },
-          "score": {
-            "energy_value": 1.29375,
-            "protein_value": 0.37109375,
-            "energy": 1.7833333333333334,
-            "total": 3.4482
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Hearty Stew and Strudel",
-          "reason": "Wholesome stew paired with an indulgent sweet dessert.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Bauerneintopf",
-              "name_en": "Farmer's stew",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 99,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "f5a8823296f309ab",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 255.0,
-              "protein_g": 13.5
-            },
-            {
-              "name": "Apfelstrudel mit Vanillesauce",
-              "name_en": "Apple strudel with vanilla sauce",
-              "station": "Süßspeise",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "d6589b2de2f0b26c",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 495.0,
-              "protein_g": 7.5
-            }
-          ],
-          "total": {
-            "price_cents": 369,
-            "price_eur": 3.69,
-            "weight_g": 600,
-            "kcal": 750.0,
-            "protein_g": 21.0,
-            "carbs_g": 97.5,
-            "fat_g": 29.4
-          },
-          "score": {
-            "energy_value": 1.6260162601626016,
-            "protein_value": 0.4742547425474255,
-            "energy": 0.8333333333333334,
-            "total": 2.9336
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Cauliflower and Rice Combo",
-          "reason": "Satisfying vegetarian bake paired with rice and cream.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Blumenkohlauflauf mit Currydip",
-              "name_en": "Cauliflower casserole with curry dip",
-              "station": "Vegetarisch/fleischlos",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1",
-                "9"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "a8d25e128f086dba",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 172.5,
-              "protein_g": 7.8
             },
             {
               "name": "Vanillecreme",
@@ -427,93 +281,6 @@
               "station": "Beilagen",
               "role": "side",
               "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 527,
-            "price_eur": 5.27,
-            "weight_g": 585.0,
-            "kcal": 744.75,
-            "protein_g": 19.95,
-            "carbs_g": 120.0,
-            "fat_g": 18.52
-          },
-          "score": {
-            "energy_value": 1.1305502846299813,
-            "protein_value": 0.31546489563567365,
-            "energy": 0.8158333333333333,
-            "total": 2.2618
-          },
-          "has_estimated_prices": true
-        }
-      ]
-    },
-    "cut_all": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Crispy Fish Plate",
-          "reason": "Lean fish meal paired simply with steamed rice.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
-              "name_en": "Breaded pollock (1 piece) with remoulade sauce",
-              "station": "Fisch",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 200,
-              "price_cents": 330,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Ei",
-                "Fi",
-                "Gl",
-                "GlW",
-                "Mi",
-                "Sf"
-              ],
-              "additives": [
-                "9"
-              ],
-              "standing": false,
-              "diet": "fish",
-              "id": "9c76261ce69141a0",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 440.0,
-              "protein_g": 23.0
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
               "count": 1,
               "unit": "scoop",
               "weight_g": 150,
@@ -534,26 +301,28 @@
             }
           ],
           "total": {
-            "price_cents": 465,
-            "price_eur": 4.65,
-            "weight_g": 350,
-            "kcal": 635.0,
-            "protein_g": 27.05,
-            "carbs_g": 70.0,
-            "fat_g": 26.45
+            "price_cents": 587,
+            "price_eur": 5.87,
+            "weight_g": 485.0,
+            "kcal": 817.25,
+            "protein_g": 31.1,
+            "carbs_g": 94.3,
+            "fat_g": 33.88
           },
           "score": {
-            "protein_density": 1.0649606299212597,
-            "protein_value": 0.24238351254480284,
-            "protein": -0.5899999999999999,
-            "energy": 0.0,
-            "total": 0.7173
+            "price": -2.935,
+            "price_over_budget": 0.0,
+            "energy_value": 0.13922487223168653,
+            "protein_value": 0.22075525269733107,
+            "protein": 4.665000000000001,
+            "energy": 0.264375,
+            "total": 2.3544
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Curry Cauliflower Bowl",
-          "reason": "Packed with vegetable bake and rice for clean fuel.",
+          "title": "Cauliflower Bake and Strudel",
+          "reason": "Savory baked cauliflower with curry sauce and sweet pastry.",
           "picked_by": "rules",
           "items": [
             {
@@ -614,29 +383,148 @@
               "price_source": "config",
               "kcal": 195.0,
               "protein_g": 4.05
+            },
+            {
+              "name": "Apfelstrudel mit Vanillesauce",
+              "name_en": "Apple strudel with vanilla sauce",
+              "station": "Süßspeise",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "d6589b2de2f0b26c",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 247.5,
+              "protein_g": 3.75
             }
           ],
           "total": {
-            "price_cents": 540,
-            "price_eur": 5.4,
-            "weight_g": 600,
-            "kcal": 712.5,
-            "protein_g": 27.45,
-            "carbs_g": 77.1,
-            "fat_g": 31.05
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 960.0,
+            "protein_g": 31.2,
+            "carbs_g": 113.85,
+            "fat_g": 40.05
           },
           "score": {
-            "protein_density": 0.9631578947368422,
-            "protein_value": 0.21180555555555555,
-            "protein": -0.5100000000000001,
-            "energy": -0.125,
-            "total": 0.54
+            "price": -3.375,
+            "price_over_budget": 0.0,
+            "energy_value": 0.14222222222222222,
+            "protein_value": 0.19259259259259257,
+            "protein": 4.68,
+            "energy": 0.38333333333333336,
+            "total": 2.0231
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Lean Stew with Dessert",
-          "reason": "Low calorie traditional stew with a light dessert cup.",
+          "title": "Gorgonzola Pasta and Vanilla Cream",
+          "reason": "Rich cheesy pasta balanced by a light creamy dessert.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pasta mit Gorgonzola-Sauce mit Birne",
+              "name_en": "Pasta with gorgonzola sauce and pear",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "15"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "fde2ab36c6997e45",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 787.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Vanillecreme",
+              "name_en": "Vanilla cream dessert",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 135.0,
+              "price_cents": 122,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "6ad333ffee28d7c6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 182.25,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 627,
+            "price_eur": 6.27,
+            "weight_g": 585.0,
+            "kcal": 969.75,
+            "protein_g": 28.8,
+            "carbs_g": 118.8,
+            "fat_g": 41.17
+          },
+          "score": {
+            "price": -3.135,
+            "price_over_budget": 0.0,
+            "energy_value": 0.15466507177033495,
+            "protein_value": 0.19138755980861244,
+            "protein": 4.32,
+            "energy": 0.39145833333333335,
+            "total": 1.9225
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Farmer Stew with Vanilla Cream",
+          "reason": "Wholesome vegetable stew finished with a small sweet treat.",
           "picked_by": "rules",
           "items": [
             {
@@ -702,17 +590,189 @@
             "fat_g": 24.53
           },
           "score": {
+            "price": -0.6775,
+            "price_over_budget": 0.0,
             "protein_density": 1.0756972111553786,
             "protein_value": 0.3736162361623616,
             "protein": -1.14,
             "energy": 0.0,
-            "total": 0.3093
+            "total": -0.3682
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Classic Gorgonzola Pasta",
-          "reason": "Simple and filling pasta plate without side extras.",
+          "title": "Breaded Fish and Vanilla Cream",
+          "reason": "Crisp pollock fillet served alongside a light dessert.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+              "name_en": "Breaded pollock (1 piece) with remoulade sauce",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 330,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "9"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "id": "9c76261ce69141a0",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 440.0,
+              "protein_g": 23.0
+            },
+            {
+              "name": "Vanillecreme",
+              "name_en": "Vanilla cream dessert",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 135.0,
+              "price_cents": 122,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "6ad333ffee28d7c6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 182.25,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 452,
+            "price_eur": 4.52,
+            "weight_g": 335.0,
+            "kcal": 622.25,
+            "protein_g": 27.05,
+            "carbs_g": 52.3,
+            "fat_g": 33.42
+          },
+          "score": {
+            "price": -1.13,
+            "price_over_budget": 0.0,
+            "protein_density": 1.0867818400964242,
+            "protein_value": 0.24935471976401183,
+            "protein": -0.5899999999999999,
+            "energy": 0.0,
+            "total": -0.3839
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Cauliflower Casserole with Dessert",
+          "reason": "Spiced vegetable casserole accompanied by a sweet dessert.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Blumenkohlauflauf mit Currydip",
+              "name_en": "Cauliflower casserole with curry dip",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1",
+                "9"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "a8d25e128f086dba",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 23.4
+            },
+            {
+              "name": "Vanillecreme",
+              "name_en": "Vanilla cream dessert",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 135.0,
+              "price_cents": 122,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "6ad333ffee28d7c6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 182.25,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 527,
+            "price_eur": 5.27,
+            "weight_g": 585.0,
+            "kcal": 699.75,
+            "protein_g": 27.45,
+            "carbs_g": 59.4,
+            "fat_g": 38.02
+          },
+          "score": {
+            "price": -1.3175,
+            "price_over_budget": 0.0,
+            "protein_density": 0.9807073954983923,
+            "protein_value": 0.2170303605313093,
+            "protein": -0.5100000000000001,
+            "energy": 0.0,
+            "total": -0.6298
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Gorgonzola and Pear Pasta",
+          "reason": "Savory pasta tossed with tangy gorgonzola and sweet pear.",
           "picked_by": "rules",
           "items": [
             {
@@ -754,11 +814,13 @@
             "fat_g": 33.75
           },
           "score": {
+            "price": -1.2625,
+            "price_over_budget": 0.0,
             "protein_density": 0.7857142857142858,
             "protein_value": 0.2042079207920792,
             "protein": -1.05,
             "energy": -0.875,
-            "total": -0.9351
+            "total": -2.1976
           },
           "has_estimated_prices": false
         }
@@ -772,8 +834,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Budget Stew and Treat",
-          "reason": "Affordable hearty stew paired with a sweet pastry.",
+          "title": "Economy Stew and Pastry",
+          "reason": "Warm stew paired with a small portion of apple strudel.",
           "picked_by": "rules",
           "items": [
             {
@@ -842,6 +904,7 @@
           },
           "score": {
             "price": -1.42,
+            "price_over_budget": 0.0,
             "energy_value": 0.8873239436619719,
             "energy": 0.05333333333333334,
             "protein": 0.05333333333333334,
@@ -850,8 +913,96 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Pollock and Rice Value",
-          "reason": "Wholesome seafood meal that stays well under budget.",
+          "title": "Veggie Casserole and Strudel",
+          "reason": "Curry cauliflower bake combined with a fruity pastry treat.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Blumenkohlauflauf mit Currydip",
+              "name_en": "Cauliflower casserole with curry dip",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1",
+                "9"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "a8d25e128f086dba",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 15.6
+            },
+            {
+              "name": "Apfelstrudel mit Vanillesauce",
+              "name_en": "Apple strudel with vanilla sauce",
+              "station": "Süßspeise",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "d6589b2de2f0b26c",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 247.5,
+              "protein_g": 3.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 592.5,
+            "protein_g": 19.35,
+            "carbs_g": 60.15,
+            "fat_g": 29.4
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.5851851851851853,
+            "energy": 0.028333333333333332,
+            "protein": -0.12999999999999973,
+            "total": -1.5415
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Fish Fillet and Rice",
+          "reason": "Simple combination of crispy breaded fish and fluffy rice.",
           "picked_by": "rules",
           "items": [
             {
@@ -921,6 +1072,7 @@
           },
           "score": {
             "price": -2.325,
+            "price_over_budget": 0.0,
             "energy_value": 0.546236559139785,
             "energy": 0.056666666666666664,
             "protein": 0.09400000000000001,
@@ -929,91 +1081,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Cauliflower Rice Plate",
-          "reason": "Inexpensive vegetarian bake served over fluffy rice.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Blumenkohlauflauf mit Currydip",
-              "name_en": "Cauliflower casserole with curry dip",
-              "station": "Vegetarisch/fleischlos",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1",
-                "9"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "a8d25e128f086dba",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 345.0,
-              "protein_g": 15.6
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 540.0,
-            "protein_g": 19.65,
-            "carbs_g": 65.4,
-            "fat_g": 20.85
-          },
-          "score": {
-            "price": -2.025,
-            "energy_value": 0.5333333333333333,
-            "energy": -0.1,
-            "protein": -0.07000000000000028,
-            "total": -1.6617
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Pasta with Gorgonzola",
-          "reason": "Budget-friendly portion of flavorful cheesy pasta.",
+          "title": "Classic Gorgonzola Pasta",
+          "reason": "Flavorful pasta plate coated in creamy gorgonzola sauce.",
           "picked_by": "rules",
           "items": [
             {
@@ -1056,6 +1125,7 @@
           },
           "score": {
             "price": -2.525,
+            "price_over_budget": 0.0,
             "energy_value": 0.6237623762376238,
             "energy": 0.15833333333333333,
             "protein": 0.06333333333333334,
@@ -1073,8 +1143,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Hearty Vegan Stew Bowl",
-          "reason": "Nutritious farmer stew served over rice for steady energy.",
+          "title": "Hearty Stew with Steamed Rice",
+          "reason": "Filling portion of savory vegan stew served over white rice.",
           "picked_by": "rules",
           "items": [
             {
@@ -1109,10 +1179,10 @@
               "station": "Beilagen",
               "role": "side",
               "texture": "dry",
-              "count": 1,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -1122,26 +1192,29 @@
               "standing": true,
               "diet": "vegan",
               "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
+              "serving": "2 scoops",
               "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 284,
-            "price_eur": 2.84,
-            "weight_g": 600,
-            "kcal": 577.5,
-            "protein_g": 24.3,
-            "carbs_g": 78.0,
-            "fat_g": 17.55
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 772.5,
+            "protein_g": 28.35,
+            "carbs_g": 120.0,
+            "fat_g": 18.0
           },
           "score": {
-            "energy_value": 1.6267605633802817,
-            "protein_value": 0.7130281690140845,
-            "energy": 0.25833333333333336,
-            "total": 2.5981
+            "price": -2.095,
+            "price_over_budget": 0.0,
+            "energy_value": 0.18436754176610978,
+            "protein_value": 0.28192124105011934,
+            "protein": 4.2525,
+            "energy": 0.22708333333333333,
+            "total": 2.8509
           },
           "has_estimated_prices": true
         }
@@ -1155,8 +1228,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Lean Vegan Stew Bowl",
-          "reason": "Low-calorie plant-based stew combined with rice.",
+          "title": "Pure Farmer Stew",
+          "reason": "Simple and clean bowl of comforting vegan vegetable stew.",
           "picked_by": "rules",
           "items": [
             {
@@ -1184,49 +1257,27 @@
               "price_source": "eat-api",
               "kcal": 382.5,
               "protein_g": 20.25
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 284,
-            "price_eur": 2.84,
-            "weight_g": 600,
-            "kcal": 577.5,
-            "protein_g": 24.3,
-            "carbs_g": 78.0,
-            "fat_g": 17.55
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 382.5,
+            "protein_g": 20.25,
+            "carbs_g": 36.0,
+            "fat_g": 17.1
           },
           "score": {
-            "protein_density": 1.051948051948052,
-            "protein_value": 0.35651408450704225,
-            "protein": -1.14,
+            "price": -0.3725,
+            "price_over_budget": 0.0,
+            "protein_density": 1.3235294117647058,
+            "protein_value": 0.5662751677852349,
+            "protein": -1.95,
             "energy": 0.0,
-            "total": 0.2685
+            "total": -0.4327
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         }
       ]
     },
@@ -1238,8 +1289,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Value Vegan Stew Bowl",
-          "reason": "Very affordable combination of rustic stew and rice.",
+          "title": "Farmer Stew with Side Rice",
+          "reason": "Nutritious and affordable vegan stew served with rice.",
           "picked_by": "rules",
           "items": [
             {
@@ -1304,6 +1355,7 @@
           },
           "score": {
             "price": -1.42,
+            "price_over_budget": 0.0,
             "energy_value": 0.8133802816901409,
             "energy": 0.018333333333333333,
             "protein": 0.05733333333333335,
@@ -1345,5 +1397,5 @@
     ],
     "vegan": []
   },
-  "generated_on": "2026-11-06"
+  "generated_on": "2026-11-09"
 }

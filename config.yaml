@@ -37,20 +37,25 @@ portions:
   default_scoop_g: 150
   station_scoop_g: {}  # e.g. {Studitopf: 150, Dessert (Glas): 100}
   max_scoop_g_by_role: {main: 450, side: 300}
-  max_plate_g: 650
 
 scoring:
   bulk:
-    energy_value: {metric: kcal_per_euro, weight: 2, normalizer: 250}
-    protein_value: {metric: protein_per_euro, weight: 1.5, normalizer: 12}
-    energy: {quantity: kcal, pivot: 500, up: 1, down: 3, normalizer: 300}
+    price: {metric: price, weight: -2, normalizer: 4}
+    price_over_budget: {quantity: price, pivot: 7, reverse: true, up: 0, down: 1, normalizer: 1}
+    energy_value: {metric: kcal_per_euro, weight: 0.25, normalizer: 250}
+    protein_value: {metric: protein_per_euro, weight: 0.5, normalizer: 12}
+    protein: {quantity: protein, pivot: 0, up: 1.5, down: 1.5, normalizer: 10}
+    energy: {quantity: kcal, pivot: 500, up: 0.25, down: 3, normalizer: 300}
   cut:
+    price: {metric: price, weight: -1, normalizer: 4}
+    price_over_budget: {quantity: price, pivot: 7, reverse: true, up: 0, down: 1, normalizer: 1}
     protein_density: {metric: protein_per_100kcal, weight: 2, normalizer: 8}
     protein_value: {metric: protein_per_euro, weight: 0.5, normalizer: 12}
     protein: {quantity: protein, pivot: 30, up: 0.5, down: 3, normalizer: 15}
     energy: {quantity: kcal, pivot: 700, reverse: true, up: 0, down: 2, normalizer: 200}
   budget:
     price: {metric: price, weight: -2, normalizer: 4}
+    price_over_budget: {quantity: price, pivot: 7, reverse: true, up: 0, down: 1, normalizer: 1}
     energy_value: {metric: kcal_per_euro, weight: 1, normalizer: 250}
     energy: {quantity: kcal, pivot: 550, up: 0.2, down: 3, normalizer: 300}
     protein: {quantity: protein, pivot: 20, up: 0.2, down: 3, normalizer: 15}

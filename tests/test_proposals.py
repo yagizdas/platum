@@ -82,7 +82,7 @@ def test_validation_unknown_duplicates_soups_dessert_and_vegan(make_dish):
     assert all(meat not in combo for combo in validate_proposals(response, items, vegan=True))
 
 
-def test_proposal_adapter_sends_only_dish_identity_and_instruction(monkeypatch, fixture_menu):
+def test_proposal_adapter_sends_existing_macros_and_requests_15_combinations(monkeypatch, fixture_menu):
     menu, tags = fixture_menu
     items = [food(d, tags) for d in menu["dishes"]]
     model = Mock(return_value={"combos": []})
@@ -90,7 +90,14 @@ def test_proposal_adapter_sends_only_dish_identity_and_instruction(monkeypatch, 
     call_proposals(items, "model", "secret", instruction="Filling trays.")
     prompt, payload, schema, model_name, key = model.call_args.args
     assert "Filling trays." in prompt
-    assert schema["properties"]["combos"]["minItems"] == 8
-    assert schema["properties"]["combos"]["maxItems"] == 12
-    assert all(set(item) == {"id", "name_en", "role", "station", "standing"} for item in payload["dishes"])
+    assert schema["properties"]["combos"]["minItems"] == 15
+    assert schema["properties"]["combos"]["maxItems"] == 15
+    assert "Propose 15 different lunches" in prompt
+    assert "grams per 100 grams of prepared food" in prompt
+    nutrition_fields = {"kcal_per_100g", "protein_per_100g", "carbs_per_100g",
+                        "fat_per_100g", "typical_portion_g", "is_per_piece", "piece_weight_g"}
+    for sent, original in zip(payload["dishes"], items, strict=True):
+        assert set(sent) == {"id", "name_en", "role", "station", "standing"} | nutrition_fields
+        assert sent["id"] == dish_id(original)
+        assert all(sent[field] == original[field] for field in nutrition_fields)
     assert model.call_args.kwargs == {"temperature": 0}

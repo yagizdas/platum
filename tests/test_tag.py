@@ -59,10 +59,11 @@ def test_missing_key_cannot_invent_tags(tmp_path, make_dish):
     assert tag_menu({"dishes": []}, tmp_path / "cache.json", "gemini-3.8-flash") == {}
 
 
-@pytest.mark.parametrize("name", ["Schnitzel (1 Stück) mit Sauce", "Seelachsfilet (1Stück)"])
-def test_explicit_single_piece_cannot_be_tagged_as_scoops(name, make_dish, monkeypatch):
+@pytest.mark.parametrize("name", ["Schnitzel (1 Stück) mit Sauce", "Seelachsfilet (1Stück)",
+                                  "Lammhacksteaks (2 Stück) mit Tsatsiki", "Meatballs (6 Stück)"])
+def test_explicit_piece_count_cannot_be_tagged_as_scoops(name, make_dish, monkeypatch):
     dish, tag = make_dish(name)
-    with pytest.raises(ValueError, match="single-piece"):
+    with pytest.raises(ValueError, match="piece-counted"):
         validate_tag(tag, name=name)
     tag.update(is_per_piece=True, piece_weight_g=200)
     assert validate_tag(tag, name=name) == tag
@@ -75,12 +76,23 @@ def test_explicit_single_piece_cannot_be_tagged_as_scoops(name, make_dish, monke
     assert requests[0]["properties"]["is_per_piece"]["enum"] == [True]
 
 
-def test_explicit_single_piece_rejects_bad_cached_tag(tmp_path, make_dish):
-    dish, tag = make_dish("Schnitzel (1 Stück)")
+@pytest.mark.parametrize("name", ["Schnitzel (1 Stück)", "Meatballs (6 Stück)"])
+def test_explicit_piece_count_rejects_bad_cached_tag(tmp_path, make_dish, name):
+    dish, tag = make_dish(name)
     path = tmp_path / "cache.json"
     path.write_text(json.dumps({normalize(dish["name"]): tag}))
-    with pytest.raises(ValueError, match="single-piece"):
+    with pytest.raises(ValueError, match="piece-counted"):
         tag_menu({"dishes": [dish]}, path, "test-model")
+
+
+@pytest.mark.parametrize("count", [1, 2, 6])
+def test_fresh_piece_count_repairs_to_whole_serving_without_multiplying(make_dish, count):
+    dish, tag = make_dish(f"Meatballs ({count} Stück)", min_g=200, max_g=300)
+    repaired = repair_tag(tag, name=dish["name"])
+    assert repaired["is_per_piece"] is True
+    assert repaired["piece_weight_g"] == 250
+    assert validate_tag(repaired, name=dish["name"]) == repaired
+    assert tag["is_per_piece"] is False
 
 
 def test_gemini_request_schema_header_and_response(monkeypatch, make_dish):

@@ -62,7 +62,7 @@ def portion_options(dish, tag, config, paired=False):
     if item["standing"]:
         item.update(role="side", is_per_piece=False, piece_weight_g=None)
     lo, hi = item["typical_portion_g"]["min"], portion_max_g(item, config)
-    limit = min(hi, config["portions"]["max_plate_g"])
+    limit = hi
     size = scoop_size(item, config)
     if item["is_per_piece"]:
         portions = [(1, item["piece_weight_g"], "piece")] if item["piece_weight_g"] <= limit else []
@@ -83,8 +83,6 @@ def valid_plate(items, config, pairing=None):
     if sum(i["role"] == "soup" for i in items) > 1 or all(i["role"] == "dessert" for i in items):
         return False
     if all(i.get("standing") for i in items):
-        return False
-    if sum(i["weight_g"] for i in items) > config["portions"]["max_plate_g"]:
         return False
     for i in items:
         if i["is_per_piece"]:
@@ -202,7 +200,7 @@ def build_today(menu, cache, config, allow_missing=False, *, pairing=None, no_ll
         raise ValueError(f"{len(missing)} dishes need tagging; run tag.py first. Refusing to pick from a partial menu.")
     result = {k: menu[k] for k in ("date", "mensa", "state", "source", "source_url", "fetched_at", "warnings")}
     result.update(schema_version=SCHEMA_VERSION, menu_count=len(menu["dishes"]), scoring=config["scoring"],
-                  max_plate_g=config["portions"]["max_plate_g"], default_scoop_g=config["portions"]["default_scoop_g"],
+                  default_scoop_g=config["portions"]["default_scoop_g"],
                   nutrition_note="Nutrition values are estimates.", variants={}, extras={"all": [], "vegan": []})
     if missing:
         result["warnings"] = [*result["warnings"], f"{len(missing)} untagged dish(es) omitted from plate recommendations."]

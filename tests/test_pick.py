@@ -20,14 +20,14 @@ def test_golden_lunches(config, fixture_menu, pairing, fixed_caps):
     m, tags = fixture_menu
     result = build_today(m, tags, config, pairing=pairing, no_llm=True, proposals=read_json(FIXTURES / "proposals-v4.json"))
     expected = {
-        "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 1)], 540, 3.725) if fixed_caps else
-                    ([('PINSA Funghi mit frischen Champignons', 1), ('Reis', 2)], 770, 3.3255),
-        "cut_all": ([('Seelachsfilet (1Stück)', 1)], 285, 3.9774),
+        "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 2)], 675, 2.5385) if fixed_caps else
+                    ([('Käsekrainer (1 Stück)', 1), ('Reis', 2)], 496, 2.4547),
+        "cut_all": ([('Seelachsfilet (1Stück)', 1)], 285, 3.2649),
         "budget_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 405, -.9511) if fixed_caps else
                       ([('Käsekrainer (1 Stück)', 1), ('Reis', 1)], 361, -.9974),
-        "bulk_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Asia-Reisbällchen auf Teriyakigemüse', 1)], 540, 3.7727) if fixed_caps else
-                      ([('Asia-Reisbällchen auf Teriyakigemüse', 2), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 540, 3.3583),
-        "cut_vegan": ([('Graupen-Gemüse-Eintopf', 2), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 369, -.7758),
+        "bulk_vegan": ([('Graupen-Gemüse-Eintopf', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 554, 3.4829) if fixed_caps else
+                      ([('Graupen-Gemüse-Eintopf', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 419, 2.6914),
+        "cut_vegan": ([('Graupen-Gemüse-Eintopf', 2), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 369, -1.6983),
         "budget_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Graupen-Gemüse-Eintopf', 1)], 320, -.726),
     }
     for key, (items, price, score) in expected.items():
@@ -39,7 +39,7 @@ def test_golden_lunches(config, fixture_menu, pairing, fixed_caps):
     for v in result["variants"].values():
         for p in v["plates"]:
             assert p["total"]["price_cents"] == sum(i["price_cents"] for i in p["items"])
-            assert p["total"]["weight_g"] <= 650
+            assert p["total"]["weight_g"] == sum(i["weight_g"] for i in p["items"])
 
 
 def test_every_candidate_meets_rules(config, fixture_menu, pairing):
@@ -55,7 +55,7 @@ def test_every_candidate_meets_rules(config, fixture_menu, pairing):
             assert not items[0]["standing"]
         else:
             assert any(i["standing"] for i in items) # deterministic fallback is main + standing side
-        assert p["weight_g"] <= config["portions"]["max_plate_g"]
+        assert p["weight_g"] == sum(i["weight_g"] for i in items)
 
 
 def test_pool_has_one_portioning_per_lunch(config, fixture_menu, pairing):
@@ -171,13 +171,38 @@ def test_friday_fish_can_reach_goals_with_two_scoops_of_rice(config, make_dish):
         assert value["items"][1]["count"] == count
         assert value["kcal"] == (356 if goal == "cut" else 551)
         assert value["protein"] == (29.95 if goal == "cut" else 34)
-    # Both dishes individually fit, but the whole-plate cap still rejects 750g.
+def test_candidates_can_exceed_650g_within_individual_portion_limits(config, make_dish):
     a, at = make_dish("Main A")
     b, bt = make_dish("Main B")
-    a = portion_options(a, at, config)[-1]
-    b = portion_options(b, bt, config)[1]
-    pairing = {"pairs": {pair_key(a, b): {"score": 3}}}
-    assert not valid_plate([a, b], config, pairing)
+    values = list(candidates([a, b], {normalize(a["name"]): at, normalize(b["name"]): bt}, config,
+                             proposals=[[dish_id(a), dish_id(b)]]))
+    large = [p for p in values if p["weight_g"] > 650]
+    assert {p["weight_g"] for p in large} == {750, 900}
+    assert all(valid_plate(p["items"], config) for p in large)
+    assert choose(values, "bulk", config)["weight_g"] > 650
+
+
+def test_piece_over_650g_retains_cached_weight(config, make_dish):
+    d, t = make_dish("Large pizza", station="Pizza", piece=True,
+                     piece_g=700, min_g=650, max_g=750)
+    options = portion_options(d, t, config)
+    assert [(i["count"], i["weight_g"], i["unit"]) for i in options] == [(1, 700, "piece")]
+    assert valid_plate(options, config)
+
+
+@pytest.mark.parametrize("count", [1, 2, 6])
+def test_piece_count_is_one_fixed_serving_with_one_surcharge(config, make_dish, count):
+    d, t = make_dish(f"Meatballs ({count} Stück)", piece=True, piece_g=240,
+                     min_g=200, max_g=300, base=1, rate=.9)
+    values = list(candidates([d], {normalize(d["name"]): t}, config))
+    assert len(values) == 1
+    p = values[0]
+    assert p["items"][0]["count"] == 1
+    assert p["items"][0]["unit"] == "piece"
+    assert p["weight_g"] == 240
+    assert p["price_cents"] == 316
+    assert p["kcal"] == 480
+    assert p["protein"] == 24
 
 
 def test_no_price_cap(config, make_dish):
