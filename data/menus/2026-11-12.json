@@ -6,11 +6,11 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-09T17:45:56.909583+00:00",
+  "fetched_at": "2026-11-10T15:44:21.382519+00:00",
   "warnings": [],
   "dishes": [
     {
-      "name": "Mediterrane Tortellini al forno",
+      "name": "Mediterrane Tortellini mit Tomatensauce und Hartkäse",
       "station": "Pasta",
       "station_raw": "Pasta",
       "markers": [
@@ -27,19 +27,11 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "CELERY",
-        "CEREAL",
-        "GLUTEN",
-        "LACTOSE",
-        "MILK",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {
@@ -61,11 +53,20 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "BARLEY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "SOY",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 5.0,
+        "base_eur": 4.5,
         "per_100g_eur": 0,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -150,6 +151,28 @@
       }
     },
     {
+      "name": "Türkische Linsensuppe mit Kreuzkümmel",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
       "name": "Boeuf Stroganoff mit Senf, Schnitzelgurken und Champignons",
       "station": "Fleisch",
       "station_raw": "Fleisch",
@@ -179,6 +202,39 @@
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
+      }
+    },
+    {
+      "name": "Gekochte Rinderschulter (1 Scheibe) mit Meerrettichsauce",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sf",
+        "Sl",
+        "Sw"
+      ],
+      "additives": [
+        "1",
+        "3",
+        "5",
+        "11"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {
@@ -217,29 +273,29 @@
       }
     },
     {
-      "name": "Schokopudding mit Sahne",
+      "name": "Mousse Walnussgemack mit Beerensauce",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
-      "markers": [
-        "f"
-      ],
+      "markers": [],
       "allergens": [
-        "Mi"
+        "Gl",
+        "GlG",
+        "Mi",
+        "Sc",
+        "ScW"
       ],
-      "additives": [],
+      "additives": [
+        "14"
+      ],
       "is_vegan": false,
-      "is_vegetarian": true,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "LACTOSE",
-        "MILK",
-        "VEGETARIAN"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {

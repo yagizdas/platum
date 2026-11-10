@@ -1,41 +1,38 @@
 {
   "schema_version": 1,
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-09T17:45:56.743101+00:00",
+  "fetched_at": "2026-11-10T15:44:21.224872+00:00",
   "warnings": [],
   "dishes": [
     {
-      "name": "Teigtaschen gefüllt mit Steinpilzen und Frischkäse in Kräutersauce",
+      "name": "Pasta mit Sojabolognese",
       "station": "Pasta",
       "station_raw": "Pasta",
       "markers": [
-        "f"
+        "v"
       ],
       "allergens": [
-        "Ei",
         "Gl",
         "GlW",
-        "Mi"
+        "Sl",
+        "So"
       ],
-      "additives": [
-        "Kn"
-      ],
-      "is_vegan": false,
+      "additives": [],
+      "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "CELERY",
         "CEREAL",
-        "CHICKEN_EGGS",
-        "GARLIC",
         "GLUTEN",
-        "LACTOSE",
-        "MILK",
+        "SOY",
+        "VEGAN",
         "VEGETARIAN",
         "WHEAT"
       ],
@@ -46,11 +43,11 @@
       }
     },
     {
-      "name": "Pizza Funghi mit frischen Champignons",
+      "name": "Pizza Salami",
       "station": "Pizza",
       "station_raw": "Pizza",
       "markers": [
-        "f"
+        "S"
       ],
       "allergens": [
         "Gl",
@@ -59,23 +56,33 @@
         "Mi",
         "So"
       ],
-      "additives": [],
+      "additives": [
+        "1",
+        "2",
+        "3",
+        "Kn"
+      ],
       "is_vegan": false,
-      "is_vegetarian": true,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "ANTIOXIDANTS",
         "BARLEY",
         "CEREAL",
+        "DYESTUFF",
+        "GARLIC",
         "GLUTEN",
         "LACTOSE",
+        "MEAT",
         "MILK",
+        "PORK",
+        "PRESERVATIVES",
         "SOY",
-        "VEGETARIAN",
         "WHEAT"
       ],
       "price": {
-        "base_eur": 4.5,
+        "base_eur": 5.0,
         "per_100g_eur": 0,
         "source": "eat-api"
       }
@@ -100,38 +107,58 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Marinierte Hähnchenbrust (1 Stück) Caipirinha Art mit Kokos- Limettenreis",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
       "api_labels": [
-        "BEEF",
-        "CELERY",
+        "LACTOSE",
         "MEAT",
-        "MUSTARD",
-        "PHOSPHATES",
-        "PORK",
-        "SWEETENERS"
+        "MILK"
       ],
       "price": {
-        "base_eur": 0.5,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       }
     },
     {
-      "name": "Asiatische Reispfanne mit Gemüse und Ei",
-      "station": "Wok",
-      "station_raw": "Wok",
+      "name": "Mandel-Mango-Chutney",
+      "station": "Unspecified",
+      "station_raw": "",
       "markers": [
-        "f"
+        "v"
       ],
       "allergens": [
-        "Ei"
+        "Sc",
+        "ScM"
       ],
       "additives": [],
-      "is_vegan": false,
+      "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CHICKEN_EGGS",
+        "ALMONDS",
+        "SHELLFISH",
+        "SHELL_FRUITS",
+        "VEGAN",
         "VEGETARIAN"
       ],
       "price": {
@@ -141,19 +168,53 @@
       }
     },
     {
-      "name": "Pikantes Kartoffelchili",
+      "name": "Broccolicurry mit roter Paprika in Kokosmilch",
+      "station": "Wok",
+      "station_raw": "Wok",
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "GARLIC",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Gersteneintopf",
       "station": "Studitopf",
       "station_raw": "Studitopf",
       "markers": [
         "v"
       ],
-      "allergens": [],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "Sl"
+      ],
       "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "BARLEY",
+        "CELERY",
+        "CEREAL",
+        "GLUTEN",
         "VEGAN",
         "VEGETARIAN"
       ],
@@ -164,54 +225,31 @@
       }
     },
     {
-      "name": "Vegane Kürbiscremesuppe",
+      "name": "Karotten-Ingwersuppe",
       "station": "Unspecified",
       "station_raw": "",
-      "markers": [
-        "f"
-      ],
+      "markers": [],
       "allergens": [
-        "So"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "SOY",
-        "VEGETARIAN"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.33,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Gegrillte Süßkartoffeln aus dem Ofen mit Kräuterdip",
-      "station": "Vegetarisch/fleischlos",
-      "station_raw": "Vegetarisch/fleischlos",
-      "markers": [
-        "v"
-      ],
-      "allergens": [
+        "Gl",
+        "GlW",
         "Mi"
       ],
       "additives": [],
-      "is_vegan": true,
-      "is_vegetarian": true,
+      "is_vegan": false,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "CEREAL",
+        "GLUTEN",
         "LACTOSE",
+        "MEAT",
         "MILK",
-        "VEGAN",
-        "VEGETARIAN"
+        "WHEAT"
       ],
       "price": {
         "base_eur": 0.0,
-        "per_100g_eur": 0.9,
+        "per_100g_eur": 0.33,
         "source": "eat-api"
       }
     },
@@ -237,16 +275,41 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Krautwickerl (1 Stück) mit Speck-Zwiebel-Sauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [
+        "2",
+        "3",
+        "8"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
       "api_labels": [
-        "BEEF",
-        "CELERY",
+        "ANTIOXIDANTS",
         "CEREAL",
-        "CHICKEN_EGGS",
-        "GARLIC",
         "GLUTEN",
         "MEAT",
-        "MUSTARD",
-        "SOY",
+        "PHOSPHATES",
+        "PORK",
+        "PRESERVATIVES",
         "WHEAT"
       ],
       "price": {
@@ -256,52 +319,69 @@
       }
     },
     {
-      "name": "Panna Cotta mit Himbeersauce",
-      "station": "Dessert (Glas)",
-      "station_raw": "Dessert (Glas)",
-      "markers": [],
+      "name": "Frische Rahmschwammerl",
+      "station": "Vegan",
+      "station_raw": "Vegan",
+      "markers": [
+        "f"
+      ],
       "allergens": [
+        "Gl",
+        "GlW",
         "Mi"
       ],
-      "additives": [
-        "14"
-      ],
+      "additives": [],
       "is_vegan": false,
-      "is_vegetarian": false,
+      "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "GELATIN",
+        "CEREAL",
+        "GLUTEN",
         "LACTOSE",
-        "MEAT",
-        "MILK"
+        "MILK",
+        "VEGETARIAN",
+        "WHEAT"
       ],
       "price": {
-        "base_eur": 1.0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       }
     },
     {
-      "name": "Mousse Heidelbeer-Geschmack",
+      "name": "Tiramisu",
       "station": "Dessert (Glas)",
-      "station_raw": "",
+      "station_raw": "Dessert (Glas)",
       "markers": [],
       "allergens": [
-        "Mi"
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sw"
       ],
       "additives": [
-        "14"
+        "5",
+        "14",
+        "99"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "ALCOHOL",
+        "CEREAL",
+        "CHICKEN_EGGS",
         "GELATIN",
+        "GLUTEN",
         "LACTOSE",
         "MEAT",
-        "MILK"
+        "MILK",
+        "SULFITES",
+        "SULPHURS",
+        "WHEAT"
       ],
       "price": {
         "base_eur": 1.0,

@@ -4,10 +4,10 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-09T17:45:56.909583+00:00",
+  "fetched_at": "2026-11-10T15:44:21.382519+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 10,
+  "menu_count": 12,
   "scoring": {
     "bulk": {
       "price": {
@@ -134,8 +134,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Beef Stroganoff and Rice",
-          "reason": "Hearty beef classic paired with fluffy rice",
+          "title": "Beef Stroganoff + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -213,8 +213,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Falafel Feast with Sweet Pudding",
-          "reason": "High calorie plant base finished with rich dessert",
+          "title": "Falafel + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -248,41 +248,15 @@
               "protein_g": 41.4
             },
             {
-              "name": "Schokopudding mit Sahne",
-              "name_en": "Chocolate pudding with whipped cream",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "a0b1100861cec86d",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 203.0,
-              "protein_g": 4.2
-            },
-            {
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
               "role": "side",
               "texture": "dry",
-              "count": 1,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -292,35 +266,35 @@
               "standing": true,
               "diet": "vegan",
               "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
+              "serving": "2 scoops",
               "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 666,
-            "price_eur": 6.66,
-            "weight_g": 740,
-            "kcal": 1500.5,
-            "protein_g": 49.65,
-            "carbs_g": 169.15,
-            "fat_g": 68.05
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1492.5,
+            "protein_g": 49.5,
+            "carbs_g": 185.25,
+            "fat_g": 59.4
           },
           "score": {
-            "price": -3.33,
+            "price": -3.375,
             "price_over_budget": 0.0,
-            "energy_value": 0.2253003003003003,
-            "protein_value": 0.3106231231231231,
-            "protein": 7.4475,
-            "energy": 0.83375,
-            "total": 5.4872
+            "energy_value": 0.22111111111111112,
+            "protein_value": 0.3055555555555555,
+            "protein": 7.425,
+            "energy": 0.8270833333333333,
+            "total": 5.4037
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Grilled Turkey Rice and Dessert",
-          "reason": "Lean poultry balanced with carbohydrates and treat",
+          "title": "Turkey steak + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -344,32 +318,6 @@
               "price_source": "eat-api",
               "kcal": 261.0,
               "protein_g": 36.9
-            },
-            {
-              "name": "Schokopudding mit Sahne",
-              "name_en": "Chocolate pudding with whipped cream",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "a0b1100861cec86d",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 203.0,
-              "protein_g": 4.2
             },
             {
               "name": "Reis",
@@ -397,185 +345,24 @@
             }
           ],
           "total": {
-            "price_cents": 658,
-            "price_eur": 6.58,
-            "weight_g": 620,
-            "kcal": 854.0,
-            "protein_g": 49.2,
-            "carbs_g": 112.6,
-            "fat_g": 21.7
+            "price_cents": 532,
+            "price_eur": 5.32,
+            "weight_g": 480,
+            "kcal": 651.0,
+            "protein_g": 45.0,
+            "carbs_g": 86.7,
+            "fat_g": 12.6
           },
           "score": {
-            "price": -3.29,
+            "price": -2.66,
             "price_over_budget": 0.0,
-            "energy_value": 0.12978723404255318,
-            "protein_value": 0.31155015197568386,
-            "protein": 7.38,
-            "energy": 0.295,
-            "total": 4.8263
+            "energy_value": 0.12236842105263157,
+            "protein_value": 0.3524436090225564,
+            "protein": 6.75,
+            "energy": 0.12583333333333332,
+            "total": 4.6906
           },
           "has_estimated_prices": true
-        },
-        {
-          "title": "Baked Tortellini and Pudding",
-          "reason": "Warm cheesy pasta coupled with chocolate dessert",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Mediterrane Tortellini al forno",
-              "name_en": "Baked Mediterranean tortellini",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "1b51948d39c54197",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 742.5,
-              "protein_g": 30.6
-            },
-            {
-              "name": "Schokopudding mit Sahne",
-              "name_en": "Chocolate pudding with whipped cream",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "a0b1100861cec86d",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 203.0,
-              "protein_g": 4.2
-            }
-          ],
-          "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590,
-            "kcal": 945.5,
-            "protein_g": 34.8,
-            "carbs_g": 109.15,
-            "fat_g": 41.5
-          },
-          "score": {
-            "price": -2.655,
-            "price_over_budget": 0.0,
-            "energy_value": 0.178060263653484,
-            "protein_value": 0.2730696798493409,
-            "protein": 5.220000000000001,
-            "energy": 0.37125,
-            "total": 3.3874
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Spicy Millet Bowl and Sweet Treat",
-          "reason": "Budget friendly grain mix paired with dessert",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
-              "name_en": "Spicy millet with black beans and vegetables",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Sl"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "5b0b0113f1e900ff",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Schokopudding mit Sahne",
-              "name_en": "Chocolate pudding with whipped cream",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "a0b1100861cec86d",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 203.0,
-              "protein_g": 4.2
-            }
-          ],
-          "total": {
-            "price_cents": 275,
-            "price_eur": 2.75,
-            "weight_g": 590,
-            "kcal": 765.5,
-            "protein_g": 24.45,
-            "carbs_g": 111.4,
-            "fat_g": 22.6
-          },
-          "score": {
-            "price": -1.375,
-            "price_over_budget": 0.0,
-            "energy_value": 0.27836363636363637,
-            "protein_value": 0.3704545454545454,
-            "protein": 3.6674999999999995,
-            "energy": 0.22125,
-            "total": 3.1626
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -587,8 +374,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Lean Chimichurri Turkey Steak",
-          "reason": "Pure protein with fresh herb seasoning",
+          "title": "Turkey steak",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -635,8 +422,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Rich Beef Stroganoff",
-          "reason": "Filling meat dish packed with savory protein",
+          "title": "Beef Stroganoff",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -690,63 +477,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Mediterranean Baked Tortellini",
-          "reason": "Comforting pasta portion ideal for lunch",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Mediterrane Tortellini al forno",
-              "name_en": "Baked Mediterranean tortellini",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "1b51948d39c54197",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 742.5,
-              "protein_g": 30.6
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 742.5,
-            "protein_g": 30.6,
-            "carbs_g": 83.25,
-            "fat_g": 32.4
-          },
-          "score": {
-            "price": -1.0125,
-            "price_over_budget": 0.0,
-            "protein_density": 1.0303030303030303,
-            "protein_value": 0.3148148148148148,
-            "protein": 0.02000000000000005,
-            "energy": -0.425,
-            "total": -0.0724
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Falafel Plate with Creamy Hummus",
-          "reason": "Satisfying plant protein with rich dips",
+          "title": "Falafel",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -801,8 +533,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Spicy Black Bean Millet Bowl",
-          "reason": "Light nutritious grains loaded with fiber",
+          "title": "Spicy millet",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -853,6 +585,85 @@
             "total": -0.8562
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Colorful vegetables + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Buntes Gemüse in scharfer Kokosmilch",
+              "name_en": "Colorful vegetables in spicy coconut milk",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se",
+                "Sf"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "c7f713aa6d014319",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 285.0,
+              "protein_g": 6.3
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 675.0,
+            "protein_g": 14.4,
+            "carbs_g": 100.5,
+            "fat_g": 22.5
+          },
+          "score": {
+            "price": -1.35,
+            "price_over_budget": 0.0,
+            "protein_density": 0.5333333333333333,
+            "protein_value": 0.11111111111111109,
+            "protein": -3.12,
+            "energy": 0.0,
+            "total": -3.8256
+          },
+          "has_estimated_prices": true
         }
       ]
     },
@@ -864,8 +675,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Budget Black Bean Millet Stew",
-          "reason": "Most affordable wholesome grain bowl",
+          "title": "Spicy millet",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -917,8 +728,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Crispy Falafel and Hummus",
-          "reason": "Inexpensive flavorful vegan protein staple",
+          "title": "Falafel",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -972,62 +783,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Baked Cheesy Tortellini",
-          "reason": "Great value comforting pasta lunch",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Mediterrane Tortellini al forno",
-              "name_en": "Baked Mediterranean tortellini",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "1b51948d39c54197",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 742.5,
-              "protein_g": 30.6
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 742.5,
-            "protein_g": 30.6,
-            "carbs_g": 83.25,
-            "fat_g": 32.4
-          },
-          "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.7333333333333334,
-            "energy": 0.12833333333333333,
-            "protein": 0.14133333333333337,
-            "total": -1.022
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Beef Stroganoff with Rice",
-          "reason": "Satisfying meat option kept within budget",
+          "title": "Beef Stroganoff + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1104,8 +861,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Zesty Turkey Steak and Rice",
-          "reason": "Lean meat paired with filling rice sides",
+          "title": "Turkey steak + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1173,6 +930,84 @@
             "total": -1.7699
           },
           "has_estimated_prices": true
+        },
+        {
+          "title": "Colorful vegetables + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Buntes Gemüse in scharfer Kokosmilch",
+              "name_en": "Colorful vegetables in spicy coconut milk",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se",
+                "Sf"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "c7f713aa6d014319",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 9.45
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 817.5,
+            "protein_g": 17.55,
+            "carbs_g": 108.75,
+            "fat_g": 33.3
+          },
+          "score": {
+            "price": -3.375,
+            "price_over_budget": 0.0,
+            "energy_value": 0.48444444444444446,
+            "energy": 0.17833333333333334,
+            "protein": -0.49000000000000055,
+            "total": -3.2022
+          },
+          "has_estimated_prices": true
         }
       ]
     },
@@ -1184,8 +1019,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Falafel and Spicy Millet Combo",
-          "reason": "Massive plant protein and energy boost",
+          "title": "Falafel + Spicy millet",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1268,8 +1103,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Coconut Veggie Curry with Rice",
-          "reason": "Creamy vegetable curry over fluffy rice",
+          "title": "Colorful vegetables + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1356,8 +1191,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Crispy Falafel with Hummus",
-          "reason": "Balanced vegan meal packed with clean fiber",
+          "title": "Falafel",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1412,8 +1247,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Zesty Black Bean Millet Bowl",
-          "reason": "Nutrient dense whole grains and legume stew",
+          "title": "Spicy millet",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1466,8 +1301,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Spicy Coconut Veggies and Rice",
-          "reason": "Light coconut vegetable wok dish with rice",
+          "title": "Colorful vegetables + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1554,8 +1389,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Hearty Spicy Millet Stew",
-          "reason": "Super cheap nutritious grain and bean bowl",
+          "title": "Spicy millet",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1607,8 +1442,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Golden Falafel with Hummus",
-          "reason": "Affordable savory chickpea specialty",
+          "title": "Falafel",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1662,8 +1497,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Coconut Milk Vegetables with Rice",
-          "reason": "Filling vegan curry kept reasonably priced",
+          "title": "Colorful vegetables + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1745,20 +1580,33 @@
   "extras": {
     "all": [
       {
-        "name": "Schokopudding mit Sahne",
-        "name_en": "Chocolate pudding with whipped cream",
-        "station": "Dessert (Glas)",
-        "weight_g": 140,
-        "price_cents": 126,
+        "name": "Türkische Linsensuppe mit Kreuzkümmel",
+        "name_en": "Turkish lentil soup with cumin",
+        "station": "Unspecified",
+        "weight_g": 300,
+        "price_cents": 270,
         "is_vegan": false,
         "diet": "vegetarian",
+        "serving": "2 scoops",
+        "kcal": 204.0,
+        "protein_g": 11.4,
+        "price_source": "config"
+      },
+      {
+        "name": "Mousse Walnussgemack mit Beerensauce",
+        "name_en": "Walnut flavored mousse with berry sauce",
+        "station": "Dessert (Glas)",
+        "weight_g": 120,
+        "price_cents": 108,
+        "is_vegan": false,
+        "diet": "meat",
         "serving": "1 piece",
-        "kcal": 203.0,
+        "kcal": 264.0,
         "protein_g": 4.2,
-        "price_source": "eat-api"
+        "price_source": "config"
       }
     ],
     "vegan": []
   },
-  "generated_on": "2026-11-09"
+  "generated_on": "2026-11-10"
 }
