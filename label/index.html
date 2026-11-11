@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Plate preference labeler</title><link rel="stylesheet" href="label.css">
+</head>
+<body>
+<main>
+  <header><p class="eyebrow">PLATUM · PRIVATE TOOL</p><h1>Rank today's plates</h1><p>Put the lunch you would most like to eat first.</p></header>
+  <section class="controls" aria-label="Ranking settings">
+    <label>Menu date <select id="date"></select></label>
+    <label>Goal <select id="goal"><option value="bulk">Bulk</option><option value="cut">Cut</option><option value="budget">Budget</option></select></label>
+  </section>
+  <p id="hint" class="hint">Drag plates into order, or use the arrow buttons.</p>
+  <ol id="plates" aria-describedby="hint"></ol>
+  <div class="actions"><button id="save" class="primary">Save ranking</button><button id="export">Export all JSON</button></div>
+  <p id="status" role="status"></p>
+</main>
+<script src="label.js"></script>
+</body></html>
