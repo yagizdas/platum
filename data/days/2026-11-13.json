@@ -4,7 +4,7 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-10T15:44:21.452220+00:00",
+  "fetched_at": "2026-11-11T15:32:57.788884+00:00",
   "warnings": [],
   "schema_version": 2,
   "menu_count": 9,
@@ -214,7 +214,7 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Breaded pollock + Vanilla cream dessert + Rice",
+          "title": "Breaded pollock + Apple strudel",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -250,75 +250,53 @@
               "protein_g": 23.0
             },
             {
-              "name": "Vanillecreme",
-              "name_en": "Vanilla cream dessert",
-              "station": "Dessert (Glas)",
+              "name": "Apfelstrudel mit Vanillesauce",
+              "name_en": "Apple strudel with vanilla sauce",
+              "station": "Süßspeise",
               "role": "dessert",
               "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 135.0,
-              "price_cents": 122,
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
+                "Gl",
+                "GlW",
                 "Mi"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
-              "id": "6ad333ffee28d7c6",
-              "serving": "1 piece",
+              "id": "d6589b2de2f0b26c",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 182.25,
-              "protein_g": 4.05
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
+              "kcal": 495.0,
+              "protein_g": 7.5
             }
           ],
           "total": {
-            "price_cents": 587,
-            "price_eur": 5.87,
-            "weight_g": 485.0,
-            "kcal": 817.25,
-            "protein_g": 31.1,
-            "carbs_g": 94.3,
-            "fat_g": 33.88
+            "price_cents": 600,
+            "price_eur": 6.0,
+            "weight_g": 500,
+            "kcal": 935.0,
+            "protein_g": 30.5,
+            "carbs_g": 101.5,
+            "fat_g": 44.0
           },
           "score": {
-            "price": -2.935,
+            "price": -3.0,
             "price_over_budget": 0.0,
-            "energy_value": 0.13922487223168653,
-            "protein_value": 0.22075525269733107,
-            "protein": 4.665000000000001,
-            "energy": 0.264375,
-            "total": 2.3544
+            "energy_value": 0.15583333333333335,
+            "protein_value": 0.21180555555555555,
+            "protein": 4.575,
+            "energy": 0.3625,
+            "total": 2.3051
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         },
         {
           "title": "Cauliflower casserole + Rice + Apple strudel",
@@ -443,7 +421,7 @@
       "note": null,
       "plates": [
         {
-          "title": "Farmer's stew + Vanilla cream dessert",
+          "title": "Farmer's stew",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -472,56 +450,30 @@
               "price_source": "eat-api",
               "kcal": 382.5,
               "protein_g": 20.25
-            },
-            {
-              "name": "Vanillecreme",
-              "name_en": "Vanilla cream dessert",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 135.0,
-              "price_cents": 122,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "6ad333ffee28d7c6",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 182.25,
-              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 271,
-            "price_eur": 2.71,
-            "weight_g": 585.0,
-            "kcal": 564.75,
-            "protein_g": 24.3,
-            "carbs_g": 60.3,
-            "fat_g": 24.53
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 382.5,
+            "protein_g": 20.25,
+            "carbs_g": 36.0,
+            "fat_g": 17.1
           },
           "score": {
-            "price": -0.6775,
+            "price": -0.3725,
             "price_over_budget": 0.0,
-            "protein_density": 1.0756972111553786,
-            "protein_value": 0.3736162361623616,
-            "protein": -1.14,
+            "protein_density": 1.3235294117647058,
+            "protein_value": 0.5662751677852349,
+            "protein": -1.95,
             "energy": 0.0,
-            "total": -0.3682
+            "total": -0.4327
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Breaded pollock + Vanilla cream dessert",
+          "title": "Breaded pollock + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -557,54 +509,52 @@
               "protein_g": 23.0
             },
             {
-              "name": "Vanillecreme",
-              "name_en": "Vanilla cream dessert",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
               "count": 1,
-              "unit": "piece",
-              "weight_g": 135.0,
-              "price_cents": 122,
-              "is_vegan": false,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
-              "allergens": [
-                "Mi"
-              ],
+              "allergens": [],
               "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "6ad333ffee28d7c6",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 182.25,
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
               "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 452,
-            "price_eur": 4.52,
-            "weight_g": 335.0,
-            "kcal": 622.25,
+            "price_cents": 465,
+            "price_eur": 4.65,
+            "weight_g": 350,
+            "kcal": 635.0,
             "protein_g": 27.05,
-            "carbs_g": 52.3,
-            "fat_g": 33.42
+            "carbs_g": 70.0,
+            "fat_g": 26.45
           },
           "score": {
-            "price": -1.13,
+            "price": -1.1625,
             "price_over_budget": 0.0,
-            "protein_density": 1.0867818400964242,
-            "protein_value": 0.24935471976401183,
+            "protein_density": 1.0649606299212597,
+            "protein_value": 0.24238351254480284,
             "protein": -0.5899999999999999,
             "energy": 0.0,
-            "total": -0.3839
+            "total": -0.4452
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         },
         {
-          "title": "Cauliflower casserole + Vanilla cream dessert",
+          "title": "Cauliflower casserole + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -644,51 +594,49 @@
               "protein_g": 23.4
             },
             {
-              "name": "Vanillecreme",
-              "name_en": "Vanilla cream dessert",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
               "count": 1,
-              "unit": "piece",
-              "weight_g": 135.0,
-              "price_cents": 122,
-              "is_vegan": false,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
-              "allergens": [
-                "Mi"
-              ],
+              "allergens": [],
               "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "6ad333ffee28d7c6",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 182.25,
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
               "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 527,
-            "price_eur": 5.27,
-            "weight_g": 585.0,
-            "kcal": 699.75,
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 712.5,
             "protein_g": 27.45,
-            "carbs_g": 59.4,
-            "fat_g": 38.02
+            "carbs_g": 77.1,
+            "fat_g": 31.05
           },
           "score": {
-            "price": -1.3175,
+            "price": -1.35,
             "price_over_budget": 0.0,
-            "protein_density": 0.9807073954983923,
-            "protein_value": 0.2170303605313093,
+            "protein_density": 0.9631578947368422,
+            "protein_value": 0.21180555555555555,
             "protein": -0.5100000000000001,
-            "energy": 0.0,
-            "total": -0.6298
+            "energy": -0.125,
+            "total": -0.81
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         }
       ]
     },
@@ -1195,20 +1143,20 @@
         "price_source": "eat-api"
       },
       {
-        "name": "Vanillecreme",
-        "name_en": "Vanilla cream dessert",
+        "name": "Schokopudding mit Kirschen",
+        "name_en": "Chocolate pudding with cherries",
         "station": "Dessert (Glas)",
-        "weight_g": 135.0,
-        "price_cents": 122,
+        "weight_g": 140.0,
+        "price_cents": 126,
         "is_vegan": false,
         "diet": "vegetarian",
         "serving": "1 piece",
-        "kcal": 182.25,
-        "protein_g": 4.05,
-        "price_source": "eat-api"
+        "kcal": 175.0,
+        "protein_g": 3.92,
+        "price_source": "config"
       }
     ],
     "vegan": []
   },
-  "generated_on": "2026-11-10"
+  "generated_on": "2026-11-11"
 }

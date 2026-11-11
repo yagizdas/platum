@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-10T15:44:21.382519+00:00",
+  "fetched_at": "2026-11-11T15:32:57.720102+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -27,11 +27,19 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CELERY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -165,9 +173,69 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
+      "api_labels": [
+        "CELERY",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Fleischpflanzerl (1 Stück) mit Kümmelsauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "R",
+        "S"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Sf"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
       "api_labels": [],
       "price": {
-        "base_eur": 0,
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Cevapcici (5 Stück) mit Ajvar",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Sf",
+        "Sl",
+        "So"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
         "source": "config"
       }
@@ -226,6 +294,43 @@
         "5",
         "11"
       ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "BEEF",
+        "CELERY",
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "DYESTUFF",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "MUSTARD",
+        "SULFITES",
+        "SULPHURS",
+        "SWEETENERS",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Entenkeule (1 Stück) mit Bratenssauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
@@ -291,11 +396,22 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "BARLEY",
+        "CEREAL",
+        "GELATIN",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "SHELLFISH",
+        "SHELL_FRUITS",
+        "WALNUTS"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {

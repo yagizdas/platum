@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-10T15:44:21.296502+00:00",
+  "fetched_at": "2026-11-11T15:32:57.633563+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -20,10 +20,13 @@
         "Gl",
         "GlW",
         "Se",
-        "So"
+        "So",
+        "Sw"
       ],
       "additives": [
-        "Kn"
+        "Kn",
+        "2",
+        "5"
       ],
       "is_vegan": true,
       "is_vegetarian": true,
@@ -88,8 +91,13 @@
       "markers": [
         "v"
       ],
-      "allergens": [],
-      "additives": [],
+      "allergens": [
+        "Mi",
+        "Sf"
+      ],
+      "additives": [
+        "1"
+      ],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
@@ -195,9 +203,46 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "CELERY",
+        "DYESTUFF",
+        "SULFITES",
+        "SULPHURS",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Cevapcici (5 Stück) mit Ajvar",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Sf",
+        "Sl",
+        "So"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
       "api_labels": [],
       "price": {
-        "base_eur": 0,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
         "source": "config"
       }
@@ -267,6 +312,29 @@
       }
     },
     {
+      "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+      "station": "Dessert (Glas)",
+      "station_raw": "Dessert (Glas)",
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
       "name": "Faschingskrapfen mit Vierfruchtfüllung",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
@@ -297,26 +365,6 @@
         "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
-      }
-    },
-    {
-      "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-      "station": "Dessert (Glas)",
-      "station_raw": "Dessert (Glas)",
-      "markers": [
-        "v"
-      ],
-      "allergens": [],
-      "additives": [],
-      "is_vegan": true,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 0,
-        "per_100g_eur": 0.9,
-        "source": "config"
       }
     },
     {

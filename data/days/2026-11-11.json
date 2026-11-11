@@ -4,10 +4,10 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-10T15:44:21.296502+00:00",
+  "fetched_at": "2026-11-11T15:32:57.633563+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 12,
+  "menu_count": 13,
   "scoring": {
     "bulk": {
       "price": {
@@ -481,10 +481,13 @@
                 "Gl",
                 "GlW",
                 "Se",
-                "So"
+                "So",
+                "Sw"
               ],
               "additives": [
-                "Kn"
+                "Kn",
+                "2",
+                "5"
               ],
               "standing": false,
               "diet": "vegan",
@@ -790,10 +793,13 @@
                 "Gl",
                 "GlW",
                 "Se",
-                "So"
+                "So",
+                "Sw"
               ],
               "additives": [
-                "Kn"
+                "Kn",
+                "2",
+                "5"
               ],
               "standing": false,
               "diet": "vegan",
@@ -843,8 +849,13 @@
               "markers": [
                 "v"
               ],
-              "allergens": [],
-              "additives": [],
+              "allergens": [
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "1"
+              ],
               "standing": false,
               "diet": "vegan",
               "id": "d933ee2b26ab0e9f",
@@ -930,10 +941,13 @@
                 "Gl",
                 "GlW",
                 "Se",
-                "So"
+                "So",
+                "Sw"
               ],
               "additives": [
-                "Kn"
+                "Kn",
+                "2",
+                "5"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1275,8 +1289,13 @@
               "markers": [
                 "v"
               ],
-              "allergens": [],
-              "additives": [],
+              "allergens": [
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "1"
+              ],
               "standing": false,
               "diet": "vegan",
               "id": "d933ee2b26ab0e9f",
@@ -1421,10 +1440,13 @@
                 "Gl",
                 "GlW",
                 "Se",
-                "So"
+                "So",
+                "Sw"
               ],
               "additives": [
-                "Kn"
+                "Kn",
+                "2",
+                "5"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1474,8 +1496,13 @@
               "markers": [
                 "v"
               ],
-              "allergens": [],
-              "additives": [],
+              "allergens": [
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "1"
+              ],
               "standing": false,
               "diet": "vegan",
               "id": "d933ee2b26ab0e9f",
@@ -1618,10 +1645,13 @@
                 "Gl",
                 "GlW",
                 "Se",
-                "So"
+                "So",
+                "Sw"
               ],
               "additives": [
-                "Kn"
+                "Kn",
+                "2",
+                "5"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1671,8 +1701,13 @@
               "markers": [
                 "v"
               ],
-              "allergens": [],
-              "additives": [],
+              "allergens": [
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "1"
+              ],
               "standing": false,
               "diet": "vegan",
               "id": "d933ee2b26ab0e9f",
@@ -1814,10 +1849,13 @@
                 "Gl",
                 "GlW",
                 "Se",
-                "So"
+                "So",
+                "Sw"
               ],
               "additives": [
-                "Kn"
+                "Kn",
+                "2",
+                "5"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1866,8 +1904,13 @@
               "markers": [
                 "v"
               ],
-              "allergens": [],
-              "additives": [],
+              "allergens": [
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "1"
+              ],
               "standing": false,
               "diet": "vegan",
               "id": "d933ee2b26ab0e9f",
@@ -1939,6 +1982,19 @@
         "price_source": "eat-api"
       },
       {
+        "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+        "name_en": "Vegan chia pudding with coconut milk and mango puree",
+        "station": "Dessert (Glas)",
+        "weight_g": 150,
+        "price_cents": 135,
+        "is_vegan": true,
+        "diet": "vegan",
+        "serving": "1 piece",
+        "kcal": 202.5,
+        "protein_g": 4.2,
+        "price_source": "eat-api"
+      },
+      {
         "name": "Faschingskrapfen mit Vierfruchtfüllung",
         "name_en": "Carnival doughnut with four-fruit jam filling",
         "station": "Dessert (Glas)",
@@ -1950,19 +2006,6 @@
         "kcal": 289.0,
         "protein_g": 5.53,
         "price_source": "eat-api"
-      },
-      {
-        "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-        "name_en": "Vegan chia pudding with coconut milk and mango puree",
-        "station": "Dessert (Glas)",
-        "weight_g": 150,
-        "price_cents": 135,
-        "is_vegan": true,
-        "diet": "vegan",
-        "serving": "1 piece",
-        "kcal": 202.5,
-        "protein_g": 4.2,
-        "price_source": "config"
       }
     ],
     "vegan": [
@@ -1977,9 +2020,9 @@
         "serving": "1 piece",
         "kcal": 202.5,
         "protein_g": 4.2,
-        "price_source": "config"
+        "price_source": "eat-api"
       }
     ]
   },
-  "generated_on": "2026-11-10"
+  "generated_on": "2026-11-11"
 }

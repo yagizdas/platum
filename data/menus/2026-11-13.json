@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-10T15:44:21.452220+00:00",
+  "fetched_at": "2026-11-11T15:32:57.788884+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -222,7 +222,7 @@
       }
     },
     {
-      "name": "Vanillecreme",
+      "name": "Schokopudding mit Kirschen",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
       "markers": [
@@ -231,20 +231,18 @@
       "allergens": [
         "Mi"
       ],
-      "additives": [],
+      "additives": [
+        "99"
+      ],
       "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "LACTOSE",
-        "MILK",
-        "VEGETARIAN"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {
