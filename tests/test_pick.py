@@ -20,13 +20,13 @@ def test_golden_lunches(config, fixture_menu, pairing, fixed_caps):
     m, tags = fixture_menu
     result = build_today(m, tags, config, pairing=pairing, no_llm=True, proposals=read_json(FIXTURES / "proposals-v4.json"))
     expected = {
-        "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 2)], 675, 2.5385) if fixed_caps else
-                    ([('Käsekrainer (1 Stück)', 1), ('Reis', 2)], 496, 2.4547),
+        "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 2)], 675, 29.4867) if fixed_caps else
+                    ([('PINSA Funghi mit frischen Champignons', 1), ('Reis', 2)], 770, 27.0205),
         "cut_all": ([('Seelachsfilet (1Stück)', 1)], 285, 3.2649),
         "budget_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 405, -.9511) if fixed_caps else
                       ([('Käsekrainer (1 Stück)', 1), ('Reis', 1)], 361, -.9974),
-        "bulk_vegan": ([('Graupen-Gemüse-Eintopf', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 554, 3.4829) if fixed_caps else
-                      ([('Graupen-Gemüse-Eintopf', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 419, 2.6914),
+        "bulk_vegan": ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 810, 34.8506) if fixed_caps else
+                      ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 675, 28.0622),
         "cut_vegan": ([('Graupen-Gemüse-Eintopf', 2), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 369, -1.6983),
         "budget_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Graupen-Gemüse-Eintopf', 1)], 320, -.726),
     }
@@ -73,11 +73,8 @@ def test_pool_has_one_portioning_per_lunch(config, fixture_menu, pairing):
 
 
 def test_equal_scores_use_price_then_sorted_dish_ids(config, make_dish):
-    for term in config["scoring"]["bulk"].values():
-        if "weight" in term:
-            term["weight"] = 0
-        else:
-            term.update(up=0, down=0)
+    for feature in config["scoring"]["bulk"]["learned_model"]["features"]:
+        feature["weight"] = 0
     dishes, tags = [], {}
     for name, price in [("Main A", 1), ("Main B", 1), ("Main C", 2)]:
         d, t = make_dish(name, base=price, rate=0)
