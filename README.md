@@ -20,6 +20,10 @@ python -m http.server 8000 --bind 127.0.0.1
 
 Open <http://127.0.0.1:8000>. `--date YYYY-MM-DD` fixes the reference date. `--no-llm` uses cached proposals or deterministic fallback trays and English item names. `pair.py --week` remains available for legacy pairing knowledge; it does not decide the new plate ranking.
 
+## Staging
+
+Push changes to the `staging` branch, then check them at <https://yagizdas.github.io/platum/staging/>. When the staged site is ready to ship, merge `staging` into `main`; the deployment workflow publishes both sites together with the same daily menu data.
+
 ## Pipeline and history
 
 The official menu supplies dishes and dietary markers. eat-api supplies prices only for a conservative normalized-name match. Source failures are labeled; two failed sources never manufacture a closed day. Configured rice and potato salad are appended only to real open menus. Unknown dietary status is never vegan.

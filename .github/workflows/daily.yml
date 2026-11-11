@@ -1,6 +1,10 @@
 name: Daily menu and GitHub Pages
 
 on:
+  push:
+    branches:
+      - main
+      - staging
   schedule:
     - cron: '30 7 * * 1-5' # 07:30 UTC, Monday–Friday (08:30/09:30 Munich)
   workflow_dispatch:
@@ -61,21 +65,34 @@ jobs:
           fi
       - uses: actions/configure-pages@v5
         if: always()
+      - name: Check out staging site
+        if: always()
+        uses: actions/checkout@v6
+        with:
+          ref: staging
+          path: staging-source
       - name: Package only public static files
         id: package
         if: always()
         run: |
-          mkdir -p dist/data
-          cp index.html dist/index.html
-          cp menu.html menu.css landing.css landing.js dish-icons.js menu-days.js report-config.js report-client.js dist/
-          cp -R assets dist/assets
-          cp data/today.json dist/data/today.json
-          cp data/week.json dist/data/week.json
-          cp -R data/days dist/data/days
-          cp manifest.webmanifest dist/manifest.webmanifest
-          mkdir -p dist/icons
-          cp icons/artwork.css dist/icons/artwork.css
-          cp -R icons/ui dist/icons/ui
+          package_site() {
+            source=$1
+            destination=$2
+            mkdir -p "$destination/data" "$destination/icons"
+            cp "$source/index.html" "$destination/index.html"
+            cp "$source"/{menu.html,menu.css,landing.css,landing.js,dish-icons.js,menu-days.js,report-config.js,report-client.js} "$destination/"
+            cp -R "$source/assets" "$destination/assets"
+            cp "$source/manifest.webmanifest" "$destination/manifest.webmanifest"
+            cp "$source/icons/artwork.css" "$destination/icons/artwork.css"
+            cp -R "$source/icons/ui" "$destination/icons/ui"
+            cp data/today.json "$destination/data/today.json"
+            cp data/week.json "$destination/data/week.json"
+            cp -R data/days "$destination/data/days"
+          }
+
+          package_site . dist
+          package_site staging-source dist/staging
+          cp -R staging-source/label dist/staging/label
           touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v4
         id: artifact
