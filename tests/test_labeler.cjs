@@ -1,10 +1,10 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {KEY,read,sample,snapshot}=require('../label/label.js');
-const plates=Array.from({length:12},(_,i)=>({id:String(i),title:`Plate ${i}`,dishes:[`Dish ${i}`],kcal:500+i,protein:20+i,price:3+i/10,score:12-i}));
-test('ranking screens contain four or five candidates with roughly 70% top-scored',()=>{
-  for(const key of ['a','b','c','d']){const chosen=sample(plates,key);assert.ok(chosen.length===4||chosen.length===5);const top=Math.round(chosen.length*.7);assert.deepEqual(chosen.slice(0,top),plates.slice(0,top));assert.ok(chosen.slice(top).every(p=>Number(p.id)>=top));}
-});
-test('sampling is stable for a date and goal',()=>assert.deepEqual(sample(plates,'2026-11-11|bulk'),sample(plates,'2026-11-11|bulk')));
-test('snapshot is self-contained',()=>{const result=snapshot('2026-11-11','cut',plates.slice(0,4),new Date('2026-11-11T12:00:00Z'));assert.equal(result.timestamp,'2026-11-11T12:00:00.000Z');assert.deepEqual(result.ranking,['0','1','2','3']);assert.deepEqual(result.plates[0].dishes,['Dish 0']);assert.equal(result.plates[0].score,undefined);});
+const {KEY,read,allPlates,selectPair,judgment}=require('../label/label.js');
+const plate=(id,score)=>({id,title:`Plate ${id}`,dishes:[`Dish ${id}`],kcal:500,protein:30,price:4,score});
+const data={days:[{date:'2026-11-10',goals:{bulk:Array.from({length:20},(_,i)=>plate(`a${i}`,20-i))}},{date:'2026-11-11',goals:{bulk:Array.from({length:20},(_,i)=>plate(`b${i}`,20-i))}}]};
+test('top sampling uses two distinct plates from a single day top 15',()=>{const pair=selectPair(data,'bulk',()=>0);assert.equal(pair.length,2);assert.equal(pair[0].menu_date,pair[1].menu_date);assert.notEqual(pair[0].id,pair[1].id);assert.ok(pair.every(value=>Number(value.id.slice(1))<15));});
+test('random sampling draws from a full day and samples across available days',()=>{const values=[.9,.99,0,.99];let i=0;const pair=selectPair(data,'bulk',()=>values[i++]??0);assert.equal(pair[0].id,'b0');assert.equal(pair[1].id,'b19');assert.equal(pair[0].menu_date,pair[1].menu_date);});
+test('all plates include their menu date',()=>assert.equal(allPlates(data,'bulk')[20].menu_date,'2026-11-11'));
+test('judgment is self-contained for later fitting',()=>{const pair=[{...plate('a',2),menu_date:'2026-11-10'},{...plate('b',1),menu_date:'2026-11-11'}],value=judgment('bulk',pair,'a',new Date('2026-11-11T12:00:00Z'));assert.equal(value.timestamp,'2026-11-11T12:00:00.000Z');assert.equal(value.date,null);assert.equal(value.plate_a.id,'a');assert.equal(value.plate_b.score,1);assert.equal(value.winner,'a');});
 test('malformed storage is safely ignored',()=>assert.deepEqual(read({getItem:key=>{assert.equal(key,KEY);return '{';}}),[]));
