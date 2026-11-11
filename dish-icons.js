@@ -1,6 +1,9 @@
 'use strict';
 
 ((root) => {
+  // Keep shared artwork relative to this script, even when a nested page loads it.
+  const scriptUrl = typeof document !== 'undefined' && document.currentScript && document.currentScript.src;
+  const assetUrl = (key, source = scriptUrl) => source ? new URL('./icons/ui/' + key + '.webp', source).href : './icons/ui/' + key + '.webp';
   const keys = Object.freeze(['dumplings','broccoli','cake','coins','dumbbell','fish','fries','chicken','leaf','tape','meatballs','pasta','rice','empty','error','salad','sausage','schnitzel','soup','dessert','stew','tray','vegetables','pizza','kebabs','steak','sweet-pastry','savory-pastry']);
   const known = new Set(keys);
   const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ß/g, 'ss').toLowerCase();
@@ -55,7 +58,7 @@
     target.dataset.icon = key;
     let img = target.querySelector('img');
     if (!img) { img = document.createElement('img'); target.append(img); }
-    const src = './icons/ui/' + key + '.webp';
+    const src = assetUrl(key);
     if (img.getAttribute('src') !== src) img.src = src;
     img.width = img.height = key === 'tray' ? 1254 : 640;
     img.alt = options.alt || '';
@@ -82,7 +85,7 @@
     return target;
   }
 
-  const api = Object.freeze({ keys, classify, apply, create, compose });
+  const api = Object.freeze({ keys, classify, assetUrl, apply, create, compose });
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.DishIcons = api;
 })(typeof globalThis === 'undefined' ? this : globalThis);
