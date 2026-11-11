@@ -71,6 +71,12 @@ jobs:
         with:
           ref: staging
           path: staging-source
+      - name: Rescore cached proposals with staging code
+        if: always()
+        run: |
+          cp data/{dish_cache.json,pairing_cache.json} staging-source/data/
+          cp -R data/{menus,proposals} staging-source/data/
+          (cd staging-source && python pick.py --week --no-llm)
       - name: Package only public static files
         id: package
         if: always()
@@ -85,9 +91,9 @@ jobs:
             cp "$source/manifest.webmanifest" "$destination/manifest.webmanifest"
             cp "$source/icons/artwork.css" "$destination/icons/artwork.css"
             cp -R "$source/icons/ui" "$destination/icons/ui"
-            cp data/today.json "$destination/data/today.json"
-            cp data/week.json "$destination/data/week.json"
-            cp -R data/days "$destination/data/days"
+            cp "$source/data/today.json" "$destination/data/today.json"
+            cp "$source/data/week.json" "$destination/data/week.json"
+            cp -R "$source/data/days" "$destination/data/days"
           }
 
           package_site . dist
