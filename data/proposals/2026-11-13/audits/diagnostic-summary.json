@@ -1,0 +1,49 @@
+{
+  "original_exact_15": {
+    "budget_vegan": {
+      "returned": 15,
+      "accepted": 2,
+      "rejections": {
+        "duplicate_combination": 13
+      },
+      "audit_file": "budget_vegan/20261112T150305.937075Z-e2ec2326.json"
+    },
+    "bulk_vegan": {
+      "returned": 15,
+      "accepted": 2,
+      "rejections": {
+        "duplicate_combination": 11,
+        "repeated_dish_id": 2
+      },
+      "audit_file": "bulk_vegan/20261112T150305.936904Z-3ee03a33.json"
+    },
+    "cut_vegan": {
+      "returned": 15,
+      "accepted": 2,
+      "rejections": {
+        "duplicate_combination": 13
+      },
+      "audit_file": "cut_vegan/20261112T150305.937040Z-73438f40.json"
+    }
+  },
+  "corrected_up_to_15": {
+    "budget_vegan": {
+      "returned": 2,
+      "accepted": 2,
+      "rejections": {},
+      "audit_file": "budget_vegan/20261112T150428.781696Z-c2bb1631.json"
+    },
+    "bulk_vegan": {
+      "returned": 2,
+      "accepted": 2,
+      "rejections": {},
+      "audit_file": "bulk_vegan/20261112T150428.781369Z-a95dbe29.json"
+    },
+    "cut_vegan": {
+      "returned": 2,
+      "accepted": 2,
+      "rejections": {},
+      "audit_file": "cut_vegan/20261112T150428.781579Z-1175ec57.json"
+    }
+  }
+}

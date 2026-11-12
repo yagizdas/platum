@@ -82,7 +82,7 @@ def test_validation_unknown_duplicates_soups_dessert_and_vegan(make_dish):
     assert all(meat not in combo for combo in validate_proposals(response, items, vegan=True))
 
 
-def test_proposal_adapter_sends_existing_macros_and_requests_15_combinations(monkeypatch, fixture_menu):
+def test_proposal_adapter_sends_existing_macros_and_requests_up_to_15_combinations(monkeypatch, fixture_menu):
     menu, tags = fixture_menu
     items = [food(d, tags) for d in menu["dishes"]]
     model = Mock(return_value={"combos": []})
@@ -90,9 +90,10 @@ def test_proposal_adapter_sends_existing_macros_and_requests_15_combinations(mon
     call_proposals(items, "model", "secret", instruction="Filling trays.")
     prompt, payload, schema, model_name, key = model.call_args.args
     assert "Filling trays." in prompt
-    assert schema["properties"]["combos"]["minItems"] == 15
+    assert schema["properties"]["combos"]["minItems"] == 0
     assert schema["properties"]["combos"]["maxItems"] == 15
-    assert "Propose 15 different lunches" in prompt
+    assert "Propose up to 15 different lunches" in prompt
+    assert "Never pad the list" in prompt
     assert "grams per 100 grams of prepared food" in prompt
     nutrition_fields = {"kcal_per_100g", "protein_per_100g", "carbs_per_100g",
                         "fat_per_100g", "typical_portion_g", "is_per_piece", "piece_weight_g"}
@@ -101,3 +102,66 @@ def test_proposal_adapter_sends_existing_macros_and_requests_15_combinations(mon
         assert sent["id"] == dish_id(original)
         assert all(sent[field] == original[field] for field in nutrition_fields)
     assert model.call_args.kwargs == {"temperature": 0}
+
+
+def test_audit_preserves_raw_duplicates_and_per_entry_reasons(config, fixture_menu, tmp_path):
+    config['llm']['enabled'] = True
+    menu, tags = fixture_menu
+    items = [food(dish, tags) for dish in menu['dishes']]
+    valid = fallback_proposals(items)[0]
+    response = {'combos': [valid, valid[::-1], ['unknown'], [valid[0], valid[0]]]}
+    caller = Mock(return_value=response)
+    combos = daily_proposals(menu['date'], items, config, 'bulk_all', cache_dir=tmp_path,
+                             caller=caller, api_key='private-api-key')
+    cache = read_json(tmp_path / menu['date'] / 'bulk_all.json')
+    audit_path = tmp_path / menu['date'] / cache['audit_file']
+    audit = read_json(audit_path)
+    assert audit['raw_response'] == response
+    assert audit['selected_combos'] == combos == [sorted(valid)]
+    assert audit['validation']['returned_count'] == 4
+    assert audit['validation']['accepted_count'] == 1
+    assert audit['validation']['rejected_counts'] == {
+        'duplicate_combination': 1, 'unknown_dish_id': 1, 'repeated_dish_id': 1}
+    assert 'private-api-key' not in audit_path.read_text()
+    daily_proposals(menu['date'], items, config, 'bulk_all', cache_dir=tmp_path,
+                    caller=caller, api_key='private-api-key')
+    caller.assert_called_once()
+    assert len(list((tmp_path / menu['date'] / 'audits' / 'bulk_all').glob('*.json'))) == 1
+
+
+@pytest.mark.parametrize('response', [TimeoutError('private-api-key'), {'combos': [['unknown']]}])
+def test_failed_refresh_preserves_existing_cache_and_records_attempt(config, fixture_menu, tmp_path, response):
+    config['llm']['enabled'] = True
+    menu, tags = fixture_menu
+    items = [food(dish, tags) for dish in menu['dishes']]
+    combos = fallback_proposals(items)
+    path = tmp_path / menu['date'] / 'bulk_all.json'
+    write_json(path, {'combos': combos, 'source': 'llm'})
+    previous = path.read_bytes()
+    caller = Mock(side_effect=response) if isinstance(response, Exception) else Mock(return_value=response)
+    assert daily_proposals(menu['date'], items, config, 'bulk_all', cache_dir=tmp_path,
+                           caller=caller, api_key='private-api-key', refresh=True) == combos
+    assert path.read_bytes() == previous
+    audit_path = next((path.parent / 'audits' / 'bulk_all').glob('*.json'))
+    audit = read_json(audit_path)
+    assert audit['source'] == 'previous_cache'
+    assert audit['cache_updated'] is False
+    assert audit['previous_cache']['combos'] == combos
+    assert 'private-api-key' not in audit_path.read_text()
+
+
+def test_provider_audit_keeps_visible_output_when_json_cannot_be_parsed(monkeypatch, fixture_menu):
+    from proposals import record_response
+    from tag import generate_json
+    result = {'modelVersion': 'test-model', 'candidates': [{'finishReason': 'STOP', 'content': {'parts': [
+        {'text': 'provider reasoning', 'thought': True}, {'text': 'invalid JSON response'}]}}]}
+    response = Mock()
+    response.read.return_value = json.dumps(result).encode()
+    response.__enter__ = Mock(return_value=response)
+    response.__exit__ = Mock(return_value=False)
+    monkeypatch.setattr('tag.urlopen', Mock(return_value=response))
+    audit = {}
+    with pytest.raises(ValueError):
+        generate_json('prompt', {}, {}, 'model', 'private-api-key',
+                      response_observer=lambda value: record_response(audit, value))
+    assert audit['provider_response']['candidates'] == [{'finish_reason': 'STOP', 'text': 'invalid JSON response'}]
