@@ -249,8 +249,7 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
 .goal-check { visibility:visible; opacity:0; transition:opacity 180ms ease; }
 .goals button[aria-pressed='true'] .goal-check { opacity:1; }
 .receipt { transition:background-color 180ms ease; }
-.receipt[aria-busy='true'] .plate-art { animation:menu-breathe 1.4s ease-in-out infinite alternate; }
-@keyframes menu-breathe { from { opacity:.55; } to { opacity:1; } }
+.plate-snapshot { position:absolute; z-index:2; pointer-events:none; min-height:0; background:var(--plate); }
 @keyframes panel-arrive { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
 .filter-panel:not([hidden]), .disclosure[open] .disclosure-content, dialog[open] { animation:panel-arrive 220ms var(--motion-ease); }
 @media (max-width:760px) { .heading-actions { gap:8px; } .filter-toggle,.filter-toggle img { width:48px; height:48px; } }

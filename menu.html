@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./menu.css?v=filters-motion-1">
+  <link rel="stylesheet" href="./menu.css?v=filters-motion-2">
 </head>
 <body>
   <div class="shell">
@@ -119,19 +119,29 @@
     const reports=PlateReports.create(globalThis.MENSA_REPORT_ENDPOINT);
     let brokenKeys=new Set();
     const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
-    let plateAnimations=[];
+    let plateAnimations=[],plateSnapshot,hasRenderedPlate=false;
     function stopPlateAnimations() {
       plateAnimations.forEach(animation=>animation.cancel());plateAnimations=[];
+      plateSnapshot?.remove();plateSnapshot=undefined;
     }
-    function animatePlateChange(direction=0) {
-      if(reducedMotion.matches || typeof $('plate-art').animate!=='function') return;
-      const timing={duration:280,easing:'cubic-bezier(.22,1,.36,1)'};
-      for(const [target,distance] of [[$('plate-art'),22],[$('plate').querySelector('.plate-summary'),14],[$('items'),10]]) {
-        plateAnimations.push(target.animate([
-          {opacity:0,transform:direction?'translateX('+(direction*distance)+'px)':'translateY(8px)'},
-          {opacity:1,transform:'translateX(0)'}
-        ],timing));
-      }
+    function capturePlate() {
+      if(reducedMotion.matches || !hasRenderedPlate || $('plate').classList.contains('is-empty')) return;
+      const overview=$('plate').querySelector('.plate-overview'),rect=overview.getBoundingClientRect();
+      plateSnapshot=overview.cloneNode(true);
+      plateSnapshot.removeAttribute('id');
+      plateSnapshot.querySelectorAll('[id]').forEach(node=>node.removeAttribute('id'));
+      plateSnapshot.setAttribute('aria-hidden','true');plateSnapshot.inert=true;
+      plateSnapshot.classList.add('plate-snapshot');
+      Object.assign(plateSnapshot.style,{top:(rect.top+scrollY)+'px',left:(rect.left+scrollX)+'px',width:rect.width+'px',height:rect.height+'px'});
+      document.body.append(plateSnapshot);
+    }
+    function animatePlateChange() {
+      const snapshot=plateSnapshot;
+      if(!snapshot) return;
+      if(typeof snapshot.animate!=='function') {snapshot.remove();return;}
+      const animation=snapshot.animate([{opacity:1},{opacity:0}],{duration:200,easing:'ease-in-out'});
+      plateAnimations.push(animation);
+      animation.finished.catch(()=>{}).then(()=>snapshot.remove());
     }
     reducedMotion.addEventListener('change',stopPlateAnimations);
     try {
@@ -264,7 +274,7 @@
       DishIcons.compose($('plate-art'),[...currentPlate().items,...activeExtras()]);
     }
     function render() {
-      stopPlateAnimations();
+      stopPlateAnimations();capturePlate();
       if(stale) return empty(selectedDate && selectedDate!==berlinDate()?'That day’s plates aren’t ready.':'Today’s plates aren’t ready.','The published menu does not match '+(selectedDate || berlinDate())+'. Check the official menu for that day.');
       const v=variant();
       if(data.state==='closed') return empty('No menu today.',v.message);
@@ -287,13 +297,13 @@
       $('option-status').setAttribute('aria-label','Lunch option '+(plateIndex+1)+' of '+plates.length);
       $('announcement').textContent='Option '+(plateIndex+1)+' of '+plates.length+': '+p.title;
       $('report-plate').hidden=!reports.enabled || p.items.some(i=>!i.id);
-      $('share').textContent='Share plate';renderExtras();renderTotals();animatePlateChange();
+      $('share').textContent='Share plate';renderExtras();renderTotals();hasRenderedPlate=true;animatePlateChange();
     }
     function cycle(direction) {
       if(!data || stale || variant().state!=='ready') return;
       const count=visiblePlates().length;
       if(count<2) return;
-      plateIndex=(plateIndex+direction+count)%count;render();stopPlateAnimations();animatePlateChange(direction);
+      plateIndex=(plateIndex+direction+count)%count;render();
     }
     function shortName(name) {return name.replace(/\s*\(1\s*Stück\)/gi,'').split(/\s+(?:mit|auf|aus|in|an)\s+/i)[0];}
     function briefDish(item) {
@@ -329,7 +339,8 @@
     $('vegan').addEventListener('change',()=>{selection.vegan=$('vegan').checked;saveAndRender();});
     function setFilterOpen(open) {
       $('filter-panel').hidden=!open;
-      $('filter-toggle').setAttribute('aria-expanded',String(open));syncControls();
+      $('filter-toggle').setAttribute('aria-expanded',String(open));
+      $('filter-toggle').dataset.active=String(open || Boolean(filterProfile()));
     }
     $('filter-toggle').addEventListener('click',()=>setFilterOpen($('filter-panel').hidden));
     for(const [id,key] of [['no-pork','noPork'],['no-beef','noBeef'],['no-meat','noMeat']]) {
@@ -338,7 +349,7 @@
     $('clear-filters').addEventListener('click',()=>{
       selection.noPork=false;selection.noBeef=false;selection.noMeat=false;saveAndRender();
     });
-    document.addEventListener('click',event=>{if(!event.target.closest('.filter-control')) setFilterOpen(false);});
+    document.addEventListener('click',event=>{if(!$('filter-panel').hidden && !event.target.closest('.filter-control')) setFilterOpen(false);});
     document.addEventListener('keydown',event=>{
       if(event.key==='Escape' && !$('filter-panel').hidden) {setFilterOpen(false);$('filter-toggle').focus();}
     });
@@ -399,28 +410,57 @@
     function renderDays() {
       $('days').replaceChildren();$('days').hidden=!weekIndex;
       if(!weekIndex) return;
-      for(const row of weekIndex.days.filter(row=>mondayOf(row.date)===mondayOf(selectedDate))) {
+      for(const row of weekIndex.days.filter(row=>mondayOf(row.date)===mondayOf(pendingDate || selectedDate))) {
         const button=document.createElement('button');button.type='button';button.className='day-button';
         const date=new Date(row.date+'T12:00:00Z');
         button.append(document.createTextNode(new Intl.DateTimeFormat('en-GB',{weekday:'short',timeZone:'Europe/Berlin'}).format(date)));
         const label=document.createElement('span');label.className='day-date';
         label.textContent=new Intl.DateTimeFormat('en-GB',{day:'numeric',timeZone:'Europe/Berlin'}).format(date);
-        button.append(label);button.setAttribute('aria-pressed',String(row.date===selectedDate));button.dataset.date=row.date;
+        button.append(label);button.setAttribute('aria-pressed',String(row.date===(pendingDate || selectedDate)));button.dataset.date=row.date;
         button.setAttribute('aria-label',row.date+(row.state==='closed'?' · no menu':' menu'));
         button.addEventListener('click',()=>selectDay(row));$('days').append(button);
       }
     }
+    const menuRequests=new Map(),artworkRequests=new Map();
+    function warmArtwork(payload) {
+      const variants=[...Object.values(payload.variants),...Object.values(payload.filtered_variants || {})];
+      const items=variants.flatMap(variant=>variant.plates.flatMap(plate=>plate.items));
+      items.push(...payload.extras.all);
+      const keys=new Set(items.map(item=>DishIcons.classify(item)));
+      for(const key of keys) {
+        if(artworkRequests.has(key)) continue;
+        const image=new Image();image.src=DishIcons.assetUrl(key);
+        artworkRequests.set(key,image.decode().catch(()=>{}));
+      }
+      return Promise.all([...keys].map(key=>artworkRequests.get(key)));
+    }
+    let pendingDate;
+    function getMenu(row) {
+      if(!menuRequests.has(row.date)) {
+        const request=fetch('./'+row.file,{cache:'no-store'}).then(response=>{
+          if(!response.ok) throw new Error('Menu request failed');
+          return response.json();
+        }).then(validateDay).then(payload=>{warmArtwork(payload);return payload;}).catch(error=>{menuRequests.delete(row.date);throw error;});
+        menuRequests.set(row.date,request);
+      }
+      return menuRequests.get(row.date);
+    }
+    function prefetchMenus() {
+      for(const row of weekIndex?.days || []) getMenu(row).catch(()=>{});
+    }
     async function selectDay(row) {
       if($('report-sheet').open) $('report-sheet').close();
-      const token=++loadToken;selectedDate=row.date;plateIndex=0;selectedExtras.clear();data=undefined;stale=false;brokenKeys=new Set();
-      $('extras-wrap').open=false;
-      renderDays();dateLabel(row.date);empty('Getting the menu…','','tray');$('plate').setAttribute('aria-busy','true');
+      const token=++loadToken;pendingDate=row.date;
+      renderDays();$('plate').setAttribute('aria-busy','true');
+      if(!data) empty('Getting the menu…','','tray');
       try {
-        const response=await fetch('./'+row.file,{cache:'no-store'});
-        if(!response.ok) throw new Error('Menu request failed');
-        const payload=validateDay(await response.json());
+        const payload=await getMenu(row);
+        await warmArtwork(payload);
         if(token!==loadToken) return;
-        data=payload;stale=data.date!==row.date;render();$('notice').textContent=(data.warnings || []).join(' ');
+        selectedDate=row.date;pendingDate=undefined;plateIndex=0;selectedExtras.clear();brokenKeys=new Set();
+        $('extras-wrap').open=false;
+        data=payload;stale=data.date!==row.date;renderDays();dateLabel(row.date);render();
+        $('plate').setAttribute('aria-busy','false');$('notice').textContent=(data.warnings || []).join(' ');
         const broken=await reports.broken(row.date);
         if(token===loadToken) {
           const previous=currentPlate();
@@ -428,8 +468,13 @@
           const next=previous?visiblePlates().findIndex(p=>p===previous):-1;
           if(next<0 && previous) {plateIndex=0;render();}
         }
-      } catch(_) {if(token===loadToken){data=undefined;empty('A little trouble in the kitchen.','Please choose another day or check the official menu below.','error');}}
-      finally {if(token===loadToken) $('plate').setAttribute('aria-busy','false');}
+      } catch(_) {
+        if(token===loadToken) {
+          pendingDate=undefined;renderDays();
+          if(data) $('notice').textContent='That menu could not be loaded. Please try another day.';
+          else empty('A little trouble in the kitchen.','Please choose another day or check the official menu below.','error');
+        }
+      } finally {if(token===loadToken) $('plate').setAttribute('aria-busy','false');}
     }
     async function loadToday() {
       const response=await fetch('./data/today.json',{cache:'no-store'});
@@ -453,7 +498,7 @@
           ? index.days.find(row=>row.date===explicit) || {date:explicit,file:'data/days/'+explicit+'.json'}
           : defaultMenuDay(index);
         if(!day) throw new Error('No upcoming menu');
-        await selectDay(day);
+        await selectDay(day);prefetchMenus();
       } catch(_) {
         weekIndex=undefined;$('days').hidden=true;
         try {
