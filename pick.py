@@ -14,6 +14,7 @@ from judge import choose_variants
 from pair import food, load_pairing
 from proposals import daily_proposals, fallback_proposals, validate_proposals
 from scoring import score_plate
+from diet_filters import FILTERS, allows, meat_types
 
 GOALS = ("bulk", "cut", "budget")
 SCHEMA_VERSION = 2
@@ -164,7 +165,7 @@ def plate_result(value, goal=None, vegan=None, config=None):
     for i in value["items"]:
         items.append({k: i[k] for k in ("name", "name_en", "station", "role", "texture", "count", "unit", "weight_g",
                                         "price_cents", "is_vegan", "markers", "allergens", "additives", "standing", "diet")}
-                     | {"id": dish_id(i), "serving": serving(i), "price_source": i["price"]["source"], "kcal": round(i["kcal"], 2), "protein_g": round(i["protein"], 2)})
+                     | {"meat_types": meat_types(i), "id": dish_id(i), "serving": serving(i), "price_source": i["price"]["source"], "kcal": round(i["kcal"], 2), "protein_g": round(i["protein"], 2)})
     total = {"price_cents": value["price_cents"], "price_eur": value["price_cents"] / 100, "weight_g": value["weight_g"],
              "kcal": round(value["kcal"], 2), **{f"{n}_g": round(value[n], 2) for n in ("protein", "carbs", "fat")}}
     return {"title": " + ".join(re.split(r"\s+(?:with|on|served|in|made from)\s+", re.sub(r"\s*\([^)]*\)", "", i["name_en"]), maxsplit=1, flags=re.I)[0].strip() for i in value["items"]), "reason": None, "picked_by": "rules",
@@ -182,7 +183,7 @@ def extras(dishes, cache, config):
         if options:
             i = options[0]
             all_extras.append({k: i[k] for k in ("name", "name_en", "station", "weight_g", "price_cents", "is_vegan", "diet")}
-                              | {"serving": serving(i), "kcal": round(i["kcal"], 2), "protein_g": round(i["protein"], 2), "price_source": i["price"]["source"]})
+                              | {"meat_types": meat_types(i), "serving": serving(i), "kcal": round(i["kcal"], 2), "protein_g": round(i["protein"], 2), "price_source": i["price"]["source"]})
     return {"all": all_extras, "vegan": [i for i in all_extras if i["is_vegan"] is True]}
 
 
@@ -205,7 +206,7 @@ def build_today(menu, cache, config, allow_missing=False, *, pairing=None, no_ll
     result = {k: menu[k] for k in ("date", "mensa", "state", "source", "source_url", "fetched_at", "warnings")}
     result.update(schema_version=SCHEMA_VERSION, menu_count=len(menu["dishes"]), scoring=config["scoring"],
                   default_scoop_g=config["portions"]["default_scoop_g"],
-                  nutrition_note="Nutrition values are estimates.", variants={}, extras={"all": [], "vegan": []})
+                  nutrition_note="Nutrition values are estimates.", filtered_variants={}, variants={}, extras={"all": [], "vegan": []})
     if missing:
         result["warnings"] = [*result["warnings"], f"{len(missing)} untagged dish(es) omitted from plate recommendations."]
         result["missing_tags"] = missing
@@ -234,6 +235,17 @@ def build_today(menu, cache, config, allow_missing=False, *, pairing=None, no_ll
             combos = proposal_sets[key]
             values = list(candidates(menu["dishes"], cache, config, vegan, pairing, proposals=combos)) if foods else []
             pool, relaxed, note = rank_variant(values, goal, vegan, config) if result["state"] == "open" else ([], False, None)
+            if not vegan:
+                vegan_values = list(candidates(menu["dishes"], cache, config, True, pairing,
+                                                proposals=proposal_sets[f"{goal}_vegan"])) if foods else []
+                for profile in FILTERS:
+                    eligible = [value for value in [*values, *vegan_values]
+                                if all(allows(item, profile) for item in value["items"])]
+                    filtered = top_plates(eligible, goal, config)
+                    result["filtered_variants"][f"{goal}_{profile}"] = {
+                        "state": "ready" if filtered else "unavailable",
+                        "plates": [plate_result(value) for value in filtered],
+                    }
             ranked[key] = pool
             state = ("ready" if pool else "unavailable") if result["state"] == "open" else result["state"]
             result["variants"][key] = {"state": state, "goal": goal, "vegan": vegan, "relaxed": relaxed, "note": note,

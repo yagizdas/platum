@@ -225,3 +225,34 @@ footer a:hover { text-decoration: underline; }
   .extra-chip { flex-wrap: wrap; }
   footer { align-items: start; flex-direction: column; gap: 10px; }
 }
+/* Dietary controls share the menu's blue selection state and supplied artwork. */
+.heading-actions { display:flex; align-items:center; gap:16px; }
+.filter-control { position:relative; flex:none; }
+.filter-toggle { position:relative; display:grid; place-items:center; width:64px; height:64px; padding:0; border:0; border-radius:50%; background:transparent; }
+.filter-toggle img { grid-area:1 / 1; width:64px; mix-blend-mode:multiply; transition:opacity 180ms ease; }
+.filter-on { opacity:0; }
+.filter-toggle[data-active='true'] .filter-on { opacity:1; }
+.filter-toggle[data-active='true'] .filter-off { opacity:0; }
+.filter-count { position:absolute; right:0; top:0; min-width:20px; padding:1px 5px; border-radius:50%; background:var(--accent); color:white; font-size:12px; }
+.filter-panel { position:absolute; top:calc(100% + 12px); right:0; z-index:10; width:280px; padding:22px; border-radius:24px; background:var(--paper); box-shadow:0 10px 36px #25282b24; }
+.filter-panel h2 { font-size:22px; margin-bottom:12px; }
+.filter-panel label { display:flex; align-items:center; gap:10px; min-height:48px; cursor:pointer; }
+.filter-panel label span { color:var(--muted); font-size:14px; }
+.filter-panel input { width:20px; height:20px; accent-color:var(--accent); }
+.filter-panel .text-button { color:var(--accent); }
+:root { --motion-ease:cubic-bezier(.22,1,.36,1); }
+button, .vegan-face, .switch, .disclosure-mark { transition:transform 140ms var(--motion-ease),background-color 180ms ease,border-color 180ms ease,color 180ms ease; }
+.switch::after { transition:transform 220ms var(--motion-ease); }
+button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97); }
+.goals .artwork, .vegan-face .artwork { transition:transform 240ms var(--motion-ease); }
+.goals button[aria-pressed='true'] .artwork, .toggle input:checked + .vegan-face .artwork { transform:translateY(-2px); }
+.goal-check { visibility:visible; opacity:0; transition:opacity 180ms ease; }
+.goals button[aria-pressed='true'] .goal-check { opacity:1; }
+.receipt { transition:background-color 180ms ease; }
+.receipt[aria-busy='true'] .plate-art { animation:menu-breathe 1.4s ease-in-out infinite alternate; }
+@keyframes menu-breathe { from { opacity:.55; } to { opacity:1; } }
+@keyframes panel-arrive { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+.filter-panel:not([hidden]), .disclosure[open] .disclosure-content, dialog[open] { animation:panel-arrive 220ms var(--motion-ease); }
+@media (max-width:760px) { .heading-actions { gap:8px; } .filter-toggle,.filter-toggle img { width:48px; height:48px; } }
+@media (max-width:520px) { .heading-actions { width:100%; } .heading-actions .day-strip { flex:1; min-width:0; width:auto; margin:0; gap:2px; } .heading-actions .day-button { min-width:40px; padding-inline:4px; } .filter-panel { right:0; width:min(280px,calc(100vw - 48px)); } }
+@media (prefers-reduced-motion:reduce) { *, *::before, *::after { animation:none!important; transition:none!important; } }
