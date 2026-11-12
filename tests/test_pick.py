@@ -23,12 +23,11 @@ def test_golden_lunches(config, fixture_menu, pairing, fixed_caps):
         "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 2)], 675, 29.4867) if fixed_caps else
                     ([('PINSA Funghi mit frischen Champignons', 1), ('Reis', 2)], 770, 27.0205),
         "cut_all": ([('Fleischpflanzerl (Frikadelle)', 1), ('Reis', 1)], 348, -1.7821),
-        "budget_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 405, -.9511) if fixed_caps else
-                      ([('Käsekrainer (1 Stück)', 1), ('Reis', 1)], 361, -.9974),
+        "budget_all": ([('Käsekrainer (1 Stück)', 1)], 226, .1448),
         "bulk_vegan": ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 810, 34.8506) if fixed_caps else
                       ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 675, 28.0622),
         "cut_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Gemüsecurry aus Blumenkohl und Broccoli', 1)], 405, -7.0742),
-        "budget_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Graupen-Gemüse-Eintopf', 1)], 320, -.726),
+        "budget_vegan": ([('Graupen-Gemüse-Eintopf', 1)], 50, -.0388),
     }
     for key, (items, price, score) in expected.items():
         p = result["variants"][key]["plates"][0]
@@ -151,7 +150,7 @@ def test_invalid_configured_scoop_caps(config, make_dish, maximum):
         portion_options(d, t, config)
 
 
-def test_friday_fish_can_reach_goals_with_two_scoops_of_rice(config, make_dish):
+def test_goal_scoring_chooses_rice_portions_for_fixed_fish_serving(config, make_dish):
     fish, fish_tag = make_dish("Fish fillet", station="Fisch", vegan=False,
                              piece=True, piece_g=140, min_g=120, max_g=160,
                              kcal=115, protein=18.5)
@@ -164,10 +163,10 @@ def test_friday_fish_can_reach_goals_with_two_scoops_of_rice(config, make_dish):
         value = choose(values, goal, config)
         assert value is not None and valid_plate(value["items"], config)
         assert value["items"][0]["weight_g"] == 140
-        count = 1 if goal == "cut" else 2
+        count = 2 if goal == "bulk" else 1
         assert value["items"][1]["count"] == count
-        assert value["kcal"] == (356 if goal == "cut" else 551)
-        assert value["protein"] == (29.95 if goal == "cut" else 34)
+        assert value["kcal"] == (551 if goal == "bulk" else 356)
+        assert value["protein"] == (34 if goal == "bulk" else 29.95)
 def test_candidates_can_exceed_650g_within_individual_portion_limits(config, make_dish):
     a, at = make_dish("Main A")
     b, bt = make_dish("Main B")

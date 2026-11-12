@@ -11,20 +11,6 @@ def test_asymmetric_linear(x, up, down, expected):
     assert h(x, up, down) == expected
 
 
-@pytest.mark.parametrize("goal,terms,total", [
-    ("budget", {"price": -2, "price_over_budget": 0, "energy_value": .6, "energy": 1 / 30, "protein": 3.2 / 15}, -1.1533),
-])
-def test_hand_computed_formulas(config, goal, terms, total):
-    score = score_plate({"price_cents": 400, "kcal": 600, "protein": 36}, goal, config)
-    assert score["total"] == total
-    assert {k: v for k, v in score.items() if k != "total"} == pytest.approx(terms)
-
-
-@pytest.mark.parametrize("goal,total", [("budget", -4.9)])
-def test_soft_deficits(config, goal, total):
-    assert score_plate({"price_cents": 200, "kcal": 300, "protein": 10}, goal, config)["total"] == total
-
-
 def test_learned_cut_prefers_more_protein_and_less_energy(config):
     plate = {"price_cents": 400, "kcal": 600, "protein": 36}
     score = score_plate(plate, "cut", config)["total"]
@@ -32,16 +18,14 @@ def test_learned_cut_prefers_more_protein_and_less_energy(config):
     assert score_plate({**plate, "kcal": 700}, "cut", config)["total"] < score
 
 
-@pytest.mark.parametrize("goal,base_per_euro", [("budget", .5)])
-def test_price_penalty_is_continuous_and_steeper_above_seven_euros(config, goal, base_per_euro):
-    penalties = []
+def test_learned_budget_penalizes_price_continuously(config):
+    scores = []
     for cents in (600, 700, 701, 800):
-        terms = score_plate({"price_cents": cents, "kcal": 900, "protein": 60}, goal, config)
-        assert terms["price_over_budget"] == pytest.approx(-max(0, cents / 100 - 7))
-        penalties.append(terms["price"] + terms["price_over_budget"])
-    assert penalties[1] - penalties[0] == pytest.approx(-base_per_euro)
-    assert penalties[2] - penalties[1] == pytest.approx(-.01 * (base_per_euro + 1))
-    assert penalties[3] - penalties[1] == pytest.approx(-(base_per_euro + 1))
+        terms = score_plate({"price_cents": cents, "kcal": 900, "protein": 60}, "budget", config)
+        scores.append(terms["price"])
+    assert scores[0] > scores[1] > scores[2] > scores[3]
+    assert scores[1] - scores[0] == pytest.approx(scores[3] - scores[1])
+    assert scores[2] - scores[1] == pytest.approx(.01 * (scores[1] - scores[0]))
 
 
 @pytest.mark.parametrize("alternative", [
@@ -53,7 +37,7 @@ def test_bulk_prefers_substantial_protein_over_cheap_energy_or_small_value_plate
     assert score_plate(preferred, "bulk", config)["total"] > score_plate(alternative, "bulk", config)["total"]
 
 
-@pytest.mark.parametrize("goal", ["bulk", "cut"])
+@pytest.mark.parametrize("goal", ["bulk", "cut", "budget"])
 def test_learned_score_is_sum_of_model_feature_terms(config, goal):
     p = {"price_cents": 400, "kcal": 600, "protein": 36}
     score = score_plate(p, goal, config)

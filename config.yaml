@@ -47,8 +47,4 @@ scoring:
   cut:
     learned_model: data/models/cut-score.json
   budget:
-    price: {metric: price, weight: -2, normalizer: 4}
-    price_over_budget: {quantity: price, pivot: 7, reverse: true, up: 0, down: 1, normalizer: 1}
-    energy_value: {metric: kcal_per_euro, weight: 1, normalizer: 250}
-    energy: {quantity: kcal, pivot: 550, up: 0.2, down: 3, normalizer: 300}
-    protein: {quantity: protein, pivot: 20, up: 0.2, down: 3, normalizer: 15}
+    learned_model: data/models/budget-score.json
