@@ -22,12 +22,12 @@ def test_golden_lunches(config, fixture_menu, pairing, fixed_caps):
     expected = {
         "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 2)], 675, 29.4867) if fixed_caps else
                     ([('PINSA Funghi mit frischen Champignons', 1), ('Reis', 2)], 770, 27.0205),
-        "cut_all": ([('Seelachsfilet (1Stück)', 1)], 285, 3.2649),
+        "cut_all": ([('Seelachsfilet (1Stück)', 1)], 285, 5.7014),
         "budget_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 405, -.9511) if fixed_caps else
                       ([('Käsekrainer (1 Stück)', 1), ('Reis', 1)], 361, -.9974),
         "bulk_vegan": ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 810, 34.8506) if fixed_caps else
                       ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 675, 28.0622),
-        "cut_vegan": ([('Graupen-Gemüse-Eintopf', 2), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 369, -1.6983),
+        "cut_vegan": ([('Graupen-Gemüse-Eintopf', 1)], 50, -.8278),
         "budget_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Graupen-Gemüse-Eintopf', 1)], 320, -.726),
     }
     for key, (items, price, score) in expected.items():

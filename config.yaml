@@ -42,12 +42,7 @@ scoring:
   bulk:
     learned_model: data/models/bulk-score.json
   cut:
-    price: {metric: price, weight: -1, normalizer: 4}
-    price_over_budget: {quantity: price, pivot: 7, reverse: true, up: 0, down: 1, normalizer: 1}
-    protein_density: {metric: protein_per_100kcal, weight: 2, normalizer: 8}
-    protein_value: {metric: protein_per_euro, weight: 0.5, normalizer: 12}
-    protein: {quantity: protein, pivot: 30, up: 0.5, down: 3, normalizer: 15}
-    energy: {quantity: kcal, pivot: 700, reverse: true, up: 0, down: 2, normalizer: 200}
+    learned_model: data/models/cut-score.json
   budget:
     price: {metric: price, weight: -2, normalizer: 4}
     price_over_budget: {quantity: price, pivot: 7, reverse: true, up: 0, down: 1, normalizer: 1}

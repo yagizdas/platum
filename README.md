@@ -32,7 +32,7 @@ To fit exported cut judgments without overwriting the bulk model:
 python train_pairwise_score.py --goal cut --input /path/to/platum-cut-judgments.json --output data/models/cut-score.json
 ```
 
-Training writes the model; activating it for meal scoring is a separate configuration change.
+Cut scoring uses `data/models/cut-score.json`, trained from the private 2026-11-12 export. Its 124 decisive choices train the same Bradley–Terry model as Bulk; 46 “both bad” judgments are retained locally but excluded from pairwise fitting. Raw Cut judgments are not committed or published. Leave-one-menu-date-out agreement is 123/124 (99.2%), versus 119/124 (96.0%) for the previous Cut score. This measures agreement with these labels, not nutrition quality or independent-user performance. Both `cut_all` and `cut_vegan` use this model for portions and ordering.
 
 ## Pipeline and history
 
@@ -55,12 +55,12 @@ For each combination, code tries one to three scoops per scoop-served item. Conf
 With `e` = euros, `k` = kcal, `p` = protein grams and `h(x;u,d) = u*x` for nonnegative `x`, otherwise `d*x`:
 
 ```text
-Bulk   = -2*e/4 - max(0,e-7) + .25*(k/e)/250 + .5*(p/e)/12 + 1.5*p/10 + h(k-500;.25,3)/300
-Cut    = -e/4 - max(0,e-7) + 2*(p/k*100)/8 + .5*(p/e)/12 + h(p-30;.5,3)/15 + h(700-k;0,2)/200
+Bulk   = 1.798757172924*k/100 + 1.770768547829*p/10 + .248880747798*e
+Cut    = -2.022930718854*k/100 + 3.298844124996*p/10 + .012871976974*e
 Budget = -2*e/4 - max(0,e-7) + (k/e)/250 + h(k-550;.2,3)/300 + h(p-20;.2,3)/15
 ```
 
-Every weight, normalizer, pivot and asymmetric slope lives under `scoring.<goal>` in `config.yaml`. All goals lose an additional point per euro above €7, a soft penalty rather than a hard price cap. Cut also deducts 0.25 points per euro across the entire price; Bulk and Budget deduct 0.5. Bulk rewards total protein linearly at 0.15 points per gram, without a protein target, with smaller value and calorie terms. The [November bulk calibration](docs/bulk-calibration-2026-11-09.md) records the comparison and its limits. Sort by score rounded to four decimals descending, price ascending, then sorted dish IDs. Keep the best portioning and up to five plates, with no repeated main in a variant. Fewer distinct mains means fewer alternatives. Score terms and total are saved under each plate's `score` and never displayed.
+Bulk and Cut load learned feature weights from the model paths under `scoring.<goal>` in `config.yaml`. Budget retains its hand-written equation and soft penalty above €7. The learned scores have no extra price penalty, calorie target, or nutrition floors; Cut can prefer a small low-calorie tray, and its slight positive price coefficient reflects these judgments rather than a preference rule we added. The [November bulk calibration](docs/bulk-calibration-2026-11-09.md) records the earlier hand-written comparison and its limits. Sort by score rounded to four decimals descending, price ascending, then sorted dish IDs. Keep the best portioning and up to five plates, with no repeated main in a variant. Fewer distinct mains means fewer alternatives. Score terms and total are saved under each plate's `score` and never displayed.
 
 `judge.py` now writes only a short English title and reason for **every final plate**. `data/title_cache.json` caches this optional daily call; IDs apply copy to the existing order. Missing, invalid or failed copy cannot change plates, portions, totals or ranking. Fallback titles use short English item names. The old pairing and judge caches are retained; pairing values no longer constrain plate selection.
 

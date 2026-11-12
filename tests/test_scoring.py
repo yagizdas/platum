@@ -12,7 +12,6 @@ def test_asymmetric_linear(x, up, down, expected):
 
 
 @pytest.mark.parametrize("goal,terms,total", [
-    ("cut", {"price": -1, "price_over_budget": 0, "protein_density": 1.5, "protein_value": .375, "protein": .2, "energy": 0}, 1.075),
     ("budget", {"price": -2, "price_over_budget": 0, "energy_value": .6, "energy": 1 / 30, "protein": 3.2 / 15}, -1.1533),
 ])
 def test_hand_computed_formulas(config, goal, terms, total):
@@ -21,18 +20,19 @@ def test_hand_computed_formulas(config, goal, terms, total):
     assert {k: v for k, v in score.items() if k != "total"} == pytest.approx(terms)
 
 
-@pytest.mark.parametrize("goal,total", [("cut", -3.4583), ("budget", -4.9)])
+@pytest.mark.parametrize("goal,total", [("budget", -4.9)])
 def test_soft_deficits(config, goal, total):
     assert score_plate({"price_cents": 200, "kcal": 300, "protein": 10}, goal, config)["total"] == total
 
 
-def test_cut_penalizes_energy_above_pivot(config):
-    score = score_plate({"price_cents": 400, "kcal": 800, "protein": 40}, "cut", config)
-    assert score["energy"] == -1
-    assert score["total"] == 0
+def test_learned_cut_prefers_more_protein_and_less_energy(config):
+    plate = {"price_cents": 400, "kcal": 600, "protein": 36}
+    score = score_plate(plate, "cut", config)["total"]
+    assert score_plate({**plate, "protein": 46}, "cut", config)["total"] > score
+    assert score_plate({**plate, "kcal": 700}, "cut", config)["total"] < score
 
 
-@pytest.mark.parametrize("goal,base_per_euro", [("cut", .25), ("budget", .5)])
+@pytest.mark.parametrize("goal,base_per_euro", [("budget", .5)])
 def test_price_penalty_is_continuous_and_steeper_above_seven_euros(config, goal, base_per_euro):
     penalties = []
     for cents in (600, 700, 701, 800):
@@ -53,10 +53,11 @@ def test_bulk_prefers_substantial_protein_over_cheap_energy_or_small_value_plate
     assert score_plate(preferred, "bulk", config)["total"] > score_plate(alternative, "bulk", config)["total"]
 
 
-def test_learned_bulk_score_is_sum_of_model_feature_terms(config):
+@pytest.mark.parametrize("goal", ["bulk", "cut"])
+def test_learned_score_is_sum_of_model_feature_terms(config, goal):
     p = {"price_cents": 400, "kcal": 600, "protein": 36}
-    score = score_plate(p, "bulk", config)
-    weights = {feature["name"]: feature for feature in config["scoring"]["bulk"]["learned_model"]["features"]}
+    score = score_plate(p, goal, config)
+    weights = {feature["name"]: feature for feature in config["scoring"][goal]["learned_model"]["features"]}
     assert score["kcal"] == pytest.approx(weights["kcal"]["weight"] * 6)
     assert score["protein"] == pytest.approx(weights["protein"]["weight"] * 3.6)
     assert score["price"] == pytest.approx(weights["price"]["weight"] * 4)
