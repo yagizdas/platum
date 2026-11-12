@@ -120,7 +120,9 @@ def candidates(dishes, cache, config, vegan=False, pairing=None, proposals=None)
 def top_plates(plates, goal, config, top_k=5, relax_protein=False):
     if goal not in GOALS:
         raise ValueError(f"Unknown goal: {goal}")
-    scored = [{**p, "score": score_plate(p, goal, config)} for p in plates]
+    minimums = config.get("plate_minimums", {}).get(goal, {})
+    scored = [{**p, "score": score_plate(p, goal, config)} for p in plates
+              if all(p[metric] >= minimum for metric, minimum in minimums.items())]
     def rank(p):
         return (-p["score"]["total"], p["price_cents"], tuple(sorted(dish_id(i) for i in p["items"])),
                 tuple(sorted((dish_id(i), i["count"]) for i in p["items"])))

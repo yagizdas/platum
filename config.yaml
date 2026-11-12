@@ -38,6 +38,9 @@ portions:
   station_scoop_g: {}  # e.g. {Studitopf: 150, Dessert (Glas): 100}
   max_scoop_g_by_role: {main: 450, side: 300}
 
+plate_minimums:
+  cut: {kcal: 300, protein: 20}
+
 scoring:
   bulk:
     learned_model: data/models/bulk-score.json

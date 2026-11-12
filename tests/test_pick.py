@@ -22,12 +22,12 @@ def test_golden_lunches(config, fixture_menu, pairing, fixed_caps):
     expected = {
         "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 2)], 675, 29.4867) if fixed_caps else
                     ([('PINSA Funghi mit frischen Champignons', 1), ('Reis', 2)], 770, 27.0205),
-        "cut_all": ([('Seelachsfilet (1Stück)', 1)], 285, 5.7014),
+        "cut_all": ([('Fleischpflanzerl (Frikadelle)', 1), ('Reis', 1)], 348, -1.7821),
         "budget_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 405, -.9511) if fixed_caps else
                       ([('Käsekrainer (1 Stück)', 1), ('Reis', 1)], 361, -.9974),
         "bulk_vegan": ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 810, 34.8506) if fixed_caps else
                       ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 675, 28.0622),
-        "cut_vegan": ([('Graupen-Gemüse-Eintopf', 1)], 50, -.8278),
+        "cut_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Gemüsecurry aus Blumenkohl und Broccoli', 1)], 405, -7.0742),
         "budget_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Graupen-Gemüse-Eintopf', 1)], 320, -.726),
     }
     for key, (items, price, score) in expected.items():
@@ -281,3 +281,24 @@ def test_price_rounding_and_piece_portion(config, make_dish):
     d, t = make_dish(piece=True, piece_g=180, min_g=150, max_g=250, base=1.5)
     item = portion_options(d, t, config)[0]
     assert item["count"] == 1 and item["unit"] == "piece" and item["price_cents"] == 312
+
+
+def test_cut_minimums_reject_snack_portions_before_ranking(config, make_dish):
+    stew, tag = make_dish("Farmer's stew", kcal=85, protein=4.5, min_g=150)
+    values = list(candidates([stew], {normalize(stew['name']): tag}, config))
+    selected = choose(values, 'cut', config)
+    assert selected['kcal'] == 382.5
+    assert selected['protein'] == 20.25
+    assert selected['items'][0]['count'] == 3
+    assert choose([p for p in values if p['kcal'] < 300 or p['protein'] < 20], 'cut', config) is None
+    # The Cut restriction does not remove options from other goals.
+    assert choose(values[:1], 'bulk', config) is not None
+    assert choose(values[:1], 'budget', config) is not None
+
+
+@pytest.mark.parametrize('kcal,protein,qualifies', [(300,20,True),(299.99,20,False),(300,19.99,False)])
+def test_cut_minimum_boundaries(config, make_dish, kcal, protein, qualifies):
+    config['portions']['max_scoop_g_by_role']['main'] = 150
+    dish, tag = make_dish('Boundary plate', min_g=150, max_g=150, kcal=kcal/1.5, protein=protein/1.5)
+    values = list(candidates([dish], {normalize(dish['name']): tag}, config))
+    assert bool(choose(values, 'cut', config)) is qualifies
