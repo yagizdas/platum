@@ -121,8 +121,10 @@ def top_plates(plates, goal, config, top_k=5, relax_protein=False):
     if goal not in GOALS:
         raise ValueError(f"Unknown goal: {goal}")
     minimums = config.get("plate_minimums", {}).get(goal, {})
+    maximums = config.get("plate_maximums", {}).get(goal, {})
     scored = [{**p, "score": score_plate(p, goal, config)} for p in plates
-              if all(p[metric] >= minimum for metric, minimum in minimums.items())]
+              if all(p[metric] >= minimum for metric, minimum in minimums.items())
+              and all(p[metric] <= maximum for metric, maximum in maximums.items())]
     def rank(p):
         return (-p["score"]["total"], p["price_cents"], tuple(sorted(dish_id(i) for i in p["items"])),
                 tuple(sorted((dish_id(i), i["count"]) for i in p["items"])))

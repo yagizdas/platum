@@ -41,6 +41,9 @@ portions:
 plate_minimums:
   cut: {kcal: 300, protein: 20}
 
+plate_maximums:
+  bulk: {kcal: 1500}
+
 scoring:
   bulk:
     learned_model: data/models/bulk-score.json

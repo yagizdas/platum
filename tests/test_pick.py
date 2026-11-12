@@ -301,3 +301,33 @@ def test_cut_minimum_boundaries(config, make_dish, kcal, protein, qualifies):
     dish, tag = make_dish('Boundary plate', min_g=150, max_g=150, kcal=kcal/1.5, protein=protein/1.5)
     values = list(candidates([dish], {normalize(dish['name']): tag}, config))
     assert bool(choose(values, 'cut', config)) is qualifies
+
+
+@pytest.mark.parametrize('kcal,qualifies', [(1400, True), (1500, True), (1500.01, False)])
+def test_bulk_calorie_cap_boundaries(config, make_dish, kcal, qualifies):
+    dish, tag = make_dish('Fixed lunch', piece=True, piece_g=300, min_g=300, max_g=300,
+                          kcal=kcal / 3, protein=10)
+    values = list(candidates([dish], {normalize(dish['name']): tag}, config))
+    assert bool(choose(values, 'bulk', config)) is qualifies
+    assert choose(values, 'cut', config) is not None
+    assert choose(values, 'budget', config) is not None
+
+
+@pytest.mark.parametrize('vegan', [False, True])
+def test_bulk_cap_selects_smaller_eligible_portions(config, make_dish, vegan):
+    dish, tag = make_dish('Calorie dense main', vegan=vegan, kcal=400, protein=15)
+    values = list(candidates([dish], {normalize(dish['name']): tag}, config, vegan=vegan))
+    assert any(plate['kcal'] > 1500 for plate in values)
+    selected = choose(values, 'bulk', config)
+    assert selected['items'][0]['count'] == 2
+    assert selected['kcal'] == 1200
+
+
+def test_bulk_cap_applies_to_the_whole_tray(config, make_dish):
+    first, first_tag = make_dish('First main', kcal=200)
+    second, second_tag = make_dish('Second main', kcal=200)
+    tags = {normalize(first['name']): first_tag, normalize(second['name']): second_tag}
+    values = list(candidates([first, second], tags, config,
+                             proposals=[[dish_id(first), dish_id(second)]]))
+    assert max(plate['kcal'] for plate in values) == 1800
+    assert choose(values, 'bulk', config)['kcal'] == 1500
