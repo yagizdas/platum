@@ -121,7 +121,7 @@ def repair_tag(tag, *, name):
     return tag
 
 
-def generate_json(prompt, payload, schema, model, api_key, *, temperature=None):
+def generate_json(prompt, payload, schema, model, api_key, *, temperature=None, response_observer=None):
     """One structured Gemini request; callers own their retry/fallback policy."""
     generation = {"maxOutputTokens": 4096, "thinkingConfig": {"thinkingLevel": "LOW"},
                   "responseMimeType": "application/json", "responseJsonSchema": schema}
@@ -143,6 +143,8 @@ def generate_json(prompt, payload, schema, model, api_key, *, temperature=None):
         except (ValueError, AttributeError):
             message = exc.reason
         raise GeminiAPIError(exc.code, str(message).replace(api_key, '[redacted]')[:500]) from None
+    if response_observer is not None:
+        response_observer(result)
     candidates = result.get("candidates", [])
     if len(candidates) != 1 or candidates[0].get("finishReason") != "STOP":
         raise ValueError("Incomplete or refused model response")
