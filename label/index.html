@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Plate preference labeler</title><link rel="stylesheet" href="../icons/artwork.css"><link rel="stylesheet" href="./label.css"></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Plate preference labeler</title><link rel="stylesheet" href="../icons/artwork.css"><link rel="stylesheet" href="./label.css?v=20261112-reset2"></head>
 <body><main>
 <header><div><p class="eyebrow">PLATUM · PRIVATE TOOL</p><h1>This or that?</h1><p>Pick the lunch you would rather eat.</p></div><div class="progress"><strong id="count">0</strong><span>/ 150 <span id="count-goal">Bulk</span> judgments</span></div></header>
 <section class="toolbar" aria-label="Labeling settings"><label>Ranking goal <select id="goal"><option value="bulk">Bulk</option><option value="cut">Cut</option><option value="budget">Budget</option></select></label><div class="toolbar-actions"><button id="reset" type="button" aria-controls="reset-panel" aria-expanded="false" disabled>Reset this goal</button><button id="export" type="button" disabled>Export JSON</button></div></section>
@@ -7,4 +7,4 @@
 <p id="hint" class="hint">Tap a plate, or use <kbd>←</kbd> <kbd>→</kbd>. Press <kbd>↓</kbd> if neither looks good.</p>
 <section id="pair" class="pair" aria-describedby="hint" aria-live="polite"></section>
 <div class="actions"><button id="undo" type="button" disabled><span aria-hidden="true">↶</span> Undo <kbd>U</kbd></button><button id="skip" type="button">Both bad <kbd>↓</kbd></button></div><p id="status" role="status"></p>
-</main><script src="../dish-icons.js"></script><script src="./label.js"></script></body></html>
+</main><script src="../dish-icons.js"></script><script src="./label.js?v=20261112-reset2"></script></body></html>

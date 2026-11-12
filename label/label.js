@@ -50,7 +50,9 @@
     $('confirm-reset').onclick=()=>{localStorage.setItem(KEY,JSON.stringify(resetGoal(records(),goal.value)));closeReset();status.textContent=`${goalName()} judgments reset. Ready to start fresh.`;updateCount();if(data)next();goal.focus();};
     goal.onchange=()=>{closeReset();status.textContent='';updateCount();next();};document.addEventListener('keydown',event=>{if(!resetPanel.hidden||event.target.matches('select,input,textarea'))return;if(event.key==='ArrowLeft'){event.preventDefault();save('a');}else if(event.key==='ArrowRight'){event.preventDefault();save('b');}else if(event.key==='ArrowDown'){event.preventDefault();save('both_bad');}else if(event.key.toLowerCase()==='u')undo.click();});
     $('export').onclick=()=>{const blob=new Blob([JSON.stringify(currentRecords(),null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`platum-${goal.value}-judgments.json`;a.click();URL.revokeObjectURL(a.href);};
-    fetch(dataUrl(document.baseURI)).then(response=>{if(!response.ok)throw Error(`HTTP ${response.status}`);return response.json();}).then(value=>{if(!validData(value))throw Error('The plate data has an invalid format.');data=value;updateCount();next();}).catch(error=>fail(`Check the published label data and try again. ${error.message}`));
+    updateCount();
+    window.addEventListener('storage',()=>{closeReset();updateCount();});
+    fetch(dataUrl(document.baseURI)).then(response=>{if(!response.ok)throw Error(`HTTP ${response.status}`);return response.json();}).then(value=>{if(!validData(value))throw Error('The plate data has an invalid format.');data=value;next();}).catch(error=>fail(`Check the published label data and try again. ${error.message}`));
   }
   return {KEY,TARGET,read,forGoal,resetGoal,undoGoal,proteinCaloriesPercent,allPlates,selectPair,plateFeatures,judgment,validData,dataUrl,start};
 });
