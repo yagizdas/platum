@@ -41,7 +41,7 @@ test('label data and icon assets resolve beneath the deployed staging base path'
   assert.equal(assetUrl('tray','https://yagizdas.github.io/platum/staging/dish-icons.js'),'https://yagizdas.github.io/platum/staging/icons/ui/tray.webp');
   const html=readFileSync(resolve(__dirname,'../label/index.html'),'utf8');
   for(const reference of [...html.matchAll(/(?:href|src)="([^"#]+)"/g)].map(match=>match[1])) {
-    assert.ok(existsSync(resolve(dirname(resolve(__dirname,'../label/index.html')),reference)),`${reference} must exist in the deployed tree`);
+    assert.ok(existsSync(resolve(dirname(resolve(__dirname,'../label/index.html')),reference.split('?')[0])),`${reference} must exist in the deployed tree`);
   }
   const published=JSON.parse(readFileSync(resolve(__dirname,'../label/data.json'),'utf8'));
   assert.ok(validData(published));
