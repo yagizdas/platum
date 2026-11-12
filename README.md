@@ -24,6 +24,16 @@ Open <http://127.0.0.1:8000>. `--date YYYY-MM-DD` fixes the reference date. `--n
 
 Push changes to the `staging` branch, then check them at <https://yagizdas.github.io/platum/staging/>. When the staged site is ready to ship, merge `staging` into `main`; the deployment workflow publishes both sites together with the same daily menu data.
 
+The private preference labeler is at <https://yagizdas.github.io/platum/staging/label/>. Select a ranking goal to keep its judgment count, undo, and JSON export separate. Existing browser judgments are preserved and filtered by their recorded goal. **Reset this goal** asks for confirmation and deletes only that goal's browser judgments; export first to keep a copy. Cards show calories from protein as `protein (g) × 4 ÷ kcal × 100`, rounded to a whole percentage.
+
+To fit exported cut judgments without overwriting the bulk model:
+
+```sh
+python train_pairwise_score.py --goal cut --input /path/to/platum-cut-judgments.json --output data/models/cut-score.json
+```
+
+Training writes the model; activating it for meal scoring is a separate configuration change.
+
 ## Pipeline and history
 
 The official menu supplies dishes and dietary markers. eat-api supplies prices only for a conservative normalized-name match. Source failures are labeled; two failed sources never manufacture a closed day. Configured rice and potato salad are appended only to real open menus. Unknown dietary status is never vegan.
