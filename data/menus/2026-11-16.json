@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-12T08:05:25.935447+00:00",
+  "fetched_at": "2026-11-12T13:54:11.088755+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -46,35 +46,58 @@
       }
     },
     {
-      "name": "Bratwurstschnecke (1 Stück)",
+      "name": "Pizza Funghi mit frischen Champignons",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Prager Bratwurst (1 Stück) mit Sauerkraut und Kartoffelpürree",
       "station": "Grill",
       "station_raw": "Grill",
       "markers": [
         "R",
         "S"
       ],
-      "allergens": [],
+      "allergens": [
+        "Mi",
+        "Sw"
+      ],
       "additives": [
         "2",
         "3",
+        "5",
         "8"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "ANTIOXIDANTS",
-        "BEEF",
-        "MEAT",
-        "PHOSPHATES",
-        "PORK",
-        "PRESERVATIVES"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.5,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {
@@ -91,8 +114,8 @@
         "So"
       ],
       "additives": [
-        "Kn",
-        "2"
+        "2",
+        "Kn"
       ],
       "is_vegan": true,
       "is_vegetarian": true,
@@ -144,6 +167,31 @@
         "base_eur": 0.0,
         "per_100g_eur": 0.33,
         "source": "eat-api"
+      }
+    },
+    {
+      "name": "Leberspätzlesuppe",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {

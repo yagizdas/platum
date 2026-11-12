@@ -4,10 +4,10 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-12T08:05:25.763198+00:00",
+  "fetched_at": "2026-11-12T13:54:10.956786+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 9,
+  "menu_count": 10,
   "scoring": {
     "bulk": {
       "price": {
@@ -324,7 +324,8 @@
                 "GlW",
                 "Mi",
                 "Sf",
-                "Sl"
+                "Sl",
+                "So"
               ],
               "additives": [
                 "1",
@@ -579,7 +580,8 @@
                 "GlW",
                 "Mi",
                 "Sf",
-                "Sl"
+                "Sl",
+                "So"
               ],
               "additives": [
                 "1",
@@ -752,7 +754,8 @@
                 "GlW",
                 "Mi",
                 "Sf",
-                "Sl"
+                "Sl",
+                "So"
               ],
               "additives": [
                 "1",
@@ -1130,6 +1133,19 @@
   "extras": {
     "all": [
       {
+        "name": "Kohlrabicremesuppe",
+        "name_en": "Cream of kohlrabi soup",
+        "station": "Unspecified",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "serving": "2 scoops",
+        "kcal": 156.0,
+        "protein_g": 3.6,
+        "price_source": "config"
+      },
+      {
         "name": "Apfelstrudel mit Vanillesauce",
         "name_en": "Apple strudel with vanilla sauce",
         "station": "Süßspeise",
@@ -1143,17 +1159,17 @@
         "price_source": "eat-api"
       },
       {
-        "name": "Schokopudding mit Kirschen",
-        "name_en": "Chocolate pudding with cherries",
+        "name": "Schokopudding mit Birnen",
+        "name_en": "Chocolate pudding with pears",
         "station": "Dessert (Glas)",
-        "weight_g": 140.0,
+        "weight_g": 140,
         "price_cents": 126,
         "is_vegan": false,
-        "diet": "vegetarian",
+        "diet": "meat",
         "serving": "1 piece",
-        "kcal": 175.0,
-        "protein_g": 3.92,
-        "price_source": "eat-api"
+        "kcal": 161.0,
+        "protein_g": 3.5,
+        "price_source": "config"
       }
     ],
     "vegan": []

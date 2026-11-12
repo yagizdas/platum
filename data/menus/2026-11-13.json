@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-12T08:05:25.763198+00:00",
+  "fetched_at": "2026-11-12T13:54:10.956786+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -41,12 +41,10 @@
       }
     },
     {
-      "name": "Pizza Regina mit Putenschinken und Champignons",
+      "name": "Pizza \"Pulled Chicken oder Pulled Duck\"",
       "station": "Pizza",
       "station_raw": "Pizza",
-      "markers": [
-        "S"
-      ],
+      "markers": [],
       "allergens": [
         "Gl",
         "GlG",
@@ -63,24 +61,11 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "ANTIOXIDANTS",
-        "BARLEY",
-        "CEREAL",
-        "GLUTEN",
-        "LACTOSE",
-        "MEAT",
-        "MILK",
-        "PHOSPHATES",
-        "PORK",
-        "PRESERVATIVES",
-        "SOY",
-        "WHEAT"
-      ],
+      "api_labels": [],
       "price": {
         "base_eur": 5.0,
         "per_100g_eur": 0,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {
@@ -110,6 +95,30 @@
       }
     },
     {
+      "name": "Kohlrabicremesuppe",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
       "name": "Blumenkohlauflauf mit Currydip",
       "station": "Vegetarisch/fleischlos",
       "station_raw": "Vegetarisch/fleischlos",
@@ -123,7 +132,8 @@
         "GlW",
         "Mi",
         "Sf",
-        "Sl"
+        "Sl",
+        "So"
       ],
       "additives": [
         "1",
@@ -222,32 +232,29 @@
       }
     },
     {
-      "name": "Schokopudding mit Kirschen",
+      "name": "Schokopudding mit Birnen",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
-      "markers": [
-        "f"
-      ],
+      "markers": [],
       "allergens": [
-        "Mi"
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sw"
       ],
       "additives": [
-        "99"
+        "5"
       ],
       "is_vegan": false,
-      "is_vegetarian": true,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "ALCOHOL",
-        "LACTOSE",
-        "MILK",
-        "VEGETARIAN"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {

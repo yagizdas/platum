@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-12T08:05:25.715616+00:00",
+  "fetched_at": "2026-11-12T13:54:10.915111+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -17,12 +17,15 @@
         "f"
       ],
       "allergens": [
+        "Ei",
         "Gl",
         "GlW",
         "Mi",
         "Sl"
       ],
-      "additives": [],
+      "additives": [
+        "Kn"
+      ],
       "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
@@ -184,84 +187,6 @@
       }
     },
     {
-      "name": "Fleischpflanzerl (1 Stück) mit Kümmelsauce",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [
-        "R",
-        "S"
-      ],
-      "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
-        "Sf"
-      ],
-      "additives": [
-        "Kn"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "BEEF",
-        "CEREAL",
-        "CHICKEN_EGGS",
-        "GARLIC",
-        "GLUTEN",
-        "MEAT",
-        "MUSTARD",
-        "PORK",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Cevapcici (5 Stück) mit Ajvar",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [
-        "R"
-      ],
-      "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
-        "Sf",
-        "Sl",
-        "So"
-      ],
-      "additives": [
-        "Kn"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "BEEF",
-        "CELERY",
-        "CEREAL",
-        "CHICKEN_EGGS",
-        "GARLIC",
-        "GLUTEN",
-        "MEAT",
-        "MUSTARD",
-        "SOY",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
       "name": "Boeuf Stroganoff mit Senf, Schnitzelgurken und Champignons",
       "station": "Fleisch",
       "station_raw": "Fleisch",
@@ -294,72 +219,56 @@
       }
     },
     {
-      "name": "Gekochte Rinderschulter (1 Scheibe) mit Meerrettichsauce",
-      "station": "Unspecified",
-      "station_raw": "",
-      "markers": [
-        "R"
-      ],
-      "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
-        "Mi",
-        "Sf",
-        "Sl",
-        "Sw"
-      ],
-      "additives": [
-        "1",
-        "3",
-        "5",
-        "11"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "ANTIOXIDANTS",
-        "BEEF",
-        "CELERY",
-        "CEREAL",
-        "CHICKEN_EGGS",
-        "DYESTUFF",
-        "GLUTEN",
-        "LACTOSE",
-        "MEAT",
-        "MILK",
-        "MUSTARD",
-        "SULFITES",
-        "SULPHURS",
-        "SWEETENERS",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Entenkeule (1 Stück) mit Bratenssauce",
+      "name": "Gegrillte Hähnchenbrust (1 Stück) mit Bratensauce",
       "station": "Fleisch",
       "station_raw": "Fleisch",
       "markers": [],
       "allergens": [
-        "Gl",
-        "GlW"
+        "En",
+        "Se"
       ],
       "additives": [],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Fleischpflanzerl (1 Stück) mit Kümmelsauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "R",
+        "S"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Sf"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
       "api_labels": [
+        "BEEF",
         "CEREAL",
+        "CHICKEN_EGGS",
+        "GARLIC",
         "GLUTEN",
         "MEAT",
+        "MUSTARD",
+        "PORK",
         "WHEAT"
       ],
       "price": {
@@ -401,6 +310,29 @@
         "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
+      }
+    },
+    {
+      "name": "Vegane Kürbisspalten aus dem Ofen mit Dip",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Sf"
+      ],
+      "additives": [
+        "1",
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {
