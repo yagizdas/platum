@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-12T16:09:23.544089+00:00",
+  "fetched_at": "2026-11-13T11:23:34.458855+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -61,10 +61,68 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "BARLEY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "PHOSPHATES",
+        "PRESERVATIVES",
+        "SOY",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 5.0,
         "per_100g_eur": 0,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Putensteak (1 Stück) mit Chimichuri aus Koriander, Tomate und Petersilie",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [],
+      "allergens": [],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Champignonrahmsauce",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sw"
+      ],
+      "additives": [
+        "5",
+        "99"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
         "source": "config"
       }
     },
@@ -95,20 +153,19 @@
       }
     },
     {
-      "name": "Kohlrabicremesuppe",
+      "name": "Cremige Kürbissuppe",
       "station": "Unspecified",
       "station_raw": "",
-      "markers": [
-        "f"
-      ],
+      "markers": [],
       "allergens": [
         "Gl",
         "GlW",
-        "Mi"
+        "Mi",
+        "Se"
       ],
       "additives": [],
       "is_vegan": false,
-      "is_vegetarian": true,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [],
@@ -153,6 +210,7 @@
         "LACTOSE",
         "MILK",
         "MUSTARD",
+        "SOY",
         "SWEETENERS",
         "VEGETARIAN",
         "WHEAT"
@@ -161,6 +219,31 @@
         "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
+      }
+    },
+    {
+      "name": "Boeuf Stroganoff mit Senf, Schnitzelgurken und Champignons",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Mi",
+        "Sf"
+      ],
+      "additives": [
+        "9"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {
@@ -250,11 +333,21 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "SULFITES",
+        "SULPHURS",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {

@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-12T16:09:23.708654+00:00",
+  "fetched_at": "2026-11-13T11:23:34.533561+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -64,11 +64,20 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "BARLEY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "SOY",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 5.0,
+        "base_eur": 4.5,
         "per_100g_eur": 0,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -93,11 +102,22 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "BEEF",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "PHOSPHATES",
+        "PORK",
+        "PRESERVATIVES",
+        "SULFITES",
+        "SULPHURS"
+      ],
       "price": {
-        "base_eur": 1.0,
+        "base_eur": 0.5,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -114,8 +134,8 @@
         "So"
       ],
       "additives": [
-        "Kn",
-        "2"
+        "2",
+        "Kn"
       ],
       "is_vegan": true,
       "is_vegetarian": true,
@@ -187,55 +207,41 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
+      "api_labels": [
+        "CELERY",
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GLUTEN",
+        "MEAT",
+        "PORK",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Hähnchenknusperfilet (1 Stück) mit Barbecuesauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
       "api_labels": [],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
         "source": "config"
-      }
-    },
-    {
-      "name": "Hähnchenknusperfilet (1 Stück) mit Mango-Chili-Dip",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [],
-      "allergens": [
-        "Ei",
-        "Gl",
-        "GlG",
-        "GlW",
-        "Mi",
-        "Sf",
-        "Sl"
-      ],
-      "additives": [
-        "1",
-        "2",
-        "9"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "BARLEY",
-        "CELERY",
-        "CEREAL",
-        "CHICKEN_EGGS",
-        "DYESTUFF",
-        "GLUTEN",
-        "LACTOSE",
-        "MEAT",
-        "MILK",
-        "MUSTARD",
-        "PRESERVATIVES",
-        "SWEETENERS",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
       }
     },
     {
@@ -270,9 +276,32 @@
       }
     },
     {
-      "name": "Topfencreme mit Himbeeren",
+      "name": "Vanillecreme mit Erdnusstoffee",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "En",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Schokopudding mit Brombeersauce",
+      "station": "Dessert (Glas)",
+      "station_raw": "",
       "markers": [
         "f"
       ],
@@ -284,15 +313,11 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "LACTOSE",
-        "MILK",
-        "VEGETARIAN"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {

@@ -1,13 +1,13 @@
 {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-12T16:09:23.493217+00:00",
+  "fetched_at": "2026-11-13T11:23:34.458855+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 14,
+  "menu_count": 13,
   "scoring": {
     "bulk": {
       "price": {
@@ -134,25 +134,107 @@
       "note": null,
       "plates": [
         {
-          "title": "Beef Stroganoff + Rice",
+          "title": "Farmer's stew + Apple strudel",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Boeuf Stroganoff mit Senf, Schnitzelgurken und Champignons",
-              "name_en": "Beef Stroganoff with mustard, pickles and mushrooms",
-              "station": "Fleisch",
+              "name": "Bauerneintopf",
+              "name_en": "Farmer's stew",
+              "station": "Studitopf",
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
+              "price_cents": 149,
+              "is_vegan": true,
               "markers": [
-                "R"
+                "v"
               ],
               "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "f5a8823296f309ab",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Apfelstrudel mit Vanillesauce",
+              "name_en": "Apple strudel with vanilla sauce",
+              "station": "Süßspeise",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "d6589b2de2f0b26c",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 495.0,
+              "protein_g": 7.5
+            }
+          ],
+          "total": {
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 877.5,
+            "protein_g": 27.75,
+            "carbs_g": 109.5,
+            "fat_g": 35.1
+          },
+          "score": {
+            "price": -2.095,
+            "price_over_budget": 0.0,
+            "energy_value": 0.20942720763723147,
+            "protein_value": 0.27595465393794744,
+            "protein": 4.1625,
+            "energy": 0.3145833333333333,
+            "total": 2.8675
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Breaded pollock + Apple strudel",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+              "name_en": "Breaded pollock (1 piece) with remoulade sauce",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 330,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlW",
                 "Mi",
                 "Sf"
               ],
@@ -160,12 +242,102 @@
                 "9"
               ],
               "standing": false,
-              "diet": "meat",
-              "id": "1f3a9de46d03b716",
+              "diet": "fish",
+              "id": "9c76261ce69141a0",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 440.0,
+              "protein_g": 23.0
+            },
+            {
+              "name": "Apfelstrudel mit Vanillesauce",
+              "name_en": "Apple strudel with vanilla sauce",
+              "station": "Süßspeise",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "d6589b2de2f0b26c",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 495.0,
+              "protein_g": 7.5
+            }
+          ],
+          "total": {
+            "price_cents": 600,
+            "price_eur": 6.0,
+            "weight_g": 500,
+            "kcal": 935.0,
+            "protein_g": 30.5,
+            "carbs_g": 101.5,
+            "fat_g": 44.0
+          },
+          "score": {
+            "price": -3.0,
+            "price_over_budget": 0.0,
+            "energy_value": 0.15583333333333335,
+            "protein_value": 0.21180555555555555,
+            "protein": 4.575,
+            "energy": 0.3625,
+            "total": 2.3051
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Cauliflower casserole + Rice + Apple strudel",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Blumenkohlauflauf mit Currydip",
+              "name_en": "Cauliflower casserole with curry dip",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "So"
+              ],
+              "additives": [
+                "1",
+                "9"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "a8d25e128f086dba",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 51.75
+              "kcal": 517.5,
+              "protein_g": 23.4
             },
             {
               "name": "Reis",
@@ -190,177 +362,53 @@
               "price_source": "config",
               "kcal": 195.0,
               "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 640,
-            "price_eur": 6.4,
-            "weight_g": 600,
-            "kcal": 802.5,
-            "protein_g": 55.8,
-            "carbs_g": 57.75,
-            "fat_g": 36.45
-          },
-          "score": {
-            "price": -3.2,
-            "price_over_budget": 0.0,
-            "energy_value": 0.125390625,
-            "protein_value": 0.36328124999999994,
-            "protein": 8.37,
-            "energy": 0.2520833333333333,
-            "total": 5.9108
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Falafel + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
+            },
             {
-              "name": "Falafel mit Hummus",
-              "name_en": "Falafel with hummus",
-              "station": "Vegan",
-              "role": "main",
+              "name": "Apfelstrudel mit Vanillesauce",
+              "name_en": "Apple strudel with vanilla sauce",
+              "station": "Süßspeise",
+              "role": "dessert",
               "texture": "saucy",
-              "count": 3,
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
               "allergens": [
                 "Gl",
                 "GlW",
-                "Se"
+                "Mi"
               ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "35cebb16751a8019",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 1102.5,
-              "protein_g": 41.4
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
               "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "d6589b2de2f0b26c",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 247.5,
+              "protein_g": 3.75
             }
           ],
           "total": {
             "price_cents": 675,
             "price_eur": 6.75,
             "weight_g": 750,
-            "kcal": 1492.5,
-            "protein_g": 49.5,
-            "carbs_g": 185.25,
-            "fat_g": 59.4
+            "kcal": 960.0,
+            "protein_g": 31.2,
+            "carbs_g": 113.85,
+            "fat_g": 40.05
           },
           "score": {
             "price": -3.375,
             "price_over_budget": 0.0,
-            "energy_value": 0.22111111111111112,
-            "protein_value": 0.3055555555555555,
-            "protein": 7.425,
-            "energy": 0.8270833333333333,
-            "total": 5.4037
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Turkey steak + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Putensteak (1 Stück) mit Chimichuri aus Koriander, Tomate und Petersilie",
-              "name_en": "Turkey steak (1 piece) with coriander, tomato, and parsley chimichurri",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 180,
-              "price_cents": 262,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "id": "665eb4489cdbee06",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 261.0,
-              "protein_g": 36.9
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 532,
-            "price_eur": 5.32,
-            "weight_g": 480,
-            "kcal": 651.0,
-            "protein_g": 45.0,
-            "carbs_g": 86.7,
-            "fat_g": 12.6
-          },
-          "score": {
-            "price": -2.66,
-            "price_over_budget": 0.0,
-            "energy_value": 0.12236842105263157,
-            "protein_value": 0.3524436090225564,
-            "protein": 6.75,
-            "energy": 0.12583333333333332,
-            "total": 4.6906
+            "energy_value": 0.14222222222222222,
+            "protein_value": 0.19259259259259257,
+            "protein": 4.68,
+            "energy": 0.38333333333333336,
+            "total": 2.0231
           },
           "has_estimated_prices": true
         }
@@ -374,172 +422,13 @@
       "note": null,
       "plates": [
         {
-          "title": "Turkey steak",
+          "title": "Farmer's stew",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Putensteak (1 Stück) mit Chimichuri aus Koriander, Tomate und Petersilie",
-              "name_en": "Turkey steak (1 piece) with coriander, tomato, and parsley chimichurri",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 180,
-              "price_cents": 262,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "id": "665eb4489cdbee06",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 261.0,
-              "protein_g": 36.9
-            }
-          ],
-          "total": {
-            "price_cents": 262,
-            "price_eur": 2.62,
-            "weight_g": 180,
-            "kcal": 261.0,
-            "protein_g": 36.9,
-            "carbs_g": 2.7,
-            "fat_g": 11.7
-          },
-          "score": {
-            "price": -0.655,
-            "price_over_budget": 0.0,
-            "protein_density": 3.53448275862069,
-            "protein_value": 0.5868320610687022,
-            "protein": 0.22999999999999995,
-            "energy": 0.0,
-            "total": 3.6963
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Beef Stroganoff",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Boeuf Stroganoff mit Senf, Schnitzelgurken und Champignons",
-              "name_en": "Beef Stroganoff with mustard, pickles and mushrooms",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
-              "markers": [
-                "R"
-              ],
-              "allergens": [
-                "Mi",
-                "Sf"
-              ],
-              "additives": [
-                "9"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "1f3a9de46d03b716",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 51.75
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 51.75,
-            "carbs_g": 15.75,
-            "fat_g": 36.0
-          },
-          "score": {
-            "price": -1.2625,
-            "price_over_budget": 0.0,
-            "protein_density": 2.1296296296296298,
-            "protein_value": 0.426980198019802,
-            "protein": 0.725,
-            "energy": 0.0,
-            "total": 2.0191
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Falafel",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Falafel mit Hummus",
-              "name_en": "Falafel with hummus",
-              "station": "Vegan",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "35cebb16751a8019",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 735.0,
-              "protein_g": 27.6
-            }
-          ],
-          "total": {
-            "price_cents": 270,
-            "price_eur": 2.7,
-            "weight_g": 300,
-            "kcal": 735.0,
-            "protein_g": 27.6,
-            "carbs_g": 67.5,
-            "fat_g": 39.0
-          },
-          "score": {
-            "price": -0.675,
-            "price_over_budget": 0.0,
-            "protein_density": 0.9387755102040816,
-            "protein_value": 0.4259259259259259,
-            "protein": -0.4799999999999997,
-            "energy": -0.35,
-            "total": -0.1403
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Spicy millet",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
-              "name_en": "Spicy millet with black beans and vegetables",
+              "name": "Bauerneintopf",
+              "name_en": "Farmer's stew",
               "station": "Studitopf",
               "role": "main",
               "texture": "saucy",
@@ -554,15 +443,13 @@
               "allergens": [
                 "Sl"
               ],
-              "additives": [
-                "2"
-              ],
+              "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "5b0b0113f1e900ff",
+              "id": "f5a8823296f309ab",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 562.5,
+              "kcal": 382.5,
               "protein_g": 20.25
             }
           ],
@@ -570,238 +457,44 @@
             "price_cents": 149,
             "price_eur": 1.49,
             "weight_g": 450,
-            "kcal": 562.5,
+            "kcal": 382.5,
             "protein_g": 20.25,
-            "carbs_g": 85.5,
-            "fat_g": 13.5
+            "carbs_g": 36.0,
+            "fat_g": 17.1
           },
           "score": {
             "price": -0.3725,
             "price_over_budget": 0.0,
-            "protein_density": 0.8999999999999999,
+            "protein_density": 1.3235294117647058,
             "protein_value": 0.5662751677852349,
             "protein": -1.95,
             "energy": 0.0,
-            "total": -0.8562
+            "total": -0.4327
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Colorful vegetables + Rice",
+          "title": "Breaded pollock + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Buntes Gemüse in scharfer Kokosmilch",
-              "name_en": "Colorful vegetables in spicy coconut milk",
-              "station": "Wok",
+              "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+              "name_en": "Breaded pollock (1 piece) with remoulade sauce",
+              "station": "Fisch",
               "role": "main",
               "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 330,
+              "is_vegan": false,
+              "markers": [],
               "allergens": [
-                "Se",
-                "Sf"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "c7f713aa6d014319",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 285.0,
-              "protein_g": 6.3
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 540,
-            "price_eur": 5.4,
-            "weight_g": 600,
-            "kcal": 675.0,
-            "protein_g": 14.4,
-            "carbs_g": 100.5,
-            "fat_g": 22.5
-          },
-          "score": {
-            "price": -1.35,
-            "price_over_budget": 0.0,
-            "protein_density": 0.5333333333333333,
-            "protein_value": 0.11111111111111109,
-            "protein": -3.12,
-            "energy": 0.0,
-            "total": -3.8256
-          },
-          "has_estimated_prices": true
-        }
-      ]
-    },
-    "budget_all": {
-      "state": "ready",
-      "goal": "budget",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Spicy millet",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
-              "name_en": "Spicy millet with black beans and vegetables",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Sl"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "5b0b0113f1e900ff",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
-            "weight_g": 450,
-            "kcal": 562.5,
-            "protein_g": 20.25,
-            "carbs_g": 85.5,
-            "fat_g": 13.5
-          },
-          "score": {
-            "price": -0.745,
-            "price_over_budget": 0.0,
-            "energy_value": 1.5100671140939599,
-            "energy": 0.008333333333333333,
-            "protein": 0.0033333333333333335,
-            "total": 0.7767
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Falafel",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Falafel mit Hummus",
-              "name_en": "Falafel with hummus",
-              "station": "Vegan",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
+                "Ei",
+                "Fi",
                 "Gl",
                 "GlW",
-                "Se"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "35cebb16751a8019",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 735.0,
-              "protein_g": 27.6
-            }
-          ],
-          "total": {
-            "price_cents": 270,
-            "price_eur": 2.7,
-            "weight_g": 300,
-            "kcal": 735.0,
-            "protein_g": 27.6,
-            "carbs_g": 67.5,
-            "fat_g": 39.0
-          },
-          "score": {
-            "price": -1.35,
-            "price_over_budget": 0.0,
-            "energy_value": 1.088888888888889,
-            "energy": 0.12333333333333334,
-            "protein": 0.10133333333333336,
-            "total": -0.0364
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Beef Stroganoff + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Boeuf Stroganoff mit Senf, Schnitzelgurken und Champignons",
-              "name_en": "Beef Stroganoff with mustard, pickles and mushrooms",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [
-                "R"
-              ],
-              "allergens": [
                 "Mi",
                 "Sf"
               ],
@@ -809,12 +502,12 @@
                 "9"
               ],
               "standing": false,
-              "diet": "meat",
-              "id": "1f3a9de46d03b716",
-              "serving": "2 scoops",
+              "diet": "fish",
+              "id": "9c76261ce69141a0",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 405.0,
-              "protein_g": 34.5
+              "kcal": 440.0,
+              "protein_g": 23.0
             },
             {
               "name": "Reis",
@@ -842,128 +535,65 @@
             }
           ],
           "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 600.0,
-            "protein_g": 38.55,
-            "carbs_g": 52.5,
-            "fat_g": 24.45
+            "price_cents": 465,
+            "price_eur": 4.65,
+            "weight_g": 350,
+            "kcal": 635.0,
+            "protein_g": 27.05,
+            "carbs_g": 70.0,
+            "fat_g": 26.45
           },
           "score": {
-            "price": -2.525,
+            "price": -1.1625,
             "price_over_budget": 0.0,
-            "energy_value": 0.4752475247524753,
-            "energy": 0.03333333333333333,
-            "protein": 0.2473333333333333,
-            "total": -1.7691
+            "protein_density": 1.0649606299212597,
+            "protein_value": 0.24238351254480284,
+            "protein": -0.5899999999999999,
+            "energy": 0.0,
+            "total": -0.4452
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Turkey steak + Rice",
+          "title": "Cauliflower casserole + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Putensteak (1 Stück) mit Chimichuri aus Koriander, Tomate und Petersilie",
-              "name_en": "Turkey steak (1 piece) with coriander, tomato, and parsley chimichurri",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 180,
-              "price_cents": 262,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "id": "665eb4489cdbee06",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 261.0,
-              "protein_g": 36.9
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 532,
-            "price_eur": 5.32,
-            "weight_g": 480,
-            "kcal": 651.0,
-            "protein_g": 45.0,
-            "carbs_g": 86.7,
-            "fat_g": 12.6
-          },
-          "score": {
-            "price": -2.66,
-            "price_over_budget": 0.0,
-            "energy_value": 0.4894736842105263,
-            "energy": 0.06733333333333334,
-            "protein": 0.3333333333333333,
-            "total": -1.7699
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Colorful vegetables + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Buntes Gemüse in scharfer Kokosmilch",
-              "name_en": "Colorful vegetables in spicy coconut milk",
-              "station": "Wok",
+              "name": "Blumenkohlauflauf mit Currydip",
+              "name_en": "Cauliflower casserole with curry dip",
+              "station": "Vegetarisch/fleischlos",
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
               "price_cents": 405,
-              "is_vegan": true,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
               "allergens": [
-                "Se",
-                "Sf"
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "So"
               ],
               "additives": [
-                "2"
+                "1",
+                "9"
               ],
               "standing": false,
-              "diet": "vegan",
-              "id": "c7f713aa6d014319",
+              "diet": "vegetarian",
+              "id": "a8d25e128f086dba",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 427.5,
-              "protein_g": 9.45
+              "kcal": 517.5,
+              "protein_g": 23.4
             },
             {
               "name": "Reis",
@@ -971,10 +601,10 @@
               "station": "Beilagen",
               "role": "side",
               "texture": "dry",
-              "count": 2,
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -984,28 +614,286 @@
               "standing": true,
               "diet": "vegan",
               "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
+              "serving": "1 scoop",
               "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 817.5,
-            "protein_g": 17.55,
-            "carbs_g": 108.75,
-            "fat_g": 33.3
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 712.5,
+            "protein_g": 27.45,
+            "carbs_g": 77.1,
+            "fat_g": 31.05
           },
           "score": {
-            "price": -3.375,
+            "price": -1.35,
             "price_over_budget": 0.0,
-            "energy_value": 0.48444444444444446,
-            "energy": 0.17833333333333334,
-            "protein": -0.49000000000000055,
-            "total": -3.2022
+            "protein_density": 0.9631578947368422,
+            "protein_value": 0.21180555555555555,
+            "protein": -0.5100000000000001,
+            "energy": -0.125,
+            "total": -0.81
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Farmer's stew + Apple strudel",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Bauerneintopf",
+              "name_en": "Farmer's stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "f5a8823296f309ab",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Apfelstrudel mit Vanillesauce",
+              "name_en": "Apple strudel with vanilla sauce",
+              "station": "Süßspeise",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "d6589b2de2f0b26c",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 247.5,
+              "protein_g": 3.75
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 630.0,
+            "protein_g": 24.0,
+            "carbs_g": 72.75,
+            "fat_g": 26.1
+          },
+          "score": {
+            "price": -1.42,
+            "price_over_budget": 0.0,
+            "energy_value": 0.8873239436619719,
+            "energy": 0.05333333333333334,
+            "protein": 0.05333333333333334,
+            "total": -0.426
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Cauliflower casserole + Apple strudel",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Blumenkohlauflauf mit Currydip",
+              "name_en": "Cauliflower casserole with curry dip",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "So"
+              ],
+              "additives": [
+                "1",
+                "9"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "a8d25e128f086dba",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 15.6
+            },
+            {
+              "name": "Apfelstrudel mit Vanillesauce",
+              "name_en": "Apple strudel with vanilla sauce",
+              "station": "Süßspeise",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "d6589b2de2f0b26c",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 247.5,
+              "protein_g": 3.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 592.5,
+            "protein_g": 19.35,
+            "carbs_g": 60.15,
+            "fat_g": 29.4
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.5851851851851853,
+            "energy": 0.028333333333333332,
+            "protein": -0.12999999999999973,
+            "total": -1.5415
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Breaded pollock + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+              "name_en": "Breaded pollock (1 piece) with remoulade sauce",
+              "station": "Fisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 330,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sf"
+              ],
+              "additives": [
+                "9"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "id": "9c76261ce69141a0",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 440.0,
+              "protein_g": 23.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 465,
+            "price_eur": 4.65,
+            "weight_g": 350,
+            "kcal": 635.0,
+            "protein_g": 27.05,
+            "carbs_g": 70.0,
+            "fat_g": 26.45
+          },
+          "score": {
+            "price": -2.325,
+            "price_over_budget": 0.0,
+            "energy_value": 0.546236559139785,
+            "energy": 0.056666666666666664,
+            "protein": 0.09400000000000001,
+            "total": -1.6281
           },
           "has_estimated_prices": true
         }
@@ -1019,43 +907,13 @@
       "note": null,
       "plates": [
         {
-          "title": "Falafel + Spicy millet",
+          "title": "Farmer's stew + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Falafel mit Hummus",
-              "name_en": "Falafel with hummus",
-              "station": "Vegan",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "35cebb16751a8019",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 1102.5,
-              "protein_g": 41.4
-            },
-            {
-              "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
-              "name_en": "Spicy millet with black beans and vegetables",
+              "name": "Bauerneintopf",
+              "name_en": "Farmer's stew",
               "station": "Studitopf",
               "role": "main",
               "texture": "saucy",
@@ -1070,71 +928,14 @@
               "allergens": [
                 "Sl"
               ],
-              "additives": [
-                "2"
-              ],
+              "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "5b0b0113f1e900ff",
+              "id": "f5a8823296f309ab",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 562.5,
+              "kcal": 382.5,
               "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 554,
-            "price_eur": 5.54,
-            "weight_g": 900,
-            "kcal": 1665.0,
-            "protein_g": 61.65,
-            "carbs_g": 186.75,
-            "fat_g": 72.0
-          },
-          "score": {
-            "price": -2.77,
-            "price_over_budget": 0.0,
-            "energy_value": 0.30054151624548736,
-            "protein_value": 0.46367328519855594,
-            "protein": 9.247499999999999,
-            "energy": 0.9708333333333333,
-            "total": 8.2125
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Colorful vegetables + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Buntes Gemüse in scharfer Kokosmilch",
-              "name_en": "Colorful vegetables in spicy coconut milk",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Se",
-                "Sf"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "c7f713aa6d014319",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 142.5,
-              "protein_g": 3.15
             },
             {
               "name": "Reis",
@@ -1162,22 +963,22 @@
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 532.5,
-            "protein_g": 11.25,
-            "carbs_g": 92.25,
-            "fat_g": 11.7
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 772.5,
+            "protein_g": 28.35,
+            "carbs_g": 120.0,
+            "fat_g": 18.0
           },
           "score": {
-            "price": -2.025,
+            "price": -2.095,
             "price_over_budget": 0.0,
-            "energy_value": 0.1314814814814815,
-            "protein_value": 0.11574074074074074,
-            "protein": 1.6875,
-            "energy": 0.027083333333333334,
-            "total": -0.0632
+            "energy_value": 0.18436754176610978,
+            "protein_value": 0.28192124105011934,
+            "protein": 4.2525,
+            "energy": 0.22708333333333333,
+            "total": 2.8509
           },
           "has_estimated_prices": true
         }
@@ -1191,69 +992,13 @@
       "note": null,
       "plates": [
         {
-          "title": "Falafel",
+          "title": "Farmer's stew",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Falafel mit Hummus",
-              "name_en": "Falafel with hummus",
-              "station": "Vegan",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "35cebb16751a8019",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 735.0,
-              "protein_g": 27.6
-            }
-          ],
-          "total": {
-            "price_cents": 270,
-            "price_eur": 2.7,
-            "weight_g": 300,
-            "kcal": 735.0,
-            "protein_g": 27.6,
-            "carbs_g": 67.5,
-            "fat_g": 39.0
-          },
-          "score": {
-            "price": -0.675,
-            "price_over_budget": 0.0,
-            "protein_density": 0.9387755102040816,
-            "protein_value": 0.4259259259259259,
-            "protein": -0.4799999999999997,
-            "energy": -0.35,
-            "total": -0.1403
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Spicy millet",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
-              "name_en": "Spicy millet with black beans and vegetables",
+              "name": "Bauerneintopf",
+              "name_en": "Farmer's stew",
               "station": "Studitopf",
               "role": "main",
               "texture": "saucy",
@@ -1268,15 +1013,13 @@
               "allergens": [
                 "Sl"
               ],
-              "additives": [
-                "2"
-              ],
+              "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "5b0b0113f1e900ff",
+              "id": "f5a8823296f309ab",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 562.5,
+              "kcal": 382.5,
               "protein_g": 20.25
             }
           ],
@@ -1284,100 +1027,21 @@
             "price_cents": 149,
             "price_eur": 1.49,
             "weight_g": 450,
-            "kcal": 562.5,
+            "kcal": 382.5,
             "protein_g": 20.25,
-            "carbs_g": 85.5,
-            "fat_g": 13.5
+            "carbs_g": 36.0,
+            "fat_g": 17.1
           },
           "score": {
             "price": -0.3725,
             "price_over_budget": 0.0,
-            "protein_density": 0.8999999999999999,
+            "protein_density": 1.3235294117647058,
             "protein_value": 0.5662751677852349,
             "protein": -1.95,
             "energy": 0.0,
-            "total": -0.8562
+            "total": -0.4327
           },
           "has_estimated_prices": false
-        },
-        {
-          "title": "Colorful vegetables + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Buntes Gemüse in scharfer Kokosmilch",
-              "name_en": "Colorful vegetables in spicy coconut milk",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Se",
-                "Sf"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "c7f713aa6d014319",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 285.0,
-              "protein_g": 6.3
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 540,
-            "price_eur": 5.4,
-            "weight_g": 600,
-            "kcal": 675.0,
-            "protein_g": 14.4,
-            "carbs_g": 100.5,
-            "fat_g": 22.5
-          },
-          "score": {
-            "price": -1.35,
-            "price_over_budget": 0.0,
-            "protein_density": 0.5333333333333333,
-            "protein_value": 0.11111111111111109,
-            "protein": -3.12,
-            "energy": 0.0,
-            "total": -3.8256
-          },
-          "has_estimated_prices": true
         }
       ]
     },
@@ -1389,13 +1053,13 @@
       "note": null,
       "plates": [
         {
-          "title": "Spicy millet",
+          "title": "Farmer's stew + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Pikante Hirse mit schwarzen Bohnen und Gemüse",
-              "name_en": "Spicy millet with black beans and vegetables",
+              "name": "Bauerneintopf",
+              "name_en": "Farmer's stew",
               "station": "Studitopf",
               "role": "main",
               "texture": "saucy",
@@ -1410,125 +1074,14 @@
               "allergens": [
                 "Sl"
               ],
-              "additives": [
-                "2"
-              ],
+              "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "5b0b0113f1e900ff",
+              "id": "f5a8823296f309ab",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 562.5,
+              "kcal": 382.5,
               "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
-            "weight_g": 450,
-            "kcal": 562.5,
-            "protein_g": 20.25,
-            "carbs_g": 85.5,
-            "fat_g": 13.5
-          },
-          "score": {
-            "price": -0.745,
-            "price_over_budget": 0.0,
-            "energy_value": 1.5100671140939599,
-            "energy": 0.008333333333333333,
-            "protein": 0.0033333333333333335,
-            "total": 0.7767
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Falafel",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Falafel mit Hummus",
-              "name_en": "Falafel with hummus",
-              "station": "Vegan",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "35cebb16751a8019",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 735.0,
-              "protein_g": 27.6
-            }
-          ],
-          "total": {
-            "price_cents": 270,
-            "price_eur": 2.7,
-            "weight_g": 300,
-            "kcal": 735.0,
-            "protein_g": 27.6,
-            "carbs_g": 67.5,
-            "fat_g": 39.0
-          },
-          "score": {
-            "price": -1.35,
-            "price_over_budget": 0.0,
-            "energy_value": 1.088888888888889,
-            "energy": 0.12333333333333334,
-            "protein": 0.10133333333333336,
-            "total": -0.0364
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Colorful vegetables + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Buntes Gemüse in scharfer Kokosmilch",
-              "name_en": "Colorful vegetables in spicy coconut milk",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Se",
-                "Sf"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "c7f713aa6d014319",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 427.5,
-              "protein_g": 9.45
             },
             {
               "name": "Reis",
@@ -1536,10 +1089,10 @@
               "station": "Beilagen",
               "role": "side",
               "texture": "dry",
-              "count": 2,
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -1549,28 +1102,28 @@
               "standing": true,
               "diet": "vegan",
               "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
+              "serving": "1 scoop",
               "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 817.5,
-            "protein_g": 17.55,
-            "carbs_g": 108.75,
-            "fat_g": 33.3
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 577.5,
+            "protein_g": 24.3,
+            "carbs_g": 78.0,
+            "fat_g": 17.55
           },
           "score": {
-            "price": -3.375,
+            "price": -1.42,
             "price_over_budget": 0.0,
-            "energy_value": 0.48444444444444446,
-            "energy": 0.17833333333333334,
-            "protein": -0.49000000000000055,
-            "total": -3.2022
+            "energy_value": 0.8133802816901409,
+            "energy": 0.018333333333333333,
+            "protein": 0.05733333333333335,
+            "total": -0.531
           },
           "has_estimated_prices": true
         }
@@ -1580,33 +1133,46 @@
   "extras": {
     "all": [
       {
-        "name": "Türkische Linsensuppe mit Kreuzkümmel",
-        "name_en": "Turkish lentil soup with cumin",
+        "name": "Cremige Kürbissuppe",
+        "name_en": "Creamy pumpkin soup",
         "station": "Unspecified",
         "weight_g": 300,
-        "price_cents": 99,
+        "price_cents": 270,
+        "is_vegan": false,
+        "diet": "meat",
+        "serving": "2 scoops",
+        "kcal": 174.0,
+        "protein_g": 3.3,
+        "price_source": "config"
+      },
+      {
+        "name": "Apfelstrudel mit Vanillesauce",
+        "name_en": "Apple strudel with vanilla sauce",
+        "station": "Süßspeise",
+        "weight_g": 300,
+        "price_cents": 270,
         "is_vegan": false,
         "diet": "vegetarian",
         "serving": "2 scoops",
-        "kcal": 204.0,
-        "protein_g": 11.4,
+        "kcal": 495.0,
+        "protein_g": 7.5,
         "price_source": "eat-api"
       },
       {
-        "name": "Mousse Walnussgemack mit Beerensauce",
-        "name_en": "Walnut flavored mousse with berry sauce",
+        "name": "Schokopudding mit Birnen",
+        "name_en": "Chocolate pudding with pears",
         "station": "Dessert (Glas)",
-        "weight_g": 120,
-        "price_cents": 208,
+        "weight_g": 140,
+        "price_cents": 226,
         "is_vegan": false,
         "diet": "meat",
         "serving": "1 piece",
-        "kcal": 264.0,
-        "protein_g": 4.2,
+        "kcal": 161.0,
+        "protein_g": 3.5,
         "price_source": "eat-api"
       }
     ],
     "vegan": []
   },
-  "generated_on": "2026-11-12"
+  "generated_on": "2026-11-13"
 }

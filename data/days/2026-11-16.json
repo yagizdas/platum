@@ -4,10 +4,10 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-12T16:09:23.708654+00:00",
+  "fetched_at": "2026-11-13T11:23:34.533561+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 11,
+  "menu_count": 12,
   "scoring": {
     "bulk": {
       "price": {
@@ -134,117 +134,7 @@
       "note": null,
       "plates": [
         {
-          "title": "Crispy chicken fillet + Quark cream + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Hähnchenknusperfilet (1 Stück) mit Mango-Chili-Dip",
-              "name_en": "Crispy chicken fillet (1 piece) with mango chili dip",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 200,
-              "price_cents": 280,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1",
-                "2",
-                "9"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "4b65de6e5715532a",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 420.0,
-              "protein_g": 33.0
-            },
-            {
-              "name": "Topfencreme mit Himbeeren",
-              "name_en": "Quark cream with raspberries",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "245f1d1a817aefdf",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 10.5
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 676,
-            "price_eur": 6.76,
-            "weight_g": 640.0,
-            "kcal": 999.0,
-            "protein_g": 51.6,
-            "carbs_g": 133.6,
-            "fat_g": 26.3
-          },
-          "score": {
-            "price": -3.38,
-            "price_over_budget": 0.0,
-            "energy_value": 0.1477810650887574,
-            "protein_value": 0.3180473372781065,
-            "protein": 7.74,
-            "energy": 0.41583333333333333,
-            "total": 5.2417
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Soy chunks rougaille + Quark cream + Rice",
+          "title": "Soy chunks rougaille + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -278,41 +168,15 @@
               "protein_g": 30.6
             },
             {
-              "name": "Topfencreme mit Himbeeren",
-              "name_en": "Quark cream with raspberries",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "245f1d1a817aefdf",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 10.5
-            },
-            {
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
               "role": "side",
               "texture": "dry",
-              "count": 1,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -322,34 +186,34 @@
               "standing": true,
               "diet": "vegan",
               "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
+              "serving": "2 scoops",
               "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 666,
-            "price_eur": 6.66,
-            "weight_g": 740.0,
-            "kcal": 856.5,
-            "protein_g": 45.15,
-            "carbs_g": 99.85,
-            "fat_g": 27.7
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 862.5,
+            "protein_g": 38.7,
+            "carbs_g": 122.25,
+            "fat_g": 21.15
           },
           "score": {
-            "price": -3.33,
+            "price": -3.375,
             "price_over_budget": 0.0,
-            "energy_value": 0.1286036036036036,
-            "protein_value": 0.2824699699699699,
-            "protein": 6.772499999999999,
-            "energy": 0.2970833333333333,
-            "total": 4.1507
+            "energy_value": 0.12777777777777777,
+            "protein_value": 0.2388888888888889,
+            "protein": 5.805000000000001,
+            "energy": 0.3020833333333333,
+            "total": 3.0988
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Pumpkin ravioli + Quark cream",
+          "title": "Pumpkin ravioli + Potato salad",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -385,134 +249,50 @@
               "protein_g": 24.75
             },
             {
-              "name": "Topfencreme mit Himbeeren",
-              "name_en": "Quark cream with raspberries",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
               "texture": "saucy",
               "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "245f1d1a817aefdf",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590.0,
-            "kcal": 1021.5,
-            "protein_g": 35.25,
-            "carbs_g": 114.1,
-            "fat_g": 46.6
-          },
-          "score": {
-            "price": -2.655,
-            "price_over_budget": 0.0,
-            "energy_value": 0.1923728813559322,
-            "protein_value": 0.2766007532956686,
-            "protein": 5.2875,
-            "energy": 0.4345833333333333,
-            "total": 3.5361
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Bulgur + Quark cream",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Bulgur mit Gemüse",
-              "name_en": "Bulgur with vegetables",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "20527bf9d82aabee",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 15.75
-            },
-            {
-              "name": "Topfencreme mit Himbeeren",
-              "name_en": "Quark cream with raspberries",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
+              "markers": [],
+              "allergens": [],
               "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "245f1d1a817aefdf",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 10.5
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
             }
           ],
           "total": {
-            "price_cents": 275,
-            "price_eur": 2.75,
-            "weight_g": 590.0,
-            "kcal": 751.5,
-            "protein_g": 26.25,
-            "carbs_g": 105.1,
-            "fat_g": 24.1
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1005.0,
+            "protein_g": 27.45,
+            "carbs_g": 116.25,
+            "fat_g": 47.4
           },
           "score": {
-            "price": -1.375,
+            "price": -2.7,
             "price_over_budget": 0.0,
-            "energy_value": 0.2732727272727273,
-            "protein_value": 0.3977272727272727,
-            "protein": 3.9375,
-            "energy": 0.20958333333333334,
-            "total": 3.4431
+            "energy_value": 0.1861111111111111,
+            "protein_value": 0.21180555555555555,
+            "protein": 4.1175,
+            "energy": 0.42083333333333334,
+            "total": 2.2362
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         },
         {
-          "title": "Maafe - Senegalese peanut stew + Quark cream + Rice",
+          "title": "Maafe - Senegalese peanut stew + Potato salad",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -537,8 +317,8 @@
                 "So"
               ],
               "additives": [
-                "Kn",
-                "2"
+                "2",
+                "Kn"
               ],
               "standing": false,
               "diet": "vegan",
@@ -549,73 +329,45 @@
               "protein_g": 18.9
             },
             {
-              "name": "Topfencreme mit Himbeeren",
-              "name_en": "Quark cream with raspberries",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "245f1d1a817aefdf",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 10.5
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
               "station": "Beilagen",
               "role": "side",
-              "texture": "dry",
+              "texture": "saucy",
               "count": 1,
               "unit": "scoop",
               "weight_g": 150,
               "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
+              "is_vegan": false,
+              "markers": [],
               "allergens": [],
               "additives": [],
               "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
               "serving": "1 scoop",
               "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
+              "kcal": 172.5,
+              "protein_g": 2.7
             }
           ],
           "total": {
-            "price_cents": 666,
-            "price_eur": 6.66,
-            "weight_g": 740.0,
-            "kcal": 946.5,
-            "protein_g": 33.45,
-            "carbs_g": 99.85,
-            "fat_g": 43.45
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 735.0,
+            "protein_g": 21.6,
+            "carbs_g": 60.0,
+            "fat_g": 43.8
           },
           "score": {
-            "price": -3.33,
+            "price": -2.7,
             "price_over_budget": 0.0,
-            "energy_value": 0.1421171171171171,
-            "protein_value": 0.20927177177177173,
-            "protein": 5.0175,
-            "energy": 0.3720833333333333,
-            "total": 2.411
+            "energy_value": 0.13611111111111113,
+            "protein_value": 0.16666666666666666,
+            "protein": 3.2399999999999998,
+            "energy": 0.19583333333333333,
+            "total": 1.0386
           },
           "has_estimated_prices": true
         }
@@ -628,66 +380,6 @@
       "relaxed": false,
       "note": null,
       "plates": [
-        {
-          "title": "Crispy chicken fillet",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Hähnchenknusperfilet (1 Stück) mit Mango-Chili-Dip",
-              "name_en": "Crispy chicken fillet (1 piece) with mango chili dip",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 200,
-              "price_cents": 280,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1",
-                "2",
-                "9"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "4b65de6e5715532a",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 420.0,
-              "protein_g": 33.0
-            }
-          ],
-          "total": {
-            "price_cents": 280,
-            "price_eur": 2.8,
-            "weight_g": 200,
-            "kcal": 420.0,
-            "protein_g": 33.0,
-            "carbs_g": 30.0,
-            "fat_g": 18.4
-          },
-          "score": {
-            "price": -0.7,
-            "price_over_budget": 0.0,
-            "protein_density": 1.9642857142857142,
-            "protein_value": 0.4910714285714286,
-            "protein": 0.1,
-            "energy": 0.0,
-            "total": 1.8554
-          },
-          "has_estimated_prices": false
-        },
         {
           "title": "Soy chunks rougaille",
           "reason": null,
@@ -744,7 +436,7 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Bulgur + Quark cream",
+          "title": "Bulgur",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -775,56 +467,30 @@
               "price_source": "eat-api",
               "kcal": 562.5,
               "protein_g": 15.75
-            },
-            {
-              "name": "Topfencreme mit Himbeeren",
-              "name_en": "Quark cream with raspberries",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "245f1d1a817aefdf",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 10.5
             }
           ],
           "total": {
-            "price_cents": 275,
-            "price_eur": 2.75,
-            "weight_g": 590.0,
-            "kcal": 751.5,
-            "protein_g": 26.25,
-            "carbs_g": 105.1,
-            "fat_g": 24.1
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 562.5,
+            "protein_g": 15.75,
+            "carbs_g": 85.5,
+            "fat_g": 17.1
           },
           "score": {
-            "price": -0.6875,
+            "price": -0.3725,
             "price_over_budget": 0.0,
-            "protein_density": 0.873253493013972,
-            "protein_value": 0.3977272727272727,
-            "protein": -0.75,
-            "energy": -0.515,
-            "total": -0.6815
+            "protein_density": 0.7000000000000001,
+            "protein_value": 0.4404362416107383,
+            "protein": -2.85,
+            "energy": 0.0,
+            "total": -2.0821
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Maafe - Senegalese peanut stew + Quark cream",
+          "title": "Maafe - Senegalese peanut stew + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -849,8 +515,8 @@
                 "So"
               ],
               "additives": [
-                "Kn",
-                "2"
+                "2",
+                "Kn"
               ],
               "standing": false,
               "diet": "vegan",
@@ -861,51 +527,49 @@
               "protein_g": 18.9
             },
             {
-              "name": "Topfencreme mit Himbeeren",
-              "name_en": "Quark cream with raspberries",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
               "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
-              "allergens": [
-                "Mi"
-              ],
+              "allergens": [],
               "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "245f1d1a817aefdf",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 10.5
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590.0,
-            "kcal": 751.5,
-            "protein_g": 29.4,
-            "carbs_g": 57.85,
-            "fat_g": 43.0
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 757.5,
+            "protein_g": 22.95,
+            "carbs_g": 80.25,
+            "fat_g": 36.45
           },
           "score": {
-            "price": -1.3275,
+            "price": -1.35,
             "price_over_budget": 0.0,
-            "protein_density": 0.9780439121756487,
-            "protein_value": 0.23069679849340866,
-            "protein": -0.12000000000000029,
-            "energy": -0.515,
-            "total": -0.7538
+            "protein_density": 0.7574257425742574,
+            "protein_value": 0.17708333333333334,
+            "protein": -1.4100000000000001,
+            "energy": -0.575,
+            "total": -2.4005
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         }
       ]
     },
@@ -917,7 +581,7 @@
       "note": null,
       "plates": [
         {
-          "title": "Bulgur + Quark cream",
+          "title": "Bulgur",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -948,50 +612,24 @@
               "price_source": "eat-api",
               "kcal": 562.5,
               "protein_g": 15.75
-            },
-            {
-              "name": "Topfencreme mit Himbeeren",
-              "name_en": "Quark cream with raspberries",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "245f1d1a817aefdf",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 10.5
             }
           ],
           "total": {
-            "price_cents": 275,
-            "price_eur": 2.75,
-            "weight_g": 590.0,
-            "kcal": 751.5,
-            "protein_g": 26.25,
-            "carbs_g": 105.1,
-            "fat_g": 24.1
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 562.5,
+            "protein_g": 15.75,
+            "carbs_g": 85.5,
+            "fat_g": 17.1
           },
           "score": {
-            "price": -1.375,
+            "price": -0.745,
             "price_over_budget": 0.0,
-            "energy_value": 1.0930909090909091,
-            "energy": 0.13433333333333336,
-            "protein": 0.08333333333333333,
-            "total": -0.0642
+            "energy_value": 1.5100671140939599,
+            "energy": 0.008333333333333333,
+            "protein": -0.85,
+            "total": -0.0766
           },
           "has_estimated_prices": false
         },
@@ -1052,197 +690,7 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Crispy chicken fillet + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Hähnchenknusperfilet (1 Stück) mit Mango-Chili-Dip",
-              "name_en": "Crispy chicken fillet (1 piece) with mango chili dip",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 200,
-              "price_cents": 280,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1",
-                "2",
-                "9"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "4b65de6e5715532a",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 420.0,
-              "protein_g": 33.0
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 415,
-            "price_eur": 4.15,
-            "weight_g": 350,
-            "kcal": 615.0,
-            "protein_g": 37.05,
-            "carbs_g": 72.0,
-            "fat_g": 18.85
-          },
-          "score": {
-            "price": -2.075,
-            "price_over_budget": 0.0,
-            "energy_value": 0.5927710843373493,
-            "energy": 0.043333333333333335,
-            "protein": 0.2273333333333333,
-            "total": -1.2116
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Maafe - Senegalese peanut stew + Quark cream + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Mafe - Senegalisches Curry mit Karotte und Kohlrabi",
-              "name_en": "Maafe - Senegalese peanut stew with carrot and kohlrabi",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "En",
-                "Gl",
-                "GlW",
-                "So"
-              ],
-              "additives": [
-                "Kn",
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "3198eac3e7896918",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 6.3
-            },
-            {
-              "name": "Topfencreme mit Himbeeren",
-              "name_en": "Quark cream with raspberries",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "245f1d1a817aefdf",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 10.5
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 396,
-            "price_eur": 3.96,
-            "weight_g": 440.0,
-            "kcal": 571.5,
-            "protein_g": 20.85,
-            "carbs_g": 74.35,
-            "fat_g": 19.45
-          },
-          "score": {
-            "price": -1.98,
-            "price_over_budget": 0.0,
-            "energy_value": 0.5772727272727273,
-            "energy": 0.014333333333333333,
-            "protein": 0.011333333333333353,
-            "total": -1.3771
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Soy chunks rougaille + Quark cream + Rice",
+          "title": "Soy chunks rougaille + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
@@ -1276,30 +724,85 @@
               "protein_g": 10.2
             },
             {
-              "name": "Topfencreme mit Himbeeren",
-              "name_en": "Quark cream with raspberries",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 547.5,
+            "protein_g": 18.3,
+            "carbs_g": 96.75,
+            "fat_g": 7.65
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.5407407407407407,
+            "energy": -0.025,
+            "protein": -0.3400000000000006,
+            "total": -1.8493
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Maafe - Senegalese peanut stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Mafe - Senegalisches Curry mit Karotte und Kohlrabi",
+              "name_en": "Maafe - Senegalese peanut stew with carrot and kohlrabi",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
               ],
               "allergens": [
-                "Mi"
+                "En",
+                "Gl",
+                "GlW",
+                "So"
               ],
-              "additives": [],
+              "additives": [
+                "2",
+                "Kn"
+              ],
               "standing": false,
-              "diet": "vegetarian",
-              "id": "245f1d1a817aefdf",
-              "serving": "1 piece",
+              "diet": "vegan",
+              "id": "3198eac3e7896918",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 10.5
+              "kcal": 562.5,
+              "protein_g": 18.9
             },
             {
               "name": "Reis",
@@ -1327,21 +830,21 @@
             }
           ],
           "total": {
-            "price_cents": 396,
-            "price_eur": 3.96,
-            "weight_g": 440.0,
-            "kcal": 541.5,
-            "protein_g": 24.75,
-            "carbs_g": 74.35,
-            "fat_g": 14.2
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 757.5,
+            "protein_g": 22.95,
+            "carbs_g": 80.25,
+            "fat_g": 36.45
           },
           "score": {
-            "price": -1.98,
+            "price": -2.7,
             "price_over_budget": 0.0,
-            "energy_value": 0.546969696969697,
-            "energy": -0.085,
-            "protein": 0.06333333333333334,
-            "total": -1.4547
+            "energy_value": 0.5611111111111111,
+            "energy": 0.13833333333333334,
+            "protein": 0.039333333333333324,
+            "total": -1.9612
           },
           "has_estimated_prices": true
         }
@@ -1437,8 +940,8 @@
                 "So"
               ],
               "additives": [
-                "Kn",
-                "2"
+                "2",
+                "Kn"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1587,8 +1090,8 @@
                 "So"
               ],
               "additives": [
-                "Kn",
-                "2"
+                "2",
+                "Kn"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1707,8 +1210,8 @@
                 "So"
               ],
               "additives": [
-                "Kn",
-                "2"
+                "2",
+                "Kn"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1801,29 +1304,42 @@
         "name_en": "Liver spaetzle soup",
         "station": "Unspecified",
         "weight_g": 300,
-        "price_cents": 370,
+        "price_cents": 99,
         "is_vegan": false,
         "diet": "meat",
         "serving": "2 scoops",
         "kcal": 174.0,
         "protein_g": 11.4,
-        "price_source": "config"
+        "price_source": "eat-api"
       },
       {
-        "name": "Topfencreme mit Himbeeren",
-        "name_en": "Quark cream with raspberries",
+        "name": "Vanillecreme mit Erdnusstoffee",
+        "name_en": "Vanilla cream with peanut toffee",
         "station": "Dessert (Glas)",
         "weight_g": 140.0,
         "price_cents": 126,
         "is_vegan": false,
         "diet": "vegetarian",
         "serving": "1 piece",
-        "kcal": 189.0,
-        "protein_g": 10.5,
-        "price_source": "eat-api"
+        "kcal": 259.0,
+        "protein_g": 5.32,
+        "price_source": "config"
+      },
+      {
+        "name": "Schokopudding mit Brombeersauce",
+        "name_en": "Chocolate pudding with blackberry sauce",
+        "station": "Dessert (Glas)",
+        "weight_g": 150,
+        "price_cents": 135,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "serving": "1 piece",
+        "kcal": 187.5,
+        "protein_g": 4.2,
+        "price_source": "config"
       }
     ],
     "vegan": []
   },
-  "generated_on": "2026-11-12"
+  "generated_on": "2026-11-13"
 }
