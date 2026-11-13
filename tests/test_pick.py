@@ -201,11 +201,11 @@ def test_piece_count_is_one_fixed_serving_with_one_surcharge(config, make_dish, 
     assert p["protein"] == 24
 
 
-def test_no_price_cap(config, make_dish):
-    d, t = make_dish("Expensive pasta", protein=20, base=20, rate=5)
+def test_bulk_price_cap_does_not_change_other_goals(config, make_dish):
+    d, t = make_dish("Expensive pasta", protein=20, base=10, rate=0)
     values = list(candidates([d], {normalize(d["name"]): t}, config))
-    config["goals"] = {"bulk_max_eur": 7} # an obsolete field cannot reinstate a cap
-    assert all(choose(values, g, config)["price_cents"] > 700 for g in ("bulk", "cut", "budget"))
+    assert choose(values, "bulk", config) is None
+    assert all(choose(values, goal, config)["price_cents"] == 1000 for goal in ("cut", "budget"))
 
 
 def test_vegan_relaxation_applies_to_all_three_goals(config, fixture_menu, pairing):
@@ -312,6 +312,27 @@ def test_bulk_calorie_cap_boundaries(config, make_dish, kcal, qualifies):
     assert bool(choose(values, 'bulk', config)) is qualifies
     assert choose(values, 'cut', config) is not None
     assert choose(values, 'budget', config) is not None
+
+
+@pytest.mark.parametrize('price,qualifies', [(8.99, True), (9, True), (9.01, False)])
+def test_bulk_price_cap_boundaries(config, make_dish, price, qualifies):
+    dish, tag = make_dish('Fixed-price lunch', piece=True, piece_g=300, min_g=300, max_g=300,
+                          base=price, rate=0, protein=10)
+    values = list(candidates([dish], {normalize(dish['name']): tag}, config))
+    assert bool(choose(values, 'bulk', config)) is qualifies
+    assert choose(values, 'cut', config) is not None
+    assert choose(values, 'budget', config) is not None
+
+
+def test_bulk_price_cap_refills_ranking_with_best_eligible_plates(config, make_dish):
+    dishes, tags = [], {}
+    for name, price in [('Too expensive', 10), ('Best eligible', 9), ('Next eligible', 8)]:
+        dish, tag = make_dish(name, piece=True, piece_g=300, min_g=300, max_g=300,
+                              base=price, rate=0, protein=10)
+        dishes.append(dish)
+        tags[normalize(name)] = tag
+    ranked = top_plates(candidates(dishes, tags, config), 'bulk', config)
+    assert [plate['price_cents'] for plate in ranked] == [900, 800]
 
 
 @pytest.mark.parametrize('vegan', [False, True])
