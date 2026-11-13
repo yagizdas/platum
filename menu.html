@@ -11,23 +11,30 @@
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./menu.css?v=filters-motion-2">
+  <link rel="stylesheet" href="./menu.css?v=staging-menu-views-1">
 </head>
 <body>
   <div class="shell">
     <header>
       <a class="brand" href="./">Mensa Plate<span aria-hidden="true">.</span></a>
       <span class="location">Arcisstraße</span>
+      <div id="menu-view-switch" class="menu-view-switch" role="group" aria-label="Staging menu design" hidden></div>
     </header>
     <main>
       <div class="heading">
-        <div><h1>Your plate</h1><time id="date" class="date"></time></div>
+        <div><h1 id="menu-heading">Your plate</h1><time id="date" class="date"></time></div>
         <div class="heading-actions">
           <div id="days" class="day-strip" role="group" aria-label="Menu day" hidden></div>
           <div class="filter-control">
             <button id="filter-toggle" class="filter-toggle" type="button" aria-label="Dietary filters" aria-expanded="false" aria-controls="filter-panel">
               <img class="filter-off" src="./icons/ui/filter_untapped.png" alt="" width="1254" height="1254">
               <img class="filter-on" src="./icons/ui/filter_tapped.png" alt="" width="1254" height="1254">
+              <span class="filter-caption" hidden>
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                  <path d="M3 5h5m4 0h5M3 10h9m4 0h1M3 15h2m4 0h8M10 3v4m4 1v4m-7 1v4"/>
+                </svg>
+                Filters
+              </span>
               <span id="filter-count" class="filter-count" hidden></span>
             </button>
             <section id="filter-panel" class="filter-panel" aria-label="Dietary filters" hidden>
@@ -113,6 +120,12 @@
     const titles = {bulk:'Bulk',cut:'Cut',budget:'Budget'};
     const dietLabels = {fish:'Fish',meat:'Meat',vegetarian:'Veg',vegan:'Vegan'};
     const SITE_URL = 'https://yagizdas.github.io/platum/';
+    const STAGING_MENU_URL = new URL('staging/menu.html', SITE_URL);
+    const MENU_VIEWS = [
+      {id:'classic', label:'Classic'},
+      {id:'new', label:'New', weekdayHeading:true, filterInPreferences:true},
+    ];
+    let menuView = MENU_VIEWS[0];
     let selection = {goal:'bulk',vegan:false,noPork:false,noBeef:false,noMeat:false};
     let data, stale=false, plateIndex=0, selectedExtras=new Set(), shareTimer;
     let weekIndex, selectedDate, loadToken=0;
@@ -404,21 +417,85 @@
       return day.toISOString().slice(0,10);
     }
     function dateLabel(day) {
+      const date=new Date(day+'T12:00:00Z');
+      const timeZone='Europe/Berlin';
+      const options=menuView.weekdayHeading
+        ? {day:'numeric',month:'long',year:'numeric',timeZone}
+        : {weekday:'long',day:'numeric',month:'short',timeZone};
+      $('menu-heading').textContent=menuView.weekdayHeading
+        ? new Intl.DateTimeFormat('en-GB',{weekday:'long',timeZone}).format(date)
+        : 'Your plate';
       $('date').dateTime=day;
-      $('date').textContent=new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'short',timeZone:'Europe/Berlin'}).format(new Date(day+'T12:00:00Z'));
+      $('date').textContent=new Intl.DateTimeFormat('en-GB',options).format(date);
+    }
+    function initStagingViews() {
+      if(location.origin!==STAGING_MENU_URL.origin || location.pathname!==STAGING_MENU_URL.pathname) return;
+      const storageKey='mensa-plate-staging-menu-view';
+      const switcher=$('menu-view-switch');
+      const filter=$('filter-toggle').closest('.filter-control');
+      const classicFilterRow=filter.parentElement;
+      const preferenceRow=document.querySelector('.controls');
+      const caption=filter.querySelector('.filter-caption');
+      function applyView(view) {
+        menuView=view;
+        stopPlateAnimations();
+        setFilterOpen(false);
+        document.body.dataset.menuView=view.id;
+        (view.filterInPreferences?preferenceRow:classicFilterRow).append(filter);
+        caption.hidden=!view.filterInPreferences;
+        if($('date').dateTime) dateLabel($('date').dateTime);
+        else $('menu-heading').textContent=view.weekdayHeading?'Menu':'Your plate';
+        $('days').querySelectorAll('button').forEach(labelDayButton);
+        for(const button of switcher.querySelectorAll('button')) {
+          button.setAttribute('aria-pressed',String(button.value===view.id));
+        }
+      }
+      for(const view of MENU_VIEWS) {
+        const button=document.createElement('button');
+        button.type='button';
+        button.value=view.id;
+        button.textContent=view.label;
+        button.addEventListener('click',()=>{
+          if(view===menuView) return;
+          applyView(view);
+          try {localStorage.setItem(storageKey,view.id);} catch(_) {}
+        });
+        switcher.append(button);
+      }
+      let saved;
+      try {saved=localStorage.getItem(storageKey);} catch(_) {}
+      applyView(MENU_VIEWS.find(view=>view.id===saved) || MENU_VIEWS[0]);
+      switcher.hidden=false;
+    }
+    function labelDayButton(button) {
+      const date=button.dataset.date;
+      const description=button.dataset.closed==='true'?'no menu':'menu';
+      if(menuView.weekdayHeading) {
+        button.removeAttribute('aria-label');
+        const month=new Intl.DateTimeFormat('en-GB',{month:'long',year:'numeric',timeZone:'Europe/Berlin'}).format(new Date(date+'T12:00:00Z'));
+        button.setAttribute('aria-description',month+' · '+description);
+      } else {
+        button.removeAttribute('aria-description');
+        button.setAttribute('aria-label',date+' · '+description);
+      }
     }
     function renderDays() {
+      const focusedDate=menuView.weekdayHeading && $('days').contains(document.activeElement)
+        ? document.activeElement.dataset.date
+        : null;
       $('days').replaceChildren();$('days').hidden=!weekIndex;
       if(!weekIndex) return;
       for(const row of weekIndex.days.filter(row=>mondayOf(row.date)===mondayOf(pendingDate || selectedDate))) {
         const button=document.createElement('button');button.type='button';button.className='day-button';
         const date=new Date(row.date+'T12:00:00Z');
-        button.append(document.createTextNode(new Intl.DateTimeFormat('en-GB',{weekday:'short',timeZone:'Europe/Berlin'}).format(date)));
+        button.append(document.createTextNode(new Intl.DateTimeFormat('en-GB',{weekday:'short',timeZone:'Europe/Berlin'}).format(date)+' '));
         const label=document.createElement('span');label.className='day-date';
         label.textContent=new Intl.DateTimeFormat('en-GB',{day:'numeric',timeZone:'Europe/Berlin'}).format(date);
         button.append(label);button.setAttribute('aria-pressed',String(row.date===(pendingDate || selectedDate)));button.dataset.date=row.date;
-        button.setAttribute('aria-label',row.date+(row.state==='closed'?' · no menu':' menu'));
+        button.dataset.closed=String(row.state==='closed');
+        labelDayButton(button);
         button.addEventListener('click',()=>selectDay(row));$('days').append(button);
+        if(row.date===focusedDate) button.focus({preventScroll:true});
       }
     }
     const menuRequests=new Map(),artworkRequests=new Map();
@@ -508,6 +585,7 @@
         } catch(_) {data=undefined;empty('A little trouble in the kitchen.','Please reload in a moment, or check the official menu below.','error');}
       } finally {if(!weekIndex) $('plate').setAttribute('aria-busy','false');}
     }
+    initStagingViews();
     load();
   </script>
   <!-- Cloudflare Web Analytics: public site token, not an API credential. -->

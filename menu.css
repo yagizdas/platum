@@ -255,3 +255,208 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
 @media (max-width:760px) { .heading-actions { gap:8px; } .filter-toggle,.filter-toggle img { width:48px; height:48px; } }
 @media (max-width:520px) { .heading-actions { width:100%; } .heading-actions .day-strip { flex:1; min-width:0; width:auto; margin:0; gap:2px; } .heading-actions .day-button { min-width:40px; padding-inline:4px; } .filter-panel { right:0; width:min(280px,calc(100vw - 48px)); } }
 @media (prefers-reduced-motion:reduce) { *, *::before, *::after { animation:none!important; transition:none!important; } }
+
+/* The review control sits between the existing brand and location on staging. */
+[data-menu-view] header { position: relative; }
+.menu-view-switch {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+}
+.menu-view-switch button {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+}
+.menu-view-switch button[aria-pressed='true'] {
+  background: var(--ink);
+  color: white;
+}
+
+/* New menu view. Classic keeps the original rules above. */
+[data-menu-view='new'] main { padding-top: 18px; }
+[data-menu-view='new'] .heading {
+  align-items: end;
+  gap: 18px 28px;
+  margin-bottom: 24px;
+}
+[data-menu-view='new'] h1 {
+  font-size: clamp(36px, 4.4vw, 54px);
+  font-weight: 600;
+  letter-spacing: -.045em;
+}
+[data-menu-view='new'] .date { margin-top: 6px; font-size: 15px; }
+[data-menu-view='new'] .day-strip { gap: 4px; }
+[data-menu-view='new'] .day-button {
+  gap: 3px;
+  min-width: 52px;
+  min-height: 52px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+[data-menu-view='new'] .day-date { font-size: 17px; font-variant-numeric: tabular-nums; }
+
+[data-menu-view='new'] .controls {
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: stretch;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+[data-menu-view='new'] .goals { gap: 4px; }
+[data-menu-view='new'] .goals button,
+[data-menu-view='new'] .vegan-face {
+  flex-direction: row;
+  gap: 8px;
+  min-height: 56px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+[data-menu-view='new'] .goals button[aria-pressed='true'],
+[data-menu-view='new'] .toggle input:checked + .vegan-face {
+  border-color: var(--accent);
+  background: var(--selected);
+}
+[data-menu-view='new'] .goals .artwork,
+[data-menu-view='new'] .vegan-face .artwork {
+  width: min(34px, calc(29px * var(--art-aspect)));
+  margin: 0;
+}
+[data-menu-view='new'] .goal-check { display: none; }
+[data-menu-view='new'] .vegan-face .switch { position: static; width: 32px; height: 20px; padding: 3px; }
+[data-menu-view='new'] .vegan-face .switch::after { width: 14px; height: 14px; }
+[data-menu-view='new'] .toggle input:checked + .vegan-face .switch::after { transform: translateX(12px); }
+[data-menu-view='new'] .filter-toggle {
+  display: inline-flex;
+  gap: 7px;
+  width: auto;
+  height: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  font-size: 14px;
+  font-weight: 600;
+}
+[data-menu-view='new'] .filter-toggle[data-active='true'] { border-color: var(--accent); color: var(--accent); }
+[data-menu-view='new'] .filter-toggle img { display: none; }
+[data-menu-view='new'] .filter-caption { display: inline-flex; align-items: center; gap: 6px; }
+[data-menu-view='new'] .filter-count { position: static; border-radius: 6px; }
+[data-menu-view='new'] .filter-panel {
+  width: min(280px, calc(100vw - 32px));
+  border-radius: 14px;
+}
+
+[data-menu-view='new'] .receipt {
+  padding: 18px 28px 12px;
+  border-radius: 18px;
+}
+[data-menu-view='new'] .plate-overview {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 24px;
+  min-height: 0;
+}
+[data-menu-view='new'] .plate-art { --dish-height: clamp(168px, 21vw, 230px); }
+[data-menu-view='new'] .plate-summary { min-width: 0; padding-block: 8px; }
+[data-menu-view='new'] #plate-title {
+  font-size: clamp(26px, 3.4vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -.04em;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+[data-menu-view='new'] #plate-title.is-long { font-size: clamp(23px, 2.6vw, 34px); }
+[data-menu-view='new'] .plate-side { margin-top: 6px; font-size: 15px; overflow-wrap: anywhere; }
+[data-menu-view='new'] .totals {
+  grid-template-columns: auto auto auto;
+  justify-content: start;
+  align-items: baseline;
+  gap: clamp(10px, 3vw, 38px);
+  margin-top: 20px;
+}
+[data-menu-view='new'] .total-value { font-size: clamp(18px, 2.4vw, 26px); font-weight: 500; }
+[data-menu-view='new'] .total-price { font-size: clamp(22px, 3.4vw, 34px); font-weight: 650; }
+[data-menu-view='new'] .total-label { margin-top: 3px; font-size: 12px; }
+[data-menu-view='new'] .relaxed-note { margin-top: 10px; }
+[data-menu-view='new'] .plate-actions {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0 12px;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+}
+[data-menu-view='new'] .alternatives { gap: 8px; }
+[data-menu-view='new'] #option-status { font-size: 14px; color: var(--muted); }
+[data-menu-view='new'] .arrow {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 20px;
+}
+[data-menu-view='new'] .arrow:hover { background: var(--paper); }
+[data-menu-view='new'] #share { margin-left: auto; font-size: 14px; font-weight: 600; }
+[data-menu-view='new'] .report-button { min-height: 44px; margin-top: 0; font-size: 13px; }
+[data-menu-view='new'] .secondary-actions { gap: 12px; margin-top: 16px; }
+[data-menu-view='new'] .ingredient-panel,
+[data-menu-view='new'] .disclosure { border-radius: 18px; }
+[data-menu-view='new'] summary { min-height: 56px; padding-block: 14px; }
+
+@media (max-width: 760px) {
+  [data-menu-view='new'] .heading { flex-wrap: wrap; }
+  [data-menu-view='new'] .heading-actions { width: 100%; }
+  [data-menu-view='new'] .day-strip {
+    display: grid;
+    grid-auto-columns: minmax(44px, 1fr);
+    grid-auto-flow: column;
+    flex: 1;
+    margin: 0;
+  }
+  [data-menu-view='new'] .day-button { min-width: 44px; }
+  [data-menu-view='new'] .receipt { padding-inline: 18px; }
+}
+@media (max-width: 560px) {
+  .menu-view-switch button { padding-inline: 10px; }
+  [data-menu-view='new'] .controls {
+    grid-template-columns: 1fr auto;
+    gap: 6px 8px;
+  }
+  [data-menu-view='new'] .goals { grid-column: 1 / -1; }
+  [data-menu-view='new'] .goals button,
+  [data-menu-view='new'] .vegan-face { gap: 4px; min-height: 48px; padding-inline: 6px; }
+  [data-menu-view='new'] .goals .artwork,
+  [data-menu-view='new'] .vegan-face .artwork { width: min(25px, calc(23px * var(--art-aspect))); }
+  [data-menu-view='new'] .vegan-face { width: auto; justify-self: start; padding-inline: 9px; }
+  [data-menu-view='new'] .toggle { justify-self: start; }
+  [data-menu-view='new'] .plate-overview { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  [data-menu-view='new'] .plate-art { --dish-height: 144px; max-width: 340px; }
+  [data-menu-view='new'] .totals { margin-top: 12px; }
+}
+@media (max-width: 520px) {
+  .menu-view-switch {
+    inset: calc(100% + 47px) 0 auto auto;
+    transform: none;
+  }
+  [data-menu-view='new'] header { flex-wrap: wrap; gap: 4px 10px; }
+  [data-menu-view='new'] .menu-view-switch { position: static; }
+}
+@media (max-width: 360px) {
+  [data-menu-view] header { flex-wrap: wrap; gap: 4px 10px; }
+  .menu-view-switch { position: static; }
+}
