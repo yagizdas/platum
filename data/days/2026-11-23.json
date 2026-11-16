@@ -1,0 +1,1995 @@
+{
+  "date": "2026-11-23",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "fetched_at": "2026-11-16T17:20:38.047141+00:00",
+  "warnings": [],
+  "schema_version": 2,
+  "menu_count": 9,
+  "scoring": {
+    "bulk": {
+      "price": {
+        "metric": "price",
+        "weight": -2,
+        "normalizer": 4
+      },
+      "price_over_budget": {
+        "quantity": "price",
+        "pivot": 7,
+        "reverse": true,
+        "up": 0,
+        "down": 1,
+        "normalizer": 1
+      },
+      "energy_value": {
+        "metric": "kcal_per_euro",
+        "weight": 0.25,
+        "normalizer": 250
+      },
+      "protein_value": {
+        "metric": "protein_per_euro",
+        "weight": 0.5,
+        "normalizer": 12
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 0,
+        "up": 1.5,
+        "down": 1.5,
+        "normalizer": 10
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 500,
+        "up": 0.25,
+        "down": 3,
+        "normalizer": 300
+      }
+    },
+    "cut": {
+      "price": {
+        "metric": "price",
+        "weight": -1,
+        "normalizer": 4
+      },
+      "price_over_budget": {
+        "quantity": "price",
+        "pivot": 7,
+        "reverse": true,
+        "up": 0,
+        "down": 1,
+        "normalizer": 1
+      },
+      "protein_density": {
+        "metric": "protein_per_100kcal",
+        "weight": 2,
+        "normalizer": 8
+      },
+      "protein_value": {
+        "metric": "protein_per_euro",
+        "weight": 0.5,
+        "normalizer": 12
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 30,
+        "up": 0.5,
+        "down": 3,
+        "normalizer": 15
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 700,
+        "reverse": true,
+        "up": 0,
+        "down": 2,
+        "normalizer": 200
+      }
+    },
+    "budget": {
+      "price": {
+        "metric": "price",
+        "weight": -2,
+        "normalizer": 4
+      },
+      "price_over_budget": {
+        "quantity": "price",
+        "pivot": 7,
+        "reverse": true,
+        "up": 0,
+        "down": 1,
+        "normalizer": 1
+      },
+      "energy_value": {
+        "metric": "kcal_per_euro",
+        "weight": 1,
+        "normalizer": 250
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 550,
+        "up": 0.2,
+        "down": 3,
+        "normalizer": 300
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 20,
+        "up": 0.2,
+        "down": 3,
+        "normalizer": 15
+      }
+    }
+  },
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Crispy Chicken and Cheesy Pasta Feast",
+          "reason": "Packed with high calories and generous protein for maximum bulking energy.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            },
+            {
+              "name": "Pasta mit Käsesauce",
+              "name_en": "Pasta with cheese sauce",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "a706a1edc7531645",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 685,
+            "price_eur": 6.85,
+            "weight_g": 650,
+            "kcal": 1282.5,
+            "protein_g": 60.25,
+            "carbs_g": 127.0,
+            "fat_g": 58.1
+          },
+          "score": {
+            "price": -3.425,
+            "price_over_budget": 0.0,
+            "energy_value": 0.18722627737226277,
+            "protein_value": 0.36648418491484186,
+            "protein": 9.0375,
+            "energy": 0.6520833333333333,
+            "total": 6.8183
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman Curry Bowl with Dessert",
+          "reason": "Hearty plant protein curry paired with chocolate mousse for dense bulking energy.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Mousse au chocolat mit Amarettini und glasierten Kirschen",
+              "name_en": "Chocolate mousse with amarettini and glazed cherries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlH",
+                "GlW",
+                "Mi",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "dd7a2145e42818ef",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 336.0,
+              "protein_g": 5.32
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 666,
+            "price_eur": 6.66,
+            "weight_g": 740,
+            "kcal": 1183.5,
+            "protein_g": 38.62,
+            "carbs_g": 119.6,
+            "fat_g": 61.4
+          },
+          "score": {
+            "price": -3.33,
+            "price_over_budget": 0.0,
+            "energy_value": 0.17770270270270272,
+            "protein_value": 0.2416166166166166,
+            "protein": 5.792999999999999,
+            "energy": 0.5695833333333333,
+            "total": 3.4519
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Bratwurst and Potato Salad Combo",
+          "reason": "Traditional sausage meal finished with sweet dessert for solid calorie support.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Fränkische Bratwurst (1 Stück)",
+              "name_en": "Franconian bratwurst (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 115,
+              "price_cents": 154,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "bc974b42022b1458",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 339.25,
+              "protein_g": 16.68
+            },
+            {
+              "name": "Mousse au chocolat mit Amarettini und glasierten Kirschen",
+              "name_en": "Chocolate mousse with amarettini and glazed cherries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlH",
+                "GlW",
+                "Mi",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "dd7a2145e42818ef",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 336.0,
+              "protein_g": 5.32
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "id": "73bbe2bb9698caf4",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 415,
+            "price_eur": 4.15,
+            "weight_g": 405,
+            "kcal": 847.75,
+            "protein_g": 24.7,
+            "carbs_g": 59.77,
+            "fat_g": 56.13
+          },
+          "score": {
+            "price": -2.075,
+            "price_over_budget": 0.0,
+            "energy_value": 0.20427710843373492,
+            "protein_value": 0.2479417670682731,
+            "protein": 3.7042500000000005,
+            "energy": 0.28979166666666667,
+            "total": 2.3713
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Veggie Rice Stew with Mousse",
+          "reason": "Wholesome stew paired with chocolate mousse to supply filling carbs and calories.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Asiatischer Reis-Gemüse-Topf",
+              "name_en": "Asian rice and vegetable stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "4ceddd745d10e730",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 11.25
+            },
+            {
+              "name": "Mousse au chocolat mit Amarettini und glasierten Kirschen",
+              "name_en": "Chocolate mousse with amarettini and glazed cherries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlH",
+                "GlW",
+                "Mi",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "dd7a2145e42818ef",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 336.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590,
+            "kcal": 763.5,
+            "protein_g": 16.57,
+            "carbs_g": 104.6,
+            "fat_g": 29.45
+          },
+          "score": {
+            "price": -1.375,
+            "price_over_budget": 0.0,
+            "energy_value": 0.2776363636363636,
+            "protein_value": 0.25106060606060604,
+            "protein": 2.4855,
+            "energy": 0.21958333333333332,
+            "total": 1.8588
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip Potato Goulash and Dessert",
+          "reason": "Comforting root vegetable goulash matched with creamy chocolate mousse.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Veganes Pastinaken-Kartoffel-Gulasch",
+              "name_en": "Vegan parsnip and potato goulash",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "f4b4b4ccd25bc9df",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 4.5
+            },
+            {
+              "name": "Mousse au chocolat mit Amarettini und glasierten Kirschen",
+              "name_en": "Chocolate mousse with amarettini and glazed cherries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlH",
+                "GlW",
+                "Mi",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "dd7a2145e42818ef",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 336.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 396,
+            "price_eur": 3.96,
+            "weight_g": 440,
+            "kcal": 561.0,
+            "protein_g": 9.82,
+            "carbs_g": 70.1,
+            "fat_g": 25.7
+          },
+          "score": {
+            "price": -1.98,
+            "price_over_budget": 0.0,
+            "energy_value": 0.14166666666666666,
+            "protein_value": 0.10332491582491583,
+            "protein": 1.473,
+            "energy": 0.050833333333333335,
+            "total": -0.2112
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Lean Chicken Schnitzel",
+          "reason": "High protein chicken dish that stays light and fit for cutting goals.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 450.0,
+            "protein_g": 31.0,
+            "carbs_g": 28.0,
+            "fat_g": 23.0
+          },
+          "score": {
+            "price": -0.7,
+            "price_over_budget": 0.0,
+            "protein_density": 1.7222222222222223,
+            "protein_value": 0.4613095238095239,
+            "protein": 0.03333333333333333,
+            "energy": 0.0,
+            "total": 1.5169
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pure Massaman Curry",
+          "reason": "Plant-forward curry offering ample protein while keeping extras off the plate.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "price": -1.0125,
+            "price_over_budget": 0.0,
+            "protein_density": 1.1206896551724137,
+            "protein_value": 0.30092592592592593,
+            "protein": -0.15,
+            "energy": 0.0,
+            "total": 0.2591
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled Bratwurst with Rice",
+          "reason": "Simple combination of savory sausage and rice for controlled portions.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Fränkische Bratwurst (1 Stück)",
+              "name_en": "Franconian bratwurst (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 115,
+              "price_cents": 154,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "bc974b42022b1458",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 339.25,
+              "protein_g": 16.68
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 424,
+            "price_eur": 4.24,
+            "weight_g": 415,
+            "kcal": 729.25,
+            "protein_g": 24.77,
+            "carbs_g": 84.92,
+            "fat_g": 31.03
+          },
+          "score": {
+            "price": -1.06,
+            "price_over_budget": 0.0,
+            "protein_density": 0.8493315049708605,
+            "protein_value": 0.24346501572327042,
+            "protein": -1.0450000000000004,
+            "energy": -0.2925,
+            "total": -1.3047
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Light Asian Rice Stew",
+          "reason": "Vegetable and rice stew that keeps calories minimal during a strict cut.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Asiatischer Reis-Gemüse-Topf",
+              "name_en": "Asian rice and vegetable stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "4ceddd745d10e730",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 11.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 11.25,
+            "carbs_g": 67.5,
+            "fat_g": 11.25
+          },
+          "score": {
+            "price": -0.3725,
+            "price_over_budget": 0.0,
+            "protein_density": 0.6578947368421052,
+            "protein_value": 0.31459731543624164,
+            "protein": -3.75,
+            "energy": 0.0,
+            "total": -3.15
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip Goulash with Steamed Rice",
+          "reason": "Nutritious vegetable stew served over rice for clean, low calorie fuel.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Veganes Pastinaken-Kartoffel-Gulasch",
+              "name_en": "Vegan parsnip and potato goulash",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "f4b4b4ccd25bc9df",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 4.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 615.0,
+            "protein_g": 12.6,
+            "carbs_g": 117.0,
+            "fat_g": 8.4
+          },
+          "score": {
+            "price": -1.35,
+            "price_over_budget": 0.0,
+            "protein_density": 0.5121951219512195,
+            "protein_value": 0.09722222222222221,
+            "protein": -3.4799999999999995,
+            "energy": 0.0,
+            "total": -4.2206
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Cheesy Pasta Bowl",
+          "reason": "Affordable comfort food delivering substantial satisfaction on a low budget.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pasta mit Käsesauce",
+              "name_en": "Pasta with cheese sauce",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "a706a1edc7531645",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 19.5
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 555.0,
+            "protein_g": 19.5,
+            "carbs_g": 66.0,
+            "fat_g": 23.4
+          },
+          "score": {
+            "price": -1.35,
+            "price_over_budget": 0.0,
+            "energy_value": 0.8222222222222222,
+            "energy": 0.0033333333333333335,
+            "protein": -0.1,
+            "total": -0.6244
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice Stew and Chocolate Mousse",
+          "reason": "Low-cost veggie stew complemented by a sweet dessert at great value.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Asiatischer Reis-Gemüse-Topf",
+              "name_en": "Asian rice and vegetable stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "4ceddd745d10e730",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 11.25
+            },
+            {
+              "name": "Mousse au chocolat mit Amarettini und glasierten Kirschen",
+              "name_en": "Chocolate mousse with amarettini and glazed cherries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlH",
+                "GlW",
+                "Mi",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "dd7a2145e42818ef",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 336.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590,
+            "kcal": 763.5,
+            "protein_g": 16.57,
+            "carbs_g": 104.6,
+            "fat_g": 29.45
+          },
+          "score": {
+            "price": -1.375,
+            "price_over_budget": 0.0,
+            "energy_value": 1.1105454545454545,
+            "energy": 0.14233333333333334,
+            "protein": -0.6859999999999999,
+            "total": -0.8081
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Bratwurst with Fluffy Rice",
+          "reason": "Economical combination providing solid sustenance without high cost.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Fränkische Bratwurst (1 Stück)",
+              "name_en": "Franconian bratwurst (1 piece)",
+              "station": "Grill",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 115,
+              "price_cents": 154,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "bc974b42022b1458",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 339.25,
+              "protein_g": 16.68
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 289,
+            "price_eur": 2.89,
+            "weight_g": 265,
+            "kcal": 534.25,
+            "protein_g": 20.73,
+            "carbs_g": 42.92,
+            "fat_g": 30.58
+          },
+          "score": {
+            "price": -1.445,
+            "price_over_budget": 0.0,
+            "energy_value": 0.7394463667820068,
+            "energy": -0.1575,
+            "protein": 0.009666666666666686,
+            "total": -0.8534
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Chicken Schnitzel and Rice Plate",
+          "reason": "Protein-rich meal keeping overall expense within reasonable reach.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 415,
+            "price_eur": 4.15,
+            "weight_g": 350,
+            "kcal": 645.0,
+            "protein_g": 35.05,
+            "carbs_g": 70.0,
+            "fat_g": 23.45
+          },
+          "score": {
+            "price": -2.075,
+            "price_over_budget": 0.0,
+            "energy_value": 0.6216867469879518,
+            "energy": 0.06333333333333334,
+            "protein": 0.20066666666666666,
+            "total": -1.1893
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Curry Rice with Sweet Finish",
+          "reason": "Flavorful curry sampler with rice and sweet dessert for modest spending.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "31444aba540c945f",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 217.5,
+              "protein_g": 9.75
+            },
+            {
+              "name": "Mousse au chocolat mit Amarettini und glasierten Kirschen",
+              "name_en": "Chocolate mousse with amarettini and glazed cherries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlH",
+                "GlW",
+                "Mi",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "dd7a2145e42818ef",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 336.0,
+              "protein_g": 5.32
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 396,
+            "price_eur": 3.96,
+            "weight_g": 440,
+            "kcal": 748.5,
+            "protein_g": 19.12,
+            "carbs_g": 92.6,
+            "fat_g": 32.9
+          },
+          "score": {
+            "price": -1.98,
+            "price_over_budget": 0.0,
+            "energy_value": 0.7560606060606061,
+            "energy": 0.13233333333333333,
+            "protein": -0.1759999999999998,
+            "total": -1.2676
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Double Rice Massaman Curry Feast",
+          "reason": "Generous serving of plant protein and rice crafted for calorie gains.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1042.5,
+            "protein_g": 37.35,
+            "carbs_g": 124.5,
+            "fat_g": 43.65
+          },
+          "score": {
+            "price": -3.375,
+            "price_over_budget": 0.0,
+            "energy_value": 0.15444444444444447,
+            "protein_value": 0.23055555555555554,
+            "protein": 5.602500000000001,
+            "energy": 0.45208333333333334,
+            "total": 3.0646
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Asian Rice and Vegetable Pot",
+          "reason": "Wholesome vegan bowl filled with vegetables and hearty rice.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Asiatischer Reis-Gemüse-Topf",
+              "name_en": "Asian rice and vegetable stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "4ceddd745d10e730",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 11.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 11.25,
+            "carbs_g": 67.5,
+            "fat_g": 11.25
+          },
+          "score": {
+            "price": -0.745,
+            "price_over_budget": 0.0,
+            "energy_value": 0.28691275167785235,
+            "protein_value": 0.31459731543624164,
+            "protein": 1.6875,
+            "energy": -0.725,
+            "total": 0.819
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip Goulash over Double Rice",
+          "reason": "Hearty vegetable stew paired with extra rice to boost vegan energy intake.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Veganes Pastinaken-Kartoffel-Gulasch",
+              "name_en": "Vegan parsnip and potato goulash",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "f4b4b4ccd25bc9df",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 112.5,
+              "protein_g": 2.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 502.5,
+            "protein_g": 10.35,
+            "carbs_g": 100.5,
+            "fat_g": 4.65
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.12407407407407407,
+            "protein_value": 0.10648148148148147,
+            "protein": 1.5524999999999998,
+            "energy": 0.0020833333333333333,
+            "total": -0.2399
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Massaman Protein Bowl",
+          "reason": "Protein-rich pea chunks in curry sauce perfect for a lean vegan meal.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "price": -1.0125,
+            "price_over_budget": 0.0,
+            "protein_density": 1.1206896551724137,
+            "protein_value": 0.30092592592592593,
+            "protein": -0.15,
+            "energy": 0.0,
+            "total": 0.2591
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Slim Veggie Rice Pot",
+          "reason": "Ultra-light Asian stew designed for calorie-conscious plant-based eating.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Asiatischer Reis-Gemüse-Topf",
+              "name_en": "Asian rice and vegetable stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "4ceddd745d10e730",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 11.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 11.25,
+            "carbs_g": 67.5,
+            "fat_g": 11.25
+          },
+          "score": {
+            "price": -0.3725,
+            "price_over_budget": 0.0,
+            "protein_density": 0.6578947368421052,
+            "protein_value": 0.31459731543624164,
+            "protein": -3.75,
+            "energy": 0.0,
+            "total": -3.15
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip Goulash with Rice",
+          "reason": "Nutrient-dense root veggies and rice providing steady energy while cutting.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Veganes Pastinaken-Kartoffel-Gulasch",
+              "name_en": "Vegan parsnip and potato goulash",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "f4b4b4ccd25bc9df",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 4.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 615.0,
+            "protein_g": 12.6,
+            "carbs_g": 117.0,
+            "fat_g": 8.4
+          },
+          "score": {
+            "price": -1.35,
+            "price_over_budget": 0.0,
+            "protein_density": 0.5121951219512195,
+            "protein_value": 0.09722222222222221,
+            "protein": -3.4799999999999995,
+            "energy": 0.0,
+            "total": -4.2206
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Massaman Protein Curry",
+          "reason": "Satisfying plant protein curry offering great flavor on a frugal budget.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.6444444444444445,
+            "energy": 0.06833333333333333,
+            "protein": 0.12333333333333334,
+            "total": -1.1889
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Thrifty Rice Vegetable Stew",
+          "reason": "The most wallet-friendly vegan choice packed with warm veggies and rice.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Asiatischer Reis-Gemüse-Topf",
+              "name_en": "Asian rice and vegetable stew",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "4ceddd745d10e730",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 11.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 11.25,
+            "carbs_g": 67.5,
+            "fat_g": 11.25
+          },
+          "score": {
+            "price": -0.745,
+            "price_over_budget": 0.0,
+            "energy_value": 1.1476510067114094,
+            "energy": -1.225,
+            "protein": -1.75,
+            "total": -2.5723
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip Goulash and Rice Meal",
+          "reason": "Cost-effective, comforting vegetable stew balanced with wholesome rice.",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Veganes Pastinaken-Kartoffel-Gulasch",
+              "name_en": "Vegan parsnip and potato goulash",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "f4b4b4ccd25bc9df",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 4.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 615.0,
+            "protein_g": 12.6,
+            "carbs_g": 117.0,
+            "fat_g": 8.4
+          },
+          "score": {
+            "price": -2.7,
+            "price_over_budget": 0.0,
+            "energy_value": 0.45555555555555555,
+            "energy": 0.043333333333333335,
+            "protein": -1.4800000000000002,
+            "total": -3.6811
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    }
+  },
+  "extras": {
+    "all": [
+      {
+        "name": "Mousse au chocolat mit Amarettini und glasierten Kirschen",
+        "name_en": "Chocolate mousse with amarettini and glazed cherries",
+        "station": "Dessert (Glas)",
+        "weight_g": 140,
+        "price_cents": 126,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "serving": "1 piece",
+        "kcal": 336.0,
+        "protein_g": 5.32,
+        "price_source": "eat-api"
+      }
+    ],
+    "vegan": []
+  },
+  "generated_on": "2026-11-16"
+}

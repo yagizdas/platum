@@ -1,0 +1,1769 @@
+{
+  "date": "2026-11-25",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "fetched_at": "2026-11-16T17:20:38.138119+00:00",
+  "warnings": [],
+  "schema_version": 2,
+  "menu_count": 9,
+  "scoring": {
+    "bulk": {
+      "price": {
+        "metric": "price",
+        "weight": -2,
+        "normalizer": 4
+      },
+      "price_over_budget": {
+        "quantity": "price",
+        "pivot": 7,
+        "reverse": true,
+        "up": 0,
+        "down": 1,
+        "normalizer": 1
+      },
+      "energy_value": {
+        "metric": "kcal_per_euro",
+        "weight": 0.25,
+        "normalizer": 250
+      },
+      "protein_value": {
+        "metric": "protein_per_euro",
+        "weight": 0.5,
+        "normalizer": 12
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 0,
+        "up": 1.5,
+        "down": 1.5,
+        "normalizer": 10
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 500,
+        "up": 0.25,
+        "down": 3,
+        "normalizer": 300
+      }
+    },
+    "cut": {
+      "price": {
+        "metric": "price",
+        "weight": -1,
+        "normalizer": 4
+      },
+      "price_over_budget": {
+        "quantity": "price",
+        "pivot": 7,
+        "reverse": true,
+        "up": 0,
+        "down": 1,
+        "normalizer": 1
+      },
+      "protein_density": {
+        "metric": "protein_per_100kcal",
+        "weight": 2,
+        "normalizer": 8
+      },
+      "protein_value": {
+        "metric": "protein_per_euro",
+        "weight": 0.5,
+        "normalizer": 12
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 30,
+        "up": 0.5,
+        "down": 3,
+        "normalizer": 15
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 700,
+        "reverse": true,
+        "up": 0,
+        "down": 2,
+        "normalizer": 200
+      }
+    },
+    "budget": {
+      "price": {
+        "metric": "price",
+        "weight": -2,
+        "normalizer": 4
+      },
+      "price_over_budget": {
+        "quantity": "price",
+        "pivot": 7,
+        "reverse": true,
+        "up": 0,
+        "down": 1,
+        "normalizer": 1
+      },
+      "energy_value": {
+        "metric": "kcal_per_euro",
+        "weight": 1,
+        "normalizer": 250
+      },
+      "energy": {
+        "quantity": "kcal",
+        "pivot": 550,
+        "up": 0.2,
+        "down": 3,
+        "normalizer": 300
+      },
+      "protein": {
+        "quantity": "protein",
+        "pivot": 20,
+        "up": 0.2,
+        "down": 3,
+        "normalizer": 15
+      }
+    }
+  },
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pork Gyros with Rice and Tzatziki",
+          "reason": "Packed with hearty pork protein and energy-giving rice for maximum bulking",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pfannengyros vom Schwein (S vom Strohschwein) mit Tsatsiki",
+              "name_en": "Pan-fried pork gyros (straw pork) with tzatziki",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "Kn",
+                "1",
+                "3",
+                "5"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "df7ab64d17737295",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 65.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 640,
+            "price_eur": 6.4,
+            "weight_g": 600,
+            "kcal": 1027.5,
+            "protein_g": 69.3,
+            "carbs_g": 56.4,
+            "fat_g": 58.05
+          },
+          "score": {
+            "price": -3.2,
+            "price_over_budget": 0.0,
+            "energy_value": 0.160546875,
+            "protein_value": 0.45117187499999994,
+            "protein": 10.395,
+            "energy": 0.4395833333333333,
+            "total": 8.2463
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Zurich Chicken with Steamed Rice",
+          "reason": "Lean chicken in cream sauce paired with rice delivers great protein and calories",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Hähnchengeschnetzeltes Züricher Art",
+              "name_en": "Zurich-style sliced chicken in cream sauce",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "882cc4ef1902bd58",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 56.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 640,
+            "price_eur": 6.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 60.3,
+            "carbs_g": 55.5,
+            "fat_g": 36.45
+          },
+          "score": {
+            "price": -3.2,
+            "price_over_budget": 0.0,
+            "energy_value": 0.125390625,
+            "protein_value": 0.39257812499999994,
+            "protein": 9.044999999999998,
+            "energy": 0.2520833333333333,
+            "total": 6.6151
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Grilled Halloumi Plate with Rice",
+          "reason": "Vegetarian feast loaded with calorie-dense cheese, ratatouille, and double rice",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1132.5,
+            "protein_g": 46.35,
+            "carbs_g": 106.5,
+            "fat_g": 54.9
+          },
+          "score": {
+            "price": -3.375,
+            "price_over_budget": 0.0,
+            "energy_value": 0.16777777777777778,
+            "protein_value": 0.28611111111111115,
+            "protein": 6.952500000000001,
+            "energy": 0.5270833333333333,
+            "total": 4.5585
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Bean Rice Stew and Almond Pudding",
+          "reason": "Hearty legume dish complemented by a sweet dessert for a satisfying bulk",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "price": -1.42,
+            "price_over_budget": 0.0,
+            "energy_value": 0.24137323943661973,
+            "protein_value": 0.3080985915492958,
+            "protein": 3.15,
+            "energy": 0.15458333333333332,
+            "total": 2.4341
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pumpkin Pasta and Almond Pudding",
+          "reason": "Carb-dense pumpkin pasta served alongside a dessert to help hit energy targets",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pasta mit getrockneten Tomaten und Kürbis",
+              "name_en": "Pasta with sun-dried tomatoes and pumpkin",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "e2971c0dc7502c65",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 820.5,
+            "protein_g": 24.15,
+            "carbs_g": 126.3,
+            "fat_g": 23.55
+          },
+          "score": {
+            "price": -2.7,
+            "price_over_budget": 0.0,
+            "energy_value": 0.15194444444444444,
+            "protein_value": 0.18634259259259256,
+            "protein": 3.6224999999999996,
+            "energy": 0.26708333333333334,
+            "total": 1.5279
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Zurich-Style Sliced Chicken",
+          "reason": "High protein chicken dish ideal for maintaining muscle during a calorie cut",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Hähnchengeschnetzeltes Züricher Art",
+              "name_en": "Zurich-style sliced chicken in cream sauce",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "882cc4ef1902bd58",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 56.25
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 56.25,
+            "carbs_g": 13.5,
+            "fat_g": 36.0
+          },
+          "score": {
+            "price": -1.2625,
+            "price_over_budget": 0.0,
+            "protein_density": 2.314814814814815,
+            "protein_value": 0.46410891089108913,
+            "protein": 0.875,
+            "energy": 0.0,
+            "total": 2.3914
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pork Gyros with Cool Tzatziki",
+          "reason": "Protein-rich pork without heavy carb sides keeps total calories controlled",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pfannengyros vom Schwein (S vom Strohschwein) mit Tsatsiki",
+              "name_en": "Pan-fried pork gyros (straw pork) with tzatziki",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "Kn",
+                "1",
+                "3",
+                "5"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "df7ab64d17737295",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 43.5
+            }
+          ],
+          "total": {
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300,
+            "kcal": 555.0,
+            "protein_g": 43.5,
+            "carbs_g": 9.6,
+            "fat_g": 38.4
+          },
+          "score": {
+            "price": -0.925,
+            "price_over_budget": 0.0,
+            "protein_density": 1.9594594594594597,
+            "protein_value": 0.48986486486486486,
+            "protein": 0.45,
+            "energy": 0.0,
+            "total": 1.9743
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled Halloumi with Ratatouille",
+          "reason": "Satisfying vegetarian plate providing good protein and flavorful vegetables",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 742.5,
+            "protein_g": 38.25,
+            "carbs_g": 22.5,
+            "fat_g": 54.0
+          },
+          "score": {
+            "price": -1.0125,
+            "price_over_budget": 0.0,
+            "protein_density": 1.2878787878787878,
+            "protein_value": 0.39351851851851855,
+            "protein": 0.275,
+            "energy": -0.425,
+            "total": 0.5189
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Hearty Rice and Bean Stew",
+          "reason": "Fiber-rich vegan bowl that keeps calories low and fullness high",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 17.1,
+            "carbs_g": 83.25,
+            "fat_g": 11.7
+          },
+          "score": {
+            "price": -0.3725,
+            "price_over_budget": 0.0,
+            "protein_density": 0.8260869565217392,
+            "protein_value": 0.4781879194630873,
+            "protein": -2.5799999999999996,
+            "energy": 0.0,
+            "total": -1.6482
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spiced Chickpea Couscous",
+          "reason": "Balanced plant-based meal offering lean protein and wholesome veggies",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "price": -1.0125,
+            "price_over_budget": 0.0,
+            "protein_density": 0.8333333333333334,
+            "protein_value": 0.20833333333333334,
+            "protein": -1.95,
+            "energy": 0.0,
+            "total": -1.9208
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Budget Bean and Rice Stew",
+          "reason": "Incredible value delivering a filling and nutritious warm meal",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 17.1,
+            "carbs_g": 83.25,
+            "fat_g": 11.7
+          },
+          "score": {
+            "price": -0.745,
+            "price_over_budget": 0.0,
+            "energy_value": 1.3892617449664428,
+            "energy": -0.325,
+            "protein": -0.5799999999999997,
+            "total": -0.2607
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Halloumi Ratatouille with Rice",
+          "reason": "Well-priced vegetarian combo featuring flavorful cheese and grains",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "e282d55f766d09fa",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 495.0,
+              "protein_g": 25.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 690.0,
+            "protein_g": 29.55,
+            "carbs_g": 57.0,
+            "fat_g": 36.45
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.6814814814814816,
+            "energy": 0.09333333333333334,
+            "protein": 0.12733333333333335,
+            "total": -1.1229
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Tomato and Pumpkin Pasta",
+          "reason": "Affordable pasta classic packed with hearty seasonal flavors",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pasta mit getrockneten Tomaten und Kürbis",
+              "name_en": "Pasta with sun-dried tomatoes and pumpkin",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "e2971c0dc7502c65",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 99.0,
+            "fat_g": 18.9
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.6444444444444445,
+            "energy": 0.06833333333333333,
+            "protein": 0.0033333333333333335,
+            "total": -1.3089
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Chickpea Vegetable Couscous",
+          "reason": "Cost-effective vegan option full of fiber, chickpeas, and spices",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.6,
+            "energy": 0.03833333333333333,
+            "protein": 0.0033333333333333335,
+            "total": -1.3833
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pork Gyros Plate with Rice",
+          "reason": "Great balance of price and satisfying meat protein with savory rice",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pfannengyros vom Schwein (S vom Strohschwein) mit Tsatsiki",
+              "name_en": "Pan-fried pork gyros (straw pork) with tzatziki",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "Kn",
+                "1",
+                "3",
+                "5"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "id": "df7ab64d17737295",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 43.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 750.0,
+            "protein_g": 47.55,
+            "carbs_g": 51.6,
+            "fat_g": 38.85
+          },
+          "score": {
+            "price": -2.525,
+            "price_over_budget": 0.0,
+            "energy_value": 0.594059405940594,
+            "energy": 0.13333333333333333,
+            "protein": 0.36733333333333335,
+            "total": -1.4303
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Simple Bean and Rice Stew",
+          "reason": "Straightforward vegan dish offering wholesome complex carbohydrates and legumes",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 17.1,
+            "carbs_g": 83.25,
+            "fat_g": 11.7
+          },
+          "score": {
+            "price": -0.745,
+            "price_over_budget": 0.0,
+            "energy_value": 0.3473154362416107,
+            "protein_value": 0.4781879194630873,
+            "protein": 2.5650000000000004,
+            "energy": 0.014583333333333334,
+            "total": 2.6601
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pumpkin Pasta with Double Rice",
+          "reason": "Carbohydrate powerhouse pairing pasta with extra rice for intense caloric surplus",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pasta mit getrockneten Tomaten und Kürbis",
+              "name_en": "Pasta with sun-dried tomatoes and pumpkin",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "e2971c0dc7502c65",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1042.5,
+            "protein_g": 28.35,
+            "carbs_g": 183.0,
+            "fat_g": 19.8
+          },
+          "score": {
+            "price": -3.375,
+            "price_over_budget": 0.0,
+            "energy_value": 0.15444444444444447,
+            "protein_value": 0.17500000000000002,
+            "protein": 4.2525,
+            "energy": 0.45208333333333334,
+            "total": 1.659
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Vegetable Couscous with Double Rice",
+          "reason": "Double portion of rice alongside chickpea couscous maximizes energy intake",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 28.35,
+            "carbs_g": 174.0,
+            "fat_g": 18.0
+          },
+          "score": {
+            "price": -3.375,
+            "price_over_budget": 0.0,
+            "energy_value": 0.14777777777777776,
+            "protein_value": 0.17500000000000002,
+            "protein": 4.2525,
+            "energy": 0.41458333333333336,
+            "total": 1.6149
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Bean Stew with Almond Pudding",
+          "reason": "Wholesome bean bowl with a sweet treat while staying within cutting parameters",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "price": -0.71,
+            "price_over_budget": 0.0,
+            "protein_density": 0.7658643326039387,
+            "protein_value": 0.3080985915492958,
+            "protein": -1.8,
+            "energy": 0.0,
+            "total": -1.436
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Savory Chickpea Couscous",
+          "reason": "Light and nutritious vegan favorite with plenty of vegetables and plant protein",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "price": -1.0125,
+            "price_over_budget": 0.0,
+            "protein_density": 0.8333333333333334,
+            "protein_value": 0.20833333333333334,
+            "protein": -1.95,
+            "energy": 0.0,
+            "total": -1.9208
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Tomato Pumpkin Pasta Bowl",
+          "reason": "Controlled portion of flavorful vegan pasta to satisfy cravings cleanly",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pasta mit getrockneten Tomaten und Kürbis",
+              "name_en": "Pasta with sun-dried tomatoes and pumpkin",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "e2971c0dc7502c65",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 99.0,
+            "fat_g": 18.9
+          },
+          "score": {
+            "price": -1.0125,
+            "price_over_budget": 0.0,
+            "protein_density": 0.7758620689655172,
+            "protein_value": 0.20833333333333334,
+            "protein": -1.95,
+            "energy": 0.0,
+            "total": -1.9783
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Value Rice and Bean Stew",
+          "reason": "Lowest price point for a satisfying and nourishing vegan lunch",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 17.1,
+            "carbs_g": 83.25,
+            "fat_g": 11.7
+          },
+          "score": {
+            "price": -0.745,
+            "price_over_budget": 0.0,
+            "energy_value": 1.3892617449664428,
+            "energy": -0.325,
+            "protein": -0.5799999999999997,
+            "total": -0.2607
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Autumn Pumpkin Pasta",
+          "reason": "Very affordable bowl of comforting pasta loaded with pumpkin flavor",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pasta mit getrockneten Tomaten und Kürbis",
+              "name_en": "Pasta with sun-dried tomatoes and pumpkin",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "e2971c0dc7502c65",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 99.0,
+            "fat_g": 18.9
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.6444444444444445,
+            "energy": 0.06833333333333333,
+            "protein": 0.0033333333333333335,
+            "total": -1.3089
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spiced Couscous and Chickpeas",
+          "reason": "Low-cost nutritious vegan dish packed with aromatic Mediterranean spices",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.6,
+            "energy": 0.03833333333333333,
+            "protein": 0.0033333333333333335,
+            "total": -1.3833
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "extras": {
+    "all": [
+      {
+        "name": "Pudding mit Mandelgeschmack und Trauben",
+        "name_en": "Almond-flavored pudding with grapes",
+        "station": "Dessert (Glas)",
+        "weight_g": 150,
+        "price_cents": 135,
+        "is_vegan": true,
+        "diet": "vegan",
+        "serving": "1 piece",
+        "kcal": 168.0,
+        "protein_g": 3.9,
+        "price_source": "eat-api"
+      }
+    ],
+    "vegan": [
+      {
+        "name": "Pudding mit Mandelgeschmack und Trauben",
+        "name_en": "Almond-flavored pudding with grapes",
+        "station": "Dessert (Glas)",
+        "weight_g": 150,
+        "price_cents": 135,
+        "is_vegan": true,
+        "diet": "vegan",
+        "serving": "1 piece",
+        "kcal": 168.0,
+        "protein_g": 3.9,
+        "price_source": "eat-api"
+      }
+    ]
+  },
+  "generated_on": "2026-11-16"
+}

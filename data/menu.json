@@ -1,50 +1,85 @@
 {
   "schema_version": 1,
-  "date": "2026-11-13",
+  "date": "2026-11-16",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-13T15:38:19.049070+00:00",
+  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
+  "fetched_at": "2026-11-16T17:20:37.691023+00:00",
   "warnings": [],
   "dishes": [
     {
-      "name": "Pasta mit Gorgonzola-Sauce",
+      "name": "Kürbis-Teigtaschen mit Käsesauce, Kirschtomaten und Basilikum",
       "station": "Pasta",
       "station_raw": "Pasta",
-      "markers": [],
+      "markers": [
+        "f"
+      ],
       "allergens": [
+        "Ei",
         "Gl",
         "GlW",
         "Mi"
       ],
       "additives": [
-        "15"
+        "Kn"
       ],
       "is_vegan": false,
-      "is_vegetarian": false,
+      "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
         "CEREAL",
+        "CHICKEN_EGGS",
+        "GARLIC",
         "GLUTEN",
         "LACTOSE",
-        "MEAT",
         "MILK",
+        "VEGETARIAN",
         "WHEAT"
       ],
       "price": {
-        "base_eur": 1.0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       }
     },
     {
-      "name": "Pizza \"Pulled Chicken oder Pulled Duck\"",
+      "name": "Lasagne Bolognese",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Gl",
+        "GlD",
+        "GlW",
+        "Mi",
+        "Sl"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Pizza Vegetariana mit Grillgemüse und Mozzarella",
       "station": "Pizza",
       "station_raw": "Pizza",
-      "markers": [],
+      "markers": [
+        "f"
+      ],
       "allergens": [
         "Gl",
         "GlG",
@@ -52,9 +87,43 @@
         "Mi",
         "So"
       ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "BARLEY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "SOY",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 4.5,
+        "per_100g_eur": 0,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Prager Bratwurst (1 Stück) mit Sauerkraut und Kartoffelpürree",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [
+        "R",
+        "S"
+      ],
+      "allergens": [
+        "Mi",
+        "Sw"
+      ],
       "additives": [
         "2",
         "3",
+        "5",
         "8"
       ],
       "is_vegan": false,
@@ -63,30 +132,39 @@
       "source": "official",
       "api_labels": [
         "ANTIOXIDANTS",
-        "BARLEY",
-        "CEREAL",
-        "GLUTEN",
+        "BEEF",
         "LACTOSE",
         "MEAT",
         "MILK",
         "PHOSPHATES",
+        "PORK",
         "PRESERVATIVES",
-        "SOY",
-        "WHEAT"
+        "SULFITES",
+        "SULPHURS"
       ],
       "price": {
-        "base_eur": 5.0,
-        "per_100g_eur": 0,
+        "base_eur": 0.5,
+        "per_100g_eur": 0.9,
         "source": "eat-api"
       }
     },
     {
-      "name": "Putensteak (1 Stück) mit Chimichuri aus Koriander, Tomate und Petersilie",
-      "station": "Grill",
-      "station_raw": "Grill",
-      "markers": [],
-      "allergens": [],
-      "additives": [],
+      "name": "Lasagne Bolognese",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Gl",
+        "GlD",
+        "GlW",
+        "Mi",
+        "Sl"
+      ],
+      "additives": [
+        "Kn"
+      ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
@@ -99,41 +177,53 @@
       }
     },
     {
-      "name": "Champignonrahmsauce",
-      "station": "Unspecified",
-      "station_raw": "",
+      "name": "Mafe - Senegalisches Curry mit Karotte und Kohlrabi",
+      "station": "Wok",
+      "station_raw": "Wok",
       "markers": [
-        "f"
+        "v"
       ],
       "allergens": [
+        "En",
         "Gl",
         "GlW",
-        "Mi",
-        "Sw"
+        "So"
       ],
       "additives": [
-        "5",
-        "99"
+        "Kn",
+        "2"
       ],
-      "is_vegan": false,
+      "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CEREAL",
+        "GARLIC",
+        "GLUTEN",
+        "PEANUTS",
+        "PRESERVATIVES",
+        "SOY",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
-      "name": "Bauerneintopf",
+      "name": "Bulgur mit Gemüse",
       "station": "Studitopf",
       "station_raw": "Studitopf",
       "markers": [
         "v"
       ],
       "allergens": [
+        "Gl",
+        "GlW",
         "Sl"
       ],
       "additives": [],
@@ -143,8 +233,11 @@
       "source": "official",
       "api_labels": [
         "CELERY",
+        "CEREAL",
+        "GLUTEN",
         "VEGAN",
-        "VEGETARIAN"
+        "VEGETARIAN",
+        "WHEAT"
       ],
       "price": {
         "base_eur": 0.0,
@@ -153,65 +246,121 @@
       }
     },
     {
-      "name": "Cremige Kürbissuppe",
+      "name": "Leberspätzlesuppe",
       "station": "Unspecified",
       "station_raw": "",
-      "markers": [],
+      "markers": [
+        "S"
+      ],
       "allergens": [
+        "Ei",
         "Gl",
         "GlW",
-        "Mi",
-        "Se"
+        "Sl"
       ],
       "additives": [],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CELERY",
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GLUTEN",
+        "MEAT",
+        "PORK",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 0,
-        "per_100g_eur": 0.9,
-        "source": "config"
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
       }
     },
     {
-      "name": "Blumenkohlauflauf mit Currydip",
-      "station": "Vegetarisch/fleischlos",
-      "station_raw": "Vegetarisch/fleischlos",
+      "name": "Hähnchenknusperfilet (1 Stück) mit Barbecuesauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CELERY",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Rougaille (Soja in würziger Tomatensauce)",
+      "station": "Vegan",
+      "station_raw": "Vegan",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Sf",
+        "So"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "GARLIC",
+        "MUSTARD",
+        "SOY",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Vegetarisches Butter Chicken (mit Chunks aus Erbsenprotein)",
+      "station": "Unspecified",
+      "station_raw": "",
       "markers": [
         "f"
       ],
       "allergens": [
-        "Ei",
         "Gl",
-        "GlG",
         "GlW",
         "Mi",
-        "Sf",
-        "Sl",
         "So"
       ],
-      "additives": [
-        "1",
-        "9"
-      ],
+      "additives": [],
       "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "BARLEY",
-        "CELERY",
         "CEREAL",
-        "CHICKEN_EGGS",
-        "DYESTUFF",
         "GLUTEN",
         "LACTOSE",
         "MILK",
-        "MUSTARD",
         "SOY",
-        "SWEETENERS",
         "VEGETARIAN",
         "WHEAT"
       ],
@@ -222,77 +371,14 @@
       }
     },
     {
-      "name": "Boeuf Stroganoff mit Senf, Schnitzelgurken und Champignons",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [
-        "R"
-      ],
-      "allergens": [
-        "Mi",
-        "Sf"
-      ],
-      "additives": [
-        "9"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      }
-    },
-    {
-      "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
-      "station": "Fisch",
-      "station_raw": "Fisch",
-      "markers": [],
-      "allergens": [
-        "Ei",
-        "Fi",
-        "Gl",
-        "GlW",
-        "Mi",
-        "Sf"
-      ],
-      "additives": [
-        "9"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "CHICKEN_EGGS",
-        "FISH",
-        "GLUTEN",
-        "LACTOSE",
-        "MILK",
-        "MUSTARD",
-        "SWEETENERS",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 1.5,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Apfelstrudel mit Vanillesauce",
-      "station": "Süßspeise",
-      "station_raw": "Süßspeise",
+      "name": "Vanillecreme mit Erdnusstoffee",
+      "station": "Dessert (Glas)",
+      "station_raw": "Dessert (Glas)",
       "markers": [
         "f"
       ],
       "allergens": [
-        "Gl",
-        "GlW",
+        "En",
         "Mi"
       ],
       "additives": [],
@@ -301,12 +387,10 @@
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CEREAL",
-        "GLUTEN",
         "LACTOSE",
         "MILK",
-        "VEGETARIAN",
-        "WHEAT"
+        "PEANUTS",
+        "VEGETARIAN"
       ],
       "price": {
         "base_eur": 0.0,
@@ -315,37 +399,27 @@
       }
     },
     {
-      "name": "Schokopudding mit Birnen",
+      "name": "Schokopudding mit Brombeersauce",
       "station": "Dessert (Glas)",
-      "station_raw": "Dessert (Glas)",
-      "markers": [],
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
       "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
-        "Mi",
-        "Sw"
+        "Mi"
       ],
-      "additives": [
-        "5"
-      ],
+      "additives": [],
       "is_vegan": false,
-      "is_vegetarian": false,
+      "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CEREAL",
-        "CHICKEN_EGGS",
-        "GLUTEN",
         "LACTOSE",
-        "MEAT",
         "MILK",
-        "SULFITES",
-        "SULPHURS",
-        "WHEAT"
+        "VEGETARIAN"
       ],
       "price": {
-        "base_eur": 1.0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       }
