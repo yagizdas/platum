@@ -1,41 +1,34 @@
 {
   "schema_version": 1,
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-16T17:20:37.691023+00:00",
+  "fetched_at": "2026-11-17T17:00:43.867570+00:00",
   "warnings": [],
   "dishes": [
     {
-      "name": "Kürbis-Teigtaschen mit Käsesauce, Kirschtomaten und Basilikum",
+      "name": "Pasta all'arrabiata",
       "station": "Pasta",
       "station_raw": "Pasta",
       "markers": [
-        "f"
+        "v"
       ],
       "allergens": [
-        "Ei",
         "Gl",
-        "GlW",
-        "Mi"
+        "GlW"
       ],
-      "additives": [
-        "Kn"
-      ],
-      "is_vegan": false,
+      "additives": [],
+      "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
         "CEREAL",
-        "CHICKEN_EGGS",
-        "GARLIC",
         "GLUTEN",
-        "LACTOSE",
-        "MILK",
+        "VEGAN",
         "VEGETARIAN",
         "WHEAT"
       ],
@@ -46,18 +39,16 @@
       }
     },
     {
-      "name": "Lasagne Bolognese",
-      "station": "Unspecified",
-      "station_raw": "",
-      "markers": [
-        "R"
-      ],
+      "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [],
       "allergens": [
         "Gl",
-        "GlD",
+        "GlG",
         "GlW",
         "Mi",
-        "Sl"
+        "So"
       ],
       "additives": [
         "Kn"
@@ -66,45 +57,49 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      }
-    },
-    {
-      "name": "Pizza Vegetariana mit Grillgemüse und Mozzarella",
-      "station": "Pizza",
-      "station_raw": "Pizza",
-      "markers": [
-        "f"
-      ],
-      "allergens": [
-        "Gl",
-        "GlG",
-        "GlW",
-        "Mi",
-        "So"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
       "api_labels": [
         "BARLEY",
         "CEREAL",
+        "GARLIC",
         "GLUTEN",
         "LACTOSE",
+        "MEAT",
         "MILK",
         "SOY",
-        "VEGETARIAN",
         "WHEAT"
       ],
       "price": {
-        "base_eur": 4.5,
+        "base_eur": 5.0,
         "per_100g_eur": 0,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Tandoori Chicken (1 Stück) in Joghurtmarinade und Gurken-Minz-Dip",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [],
+      "allergens": [
+        "Mi",
+        "Sf"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "GARLIC",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "MUSTARD"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
         "source": "eat-api"
       }
     },
@@ -130,22 +125,11 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "ANTIOXIDANTS",
-        "BEEF",
-        "LACTOSE",
-        "MEAT",
-        "MILK",
-        "PHOSPHATES",
-        "PORK",
-        "PRESERVATIVES",
-        "SULFITES",
-        "SULPHURS"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.5,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {
@@ -177,36 +161,26 @@
       }
     },
     {
-      "name": "Mafe - Senegalisches Curry mit Karotte und Kohlrabi",
+      "name": "Rotes Linsendahl mit Lauch und Koriander",
       "station": "Wok",
       "station_raw": "Wok",
       "markers": [
         "v"
       ],
       "allergens": [
-        "En",
-        "Gl",
-        "GlW",
-        "So"
+        "Sf",
+        "Sl"
       ],
-      "additives": [
-        "Kn",
-        "2"
-      ],
+      "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CEREAL",
-        "GARLIC",
-        "GLUTEN",
-        "PEANUTS",
-        "PRESERVATIVES",
-        "SOY",
+        "CELERY",
+        "MUSTARD",
         "VEGAN",
-        "VEGETARIAN",
-        "WHEAT"
+        "VEGETARIAN"
       ],
       "price": {
         "base_eur": 0.0,
@@ -215,7 +189,7 @@
       }
     },
     {
-      "name": "Bulgur mit Gemüse",
+      "name": "Zartweizen mit Erbsen, Karotten und Mais",
       "station": "Studitopf",
       "station_raw": "Studitopf",
       "markers": [
@@ -246,30 +220,25 @@
       }
     },
     {
-      "name": "Leberspätzlesuppe",
+      "name": "Türkische Linsensuppe mit Kreuzkümmel",
       "station": "Unspecified",
       "station_raw": "",
       "markers": [
-        "S"
+        "f"
       ],
       "allergens": [
-        "Ei",
         "Gl",
-        "GlW",
-        "Sl"
+        "GlW"
       ],
       "additives": [],
       "is_vegan": false,
-      "is_vegetarian": false,
+      "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CELERY",
         "CEREAL",
-        "CHICKEN_EGGS",
         "GLUTEN",
-        "MEAT",
-        "PORK",
+        "VEGETARIAN",
         "WHEAT"
       ],
       "price": {
@@ -279,114 +248,26 @@
       }
     },
     {
-      "name": "Hähnchenknusperfilet (1 Stück) mit Barbecuesauce",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [],
+      "name": "Libanesischer Gemüseauflauf mit Joghurtdip",
+      "station": "Vegetarisch/fleischlos",
+      "station_raw": "Vegetarisch/fleischlos",
+      "markers": [
+        "f"
+      ],
       "allergens": [
-        "Gl",
-        "GlW",
+        "Ei",
+        "En",
+        "Mi",
         "Sl"
       ],
       "additives": [],
       "is_vegan": false,
-      "is_vegetarian": false,
+      "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
         "CELERY",
-        "CEREAL",
-        "GLUTEN",
-        "MEAT",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Rougaille (Soja in würziger Tomatensauce)",
-      "station": "Vegan",
-      "station_raw": "Vegan",
-      "markers": [
-        "v"
-      ],
-      "allergens": [
-        "Sf",
-        "So"
-      ],
-      "additives": [
-        "Kn"
-      ],
-      "is_vegan": true,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "GARLIC",
-        "MUSTARD",
-        "SOY",
-        "VEGAN",
-        "VEGETARIAN"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Vegetarisches Butter Chicken (mit Chunks aus Erbsenprotein)",
-      "station": "Unspecified",
-      "station_raw": "",
-      "markers": [
-        "f"
-      ],
-      "allergens": [
-        "Gl",
-        "GlW",
-        "Mi",
-        "So"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "GLUTEN",
-        "LACTOSE",
-        "MILK",
-        "SOY",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Vanillecreme mit Erdnusstoffee",
-      "station": "Dessert (Glas)",
-      "station_raw": "Dessert (Glas)",
-      "markers": [
-        "f"
-      ],
-      "allergens": [
-        "En",
-        "Mi"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
+        "CHICKEN_EGGS",
         "LACTOSE",
         "MILK",
         "PEANUTS",
@@ -399,23 +280,62 @@
       }
     },
     {
-      "name": "Schokopudding mit Brombeersauce",
-      "station": "Dessert (Glas)",
-      "station_raw": "",
+      "name": "Rinderroulade in Rotweinsauce (1 Stück)",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
       "markers": [
-        "f"
+        "R",
+        "S"
       ],
       "allergens": [
-        "Mi"
+        "Gl",
+        "GlW",
+        "Sf",
+        "Sw"
       ],
-      "additives": [],
+      "additives": [
+        "2",
+        "5",
+        "99"
+      ],
       "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ALCOHOL",
+        "BEEF",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "MUSTARD",
+        "PORK",
+        "PRESERVATIVES",
+        "SULFITES",
+        "SULPHURS",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+      "station": "Dessert (Glas)",
+      "station_raw": "Dessert (Glas)",
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [],
+      "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "LACTOSE",
-        "MILK",
+        "VEGAN",
         "VEGETARIAN"
       ],
       "price": {

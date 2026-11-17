@@ -4,10 +4,10 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-16T17:20:37.841662+00:00",
+  "fetched_at": "2026-11-17T17:00:43.974807+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 9,
+  "menu_count": 10,
   "scoring": {
     "bulk": {
       "price": {
@@ -1940,6 +1940,19 @@
   "extras": {
     "all": [
       {
+        "name": "Vegane Gulaschsuppe mit Soja, Kartoffeln und Paprika",
+        "name_en": "Vegan goulash soup with soy, potatoes and bell pepper",
+        "station": "Unspecified",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": true,
+        "diet": "vegan",
+        "serving": "2 scoops",
+        "kcal": 195.0,
+        "protein_g": 10.5,
+        "price_source": "config"
+      },
+      {
         "name": "Panna Cotta mit Amarettini",
         "name_en": "Panna cotta with amarettini",
         "station": "Dessert (Glas)",
@@ -1953,7 +1966,21 @@
         "price_source": "eat-api"
       }
     ],
-    "vegan": []
+    "vegan": [
+      {
+        "name": "Vegane Gulaschsuppe mit Soja, Kartoffeln und Paprika",
+        "name_en": "Vegan goulash soup with soy, potatoes and bell pepper",
+        "station": "Unspecified",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": true,
+        "diet": "vegan",
+        "serving": "2 scoops",
+        "kcal": 195.0,
+        "protein_g": 10.5,
+        "price_source": "config"
+      }
+    ]
   },
-  "generated_on": "2026-11-16"
+  "generated_on": "2026-11-17"
 }
