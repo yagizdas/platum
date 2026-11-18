@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-18T12:04:50.684422+00:00",
+  "fetched_at": "2026-11-18T16:41:03.442063+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -56,9 +56,9 @@
       ],
       "additives": [
         "1",
+        "Kn",
         "2",
-        "3",
-        "Kn"
+        "3"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
@@ -108,6 +108,42 @@
       }
     },
     {
+      "name": "Thailändische Frühlingsrolle mit Sweet-Chilisauce",
+      "station": "Wok",
+      "station_raw": "Wok",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sl"
+      ],
+      "additives": [
+        "11",
+        "Kn"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CELERY",
+        "CEREAL",
+        "GARLIC",
+        "GLUTEN",
+        "SWEETENERS",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
       "name": "Curry-Mie-Nudeln mit Asiagemüse",
       "station": "Wok",
       "station_raw": "Wok",
@@ -136,42 +172,6 @@
         "SESAME",
         "SHELL_FRUITS",
         "SOY",
-        "VEGAN",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Thailändische Frühlingsrolle mit Sweet-Chilisauce",
-      "station": "Wok",
-      "station_raw": "Wok",
-      "markers": [
-        "v"
-      ],
-      "allergens": [
-        "Gl",
-        "GlW",
-        "Sl"
-      ],
-      "additives": [
-        "Kn",
-        "11"
-      ],
-      "is_vegan": true,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "CELERY",
-        "CEREAL",
-        "GARLIC",
-        "GLUTEN",
-        "SWEETENERS",
         "VEGAN",
         "VEGETARIAN",
         "WHEAT"
@@ -234,6 +234,31 @@
         "base_eur": 0.0,
         "per_100g_eur": 0.33,
         "source": "eat-api"
+      }
+    },
+    {
+      "name": "Schaschlik (1 Stück) mit Honig-Currysauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Sf",
+        "Sl"
+      ],
+      "additives": [
+        "11"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {
