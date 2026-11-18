@@ -10,6 +10,7 @@ from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
 from common import ROOT, dish_id, load_config, normalize, read_json, today, week_dates, write_json
+from counters import shared_counters
 from judge import choose_variants
 from pair import food, load_pairing
 from proposals import daily_proposals, fallback_proposals, validate_proposals
@@ -84,6 +85,8 @@ def valid_plate(items, config, pairing=None):
     if sum(i["role"] == "soup" for i in items) > 1 or all(i["role"] == "dessert" for i in items):
         return False
     if all(i.get("standing") for i in items):
+        return False
+    if not shared_counters(items):
         return False
     for i in items:
         if i["is_per_piece"]:
@@ -163,12 +166,14 @@ def short_name(name):
 def plate_result(value, goal=None, vegan=None, config=None):
     items = []
     for i in value["items"]:
-        items.append({k: i[k] for k in ("name", "name_en", "station", "role", "texture", "count", "unit", "weight_g",
+        items.append({k: i[k] for k in ("name", "name_en", "station", "counters", "role", "texture", "count", "unit", "weight_g",
                                         "price_cents", "is_vegan", "markers", "allergens", "additives", "standing", "diet")}
                      | {"meat_types": meat_types(i), "id": dish_id(i), "serving": serving(i), "price_source": i["price"]["source"], "kcal": round(i["kcal"], 2), "protein_g": round(i["protein"], 2)})
     total = {"price_cents": value["price_cents"], "price_eur": value["price_cents"] / 100, "weight_g": value["weight_g"],
              "kcal": round(value["kcal"], 2), **{f"{n}_g": round(value[n], 2) for n in ("protein", "carbs", "fat")}}
+    counters = shared_counters(value["items"])
     return {"title": " + ".join(re.split(r"\s+(?:with|on|served|in|made from)\s+", re.sub(r"\s*\([^)]*\)", "", i["name_en"]), maxsplit=1, flags=re.I)[0].strip() for i in value["items"]), "reason": None, "picked_by": "rules",
+            "counter": counters[0], "counters": list(counters),
             "items": items, "total": total, "score": value.get("score"),
             "has_estimated_prices": any(i["price_source"] == "config" for i in items)}
 

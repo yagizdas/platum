@@ -66,6 +66,8 @@ h1 { font-size: clamp(40px, 4vw, 60px); font-weight: 700; line-height: 1; letter
 h2 { max-width: 24ch; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.05; font-weight: 600; letter-spacing: -.045em; text-wrap: balance; }
 h2.is-long { font-size: clamp(28px, 2.6vw, 36px); }
 .plate-side { margin-top: 14px; font-size: 20px; color: var(--muted); line-height: 1.35; }
+.plate-counter { display: inline-flex; margin-top: 14px; padding: 6px 10px; border-radius: 8px; background: var(--selected); color: var(--accent); font-size: 14px; font-weight: 600; }
+.plate-counter + .plate-side { margin-top: 10px; }
 .totals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 36px; font-variant-numeric: tabular-nums; }
 .total-value { display: block; font-size: 32px; line-height: 1.1; font-weight: 400; letter-spacing: -.04em; white-space: nowrap; }
 .total-price { color: var(--accent); font-weight: 600; }

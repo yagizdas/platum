@@ -21,19 +21,21 @@ def test_golden_lunches(config, fixture_menu, pairing, fixed_caps):
     result = build_today(m, tags, config, pairing=pairing, no_llm=True, proposals=read_json(FIXTURES / "proposals-v4.json"))
     expected = {
         "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 2)], 675, 29.4867) if fixed_caps else
-                    ([('PINSA Funghi mit frischen Champignons', 1), ('Reis', 2)], 770, 27.0205),
+                    ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Reis', 2)], 540, 22.6983),
         "cut_all": ([('Fleischpflanzerl (Frikadelle)', 1), ('Reis', 1)], 348, -1.7821),
         "budget_all": ([('Käsekrainer (1 Stück)', 1)], 226, .1448),
         "bulk_vegan": ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 810, 34.8506) if fixed_caps else
                       ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 675, 28.0622),
-        "cut_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Gemüsecurry aus Blumenkohl und Broccoli', 1)], 405, -7.0742),
-        "budget_vegan": ([('Graupen-Gemüse-Eintopf', 2), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 369, -.3292),
+        "cut_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Asia-Reisbällchen auf Teriyakigemüse', 1)], 405, -8.245),
+        "budget_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 405, -.3964) if fixed_caps else
+                        ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Asia-Reisbällchen auf Teriyakigemüse', 1)], 405, -.9134),
     }
     for key, (items, price, score) in expected.items():
         p = result["variants"][key]["plates"][0]
         assert [(i["name"], i["count"]) for i in p["items"]] == items
         assert p["total"]["price_cents"] == price
         assert p["score"]["total"] == score
+        assert p["counter"] in set.intersection(*(set(i["counters"]) for i in p["items"]))
     assert result["schema_version"] == 2
     for v in result["variants"].values():
         for p in v["plates"]:
@@ -96,7 +98,7 @@ def test_invalid_single_pairs_and_pizza(config, fixture_menu, pairing):
     r = portion_options(rice, rice, config)[0]
     assert valid_plate([f], config, pairing) # proposals decide completeness, not old pair scores
     assert not valid_plate([r], config, pairing)
-    assert valid_plate([f, p], config, pairing)
+    assert not valid_plate([f, p], config, pairing)  # served at different counters
     assert not valid_plate([f, f], config, pairing)
     assert not valid_plate([f, r, r], config, pairing)
     bad = copy.deepcopy(pairing); bad["pairs"][pair_key(f, r)]["score"] = 1
@@ -108,7 +110,7 @@ def test_invalid_single_pairs_and_pizza(config, fixture_menu, pairing):
     bad["pairs"][pair_key(r, k)] = {"score": 3}
     bad["pairs"][pair_key(f, p)] = {"score": 3}
     assert not valid_plate([r, k], config, bad) # model scores cannot create a main-less plate
-    assert valid_plate([f, p], config, bad)
+    assert not valid_plate([f, p], config, bad)  # pairing scores cannot override counter layout
 
 
 def test_paired_portions_ignore_minimum_but_not_max(config, make_dish):
@@ -154,7 +156,7 @@ def test_goal_scoring_chooses_rice_portions_for_fixed_fish_serving(config, make_
     fish, fish_tag = make_dish("Fish fillet", station="Fisch", vegan=False,
                              piece=True, piece_g=140, min_g=120, max_g=160,
                              kcal=115, protein=18.5)
-    rice, rice_tag = make_dish("Rice", role="side", max_g=250, kcal=130, protein=2.7)
+    rice, rice_tag = make_dish("Rice", station="Beilagen", role="side", max_g=250, kcal=130, protein=2.7)
     tags = {normalize(fish["name"]): fish_tag, normalize(rice["name"]): rice_tag}
     values = list(candidates([fish, rice], tags, config))
     # Score each portioning of the same proposed fish + rice tray.

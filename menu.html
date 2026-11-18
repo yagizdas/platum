@@ -60,6 +60,7 @@
           <div class="plate-art dish-scene" id="plate-art"><span id="plate-illustration" class="artwork art-tray" data-icon="tray"><img src="./icons/ui/tray.webp" width="1254" height="1254" alt="" decoding="async"></span></div>
           <div class="plate-summary">
             <h2 id="plate-title">Your plate</h2>
+            <p class="plate-counter" id="plate-counter" hidden></p>
             <p class="plate-side" id="plate-side" hidden></p>
             <div class="totals" id="totals" hidden>
               <div><span id="price" class="total-value total-price"></span><span class="total-label">Student price</span><span id="includes-extras" class="total-label" hidden>incl. extras</span></div>
@@ -220,7 +221,7 @@
     }
     function empty(title,text,icon='empty') {
       stopPlateAnimations();
-      $('plate').classList.add('is-empty');$('secondary-actions').hidden=true;$('plate-side').hidden=true;
+      $('plate').classList.add('is-empty');$('secondary-actions').hidden=true;$('plate-side').hidden=true;$('plate-counter').hidden=true;
       DishIcons.compose($('plate-art'),[],{fallback:icon});
       $('items').replaceChildren();$('plate-title').textContent='Your plate';$('reason').hidden=true;
       for(const id of ['totals','details','relaxed-note','plate-actions','extras-wrap','report-plate']) $(id).hidden=true;
@@ -300,6 +301,7 @@
       renderIllustration();
       $('plate-title').textContent=title;$('plate-title').lang=main.name_en?'en':'de';
       $('plate-title').classList.toggle('is-long',title.length>30);
+      $('plate-counter').textContent='Pick up at '+p.counter;$('plate-counter').hidden=!p.counter;
       $('plate-side').textContent=p.items.filter(item=>item!==main).map(briefDish).join(' + ');$('plate-side').hidden=p.items.length<2;
       $('reason').textContent=p.reason || '';$('reason').hidden=!p.reason;
       renderItems();
