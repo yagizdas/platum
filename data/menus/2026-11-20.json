@@ -6,9 +6,33 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-17T17:00:44.021239+00:00",
+  "fetched_at": "2026-11-18T12:04:50.732553+00:00",
   "warnings": [],
   "dishes": [
+    {
+      "name": "Pasta Bolognese",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
     {
       "name": "Teigtaschen aus Rote Beete und Süßkartoffeln auf Blattspinat",
       "station": "Pasta",
@@ -46,6 +70,58 @@
       }
     },
     {
+      "name": "Pizza mit Putenschinken",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [
+        "2",
+        "3",
+        "8"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Pizza Kräuterkäse und gebratener Paprika",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
       "name": "Gemüsecurry",
       "station": "Wok",
       "station_raw": "Wok",
@@ -58,8 +134,8 @@
         "So"
       ],
       "additives": [
-        "Kn",
-        "2"
+        "2",
+        "Kn"
       ],
       "is_vegan": true,
       "is_vegetarian": true,

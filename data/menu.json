@@ -1,34 +1,40 @@
 {
   "schema_version": 1,
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-17T17:00:43.867570+00:00",
+  "fetched_at": "2026-11-18T12:04:50.620894+00:00",
   "warnings": [],
   "dishes": [
     {
-      "name": "Pasta all'arrabiata",
+      "name": "Allgäuer Käsespätzle mit Röstzwiebeln",
       "station": "Pasta",
       "station_raw": "Pasta",
       "markers": [
-        "v"
+        "f"
       ],
       "allergens": [
+        "Ei",
         "Gl",
-        "GlW"
+        "GlD",
+        "GlW",
+        "Mi"
       ],
       "additives": [],
-      "is_vegan": true,
+      "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
         "CEREAL",
+        "CHICKEN_EGGS",
         "GLUTEN",
-        "VEGAN",
+        "LACTOSE",
+        "MILK",
+        "SPELT",
         "VEGETARIAN",
         "WHEAT"
       ],
@@ -39,10 +45,12 @@
       }
     },
     {
-      "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+      "name": "Pizza Funghi mit frischen Champignons",
       "station": "Pizza",
       "station_raw": "Pizza",
-      "markers": [],
+      "markers": [
+        "f"
+      ],
       "allergens": [
         "Gl",
         "GlG",
@@ -50,126 +58,38 @@
         "Mi",
         "So"
       ],
-      "additives": [
-        "Kn"
-      ],
+      "additives": [],
       "is_vegan": false,
-      "is_vegetarian": false,
+      "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
         "BARLEY",
         "CEREAL",
-        "GARLIC",
         "GLUTEN",
         "LACTOSE",
-        "MEAT",
         "MILK",
         "SOY",
+        "VEGETARIAN",
         "WHEAT"
       ],
       "price": {
-        "base_eur": 5.0,
+        "base_eur": 4.5,
         "per_100g_eur": 0,
         "source": "eat-api"
       }
     },
     {
-      "name": "Tandoori Chicken (1 Stück) in Joghurtmarinade und Gurken-Minz-Dip",
+      "name": "Gebratener Räuchertofu mit Gemüse (scharf)",
       "station": "Grill",
       "station_raw": "Grill",
-      "markers": [],
-      "allergens": [
-        "Mi",
-        "Sf"
-      ],
-      "additives": [
-        "Kn"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "GARLIC",
-        "LACTOSE",
-        "MEAT",
-        "MILK",
-        "MUSTARD"
-      ],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Prager Bratwurst (1 Stück) mit Sauerkraut und Kartoffelpürree",
-      "station": "Grill",
-      "station_raw": "Grill",
-      "markers": [
-        "R",
-        "S"
-      ],
-      "allergens": [
-        "Mi",
-        "Sw"
-      ],
-      "additives": [
-        "2",
-        "3",
-        "5",
-        "8"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      }
-    },
-    {
-      "name": "Lasagne Bolognese",
-      "station": "Unspecified",
-      "station_raw": "",
-      "markers": [
-        "R"
-      ],
-      "allergens": [
-        "Gl",
-        "GlD",
-        "GlW",
-        "Mi",
-        "Sl"
-      ],
-      "additives": [
-        "Kn"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      }
-    },
-    {
-      "name": "Rotes Linsendahl mit Lauch und Koriander",
-      "station": "Wok",
-      "station_raw": "Wok",
       "markers": [
         "v"
       ],
       "allergens": [
-        "Sf",
-        "Sl"
+        "Gl",
+        "GlW",
+        "So"
       ],
       "additives": [],
       "is_vegan": true,
@@ -177,10 +97,12 @@
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CELERY",
-        "MUSTARD",
+        "CEREAL",
+        "GLUTEN",
+        "SOY",
         "VEGAN",
-        "VEGETARIAN"
+        "VEGETARIAN",
+        "WHEAT"
       ],
       "price": {
         "base_eur": 0.0,
@@ -189,26 +111,50 @@
       }
     },
     {
-      "name": "Zartweizen mit Erbsen, Karotten und Mais",
+      "name": "Pikanter Pilztopf mit Kartoffeln und Kraut",
       "station": "Studitopf",
       "station_raw": "Studitopf",
       "markers": [
         "v"
       ],
-      "allergens": [
-        "Gl",
-        "GlW",
-        "Sl"
-      ],
+      "allergens": [],
       "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CELERY",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Tomaten-Kokos-Suppe",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [
+        "2"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
         "CEREAL",
         "GLUTEN",
+        "PRESERVATIVES",
         "VEGAN",
         "VEGETARIAN",
         "WHEAT"
@@ -220,61 +166,83 @@
       }
     },
     {
-      "name": "Türkische Linsensuppe mit Kreuzkümmel",
-      "station": "Unspecified",
-      "station_raw": "",
-      "markers": [
-        "f"
-      ],
-      "allergens": [
-        "Gl",
-        "GlW"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "GLUTEN",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.33,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Libanesischer Gemüseauflauf mit Joghurtdip",
+      "name": "Quinoa-Grünkern-Strudel mit Sauerrahm-Dip",
       "station": "Vegetarisch/fleischlos",
       "station_raw": "Vegetarisch/fleischlos",
       "markers": [
         "f"
       ],
       "allergens": [
-        "Ei",
-        "En",
+        "Gl",
+        "GlG",
+        "GlW",
         "Mi",
-        "Sl"
+        "Sf",
+        "Sl",
+        "So"
       ],
-      "additives": [],
+      "additives": [
+        "1",
+        "Kn"
+      ],
       "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "BARLEY",
         "CELERY",
-        "CHICKEN_EGGS",
+        "CEREAL",
+        "DYESTUFF",
+        "GARLIC",
+        "GLUTEN",
         "LACTOSE",
         "MILK",
-        "PEANUTS",
-        "VEGETARIAN"
+        "MUSTARD",
+        "SOY",
+        "VEGETARIAN",
+        "WHEAT"
       ],
       "price": {
         "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Vegetarisches Pflanzerl mit Käse und Gemüse, dazu Kräuterdip",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Ei",
+        "Mi",
+        "Sl",
+        "Sw"
+      ],
+      "additives": [
+        "1",
+        "3",
+        "5",
+        "15"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "CELERY",
+        "CHICKEN_EGGS",
+        "DYESTUFF",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "SULFITES",
+        "SULPHURS"
+      ],
+      "price": {
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       }
@@ -322,19 +290,84 @@
       }
     },
     {
-      "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
+      "name": "Lammgulasch mit Süßkartoffeln brasilianische Art",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Schaschlik (1 Stück) mit Honig-Currysauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Sf",
+        "Sl"
+      ],
+      "additives": [
+        "11"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CELERY",
+        "MEAT",
+        "MUSTARD",
+        "PORK",
+        "SWEETENERS"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Veganes Mousse au Chocolat mit Himbeersauce",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
       "markers": [
         "v"
       ],
-      "allergens": [],
+      "allergens": [
+        "Gl",
+        "GlH",
+        "So"
+      ],
       "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "OAT",
+        "SOY",
         "VEGAN",
         "VEGETARIAN"
       ],

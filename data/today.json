@@ -1,10 +1,10 @@
 {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-17T17:00:43.867570+00:00",
+  "fetched_at": "2026-11-18T12:04:50.620894+00:00",
   "warnings": [],
   "schema_version": 2,
   "menu_count": 13,
@@ -134,147 +134,94 @@
       "note": null,
       "plates": [
         {
-          "title": "Tandoori Chicken and Lentil Dal",
-          "reason": "Combines rich grilled chicken with hearty lentil dal for high protein",
+          "title": "Cheese Spaetzle Bowl",
+          "reason": "Hearty pasta dish loaded with rich cheese and crispy onions for high energy",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Tandoori Chicken (1 Stück) in Joghurtmarinade und Gurken-Minz-Dip",
-              "name_en": "Tandoori chicken (1 piece) in yoghurt marinade with cucumber mint dip",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 240,
-              "price_cents": 316,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Mi",
-                "Sf"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "8473e66095cf92e8",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 348.0,
-              "protein_g": 42.0
-            },
-            {
-              "name": "Rotes Linsendahl mit Lauch und Koriander",
-              "name_en": "Red lentil dal with leek and coriander",
-              "station": "Wok",
+              "name": "Allgäuer Käsespätzle mit Röstzwiebeln",
+              "name_en": "Allgäu cheese spaetzle with fried onions",
+              "station": "Pasta",
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
               "price_cents": 405,
-              "is_vegan": true,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
               "allergens": [
-                "Sf",
-                "Sl"
+                "Ei",
+                "Gl",
+                "GlD",
+                "GlW",
+                "Mi"
               ],
               "additives": [],
               "standing": false,
-              "diet": "vegan",
-              "id": "b70e2dcc13032f48",
+              "diet": "vegetarian",
+              "id": "eb4a96205f8cb975",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 472.5,
-              "protein_g": 24.75
+              "kcal": 1012.5,
+              "protein_g": 42.75
             }
           ],
           "total": {
-            "price_cents": 721,
-            "price_eur": 7.21,
-            "weight_g": 690,
-            "kcal": 820.5,
-            "protein_g": 66.75,
-            "carbs_g": 65.7,
-            "fat_g": 30.72
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 1012.5,
+            "protein_g": 42.75,
+            "carbs_g": 103.5,
+            "fat_g": 47.25
           },
           "score": {
-            "price": -3.605,
-            "price_over_budget": -0.20999999999999996,
-            "energy_value": 0.1138002773925104,
-            "protein_value": 0.38574895977808604,
-            "protein": 10.0125,
-            "energy": 0.26708333333333334,
-            "total": 6.9641
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.25,
+            "protein_value": 0.4398148148148148,
+            "protein": 6.4125,
+            "energy": 0.4270833333333333,
+            "total": 5.5044
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Beef Roulade with Rice and Pudding",
-          "reason": "Tender beef roulade paired with rice and finished with fruity pudding",
+          "title": "Curry Shashlik and Rice",
+          "reason": "Tender meat skewer paired with fluffy rice and sweet curry sauce",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Rinderroulade in Rotweinsauce (1 Stück)",
-              "name_en": "Beef roulade in red wine sauce (1 piece)",
+              "name": "Schaschlik (1 Stück) mit Honig-Currysauce",
+              "name_en": "Shashlik (1 piece) with honey curry sauce",
               "station": "Fleisch",
               "role": "main",
               "texture": "saucy",
               "count": 1,
               "unit": "piece",
-              "weight_g": 220,
-              "price_cents": 298,
+              "weight_g": 300.0,
+              "price_cents": 370,
               "is_vegan": false,
               "markers": [
-                "R",
                 "S"
               ],
               "allergens": [
-                "Gl",
-                "GlW",
                 "Sf",
-                "Sw"
+                "Sl"
               ],
               "additives": [
-                "2",
-                "5",
-                "99"
+                "11"
               ],
               "standing": false,
               "diet": "meat",
-              "id": "521f786db2388935",
+              "id": "c9c33eb6b1b8686b",
               "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 319.0,
-              "protein_g": 29.7
-            },
-            {
-              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-              "name_en": "Vegan chia pudding with coconut milk and mango puree",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "823f80f7c6201433",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 202.5,
-              "protein_g": 4.2
+              "kcal": 495.0,
+              "protein_g": 37.5
             },
             {
               "name": "Reis",
@@ -302,34 +249,34 @@
             }
           ],
           "total": {
-            "price_cents": 703,
-            "price_eur": 7.03,
-            "weight_g": 670,
-            "kcal": 911.5,
-            "protein_g": 42.0,
-            "carbs_g": 112.35,
-            "fat_g": 30.4
+            "price_cents": 640,
+            "price_eur": 6.4,
+            "weight_g": 600.0,
+            "kcal": 885.0,
+            "protein_g": 45.6,
+            "carbs_g": 111.0,
+            "fat_g": 26.4
           },
           "score": {
-            "price": -3.515,
-            "price_over_budget": -0.03000000000000025,
-            "energy_value": 0.12965860597439544,
-            "protein_value": 0.24893314366998576,
-            "protein": 6.3,
-            "energy": 0.34291666666666665,
-            "total": 3.4765
+            "price": -3.2,
+            "price_over_budget": 0.0,
+            "energy_value": 0.13828125,
+            "protein_value": 0.296875,
+            "protein": 6.840000000000001,
+            "energy": 0.32083333333333336,
+            "total": 4.396
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Pasta Arrabiata with Mango Pudding",
-          "reason": "Spicy pasta meal nicely rounded out by sweet chia pudding dessert",
+          "title": "Spicy Tofu Rice Plate",
+          "reason": "Protein packed smoked tofu stir fry served with satisfying steamed rice",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Pasta all'arrabiata",
-              "name_en": "Pasta all'Arrabbiata",
-              "station": "Pasta",
+              "name": "Gebratener Räuchertofu mit Gemüse (scharf)",
+              "name_en": "Fried smoked tofu with spicy vegetables",
+              "station": "Grill",
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -342,119 +289,92 @@
               ],
               "allergens": [
                 "Gl",
-                "GlW"
+                "GlW",
+                "So"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "325283ce8bed31ed",
+              "id": "4c2d3896cbaef87e",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
+              "kcal": 562.5,
+              "protein_g": 38.25
             },
             {
-              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-              "name_en": "Vegan chia pudding with coconut milk and mango puree",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 135,
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [],
               "additives": [],
-              "standing": false,
+              "standing": true,
               "diet": "vegan",
-              "id": "823f80f7c6201433",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 202.5,
-              "protein_g": 4.2
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 540,
-            "price_eur": 5.4,
-            "weight_g": 600,
-            "kcal": 855.0,
-            "protein_g": 24.45,
-            "carbs_g": 129.75,
-            "fat_g": 25.2
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 952.5,
+            "protein_g": 46.35,
+            "carbs_g": 111.0,
+            "fat_g": 34.65
           },
           "score": {
-            "price": -2.7,
+            "price": -3.375,
             "price_over_budget": 0.0,
-            "energy_value": 0.15833333333333333,
-            "protein_value": 0.1886574074074074,
-            "protein": 3.6674999999999995,
-            "energy": 0.29583333333333334,
-            "total": 1.6103
+            "energy_value": 0.1411111111111111,
+            "protein_value": 0.28611111111111115,
+            "protein": 6.952500000000001,
+            "energy": 0.3770833333333333,
+            "total": 4.3818
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         },
         {
-          "title": "Lebanese Casserole with Rice and Chia",
-          "reason": "Flavorful vegetable bake served alongside fluffy rice and chia treat",
+          "title": "Brazilian Lamb and Rice",
+          "reason": "Savory lamb goulash cooked with sweet potatoes and balanced with rice",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Libanesischer Gemüseauflauf mit Joghurtdip",
-              "name_en": "Lebanese vegetable casserole with yogurt dip",
-              "station": "Vegetarisch/fleischlos",
+              "name": "Lammgulasch mit Süßkartoffeln brasilianische Art",
+              "name_en": "Brazilian-style lamb goulash with sweet potatoes",
+              "station": "Fleisch",
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 405,
+              "price_cents": 505,
               "is_vegan": false,
-              "markers": [
-                "f"
-              ],
+              "markers": [],
               "allergens": [
-                "Ei",
-                "En",
-                "Mi",
-                "Sl"
+                "Gl",
+                "GlW"
               ],
               "additives": [],
               "standing": false,
-              "diet": "vegetarian",
-              "id": "05a53c5ba6b4030a",
+              "diet": "meat",
+              "id": "0f4749583adb4f46",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 517.5,
-              "protein_g": 15.75
-            },
-            {
-              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-              "name_en": "Vegan chia pudding with coconut milk and mango puree",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "823f80f7c6201433",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 202.5,
-              "protein_g": 4.2
+              "kcal": 607.5,
+              "protein_g": 38.25
             },
             {
               "name": "Reis",
@@ -482,22 +402,107 @@
             }
           ],
           "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 915.0,
-            "protein_g": 24.0,
-            "carbs_g": 106.5,
-            "fat_g": 41.85
+            "price_cents": 640,
+            "price_eur": 6.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 42.3,
+            "carbs_g": 82.5,
+            "fat_g": 31.95
           },
           "score": {
-            "price": -3.375,
+            "price": -3.2,
             "price_over_budget": 0.0,
-            "energy_value": 0.13555555555555554,
-            "protein_value": 0.14814814814814814,
-            "protein": 3.6,
-            "energy": 0.3458333333333333,
-            "total": 0.8545
+            "energy_value": 0.125390625,
+            "protein_value": 0.27539062499999994,
+            "protein": 6.345,
+            "energy": 0.2520833333333333,
+            "total": 3.7979
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Grain Strudel with Rice",
+          "reason": "Flaky vegetarian strudel paired with cool dip and double rice",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Quinoa-Grünkern-Strudel mit Sauerrahm-Dip",
+              "name_en": "Quinoa and green spelt strudel with sour cream dip",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300.0,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "So"
+              ],
+              "additives": [
+                "1",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "e9a75c827b76fd01",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 585.0,
+              "protein_g": 16.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600.0,
+            "kcal": 975.0,
+            "protein_g": 24.6,
+            "carbs_g": 150.0,
+            "fat_g": 29.4
+          },
+          "score": {
+            "price": -2.7,
+            "price_over_budget": 0.0,
+            "energy_value": 0.18055555555555555,
+            "protein_value": 0.1898148148148148,
+            "protein": 3.6900000000000004,
+            "energy": 0.3958333333333333,
+            "total": 1.7562
           },
           "has_estimated_prices": true
         }
@@ -511,127 +516,69 @@
       "note": null,
       "plates": [
         {
-          "title": "Solo Tandoori Chicken",
-          "reason": "Lean and protein-packed chicken breast with refreshing mint dip",
+          "title": "Single Curry Shashlik",
+          "reason": "Lean meat skewer in a flavorful sauce keeping carbs minimal",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Tandoori Chicken (1 Stück) in Joghurtmarinade und Gurken-Minz-Dip",
-              "name_en": "Tandoori chicken (1 piece) in yoghurt marinade with cucumber mint dip",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 240,
-              "price_cents": 316,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Mi",
-                "Sf"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "8473e66095cf92e8",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 348.0,
-              "protein_g": 42.0
-            }
-          ],
-          "total": {
-            "price_cents": 316,
-            "price_eur": 3.16,
-            "weight_g": 240,
-            "kcal": 348.0,
-            "protein_g": 42.0,
-            "carbs_g": 7.2,
-            "fat_g": 16.32
-          },
-          "score": {
-            "price": -0.79,
-            "price_over_budget": 0.0,
-            "protein_density": 3.0172413793103448,
-            "protein_value": 0.5537974683544303,
-            "protein": 0.4,
-            "energy": 0.0,
-            "total": 3.181
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Savory Beef Roulade",
-          "reason": "Classic hearty meat dish served in a savory red wine reduction",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Rinderroulade in Rotweinsauce (1 Stück)",
-              "name_en": "Beef roulade in red wine sauce (1 piece)",
+              "name": "Schaschlik (1 Stück) mit Honig-Currysauce",
+              "name_en": "Shashlik (1 piece) with honey curry sauce",
               "station": "Fleisch",
               "role": "main",
               "texture": "saucy",
               "count": 1,
               "unit": "piece",
-              "weight_g": 220,
-              "price_cents": 298,
+              "weight_g": 300.0,
+              "price_cents": 370,
               "is_vegan": false,
               "markers": [
-                "R",
                 "S"
               ],
               "allergens": [
-                "Gl",
-                "GlW",
                 "Sf",
-                "Sw"
+                "Sl"
               ],
               "additives": [
-                "2",
-                "5",
-                "99"
+                "11"
               ],
               "standing": false,
               "diet": "meat",
-              "id": "521f786db2388935",
+              "id": "c9c33eb6b1b8686b",
               "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 319.0,
-              "protein_g": 29.7
+              "kcal": 495.0,
+              "protein_g": 37.5
             }
           ],
           "total": {
-            "price_cents": 298,
-            "price_eur": 2.98,
-            "weight_g": 220,
-            "kcal": 319.0,
-            "protein_g": 29.7,
-            "carbs_g": 6.6,
-            "fat_g": 18.7
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300.0,
+            "kcal": 495.0,
+            "protein_g": 37.5,
+            "carbs_g": 27.0,
+            "fat_g": 25.5
           },
           "score": {
-            "price": -0.745,
+            "price": -0.925,
             "price_over_budget": 0.0,
-            "protein_density": 2.3275862068965516,
-            "protein_value": 0.4152684563758389,
-            "protein": -0.060000000000000143,
+            "protein_density": 1.893939393939394,
+            "protein_value": 0.4222972972972973,
+            "protein": 0.25,
             "energy": 0.0,
-            "total": 1.9379
+            "total": 1.6412
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Lentil Dal and Chia Pudding",
-          "reason": "Plant-based protein duo pairing spiced dal with coconut dessert",
+          "title": "Spicy Smoked Tofu",
+          "reason": "Nutritious tofu and vegetable medley offering plenty of protein",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Rotes Linsendahl mit Lauch und Koriander",
-              "name_en": "Red lentil dal with leek and coriander",
-              "station": "Wok",
+              "name": "Gebratener Räuchertofu mit Gemüse (scharf)",
+              "name_en": "Fried smoked tofu with spicy vegetables",
+              "station": "Grill",
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -643,114 +590,205 @@
                 "v"
               ],
               "allergens": [
-                "Sf",
-                "Sl"
+                "Gl",
+                "GlW",
+                "So"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "b70e2dcc13032f48",
+              "id": "4c2d3896cbaef87e",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 472.5,
-              "protein_g": 24.75
-            },
-            {
-              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-              "name_en": "Vegan chia pudding with coconut milk and mango puree",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "823f80f7c6201433",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 202.5,
-              "protein_g": 4.2
+              "kcal": 562.5,
+              "protein_g": 38.25
             }
           ],
           "total": {
-            "price_cents": 540,
-            "price_eur": 5.4,
-            "weight_g": 600,
-            "kcal": 675.0,
-            "protein_g": 28.95,
-            "carbs_g": 80.25,
-            "fat_g": 25.2
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 562.5,
+            "protein_g": 38.25,
+            "carbs_g": 27.0,
+            "fat_g": 33.75
           },
           "score": {
-            "price": -1.35,
+            "price": -1.0125,
             "price_over_budget": 0.0,
-            "protein_density": 1.0722222222222222,
-            "protein_value": 0.22337962962962962,
-            "protein": -0.21000000000000013,
+            "protein_density": 1.7000000000000002,
+            "protein_value": 0.39351851851851855,
+            "protein": 0.275,
             "energy": 0.0,
-            "total": -0.2644
+            "total": 1.356
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Mixed Durum Wheat Berries",
-          "reason": "Wholesome grains cooked with peas corn and carrots for light dining",
+          "title": "Sweet Potato Lamb Goulash",
+          "reason": "Tender lamb goulash providing great protein without extra side dishes",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Zartweizen mit Erbsen, Karotten und Mais",
-              "name_en": "Durum wheat berries with peas, carrots, and corn",
-              "station": "Studitopf",
+              "name": "Lammgulasch mit Süßkartoffeln brasilianische Art",
+              "name_en": "Brazilian-style lamb goulash with sweet potatoes",
+              "station": "Fleisch",
               "role": "main",
-              "texture": "dry",
+              "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
               "allergens": [
                 "Gl",
-                "GlW",
-                "Sl"
+                "GlW"
               ],
               "additives": [],
               "standing": false,
-              "diet": "vegan",
-              "id": "b2bfbd128d2762c9",
+              "diet": "meat",
+              "id": "0f4749583adb4f46",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 607.5,
-              "protein_g": 20.25
+              "protein_g": 38.25
             }
           ],
           "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
+            "price_cents": 505,
+            "price_eur": 5.05,
             "weight_g": 450,
             "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 103.5,
-            "fat_g": 9.9
+            "protein_g": 38.25,
+            "carbs_g": 40.5,
+            "fat_g": 31.5
           },
           "score": {
-            "price": -0.3725,
+            "price": -1.2625,
             "price_over_budget": 0.0,
-            "protein_density": 0.8333333333333334,
-            "protein_value": 0.5662751677852349,
-            "protein": -1.95,
+            "protein_density": 1.574074074074074,
+            "protein_value": 0.3155940594059406,
+            "protein": 0.275,
             "energy": 0.0,
-            "total": -0.9229
+            "total": 0.9022
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Light Cheese Spaetzle",
+          "reason": "Classic cheesy noodles in a modest portion size",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Allgäuer Käsespätzle mit Röstzwiebeln",
+              "name_en": "Allgäu cheese spaetzle with fried onions",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlD",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "eb4a96205f8cb975",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 675.0,
+              "protein_g": 28.5
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 675.0,
+            "protein_g": 28.5,
+            "carbs_g": 69.0,
+            "fat_g": 31.5
+          },
+          "score": {
+            "price": -0.675,
+            "price_over_budget": 0.0,
+            "protein_density": 1.0555555555555556,
+            "protein_value": 0.4398148148148148,
+            "protein": -0.3,
+            "energy": 0.0,
+            "total": 0.5204
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetarian Grain Strudel",
+          "reason": "Wholesome quinoa and green spelt pastry served with tangy sauce",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Quinoa-Grünkern-Strudel mit Sauerrahm-Dip",
+              "name_en": "Quinoa and green spelt strudel with sour cream dip",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300.0,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "So"
+              ],
+              "additives": [
+                "1",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "e9a75c827b76fd01",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 585.0,
+              "protein_g": 16.5
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300.0,
+            "kcal": 585.0,
+            "protein_g": 16.5,
+            "carbs_g": 66.0,
+            "fat_g": 28.5
+          },
+          "score": {
+            "price": -0.675,
+            "price_over_budget": 0.0,
+            "protein_density": 0.7051282051282052,
+            "protein_value": 0.2546296296296296,
+            "protein": -2.7,
+            "energy": 0.0,
+            "total": -2.4152
           },
           "has_estimated_prices": false
         }
@@ -764,67 +802,153 @@
       "note": null,
       "plates": [
         {
-          "title": "Budget Wheat Berry Medley",
-          "reason": "Extremely affordable and nourishing whole grain bowl with vegetables",
+          "title": "Budget Spaetzle Plate",
+          "reason": "Very affordable German pasta dish topped with savory onions",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Zartweizen mit Erbsen, Karotten und Mais",
-              "name_en": "Durum wheat berries with peas, carrots, and corn",
-              "station": "Studitopf",
+              "name": "Allgäuer Käsespätzle mit Röstzwiebeln",
+              "name_en": "Allgäu cheese spaetzle with fried onions",
+              "station": "Pasta",
               "role": "main",
-              "texture": "dry",
-              "count": 3,
+              "texture": "saucy",
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
               "allergens": [
+                "Ei",
                 "Gl",
+                "GlD",
                 "GlW",
-                "Sl"
+                "Mi"
               ],
               "additives": [],
               "standing": false,
-              "diet": "vegan",
-              "id": "b2bfbd128d2762c9",
-              "serving": "3 scoops",
+              "diet": "vegetarian",
+              "id": "eb4a96205f8cb975",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
+              "kcal": 675.0,
+              "protein_g": 28.5
             }
           ],
           "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 103.5,
-            "fat_g": 9.9
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 675.0,
+            "protein_g": 28.5,
+            "carbs_g": 69.0,
+            "fat_g": 31.5
           },
           "score": {
-            "price": -0.745,
+            "price": -1.35,
             "price_over_budget": 0.0,
-            "energy_value": 1.6308724832214767,
-            "energy": 0.03833333333333333,
-            "protein": 0.0033333333333333335,
-            "total": 0.9275
+            "energy_value": 0.9999999999999999,
+            "energy": 0.08333333333333333,
+            "protein": 0.11333333333333334,
+            "total": -0.1533
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Classic Pasta Arrabiata",
-          "reason": "Simple spicy pasta providing great value and solid satisfaction",
+          "title": "Strudel with Rice",
+          "reason": "Filling grain strudel with dip and a side of rice at a fair price",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Pasta all'arrabiata",
-              "name_en": "Pasta all'Arrabbiata",
-              "station": "Pasta",
+              "name": "Quinoa-Grünkern-Strudel mit Sauerrahm-Dip",
+              "name_en": "Quinoa and green spelt strudel with sour cream dip",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300.0,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "So"
+              ],
+              "additives": [
+                "1",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "e9a75c827b76fd01",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 585.0,
+              "protein_g": 16.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450.0,
+            "kcal": 780.0,
+            "protein_g": 20.55,
+            "carbs_g": 108.0,
+            "fat_g": 28.95
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.7703703703703705,
+            "energy": 0.15333333333333332,
+            "protein": 0.007333333333333344,
+            "total": -1.094
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Spicy Tofu Veggies",
+          "reason": "High protein tofu stir fry that stays light on the wallet",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gebratener Räuchertofu mit Gemüse (scharf)",
+              "name_en": "Fried smoked tofu with spicy vegetables",
+              "station": "Grill",
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -837,227 +961,71 @@
               ],
               "allergens": [
                 "Gl",
-                "GlW"
+                "GlW",
+                "So"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "325283ce8bed31ed",
+              "id": "4c2d3896cbaef87e",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
+              "kcal": 562.5,
+              "protein_g": 38.25
             }
           ],
           "total": {
             "price_cents": 405,
             "price_eur": 4.05,
             "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 20.25,
-            "carbs_g": 108.0,
-            "fat_g": 14.4
+            "kcal": 562.5,
+            "protein_g": 38.25,
+            "carbs_g": 27.0,
+            "fat_g": 33.75
           },
           "score": {
             "price": -2.025,
             "price_over_budget": 0.0,
-            "energy_value": 0.6444444444444445,
-            "energy": 0.06833333333333333,
-            "protein": 0.0033333333333333335,
-            "total": -1.3089
+            "energy_value": 0.5555555555555556,
+            "energy": 0.008333333333333333,
+            "protein": 0.24333333333333335,
+            "total": -1.2178
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Tandoori Chicken with Rice",
-          "reason": "Wholesome grilled poultry balanced with simple white rice",
+          "title": "Shashlik and Rice Plate",
+          "reason": "Flavorsome meat skewer with sauce and rice under the budget limit",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Tandoori Chicken (1 Stück) in Joghurtmarinade und Gurken-Minz-Dip",
-              "name_en": "Tandoori chicken (1 piece) in yoghurt marinade with cucumber mint dip",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 240,
-              "price_cents": 316,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Mi",
-                "Sf"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "8473e66095cf92e8",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 348.0,
-              "protein_g": 42.0
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 451,
-            "price_eur": 4.51,
-            "weight_g": 390,
-            "kcal": 543.0,
-            "protein_g": 46.05,
-            "carbs_g": 49.2,
-            "fat_g": 16.77
-          },
-          "score": {
-            "price": -2.255,
-            "price_over_budget": 0.0,
-            "energy_value": 0.4815964523281597,
-            "energy": -0.07,
-            "protein": 0.3473333333333333,
-            "total": -1.4961
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Lentil Dal with Chia Dessert",
-          "reason": "Economical warm lentils accompanied by a tropical sweet treat",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Rotes Linsendahl mit Lauch und Koriander",
-              "name_en": "Red lentil dal with leek and coriander",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Sf",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "b70e2dcc13032f48",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 315.0,
-              "protein_g": 16.5
-            },
-            {
-              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-              "name_en": "Vegan chia pudding with coconut milk and mango puree",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "823f80f7c6201433",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 202.5,
-              "protein_g": 4.2
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 517.5,
-            "protein_g": 20.7,
-            "carbs_g": 60.75,
-            "fat_g": 20.4
-          },
-          "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.5111111111111112,
-            "energy": -0.325,
-            "protein": 0.009333333333333325,
-            "total": -1.8296
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Beef Roulade with Steamed Rice",
-          "reason": "Rich meat in red wine sauce served with filling white rice",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Rinderroulade in Rotweinsauce (1 Stück)",
-              "name_en": "Beef roulade in red wine sauce (1 piece)",
+              "name": "Schaschlik (1 Stück) mit Honig-Currysauce",
+              "name_en": "Shashlik (1 piece) with honey curry sauce",
               "station": "Fleisch",
               "role": "main",
               "texture": "saucy",
               "count": 1,
               "unit": "piece",
-              "weight_g": 220,
-              "price_cents": 298,
+              "weight_g": 300.0,
+              "price_cents": 370,
               "is_vegan": false,
               "markers": [
-                "R",
                 "S"
               ],
               "allergens": [
-                "Gl",
-                "GlW",
                 "Sf",
-                "Sw"
+                "Sl"
               ],
               "additives": [
-                "2",
-                "5",
-                "99"
+                "11"
               ],
               "standing": false,
               "diet": "meat",
-              "id": "521f786db2388935",
+              "id": "c9c33eb6b1b8686b",
               "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 319.0,
-              "protein_g": 29.7
+              "kcal": 495.0,
+              "protein_g": 37.5
             },
             {
               "name": "Reis",
@@ -1085,23 +1053,73 @@
             }
           ],
           "total": {
-            "price_cents": 433,
-            "price_eur": 4.33,
-            "weight_g": 370,
-            "kcal": 514.0,
-            "protein_g": 33.75,
-            "carbs_g": 48.6,
-            "fat_g": 19.15
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450.0,
+            "kcal": 690.0,
+            "protein_g": 41.55,
+            "carbs_g": 69.0,
+            "fat_g": 25.95
           },
           "score": {
-            "price": -2.165,
+            "price": -2.525,
             "price_over_budget": 0.0,
-            "energy_value": 0.47482678983833715,
-            "energy": -0.36,
-            "protein": 0.18333333333333332,
-            "total": -1.8668
+            "energy_value": 0.5465346534653466,
+            "energy": 0.09333333333333334,
+            "protein": 0.28733333333333333,
+            "total": -1.5978
           },
           "has_estimated_prices": true
+        },
+        {
+          "title": "Brazilian Lamb Plate",
+          "reason": "Rich lamb stew with sweet potatoes for an economical warm meal",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Lammgulasch mit Süßkartoffeln brasilianische Art",
+              "name_en": "Brazilian-style lamb goulash with sweet potatoes",
+              "station": "Fleisch",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "id": "0f4749583adb4f46",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 38.25
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 38.25,
+            "carbs_g": 40.5,
+            "fat_g": 31.5
+          },
+          "score": {
+            "price": -2.525,
+            "price_over_budget": 0.0,
+            "energy_value": 0.4811881188118812,
+            "energy": 0.03833333333333333,
+            "protein": 0.24333333333333335,
+            "total": -1.7621
+          },
+          "has_estimated_prices": false
         }
       ]
     },
@@ -1113,16 +1131,44 @@
       "note": null,
       "plates": [
         {
-          "title": "Vegan Grains Lentils and Pudding",
-          "reason": "Massive plant-powered feast combining savory grains lentils and dessert",
+          "title": "Vegan Feast Combo",
+          "reason": "Spicy tofu coupled with mushroom stew and rice for maximum plant power",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Zartweizen mit Erbsen, Karotten und Mais",
-              "name_en": "Durum wheat berries with peas, carrots, and corn",
+              "name": "Gebratener Räuchertofu mit Gemüse (scharf)",
+              "name_en": "Fried smoked tofu with spicy vegetables",
+              "station": "Grill",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "4c2d3896cbaef87e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 38.25
+            },
+            {
+              "name": "Pikanter Pilztopf mit Kartoffeln und Kraut",
+              "name_en": "Spicy mushroom stew with potatoes and cabbage",
               "station": "Studitopf",
               "role": "main",
-              "texture": "dry",
+              "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
@@ -1131,147 +1177,15 @@
               "markers": [
                 "v"
               ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "b2bfbd128d2762c9",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Rotes Linsendahl mit Lauch und Koriander",
-              "name_en": "Red lentil dal with leek and coriander",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Sf",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "b70e2dcc13032f48",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 472.5,
-              "protein_g": 24.75
-            },
-            {
-              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-              "name_en": "Vegan chia pudding with coconut milk and mango puree",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
               "allergens": [],
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "823f80f7c6201433",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 202.5,
-              "protein_g": 4.2
-            }
-          ],
-          "total": {
-            "price_cents": 689,
-            "price_eur": 6.89,
-            "weight_g": 1050,
-            "kcal": 1282.5,
-            "protein_g": 49.2,
-            "carbs_g": 183.75,
-            "fat_g": 35.1
-          },
-          "score": {
-            "price": -3.445,
-            "price_over_budget": 0.0,
-            "energy_value": 0.18613933236574745,
-            "protein_value": 0.2975326560232221,
-            "protein": 7.380000000000001,
-            "energy": 0.6520833333333333,
-            "total": 5.0708
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Arrabiata Rice and Chia Combo",
-          "reason": "Carb-dense pairing of spicy pasta rice and creamy mango dessert",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta all'arrabiata",
-              "name_en": "Pasta all'Arrabbiata",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "325283ce8bed31ed",
+              "id": "c800cd1420a29a9e",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-              "name_en": "Vegan chia pudding with coconut milk and mango puree",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "823f80f7c6201433",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 202.5,
-              "protein_g": 4.2
+              "kcal": 324.0,
+              "protein_g": 9.45
             },
             {
               "name": "Reis",
@@ -1299,22 +1213,22 @@
             }
           ],
           "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1050.0,
-            "protein_g": 28.5,
-            "carbs_g": 171.75,
-            "fat_g": 25.65
+            "price_cents": 689,
+            "price_eur": 6.89,
+            "weight_g": 1050,
+            "kcal": 1081.5,
+            "protein_g": 51.75,
+            "carbs_g": 111.75,
+            "fat_g": 45.45
           },
           "score": {
-            "price": -3.375,
+            "price": -3.445,
             "price_over_budget": 0.0,
-            "energy_value": 0.15555555555555553,
-            "protein_value": 0.17592592592592593,
-            "protein": 4.275,
-            "energy": 0.4583333333333333,
-            "total": 1.6898
+            "energy_value": 0.15696661828737302,
+            "protein_value": 0.3129535558780842,
+            "protein": 7.7625,
+            "energy": 0.4845833333333333,
+            "total": 5.272
           },
           "has_estimated_prices": true
         }
@@ -1328,47 +1242,20 @@
       "note": null,
       "plates": [
         {
-          "title": "Hearty Dal and Wheat Berries",
-          "reason": "Nutritious fiber and protein source made with lentils and durum wheat",
+          "title": "Pure Spicy Tofu",
+          "reason": "Smoked tofu with crisp vegetables maximizing plant protein",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Rotes Linsendahl mit Lauch und Koriander",
-              "name_en": "Red lentil dal with leek and coriander",
-              "station": "Wok",
+              "name": "Gebratener Räuchertofu mit Gemüse (scharf)",
+              "name_en": "Fried smoked tofu with spicy vegetables",
+              "station": "Grill",
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
               "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Sf",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "b70e2dcc13032f48",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 472.5,
-              "protein_g": 24.75
-            },
-            {
-              "name": "Zartweizen mit Erbsen, Karotten und Mais",
-              "name_en": "Durum wheat berries with peas, carrots, and corn",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 50,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -1376,90 +1263,111 @@
               "allergens": [
                 "Gl",
                 "GlW",
-                "Sl"
+                "So"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "b2bfbd128d2762c9",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 202.5,
-              "protein_g": 6.75
-            }
-          ],
-          "total": {
-            "price_cents": 455,
-            "price_eur": 4.55,
-            "weight_g": 600,
-            "kcal": 675.0,
-            "protein_g": 31.5,
-            "carbs_g": 93.0,
-            "fat_g": 17.7
-          },
-          "score": {
-            "price": -1.1375,
-            "price_over_budget": 0.0,
-            "protein_density": 1.1666666666666667,
-            "protein_value": 0.2884615384615385,
-            "protein": 0.05,
-            "energy": 0.0,
-            "total": 0.3676
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Simple Pasta Arrabiata",
-          "reason": "Straightforward vegan tomato pasta that fits lean energy targets",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta all'arrabiata",
-              "name_en": "Pasta all'Arrabbiata",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "325283ce8bed31ed",
+              "id": "4c2d3896cbaef87e",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
+              "kcal": 562.5,
+              "protein_g": 38.25
             }
           ],
           "total": {
             "price_cents": 405,
             "price_eur": 4.05,
             "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 20.25,
-            "carbs_g": 108.0,
-            "fat_g": 14.4
+            "kcal": 562.5,
+            "protein_g": 38.25,
+            "carbs_g": 27.0,
+            "fat_g": 33.75
           },
           "score": {
             "price": -1.0125,
             "price_over_budget": 0.0,
-            "protein_density": 0.7758620689655172,
-            "protein_value": 0.20833333333333334,
-            "protein": -1.95,
+            "protein_density": 1.7000000000000002,
+            "protein_value": 0.39351851851851855,
+            "protein": 0.275,
             "energy": 0.0,
-            "total": -1.9783
+            "total": 1.356
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Mushroom Potato Stew with Rice",
+          "reason": "Comforting mushroom hotpot paired with filling white rice",
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Pikanter Pilztopf mit Kartoffeln und Kraut",
+              "name_en": "Spicy mushroom stew with potatoes and cabbage",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "c800cd1420a29a9e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 324.0,
+              "protein_g": 9.45
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 714.0,
+            "protein_g": 17.55,
+            "carbs_g": 126.75,
+            "fat_g": 12.15
+          },
+          "score": {
+            "price": -1.0475,
+            "price_over_budget": 0.0,
+            "protein_density": 0.6144957983193277,
+            "protein_value": 0.1745226730310262,
+            "protein": -2.4900000000000007,
+            "energy": -0.14,
+            "total": -2.8885
+          },
+          "has_estimated_prices": true
         }
       ]
     },
@@ -1471,119 +1379,14 @@
       "note": null,
       "plates": [
         {
-          "title": "Inexpensive Grain and Veggie Bowl",
-          "reason": "Lowest cost vegan lunch packed with wheat berries and mixed vegetables",
+          "title": "Tofu Mushroom Duo",
+          "reason": "A smart mix of spicy tofu and hearty mushroom stew at a low cost",
           "picked_by": "rules",
           "items": [
             {
-              "name": "Zartweizen mit Erbsen, Karotten und Mais",
-              "name_en": "Durum wheat berries with peas, carrots, and corn",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "dry",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "b2bfbd128d2762c9",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 103.5,
-            "fat_g": 9.9
-          },
-          "score": {
-            "price": -0.745,
-            "price_over_budget": 0.0,
-            "energy_value": 1.6308724832214767,
-            "energy": 0.03833333333333333,
-            "protein": 0.0033333333333333335,
-            "total": 0.9275
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Economical Pasta Arrabiata",
-          "reason": "Tasty and cheap plate of warm spicy Italian pasta",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta all'arrabiata",
-              "name_en": "Pasta all'Arrabbiata",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "325283ce8bed31ed",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 20.25,
-            "carbs_g": 108.0,
-            "fat_g": 14.4
-          },
-          "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.6444444444444445,
-            "energy": 0.06833333333333333,
-            "protein": 0.0033333333333333335,
-            "total": -1.3089
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Lentil Dal and Mango Pudding",
-          "reason": "Affordable combination of warm dal stew and chilled sweet chia pudding",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Rotes Linsendahl mit Lauch und Koriander",
-              "name_en": "Red lentil dal with leek and coriander",
-              "station": "Wok",
+              "name": "Gebratener Räuchertofu mit Gemüse (scharf)",
+              "name_en": "Fried smoked tofu with spicy vegetables",
+              "station": "Grill",
               "role": "main",
               "texture": "saucy",
               "count": 2,
@@ -1595,28 +1398,29 @@
                 "v"
               ],
               "allergens": [
-                "Sf",
-                "Sl"
+                "Gl",
+                "GlW",
+                "So"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "b70e2dcc13032f48",
+              "id": "4c2d3896cbaef87e",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 315.0,
-              "protein_g": 16.5
+              "kcal": 375.0,
+              "protein_g": 25.5
             },
             {
-              "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-              "name_en": "Vegan chia pudding with coconut milk and mango puree",
-              "station": "Dessert (Glas)",
-              "role": "dessert",
+              "name": "Pikanter Pilztopf mit Kartoffeln und Kraut",
+              "name_en": "Spicy mushroom stew with potatoes and cabbage",
+              "station": "Studitopf",
+              "role": "main",
               "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 135,
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -1625,29 +1429,29 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "823f80f7c6201433",
-              "serving": "1 piece",
+              "id": "c800cd1420a29a9e",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 202.5,
-              "protein_g": 4.2
+              "kcal": 216.0,
+              "protein_g": 6.3
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 517.5,
-            "protein_g": 20.7,
-            "carbs_g": 60.75,
-            "fat_g": 20.4
+            "price_cents": 369,
+            "price_eur": 3.69,
+            "weight_g": 600,
+            "kcal": 591.0,
+            "protein_g": 31.8,
+            "carbs_g": 46.5,
+            "fat_g": 30.0
           },
           "score": {
-            "price": -2.025,
+            "price": -1.845,
             "price_over_budget": 0.0,
-            "energy_value": 0.5111111111111112,
-            "energy": -0.325,
-            "protein": 0.009333333333333325,
-            "total": -1.8296
+            "energy_value": 0.640650406504065,
+            "energy": 0.027333333333333338,
+            "protein": 0.15733333333333335,
+            "total": -1.0197
           },
           "has_estimated_prices": false
         }
@@ -1657,47 +1461,60 @@
   "extras": {
     "all": [
       {
-        "name": "Türkische Linsensuppe mit Kreuzkümmel",
-        "name_en": "Turkish lentil soup with cumin",
+        "name": "Tomaten-Kokos-Suppe",
+        "name_en": "Tomato coconut soup",
         "station": "Unspecified",
         "weight_g": 300,
         "price_cents": 99,
-        "is_vegan": false,
-        "diet": "vegetarian",
+        "is_vegan": true,
+        "diet": "vegan",
         "serving": "2 scoops",
-        "kcal": 204.0,
-        "protein_g": 11.4,
+        "kcal": 186.0,
+        "protein_g": 3.3,
         "price_source": "eat-api"
       },
       {
-        "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-        "name_en": "Vegan chia pudding with coconut milk and mango puree",
+        "name": "Veganes Mousse au Chocolat mit Himbeersauce",
+        "name_en": "Vegan chocolate mousse with raspberry sauce",
         "station": "Dessert (Glas)",
-        "weight_g": 150,
-        "price_cents": 135,
+        "weight_g": 130.0,
+        "price_cents": 117,
         "is_vegan": true,
         "diet": "vegan",
         "serving": "1 piece",
-        "kcal": 202.5,
-        "protein_g": 4.2,
+        "kcal": 279.5,
+        "protein_g": 4.16,
         "price_source": "eat-api"
       }
     ],
     "vegan": [
       {
-        "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-        "name_en": "Vegan chia pudding with coconut milk and mango puree",
+        "name": "Tomaten-Kokos-Suppe",
+        "name_en": "Tomato coconut soup",
+        "station": "Unspecified",
+        "weight_g": 300,
+        "price_cents": 99,
+        "is_vegan": true,
+        "diet": "vegan",
+        "serving": "2 scoops",
+        "kcal": 186.0,
+        "protein_g": 3.3,
+        "price_source": "eat-api"
+      },
+      {
+        "name": "Veganes Mousse au Chocolat mit Himbeersauce",
+        "name_en": "Vegan chocolate mousse with raspberry sauce",
         "station": "Dessert (Glas)",
-        "weight_g": 150,
-        "price_cents": 135,
+        "weight_g": 130.0,
+        "price_cents": 117,
         "is_vegan": true,
         "diet": "vegan",
         "serving": "1 piece",
-        "kcal": 202.5,
-        "protein_g": 4.2,
+        "kcal": 279.5,
+        "protein_g": 4.16,
         "price_source": "eat-api"
       }
     ]
   },
-  "generated_on": "2026-11-17"
+  "generated_on": "2026-11-18"
 }

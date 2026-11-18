@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-17T17:00:43.916216+00:00",
+  "fetched_at": "2026-11-18T12:04:50.620894+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -34,6 +34,7 @@
         "GLUTEN",
         "LACTOSE",
         "MILK",
+        "SPELT",
         "VEGETARIAN",
         "WHEAT"
       ],
@@ -62,11 +63,20 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "BARLEY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "SOY",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 5.0,
+        "base_eur": 4.5,
         "per_100g_eur": 0,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -141,11 +151,18 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "PRESERVATIVES",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 0,
-        "per_100g_eur": 0.9,
-        "source": "config"
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
       }
     },
     {
@@ -165,8 +182,8 @@
         "So"
       ],
       "additives": [
-        "Kn",
-        "1"
+        "1",
+        "Kn"
       ],
       "is_vegan": false,
       "is_vegetarian": true,
@@ -213,11 +230,63 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "CELERY",
+        "CHICKEN_EGGS",
+        "DYESTUFF",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "SULFITES",
+        "SULPHURS"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Rinderroulade in Rotweinsauce (1 Stück)",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "R",
+        "S"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sf",
+        "Sw"
+      ],
+      "additives": [
+        "2",
+        "5",
+        "99"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ALCOHOL",
+        "BEEF",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "MUSTARD",
+        "PORK",
+        "PRESERVATIVES",
+        "SULFITES",
+        "SULPHURS",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
       }
     },
     {
@@ -278,36 +347,6 @@
       }
     },
     {
-      "name": "Rinderroulade in Rotweinsauce (1 Stück)",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [
-        "R",
-        "S"
-      ],
-      "allergens": [
-        "Gl",
-        "GlW",
-        "Sf",
-        "Sw"
-      ],
-      "additives": [
-        "2",
-        "5",
-        "99"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      }
-    },
-    {
       "name": "Veganes Mousse au Chocolat mit Himbeersauce",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
@@ -324,11 +363,18 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "OAT",
+        "SOY",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
