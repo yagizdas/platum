@@ -6,38 +6,31 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/48.json",
-  "fetched_at": "2026-11-18T16:41:03.630765+00:00",
+  "fetched_at": "2026-11-19T16:44:26.551772+00:00",
   "warnings": [],
   "dishes": [
     {
-      "name": "Pasta mit Käsesauce",
+      "name": "Pasta mit Gorgonzolasauce",
       "station": "Pasta",
       "station_raw": "Pasta",
-      "markers": [
-        "f"
-      ],
+      "markers": [],
       "allergens": [
         "Gl",
         "GlW",
         "Mi"
       ],
-      "additives": [],
+      "additives": [
+        "15"
+      ],
       "is_vegan": false,
-      "is_vegetarian": true,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "GLUTEN",
-        "LACTOSE",
-        "MILK",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {
@@ -122,8 +115,8 @@
         "So"
       ],
       "additives": [
-        "2",
-        "Kn"
+        "Kn",
+        "2"
       ],
       "is_vegan": true,
       "is_vegetarian": true,

@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-18T16:41:03.502596+00:00",
+  "fetched_at": "2026-11-19T16:44:26.397098+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -26,11 +26,18 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "BEEF",
+        "CELERY",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -70,6 +77,30 @@
       }
     },
     {
+      "name": "Lasagne Bolognese (hausgemacht)",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
       "name": "Pizza mit Putenschinken",
       "station": "Pizza",
       "station_raw": "Pizza",
@@ -90,11 +121,23 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "BARLEY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "PHOSPHATES",
+        "PRESERVATIVES",
+        "SOY",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 5.0,
         "per_100g_eur": 0,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -114,11 +157,20 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "BARLEY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "SOY",
+        "WHEAT"
+      ],
       "price": {
-        "base_eur": 0,
-        "per_100g_eur": 0.9,
-        "source": "config"
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "eat-api"
       }
     },
     {
@@ -134,8 +186,8 @@
         "So"
       ],
       "additives": [
-        "Kn",
-        "2"
+        "2",
+        "Kn"
       ],
       "is_vegan": true,
       "is_vegetarian": true,
@@ -193,35 +245,77 @@
       }
     },
     {
-      "name": "Jambalaya Louisiana mit Shrimps und Hähnchenbrustfilet (1 Stück)",
-      "station": "Fisch",
-      "station_raw": "Fisch",
+      "name": "Vegane Kürbiscremesuppe",
+      "station": "Unspecified",
+      "station_raw": "",
       "markers": [],
-      "allergens": [
-        "Kr",
-        "Sl",
-        "Sw"
-      ],
+      "allergens": [],
       "additives": [
-        "1",
-        "5"
+        "1"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "CELERY",
-        "DYESTUFF",
-        "MEAT",
-        "SHELLFISH",
-        "SULFITES",
-        "SULPHURS"
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Krautwickerl (1 Stück) mit Speck-Zwiebel-Sauce und Kartoffelpüree",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "S"
       ],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [
+        "2",
+        "3",
+        "8"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
+      }
+    },
+    {
+      "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+      "station": "Fisch",
+      "station_raw": "Fisch",
+      "markers": [],
+      "allergens": [
+        "Ei",
+        "Fi",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sf"
+      ],
+      "additives": [
+        "9"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.5,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {
@@ -255,6 +349,28 @@
         "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
+      }
+    },
+    {
+      "name": "Panna Cotta mit Erdbeersauce",
+      "station": "Dessert (Glas)",
+      "station_raw": "Dessert (Glas)",
+      "markers": [],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [
+        "14"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {

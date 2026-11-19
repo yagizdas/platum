@@ -4,7 +4,7 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-18T16:41:03.630765+00:00",
+  "fetched_at": "2026-11-19T16:44:26.551772+00:00",
   "warnings": [],
   "schema_version": 2,
   "menu_count": 9,
@@ -134,8 +134,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Crispy Chicken and Cheesy Pasta Feast",
-          "reason": "Packed with high calories and generous protein for maximum bulking energy.",
+          "title": "Chicken schnitzel + Chocolate mousse + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -168,57 +168,87 @@
               "protein_g": 31.0
             },
             {
-              "name": "Pasta mit Käsesauce",
-              "name_en": "Pasta with cheese sauce",
-              "station": "Pasta",
-              "role": "main",
+              "name": "Mousse au chocolat mit Amarettini und glasierten Kirschen",
+              "name_en": "Chocolate mousse with amarettini and glazed cherries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
               "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
+                "Ei",
                 "Gl",
+                "GlH",
                 "GlW",
-                "Mi"
+                "Mi",
+                "So",
+                "Sw"
               ],
-              "additives": [],
+              "additives": [
+                "5"
+              ],
               "standing": false,
               "diet": "vegetarian",
-              "id": "a706a1edc7531645",
-              "serving": "3 scoops",
+              "id": "dd7a2145e42818ef",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 832.5,
-              "protein_g": 29.25
+              "kcal": 336.0,
+              "protein_g": 5.32
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 685,
-            "price_eur": 6.85,
-            "weight_g": 650,
-            "kcal": 1282.5,
-            "protein_g": 60.25,
-            "carbs_g": 127.0,
-            "fat_g": 58.1
+            "price_cents": 676,
+            "price_eur": 6.76,
+            "weight_g": 640,
+            "kcal": 1176.0,
+            "protein_g": 44.42,
+            "carbs_g": 149.1,
+            "fat_g": 42.1
           },
           "score": {
-            "price": -3.425,
+            "price": -3.38,
             "price_over_budget": 0.0,
-            "energy_value": 0.18722627737226277,
-            "protein_value": 0.36648418491484186,
-            "protein": 9.0375,
-            "energy": 0.6520833333333333,
-            "total": 6.8183
+            "energy_value": 0.1739644970414201,
+            "protein_value": 0.27379191321499013,
+            "protein": 6.662999999999999,
+            "energy": 0.5633333333333334,
+            "total": 4.2941
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         },
         {
-          "title": "Massaman Curry Bowl with Dessert",
-          "reason": "Hearty plant protein curry paired with chocolate mousse for dense bulking energy.",
+          "title": "Massaman curry + Chocolate mousse + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -331,8 +361,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Bratwurst and Potato Salad Combo",
-          "reason": "Traditional sausage meal finished with sweet dessert for solid calorie support.",
+          "title": "Franconian bratwurst + Chocolate mousse + Potato salad",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -444,8 +474,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Veggie Rice Stew with Mousse",
-          "reason": "Wholesome stew paired with chocolate mousse to supply filling carbs and calories.",
+          "title": "Asian rice and vegetable stew + Chocolate mousse",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -466,8 +496,8 @@
                 "So"
               ],
               "additives": [
-                "2",
-                "Kn"
+                "Kn",
+                "2"
               ],
               "standing": false,
               "diet": "vegan",
@@ -533,8 +563,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Parsnip Potato Goulash and Dessert",
-          "reason": "Comforting root vegetable goulash matched with creamy chocolate mousse.",
+          "title": "Vegan parsnip and potato goulash + Chocolate mousse",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -626,8 +656,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Lean Chicken Schnitzel",
-          "reason": "High protein chicken dish that stays light and fit for cutting goals.",
+          "title": "Chicken schnitzel",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -681,8 +711,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Pure Massaman Curry",
-          "reason": "Plant-forward curry offering ample protein while keeping extras off the plate.",
+          "title": "Massaman curry",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -737,8 +767,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Grilled Bratwurst with Rice",
-          "reason": "Simple combination of savory sausage and rice for controlled portions.",
+          "title": "Franconian bratwurst + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -818,8 +848,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Light Asian Rice Stew",
-          "reason": "Vegetable and rice stew that keeps calories minimal during a strict cut.",
+          "title": "Asian rice and vegetable stew",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -840,8 +870,8 @@
                 "So"
               ],
               "additives": [
-                "2",
-                "Kn"
+                "Kn",
+                "2"
               ],
               "standing": false,
               "diet": "vegan",
@@ -873,8 +903,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Parsnip Goulash with Steamed Rice",
-          "reason": "Nutritious vegetable stew served over rice for clean, low calorie fuel.",
+          "title": "Vegan parsnip and potato goulash + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -956,61 +986,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Cheesy Pasta Bowl",
-          "reason": "Affordable comfort food delivering substantial satisfaction on a low budget.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta mit Käsesauce",
-              "name_en": "Pasta with cheese sauce",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "a706a1edc7531645",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 19.5
-            }
-          ],
-          "total": {
-            "price_cents": 270,
-            "price_eur": 2.7,
-            "weight_g": 300,
-            "kcal": 555.0,
-            "protein_g": 19.5,
-            "carbs_g": 66.0,
-            "fat_g": 23.4
-          },
-          "score": {
-            "price": -1.35,
-            "price_over_budget": 0.0,
-            "energy_value": 0.8222222222222222,
-            "energy": 0.0033333333333333335,
-            "protein": -0.1,
-            "total": -0.6244
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Rice Stew and Chocolate Mousse",
-          "reason": "Low-cost veggie stew complemented by a sweet dessert at great value.",
+          "title": "Asian rice and vegetable stew + Chocolate mousse",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1031,8 +1008,8 @@
                 "So"
               ],
               "additives": [
-                "2",
-                "Kn"
+                "Kn",
+                "2"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1097,8 +1074,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Bratwurst with Fluffy Rice",
-          "reason": "Economical combination providing solid sustenance without high cost.",
+          "title": "Franconian bratwurst + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1177,8 +1154,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Chicken Schnitzel and Rice Plate",
-          "reason": "Protein-rich meal keeping overall expense within reasonable reach.",
+          "title": "Chicken schnitzel + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1255,8 +1232,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Curry Rice with Sweet Finish",
-          "reason": "Flavorful curry sampler with rice and sweet dessert for modest spending.",
+          "title": "Massaman curry + Chocolate mousse + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1366,6 +1343,89 @@
             "total": -1.2676
           },
           "has_estimated_prices": true
+        },
+        {
+          "title": "Vegan parsnip and potato goulash + Chocolate mousse",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Veganes Pastinaken-Kartoffel-Gulasch",
+              "name_en": "Vegan parsnip and potato goulash",
+              "station": "Vegetarisch/fleischlos",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "id": "f4b4b4ccd25bc9df",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 4.5
+            },
+            {
+              "name": "Mousse au chocolat mit Amarettini und glasierten Kirschen",
+              "name_en": "Chocolate mousse with amarettini and glazed cherries",
+              "station": "Dessert (Glas)",
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlH",
+                "GlW",
+                "Mi",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "dd7a2145e42818ef",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 336.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 396,
+            "price_eur": 3.96,
+            "weight_g": 440,
+            "kcal": 561.0,
+            "protein_g": 9.82,
+            "carbs_g": 70.1,
+            "fat_g": 25.7
+          },
+          "score": {
+            "price": -1.98,
+            "price_over_budget": 0.0,
+            "energy_value": 0.5666666666666667,
+            "energy": 0.007333333333333334,
+            "protein": -2.036,
+            "total": -3.442
+          },
+          "has_estimated_prices": false
         }
       ]
     },
@@ -1377,8 +1437,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Double Rice Massaman Curry Feast",
-          "reason": "Generous serving of plant protein and rice crafted for calorie gains.",
+          "title": "Massaman curry + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1457,8 +1517,8 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Asian Rice and Vegetable Pot",
-          "reason": "Wholesome vegan bowl filled with vegetables and hearty rice.",
+          "title": "Asian rice and vegetable stew",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1479,8 +1539,8 @@
                 "So"
               ],
               "additives": [
-                "2",
-                "Kn"
+                "Kn",
+                "2"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1512,8 +1572,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Parsnip Goulash over Double Rice",
-          "reason": "Hearty vegetable stew paired with extra rice to boost vegan energy intake.",
+          "title": "Vegan parsnip and potato goulash + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1595,8 +1655,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Massaman Protein Bowl",
-          "reason": "Protein-rich pea chunks in curry sauce perfect for a lean vegan meal.",
+          "title": "Massaman curry",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1651,8 +1711,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Slim Veggie Rice Pot",
-          "reason": "Ultra-light Asian stew designed for calorie-conscious plant-based eating.",
+          "title": "Asian rice and vegetable stew",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1673,8 +1733,8 @@
                 "So"
               ],
               "additives": [
-                "2",
-                "Kn"
+                "Kn",
+                "2"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1706,8 +1766,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Parsnip Goulash with Rice",
-          "reason": "Nutrient-dense root veggies and rice providing steady energy while cutting.",
+          "title": "Vegan parsnip and potato goulash + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1789,8 +1849,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Massaman Protein Curry",
-          "reason": "Satisfying plant protein curry offering great flavor on a frugal budget.",
+          "title": "Massaman curry",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1844,8 +1904,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Thrifty Rice Vegetable Stew",
-          "reason": "The most wallet-friendly vegan choice packed with warm veggies and rice.",
+          "title": "Asian rice and vegetable stew",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1866,8 +1926,8 @@
                 "So"
               ],
               "additives": [
-                "2",
-                "Kn"
+                "Kn",
+                "2"
               ],
               "standing": false,
               "diet": "vegan",
@@ -1898,8 +1958,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Parsnip Goulash and Rice Meal",
-          "reason": "Cost-effective, comforting vegetable stew balanced with wholesome rice.",
+          "title": "Vegan parsnip and potato goulash + Rice",
+          "reason": null,
           "picked_by": "rules",
           "items": [
             {
@@ -1991,5 +2051,5 @@
     ],
     "vegan": []
   },
-  "generated_on": "2026-11-18"
+  "generated_on": "2026-11-19"
 }

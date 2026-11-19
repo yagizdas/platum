@@ -6,9 +6,33 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-18T16:41:03.442063+00:00",
+  "fetched_at": "2026-11-19T16:44:26.348940+00:00",
   "warnings": [],
   "dishes": [
+    {
+      "name": "Lasagne Bolognese (hausgemacht)",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
     {
       "name": "Pasta Bolognese",
       "station": "Pasta",
@@ -56,19 +80,33 @@
       ],
       "additives": [
         "1",
-        "Kn",
         "2",
-        "3"
+        "3",
+        "Kn"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "BARLEY",
+        "CEREAL",
+        "DYESTUFF",
+        "GARLIC",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "PORK",
+        "PRESERVATIVES",
+        "SOY",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 5.0,
         "per_100g_eur": 0,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -80,9 +118,12 @@
         "Gl",
         "GlW",
         "Mi",
+        "So",
         "Sw"
       ],
       "additives": [
+        "Kn",
+        "2",
         "5",
         "99"
       ],
@@ -155,10 +196,13 @@
         "GlW",
         "Se",
         "Sf",
-        "So"
+        "So",
+        "Sw"
       ],
       "additives": [
-        "2"
+        "2",
+        "Kn",
+        "5"
       ],
       "is_vegan": true,
       "is_vegetarian": true,
@@ -237,31 +281,6 @@
       }
     },
     {
-      "name": "Schaschlik (1 Stück) mit Honig-Currysauce",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [
-        "S"
-      ],
-      "allergens": [
-        "Sf",
-        "Sl"
-      ],
-      "additives": [
-        "11"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      }
-    },
-    {
       "name": "Rinderroulade in Rotweinsauce (1 Stück)",
       "station": "Fleisch",
       "station_raw": "Fleisch",
@@ -284,11 +303,54 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "ALCOHOL",
+        "BEEF",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "MUSTARD",
+        "PORK",
+        "PRESERVATIVES",
+        "SULFITES",
+        "SULPHURS",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Schaschlik (1 Stück) mit Honig-Currysauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Sf",
+        "Sl"
+      ],
+      "additives": [
+        "11"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CELERY",
+        "MEAT",
+        "MUSTARD",
+        "PORK",
+        "SWEETENERS"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
       }
     },
     {
@@ -307,11 +369,16 @@
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CHICKEN_EGGS",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -327,11 +394,15 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "LACTOSE",
+        "MEAT",
+        "MILK"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -350,11 +421,17 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "GELATIN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "SOY"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
