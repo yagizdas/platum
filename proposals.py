@@ -59,6 +59,8 @@ def rejection_reason(combo, by_id, vegan):
         return "dessert_only"
     if all(item.get("standing") for item in dishes):
         return "standing_sides_only"
+    if not any(item["role"] == "main" and not item.get("standing") for item in dishes):
+        return "missing_main"
     if not shared_counters(dishes):
         return "no_shared_counter"
     return None

@@ -41,6 +41,11 @@ def load_pairing(path):
 
 def food(dish, cache):
     tag = validate_tag(cache[normalize(dish["name"])], name=dish["name"])
+    # The official counter is more reliable than a nutrition-model role for
+    # deciding whether something may anchor a lunch.  In particular, sweet
+    # entrees have historically been tagged as mains because they are large.
+    if dish["station"].casefold().startswith(("dessert", "süßspeise", "süssspeise")):
+        tag = {**tag, "role": "dessert"}
     if dish.get("standing"):
         tag = {**tag, "role": "side", "is_per_piece": False, "piece_weight_g": None,
                "name_en": dish.get("name_en", tag["name_en"])}

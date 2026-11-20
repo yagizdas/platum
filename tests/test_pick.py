@@ -21,7 +21,7 @@ def test_golden_lunches(config, fixture_menu, pairing, fixed_caps):
     result = build_today(m, tags, config, pairing=pairing, no_llm=True, proposals=read_json(FIXTURES / "proposals-v4.json"))
     expected = {
         "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 2)], 675, 29.4867) if fixed_caps else
-                    ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Reis', 2)], 540, 22.6983),
+                    ([('Fleischpflanzerl (Frikadelle)', 1), ('Reis', 2)], 483, 18.3645),
         "cut_all": ([('Fleischpflanzerl (Frikadelle)', 1), ('Reis', 1)], 348, -1.7821),
         "budget_all": ([('Käsekrainer (1 Stück)', 1)], 226, .1448),
         "bulk_vegan": ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 810, 34.8506) if fixed_caps else
@@ -293,8 +293,41 @@ def test_meal_minimums_reject_snack_portions_before_ranking(config, make_dish, g
     assert selected['protein'] == 20.25
     assert selected['items'][0]['count'] == 3
     assert choose([p for p in values if p['kcal'] < 300 or p['protein'] < 20], goal, config) is None
-    # Bulk has no minimum meal requirement.
-    assert choose(values[:1], 'bulk', config) is not None
+    assert choose(values, 'bulk', config) is None
+    assert choose(values[:1], 'bulk', config) is None
+
+
+def test_bulk_requires_a_substantial_protein_meal(config, make_dish):
+    dish, tag = make_dish('Small cheap stew', kcal=95, protein=5.5)
+    values = list(candidates([dish], {normalize(dish['name']): tag}, config))
+    assert choose([plate for plate in values if plate['kcal'] < 350], 'bulk', config) is None
+    assert choose([plate for plate in values if plate['protein'] < 25], 'bulk', config) is None
+
+
+def test_sweet_counter_dish_cannot_anchor_a_plate(config, make_dish):
+    sweet, tag = make_dish('Kaiserschmarrn', station='Süßspeise', kcal=190, protein=5)
+    side, side_tag = make_dish('Potato salad', station='Beilagen', role='side')
+    sweet_item = food(sweet, {normalize(sweet['name']): tag})
+    assert sweet_item['role'] == 'dessert'
+    tags = {normalize(sweet['name']): tag, normalize(side['name']): side_tag}
+    assert not list(candidates([sweet, side], tags, config,
+                               proposals=[[dish_id(sweet), dish_id(side)]]))
+
+
+def test_model_cannot_omit_real_mains_from_candidate_pool(config, make_dish):
+    dessert, dessert_tag = make_dish('Sweet dish', station='Süßspeise', kcal=190, protein=5)
+    steak, steak_tag = make_dish('Steak', station='Grill', vegan=False, piece=True,
+                                 piece_g=240, min_g=200, max_g=280, kcal=165, protein=16.5,
+                                 base=1)
+    side, side_tag = make_dish('Rice', station='Beilagen', role='side', kcal=130, protein=2.7)
+    tags = {normalize(dessert['name']): dessert_tag, normalize(steak['name']): steak_tag,
+            normalize(side['name']): side_tag}
+    values = list(candidates([dessert, steak, side], tags, config,
+                             proposals=[[dish_id(dessert), dish_id(side)]]))
+    selected = choose(values, 'bulk', config)
+    assert selected is not None
+    assert selected['items'][0]['name'] == 'Steak'
+    assert all(item['name'] != 'Sweet dish' for item in selected['items'])
 
 
 @pytest.mark.parametrize('kcal,protein,qualifies', [(300,20,True),(299.99,20,False),(300,19.99,False)])

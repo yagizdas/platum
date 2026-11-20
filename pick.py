@@ -86,6 +86,8 @@ def valid_plate(items, config, pairing=None):
         return False
     if all(i.get("standing") for i in items):
         return False
+    if not any(i["role"] == "main" and not i.get("standing") for i in items):
+        return False
     if not shared_counters(items):
         return False
     for i in items:
@@ -113,7 +115,18 @@ def plate(items):
 def candidates(dishes, cache, config, vegan=False, pairing=None, proposals=None):
     items = [food(d, cache) for d in dishes if not vegan or d.get("is_vegan") is True]
     by_id = {dish_id(i): i for i in items}
-    combos = fallback_proposals(items) if proposals is None else validate_proposals({"combos": proposals}, items, vegan=vegan)
+    # Model proposals add useful multi-dish trays, but must not decide which
+    # mains enter the candidate pool.  Always include deterministic coverage
+    # for every main so an omitted pasta, grill dish, or pizza can still rank.
+    if proposals is None:
+        combos = fallback_proposals(items)
+    else:
+        suggested = validate_proposals({"combos": proposals}, items, vegan=vegan)
+        # Single-main coverage is deliberately conservative: proposal trays
+        # retain their accompaniments, while omitted dishes still get a chance.
+        mains = [[dish_id(item)] for item in items
+                 if item["role"] == "main" and not item.get("standing")]
+        combos = sorted({tuple(combo) for combo in [*suggested, *mains]})
     for ids in combos:
         options = [portion_options(by_id[key], by_id[key], config, paired=True) for key in ids]
         for combo in itertools.product(*options):
