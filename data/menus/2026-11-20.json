@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-19T16:44:26.397098+00:00",
+  "fetched_at": "2026-11-20T10:10:10.250676+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -93,11 +93,19 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "BEEF",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -171,6 +179,35 @@
         "base_eur": 5.0,
         "per_100g_eur": 0,
         "source": "eat-api"
+      }
+    },
+    {
+      "name": "Schweinesteak (1 Stück) vom Grill (S vom Strohschwein) mit Champignonsauce",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi",
+        "So",
+        "Sw"
+      ],
+      "additives": [
+        "2",
+        "5",
+        "Kn",
+        "99"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {
@@ -257,11 +294,14 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "DYESTUFF",
+        "MEAT"
+      ],
       "price": {
-        "base_eur": 0,
-        "per_100g_eur": 0.9,
-        "source": "config"
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
       }
     },
     {
@@ -284,11 +324,20 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "PHOSPHATES",
+        "PORK",
+        "PRESERVATIVES",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -311,11 +360,21 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "FISH",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "MUSTARD",
+        "SWEETENERS",
+        "WHEAT"
+      ],
       "price": {
         "base_eur": 1.5,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {
@@ -366,11 +425,16 @@
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [],
+      "api_labels": [
+        "GELATIN",
+        "LACTOSE",
+        "MEAT",
+        "MILK"
+      ],
       "price": {
-        "base_eur": 0,
+        "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "config"
+        "source": "eat-api"
       }
     },
     {

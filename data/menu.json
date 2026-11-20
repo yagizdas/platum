@@ -1,38 +1,14 @@
 {
   "schema_version": 1,
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-19T16:44:26.348940+00:00",
+  "fetched_at": "2026-11-20T10:10:10.250676+00:00",
   "warnings": [],
   "dishes": [
-    {
-      "name": "Lasagne Bolognese (hausgemacht)",
-      "station": "Pasta",
-      "station_raw": "Pasta",
-      "markers": [
-        "R"
-      ],
-      "allergens": [
-        "Gl",
-        "GlW",
-        "Mi"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      }
-    },
     {
       "name": "Pasta Bolognese",
       "station": "Pasta",
@@ -65,12 +41,78 @@
       }
     },
     {
-      "name": "Pizza Salami",
+      "name": "Teigtaschen aus Rote Beete und Süßkartoffeln auf Blattspinat",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GARLIC",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Lasagne Bolognese (hausgemacht)",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "BEEF",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Pizza mit Putenschinken",
       "station": "Pizza",
       "station_raw": "Pizza",
-      "markers": [
-        "S"
-      ],
+      "markers": [],
       "allergens": [
         "Gl",
         "GlG",
@@ -79,10 +121,9 @@
         "So"
       ],
       "additives": [
-        "1",
         "2",
         "3",
-        "Kn"
+        "8"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
@@ -92,14 +133,45 @@
         "ANTIOXIDANTS",
         "BARLEY",
         "CEREAL",
-        "DYESTUFF",
-        "GARLIC",
         "GLUTEN",
         "LACTOSE",
         "MEAT",
         "MILK",
-        "PORK",
+        "PHOSPHATES",
         "PRESERVATIVES",
+        "SOY",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Pizza Kräuterkäse und gebratener Paprika",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "BARLEY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
         "SOY",
         "WHEAT"
       ],
@@ -122,34 +194,24 @@
         "Sw"
       ],
       "additives": [
-        "Kn",
         "2",
         "5",
+        "Kn",
         "99"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "ALCOHOL",
-        "CEREAL",
-        "GLUTEN",
-        "LACTOSE",
-        "MEAT",
-        "MILK",
-        "SULFITES",
-        "SULPHURS",
-        "WHEAT"
-      ],
+      "api_labels": [],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {
-      "name": "Thailändische Frühlingsrolle mit Sweet-Chilisauce",
+      "name": "Gemüsecurry",
       "station": "Wok",
       "station_raw": "Wok",
       "markers": [
@@ -158,10 +220,10 @@
       "allergens": [
         "Gl",
         "GlW",
-        "Sl"
+        "So"
       ],
       "additives": [
-        "11",
+        "2",
         "Kn"
       ],
       "is_vegan": true,
@@ -169,11 +231,11 @@
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CELERY",
         "CEREAL",
         "GARLIC",
         "GLUTEN",
-        "SWEETENERS",
+        "PRESERVATIVES",
+        "SOY",
         "VEGAN",
         "VEGETARIAN",
         "WHEAT"
@@ -185,23 +247,19 @@
       }
     },
     {
-      "name": "Curry-Mie-Nudeln mit Asiagemüse",
-      "station": "Wok",
-      "station_raw": "Wok",
+      "name": "Linseneintopf mit Gemüse",
+      "station": "Studitopf",
+      "station_raw": "Studitopf",
       "markers": [
         "v"
       ],
       "allergens": [
-        "Gl",
-        "GlW",
-        "Se",
-        "Sf",
-        "So",
+        "Sl",
         "Sw"
       ],
       "additives": [
-        "2",
-        "Kn",
+        "1",
+        "3",
         "5"
       ],
       "is_vegan": true,
@@ -209,37 +267,11 @@
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CEREAL",
-        "GLUTEN",
-        "MUSTARD",
-        "PRESERVATIVES",
-        "SESAME",
-        "SHELL_FRUITS",
-        "SOY",
-        "VEGAN",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Kürbis-Reistopf mit Tomaten",
-      "station": "Studitopf",
-      "station_raw": "Studitopf",
-      "markers": [
-        "v"
-      ],
-      "allergens": [],
-      "additives": [],
-      "is_vegan": true,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
+        "ANTIOXIDANTS",
+        "CELERY",
+        "DYESTUFF",
+        "SULFITES",
+        "SULPHURS",
         "VEGAN",
         "VEGETARIAN"
       ],
@@ -250,29 +282,21 @@
       }
     },
     {
-      "name": "Vegane Gulaschsuppe mit Soja, Kartoffeln und Paprika",
+      "name": "Vegane Kürbiscremesuppe",
       "station": "Unspecified",
       "station_raw": "",
-      "markers": [
-        "v"
+      "markers": [],
+      "allergens": [],
+      "additives": [
+        "1"
       ],
-      "allergens": [
-        "Gl",
-        "GlW",
-        "So"
-      ],
-      "additives": [],
-      "is_vegan": true,
-      "is_vegetarian": true,
+      "is_vegan": false,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CEREAL",
-        "GLUTEN",
-        "SOY",
-        "VEGAN",
-        "VEGETARIAN",
-        "WHEAT"
+        "DYESTUFF",
+        "MEAT"
       ],
       "price": {
         "base_eur": 0.0,
@@ -281,39 +305,33 @@
       }
     },
     {
-      "name": "Rinderroulade in Rotweinsauce (1 Stück)",
+      "name": "Krautwickerl (1 Stück) mit Speck-Zwiebel-Sauce und Kartoffelpüree",
       "station": "Fleisch",
       "station_raw": "Fleisch",
       "markers": [
-        "R",
         "S"
       ],
       "allergens": [
         "Gl",
-        "GlW",
-        "Sf",
-        "Sw"
+        "GlW"
       ],
       "additives": [
         "2",
-        "5",
-        "99"
+        "3",
+        "8"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "ALCOHOL",
-        "BEEF",
+        "ANTIOXIDANTS",
         "CEREAL",
         "GLUTEN",
         "MEAT",
-        "MUSTARD",
+        "PHOSPHATES",
         "PORK",
         "PRESERVATIVES",
-        "SULFITES",
-        "SULPHURS",
         "WHEAT"
       ],
       "price": {
@@ -323,45 +341,53 @@
       }
     },
     {
-      "name": "Schaschlik (1 Stück) mit Honig-Currysauce",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [
-        "S"
-      ],
+      "name": "Panierter Seelachs (1 Stück) mit Remouladensuce",
+      "station": "Fisch",
+      "station_raw": "Fisch",
+      "markers": [],
       "allergens": [
-        "Sf",
-        "Sl"
+        "Ei",
+        "Fi",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sf"
       ],
       "additives": [
-        "11"
+        "9"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CELERY",
-        "MEAT",
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "FISH",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
         "MUSTARD",
-        "PORK",
-        "SWEETENERS"
+        "SWEETENERS",
+        "WHEAT"
       ],
       "price": {
-        "base_eur": 1.0,
+        "base_eur": 1.5,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       }
     },
     {
-      "name": "Kartoffelauflauf mit Kürbis mit Kräuterdip",
-      "station": "Vegan",
-      "station_raw": "Vegan",
+      "name": "Kaiserschmarrn mit Zwetschgenröstern",
+      "station": "Süßspeise",
+      "station_raw": "Süßspeise",
       "markers": [
         "f"
       ],
       "allergens": [
         "Ei",
+        "Gl",
+        "GlW",
         "Mi"
       ],
       "additives": [],
@@ -370,10 +396,13 @@
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "CEREAL",
         "CHICKEN_EGGS",
+        "GLUTEN",
         "LACTOSE",
         "MILK",
-        "VEGETARIAN"
+        "VEGETARIAN",
+        "WHEAT"
       ],
       "price": {
         "base_eur": 0.0,
@@ -382,37 +411,12 @@
       }
     },
     {
-      "name": "Gegrillte Zucchini mit Kräuterdip",
-      "station": "Unspecified",
-      "station_raw": "",
-      "markers": [],
-      "allergens": [
-        "Mi"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "LACTOSE",
-        "MEAT",
-        "MILK"
-      ],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Weiße Schokoladenmousse mit Heidelbeeren",
+      "name": "Panna Cotta mit Erdbeersauce",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
       "markers": [],
       "allergens": [
-        "Mi",
-        "So"
+        "Mi"
       ],
       "additives": [
         "14"
@@ -425,8 +429,7 @@
         "GELATIN",
         "LACTOSE",
         "MEAT",
-        "MILK",
-        "SOY"
+        "MILK"
       ],
       "price": {
         "base_eur": 1.0,

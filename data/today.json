@@ -1,10 +1,10 @@
 {
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-19T16:44:26.348940+00:00",
+  "fetched_at": "2026-11-20T10:10:10.250676+00:00",
   "warnings": [],
   "schema_version": 2,
   "menu_count": 15,
@@ -134,177 +134,40 @@
       "note": null,
       "plates": [
         {
-          "title": "Grilled pork steak from straw pork + Rice",
+          "title": "Lentil stew + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Schweinesteak (1 Stück) vom Grill (S vom Strohschwein) mit Champignonsauce",
-              "name_en": "Grilled pork steak (1 piece) from straw pork with mushroom sauce",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 240.0,
-              "price_cents": 316,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "So",
-                "Sw"
-              ],
-              "additives": [
-                "Kn",
-                "2",
-                "5",
-                "99"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "58331f78c5e92440",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 396.0,
-              "protein_g": 39.6
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 586,
-            "price_eur": 5.86,
-            "weight_g": 540.0,
-            "kcal": 786.0,
-            "protein_g": 47.7,
-            "carbs_g": 91.2,
-            "fat_g": 23.7
-          },
-          "score": {
-            "price": -2.93,
-            "price_over_budget": 0.0,
-            "energy_value": 0.1341296928327645,
-            "protein_value": 0.3391638225255973,
-            "protein": 7.155000000000001,
-            "energy": 0.23833333333333334,
-            "total": 4.9366
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Pasta Bolognese",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta Bolognese",
-              "name_en": "Pasta Bolognese",
-              "station": "Pasta",
+              "name": "Linseneintopf mit Gemüse",
+              "name_en": "Lentil stew with vegetables",
+              "station": "Studitopf",
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
-              "markers": [
-                "R"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "id": "2a2d8151db8db8e0",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 29.25
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 29.25,
-            "carbs_g": 83.25,
-            "fat_g": 21.6
-          },
-          "score": {
-            "price": -2.525,
-            "price_over_budget": 0.0,
-            "energy_value": 0.1292079207920792,
-            "protein_value": 0.24133663366336633,
-            "protein": 4.3875,
-            "energy": 0.12708333333333333,
-            "total": 2.3601
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Thai spring roll + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Thailändische Frühlingsrolle mit Sweet-Chilisauce",
-              "name_en": "Thai spring roll with sweet chili sauce",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 250,
-              "price_cents": 225,
+              "price_cents": 149,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [
-                "Gl",
-                "GlW",
-                "Sl"
+                "Sl",
+                "Sw"
               ],
               "additives": [
-                "11",
-                "Kn"
+                "1",
+                "3",
+                "5"
               ],
               "standing": false,
               "diet": "vegan",
-              "id": "86e7cb9cc6030dcb",
-              "serving": "1 piece",
+              "id": "436e569b9addb4f7",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 487.5,
-              "protein_g": 11.25
+              "kcal": 427.5,
+              "protein_g": 24.75
             },
             {
               "name": "Reis",
@@ -312,10 +175,10 @@
               "station": "Beilagen",
               "role": "side",
               "texture": "dry",
-              "count": 2,
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -325,71 +188,65 @@
               "standing": true,
               "diet": "vegan",
               "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
+              "serving": "1 scoop",
               "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 495,
-            "price_eur": 4.95,
-            "weight_g": 550,
-            "kcal": 877.5,
-            "protein_g": 19.35,
-            "carbs_g": 149.0,
-            "fat_g": 20.9
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 622.5,
+            "protein_g": 28.8,
+            "carbs_g": 100.5,
+            "fat_g": 9.45
           },
           "score": {
-            "price": -2.475,
+            "price": -1.42,
             "price_over_budget": 0.0,
-            "energy_value": 0.17727272727272728,
-            "protein_value": 0.16287878787878787,
-            "protein": 2.9025000000000003,
-            "energy": 0.3145833333333333,
-            "total": 1.0822
+            "energy_value": 0.21919014084507044,
+            "protein_value": 0.4225352112676057,
+            "protein": 4.32,
+            "energy": 0.10208333333333333,
+            "total": 3.6438
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Curry mie noodles + Potato salad",
+          "title": "Shredded pancake + Potato salad",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Curry-Mie-Nudeln mit Asiagemüse",
-              "name_en": "Curry mie noodles with Asian vegetables",
-              "station": "Wok",
+              "name": "Kaiserschmarrn mit Zwetschgenröstern",
+              "name_en": "Shredded pancake with plum compote",
+              "station": "Süßspeise",
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
               "price_cents": 405,
-              "is_vegan": true,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
               "allergens": [
+                "Ei",
                 "Gl",
                 "GlW",
-                "Se",
-                "Sf",
-                "So",
-                "Sw"
+                "Mi"
               ],
-              "additives": [
-                "2",
-                "Kn",
-                "5"
-              ],
+              "additives": [],
               "standing": false,
-              "diet": "vegan",
-              "id": "f1901afbfb5de9d6",
+              "diet": "vegetarian",
+              "id": "fbaa4f5da9d64709",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 17.1
+              "kcal": 855.0,
+              "protein_g": 22.5
             },
             {
               "name": "Kartoffelsalat",
@@ -418,864 +275,53 @@
             "price_cents": 540,
             "price_eur": 5.4,
             "weight_g": 600,
-            "kcal": 825.0,
-            "protein_g": 19.8,
-            "carbs_g": 116.25,
-            "fat_g": 30.3
+            "kcal": 1027.5,
+            "protein_g": 25.2,
+            "carbs_g": 156.75,
+            "fat_g": 32.55
           },
           "score": {
             "price": -2.7,
             "price_over_budget": 0.0,
-            "energy_value": 0.15277777777777776,
-            "protein_value": 0.15277777777777776,
-            "protein": 2.97,
-            "energy": 0.2708333333333333,
-            "total": 0.8464
+            "energy_value": 0.19027777777777777,
+            "protein_value": 0.19444444444444442,
+            "protein": 3.78,
+            "energy": 0.4395833333333333,
+            "total": 1.9043
           },
           "has_estimated_prices": true
-        }
-      ]
-    },
-    "cut_all": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Grilled pork steak from straw pork",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Schweinesteak (1 Stück) vom Grill (S vom Strohschwein) mit Champignonsauce",
-              "name_en": "Grilled pork steak (1 piece) from straw pork with mushroom sauce",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 240.0,
-              "price_cents": 316,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "So",
-                "Sw"
-              ],
-              "additives": [
-                "Kn",
-                "2",
-                "5",
-                "99"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "58331f78c5e92440",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 396.0,
-              "protein_g": 39.6
-            }
-          ],
-          "total": {
-            "price_cents": 316,
-            "price_eur": 3.16,
-            "weight_g": 240.0,
-            "kcal": 396.0,
-            "protein_g": 39.6,
-            "carbs_g": 7.2,
-            "fat_g": 22.8
-          },
-          "score": {
-            "price": -0.79,
-            "price_over_budget": 0.0,
-            "protein_density": 2.5,
-            "protein_value": 0.5221518987341772,
-            "protein": 0.32000000000000006,
-            "energy": 0.0,
-            "total": 2.5522
-          },
-          "has_estimated_prices": false
         },
         {
-          "title": "Pasta Bolognese",
+          "title": "Beetroot and sweet potato dumplings + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Pasta Bolognese",
-              "name_en": "Pasta Bolognese",
+              "name": "Teigtaschen aus Rote Beete und Süßkartoffeln auf Blattspinat",
+              "name_en": "Beetroot and sweet potato dumplings on leaf spinach",
               "station": "Pasta",
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 505,
+              "price_cents": 405,
               "is_vegan": false,
               "markers": [
-                "R"
+                "f"
               ],
               "allergens": [
+                "Ei",
                 "Gl",
                 "GlW",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "id": "2a2d8151db8db8e0",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 29.25
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 29.25,
-            "carbs_g": 83.25,
-            "fat_g": 21.6
-          },
-          "score": {
-            "price": -1.2625,
-            "price_over_budget": 0.0,
-            "protein_density": 1.1206896551724137,
-            "protein_value": 0.24133663366336633,
-            "protein": -0.15,
-            "energy": 0.0,
-            "total": -0.0505
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Curry mie noodles",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Curry-Mie-Nudeln mit Asiagemüse",
-              "name_en": "Curry mie noodles with Asian vegetables",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se",
-                "Sf",
-                "So",
-                "Sw"
+                "Mi"
               ],
               "additives": [
-                "2",
-                "Kn",
-                "5"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "f1901afbfb5de9d6",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 17.1
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 17.1,
-            "carbs_g": 94.5,
-            "fat_g": 22.5
-          },
-          "score": {
-            "price": -1.0125,
-            "price_over_budget": 0.0,
-            "protein_density": 0.6551724137931034,
-            "protein_value": 0.17592592592592593,
-            "protein": -2.5799999999999996,
-            "energy": 0.0,
-            "total": -2.7614
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Thai spring roll + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Thailändische Frühlingsrolle mit Sweet-Chilisauce",
-              "name_en": "Thai spring roll with sweet chili sauce",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 250,
-              "price_cents": 225,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl"
-              ],
-              "additives": [
-                "11",
                 "Kn"
               ],
               "standing": false,
-              "diet": "vegan",
-              "id": "86e7cb9cc6030dcb",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 487.5,
-              "protein_g": 11.25
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 360,
-            "price_eur": 3.6,
-            "weight_g": 400,
-            "kcal": 682.5,
-            "protein_g": 15.3,
-            "carbs_g": 107.0,
-            "fat_g": 20.45
-          },
-          "score": {
-            "price": -0.9,
-            "price_over_budget": 0.0,
-            "protein_density": 0.5604395604395604,
-            "protein_value": 0.17708333333333334,
-            "protein": -2.9399999999999995,
-            "energy": 0.0,
-            "total": -3.1025
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Pumpkin and rice stew + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Kürbis-Reistopf mit Tomaten",
-              "name_en": "Pumpkin and rice stew with tomatoes",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "86777cc79310640a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 396.0,
-              "protein_g": 9.45
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 284,
-            "price_eur": 2.84,
-            "weight_g": 600,
-            "kcal": 591.0,
-            "protein_g": 13.5,
-            "carbs_g": 107.25,
-            "fat_g": 10.35
-          },
-          "score": {
-            "price": -0.71,
-            "price_over_budget": 0.0,
-            "protein_density": 0.5710659898477157,
-            "protein_value": 0.19806338028169015,
-            "protein": -3.3,
-            "energy": 0.0,
-            "total": -3.2409
-          },
-          "has_estimated_prices": true
-        }
-      ]
-    },
-    "budget_all": {
-      "state": "ready",
-      "goal": "budget",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Grilled pork steak from straw pork + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Schweinesteak (1 Stück) vom Grill (S vom Strohschwein) mit Champignonsauce",
-              "name_en": "Grilled pork steak (1 piece) from straw pork with mushroom sauce",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 240.0,
-              "price_cents": 316,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "So",
-                "Sw"
-              ],
-              "additives": [
-                "Kn",
-                "2",
-                "5",
-                "99"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "58331f78c5e92440",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 396.0,
-              "protein_g": 39.6
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 451,
-            "price_eur": 4.51,
-            "weight_g": 390.0,
-            "kcal": 591.0,
-            "protein_g": 43.65,
-            "carbs_g": 49.2,
-            "fat_g": 23.25
-          },
-          "score": {
-            "price": -2.255,
-            "price_over_budget": 0.0,
-            "energy_value": 0.524168514412417,
-            "energy": 0.027333333333333338,
-            "protein": 0.3153333333333333,
-            "total": -1.3882
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Thai spring roll + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Thailändische Frühlingsrolle mit Sweet-Chilisauce",
-              "name_en": "Thai spring roll with sweet chili sauce",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 250,
-              "price_cents": 225,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl"
-              ],
-              "additives": [
-                "11",
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "86e7cb9cc6030dcb",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 487.5,
-              "protein_g": 11.25
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 495,
-            "price_eur": 4.95,
-            "weight_g": 550,
-            "kcal": 877.5,
-            "protein_g": 19.35,
-            "carbs_g": 149.0,
-            "fat_g": 20.9
-          },
-          "score": {
-            "price": -2.475,
-            "price_over_budget": 0.0,
-            "energy_value": 0.7090909090909091,
-            "energy": 0.21833333333333332,
-            "protein": -0.12999999999999973,
-            "total": -1.6776
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Pasta Bolognese",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta Bolognese",
-              "name_en": "Pasta Bolognese",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
-              "markers": [
-                "R"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "id": "2a2d8151db8db8e0",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 29.25
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 29.25,
-            "carbs_g": 83.25,
-            "fat_g": 21.6
-          },
-          "score": {
-            "price": -2.525,
-            "price_over_budget": 0.0,
-            "energy_value": 0.5168316831683168,
-            "energy": 0.06833333333333333,
-            "protein": 0.12333333333333334,
-            "total": -1.8165
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Curry mie noodles",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Curry-Mie-Nudeln mit Asiagemüse",
-              "name_en": "Curry mie noodles with Asian vegetables",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se",
-                "Sf",
-                "So",
-                "Sw"
-              ],
-              "additives": [
-                "2",
-                "Kn",
-                "5"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "f1901afbfb5de9d6",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 17.1
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 17.1,
-            "carbs_g": 94.5,
-            "fat_g": 22.5
-          },
-          "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.6444444444444445,
-            "energy": 0.06833333333333333,
-            "protein": -0.5799999999999997,
-            "total": -1.8922
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pumpkin and rice stew + Potato salad",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Kürbis-Reistopf mit Tomaten",
-              "name_en": "Pumpkin and rice stew with tomatoes",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "86777cc79310640a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 396.0,
-              "protein_g": 9.45
-            },
-            {
-              "name": "Kartoffelsalat",
-              "name_en": "Potato salad",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "meat",
-              "id": "73bbe2bb9698caf4",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 172.5,
-              "protein_g": 2.7
-            }
-          ],
-          "total": {
-            "price_cents": 284,
-            "price_eur": 2.84,
-            "weight_g": 600,
-            "kcal": 568.5,
-            "protein_g": 12.15,
-            "carbs_g": 87.0,
-            "fat_g": 17.7
-          },
-          "score": {
-            "price": -1.42,
-            "price_over_budget": 0.0,
-            "energy_value": 0.8007042253521127,
-            "energy": 0.012333333333333333,
-            "protein": -1.5700000000000003,
-            "total": -2.177
-          },
-          "has_estimated_prices": true
-        }
-      ]
-    },
-    "bulk_vegan": {
-      "state": "ready",
-      "goal": "bulk",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Thai spring roll + Pumpkin and rice stew + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Thailändische Frühlingsrolle mit Sweet-Chilisauce",
-              "name_en": "Thai spring roll with sweet chili sauce",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 250,
-              "price_cents": 225,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl"
-              ],
-              "additives": [
-                "11",
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "86e7cb9cc6030dcb",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 487.5,
-              "protein_g": 11.25
-            },
-            {
-              "name": "Kürbis-Reistopf mit Tomaten",
-              "name_en": "Pumpkin and rice stew with tomatoes",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "86777cc79310640a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 396.0,
-              "protein_g": 9.45
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 644,
-            "price_eur": 6.44,
-            "weight_g": 1000,
-            "kcal": 1273.5,
-            "protein_g": 28.8,
-            "carbs_g": 214.25,
-            "fat_g": 30.8
-          },
-          "score": {
-            "price": -3.22,
-            "price_over_budget": 0.0,
-            "energy_value": 0.19774844720496892,
-            "protein_value": 0.18633540372670807,
-            "protein": 4.319999999999999,
-            "energy": 0.6445833333333333,
-            "total": 2.1287
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Curry mie noodles + Rice",
-          "reason": null,
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Curry-Mie-Nudeln mit Asiagemüse",
-              "name_en": "Curry mie noodles with Asian vegetables",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se",
-                "Sf",
-                "So",
-                "Sw"
-              ],
-              "additives": [
-                "2",
-                "Kn",
-                "5"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "f1901afbfb5de9d6",
+              "diet": "vegetarian",
+              "id": "d67d60114834c67e",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 652.5,
@@ -1312,8 +358,8 @@
             "weight_g": 750,
             "kcal": 1042.5,
             "protein_g": 25.2,
-            "carbs_g": 178.5,
-            "fat_g": 23.4
+            "carbs_g": 176.25,
+            "fat_g": 22.95
           },
           "score": {
             "price": -3.375,
@@ -1325,31 +371,22 @@
             "total": 1.1671
           },
           "has_estimated_prices": true
-        }
-      ]
-    },
-    "cut_vegan": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
-      "plates": [
+        },
         {
-          "title": "Curry mie noodles",
+          "title": "Vegetable curry + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Curry-Mie-Nudeln mit Asiagemüse",
-              "name_en": "Curry mie noodles with Asian vegetables",
+              "name": "Gemüsecurry",
+              "name_en": "Vegetable curry",
               "station": "Wok",
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -1357,19 +394,162 @@
               "allergens": [
                 "Gl",
                 "GlW",
-                "Se",
-                "Sf",
-                "So",
-                "Sw"
+                "So"
               ],
               "additives": [
                 "2",
-                "Kn",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "42225c9c702dc308",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 142.5,
+              "protein_g": 3.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 532.5,
+            "protein_g": 11.85,
+            "carbs_g": 96.0,
+            "fat_g": 9.15
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.1314814814814815,
+            "protein_value": 0.12191358024691358,
+            "protein": 1.7774999999999999,
+            "energy": 0.027083333333333334,
+            "total": 0.033
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Lentil stew",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Linseneintopf mit Gemüse",
+              "name_en": "Lentil stew with vegetables",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
                 "5"
               ],
               "standing": false,
               "diet": "vegan",
-              "id": "f1901afbfb5de9d6",
+              "id": "436e569b9addb4f7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 24.75,
+            "carbs_g": 58.5,
+            "fat_g": 9.0
+          },
+          "score": {
+            "price": -0.3725,
+            "price_over_budget": 0.0,
+            "protein_density": 1.4473684210526316,
+            "protein_value": 0.6921140939597316,
+            "protein": -1.05,
+            "energy": 0.0,
+            "total": 0.717
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Beetroot and sweet potato dumplings",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Teigtaschen aus Rote Beete und Süßkartoffeln auf Blattspinat",
+              "name_en": "Beetroot and sweet potato dumplings on leaf spinach",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "d67d60114834c67e",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 652.5,
@@ -1382,8 +562,8 @@
             "weight_g": 450,
             "kcal": 652.5,
             "protein_g": 17.1,
-            "carbs_g": 94.5,
-            "fat_g": 22.5
+            "carbs_g": 92.25,
+            "fat_g": 22.05
           },
           "score": {
             "price": -1.0125,
@@ -1397,20 +577,75 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Thai spring roll + Pumpkin and rice stew",
+          "title": "Shredded pancake",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Thailändische Frühlingsrolle mit Sweet-Chilisauce",
-              "name_en": "Thai spring roll with sweet chili sauce",
+              "name": "Kaiserschmarrn mit Zwetschgenröstern",
+              "name_en": "Shredded pancake with plum compote",
+              "station": "Süßspeise",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "fbaa4f5da9d64709",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 570.0,
+              "protein_g": 15.0
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 570.0,
+            "protein_g": 15.0,
+            "carbs_g": 90.0,
+            "fat_g": 16.5
+          },
+          "score": {
+            "price": -0.675,
+            "price_over_budget": 0.0,
+            "protein_density": 0.6578947368421052,
+            "protein_value": 0.23148148148148148,
+            "protein": -3.0,
+            "energy": 0.0,
+            "total": -2.7856
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gemüsecurry",
+              "name_en": "Vegetable curry",
               "station": "Wok",
               "role": "main",
               "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 250,
-              "price_cents": 225,
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -1418,113 +653,82 @@
               "allergens": [
                 "Gl",
                 "GlW",
-                "Sl"
+                "So"
               ],
               "additives": [
-                "11",
+                "2",
                 "Kn"
               ],
               "standing": false,
               "diet": "vegan",
-              "id": "86e7cb9cc6030dcb",
-              "serving": "1 piece",
+              "id": "42225c9c702dc308",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 487.5,
-              "protein_g": 11.25
+              "kcal": 285.0,
+              "protein_g": 7.5
             },
             {
-              "name": "Kürbis-Reistopf mit Tomaten",
-              "name_en": "Pumpkin and rice stew with tomatoes",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
-              "price_cents": 99,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [],
               "additives": [],
-              "standing": false,
+              "standing": true,
               "diet": "vegan",
-              "id": "86777cc79310640a",
+              "id": "9f0686a5bcd7307e",
               "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 264.0,
-              "protein_g": 6.3
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 324,
-            "price_eur": 3.24,
-            "weight_g": 550,
-            "kcal": 751.5,
-            "protein_g": 17.55,
-            "carbs_g": 108.5,
-            "fat_g": 26.6
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 675.0,
+            "protein_g": 15.6,
+            "carbs_g": 108.0,
+            "fat_g": 17.4
           },
           "score": {
-            "price": -0.81,
+            "price": -1.35,
             "price_over_budget": 0.0,
-            "protein_density": 0.5838323353293413,
-            "protein_value": 0.22569444444444445,
-            "protein": -2.4899999999999998,
-            "energy": -0.515,
-            "total": -3.0055
+            "protein_density": 0.5777777777777777,
+            "protein_value": 0.12037037037037036,
+            "protein": -2.8800000000000003,
+            "energy": 0.0,
+            "total": -3.5319
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         }
       ]
     },
-    "budget_vegan": {
+    "budget_all": {
       "state": "ready",
       "goal": "budget",
-      "vegan": true,
+      "vegan": false,
       "relaxed": false,
       "note": null,
       "plates": [
         {
-          "title": "Thai spring roll + Pumpkin and rice stew",
+          "title": "Lentil stew + Rice",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Thailändische Frühlingsrolle mit Sweet-Chilisauce",
-              "name_en": "Thai spring roll with sweet chili sauce",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 250,
-              "price_cents": 225,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sl"
-              ],
-              "additives": [
-                "11",
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "86e7cb9cc6030dcb",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 487.5,
-              "protein_g": 11.25
-            },
-            {
-              "name": "Kürbis-Reistopf mit Tomaten",
-              "name_en": "Pumpkin and rice stew with tomatoes",
+              "name": "Linseneintopf mit Gemüse",
+              "name_en": "Lentil stew with vegetables",
               "station": "Studitopf",
               "role": "main",
               "texture": "saucy",
@@ -1536,71 +740,152 @@
               "markers": [
                 "v"
               ],
-              "allergens": [],
-              "additives": [],
+              "allergens": [
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5"
+              ],
               "standing": false,
               "diet": "vegan",
-              "id": "86777cc79310640a",
+              "id": "436e569b9addb4f7",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 396.0,
-              "protein_g": 9.45
+              "kcal": 427.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 374,
-            "price_eur": 3.74,
-            "weight_g": 700,
-            "kcal": 883.5,
-            "protein_g": 20.7,
-            "carbs_g": 130.25,
-            "fat_g": 29.9
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 622.5,
+            "protein_g": 28.8,
+            "carbs_g": 100.5,
+            "fat_g": 9.45
           },
           "score": {
-            "price": -1.87,
+            "price": -1.42,
             "price_over_budget": 0.0,
-            "energy_value": 0.9449197860962566,
-            "energy": 0.22233333333333336,
-            "protein": 0.009333333333333325,
-            "total": -0.6934
+            "energy_value": 0.8767605633802817,
+            "energy": 0.04833333333333333,
+            "protein": 0.11733333333333335,
+            "total": -0.3776
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         },
         {
-          "title": "Curry mie noodles + Rice",
+          "title": "Shredded pancake",
           "reason": null,
           "picked_by": "rules",
           "items": [
             {
-              "name": "Curry-Mie-Nudeln mit Asiagemüse",
-              "name_en": "Curry mie noodles with Asian vegetables",
-              "station": "Wok",
+              "name": "Kaiserschmarrn mit Zwetschgenröstern",
+              "name_en": "Shredded pancake with plum compote",
+              "station": "Süßspeise",
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
               "price_cents": 405,
-              "is_vegan": true,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
               "allergens": [
+                "Ei",
                 "Gl",
                 "GlW",
-                "Se",
-                "Sf",
-                "So",
-                "Sw"
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "id": "fbaa4f5da9d64709",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 855.0,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 855.0,
+            "protein_g": 22.5,
+            "carbs_g": 135.0,
+            "fat_g": 24.75
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.8444444444444444,
+            "energy": 0.20333333333333334,
+            "protein": 0.03333333333333333,
+            "total": -0.9439
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Beetroot and sweet potato dumplings + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Teigtaschen aus Rote Beete und Süßkartoffeln auf Blattspinat",
+              "name_en": "Beetroot and sweet potato dumplings on leaf spinach",
+              "station": "Pasta",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
               ],
               "additives": [
-                "2",
-                "Kn",
-                "5"
+                "Kn"
               ],
               "standing": false,
-              "diet": "vegan",
-              "id": "f1901afbfb5de9d6",
+              "diet": "vegetarian",
+              "id": "d67d60114834c67e",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 652.5,
@@ -1637,8 +922,8 @@
             "weight_g": 600,
             "kcal": 847.5,
             "protein_g": 21.15,
-            "carbs_g": 136.5,
-            "fat_g": 22.95
+            "carbs_g": 134.25,
+            "fat_g": 22.5
           },
           "score": {
             "price": -2.7,
@@ -1649,6 +934,573 @@
             "total": -1.8586
           },
           "has_estimated_prices": true
+        },
+        {
+          "title": "Vegetable curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gemüsecurry",
+              "name_en": "Vegetable curry",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "42225c9c702dc308",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 11.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 817.5,
+            "protein_g": 19.35,
+            "carbs_g": 120.0,
+            "fat_g": 25.65
+          },
+          "score": {
+            "price": -3.375,
+            "price_over_budget": 0.0,
+            "energy_value": 0.48444444444444446,
+            "energy": 0.17833333333333334,
+            "protein": -0.12999999999999973,
+            "total": -2.8422
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Lentil stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Linseneintopf mit Gemüse",
+              "name_en": "Lentil stew with vegetables",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "436e569b9addb4f7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 622.5,
+            "protein_g": 28.8,
+            "carbs_g": 100.5,
+            "fat_g": 9.45
+          },
+          "score": {
+            "price": -1.42,
+            "price_over_budget": 0.0,
+            "energy_value": 0.21919014084507044,
+            "protein_value": 0.4225352112676057,
+            "protein": 4.32,
+            "energy": 0.10208333333333333,
+            "total": 3.6438
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Vegetable curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gemüsecurry",
+              "name_en": "Vegetable curry",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "42225c9c702dc308",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 142.5,
+              "protein_g": 3.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 532.5,
+            "protein_g": 11.85,
+            "carbs_g": 96.0,
+            "fat_g": 9.15
+          },
+          "score": {
+            "price": -2.025,
+            "price_over_budget": 0.0,
+            "energy_value": 0.1314814814814815,
+            "protein_value": 0.12191358024691358,
+            "protein": 1.7774999999999999,
+            "energy": 0.027083333333333334,
+            "total": 0.033
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Lentil stew",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Linseneintopf mit Gemüse",
+              "name_en": "Lentil stew with vegetables",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "436e569b9addb4f7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 24.75,
+            "carbs_g": 58.5,
+            "fat_g": 9.0
+          },
+          "score": {
+            "price": -0.3725,
+            "price_over_budget": 0.0,
+            "protein_density": 1.4473684210526316,
+            "protein_value": 0.6921140939597316,
+            "protein": -1.05,
+            "energy": 0.0,
+            "total": 0.717
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gemüsecurry",
+              "name_en": "Vegetable curry",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "42225c9c702dc308",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 285.0,
+              "protein_g": 7.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 675.0,
+            "protein_g": 15.6,
+            "carbs_g": 108.0,
+            "fat_g": 17.4
+          },
+          "score": {
+            "price": -1.35,
+            "price_over_budget": 0.0,
+            "protein_density": 0.5777777777777777,
+            "protein_value": 0.12037037037037036,
+            "protein": -2.8800000000000003,
+            "energy": 0.0,
+            "total": -3.5319
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Lentil stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Linseneintopf mit Gemüse",
+              "name_en": "Lentil stew with vegetables",
+              "station": "Studitopf",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "436e569b9addb4f7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 622.5,
+            "protein_g": 28.8,
+            "carbs_g": 100.5,
+            "fat_g": 9.45
+          },
+          "score": {
+            "price": -1.42,
+            "price_over_budget": 0.0,
+            "energy_value": 0.8767605633802817,
+            "energy": 0.04833333333333333,
+            "protein": 0.11733333333333335,
+            "total": -0.3776
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Vegetable curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "items": [
+            {
+              "name": "Gemüsecurry",
+              "name_en": "Vegetable curry",
+              "station": "Wok",
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "id": "42225c9c702dc308",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 11.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 817.5,
+            "protein_g": 19.35,
+            "carbs_g": 120.0,
+            "fat_g": 25.65
+          },
+          "score": {
+            "price": -3.375,
+            "price_over_budget": 0.0,
+            "energy_value": 0.48444444444444446,
+            "energy": 0.17833333333333334,
+            "protein": -0.12999999999999973,
+            "total": -2.8422
+          },
+          "has_estimated_prices": true
         }
       ]
     }
@@ -1656,47 +1508,33 @@
   "extras": {
     "all": [
       {
-        "name": "Vegane Gulaschsuppe mit Soja, Kartoffeln und Paprika",
-        "name_en": "Vegan goulash soup with soy, potatoes and bell pepper",
+        "name": "Vegane Kürbiscremesuppe",
+        "name_en": "Vegan pumpkin cream soup",
         "station": "Unspecified",
         "weight_g": 300,
         "price_cents": 99,
-        "is_vegan": true,
-        "diet": "vegan",
+        "is_vegan": false,
+        "diet": "meat",
         "serving": "2 scoops",
-        "kcal": 195.0,
-        "protein_g": 10.5,
+        "kcal": 144.0,
+        "protein_g": 3.3,
         "price_source": "eat-api"
       },
       {
-        "name": "Weiße Schokoladenmousse mit Heidelbeeren",
-        "name_en": "White chocolate mousse with blueberries",
+        "name": "Panna Cotta mit Erdbeersauce",
+        "name_en": "Panna cotta with strawberry sauce",
         "station": "Dessert (Glas)",
-        "weight_g": 120.0,
-        "price_cents": 208,
+        "weight_g": 140,
+        "price_cents": 226,
         "is_vegan": false,
         "diet": "meat",
         "serving": "1 piece",
-        "kcal": 312.0,
-        "protein_g": 5.4,
+        "kcal": 294.0,
+        "protein_g": 4.34,
         "price_source": "eat-api"
       }
     ],
-    "vegan": [
-      {
-        "name": "Vegane Gulaschsuppe mit Soja, Kartoffeln und Paprika",
-        "name_en": "Vegan goulash soup with soy, potatoes and bell pepper",
-        "station": "Unspecified",
-        "weight_g": 300,
-        "price_cents": 99,
-        "is_vegan": true,
-        "diet": "vegan",
-        "serving": "2 scoops",
-        "kcal": 195.0,
-        "protein_g": 10.5,
-        "price_source": "eat-api"
-      }
-    ]
+    "vegan": []
   },
-  "generated_on": "2026-11-19"
+  "generated_on": "2026-11-20"
 }
