@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/48.json",
-  "fetched_at": "2026-11-20T10:42:15.351879+00:00",
+  "fetched_at": "2026-11-20T16:19:22.518358+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -65,6 +65,30 @@
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
+      }
+    },
+    {
+      "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "config"
       }
     },
     {
@@ -149,8 +173,8 @@
         "So"
       ],
       "additives": [
-        "2",
-        "Kn"
+        "Kn",
+        "2"
       ],
       "is_vegan": true,
       "is_vegetarian": true,
