@@ -86,7 +86,7 @@ jobs:
             destination=$2
             mkdir -p "$destination/data" "$destination/icons"
             cp "$source/index.html" "$destination/index.html"
-            cp "$source"/{menu.html,menu.css,landing.css,landing.js,dish-icons.js,menu-days.js,report-config.js,report-client.js} "$destination/"
+            cp "$source"/{menu.html,menu.css,landing.css,landing.js,dish-icons.js,menu-days.js,font-trial.js,report-config.js,report-client.js} "$destination/"
             cp -R "$source/assets" "$destination/assets"
             cp "$source/manifest.webmanifest" "$destination/manifest.webmanifest"
             cp "$source/icons/artwork.css" "$destination/icons/artwork.css"
