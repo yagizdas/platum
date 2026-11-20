@@ -10,6 +10,9 @@
   <link rel="icon" type="image/webp" href="./icons/ui/tray.webp">
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&amp;family=Figtree:wght@400..700&amp;family=Fraunces:opsz,SOFT,WONK,wght@9..144,100,1,400..700&amp;family=Instrument+Sans:wght@400..700&amp;family=Instrument+Serif&amp;family=Plus+Jakarta+Sans:wght@400..700&amp;display=swap">
   <link rel="stylesheet" href="./icons/artwork.css">
   <link rel="stylesheet" href="./menu.css?v=staging-menu-views-1">
 </head>
@@ -22,7 +25,7 @@
     </header>
     <main>
       <div class="heading">
-        <div><h1 id="menu-heading">Your plate</h1><time id="date" class="date"></time></div>
+        <h1><time id="date" class="date"></time></h1>
         <div class="heading-actions">
           <div id="days" class="day-strip" role="group" aria-label="Menu day" hidden></div>
           <div class="filter-control">
@@ -112,6 +115,7 @@
   </div>
   <script src="./dish-icons.js"></script>
   <script src="./menu-days.js"></script>
+  <script src="./font-trial.js"></script>
   <script src="./report-config.js"></script>
   <script src="./report-client.js"></script>
   <script>
@@ -124,7 +128,7 @@
     const STAGING_MENU_URL = new URL('staging/menu.html', SITE_URL);
     const MENU_VIEWS = [
       {id:'classic', label:'Classic'},
-      {id:'new', label:'New', weekdayHeading:true, filterInPreferences:true},
+      {id:'new', label:'New', filterInPreferences:true},
     ];
     let menuView = MENU_VIEWS[0];
     let selection = {goal:'bulk',vegan:false,noPork:false,noBeef:false,noMeat:false};
@@ -419,16 +423,8 @@
       return day.toISOString().slice(0,10);
     }
     function dateLabel(day) {
-      const date=new Date(day+'T12:00:00Z');
-      const timeZone='Europe/Berlin';
-      const options=menuView.weekdayHeading
-        ? {day:'numeric',month:'long',year:'numeric',timeZone}
-        : {weekday:'long',day:'numeric',month:'short',timeZone};
-      $('menu-heading').textContent=menuView.weekdayHeading
-        ? new Intl.DateTimeFormat('en-GB',{weekday:'long',timeZone}).format(date)
-        : 'Your plate';
       $('date').dateTime=day;
-      $('date').textContent=new Intl.DateTimeFormat('en-GB',options).format(date);
+      $('date').textContent=MenuDays.menuDateLabel(day);
     }
     function initStagingViews() {
       if(location.origin!==STAGING_MENU_URL.origin || location.pathname!==STAGING_MENU_URL.pathname) return;
@@ -446,7 +442,6 @@
         (view.filterInPreferences?preferenceRow:classicFilterRow).append(filter);
         caption.hidden=!view.filterInPreferences;
         if($('date').dateTime) dateLabel($('date').dateTime);
-        else $('menu-heading').textContent=view.weekdayHeading?'Menu':'Your plate';
         $('days').querySelectorAll('button').forEach(labelDayButton);
         for(const button of switcher.querySelectorAll('button')) {
           button.setAttribute('aria-pressed',String(button.value===view.id));
@@ -482,7 +477,7 @@
       }
     }
     function renderDays() {
-      const focusedDate=menuView.weekdayHeading && $('days').contains(document.activeElement)
+      const focusedDate=$('days').contains(document.activeElement)
         ? document.activeElement.dataset.date
         : null;
       $('days').replaceChildren();$('days').hidden=!weekIndex;
@@ -588,6 +583,7 @@
       } finally {if(!weekIndex) $('plate').setAttribute('aria-busy','false');}
     }
     initStagingViews();
+    FontTrial.init();
     load();
   </script>
   <!-- Cloudflare Web Analytics: public site token, not an API credential. -->

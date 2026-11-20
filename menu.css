@@ -13,9 +13,9 @@
   src: url('./assets/fonts/bricolage-grotesque-latin-ext.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-:root { color-scheme: light; --ground: #f5f5f1; --ink: #25282b; --muted: #5e6266; --surface: #eaeae6; --plate: #e9eef3; --paper: #fbfbf8; --accent: #0065bd; --selected: #e0ebf5; --line: #dcdedc; --radius: 28px; }
+:root { color-scheme: light; --ground: #f5f5f1; --ink: #25282b; --muted: #5e6266; --surface: #eaeae6; --plate: #e9eef3; --paper: #fbfbf8; --accent: #0065bd; --selected: #e0ebf5; --line: #dcdedc; --radius: 28px; --font-body:'Bricolage Grotesque',sans-serif; --font-heading:var(--font-body); --font-numbers:var(--font-heading); }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--ground); color: var(--ink); font: 400 16px/1.45 'Bricolage Grotesque', sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 400 16px/1.45 var(--font-body); -webkit-font-smoothing: antialiased; }
 button, input { font: inherit; }
 button, a, input, label, summary { -webkit-tap-highlight-color: transparent; }
 button, summary { cursor: pointer; }
@@ -23,6 +23,8 @@ a { color: inherit; text-underline-offset: 5px; }
 button { color: inherit; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
 h1, h2, h3, p { margin: 0; }
+h1, h2, h3, .brand { font-family: var(--font-heading); }
+.total-value, .count, .item-price, #option-status, .day-date { font-family: var(--font-numbers); font-variant-numeric: tabular-nums; }
 img { display: block; max-width: 100%; height: auto; }
 .shell { max-width: 1264px; margin: 0 auto; padding: 0 48px; }
 header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 32px 0; }
@@ -32,7 +34,7 @@ header { display: flex; align-items: center; justify-content: space-between; gap
 main { padding: 32px 0 0; }
 .heading { display: flex; align-items: center; justify-content: space-between; gap: 32px; margin-bottom: 32px; }
 h1 { font-size: clamp(40px, 4vw, 60px); font-weight: 700; line-height: 1; letter-spacing: -.055em; }
-.date { display: block; margin-top: 12px; color: var(--muted); font-size: 16px; }
+.date { display: block; color: inherit; font: inherit; }
 .day-strip { display: flex; gap: 8px; }
 .day-button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; min-width: 64px; min-height: 70px; padding: 10px 12px; border: 0; border-radius: 20px; background: transparent; color: var(--muted); font-size: 14px; }
 .day-button[aria-pressed='true'] { background: var(--ink); color: var(--ground); }
@@ -257,6 +259,20 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
 @media (max-width:760px) { .heading-actions { gap:8px; } .filter-toggle,.filter-toggle img { width:48px; height:48px; } }
 @media (max-width:520px) { .heading-actions { width:100%; } .heading-actions .day-strip { flex:1; min-width:0; width:auto; margin:0; gap:2px; } .heading-actions .day-button { min-width:40px; padding-inline:4px; } .filter-panel { right:0; width:min(280px,calc(100vw - 48px)); } }
 @media (prefers-reduced-motion:reduce) { *, *::before, *::after { animation:none!important; transition:none!important; } }
+
+/* Temporary font trial: all variants and its removable control live together. */
+[data-font-trial='jakarta'] { --font-body:'Plus Jakarta Sans',sans-serif; }
+[data-font-trial='dm-sans'] { --font-body:'DM Sans',sans-serif; }
+[data-font-trial='bricolage-dm'] { --font-body:'DM Sans',sans-serif; --font-heading:'Bricolage Grotesque',sans-serif; --font-numbers:'Bricolage Grotesque',sans-serif; }
+[data-font-trial='fraunces-figtree'] { --font-body:'Figtree',sans-serif; --font-heading:'Fraunces',serif; --font-numbers:'Fraunces',serif; }
+[data-font-trial='fraunces-figtree'] h1,
+[data-font-trial='fraunces-figtree'] h2,
+[data-font-trial='fraunces-figtree'] h3,
+[data-font-trial='fraunces-figtree'] .brand { font-variation-settings:'SOFT' 100,'WONK' 1; }
+[data-font-trial='instrument'] { --font-body:'Instrument Sans',sans-serif; --font-heading:'Instrument Serif',serif; --font-numbers:'Instrument Serif',serif; }
+.font-trial { position:fixed; right:max(14px,env(safe-area-inset-right)); bottom:max(14px,env(safe-area-inset-bottom)); z-index:20; display:flex; align-items:center; gap:8px; max-width:calc(100vw - 28px); min-height:42px; padding:5px 11px 5px 7px; border:1px solid var(--line); border-radius:999px; background:var(--paper); box-shadow:0 5px 20px #25282b26; color:var(--ink); font-family:var(--font-body); }
+.font-trial-sample { display:grid; place-items:center; width:30px; height:30px; flex:none; border-radius:50%; background:var(--ink); color:var(--ground); font-family:var(--font-heading); font-size:15px; }
+.font-trial-name { min-width:0; overflow:hidden; font-size:12px; font-weight:600; text-overflow:ellipsis; white-space:nowrap; }
 
 /* The review control sits between the existing brand and location on staging. */
 [data-menu-view] header { position: relative; }
