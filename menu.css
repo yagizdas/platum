@@ -55,10 +55,10 @@ h1 { font-size: clamp(40px, 4vw, 60px); font-weight: 700; line-height: 1; letter
 .vegan-face { gap: 12px; }
 .vegan-face .artwork { width: min(64px, calc(72px * var(--art-aspect))); }
 .switch { display: inline-flex; align-items: center; flex-shrink: 0; width: 32px; height: 20px; border-radius: 100px; background: var(--muted); padding: 3px; }
-.switch::after { content: ''; width: 14px; height: 14px; border-radius: 50%; background: var(--ground); }
+.switch-knob { content: ''; width: 14px; height: 14px; border-radius: 50%; background: var(--ground); }
 .toggle input:checked + .vegan-face { border-color: var(--accent); background: var(--selected); color: var(--accent); }
 .toggle input:checked + .vegan-face .switch { background: var(--accent); }
-.toggle input:checked + .vegan-face .switch::after { transform: translateX(12px); }
+.toggle[data-vegan='true'] .switch-knob { transform: translateX(12px); }
 .toggle input:focus-visible { outline: 0; }
 .toggle input:focus-visible + .vegan-face { outline: 3px solid var(--accent); outline-offset: 5px; }
 .receipt { padding: 32px 40px 24px; border-radius: var(--radius); background: var(--plate); touch-action: pan-y pinch-zoom; }
@@ -173,8 +173,8 @@ footer a:hover { text-decoration: underline; }
   .goals .artwork, .vegan-face .artwork { width: min(64px, calc(48px * var(--art-aspect))); }
   .goal-check { top: 4px; right: 7px; font-size: 13px; }
   .vegan-face .switch { position: absolute; top: 8px; right: 8px; width: 24px; height: 15px; padding: 2px; }
-  .vegan-face .switch::after { width: 11px; height: 11px; }
-  .toggle input:checked + .vegan-face .switch::after { transform: translateX(9px); }
+  .vegan-face .switch-knob { width: 11px; height: 11px; }
+  .toggle[data-vegan='true'] .switch-knob { transform: translateX(9px); }
   .vegan-face .artwork { margin-top: 8px; width: min(64px, calc(40px * var(--art-aspect))); }
   .receipt { padding: 20px 24px 20px; }
   .plate-overview { grid-template-columns: 1fr; gap: 12px; min-height: 0; }
@@ -246,14 +246,14 @@ footer a:hover { text-decoration: underline; }
 .filter-panel .text-button { color:var(--accent); }
 :root { --motion-ease:cubic-bezier(.22,1,.36,1); }
 button, .vegan-face, .switch, .disclosure-mark { transition:transform 140ms var(--motion-ease),background-color 180ms ease,border-color 180ms ease,color 180ms ease; }
-.switch::after { transition:transform 220ms var(--motion-ease); }
+.switch-knob { transition:none; }
 button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97); }
 .goals .artwork, .vegan-face .artwork { transition:transform 240ms var(--motion-ease); }
 .goals button[aria-pressed='true'] .artwork, .toggle input:checked + .vegan-face .artwork { transform:translateY(-2px); }
 .goal-check { visibility:visible; opacity:0; transition:opacity 180ms ease; }
 .goals button[aria-pressed='true'] .goal-check { opacity:1; }
 .receipt { transition:background-color 180ms ease; }
-.plate-snapshot { position:absolute; z-index:2; pointer-events:none; min-height:0; background:var(--plate); }
+
 @keyframes panel-arrive { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
 .filter-panel:not([hidden]), .disclosure[open] .disclosure-content, dialog[open] { animation:panel-arrive 220ms var(--motion-ease); }
 @media (max-width:760px) { .heading-actions { gap:8px; } .filter-toggle,.filter-toggle img { width:48px; height:48px; } }
@@ -342,8 +342,8 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
 }
 [data-menu-view='new'] .goal-check { display: none; }
 [data-menu-view='new'] .vegan-face .switch { position: static; width: 32px; height: 20px; padding: 3px; }
-[data-menu-view='new'] .vegan-face .switch::after { width: 14px; height: 14px; }
-[data-menu-view='new'] .toggle input:checked + .vegan-face .switch::after { transform: translateX(12px); }
+[data-menu-view='new'] .vegan-face .switch-knob { width: 14px; height: 14px; }
+[data-menu-view='new'] .toggle[data-vegan='true'] .vegan-face .switch-knob { transform: translateX(12px); }
 [data-menu-view='new'] .filter-toggle {
   display: inline-flex;
   gap: 7px;
@@ -464,3 +464,101 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
   [data-menu-view] header { flex-wrap: wrap; gap: 4px 10px; }
   .menu-view-switch { position: static; }
 }
+/* The tray stays fixed. View-transition snapshots belong only to its contents. */
+.receipt { position:relative; isolation:isolate; height:560px; display:flex; flex-direction:column; background:var(--plate); transition:none; }
+.receipt > :not(.tray-tints) { position:relative; z-index:1; }
+.plate-overview { flex:1; min-height:0; }
+.plate-actions { flex:none; }
+.tray-tints { position:absolute; inset:0; border-radius:inherit; overflow:hidden; z-index:0; }
+.tray-tints span { position:absolute; inset:0; opacity:0; }
+[data-tint='bulk'] { background:#e9eef3; }
+[data-tint='cut'] { background:#e8efea; }
+[data-tint='budget'] { background:#f0ede4; }
+.day-strip,.goals { position:relative; isolation:isolate; }
+.day-button { position:relative; z-index:1; }
+.day-button[aria-pressed='true'] { background:transparent; }
+.day-indicator,.mode-indicator,.pager-indicator { position:absolute; top:0; left:0; pointer-events:none; z-index:0; transform-origin:top left; }
+.day-indicator { border-radius:20px; background:var(--ink); }
+.mode-indicator { border:2px solid var(--accent); border-radius:24px; background:var(--selected); }
+.goals button { z-index:auto; background:transparent; }
+.goals button::before { content:''; position:absolute; inset:-2px; border-radius:inherit; background:var(--surface); z-index:-2; }
+.goals button:hover:not([aria-pressed='true']) { background:transparent; }
+.goals button:hover:not([aria-pressed='true'])::before { background:var(--plate); }
+.mode-indicator { z-index:-1; }
+.goals button[aria-pressed='true'] { border-color:transparent; background:transparent; }
+.pager-dots { display:flex; align-items:center; gap:4px; position:relative; isolation:isolate; }
+.pager-dot { position:relative; width:20px; height:32px; padding:0; border:0; background:transparent; }
+.pager-dot::after { content:''; display:block; width:7px; height:7px; margin:auto; border-radius:50%; background:var(--muted); opacity:.35; }
+.pager-dot[aria-pressed='true']::after { opacity:0; }
+.pager-indicator { background:transparent; display:grid; place-items:center; }
+.pager-indicator::after { content:''; width:20px; height:7px; border-radius:9px; background:var(--accent); }
+.arrow:disabled { opacity:.35; cursor:default; }
+.number-digits { display:inline-flex; vertical-align:bottom; }
+.digit-cell { display:inline-block; width:.6em; height:1.15em; line-height:1.15; overflow:hidden; text-align:center; }
+.digit-separator { display:inline-block; height:1.15em; line-height:1.15; }
+#plate-art { touch-action:pan-y; cursor:grab; user-select:none; }
+#plate-art:active { cursor:grabbing; }
+
+::view-transition,::view-transition-group(*),::view-transition-image-pair(*),::view-transition-old(*),::view-transition-new(*) { pointer-events:none; }
+::view-transition-group(*) { animation:none; transform-origin:top left; }
+::view-transition-old(*),::view-transition-new(*) { animation:none; mix-blend-mode:normal; }
+::view-transition-old(*) { opacity:0; }
+::view-transition-new(*) { opacity:1; }
+::view-transition-image-pair(*) { isolation:isolate; }
+::view-transition-group(root) { animation:none; }
+::view-transition-image-pair(digit-price-0),::view-transition-image-pair(digit-price-1),::view-transition-image-pair(digit-price-2),::view-transition-image-pair(digit-price-3),::view-transition-image-pair(digit-price-4),::view-transition-image-pair(digit-price-5),::view-transition-image-pair(digit-kcal-0),::view-transition-image-pair(digit-kcal-1),::view-transition-image-pair(digit-kcal-2),::view-transition-image-pair(digit-kcal-3),::view-transition-image-pair(digit-protein-0),::view-transition-image-pair(digit-protein-1),::view-transition-image-pair(digit-protein-2) { overflow:clip; }
+@media(max-width:760px) {
+  .receipt { height:650px; }
+  .plate-overview { display:grid; grid-template-rows:240px 1fr; align-content:start; }
+  .plate-summary { align-self:start; }
+  .day-indicator { border-radius:16px; }
+  .mode-indicator { border-radius:20px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .tray-tints span,.switch-knob { transition:none; }
+}
+
+:root { view-transition-name:none; }
+
+.has-view-transitions .tray-tints span { transition:opacity 300ms var(--motion-ease); }
+@media(max-width:760px) {
+  .plate-actions { gap:8px; }
+  .alternatives { gap:6px; }
+  .pager-dot { width:14px; }
+  .pager-dots { gap:2px; }
+  .pager-indicator::after { width:14px; }
+}
+@media(max-width:360px) { .alternatives .arrow { min-width:40px; } }
+@media(prefers-reduced-motion:reduce) { .has-view-transitions .tray-tints span { transition:opacity 120ms ease!important; } }
+
+/* Align the menu header and keep the selected lunch in the tray's center. */
+.heading > h1 { flex:1; min-width:0; }
+.heading-actions { justify-content:flex-end; flex:none; }
+.heading .day-strip { margin:0; width:auto; }
+.receipt { height:500px; }
+.plate-overview { align-items:center; }
+.plate-summary { align-self:center; }
+.plate-actions { display:grid; grid-template-columns:1fr auto 1fr; }
+.alternatives { grid-column:2; justify-content:center; }
+#share { grid-column:3; justify-self:end; }
+@media (max-width:1050px) and (min-width:761px) {
+  .heading { gap:24px; }
+  .heading h1 { font-size:40px; }
+  .heading-actions { gap:8px; }
+  .day-button { min-width:48px; padding-inline:8px; }
+}
+@media (max-width:760px) {
+  .heading { flex-wrap:wrap; align-items:center; }
+  .heading > h1 { flex-basis:100%; }
+  .heading-actions { width:100%; justify-content:space-between; }
+  .heading .day-strip { flex:0 1 auto; justify-content:flex-start; gap:4px; }
+  .receipt { height:650px; }
+  .plate-overview { grid-template-rows:240px 1fr; }
+  .plate-summary { align-self:center; }
+  .plate-actions { grid-template-columns:1fr auto; }
+  .alternatives { grid-column:1; justify-self:start; }
+  #share { grid-column:2; }
+}
+/* Blend the supplied white-backed food artwork into the tray surface. */
+.plate-overview { mix-blend-mode:multiply; }
+.report-button { align-self:flex-start; }

@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./menu.css?v=staging-menu-views-2">
+  <link rel="stylesheet" href="./menu.css?v=layout-cleanup-1">
 </head>
 <body>
   <div class="shell">
@@ -22,7 +22,7 @@
     </header>
     <main>
       <div class="heading">
-        <h1><time id="date" class="date"></time></h1>
+        <h1><time id="date">Your plate</time></h1>
         <div class="heading-actions">
           <div id="days" class="day-strip" role="group" aria-label="Menu day" hidden></div>
           <div class="filter-control">
@@ -53,9 +53,10 @@
           <button type="button" data-goal="cut" aria-pressed="false"><span class="artwork art-tape" data-icon="tape"><img src="./icons/ui/tape.webp" width="640" height="640" alt="" decoding="async"></span><span>Cut</span><span class="goal-check" aria-hidden="true"></span></button>
           <button type="button" data-goal="budget" aria-pressed="false"><span class="artwork art-coins" data-icon="coins"><img src="./icons/ui/coins.webp" width="640" height="640" alt="" decoding="async"></span><span>Budget</span><span class="goal-check" aria-hidden="true"></span></button>
         </div>
-        <label class="toggle"><input id="vegan" type="checkbox" role="switch"><span class="vegan-face"><span class="artwork art-leaf" data-icon="leaf"><img src="./icons/ui/leaf.webp" width="640" height="640" alt="" decoding="async"></span><span>Vegan</span><span class="switch" aria-hidden="true"></span></span></label>
+        <label class="toggle"><input id="vegan" type="checkbox" role="switch"><span class="vegan-face"><span class="artwork art-leaf" data-icon="leaf"><img src="./icons/ui/leaf.webp" width="640" height="640" alt="" decoding="async"></span><span>Vegan</span><span class="switch" aria-hidden="true"><span class="switch-knob"></span></span></span></label>
       </div>
       <section class="receipt" aria-labelledby="plate-title" aria-busy="true" id="plate">
+        <div class="tray-tints" aria-hidden="true"><span data-tint="bulk"></span><span data-tint="cut"></span><span data-tint="budget"></span></div>
         <div class="plate-overview">
           <div class="plate-art dish-scene" id="plate-art"><span id="plate-illustration" class="artwork art-tray" data-icon="tray"><img src="./icons/ui/tray.webp" width="1254" height="1254" alt="" decoding="async"></span></div>
           <div class="plate-summary">
@@ -74,7 +75,7 @@
         <div class="plate-actions" id="plate-actions" hidden>
           <div class="alternatives" id="alternatives">
             <button class="arrow" id="previous" type="button" aria-label="Previous lunch">←</button>
-            <span id="option-status" aria-live="off">1 / 3</span>
+            <div id="option-status" class="pager-dots" role="group" aria-label="Lunch options"></div>
             <button class="arrow" id="next" type="button" aria-label="Next lunch">→</button>
           </div>
           <button class="text-button" id="share" type="button">Share plate <span aria-hidden="true">↗</span></button>
@@ -91,9 +92,7 @@
         <section class="ingredient-panel" id="plate-details" aria-labelledby="ingredients-title">
           <h2 class="ingredients-title" id="ingredients-title">Details</h2>
           <div class="ingredient-content">
-            <p class="reason" id="reason" hidden></p>
             <ul class="items" id="items"></ul>
-            <p class="details" id="details" hidden></p>
           </div>
         </section>
         <details class="disclosure" id="extras-wrap">
@@ -133,29 +132,156 @@
     const reports=PlateReports.create(globalThis.MENSA_REPORT_ENDPOINT);
     let brokenKeys=new Set();
     const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
-    let plateAnimations=[],plateSnapshot,hasRenderedPlate=false;
+    document.documentElement.classList.toggle('has-view-transitions',typeof document.startViewTransition==='function');
+    let activeTransition,motionRevision=0;
+    const foodSnapshotStyle=document.createElement('style');document.head.append(foodSnapshotStyle);
+    function blendFoodSnapshots(parts) {
+      const names=[...parts].filter(name=>name.startsWith('food-') || name==='tray-content');
+      foodSnapshotStyle.textContent=names.map(name=>`::view-transition-group(${name})`).join(',')+(names.length?'{mix-blend-mode:multiply;}':'');
+    }
+    function clearMotionNames() {
+      document.querySelectorAll('[data-motion-name]').forEach(node=>{node.style.viewTransitionName='none';delete node.dataset.motionName;});
+    }
+    const spring='cubic-bezier(.22,1,.36,1)';
     function stopPlateAnimations() {
-      plateAnimations.forEach(animation=>animation.cancel());plateAnimations=[];
-      plateSnapshot?.remove();plateSnapshot=undefined;
+      ++motionRevision;activeTransition?.skipTransition();
     }
-    function capturePlate() {
-      if(reducedMotion.matches || !hasRenderedPlate || $('plate').classList.contains('is-empty')) return;
-      const overview=$('plate').querySelector('.plate-overview'),rect=overview.getBoundingClientRect();
-      plateSnapshot=overview.cloneNode(true);
-      plateSnapshot.removeAttribute('id');
-      plateSnapshot.querySelectorAll('[id]').forEach(node=>node.removeAttribute('id'));
-      plateSnapshot.setAttribute('aria-hidden','true');plateSnapshot.inert=true;
-      plateSnapshot.classList.add('plate-snapshot');
-      Object.assign(plateSnapshot.style,{top:(rect.top+scrollY)+'px',left:(rect.left+scrollX)+'px',width:rect.width+'px',height:rect.height+'px'});
-      document.body.append(plateSnapshot);
+    function positionIndicator(host, selected, className) {
+      if(!selected) return;
+      let indicator=host.querySelector('.'+className);
+      const existing=Boolean(indicator);
+      if(!indicator) {indicator=document.createElement('span');indicator.className=className;indicator.setAttribute('aria-hidden','true');host.prepend(indicator);}
+      const from=getComputedStyle(indicator).transform;
+      const to=`translate(${selected.offsetLeft}px,${selected.offsetTop}px)`;
+      indicator.getAnimations().forEach(animation=>animation.cancel());
+      indicator.style.width=selected.offsetWidth+'px';indicator.style.height=selected.offsetHeight+'px';indicator.style.transform=to;
+      if(existing && from!=='none' && document.startViewTransition && !reducedMotion.matches) {
+        const animation=indicator.animate([{transform:from},{transform:to}],{duration:300,easing:spring});
+        animation.finished.then(()=>animation.cancel(),()=>{});
+      }
     }
-    function animatePlateChange() {
-      const snapshot=plateSnapshot;
-      if(!snapshot) return;
-      if(typeof snapshot.animate!=='function') {snapshot.remove();return;}
-      const animation=snapshot.animate([{opacity:1},{opacity:0}],{duration:200,easing:'ease-in-out'});
-      plateAnimations.push(animation);
-      animation.finished.catch(()=>{}).then(()=>snapshot.remove());
+    function syncMotionControls() {
+      positionIndicator(document.querySelector('.goals'),document.querySelector('[data-goal][aria-pressed="true"]'),'mode-indicator');
+      positionIndicator($('days'),$('days').querySelector('[aria-pressed="true"]'),'day-indicator');
+      $('plate').dataset.mode=selection.goal;document.querySelector('.toggle').dataset.vegan=String(selection.vegan);
+      for(const layer of document.querySelectorAll('[data-tint]')) layer.style.opacity=String(layer.dataset.tint===selection.goal?1:0);
+    }
+    function transitionParts(kind) {
+      clearMotionNames();
+      const parts=new Map();
+      function name(node,key,value='') {
+        if(!node || node.hidden) return;
+        node.style.viewTransitionName=key;node.dataset.motionName=key;const rect=node.getBoundingClientRect(),matrix=new DOMMatrix(getComputedStyle(node).transform==='none'?undefined:getComputedStyle(node).transform);
+        const width=node.offsetWidth,height=node.offsetHeight;
+        matrix.e=rect.x-Math.min(0,matrix.a*width,matrix.c*height,matrix.a*width+matrix.c*height);
+        matrix.f=rect.y-Math.min(0,matrix.b*width,matrix.d*height,matrix.b*width+matrix.d*height);
+        parts.set(key,{value,matrix,width,height});
+      }
+      if(reducedMotion.matches) {name($('plate').querySelector('.plate-overview'),'tray-content');if(kind==='day')name($('date'),'menu-date');}
+      else if(kind==='day') {name($('plate').querySelector('.plate-overview'),'tray-content');name($('date'),'menu-date');}
+      else if(kind!=='indicator') {
+        document.querySelectorAll('#plate-art [data-dish-key]').forEach(node=>name(node,'food-'+node.dataset.dishKey,node.dataset.dishKey));
+        name($('plate-title'),'dish-title',$('plate-title').textContent);
+        name($('plate-side'),'dish-subtitle',$('plate-side').textContent);
+        document.querySelectorAll('[data-digit-name]').forEach(node=>name(node,node.dataset.digitName,node.textContent));
+      }
+      if(!reducedMotion.matches) {
+        name(document.querySelector('.switch-knob'),'vegan-knob');
+      }
+      return parts;
+    }
+    function animateTransition(transition, oldParts, newParts, kind, direction) {
+      const reduced=reducedMotion.matches;
+      function track(animation) {transition.finished.then(()=>animation.cancel(),()=>animation.cancel());return animation;}
+      function animate(name,side,frames,duration=300,delay=0) {
+        track(document.documentElement.animate(frames,{duration,delay,easing:reduced?'ease':spring,fill:'both',pseudoElement:`::view-transition-${side}(${name})`}));
+      }
+      let incoming=0;
+      for(const name of new Set([...oldParts.keys(),...newParts.keys()])) {
+        const old=oldParts.has(name),fresh=newParts.has(name);
+        if(old && fresh && (name.endsWith('-pill') || name==='vegan-knob' || name.startsWith('food-'))) {
+          const a=oldParts.get(name),b=newParts.get(name);
+          if(a.width && b.width && a.height && b.height) {
+            const target=getComputedStyle(document.documentElement,`::view-transition-group(${name})`).transform;
+            track(document.documentElement.animate([
+              {transform:a.matrix.scale(a.width/b.width,a.height/b.height).toString()},
+              {transform:target}
+            ],{duration:300,easing:spring,fill:'both',pseudoElement:`::view-transition-group(${name})`}));
+          }
+        }
+        if(name.endsWith('-pill') || name==='vegan-knob') continue;
+        if(reduced) {
+          if(old) animate(name,'old',[{opacity:1},{opacity:0}],120);
+          if(fresh) animate(name,'new',[{opacity:0},{opacity:1}],120);
+          continue;
+        }
+        if(name.startsWith('food-')) {
+          if(old && fresh) continue;
+          if(old) animate(name,'old',[{opacity:1,transform:'translateX(0) scale(1)'},{opacity:0,transform:`translateX(${-direction*40}px) scale(.92)`}],220);
+          if(fresh) animate(name,'new',[
+            {opacity:0,transform:`translateX(${direction*40}px) scale(.92)`,offset:0},
+            {opacity:1,transform:`translateX(${-direction*3}px) scale(1.015)`,offset:.75},
+            {opacity:1,transform:'translateX(0) scale(1)',offset:1}
+          ],320,incoming++*40);
+        } else if(name.startsWith('digit-')) {
+          if(old && fresh && oldParts.get(name).value===newParts.get(name).value) continue;
+          if(old) animate(name,'old',[{transform:'translateY(0)'},{transform:'translateY(-110%)'}],400);
+          if(fresh) animate(name,'new',[{transform:'translateY(110%)'},{transform:'translateY(0)'}],400);
+        } else {
+          const distance=name==='tray-content'?40:12,duration=kind==='day'?320:240;
+          if(old) animate(name,'old',[{opacity:1,transform:'translateX(0)'},{opacity:0,transform:`translateX(${-direction*distance}px)`}],duration);
+          if(fresh) animate(name,'new',[{opacity:0,transform:`translateX(${direction*distance}px)`},{opacity:1,transform:'translateX(0)'}],duration);
+        }
+      }
+    }
+    async function motionUpdate(update,kind='mode',direction=1) {
+      const revision=++motionRevision,previous=activeTransition;
+      previous?.skipTransition();
+      if(kind==='day' || kind==='mode') {
+        drag=undefined;wheelGesture=undefined;clearTimeout(wheelTimer);returnAnimation?.cancel();
+        $('plate-art').style.transform='';
+      }
+      if(previous) await previous.updateCallbackDone.catch(()=>{});
+      if(revision!==motionRevision) {if(kind==='day'){update();syncMotionControls();}return false;}
+      if(!document.startViewTransition) {update();syncMotionControls();return true;}
+      const oldParts=transitionParts(kind);blendFoodSnapshots(oldParts.keys());
+      let newParts;
+      const transition=document.startViewTransition(()=>{
+        if(revision!==motionRevision) {if(kind==='day'){update();syncMotionControls();}return;}
+        update();syncMotionControls();newParts=transitionParts(kind);blendFoodSnapshots(new Set([...oldParts.keys(),...newParts.keys()]));
+      });
+      activeTransition=transition;
+      transition.ready.then(()=>{
+        if(revision===motionRevision && newParts) animateTransition(transition,oldParts,newParts,kind,direction);
+      }).catch(()=>{});
+      transition.finished.catch(()=>{}).then(()=>{if(activeTransition===transition) {activeTransition=undefined;clearMotionNames();}});
+      await transition.updateCallbackDone;
+      return revision===motionRevision;
+    }
+    function render(kind='mode',direction=1) {
+      return motionUpdate(()=>{syncControls();renderPlate();},kind,direction);
+    }
+    function numberValue(id,prefix,text) {
+      const node=$(id);node.replaceChildren();node.setAttribute('aria-label',prefix+text);
+      const fixed=document.createElement('span');fixed.className='number-prefix';fixed.textContent=prefix;fixed.setAttribute('aria-hidden','true');node.append(fixed);
+      const digits=document.createElement('span');digits.className='number-digits';digits.setAttribute('aria-hidden','true');
+      let index=0;
+      for(const char of [...text].reverse()) {
+        const cell=document.createElement('span');cell.className=/\d/.test(char)?'digit-cell':'digit-separator';cell.textContent=char;
+        if(/\d/.test(char)) cell.dataset.digitName=`digit-${id}-${index++}`;
+        digits.prepend(cell);
+      }
+      node.append(digits);
+    }
+    function renderPager(count) {
+      const host=$('option-status'),indicator=host.querySelector('.pager-indicator');host.replaceChildren(...(indicator?[indicator]:[]));host.setAttribute('aria-label','Lunch option '+(plateIndex+1)+' of '+count);
+      for(let index=0;index<count;index++) {
+        const dot=document.createElement('button');dot.type='button';dot.className='pager-dot';
+        dot.setAttribute('aria-label','Lunch option '+(index+1)+' of '+count);dot.setAttribute('aria-pressed',String(index===plateIndex));
+        dot.addEventListener('click',()=>{const direction=Math.sign(index-plateIndex);if(!direction)return;plateIndex=index;render('pager',direction);});host.append(dot);
+      }
+      positionIndicator(host,host.querySelector('[aria-pressed="true"]'),'pager-indicator');
+      $('previous').disabled=plateIndex===0;$('next').disabled=plateIndex===count-1;
     }
     reducedMotion.addEventListener('change',stopPlateAnimations);
     try {
@@ -216,15 +342,14 @@
     function saveAndRender() {
       try {localStorage.setItem('mensa-plate',JSON.stringify(selection));} catch(_) {}
       $('extras-wrap').open=false;
-      plateIndex=0;selectedExtras.clear();syncControls();
-      if(data) render();
+      plateIndex=0;selectedExtras.clear();
+      syncControls();if(data) render();
     }
     function empty(title,text,icon='empty') {
-      stopPlateAnimations();
       $('plate').classList.add('is-empty');$('secondary-actions').hidden=true;$('plate-side').hidden=true;$('plate-counter').hidden=true;
       DishIcons.compose($('plate-art'),[],{fallback:icon});
-      $('items').replaceChildren();$('plate-title').textContent='Your plate';$('reason').hidden=true;
-      for(const id of ['totals','details','relaxed-note','plate-actions','extras-wrap','report-plate']) $(id).hidden=true;
+      $('items').replaceChildren();$('plate-title').textContent='Your plate';
+      for(const id of ['totals','relaxed-note','plate-actions','extras-wrap','report-plate']) $(id).hidden=true;
       $('empty').hidden=false;$('empty-title').textContent=title;$('empty-text').textContent=text || '';
       $('announcement').textContent=title;
     }
@@ -237,10 +362,8 @@
     }
     function renderTotals(announce=false) {
       const total=totals();
-      $('price').textContent=money(total.price_cents);$('kcal').textContent='~'+rounded(total.kcal);$('protein').textContent='~'+rounded(total.protein_g);
+      numberValue('price','€',(total.price_cents/100).toFixed(2));numberValue('kcal','~',rounded(total.kcal));numberValue('protein','~',rounded(total.protein_g));
       $('includes-extras').hidden=selectedExtras.size===0;
-      const estimated=currentPlate().has_estimated_prices || activeExtras().some(e=>e.price_source==='config');
-      $('details').textContent=rounded(total.weight_g)+'g total · Scoops are approximate; weighed at checkout.'+(estimated?' Some prices use category estimates.':'');
       if(announce) $('announcement').textContent='Tray total '+money(total.price_cents)+', approximately '+rounded(total.kcal)+' calories and '+rounded(total.protein_g)+' grams protein.';
     }
     function renderExtras() {
@@ -257,7 +380,7 @@
         button.addEventListener('click',()=>{
           if(selectedExtras.has(index)) selectedExtras.delete(index);else selectedExtras.add(index);
           mark.textContent=selectedExtras.has(index)?'−':'+';
-          button.setAttribute('aria-pressed',String(selectedExtras.has(index)));renderIllustration();renderItems();renderTotals(true);
+          button.setAttribute('aria-pressed',String(selectedExtras.has(index)));render('mode');
         });
         $('extras').append(button);
       });
@@ -276,19 +399,30 @@
         const description=document.createElement('div');description.className='item-description';
         const name=document.createElement('p');name.className='dish-name';name.lang='de';name.textContent=item.name;
         const en=document.createElement('span');en.className='english';en.textContent=item.name_en;
-        const meta=document.createElement('span');meta.className='meta';
-        meta.textContent=(item.standing?'Beilagen counter · usually there':item.station==='Unspecified'?'Main':item.station)+' · '+rounded(item.weight_g)+'g';
-        const tag=document.createElement('span');tag.className='diet-tag';tag.textContent=dietLabels[item.diet] || '';
-        description.append(name,en,meta,tag);
+        description.append(name,en);
         const price=document.createElement('span');price.className='item-price';price.textContent=money(item.price_cents);
         li.append(art,portion,description,price);$('items').append(li);
       }
     }
     function renderIllustration() {
-      DishIcons.compose($('plate-art'),[...currentPlate().items,...activeExtras()]);
+      const items=[...currentPlate().items,...activeExtras()];
+      const main=items.find(item=>item.role==='main') || items[0];
+      const ordered=[main,...items.filter(item=>item!==main).slice(0,2)];
+      const host=$('plate-art'),previous=new Map([...host.querySelectorAll('[data-dish-key]')].map(node=>[node.dataset.dishKey,node]));
+      host.dataset.companions=String(ordered.length-1);
+      const seen=new Map();
+      const nodes=ordered.map((item,index)=>{
+        const base=item.id || [...(item.name || item.name_en)].reduce((hash,char)=>(hash*31+char.charCodeAt(0))>>>0,0).toString(36);
+        const duplicate=seen.get(base)||0;seen.set(base,duplicate+1);
+        const key=base+(duplicate?'-'+duplicate:'');
+        const node=previous.get(key) || DishIcons.create(DishIcons.classify(item));
+        DishIcons.apply(node,DishIcons.classify(item));node.dataset.dishKey=key;
+        node.classList.toggle('dish-companion',index>0);node.setAttribute('aria-hidden','true');
+        node.querySelector('img').draggable=false;return node;
+      });
+      host.replaceChildren(...nodes);
     }
-    function render() {
-      stopPlateAnimations();capturePlate();
+    function renderPlate() {
       if(stale) return empty(selectedDate && selectedDate!==berlinDate()?'That day’s plates aren’t ready.':'Today’s plates aren’t ready.','The published menu does not match '+(selectedDate || berlinDate())+'. Check the official menu for that day.');
       const v=variant();
       if(data.state==='closed') return empty('No menu today.',v.message);
@@ -303,22 +437,22 @@
       $('plate-title').classList.toggle('is-long',title.length>30);
       $('plate-counter').textContent='Pick up at '+p.counter;$('plate-counter').hidden=!p.counter;
       $('plate-side').textContent=p.items.filter(item=>item!==main).map(briefDish).join(' + ');$('plate-side').hidden=p.items.length<2;
-      $('reason').textContent=p.reason || '';$('reason').hidden=!p.reason;
       renderItems();
-      $('totals').hidden=false;$('details').hidden=false;
+      $('totals').hidden=false;
       $('relaxed-note').textContent=v.note || '';$('relaxed-note').hidden=!v.relaxed || !v.note;
       $('plate-actions').hidden=false;$('alternatives').hidden=plates.length<2;
-      $('option-status').textContent=(plateIndex+1)+' / '+plates.length;
-      $('option-status').setAttribute('aria-label','Lunch option '+(plateIndex+1)+' of '+plates.length);
+      renderPager(plates.length);
       $('announcement').textContent='Option '+(plateIndex+1)+' of '+plates.length+': '+p.title;
       $('report-plate').hidden=!reports.enabled || p.items.some(i=>!i.id);
-      $('share').textContent='Share plate';renderExtras();renderTotals();hasRenderedPlate=true;animatePlateChange();
+      $('share').textContent='Share plate';renderExtras();renderTotals();
     }
     function cycle(direction) {
       if(!data || stale || variant().state!=='ready') return;
       const count=visiblePlates().length;
       if(count<2) return;
-      plateIndex=(plateIndex+direction+count)%count;render();
+      const next=Math.max(0,Math.min(count-1,plateIndex+direction));
+      if(next===plateIndex) return;
+      plateIndex=next;render('pager',direction);
     }
     function shortName(name) {return name.replace(/\s*\(1\s*Stück\)/gi,'').split(/\s+(?:mit|auf|aus|in|an)\s+/i)[0];}
     function briefDish(item) {
@@ -369,7 +503,10 @@
       if(event.key==='Escape' && !$('filter-panel').hidden) {setFilterOpen(false);$('filter-toggle').focus();}
     });
     $('previous').addEventListener('click',()=>cycle(-1));$('next').addEventListener('click',()=>cycle(1));
-    $('alternatives').addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();cycle(event.key==='ArrowRight'?1:-1);}});
+    document.addEventListener('keydown',event=>{
+      if(event.target.matches?.('input,textarea,select,[contenteditable]') || $('report-sheet').open || !$('filter-panel').hidden) return;
+      if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();cycle(event.key==='ArrowRight'?1:-1);}
+    });
     $('share').addEventListener('click',share);
     $('report-close').addEventListener('click',()=>$('report-sheet').close());
     $('report-sheet').addEventListener('keydown',event=>{
@@ -409,9 +546,69 @@
       }
       $('report-sheet').showModal();
     });
-    let touch;
-    $('plate').addEventListener('touchstart',event=>{const p=event.touches[0];touch={x:p.clientX,y:p.clientY};},{passive:true});
-    $('plate').addEventListener('touchend',event=>{if(!touch) return;const p=event.changedTouches[0],dx=p.clientX-touch.x,dy=p.clientY-touch.y;touch=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.2) cycle(dx<0?1:-1);},{passive:true});
+    let drag,returnAnimation,wheelTimer,wheelGesture;
+    const dragArea=$('plate-art');
+    function dragOffset(distance) {
+      const count=data?visiblePlates().length:0;
+      const edge=distance>0?plateIndex===0:plateIndex>=count-1;
+      return edge?distance*.18:distance;
+    }
+    function paintDrag(distance) {if(!reducedMotion.matches)dragArea.style.transform=`translateX(${dragOffset(distance)}px)`;}
+    function releaseDrag(distance,velocity,cancelled=false) {
+      const direction=distance<0?1:-1,count=data?visiblePlates().length:0;
+      const within=plateIndex+direction>=0 && plateIndex+direction<count;
+      const commit=!cancelled && within && (Math.abs(distance)>dragArea.clientWidth*.25 || (Math.abs(velocity)>.55 && Math.abs(distance)>20));
+      const offset=dragOffset(distance);
+      if(commit) {
+        plateIndex+=direction;
+        motionUpdate(()=>{dragArea.style.transform='';syncControls();renderPlate();},'pager',direction);
+      } else {
+        dragArea.style.transform='';
+        if(document.startViewTransition && !reducedMotion.matches) {
+          returnAnimation=dragArea.animate([{transform:`translateX(${offset}px)`},{transform:'translateX(0)'}],{duration:300,easing:spring});
+        }
+      }
+    }
+    dragArea.addEventListener('dragstart',event=>event.preventDefault());
+    dragArea.addEventListener('pointerdown',event=>{
+      if(event.button!==0 || !data || !currentPlate()) return;
+      stopPlateAnimations();returnAnimation?.cancel();
+      drag={id:event.pointerId,x:event.clientX,y:event.clientY,lastX:event.clientX,lastTime:event.timeStamp,velocity:0,horizontal:false};
+    });
+    dragArea.addEventListener('pointermove',event=>{
+      if(!drag || drag.id!==event.pointerId) return;
+      const dx=event.clientX-drag.x,dy=event.clientY-drag.y;
+      if(!drag.horizontal) {
+        if(Math.abs(dy)>Math.abs(dx) && Math.abs(dy)>8) {drag=undefined;return;}
+        if(Math.abs(dx)<8) return;
+        drag.horizontal=true;dragArea.setPointerCapture(event.pointerId);
+      }
+      const elapsed=event.timeStamp-drag.lastTime;
+      if(elapsed>0) drag.velocity=(event.clientX-drag.lastX)/elapsed;
+      drag.lastX=event.clientX;drag.lastTime=event.timeStamp;paintDrag(dx);
+    });
+    function finishPointer(event,cancelled=false) {
+      if(!drag || drag.id!==event.pointerId) return;
+      const state=drag;drag=undefined;
+      if(dragArea.hasPointerCapture(event.pointerId)) dragArea.releasePointerCapture(event.pointerId);
+      if(!state.horizontal) return;
+      const velocity=event.timeStamp-state.lastTime>90?0:state.velocity;
+      releaseDrag(event.clientX-state.x,cancelled?0:velocity,cancelled);
+    }
+    dragArea.addEventListener('pointerup',event=>finishPointer(event));
+    dragArea.addEventListener('pointercancel',event=>finishPointer(event,true));
+    dragArea.addEventListener('wheel',event=>{
+      if(Math.abs(event.deltaX)<=Math.abs(event.deltaY) || !data || !currentPlate()) return;
+      event.preventDefault();returnAnimation?.cancel();
+      const now=performance.now(),unit=event.deltaMode===1?16:event.deltaMode===2?dragArea.clientWidth:1;
+      if(!wheelGesture) {stopPlateAnimations();wheelGesture={distance:0,time:now,velocity:0};}
+      const distance=-event.deltaX*unit,elapsed=Math.max(1,now-wheelGesture.time);
+      wheelGesture.distance+=distance;wheelGesture.velocity=distance/elapsed;wheelGesture.time=now;
+      paintDrag(wheelGesture.distance);clearTimeout(wheelTimer);
+      wheelTimer=setTimeout(()=>{const state=wheelGesture;wheelGesture=undefined;releaseDrag(state.distance,state.velocity);},85);
+    },{passive:false});
+    window.addEventListener('resize',()=>{stopPlateAnimations();syncMotionControls();if(data && currentPlate())renderPager(visiblePlates().length);});
+
     syncControls();
     function mondayOf(text) {
       const day=new Date(text+'T12:00:00Z');
@@ -476,7 +673,7 @@
       const focusedDate=$('days').contains(document.activeElement)
         ? document.activeElement.dataset.date
         : null;
-      $('days').replaceChildren();$('days').hidden=!weekIndex;
+      const indicator=$('days').querySelector('.day-indicator');$('days').replaceChildren(...(indicator?[indicator]:[]));$('days').hidden=!weekIndex;
       if(!weekIndex) return;
       for(const row of weekIndex.days.filter(row=>mondayOf(row.date)===mondayOf(pendingDate || selectedDate))) {
         const button=document.createElement('button');button.type='button';button.className='day-button';
@@ -490,6 +687,7 @@
         button.addEventListener('click',()=>selectDay(row));$('days').append(button);
         if(row.date===focusedDate) button.focus({preventScroll:true});
       }
+      syncMotionControls();
     }
     const menuRequests=new Map(),artworkRequests=new Map();
     function warmArtwork(payload) {
@@ -521,15 +719,20 @@
     async function selectDay(row) {
       if($('report-sheet').open) $('report-sheet').close();
       const token=++loadToken;pendingDate=row.date;
-      renderDays();$('plate').setAttribute('aria-busy','true');
+      $('plate').setAttribute('aria-busy','true');
       if(!data) empty('Getting the menu…','','tray');
       try {
         const payload=await getMenu(row);
         await warmArtwork(payload);
         if(token!==loadToken) return;
-        selectedDate=row.date;pendingDate=undefined;plateIndex=0;selectedExtras.clear();brokenKeys=new Set();
-        $('extras-wrap').open=false;
-        data=payload;stale=data.date!==row.date;renderDays();dateLabel(row.date);render();
+        const direction=selectedDate && row.date<selectedDate?-1:1;
+        const committed=await motionUpdate(()=>{
+          if(token!==loadToken) return;
+          selectedDate=row.date;pendingDate=undefined;plateIndex=0;selectedExtras.clear();brokenKeys=new Set();
+          $('extras-wrap').open=false;
+          data=payload;stale=data.date!==row.date;renderDays();dateLabel(row.date);syncControls();renderPlate();
+        },'day',direction);
+        if(!committed || token!==loadToken) return;
         $('plate').setAttribute('aria-busy','false');$('notice').textContent=(data.warnings || []).join(' ');
         const broken=await reports.broken(row.date);
         if(token===loadToken) {
@@ -568,7 +771,7 @@
           ? index.days.find(row=>row.date===explicit) || {date:explicit,file:'data/days/'+explicit+'.json'}
           : defaultMenuDay(index);
         if(!day) throw new Error('No upcoming menu');
-        await selectDay(day);prefetchMenus();
+        const initial=selectDay(day);prefetchMenus();await initial;
       } catch(_) {
         weekIndex=undefined;$('days').hidden=true;
         try {
