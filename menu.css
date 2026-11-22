@@ -562,3 +562,44 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
 /* Blend the supplied white-backed food artwork into the tray surface. */
 .plate-overview { mix-blend-mode:multiply; }
 .report-button { align-self:flex-start; }
+
+/* Diet is the fourth peer tile; every dietary constraint lives in its popover. */
+.diet-control { min-width:0; }
+.diet-tile { height:100%; }
+.diet-copy { display:flex; flex-direction:column; align-items:flex-start; min-width:0; }
+.diet-summary { margin-top:4px; font-size:14px; line-height:1.25; letter-spacing:0; white-space:nowrap; }
+.diet-tile[data-active='true'] { border-color:var(--accent); background:var(--selected); color:var(--accent); }
+.diet-tile:hover { background:var(--plate); }
+.diet-tile[data-active='true']:hover { background:var(--selected); }
+.diet-tile .artwork { transition:transform 240ms var(--motion-ease); }
+.diet-tile[aria-expanded='true'] .artwork { transform:translateY(-2px); }
+.heading-actions { margin-left:auto; }
+.heading .day-strip { justify-content:flex-end; }
+[data-menu-view='new'] .controls { grid-template-columns:minmax(0,3fr) minmax(0,1fr); }
+[data-menu-view='new'] .diet-tile { width:100%; }
+@media(max-width:1050px) and (min-width:761px) {
+  .diet-tile { gap:8px; }
+  .diet-summary { font-size:12px; }
+}
+@media(max-width:760px) {
+  .heading-actions { justify-content:flex-end; }
+  .heading .day-strip { flex:0 1 auto; justify-content:flex-end; }
+  .diet-copy { align-items:center; }
+  .diet-summary { font-size:12px; margin-top:2px; }
+  .diet-tile .artwork { margin-top:0; }
+  .diet-control .filter-panel { width:min(280px,calc(100vw - 40px)); }
+}
+@media(max-width:560px) {
+  [data-menu-view='new'] .goals { grid-column:auto; }
+  [data-menu-view='new'] .diet-tile { flex-direction:column; padding-inline:4px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .diet-tile .artwork { transition:none; transform:none; }
+}
+.controls, [data-menu-view='new'] .controls { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.goals, [data-menu-view='new'] .goals { grid-column:span 3; column-gap:inherit; }
+@media(max-width:520px) {
+  [data-menu-view] header { display:grid; grid-template-columns:1fr auto; gap:12px; }
+  [data-menu-view] .menu-view-switch { position:static; inset:auto; transform:none; grid-column:1 / -1; justify-self:center; }
+}
+@media(max-width:360px) { .diet-summary { font-size:11px; letter-spacing:-.02em; } }

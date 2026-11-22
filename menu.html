@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./menu.css?v=layout-cleanup-1">
+  <link rel="stylesheet" href="./menu.css?v=diet-tile-1">
 </head>
 <body>
   <div class="shell">
@@ -25,26 +25,6 @@
         <h1><time id="date">Your plate</time></h1>
         <div class="heading-actions">
           <div id="days" class="day-strip" role="group" aria-label="Menu day" hidden></div>
-          <div class="filter-control">
-            <button id="filter-toggle" class="filter-toggle" type="button" aria-label="Dietary filters" aria-expanded="false" aria-controls="filter-panel">
-              <img class="filter-off" src="./icons/ui/filter_untapped.png" alt="" width="1254" height="1254">
-              <img class="filter-on" src="./icons/ui/filter_tapped.png" alt="" width="1254" height="1254">
-              <span class="filter-caption" hidden>
-                <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-                  <path d="M3 5h5m4 0h5M3 10h9m4 0h1M3 15h2m4 0h8M10 3v4m4 1v4m-7 1v4"/>
-                </svg>
-                Filters
-              </span>
-              <span id="filter-count" class="filter-count" hidden></span>
-            </button>
-            <section id="filter-panel" class="filter-panel" aria-label="Dietary filters" hidden>
-              <h2>Dietary filters</h2>
-              <label><input id="no-pork" type="checkbox">No pork</label>
-              <label><input id="no-beef" type="checkbox">No beef</label>
-              <label><input id="no-meat" type="checkbox">Vegetarian</label>
-              <button id="clear-filters" class="text-button" type="button">Clear filters</button>
-            </section>
-          </div>
         </div>
       </div>
       <div class="controls">
@@ -53,7 +33,20 @@
           <button type="button" data-goal="cut" aria-pressed="false"><span class="artwork art-tape" data-icon="tape"><img src="./icons/ui/tape.webp" width="640" height="640" alt="" decoding="async"></span><span>Cut</span><span class="goal-check" aria-hidden="true"></span></button>
           <button type="button" data-goal="budget" aria-pressed="false"><span class="artwork art-coins" data-icon="coins"><img src="./icons/ui/coins.webp" width="640" height="640" alt="" decoding="async"></span><span>Budget</span><span class="goal-check" aria-hidden="true"></span></button>
         </div>
-        <label class="toggle"><input id="vegan" type="checkbox" role="switch"><span class="vegan-face"><span class="artwork art-leaf" data-icon="leaf"><img src="./icons/ui/leaf.webp" width="640" height="640" alt="" decoding="async"></span><span>Vegan</span><span class="switch" aria-hidden="true"><span class="switch-knob"></span></span></span></label>
+        <div class="filter-control diet-control">
+          <button id="filter-toggle" class="diet-tile vegan-face" type="button" aria-expanded="false" aria-controls="filter-panel" aria-label="Diet">
+            <span class="artwork art-leaf" data-icon="leaf"><img src="./icons/ui/leaf.webp" width="640" height="640" alt="" decoding="async"></span>
+            <span class="diet-copy"><span>Diet</span><span id="diet-summary" class="diet-summary" hidden></span></span>
+          </button>
+          <section id="filter-panel" class="filter-panel" aria-label="Dietary filters" hidden>
+            <h2>Dietary filters</h2>
+            <label><input id="vegan" type="checkbox">Vegan</label>
+            <label><input id="no-meat" type="checkbox">Vegetarian</label>
+            <label><input id="no-pork" type="checkbox">No pork</label>
+            <label><input id="no-beef" type="checkbox">No beef</label>
+            <button id="clear-filters" class="text-button" type="button">Clear filters</button>
+          </section>
+        </div>
       </div>
       <section class="receipt" aria-labelledby="plate-title" aria-busy="true" id="plate">
         <div class="tray-tints" aria-hidden="true"><span data-tint="bulk"></span><span data-tint="cut"></span><span data-tint="budget"></span></div>
@@ -123,7 +116,7 @@
     const STAGING_MENU_URL = new URL('staging/menu.html', SITE_URL);
     const MENU_VIEWS = [
       {id:'classic', label:'Classic'},
-      {id:'new', label:'New', filterInPreferences:true},
+      {id:'new', label:'New'},
     ];
     let menuView = MENU_VIEWS[0];
     let selection = {goal:'bulk',vegan:false,noPork:false,noBeef:false,noMeat:false};
@@ -163,7 +156,7 @@
     function syncMotionControls() {
       positionIndicator(document.querySelector('.goals'),document.querySelector('[data-goal][aria-pressed="true"]'),'mode-indicator');
       positionIndicator($('days'),$('days').querySelector('[aria-pressed="true"]'),'day-indicator');
-      $('plate').dataset.mode=selection.goal;document.querySelector('.toggle').dataset.vegan=String(selection.vegan);
+      $('plate').dataset.mode=selection.goal;
       for(const layer of document.querySelectorAll('[data-tint]')) layer.style.opacity=String(layer.dataset.tint===selection.goal?1:0);
     }
     function transitionParts(kind) {
@@ -185,9 +178,6 @@
         name($('plate-side'),'dish-subtitle',$('plate-side').textContent);
         document.querySelectorAll('[data-digit-name]').forEach(node=>name(node,node.dataset.digitName,node.textContent));
       }
-      if(!reducedMotion.matches) {
-        name(document.querySelector('.switch-knob'),'vegan-knob');
-      }
       return parts;
     }
     function animateTransition(transition, oldParts, newParts, kind, direction) {
@@ -199,7 +189,7 @@
       let incoming=0;
       for(const name of new Set([...oldParts.keys(),...newParts.keys()])) {
         const old=oldParts.has(name),fresh=newParts.has(name);
-        if(old && fresh && (name.endsWith('-pill') || name==='vegan-knob' || name.startsWith('food-'))) {
+        if(old && fresh && (name.endsWith('-pill') || name.startsWith('food-'))) {
           const a=oldParts.get(name),b=newParts.get(name);
           if(a.width && b.width && a.height && b.height) {
             const target=getComputedStyle(document.documentElement,`::view-transition-group(${name})`).transform;
@@ -209,7 +199,7 @@
             ],{duration:300,easing:spring,fill:'both',pseudoElement:`::view-transition-group(${name})`}));
           }
         }
-        if(name.endsWith('-pill') || name==='vegan-knob') continue;
+        if(name.endsWith('-pill')) continue;
         if(reduced) {
           if(old) animate(name,'old',[{opacity:1},{opacity:0}],120);
           if(fresh) animate(name,'new',[{opacity:0},{opacity:1}],120);
@@ -243,7 +233,7 @@
       }
       if(previous) await previous.updateCallbackDone.catch(()=>{});
       if(revision!==motionRevision) {if(kind==='day'){update();syncMotionControls();}return false;}
-      if(!document.startViewTransition) {update();syncMotionControls();return true;}
+      if(!document.startViewTransition || !$('filter-panel').hidden) {update();syncMotionControls();return true;}
       const oldParts=transitionParts(kind);blendFoodSnapshots(oldParts.keys());
       let newParts;
       const transition=document.startViewTransition(()=>{
@@ -290,6 +280,7 @@
     } catch(_) {}
     const requested=new URLSearchParams(location.search);
     if(goals.includes(requested.get('goal'))) selection={...selection,goal:requested.get('goal'),vegan:requested.get('vegan')==='1'};
+    if(selection.vegan) selection.noMeat=false;
     const money=cents=>'€'+(cents/100).toFixed(2);
     const rounded=value=>Math.round(value).toLocaleString('en-GB');
     const berlinDate=MenuDays.berlinDate;
@@ -333,11 +324,13 @@
       document.querySelectorAll('[data-goal]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.goal===selection.goal)));
       $('vegan').checked=selection.vegan;
       $('no-pork').checked=selection.noPork;$('no-beef').checked=selection.noBeef;$('no-meat').checked=selection.noMeat;
-      $('no-pork').disabled=selection.noMeat;$('no-beef').disabled=selection.noMeat;
-      const count=selection.noMeat?1:Number(selection.noPork)+Number(selection.noBeef);
-      $('filter-count').textContent=count;$('filter-count').hidden=!count;
-      $('filter-toggle').dataset.active=String(count>0 || !$('filter-panel').hidden);
-      $('filter-toggle').setAttribute('aria-label',count?'Dietary filters, '+count+' active':'Dietary filters');
+      $('no-pork').disabled=selection.vegan || selection.noMeat;
+      $('no-beef').disabled=selection.vegan || selection.noMeat;
+      const labels=selection.vegan?['Vegan']:selection.noMeat?['Vegetarian']:[selection.noPork?'No pork':null,selection.noBeef?'No beef':null].filter(Boolean);
+      $('diet-summary').textContent=labels.length?labels[0]+(labels.length>1?' +'+(labels.length-1):''):'';
+      $('diet-summary').hidden=!labels.length;
+      $('filter-toggle').dataset.active=String(labels.length>0);
+      $('filter-toggle').setAttribute('aria-label','Diet'+(labels.length?': '+labels.join(', '):''));
     }
     function saveAndRender() {
       try {localStorage.setItem('mensa-plate',JSON.stringify(selection));} catch(_) {}
@@ -485,18 +478,18 @@
       return payload;
     }
     document.querySelectorAll('[data-goal]').forEach(button=>button.addEventListener('click',()=>{selection.goal=button.dataset.goal;saveAndRender();}));
-    $('vegan').addEventListener('change',()=>{selection.vegan=$('vegan').checked;saveAndRender();});
+    $('vegan').addEventListener('change',()=>{selection.vegan=$('vegan').checked;if(selection.vegan)selection.noMeat=false;saveAndRender();});
     function setFilterOpen(open) {
+      if(open) activeTransition?.skipTransition();
       $('filter-panel').hidden=!open;
       $('filter-toggle').setAttribute('aria-expanded',String(open));
-      $('filter-toggle').dataset.active=String(open || Boolean(filterProfile()));
     }
     $('filter-toggle').addEventListener('click',()=>setFilterOpen($('filter-panel').hidden));
     for(const [id,key] of [['no-pork','noPork'],['no-beef','noBeef'],['no-meat','noMeat']]) {
-      $(id).addEventListener('change',()=>{selection[key]=$(id).checked;saveAndRender();});
+      $(id).addEventListener('change',()=>{selection[key]=$(id).checked;if(key==='noMeat' && selection.noMeat)selection.vegan=false;saveAndRender();});
     }
     $('clear-filters').addEventListener('click',()=>{
-      selection.noPork=false;selection.noBeef=false;selection.noMeat=false;saveAndRender();
+      selection.vegan=false;selection.noPork=false;selection.noBeef=false;selection.noMeat=false;saveAndRender();
     });
     document.addEventListener('click',event=>{if(!$('filter-panel').hidden && !event.target.closest('.filter-control')) setFilterOpen(false);});
     document.addEventListener('keydown',event=>{
@@ -623,17 +616,12 @@
       if(location.origin!==STAGING_MENU_URL.origin || location.pathname!==STAGING_MENU_URL.pathname) return;
       const storageKey='mensa-plate-staging-menu-view';
       const switcher=$('menu-view-switch');
-      const filter=$('filter-toggle').closest('.filter-control');
-      const classicFilterRow=filter.parentElement;
-      const preferenceRow=document.querySelector('.controls');
-      const caption=filter.querySelector('.filter-caption');
       function applyView(view) {
         menuView=view;
         stopPlateAnimations();
         setFilterOpen(false);
         document.body.dataset.menuView=view.id;
-        (view.filterInPreferences?preferenceRow:classicFilterRow).append(filter);
-        caption.hidden=!view.filterInPreferences;
+        syncMotionControls();
         if($('date').dateTime) dateLabel($('date').dateTime);
         $('days').querySelectorAll('button').forEach(labelDayButton);
         for(const button of switcher.querySelectorAll('button')) {
