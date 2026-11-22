@@ -260,20 +260,6 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
 @media (max-width:520px) { .heading-actions { width:100%; } .heading-actions .day-strip { flex:1; min-width:0; width:auto; margin:0; gap:2px; } .heading-actions .day-button { min-width:40px; padding-inline:4px; } .filter-panel { right:0; width:min(280px,calc(100vw - 48px)); } }
 @media (prefers-reduced-motion:reduce) { *, *::before, *::after { animation:none!important; transition:none!important; } }
 
-/* Temporary font trial: all variants and its removable control live together. */
-[data-font-trial='jakarta'] { --font-body:'Plus Jakarta Sans',sans-serif; }
-[data-font-trial='dm-sans'] { --font-body:'DM Sans',sans-serif; }
-[data-font-trial='bricolage-dm'] { --font-body:'DM Sans',sans-serif; --font-heading:'Bricolage Grotesque',sans-serif; --font-numbers:'Bricolage Grotesque',sans-serif; }
-[data-font-trial='fraunces-figtree'] { --font-body:'Figtree',sans-serif; --font-heading:'Fraunces',serif; --font-numbers:'Fraunces',serif; }
-[data-font-trial='fraunces-figtree'] h1,
-[data-font-trial='fraunces-figtree'] h2,
-[data-font-trial='fraunces-figtree'] h3,
-[data-font-trial='fraunces-figtree'] .brand { font-variation-settings:'SOFT' 100,'WONK' 1; }
-[data-font-trial='instrument'] { --font-body:'Instrument Sans',sans-serif; --font-heading:'Instrument Serif',serif; --font-numbers:'Instrument Serif',serif; }
-.font-trial { position:fixed; right:max(14px,env(safe-area-inset-right)); bottom:max(14px,env(safe-area-inset-bottom)); z-index:20; display:flex; align-items:center; gap:8px; max-width:calc(100vw - 28px); min-height:42px; padding:5px 11px 5px 7px; border:1px solid var(--line); border-radius:999px; background:var(--paper); box-shadow:0 5px 20px #25282b26; color:var(--ink); font-family:var(--font-body); }
-.font-trial-sample { display:grid; place-items:center; width:30px; height:30px; flex:none; border-radius:50%; background:var(--ink); color:var(--ground); font-family:var(--font-heading); font-size:15px; }
-.font-trial-name { min-width:0; overflow:hidden; font-size:12px; font-weight:600; text-overflow:ellipsis; white-space:nowrap; }
-
 /* The review control sits between the existing brand and location on staging. */
 [data-menu-view] header { position: relative; }
 .menu-view-switch {
