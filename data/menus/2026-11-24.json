@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/48.json",
-  "fetched_at": "2026-11-22T18:11:42.525676+00:00",
+  "fetched_at": "2026-11-23T09:36:31.654358+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -39,6 +39,30 @@
       }
     },
     {
+      "name": "Pizza Champignons und mariniertem Hirtenkäse",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "config"
+      }
+    },
+    {
       "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
       "station": "Grill",
       "station_raw": "Grill",
@@ -49,8 +73,8 @@
         "So"
       ],
       "additives": [
-        "Kn",
-        "2"
+        "2",
+        "Kn"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
@@ -104,6 +128,32 @@
       }
     },
     {
+      "name": "Grießnockerlsuppe",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
       "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
       "station": "Vegetarisch/fleischlos",
       "station_raw": "Vegetarisch/fleischlos",
@@ -112,17 +162,10 @@
       ],
       "allergens": [
         "Ei",
-        "Gl",
-        "GlG",
-        "GlW",
-        "Mi",
-        "Sf",
-        "Sl"
+        "Mi"
       ],
       "additives": [
-        "1",
-        "Kn",
-        "9"
+        "Kn"
       ],
       "is_vegan": false,
       "is_vegetarian": true,
@@ -217,29 +260,31 @@
       }
     },
     {
-      "name": "Rote Grütze mit Sahne",
+      "name": "Tiramisu",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
-      "markers": [
-        "f"
-      ],
+      "markers": [],
       "allergens": [
-        "Mi"
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sw"
       ],
-      "additives": [],
+      "additives": [
+        "5",
+        "14",
+        "99"
+      ],
       "is_vegan": false,
-      "is_vegetarian": true,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "LACTOSE",
-        "MILK",
-        "VEGETARIAN"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       }
     },
     {

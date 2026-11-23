@@ -4,10 +4,10 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-22T18:11:42.525676+00:00",
+  "fetched_at": "2026-11-23T09:36:31.654358+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 9,
+  "menu_count": 11,
   "scoring": {
     "bulk": {
       "price": {
@@ -156,8 +156,8 @@
                 "So"
               ],
               "additives": [
-                "Kn",
-                "2"
+                "2",
+                "Kn"
               ],
               "standing": false,
               "diet": "meat",
@@ -368,17 +368,10 @@
               ],
               "allergens": [
                 "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
+                "Mi"
               ],
               "additives": [
-                "1",
-                "Kn",
-                "9"
+                "Kn"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -520,8 +513,8 @@
                 "So"
               ],
               "additives": [
-                "Kn",
-                "2"
+                "2",
+                "Kn"
               ],
               "standing": false,
               "diet": "meat",
@@ -684,17 +677,10 @@
               ],
               "allergens": [
                 "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
+                "Mi"
               ],
               "additives": [
-                "1",
-                "Kn",
-                "9"
+                "Kn"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -941,17 +927,10 @@
               ],
               "allergens": [
                 "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
+                "Mi"
               ],
               "additives": [
-                "1",
-                "Kn",
-                "9"
+                "Kn"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -1058,8 +1037,8 @@
                 "So"
               ],
               "additives": [
-                "Kn",
-                "2"
+                "2",
+                "Kn"
               ],
               "standing": false,
               "diet": "meat",
@@ -1516,20 +1495,33 @@
   "extras": {
     "all": [
       {
-        "name": "Rote Grütze mit Sahne",
-        "name_en": "Red berry compote with cream",
-        "station": "Dessert (Glas)",
-        "weight_g": 150,
-        "price_cents": 135,
+        "name": "Grießnockerlsuppe",
+        "name_en": "Semolina dumpling soup",
+        "station": "Unspecified",
+        "weight_g": 300,
+        "price_cents": 270,
         "is_vegan": false,
         "diet": "vegetarian",
+        "serving": "2 scoops",
+        "kcal": 195.0,
+        "protein_g": 7.5,
+        "price_source": "config"
+      },
+      {
+        "name": "Tiramisu",
+        "name_en": "Tiramisu",
+        "station": "Dessert (Glas)",
+        "weight_g": 120.0,
+        "price_cents": 108,
+        "is_vegan": false,
+        "diet": "meat",
         "serving": "1 piece",
-        "kcal": 202.5,
-        "protein_g": 1.8,
-        "price_source": "eat-api"
+        "kcal": 336.0,
+        "protein_g": 5.4,
+        "price_source": "config"
       }
     ],
     "vegan": []
   },
-  "generated_on": "2026-11-22"
+  "generated_on": "2026-11-23"
 }

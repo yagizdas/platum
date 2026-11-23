@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/48.json",
-  "fetched_at": "2026-11-22T18:11:42.603279+00:00",
+  "fetched_at": "2026-11-23T09:36:31.726414+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -21,8 +21,8 @@
         "GlW"
       ],
       "additives": [
-        "Kn",
-        "3"
+        "3",
+        "Kn"
       ],
       "is_vegan": true,
       "is_vegetarian": true,
@@ -132,6 +132,29 @@
       }
     },
     {
+      "name": "Türkische Linsensuppe mit Kreuzkümmel",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
       "name": "Pfannengyros vom Schwein (S vom Strohschwein) mit Tsatsiki",
       "station": "Fleisch",
       "station_raw": "Fleisch",
@@ -141,9 +164,9 @@
         "Sw"
       ],
       "additives": [
-        "Kn",
         "1",
         "3",
+        "Kn",
         "5"
       ],
       "is_vegan": false,

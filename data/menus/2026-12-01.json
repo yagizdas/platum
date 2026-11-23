@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "date": "2026-12-01",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/49.json",
+  "fetched_at": "2026-11-23T09:36:32.271044+00:00",
+  "warnings": [],
+  "dishes": [
+    {
+      "name": "Pasta mit mediterraner Tomatensauce",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Schweinesteak (1 Stück) vom Grill (S vom Strohschwein) mit Champignonsauce",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sw"
+      ],
+      "additives": [
+        "5",
+        "99"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ALCOHOL",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "SULFITES",
+        "SULPHURS",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Gersteneintopf",
+      "station": "Studitopf",
+      "station_raw": "Studitopf",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "BARLEY",
+        "CELERY",
+        "CEREAL",
+        "GLUTEN",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Frische Rahmschwammerl",
+      "station": "Vegetarisch/fleischlos",
+      "station_raw": "Vegetarisch/fleischlos",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Rahm-Kartoffelgratin mit Romanescoröschen mit Kräuterdip",
+      "station": "Vegetarisch/fleischlos",
+      "station_raw": "Vegetarisch/fleischlos",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GARLIC",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Münchner Biergulasch vom Rind",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW"
+      ],
+      "additives": [
+        "99"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ALCOHOL",
+        "BARLEY",
+        "BEEF",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Reis",
+      "name_en": "Rice",
+      "station": "Beilagen",
+      "station_raw": "Beilagen",
+      "standing": true,
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [],
+      "dietary_source": "config",
+      "source": "config",
+      "api_labels": [],
+      "price_source": "config",
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Kartoffelsalat",
+      "name_en": "Potato salad",
+      "station": "Beilagen",
+      "station_raw": "Beilagen",
+      "standing": true,
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "markers": [],
+      "allergens": [],
+      "additives": [],
+      "dietary_source": "config",
+      "source": "config",
+      "api_labels": [],
+      "price_source": "config",
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    }
+  ]
+}
