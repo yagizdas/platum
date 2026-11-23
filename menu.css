@@ -390,9 +390,31 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
 .goals { grid-column:span 3; column-gap:inherit; }
 @media(max-width:360px) { .diet-summary { font-size:11px; letter-spacing:-.02em; } }
 
-/* Blend the entire control row as one scene, including mobile compositor layers. */
-.controls { mix-blend-mode:multiply; }
 @media(max-width:760px) {
+  /* Flatten each icon against its tile before mobile scrolling composites it.
+     A row-wide blend and transparent tiles can expose the source's white matte. */
+  .goals button, .diet-tile {
+    --tile-surface:var(--surface);
+    isolation:isolate;
+    background:var(--tile-surface);
+    transition:transform 140ms var(--motion-ease),color 180ms ease;
+  }
+  .goals button::before { content:none; }
+  .goals button[aria-pressed='true'], .diet-tile[data-active='true'] {
+    --tile-surface:var(--selected);
+    background:var(--tile-surface);
+    border-color:var(--accent);
+  }
+  .goals button:hover:not([aria-pressed='true']), .diet-tile:hover {
+    background:var(--tile-surface);
+  }
+  .mode-indicator { display:none; }
+  .controls .artwork {
+    isolation:isolate;
+    mix-blend-mode:normal;
+    background:var(--tile-surface);
+  }
+  .controls .artwork > img { mix-blend-mode:multiply; }
   header { padding-block:20px 12px; }
   main { padding-top:12px; }
   .heading { gap:14px; margin-bottom:18px; }
