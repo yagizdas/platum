@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./menu.css?v=mobile-icon-surfaces-1">
+  <link rel="stylesheet" href="./menu.css?v=meal-deck-1">
 </head>
 <body>
   <div class="shell">
@@ -54,7 +54,16 @@
           </section>
         </div>
       </div>
-      <section class="receipt" aria-labelledby="plate-title" aria-busy="true" id="plate">
+      <div class="plate-actions deck-navigation" id="plate-actions" hidden>
+        <div class="alternatives" id="alternatives">
+          <button class="arrow" id="previous" type="button" aria-label="Previous lunch" aria-controls="plate">←</button>
+          <div id="option-status" class="pager-dots" role="group" aria-label="Lunch options"></div>
+          <button class="arrow" id="next" type="button" aria-label="Next lunch" aria-controls="plate">→</button>
+        </div>
+      </div>
+      <div class="deck-stage">
+      <div class="meal-deck" id="meal-deck" role="region" aria-roledescription="carousel" aria-label="Lunch options">
+      <section class="receipt" aria-labelledby="plate-title" aria-roledescription="slide" aria-busy="true" id="plate">
         <div class="tray-tints" aria-hidden="true"><span data-tint="bulk"></span><span data-tint="cut"></span><span data-tint="budget"></span></div>
         <div class="plate-overview">
           <div class="plate-art dish-scene" id="plate-art"><span id="plate-illustration" class="artwork art-tray" data-icon="tray"><img src="./icons/ui/tray.webp" width="1254" height="1254" alt="" decoding="async"></span></div>
@@ -71,16 +80,9 @@
             <div class="empty" id="empty" hidden><h3 id="empty-title"></h3><p id="empty-text"></p></div>
           </div>
         </div>
-        <div class="plate-actions" id="plate-actions" hidden>
-          <div class="alternatives" id="alternatives">
-            <button class="arrow" id="previous" type="button" aria-label="Previous lunch">←</button>
-            <div id="option-status" class="pager-dots" role="group" aria-label="Lunch options"></div>
-            <button class="arrow" id="next" type="button" aria-label="Next lunch">→</button>
-          </div>
-          <button class="text-button" id="share" type="button">Share plate <span aria-hidden="true">↗</span></button>
-        </div>
-        <button class="text-button report-button" id="report-plate" type="button" aria-haspopup="dialog" aria-controls="report-sheet" hidden>Can't get this plate?</button>
       </section>
+      </div>
+      </div>
       <dialog id="report-sheet" class="report-sheet" aria-labelledby="report-title">
         <h2 id="report-title">Which dish was at another counter?</h2>
         <div id="report-dishes" class="report-dishes"></div>
@@ -89,7 +91,13 @@
       </dialog>
       <div class="secondary-actions" id="secondary-actions" hidden>
         <section class="ingredient-panel" id="plate-details" aria-labelledby="ingredients-title">
-          <h2 class="ingredients-title" id="ingredients-title">Details</h2>
+          <div class="details-heading">
+            <h2 class="ingredients-title" id="ingredients-title">Details</h2>
+            <div class="details-actions">
+              <button class="text-button report-button" id="report-plate" type="button" aria-haspopup="dialog" aria-controls="report-sheet" hidden>Can't get this plate?</button>
+              <button class="text-button" id="share" type="button">Share plate <span aria-hidden="true">↗</span></button>
+            </div>
+          </div>
           <div class="ingredient-content">
             <ul class="items" id="items"></ul>
           </div>
@@ -129,6 +137,80 @@
     document.documentElement.classList.toggle('has-view-transitions',typeof document.startViewTransition==='function');
     let activeTransition,motionRevision=0;
     const foodAnimations=new Set();
+    const deckAnimations=new Set();
+    const warmedDeckArt=new Set();
+    let departingCard,deckDragDirection=0;
+    function clearDeckMotion() {
+      for(const animation of deckAnimations) animation.cancel();
+      deckAnimations.clear();departingCard?.remove();departingCard=undefined;
+      $('plate').style.transform='';$('plate').style.opacity='';$('plate').style.zIndex='';
+      for(const card of $('meal-deck').querySelectorAll('.deck-preview')) card.style.transform='';
+      deckDragDirection=0;
+    }
+    function copyPlateCard() {
+      const card=$('plate').cloneNode(true);
+      card.classList.add('deck-preview');card.style.transform='';card.style.opacity='';card.style.zIndex='';
+      card.style.height=$('plate').offsetHeight+'px';
+      card.setAttribute('aria-hidden','true');card.inert=true;
+      card.removeAttribute('aria-labelledby');card.removeAttribute('aria-roledescription');card.removeAttribute('aria-busy');
+      for(const node of [card,...card.querySelectorAll('*')]) {
+        node.removeAttribute('id');node.removeAttribute('data-motion-name');node.removeAttribute('data-digit-name');
+        node.style.viewTransitionName='none';
+      }
+      return card;
+    }
+    function renderDeck(plates=[],backwards=false) {
+      const host=$('meal-deck');host.querySelectorAll('.deck-preview').forEach(card=>card.remove());
+      const direction=backwards?-1:1;
+      for(let depth=2;depth>=1;depth--) {
+        const index=plateIndex+depth*direction;
+        if(!plates[index]) continue;
+        for(const item of plates[index].items.slice(0,3)) {
+          const key=DishIcons.classify(item);
+          if(warmedDeckArt.has(key)) continue;
+          warmedDeckArt.add(key);
+          const image=new Image();image.src=DishIcons.assetUrl(key);image.decode().catch(()=>{});
+        }
+        // Only the card edges are exposed at rest. Render the actual meal once,
+        // in the live card as it comes forward, without hidden duplicate content.
+        const card=document.createElement('div');card.className='receipt deck-preview';
+        card.setAttribute('aria-hidden','true');card.inert=true;card.dataset.depth=String(depth);
+        card.append($('plate').querySelector('.tray-tints').cloneNode(true));
+        host.insertBefore(card,$('plate'));
+      }
+      host.dataset.stacked=String(!!host.querySelector('.deck-preview'));
+    }
+    function moveDeck(update,direction=1) {
+      const front=$('plate'),from=getComputedStyle(front).transform;
+      const outgoing=!front.classList.contains('is-empty') && !$('totals').hidden?copyPlateCard():null;
+      clearDeckMotion();clearMotionNames();
+      update();syncMotionControls();
+      if(!outgoing || reducedMotion.matches || front.classList.contains('is-empty')) return true;
+      outgoing.classList.remove('deck-preview');outgoing.classList.add('deck-departing');
+      $('meal-deck').append(outgoing);departingCard=outgoing;
+      const distance=front.offsetWidth+front.offsetHeight*.1+20,duration=420;
+      const peek='translateY(-14px) scale(.97) rotate(-.7deg)';
+      const forward=direction>0;
+      outgoing.style.zIndex=forward?'4':'3';front.style.zIndex=forward?'3':'4';
+      function track(node,frames) {
+        const animation=node.animate(frames,{duration,easing:spring,fill:'both'});deckAnimations.add(animation);
+        return animation;
+      }
+      track(outgoing,forward?[
+        {transform:from==='none'?'none':from,opacity:1},
+        {transform:`translateX(${-distance}px) rotate(-5deg) scale(.98)`,opacity:1}
+      ]:[{transform:from==='none'?'none':from,opacity:1},{transform:peek,opacity:1}]);
+      const incoming=track(front,forward?[
+        {transform:peek,opacity:1},{transform:'none',opacity:1}
+      ]:[{transform:`translateX(${-distance}px) rotate(-3deg) scale(.98)`,opacity:1},{transform:'none',opacity:1}]);
+      for(const card of $('meal-deck').querySelectorAll('.deck-preview')) {
+        if(forward) track(card,card.dataset.depth==='1'?
+          [{transform:'translateY(-28px) scale(.94) rotate(.7deg)'},{transform:getComputedStyle(card).transform}]:
+          [{opacity:0},{opacity:1}]);
+      }
+      incoming.finished.then(()=>{if(departingCard===outgoing)clearDeckMotion();},()=>{});
+      return true;
+    }
     function foodPositions() {
       return new Map([...$('plate-art').querySelectorAll('[data-dish-key]')].map(node=>[node.dataset.dishKey,node.getBoundingClientRect()]));
     }
@@ -159,6 +241,7 @@
     const spring='cubic-bezier(.22,1,.36,1)';
     function stopPlateAnimations() {
       ++motionRevision;activeTransition?.skipTransition();
+      clearDeckMotion();
       for(const animation of foodAnimations) animation.cancel();
       foodAnimations.clear();
     }
@@ -231,10 +314,12 @@
       previous?.skipTransition();
       if(kind==='day' || kind==='mode') {
         drag=undefined;wheelGesture=undefined;clearTimeout(wheelTimer);returnAnimation?.cancel();
-        $('plate-art').style.transform='';
+        $('plate').style.transform='';
       }
       if(previous) await previous.updateCallbackDone.catch(()=>{});
       if(revision!==motionRevision) {if(kind==='day'){update();syncMotionControls();}return false;}
+      if(kind==='pager') return moveDeck(update,direction);
+      clearDeckMotion();
       if(!document.startViewTransition || !$('filter-panel').hidden) {update();syncMotionControls();animateFood(previousFood,direction);return true;}
       const oldParts=transitionParts(kind);
       let newParts;
@@ -266,13 +351,16 @@
       node.append(digits);
     }
     function renderPager(count) {
-      const host=$('option-status'),indicator=host.querySelector('.pager-indicator');host.replaceChildren(...(indicator?[indicator]:[]));host.setAttribute('aria-label','Lunch option '+(plateIndex+1)+' of '+count);
+      const host=$('option-status'),indicator=host.querySelector('.pager-indicator'),focused=host.contains(document.activeElement);
+      host.replaceChildren(...(indicator?[indicator]:[]));host.setAttribute('aria-label','Lunch option '+(plateIndex+1)+' of '+count);
       for(let index=0;index<count;index++) {
         const dot=document.createElement('button');dot.type='button';dot.className='pager-dot';
         dot.setAttribute('aria-label','Lunch option '+(index+1)+' of '+count);dot.setAttribute('aria-pressed',String(index===plateIndex));
+        dot.setAttribute('aria-controls','plate');
         dot.addEventListener('click',()=>{const direction=Math.sign(index-plateIndex);if(!direction)return;plateIndex=index;render('pager',direction);});host.append(dot);
       }
       positionIndicator(host,host.querySelector('[aria-pressed="true"]'),'pager-indicator');
+      if(focused)host.querySelector('[aria-pressed="true"]')?.focus({preventScroll:true});
       $('previous').disabled=plateIndex===0;$('next').disabled=plateIndex===count-1;
     }
     reducedMotion.addEventListener('change',stopPlateAnimations);
@@ -343,6 +431,7 @@
       syncControls();if(data) render();
     }
     function empty(title,text,icon='empty') {
+      renderDeck();
       $('plate').classList.add('is-empty');$('secondary-actions').hidden=true;$('plate-side').hidden=true;$('plate-counter').hidden=true;
       DishIcons.compose($('plate-art'),[],{fallback:icon});
       $('items').replaceChildren();$('plate-title').textContent='Your plate';
@@ -437,11 +526,12 @@
       renderItems();
       $('totals').hidden=false;
       $('relaxed-note').textContent=v.note || '';$('relaxed-note').hidden=!v.relaxed || !v.note;
-      $('plate-actions').hidden=false;$('alternatives').hidden=plates.length<2;
+      $('plate-actions').hidden=plates.length<2;$('alternatives').hidden=plates.length<2;
       renderPager(plates.length);
       $('announcement').textContent='Option '+(plateIndex+1)+' of '+plates.length+': '+p.title;
       $('report-plate').hidden=!reports.enabled || p.items.some(i=>!i.id);
       $('share').textContent='Share plate';renderExtras();renderTotals();
+      renderDeck(plates);
     }
     function cycle(direction) {
       if(!data || stale || variant().state!=='ready') return;
@@ -553,26 +643,33 @@
       $('report-sheet').showModal();
     });
     let drag,returnAnimation,wheelTimer,wheelGesture;
-    const dragArea=$('plate-art');
+    const dragArea=$('plate');
     function dragOffset(distance) {
       const count=data?visiblePlates().length:0;
       const edge=distance>0?plateIndex===0:plateIndex>=count-1;
       return edge?distance*.18:distance;
     }
-    function paintDrag(distance) {if(!reducedMotion.matches)dragArea.style.transform=`translateX(${dragOffset(distance)}px)`;}
+    function paintDrag(distance) {
+      if(reducedMotion.matches) return;
+      const direction=distance<0?1:-1;
+      if(deckDragDirection!==direction) {renderDeck(visiblePlates(),direction<0);deckDragDirection=direction;}
+      const offset=dragOffset(distance),progress=Math.min(Math.abs(offset)/dragArea.clientWidth,1);
+      dragArea.style.transform=`translateX(${offset}px) rotate(${offset/dragArea.clientWidth*5}deg)`;
+      const next=$('meal-deck').querySelector('[data-depth="1"]');
+      if(next)next.style.transform=`translateY(${-14*(1-progress)}px) scale(${.97+.03*progress}) rotate(${- .7*(1-progress)}deg)`;
+    }
     function releaseDrag(distance,velocity,cancelled=false) {
       const direction=distance<0?1:-1,count=data?visiblePlates().length:0;
       const within=plateIndex+direction>=0 && plateIndex+direction<count;
       const commit=!cancelled && within && (Math.abs(distance)>dragArea.clientWidth*.25 || (Math.abs(velocity)>.55 && Math.abs(distance)>20));
-      const offset=dragOffset(distance);
       if(commit) {
         plateIndex+=direction;
-        motionUpdate(()=>{dragArea.style.transform='';syncControls();renderPlate();},'pager',direction);
+        motionUpdate(()=>{syncControls();renderPlate();},'pager',direction);
       } else {
+        const from=getComputedStyle(dragArea).transform;
         dragArea.style.transform='';
-        if(document.startViewTransition && !reducedMotion.matches) {
-          returnAnimation=dragArea.animate([{transform:`translateX(${offset}px)`},{transform:'translateX(0)'}],{duration:300,easing:spring});
-        }
+        renderDeck(visiblePlates());deckDragDirection=0;
+        if(!reducedMotion.matches) returnAnimation=dragArea.animate([{transform:from},{transform:'none'}],{duration:260,easing:spring});
       }
     }
     dragArea.addEventListener('dragstart',event=>event.preventDefault());
@@ -613,7 +710,7 @@
       paintDrag(wheelGesture.distance);clearTimeout(wheelTimer);
       wheelTimer=setTimeout(()=>{const state=wheelGesture;wheelGesture=undefined;releaseDrag(state.distance,state.velocity);},85);
     },{passive:false});
-    window.addEventListener('resize',()=>{stopPlateAnimations();syncMotionControls();if(data && currentPlate())renderPager(visiblePlates().length);});
+    window.addEventListener('resize',()=>{stopPlateAnimations();syncMotionControls();if(data && currentPlate()){renderPager(visiblePlates().length);renderDeck(visiblePlates());}});
 
     syncControls();
     function mondayOf(text) {
