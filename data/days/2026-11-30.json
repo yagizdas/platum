@@ -6,142 +6,116 @@
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "fetched_at": "2026-11-23T09:36:32.200248+00:00",
   "warnings": [],
+  "campus": "arcisstr",
   "schema_version": 2,
   "menu_count": 8,
   "scoring": {
     "bulk": {
-      "price": {
-        "metric": "price",
-        "weight": -2,
-        "normalizer": 4
-      },
-      "price_over_budget": {
-        "quantity": "price",
-        "pivot": 7,
-        "reverse": true,
-        "up": 0,
-        "down": 1,
-        "normalizer": 1
-      },
-      "energy_value": {
-        "metric": "kcal_per_euro",
-        "weight": 0.25,
-        "normalizer": 250
-      },
-      "protein_value": {
-        "metric": "protein_per_euro",
-        "weight": 0.5,
-        "normalizer": 12
-      },
-      "protein": {
-        "quantity": "protein",
-        "pivot": 0,
-        "up": 1.5,
-        "down": 1.5,
-        "normalizer": 10
-      },
-      "energy": {
-        "quantity": "kcal",
-        "pivot": 500,
-        "up": 0.25,
-        "down": 3,
-        "normalizer": 300
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "bulk",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 148,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 1.798757172924
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 1.770768547829
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.248880747798
+          }
+        ]
       }
     },
     "cut": {
-      "price": {
-        "metric": "price",
-        "weight": -1,
-        "normalizer": 4
-      },
-      "price_over_budget": {
-        "quantity": "price",
-        "pivot": 7,
-        "reverse": true,
-        "up": 0,
-        "down": 1,
-        "normalizer": 1
-      },
-      "protein_density": {
-        "metric": "protein_per_100kcal",
-        "weight": 2,
-        "normalizer": 8
-      },
-      "protein_value": {
-        "metric": "protein_per_euro",
-        "weight": 0.5,
-        "normalizer": 12
-      },
-      "protein": {
-        "quantity": "protein",
-        "pivot": 30,
-        "up": 0.5,
-        "down": 3,
-        "normalizer": 15
-      },
-      "energy": {
-        "quantity": "kcal",
-        "pivot": 700,
-        "reverse": true,
-        "up": 0,
-        "down": 2,
-        "normalizer": 200
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "cut",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 124,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": -2.022930718854
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 3.298844124996
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.012871976974
+          }
+        ]
       }
     },
     "budget": {
-      "price": {
-        "metric": "price",
-        "weight": -2,
-        "normalizer": 4
-      },
-      "price_over_budget": {
-        "quantity": "price",
-        "pivot": 7,
-        "reverse": true,
-        "up": 0,
-        "down": 1,
-        "normalizer": 1
-      },
-      "energy_value": {
-        "metric": "kcal_per_euro",
-        "weight": 1,
-        "normalizer": 250
-      },
-      "energy": {
-        "quantity": "kcal",
-        "pivot": 550,
-        "up": 0.2,
-        "down": 3,
-        "normalizer": 300
-      },
-      "protein": {
-        "quantity": "protein",
-        "pivot": 20,
-        "up": 0.2,
-        "down": 3,
-        "normalizer": 15
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "budget",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 152,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 0.353295614669
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 0.730392949246
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": -1.270457995687
+          }
+        ]
       }
     }
   },
   "default_scoop_g": 150,
   "nutrition_note": "Nutrition values are estimates.",
-  "variants": {
-    "bulk_all": {
+  "filtered_variants": {
+    "bulk_no_pork": {
+      "state": "unavailable",
+      "plates": []
+    },
+    "bulk_no_beef": {
       "state": "ready",
-      "goal": "bulk",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
       "plates": [
         {
-          "title": "Pork and Beef Rice Combo",
-          "reason": "Hearty meats paired with rice for maximum calories and fuel",
+          "title": "Pork cordon bleu + Rice",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
           "items": [
             {
               "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
               "name_en": "Pork cordon bleu (1 piece) (with reconstituted ham)",
               "station": "Fleisch",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "main",
               "texture": "dry",
               "count": 1,
@@ -164,6 +138,9 @@
               ],
               "standing": false,
               "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
               "id": "079f711a613184c1",
               "serving": "1 piece",
               "price_source": "eat-api",
@@ -171,40 +148,12 @@
               "protein_g": 29.7
             },
             {
-              "name": "Rindsbratwurst vom Grill (1 Stück)",
-              "name_en": "Grilled beef sausage (1 piece)",
-              "station": "Grill",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 120,
-              "price_cents": 158,
-              "is_vegan": false,
-              "markers": [
-                "R"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2",
-                "3",
-                "8"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "435612acd192dcfa",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 318.0,
-              "protein_g": 17.4
-            },
-            {
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -219,6 +168,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "meat_types": [],
               "id": "9f0686a5bcd7307e",
               "serving": "2 scoops",
               "price_source": "config",
@@ -227,34 +177,52 @@
             }
           ],
           "total": {
-            "price_cents": 690,
-            "price_eur": 6.9,
-            "weight_g": 600,
-            "kcal": 1140.0,
-            "protein_g": 55.2,
-            "carbs_g": 108.84,
-            "fat_g": 52.56
+            "price_cents": 532,
+            "price_eur": 5.32,
+            "weight_g": 480,
+            "kcal": 822.0,
+            "protein_g": 37.8,
+            "carbs_g": 107.4,
+            "fat_g": 25.2
           },
           "score": {
-            "price": -3.45,
-            "price_over_budget": 0.0,
-            "energy_value": 0.16521739130434782,
-            "protein_value": 0.3333333333333333,
-            "protein": 8.28,
-            "energy": 0.5333333333333333,
-            "total": 5.8619
+            "kcal": 14.785783961435278,
+            "protein": 6.6935051107936205,
+            "price": 1.3240455782853602,
+            "total": 22.8033
           },
           "has_estimated_prices": true
-        },
+        }
+      ]
+    },
+    "bulk_no_pork_beef": {
+      "state": "unavailable",
+      "plates": []
+    },
+    "bulk_vegetarian": {
+      "state": "unavailable",
+      "plates": []
+    },
+    "cut_no_pork": {
+      "state": "ready",
+      "plates": [
         {
-          "title": "Coconut Soy Veggie Curry",
-          "reason": "Rich wok curry loaded with soy and peanuts over fluffy rice",
+          "title": "Coconut curry",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
+              "counters": [
+                "Warm 3/4"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -277,66 +245,50 @@
               ],
               "standing": false,
               "diet": "vegan",
+              "meat_types": [],
               "id": "65ca5e1db9855101",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 607.5,
               "protein_g": 24.75
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 997.5,
-            "protein_g": 32.85,
-            "carbs_g": 120.0,
-            "fat_g": 41.4
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 24.75,
+            "carbs_g": 36.0,
+            "fat_g": 40.5
           },
           "score": {
-            "price": -3.375,
-            "price_over_budget": 0.0,
-            "energy_value": 0.14777777777777776,
-            "protein_value": 0.2027777777777778,
-            "protein": 4.9275,
-            "energy": 0.41458333333333336,
-            "total": 2.3176
+            "kcal": -12.28930411703805,
+            "protein": 8.1646392093651,
+            "price": 0.0521315067447,
+            "total": -4.0725
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         },
         {
-          "title": "Herb Potato Pockets and Salad",
-          "reason": "Comforting potato dumplings served with cool sour cream and potato salad",
+          "title": "Tomato-basil filled ravioli",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
           "items": [
             {
-              "name": "Kartoffeltaschen mit Kräuterfrischkäse und Sauerrahmdip",
-              "name_en": "Potato pockets filled with herb cream cheese served with sour cream dip",
-              "station": "Vegetarisch/fleischlos",
+              "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
+              "name_en": "Tomato-basil filled ravioli with tomato sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -348,84 +300,61 @@
                 "f"
               ],
               "allergens": [
+                "Ei",
                 "Gl",
-                "GlG",
-                "Mi",
-                "Sf",
-                "Sl"
+                "GlW",
+                "Mi"
               ],
-              "additives": [
-                "1"
-              ],
+              "additives": [],
               "standing": false,
               "diet": "vegetarian",
-              "id": "9e1e9253eb150ed6",
+              "meat_types": [],
+              "id": "3bea4815f15a8dc6",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 832.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Kartoffelsalat",
-              "name_en": "Potato salad",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "meat",
-              "id": "73bbe2bb9698caf4",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 172.5,
-              "protein_g": 2.7
+              "kcal": 607.5,
+              "protein_g": 20.25
             }
           ],
           "total": {
-            "price_cents": 540,
-            "price_eur": 5.4,
-            "weight_g": 600,
-            "kcal": 1005.0,
-            "protein_g": 19.8,
-            "carbs_g": 118.5,
-            "fat_g": 49.2
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
           },
           "score": {
-            "price": -2.7,
-            "price_over_budget": 0.0,
-            "energy_value": 0.1861111111111111,
-            "protein_value": 0.15277777777777776,
-            "protein": 2.97,
-            "energy": 0.42083333333333334,
-            "total": 1.0297
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         }
       ]
     },
-    "cut_all": {
+    "cut_no_beef": {
       "state": "ready",
-      "goal": "cut",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
       "plates": [
         {
-          "title": "Classic Pork Cordon Bleu",
-          "reason": "High protein main course kept lean with no extra side dishes",
+          "title": "Pork cordon bleu",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
           "items": [
             {
               "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
               "name_en": "Pork cordon bleu (1 piece) (with reconstituted ham)",
               "station": "Fleisch",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "main",
               "texture": "dry",
               "count": 1,
@@ -448,6 +377,9 @@
               ],
               "standing": false,
               "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
               "id": "079f711a613184c1",
               "serving": "1 piece",
               "price_source": "eat-api",
@@ -465,62 +397,36 @@
             "fat_g": 24.3
           },
           "score": {
-            "price": -0.655,
-            "price_over_budget": 0.0,
-            "protein_density": 1.7187499999999998,
-            "protein_value": 0.47232824427480913,
-            "protein": -0.060000000000000143,
-            "energy": 0.0,
-            "total": 1.4761
+            "kcal": -8.73906070544928,
+            "protein": 9.79756705123812,
+            "price": 0.03372457967188,
+            "total": 1.0922
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Grilled Beef Sausage and Curry",
-          "reason": "Savory sausage served alongside vegetable wok curry for great protein",
+          "title": "Coconut curry",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
           "items": [
-            {
-              "name": "Rindsbratwurst vom Grill (1 Stück)",
-              "name_en": "Grilled beef sausage (1 piece)",
-              "station": "Grill",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 120,
-              "price_cents": 158,
-              "is_vegan": false,
-              "markers": [
-                "R"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2",
-                "3",
-                "8"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "435612acd192dcfa",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 318.0,
-              "protein_g": 17.4
-            },
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
+              "counters": [
+                "Warm 3/4"
+              ],
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -537,42 +443,50 @@
               ],
               "standing": false,
               "diet": "vegan",
+              "meat_types": [],
               "id": "65ca5e1db9855101",
-              "serving": "2 scoops",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 405.0,
-              "protein_g": 16.5
+              "kcal": 607.5,
+              "protein_g": 24.75
             }
           ],
           "total": {
-            "price_cents": 428,
-            "price_eur": 4.28,
-            "weight_g": 420,
-            "kcal": 723.0,
-            "protein_g": 33.9,
-            "carbs_g": 25.44,
-            "fat_g": 54.36
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 24.75,
+            "carbs_g": 36.0,
+            "fat_g": 40.5
           },
           "score": {
-            "price": -1.07,
-            "price_over_budget": 0.0,
-            "protein_density": 1.1721991701244814,
-            "protein_value": 0.3300233644859813,
-            "protein": 0.12999999999999995,
-            "energy": -0.23,
-            "total": 0.3322
+            "kcal": -12.28930411703805,
+            "protein": 8.1646392093651,
+            "price": 0.0521315067447,
+            "total": -4.0725
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Tomato Basil Ravioli",
-          "reason": "Light filled pasta plate served simply with fragrant tomato sauce",
+          "title": "Tomato-basil filled ravioli",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
           "items": [
             {
               "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
               "name_en": "Tomato-basil filled ravioli with tomato sauce",
               "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -592,6 +506,7 @@
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
+              "meat_types": [],
               "id": "3bea4815f15a8dc6",
               "serving": "3 scoops",
               "price_source": "eat-api",
@@ -609,83 +524,433 @@
             "fat_g": 17.1
           },
           "score": {
-            "price": -1.0125,
-            "price_over_budget": 0.0,
-            "protein_density": 0.8333333333333334,
-            "protein_value": 0.20833333333333334,
-            "protein": -1.95,
-            "energy": 0.0,
-            "total": -1.9208
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
           },
           "has_estimated_prices": false
-        },
+        }
+      ]
+    },
+    "cut_no_pork_beef": {
+      "state": "ready",
+      "plates": [
         {
-          "title": "Rustic Root Veg Polenta",
-          "reason": "Simple corn polenta stew loaded with root vegetables for clean eating",
+          "title": "Coconut curry",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
           "items": [
             {
-              "name": "Polenta mit Wurzelgemüse",
-              "name_en": "Polenta with root vegetables",
-              "station": "Studitopf",
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [
+                "Warm 3/4"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 149,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [
-                "Sl"
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
               ],
-              "additives": [],
+              "additives": [
+                "2"
+              ],
               "standing": false,
               "diet": "vegan",
-              "id": "45d6035a1fd38d8f",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 427.5,
-              "protein_g": 10.35
+              "kcal": 607.5,
+              "protein_g": 24.75
             }
           ],
           "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
+            "price_cents": 405,
+            "price_eur": 4.05,
             "weight_g": 450,
-            "kcal": 427.5,
-            "protein_g": 10.35,
-            "carbs_g": 67.5,
-            "fat_g": 12.6
+            "kcal": 607.5,
+            "protein_g": 24.75,
+            "carbs_g": 36.0,
+            "fat_g": 40.5
           },
           "score": {
-            "price": -0.3725,
-            "price_over_budget": 0.0,
-            "protein_density": 0.6052631578947368,
-            "protein_value": 0.28942953020134227,
-            "protein": -3.9299999999999997,
-            "energy": 0.0,
-            "total": -3.4078
+            "kcal": -12.28930411703805,
+            "protein": 8.1646392093651,
+            "price": 0.0521315067447,
+            "total": -4.0725
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Herb Stuffed Potato Pockets",
-          "reason": "Crisp potato pockets filled with fresh herb cheese and dipping sauce",
+          "title": "Tomato-basil filled ravioli",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
+              "name_en": "Tomato-basil filled ravioli with tomato sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "3bea4815f15a8dc6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Coconut curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 24.75,
+            "carbs_g": 36.0,
+            "fat_g": 40.5
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 8.1646392093651,
+            "price": 0.0521315067447,
+            "total": -4.0725
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Tomato-basil filled ravioli",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
+              "name_en": "Tomato-basil filled ravioli with tomato sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "3bea4815f15a8dc6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Coconut curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 24.75,
+            "carbs_g": 36.0,
+            "fat_g": 40.5
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.8077225493838498,
+            "price": -5.14535488253235,
+            "total": -1.1914
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Tomato-basil filled ravioli",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
+              "name_en": "Tomato-basil filled ravioli with tomato sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "3bea4815f15a8dc6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato pockets filled + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
           "items": [
             {
               "name": "Kartoffeltaschen mit Kräuterfrischkäse und Sauerrahmdip",
               "name_en": "Potato pockets filled with herb cream cheese served with sour cream dip",
               "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": false,
               "markers": [
                 "f"
@@ -702,82 +967,20 @@
               ],
               "standing": false,
               "diet": "vegetarian",
+              "meat_types": [],
               "id": "9e1e9253eb150ed6",
-              "serving": "2 scoops",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 11.4
-            }
-          ],
-          "total": {
-            "price_cents": 270,
-            "price_eur": 2.7,
-            "weight_g": 300,
-            "kcal": 555.0,
-            "protein_g": 11.4,
-            "carbs_g": 64.5,
-            "fat_g": 27.6
-          },
-          "score": {
-            "price": -0.675,
-            "price_over_budget": 0.0,
-            "protein_density": 0.5135135135135136,
-            "protein_value": 0.17592592592592593,
-            "protein": -3.72,
-            "energy": 0.0,
-            "total": -3.7056
-          },
-          "has_estimated_prices": false
-        }
-      ]
-    },
-    "budget_all": {
-      "state": "ready",
-      "goal": "budget",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Grilled Beef Sausage and Rice",
-          "reason": "Simple and filling grilled beef classic that keeps costs very low",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Rindsbratwurst vom Grill (1 Stück)",
-              "name_en": "Grilled beef sausage (1 piece)",
-              "station": "Grill",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 120,
-              "price_cents": 158,
-              "is_vegan": false,
-              "markers": [
-                "R"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2",
-                "3",
-                "8"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "435612acd192dcfa",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 318.0,
-              "protein_g": 17.4
+              "kcal": 832.5,
+              "protein_g": 17.1
             },
             {
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "side",
               "texture": "dry",
               "count": 1,
@@ -792,6 +995,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "meat_types": [],
               "id": "9f0686a5bcd7307e",
               "serving": "1 scoop",
               "price_source": "config",
@@ -800,33 +1004,44 @@
             }
           ],
           "total": {
-            "price_cents": 293,
-            "price_eur": 2.93,
-            "weight_g": 270,
-            "kcal": 513.0,
-            "protein_g": 21.45,
-            "carbs_g": 43.44,
-            "fat_g": 27.81
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1027.5,
+            "protein_g": 21.15,
+            "carbs_g": 138.75,
+            "fat_g": 41.85
           },
           "score": {
-            "price": -1.465,
-            "price_over_budget": 0.0,
-            "energy_value": 0.7003412969283276,
-            "energy": -0.37,
-            "protein": 0.019333333333333324,
-            "total": -1.1153
+            "kcal": 3.630112440723975,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -1.6856
           },
           "has_estimated_prices": true
-        },
+        }
+      ]
+    },
+    "budget_no_beef": {
+      "state": "ready",
+      "plates": [
         {
-          "title": "Cordon Bleu with White Rice",
-          "reason": "Satisfying breaded pork favorite paired with a basic portion of rice",
+          "title": "Pork cordon bleu",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
           "items": [
             {
               "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
               "name_en": "Pork cordon bleu (1 piece) (with reconstituted ham)",
               "station": "Fleisch",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "main",
               "texture": "dry",
               "count": 1,
@@ -849,65 +1064,50 @@
               ],
               "standing": false,
               "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
               "id": "079f711a613184c1",
               "serving": "1 piece",
               "price_source": "eat-api",
               "kcal": 432.0,
               "protein_g": 29.7
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 397,
-            "price_eur": 3.97,
-            "weight_g": 330,
-            "kcal": 627.0,
-            "protein_g": 33.75,
-            "carbs_g": 65.4,
-            "fat_g": 24.75
+            "price_cents": 262,
+            "price_eur": 2.62,
+            "weight_g": 180,
+            "kcal": 432.0,
+            "protein_g": 29.7,
+            "carbs_g": 23.4,
+            "fat_g": 24.3
           },
           "score": {
-            "price": -1.985,
-            "price_over_budget": 0.0,
-            "energy_value": 0.6317380352644837,
-            "energy": 0.051333333333333335,
-            "protein": 0.18333333333333332,
-            "total": -1.1186
+            "kcal": 1.52623705537008,
+            "protein": 2.16926705926062,
+            "price": -3.32859994869994,
+            "total": 0.3669
           },
-          "has_estimated_prices": true
+          "has_estimated_prices": false
         },
         {
-          "title": "Spiced Coconut Tofu Curry",
-          "reason": "Generous serving of aromatic vegetable wok curry at an affordable cost",
+          "title": "Coconut curry",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
+              "counters": [
+                "Warm 3/4"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -930,6 +1130,7 @@
               ],
               "standing": false,
               "diet": "vegan",
+              "meat_types": [],
               "id": "65ca5e1db9855101",
               "serving": "3 scoops",
               "price_source": "eat-api",
@@ -947,24 +1148,32 @@
             "fat_g": 40.5
           },
           "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.6,
-            "energy": 0.03833333333333333,
-            "protein": 0.06333333333333334,
-            "total": -1.3233
+            "kcal": 2.1462708591141753,
+            "protein": 1.8077225493838498,
+            "price": -5.14535488253235,
+            "total": -1.1914
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Basil Tomato Stuffed Ravioli",
-          "reason": "Flavorsome pasta dish providing hearty satisfaction on a budget",
+          "title": "Tomato-basil filled ravioli",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
           "items": [
             {
               "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
               "name_en": "Tomato-basil filled ravioli with tomato sauce",
               "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -984,6 +1193,7 @@
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
+              "meat_types": [],
               "id": "3bea4815f15a8dc6",
               "serving": "3 scoops",
               "price_source": "eat-api",
@@ -1001,56 +1211,73 @@
             "fat_g": 17.1
           },
           "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.6,
-            "energy": 0.03833333333333333,
-            "protein": 0.0033333333333333335,
-            "total": -1.3833
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Hearty Polenta Stew and Rice",
-          "reason": "Very economical pairing of warm vegetable polenta with tender rice",
+          "title": "Potato pockets filled + Rice",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
           "items": [
             {
-              "name": "Polenta mit Wurzelgemüse",
-              "name_en": "Polenta with root vegetables",
-              "station": "Studitopf",
+              "name": "Kartoffeltaschen mit Kräuterfrischkäse und Sauerrahmdip",
+              "name_en": "Potato pockets filled with herb cream cheese served with sour cream dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
+              "price_cents": 405,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
               "allergens": [
+                "Gl",
+                "GlG",
+                "Mi",
+                "Sf",
                 "Sl"
               ],
-              "additives": [],
+              "additives": [
+                "1"
+              ],
               "standing": false,
-              "diet": "vegan",
-              "id": "45d6035a1fd38d8f",
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "9e1e9253eb150ed6",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 427.5,
-              "protein_g": 10.35
+              "kcal": 832.5,
+              "protein_g": 17.1
             },
             {
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "side",
               "texture": "dry",
-              "count": 2,
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -1059,50 +1286,53 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "meat_types": [],
               "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
+              "serving": "1 scoop",
               "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
+              "kcal": 195.0,
+              "protein_g": 4.05
             }
           ],
           "total": {
-            "price_cents": 419,
-            "price_eur": 4.19,
-            "weight_g": 750,
-            "kcal": 817.5,
-            "protein_g": 18.45,
-            "carbs_g": 151.5,
-            "fat_g": 13.5
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1027.5,
+            "protein_g": 21.15,
+            "carbs_g": 138.75,
+            "fat_g": 41.85
           },
           "score": {
-            "price": -2.095,
-            "price_over_budget": 0.0,
-            "energy_value": 0.7804295942720764,
-            "energy": 0.17833333333333334,
-            "protein": -0.31000000000000016,
-            "total": -1.4462
+            "kcal": 3.630112440723975,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -1.6856
           },
           "has_estimated_prices": true
         }
       ]
     },
-    "bulk_vegan": {
+    "budget_no_pork_beef": {
       "state": "ready",
-      "goal": "bulk",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
       "plates": [
         {
-          "title": "Coconut Veggie Curry with Rice",
-          "reason": "Wholesome vegan wok curry served with nutty peanuts and steamed rice",
+          "title": "Coconut curry",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
+              "counters": [
+                "Warm 3/4"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1125,173 +1355,7 @@
               ],
               "standing": false,
               "diet": "vegan",
-              "id": "65ca5e1db9855101",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 24.75
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 997.5,
-            "protein_g": 32.85,
-            "carbs_g": 120.0,
-            "fat_g": 41.4
-          },
-          "score": {
-            "price": -3.375,
-            "price_over_budget": 0.0,
-            "energy_value": 0.14777777777777776,
-            "protein_value": 0.2027777777777778,
-            "protein": 4.9275,
-            "energy": 0.41458333333333336,
-            "total": 2.3176
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Polenta Vegetable Rice Feast",
-          "reason": "Comforting polenta and root vegetable stew piled over extra rice",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Polenta mit Wurzelgemüse",
-              "name_en": "Polenta with root vegetables",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "45d6035a1fd38d8f",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 427.5,
-              "protein_g": 10.35
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 419,
-            "price_eur": 4.19,
-            "weight_g": 750,
-            "kcal": 817.5,
-            "protein_g": 18.45,
-            "carbs_g": 151.5,
-            "fat_g": 13.5
-          },
-          "score": {
-            "price": -2.095,
-            "price_over_budget": 0.0,
-            "energy_value": 0.1951073985680191,
-            "protein_value": 0.18347255369928397,
-            "protein": 2.7674999999999996,
-            "energy": 0.26458333333333334,
-            "total": 1.3157
-          },
-          "has_estimated_prices": true
-        }
-      ]
-    },
-    "cut_vegan": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Coconut Soy Peanut Curry",
-          "reason": "Flavorful vegan curry that cuts down on carbs by skipping sides",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
-              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
-              "station": "Wok",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "En",
-                "Gl",
-                "GlW",
-                "Sf",
-                "So"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
+              "meat_types": [],
               "id": "65ca5e1db9855101",
               "serving": "3 scoops",
               "price_source": "eat-api",
@@ -1309,65 +1373,1103 @@
             "fat_g": 40.5
           },
           "score": {
-            "price": -1.0125,
-            "price_over_budget": 0.0,
-            "protein_density": 1.0185185185185186,
-            "protein_value": 0.25462962962962965,
-            "protein": -1.05,
-            "energy": 0.0,
-            "total": -0.7894
+            "kcal": 2.1462708591141753,
+            "protein": 1.8077225493838498,
+            "price": -5.14535488253235,
+            "total": -1.1914
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Warm Root Vegetable Polenta",
-          "reason": "Low calorie plant based dish featuring soft polenta and vegetables",
+          "title": "Tomato-basil filled ravioli",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
           "items": [
             {
-              "name": "Polenta mit Wurzelgemüse",
-              "name_en": "Polenta with root vegetables",
-              "station": "Studitopf",
+              "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
+              "name_en": "Tomato-basil filled ravioli with tomato sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 149,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "3bea4815f15a8dc6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato pockets filled + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltaschen mit Kräuterfrischkäse und Sauerrahmdip",
+              "name_en": "Potato pockets filled with herb cream cheese served with sour cream dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "9e1e9253eb150ed6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1027.5,
+            "protein_g": 21.15,
+            "carbs_g": 138.75,
+            "fat_g": 41.85
+          },
+          "score": {
+            "kcal": 3.630112440723975,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -1.6856
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Coconut curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [
-                "Sl"
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
               ],
-              "additives": [],
+              "additives": [
+                "2"
+              ],
               "standing": false,
               "diet": "vegan",
-              "id": "45d6035a1fd38d8f",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 427.5,
-              "protein_g": 10.35
+              "kcal": 607.5,
+              "protein_g": 24.75
             }
           ],
           "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
+            "price_cents": 405,
+            "price_eur": 4.05,
             "weight_g": 450,
-            "kcal": 427.5,
-            "protein_g": 10.35,
-            "carbs_g": 67.5,
-            "fat_g": 12.6
+            "kcal": 607.5,
+            "protein_g": 24.75,
+            "carbs_g": 36.0,
+            "fat_g": 40.5
           },
           "score": {
-            "price": -0.3725,
-            "price_over_budget": 0.0,
-            "protein_density": 0.6052631578947368,
-            "protein_value": 0.28942953020134227,
-            "protein": -3.9299999999999997,
-            "energy": 0.0,
-            "total": -3.4078
+            "kcal": 2.1462708591141753,
+            "protein": 1.8077225493838498,
+            "price": -5.14535488253235,
+            "total": -1.1914
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Tomato-basil filled ravioli",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
+              "name_en": "Tomato-basil filled ravioli with tomato sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "3bea4815f15a8dc6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato pockets filled + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltaschen mit Kräuterfrischkäse und Sauerrahmdip",
+              "name_en": "Potato pockets filled with herb cream cheese served with sour cream dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "9e1e9253eb150ed6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1027.5,
+            "protein_g": 21.15,
+            "carbs_g": 138.75,
+            "fat_g": 41.85
+          },
+          "score": {
+            "kcal": 3.630112440723975,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -1.6856
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    }
+  },
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pork cordon bleu + Potato salad + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
+              "name_en": "Pork cordon bleu (1 piece) (with reconstituted ham)",
+              "station": "Fleisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 180,
+              "price_cents": 262,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "079f711a613184c1",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 432.0,
+              "protein_g": 29.7
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "73bbe2bb9698caf4",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 802,
+            "price_eur": 8.02,
+            "weight_g": 780,
+            "kcal": 1167.0,
+            "protein_g": 43.2,
+            "carbs_g": 150.9,
+            "fat_g": 40.8
+          },
+          "score": {
+            "kcal": 20.991496208023083,
+            "protein": 7.649720126621281,
+            "price": 1.99602359733996,
+            "total": 30.6372
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pork cordon bleu",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
+              "name_en": "Pork cordon bleu (1 piece) (with reconstituted ham)",
+              "station": "Fleisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 180,
+              "price_cents": 262,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "079f711a613184c1",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 432.0,
+              "protein_g": 29.7
+            }
+          ],
+          "total": {
+            "price_cents": 262,
+            "price_eur": 2.62,
+            "weight_g": 180,
+            "kcal": 432.0,
+            "protein_g": 29.7,
+            "carbs_g": 23.4,
+            "fat_g": 24.3
+          },
+          "score": {
+            "kcal": -8.73906070544928,
+            "protein": 9.79756705123812,
+            "price": 0.03372457967188,
+            "total": 1.0922
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Coconut curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 24.75,
+            "carbs_g": 36.0,
+            "fat_g": 40.5
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 8.1646392093651,
+            "price": 0.0521315067447,
+            "total": -4.0725
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Tomato-basil filled ravioli",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
+              "name_en": "Tomato-basil filled ravioli with tomato sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "3bea4815f15a8dc6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pork cordon bleu",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
+              "name_en": "Pork cordon bleu (1 piece) (with reconstituted ham)",
+              "station": "Fleisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 180,
+              "price_cents": 262,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "079f711a613184c1",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 432.0,
+              "protein_g": 29.7
+            }
+          ],
+          "total": {
+            "price_cents": 262,
+            "price_eur": 2.62,
+            "weight_g": 180,
+            "kcal": 432.0,
+            "protein_g": 29.7,
+            "carbs_g": 23.4,
+            "fat_g": 24.3
+          },
+          "score": {
+            "kcal": 1.52623705537008,
+            "protein": 2.16926705926062,
+            "price": -3.32859994869994,
+            "total": 0.3669
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Coconut curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 24.75,
+            "carbs_g": 36.0,
+            "fat_g": 40.5
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.8077225493838498,
+            "price": -5.14535488253235,
+            "total": -1.1914
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Tomato-basil filled ravioli",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
+              "name_en": "Tomato-basil filled ravioli with tomato sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "3bea4815f15a8dc6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato pockets filled + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltaschen mit Kräuterfrischkäse und Sauerrahmdip",
+              "name_en": "Potato pockets filled with herb cream cheese served with sour cream dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "9e1e9253eb150ed6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 1027.5,
+            "protein_g": 21.15,
+            "carbs_g": 138.75,
+            "fat_g": 41.85
+          },
+          "score": {
+            "kcal": 3.630112440723975,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -1.6856
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "unavailable",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [],
+      "message": "No plate fits this goal today."
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Coconut curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 24.75,
+            "carbs_g": 36.0,
+            "fat_g": 40.5
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 8.1646392093651,
+            "price": 0.0521315067447,
+            "total": -4.0725
           },
           "has_estimated_prices": false
         }
@@ -1381,14 +2483,22 @@
       "note": null,
       "plates": [
         {
-          "title": "Coconut Veggie Wok Plate",
-          "reason": "Low priced plant based wok meal rich with soy and crunch",
+          "title": "Coconut curry",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
+              "counters": [
+                "Warm 3/4"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1411,6 +2521,7 @@
               ],
               "standing": false,
               "diet": "vegan",
+              "meat_types": [],
               "id": "65ca5e1db9855101",
               "serving": "3 scoops",
               "price_source": "eat-api",
@@ -1428,89 +2539,12 @@
             "fat_g": 40.5
           },
           "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.6,
-            "energy": 0.03833333333333333,
-            "protein": 0.06333333333333334,
-            "total": -1.3233
+            "kcal": 2.1462708591141753,
+            "protein": 1.8077225493838498,
+            "price": -5.14535488253235,
+            "total": -1.1914
           },
           "has_estimated_prices": false
-        },
-        {
-          "title": "Rice and Polenta Stew",
-          "reason": "Extremely cost effective combination of corn polenta and white rice",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Polenta mit Wurzelgemüse",
-              "name_en": "Polenta with root vegetables",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Sl"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "45d6035a1fd38d8f",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 427.5,
-              "protein_g": 10.35
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 419,
-            "price_eur": 4.19,
-            "weight_g": 750,
-            "kcal": 817.5,
-            "protein_g": 18.45,
-            "carbs_g": 151.5,
-            "fat_g": 13.5
-          },
-          "score": {
-            "price": -2.095,
-            "price_over_budget": 0.0,
-            "energy_value": 0.7804295942720764,
-            "energy": 0.17833333333333334,
-            "protein": -0.31000000000000016,
-            "total": -1.4462
-          },
-          "has_estimated_prices": true
         }
       ]
     }

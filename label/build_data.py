@@ -9,6 +9,12 @@ def plate_id(plate):
     return "+".join(sorted(item["id"] for item in plate["items"]))
 
 
+def visual_item(item):
+    """Keep the dish identity fields used by the shared plate artwork."""
+    fields = ("name", "name_en", "station", "role", "diet", "is_vegan")
+    return {field: item[field] for field in fields if field in item}
+
+
 def build():
     days = []
     for path in sorted((ROOT / "data" / "days").glob("*.json")):
@@ -25,6 +31,7 @@ def build():
                         "id": key,
                         "title": plate["title"],
                         "dishes": [item.get("name_en") or item["name"] for item in plate["items"]],
+                        "items": [visual_item(item) for item in plate["items"]],
                         "kcal": plate["total"]["kcal"],
                         "protein": plate["total"]["protein_g"],
                         "price": plate["total"]["price_eur"],

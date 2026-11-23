@@ -6,356 +6,113 @@
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "fetched_at": "2026-11-23T09:36:31.654358+00:00",
   "warnings": [],
+  "campus": "arcisstr",
   "schema_version": 2,
   "menu_count": 11,
   "scoring": {
     "bulk": {
-      "price": {
-        "metric": "price",
-        "weight": -2,
-        "normalizer": 4
-      },
-      "price_over_budget": {
-        "quantity": "price",
-        "pivot": 7,
-        "reverse": true,
-        "up": 0,
-        "down": 1,
-        "normalizer": 1
-      },
-      "energy_value": {
-        "metric": "kcal_per_euro",
-        "weight": 0.25,
-        "normalizer": 250
-      },
-      "protein_value": {
-        "metric": "protein_per_euro",
-        "weight": 0.5,
-        "normalizer": 12
-      },
-      "protein": {
-        "quantity": "protein",
-        "pivot": 0,
-        "up": 1.5,
-        "down": 1.5,
-        "normalizer": 10
-      },
-      "energy": {
-        "quantity": "kcal",
-        "pivot": 500,
-        "up": 0.25,
-        "down": 3,
-        "normalizer": 300
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "bulk",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 148,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 1.798757172924
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 1.770768547829
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.248880747798
+          }
+        ]
       }
     },
     "cut": {
-      "price": {
-        "metric": "price",
-        "weight": -1,
-        "normalizer": 4
-      },
-      "price_over_budget": {
-        "quantity": "price",
-        "pivot": 7,
-        "reverse": true,
-        "up": 0,
-        "down": 1,
-        "normalizer": 1
-      },
-      "protein_density": {
-        "metric": "protein_per_100kcal",
-        "weight": 2,
-        "normalizer": 8
-      },
-      "protein_value": {
-        "metric": "protein_per_euro",
-        "weight": 0.5,
-        "normalizer": 12
-      },
-      "protein": {
-        "quantity": "protein",
-        "pivot": 30,
-        "up": 0.5,
-        "down": 3,
-        "normalizer": 15
-      },
-      "energy": {
-        "quantity": "kcal",
-        "pivot": 700,
-        "reverse": true,
-        "up": 0,
-        "down": 2,
-        "normalizer": 200
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "cut",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 124,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": -2.022930718854
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 3.298844124996
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.012871976974
+          }
+        ]
       }
     },
     "budget": {
-      "price": {
-        "metric": "price",
-        "weight": -2,
-        "normalizer": 4
-      },
-      "price_over_budget": {
-        "quantity": "price",
-        "pivot": 7,
-        "reverse": true,
-        "up": 0,
-        "down": 1,
-        "normalizer": 1
-      },
-      "energy_value": {
-        "metric": "kcal_per_euro",
-        "weight": 1,
-        "normalizer": 250
-      },
-      "energy": {
-        "quantity": "kcal",
-        "pivot": 550,
-        "up": 0.2,
-        "down": 3,
-        "normalizer": 300
-      },
-      "protein": {
-        "quantity": "protein",
-        "pivot": 20,
-        "up": 0.2,
-        "down": 3,
-        "normalizer": 15
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "budget",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 152,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 0.353295614669
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 0.730392949246
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": -1.270457995687
+          }
+        ]
       }
     }
   },
   "default_scoop_g": 150,
   "nutrition_note": "Nutrition values are estimates.",
-  "variants": {
-    "bulk_all": {
+  "filtered_variants": {
+    "bulk_no_pork": {
       "state": "ready",
-      "goal": "bulk",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
       "plates": [
         {
-          "title": "Thai Chicken and Rice",
-          "reason": "High protein dish paired with rice for maximum energy.",
+          "title": "Vegetable and white cheese moussaka + Rice",
+          "reason": null,
           "picked_by": "rules",
-          "items": [
-            {
-              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
-              "name_en": "Thai-style chicken breast strips with vegetables",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "So"
-              ],
-              "additives": [
-                "2",
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "a147997598d3306d",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 517.5,
-              "protein_g": 53.1
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
           ],
-          "total": {
-            "price_cents": 640,
-            "price_eur": 6.4,
-            "weight_g": 600,
-            "kcal": 712.5,
-            "protein_g": 57.15,
-            "carbs_g": 66.3,
-            "fat_g": 22.05
-          },
-          "score": {
-            "price": -3.2,
-            "price_over_budget": 0.0,
-            "energy_value": 0.111328125,
-            "protein_value": 0.3720703125,
-            "protein": 8.5725,
-            "energy": 0.17708333333333334,
-            "total": 6.033
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Roast Pork with Rice",
-          "reason": "Savory pork roast complemented with extra rice.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Spanferkelrollbraten (1 Scheibe) mit Biersauce",
-              "name_en": "Rolled roast suckling pig (1 slice) with beer sauce",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 200,
-              "price_cents": 280,
-              "is_vegan": false,
-              "markers": [
-                "S"
-              ],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW"
-              ],
-              "additives": [
-                "99"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "8a34d5e5f93fcb85",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 390.0,
-              "protein_g": 33.0
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 550,
-            "price_eur": 5.5,
-            "weight_g": 500,
-            "kcal": 780.0,
-            "protein_g": 41.1,
-            "carbs_g": 90.4,
-            "fat_g": 26.5
-          },
-          "score": {
-            "price": -2.75,
-            "price_over_budget": 0.0,
-            "energy_value": 0.14181818181818182,
-            "protein_value": 0.31136363636363634,
-            "protein": 6.165000000000001,
-            "energy": 0.23333333333333334,
-            "total": 4.1015
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Hearty Arabic Couscous",
-          "reason": "Generous portion of couscous with chickpeas and vegetables.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
-              "name_en": "Arabic-style couscous with carrots and chickpeas",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "310500cfec7d466b",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 94.5,
-            "fat_g": 14.4
-          },
-          "score": {
-            "price": -0.745,
-            "price_over_budget": 0.0,
-            "energy_value": 0.4077181208053692,
-            "protein_value": 0.5662751677852349,
-            "protein": 3.0375,
-            "energy": 0.08958333333333333,
-            "total": 3.3561
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Moussaka and Rice Combo",
-          "reason": "Rich vegetable moussaka served alongside hearty rice.",
-          "picked_by": "rules",
+          "stations": [],
           "items": [
             {
               "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
               "name_en": "Vegetable and white cheese moussaka with garlic dip",
               "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -375,6 +132,7 @@
               ],
               "standing": false,
               "diet": "vegetarian",
+              "meat_types": [],
               "id": "46d79875a0caa055",
               "serving": "3 scoops",
               "price_source": "eat-api",
@@ -385,6 +143,9 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -399,6 +160,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "meat_types": [],
               "id": "9f0686a5bcd7307e",
               "serving": "2 scoops",
               "price_source": "config",
@@ -416,89 +178,118 @@
             "fat_g": 40.5
           },
           "score": {
-            "price": -3.375,
-            "price_over_budget": 0.0,
-            "energy_value": 0.14777777777777776,
-            "protein_value": 0.17500000000000002,
-            "protein": 4.2525,
-            "energy": 0.41458333333333336,
-            "total": 1.6149
+            "kcal": 17.942602799916898,
+            "protein": 5.020128833095216,
+            "price": 1.6799450476365,
+            "total": 24.6427
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Sweet Yeast Dumplings",
-          "reason": "Fulfilling cherry dumplings smothered in vanilla sauce.",
+          "title": "Pasta + Rice",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
           "items": [
             {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
               "price_cents": 405,
-              "is_vegan": false,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
               "allergens": [
-                "Ei",
                 "Gl",
-                "GlW",
-                "Mi"
+                "GlW"
               ],
               "additives": [],
               "standing": false,
-              "diet": "vegetarian",
-              "id": "da0820fe88930dff",
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 832.5,
-              "protein_g": 15.75
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 832.5,
-            "protein_g": 15.75,
-            "carbs_g": 144.0,
-            "fat_g": 20.25
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 25.2,
+            "carbs_g": 176.25,
+            "fat_g": 18.45
           },
           "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.20555555555555557,
-            "protein_value": 0.16203703703703703,
-            "protein": 2.3625,
-            "energy": 0.27708333333333335,
-            "total": 0.9822
+            "kcal": 17.942602799916898,
+            "protein": 4.46233674052908,
+            "price": 1.6799450476365,
+            "total": 24.0849
           },
-          "has_estimated_prices": false
-        }
-      ]
-    },
-    "cut_all": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
+          "has_estimated_prices": true
+        },
         {
-          "title": "Thai Chicken Plate",
-          "reason": "Lean chicken breast strips packed with protein.",
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Grill",
+          "counters": [
+            "Grill"
+          ],
+          "stations": [],
           "items": [
             {
               "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
               "name_en": "Thai-style chicken breast strips with vegetables",
               "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -518,6 +309,9 @@
               ],
               "standing": false,
               "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
               "id": "a147997598d3306d",
               "serving": "3 scoops",
               "price_source": "eat-api",
@@ -535,386 +329,36 @@
             "fat_g": 21.6
           },
           "score": {
-            "price": -1.2625,
-            "price_over_budget": 0.0,
-            "protein_density": 2.5652173913043477,
-            "protein_value": 0.4381188118811881,
-            "protein": 0.77,
-            "energy": 0.0,
-            "total": 2.5108
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Roast Suckling Pig",
-          "reason": "Savory slice of tender roast pork in sauce.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Spanferkelrollbraten (1 Scheibe) mit Biersauce",
-              "name_en": "Rolled roast suckling pig (1 slice) with beer sauce",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 200,
-              "price_cents": 280,
-              "is_vegan": false,
-              "markers": [
-                "S"
-              ],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW"
-              ],
-              "additives": [
-                "99"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "8a34d5e5f93fcb85",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 390.0,
-              "protein_g": 33.0
-            }
-          ],
-          "total": {
-            "price_cents": 280,
-            "price_eur": 2.8,
-            "weight_g": 200,
-            "kcal": 390.0,
-            "protein_g": 33.0,
-            "carbs_g": 6.4,
-            "fat_g": 25.6
-          },
-          "score": {
-            "price": -0.7,
-            "price_over_budget": 0.0,
-            "protein_density": 2.1153846153846154,
-            "protein_value": 0.4910714285714286,
-            "protein": 0.1,
-            "energy": 0.0,
-            "total": 2.0065
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Arabic Couscous Bowl",
-          "reason": "Light couscous loaded with chickpeas and carrots.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
-              "name_en": "Arabic-style couscous with carrots and chickpeas",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "310500cfec7d466b",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 94.5,
-            "fat_g": 14.4
-          },
-          "score": {
-            "price": -0.3725,
-            "price_over_budget": 0.0,
-            "protein_density": 0.8333333333333334,
-            "protein_value": 0.5662751677852349,
-            "protein": -1.95,
-            "energy": 0.0,
-            "total": -0.9229
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Vegetable Moussaka",
-          "reason": "Flavorful baked vegetable dish with garlic dip.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
-              "name_en": "Vegetable and white cheese moussaka with garlic dip",
-              "station": "Vegetarisch/fleischlos",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "46d79875a0caa055",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 40.5,
-            "fat_g": 39.6
-          },
-          "score": {
-            "price": -1.0125,
-            "price_over_budget": 0.0,
-            "protein_density": 0.8333333333333334,
-            "protein_value": 0.20833333333333334,
-            "protein": -1.95,
-            "energy": 0.0,
-            "total": -1.9208
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pasta Verdura",
-          "reason": "Simple and satisfying pasta tossed with vegetables.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta Verdura",
-              "name_en": "Pasta with vegetables",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "4961ce657aa212a6",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 17.1
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 17.1,
-            "carbs_g": 92.25,
-            "fat_g": 17.55
-          },
-          "score": {
-            "price": -1.0125,
-            "price_over_budget": 0.0,
-            "protein_density": 0.7037037037037038,
-            "protein_value": 0.17592592592592593,
-            "protein": -2.5799999999999996,
-            "energy": 0.0,
-            "total": -2.7129
+            "kcal": 9.3085683698817,
+            "protein": 9.40278098897199,
+            "price": 1.2568477763799,
+            "total": 19.9682
           },
           "has_estimated_prices": false
         }
       ]
     },
-    "budget_all": {
+    "bulk_no_beef": {
       "state": "ready",
-      "goal": "budget",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
       "plates": [
         {
-          "title": "Budget Couscous Bowl",
-          "reason": "Very affordable chickpea and vegetable couscous.",
+          "title": "Vegetable and white cheese moussaka + Rice",
+          "reason": null,
           "picked_by": "rules",
-          "items": [
-            {
-              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
-              "name_en": "Arabic-style couscous with carrots and chickpeas",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "310500cfec7d466b",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            }
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
           ],
-          "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 94.5,
-            "fat_g": 14.4
-          },
-          "score": {
-            "price": -0.745,
-            "price_over_budget": 0.0,
-            "energy_value": 1.6308724832214767,
-            "energy": 0.03833333333333333,
-            "protein": 0.0033333333333333335,
-            "total": 0.9275
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Roast Pork with Rice",
-          "reason": "Filling meat option paired with fluffy rice.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Spanferkelrollbraten (1 Scheibe) mit Biersauce",
-              "name_en": "Rolled roast suckling pig (1 slice) with beer sauce",
-              "station": "Fleisch",
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 200,
-              "price_cents": 280,
-              "is_vegan": false,
-              "markers": [
-                "S"
-              ],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW"
-              ],
-              "additives": [
-                "99"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "8a34d5e5f93fcb85",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 390.0,
-              "protein_g": 33.0
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 415,
-            "price_eur": 4.15,
-            "weight_g": 350,
-            "kcal": 585.0,
-            "protein_g": 37.05,
-            "carbs_g": 48.4,
-            "fat_g": 26.05
-          },
-          "score": {
-            "price": -2.075,
-            "price_over_budget": 0.0,
-            "energy_value": 0.563855421686747,
-            "energy": 0.023333333333333334,
-            "protein": 0.2273333333333333,
-            "total": -1.2605
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Baked Vegetable Moussaka",
-          "reason": "Economical meatless meal served with garlic dip.",
-          "picked_by": "rules",
+          "stations": [],
           "items": [
             {
               "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
               "name_en": "Vegetable and white cheese moussaka with garlic dip",
               "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -934,264 +378,20 @@
               ],
               "standing": false,
               "diet": "vegetarian",
+              "meat_types": [],
               "id": "46d79875a0caa055",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 607.5,
               "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 40.5,
-            "fat_g": 39.6
-          },
-          "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.6,
-            "energy": 0.03833333333333333,
-            "protein": 0.0033333333333333335,
-            "total": -1.3833
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Cherry Dumplings",
-          "reason": "Sweet dessert option offering hearty fuel.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "da0820fe88930dff",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 832.5,
-              "protein_g": 15.75
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 832.5,
-            "protein_g": 15.75,
-            "carbs_g": 144.0,
-            "fat_g": 20.25
-          },
-          "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.8222222222222223,
-            "energy": 0.18833333333333332,
-            "protein": -0.85,
-            "total": -1.8644
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Thai Chicken with Rice",
-          "reason": "Savory chicken strips balanced with a side of rice.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
-              "name_en": "Thai-style chicken breast strips with vegetables",
-              "station": "Grill",
-              "role": "main",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "So"
-              ],
-              "additives": [
-                "2",
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "id": "a147997598d3306d",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 345.0,
-              "protein_g": 35.4
             },
             {
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
+              "counters": [
+                "Warm 1&2"
               ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 540.0,
-            "protein_g": 39.45,
-            "carbs_g": 58.2,
-            "fat_g": 14.85
-          },
-          "score": {
-            "price": -2.525,
-            "price_over_budget": 0.0,
-            "energy_value": 0.42772277227722777,
-            "energy": -0.1,
-            "protein": 0.2593333333333333,
-            "total": -1.9379
-          },
-          "has_estimated_prices": true
-        }
-      ]
-    },
-    "bulk_vegan": {
-      "state": "ready",
-      "goal": "bulk",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Arabic Couscous Feast",
-          "reason": "Plant-based meal featuring spiced carrots and chickpeas.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
-              "name_en": "Arabic-style couscous with carrots and chickpeas",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "310500cfec7d466b",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 94.5,
-            "fat_g": 14.4
-          },
-          "score": {
-            "price": -0.745,
-            "price_over_budget": 0.0,
-            "energy_value": 0.4077181208053692,
-            "protein_value": 0.5662751677852349,
-            "protein": 3.0375,
-            "energy": 0.08958333333333333,
-            "total": 3.3561
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pasta Verdura with Rice",
-          "reason": "Carb-dense vegan combination to fuel the day.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta Verdura",
-              "name_en": "Pasta with vegetables",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "4961ce657aa212a6",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -1206,6 +406,95 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 28.35,
+            "carbs_g": 124.5,
+            "fat_g": 40.5
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 5.020128833095216,
+            "price": 1.6799450476365,
+            "total": 24.6427
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
               "id": "9f0686a5bcd7307e",
               "serving": "2 scoops",
               "price_source": "config",
@@ -1223,89 +512,281 @@
             "fat_g": 18.45
           },
           "score": {
-            "price": -3.375,
-            "price_over_budget": 0.0,
-            "energy_value": 0.14777777777777776,
-            "protein_value": 0.15555555555555559,
-            "protein": 3.7800000000000002,
-            "energy": 0.41458333333333336,
-            "total": 1.1229
+            "kcal": 17.942602799916898,
+            "protein": 4.46233674052908,
+            "price": 1.6799450476365,
+            "total": 24.0849
           },
           "has_estimated_prices": true
-        }
-      ]
-    },
-    "cut_vegan": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
-      "plates": [
+        },
         {
-          "title": "Light Chickpea Couscous",
-          "reason": "Clean vegan meal with flavorful vegetables and grains.",
+          "title": "Rolled roast suckling pig + Rice",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
           "items": [
             {
-              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
-              "name_en": "Arabic-style couscous with carrots and chickpeas",
-              "station": "Studitopf",
+              "name": "Spanferkelrollbraten (1 Scheibe) mit Biersauce",
+              "name_en": "Rolled roast suckling pig (1 slice) with beer sauce",
+              "station": "Fleisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW"
+              ],
+              "additives": [
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "8a34d5e5f93fcb85",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 390.0,
+              "protein_g": 33.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 550,
+            "price_eur": 5.5,
+            "weight_g": 500,
+            "kcal": 780.0,
+            "protein_g": 41.1,
+            "carbs_g": 90.4,
+            "fat_g": 26.5
+          },
+          "score": {
+            "kcal": 14.0303059488072,
+            "protein": 7.27785873157719,
+            "price": 1.368844112889,
+            "total": 22.677
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Grill",
+          "counters": [
+            "Grill"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
               "allergens": [
                 "Gl",
-                "GlW"
+                "GlW",
+                "So"
               ],
               "additives": [
-                "2"
+                "2",
+                "Kn"
               ],
               "standing": false,
-              "diet": "vegan",
-              "id": "310500cfec7d466b",
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 53.1,
+            "carbs_g": 24.3,
+            "fat_g": 21.6
+          },
+          "score": {
+            "kcal": 9.3085683698817,
+            "protein": 9.40278098897199,
+            "price": 1.2568477763799,
+            "total": 19.9682
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Vegetable and white cheese moussaka + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
               "serving": "3 scoops",
               "price_source": "eat-api",
               "kcal": 607.5,
               "protein_g": 20.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 94.5,
-            "fat_g": 14.4
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 28.35,
+            "carbs_g": 124.5,
+            "fat_g": 40.5
           },
           "score": {
-            "price": -0.3725,
-            "price_over_budget": 0.0,
-            "protein_density": 0.8333333333333334,
-            "protein_value": 0.5662751677852349,
-            "protein": -1.95,
-            "energy": 0.0,
-            "total": -0.9229
+            "kcal": 17.942602799916898,
+            "protein": 5.020128833095216,
+            "price": 1.6799450476365,
+            "total": 24.6427
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         },
         {
-          "title": "Simple Pasta Verdura",
-          "reason": "Nutritious pasta prepared with assorted vegetables.",
+          "title": "Pasta + Rice",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
           "items": [
             {
               "name": "Pasta Verdura",
               "name_en": "Pasta with vegetables",
               "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1323,122 +804,7 @@
               "additives": [],
               "standing": false,
               "diet": "vegan",
-              "id": "4961ce657aa212a6",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 17.1
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 17.1,
-            "carbs_g": 92.25,
-            "fat_g": 17.55
-          },
-          "score": {
-            "price": -1.0125,
-            "price_over_budget": 0.0,
-            "protein_density": 0.7037037037037038,
-            "protein_value": 0.17592592592592593,
-            "protein": -2.5799999999999996,
-            "energy": 0.0,
-            "total": -2.7129
-          },
-          "has_estimated_prices": false
-        }
-      ]
-    },
-    "budget_vegan": {
-      "state": "ready",
-      "goal": "budget",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Low-Cost Arabic Couscous",
-          "reason": "Wallet-friendly vegan plate rich in wholesome legumes.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
-              "name_en": "Arabic-style couscous with carrots and chickpeas",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "id": "310500cfec7d466b",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 149,
-            "price_eur": 1.49,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 94.5,
-            "fat_g": 14.4
-          },
-          "score": {
-            "price": -0.745,
-            "price_over_budget": 0.0,
-            "energy_value": 1.6308724832214767,
-            "energy": 0.03833333333333333,
-            "protein": 0.0033333333333333335,
-            "total": 0.9275
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pasta Verdura and Rice",
-          "reason": "Budget-conscious combo of vegetable pasta and rice.",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta Verdura",
-              "name_en": "Pasta with vegetables",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
+              "meat_types": [],
               "id": "4961ce657aa212a6",
               "serving": "3 scoops",
               "price_source": "eat-api",
@@ -1449,6 +815,535 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 25.2,
+            "carbs_g": 176.25,
+            "fat_g": 18.45
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 4.46233674052908,
+            "price": 1.6799450476365,
+            "total": 24.0849
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Grill",
+          "counters": [
+            "Grill"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 53.1,
+            "carbs_g": 24.3,
+            "fat_g": 21.6
+          },
+          "score": {
+            "kcal": 9.3085683698817,
+            "protein": 9.40278098897199,
+            "price": 1.2568477763799,
+            "total": 19.9682
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Vegetable and white cheese moussaka + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 28.35,
+            "carbs_g": 124.5,
+            "fat_g": 40.5
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 5.020128833095216,
+            "price": 1.6799450476365,
+            "total": 24.6427
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 25.2,
+            "carbs_g": 176.25,
+            "fat_g": 18.45
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 4.46233674052908,
+            "price": 1.6799450476365,
+            "total": 24.0849
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Grill",
+          "counters": [
+            "Grill"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 53.1,
+            "carbs_g": 24.3,
+            "fat_g": 21.6
+          },
+          "score": {
+            "kcal": -10.468666470069449,
+            "protein": 17.51686230372876,
+            "price": 0.0650034837187,
+            "total": 7.1132
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable and white cheese moussaka",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 40.5,
+            "fat_g": 39.6
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Arabic-style couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 94.5,
+            "fat_g": 14.4
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.01917924569126,
+            "total": -5.59
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "side",
               "texture": "dry",
               "count": 1,
@@ -1463,6 +1358,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "meat_types": [],
               "id": "9f0686a5bcd7307e",
               "serving": "1 scoop",
               "price_source": "config",
@@ -1480,12 +1376,3347 @@
             "fat_g": 18.0
           },
           "score": {
-            "price": -2.7,
-            "price_over_budget": 0.0,
-            "energy_value": 0.5944444444444444,
-            "energy": 0.16833333333333333,
-            "protein": 0.015333333333333362,
-            "total": -1.9219
+            "kcal": -16.234019018803348,
+            "protein": 6.977055324366541,
+            "price": 0.0695086756596,
+            "total": -9.1875
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Grill",
+          "counters": [
+            "Grill"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 53.1,
+            "carbs_g": 24.3,
+            "fat_g": 21.6
+          },
+          "score": {
+            "kcal": -10.468666470069449,
+            "protein": 17.51686230372876,
+            "price": 0.0650034837187,
+            "total": 7.1132
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rolled roast suckling pig",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Spanferkelrollbraten (1 Scheibe) mit Biersauce",
+              "name_en": "Rolled roast suckling pig (1 slice) with beer sauce",
+              "station": "Fleisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW"
+              ],
+              "additives": [
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "8a34d5e5f93fcb85",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 390.0,
+              "protein_g": 33.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 390.0,
+            "protein_g": 33.0,
+            "carbs_g": 6.4,
+            "fat_g": 25.6
+          },
+          "score": {
+            "kcal": -7.8894298035306,
+            "protein": 10.8861856124868,
+            "price": 0.0360415355272,
+            "total": 3.0328
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable and white cheese moussaka",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 40.5,
+            "fat_g": 39.6
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Arabic-style couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 94.5,
+            "fat_g": 14.4
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.01917924569126,
+            "total": -5.59
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 21.15,
+            "carbs_g": 134.25,
+            "fat_g": 18.0
+          },
+          "score": {
+            "kcal": -16.234019018803348,
+            "protein": 6.977055324366541,
+            "price": 0.0695086756596,
+            "total": -9.1875
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Grill",
+          "counters": [
+            "Grill"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 53.1,
+            "carbs_g": 24.3,
+            "fat_g": 21.6
+          },
+          "score": {
+            "kcal": -10.468666470069449,
+            "protein": 17.51686230372876,
+            "price": 0.0650034837187,
+            "total": 7.1132
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable and white cheese moussaka",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 40.5,
+            "fat_g": 39.6
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Arabic-style couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 94.5,
+            "fat_g": 14.4
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.01917924569126,
+            "total": -5.59
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 21.15,
+            "carbs_g": 134.25,
+            "fat_g": 18.0
+          },
+          "score": {
+            "kcal": -16.234019018803348,
+            "protein": 6.977055324366541,
+            "price": 0.0695086756596,
+            "total": -9.1875
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Vegetable and white cheese moussaka",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 40.5,
+            "fat_g": 39.6
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Arabic-style couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 94.5,
+            "fat_g": 14.4
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.01917924569126,
+            "total": -5.59
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 21.15,
+            "carbs_g": 134.25,
+            "fat_g": 18.0
+          },
+          "score": {
+            "kcal": -16.234019018803348,
+            "protein": 6.977055324366541,
+            "price": 0.0695086756596,
+            "total": -9.1875
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Arabic-style couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 94.5,
+            "fat_g": 14.4
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -1.89298241357363,
+            "total": 1.7323
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Grill",
+          "counters": [
+            "Grill"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 53.1,
+            "carbs_g": 24.3,
+            "fat_g": 21.6
+          },
+          "score": {
+            "kcal": 1.828304805912075,
+            "protein": 3.87838656049626,
+            "price": -6.4158128782193495,
+            "total": -0.7091
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable and white cheese moussaka",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 40.5,
+            "fat_g": 39.6
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 21.15,
+            "carbs_g": 134.25,
+            "fat_g": 18.0
+          },
+          "score": {
+            "kcal": 2.835197307718725,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -2.4805
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Arabic-style couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 94.5,
+            "fat_g": 14.4
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -1.89298241357363,
+            "total": 1.7323
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rolled roast suckling pig",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Spanferkelrollbraten (1 Scheibe) mit Biersauce",
+              "name_en": "Rolled roast suckling pig (1 slice) with beer sauce",
+              "station": "Fleisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW"
+              ],
+              "additives": [
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "8a34d5e5f93fcb85",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 390.0,
+              "protein_g": 33.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 390.0,
+            "protein_g": 33.0,
+            "carbs_g": 6.4,
+            "fat_g": 25.6
+          },
+          "score": {
+            "kcal": 1.3778528972091002,
+            "protein": 2.4102967325118,
+            "price": -3.5572823879235993,
+            "total": 0.2309
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Grill",
+          "counters": [
+            "Grill"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 53.1,
+            "carbs_g": 24.3,
+            "fat_g": 21.6
+          },
+          "score": {
+            "kcal": 1.828304805912075,
+            "protein": 3.87838656049626,
+            "price": -6.4158128782193495,
+            "total": -0.7091
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable and white cheese moussaka",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 40.5,
+            "fat_g": 39.6
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 21.15,
+            "carbs_g": 134.25,
+            "fat_g": 18.0
+          },
+          "score": {
+            "kcal": 2.835197307718725,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -2.4805
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Arabic-style couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 94.5,
+            "fat_g": 14.4
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -1.89298241357363,
+            "total": 1.7323
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Grill",
+          "counters": [
+            "Grill"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 53.1,
+            "carbs_g": 24.3,
+            "fat_g": 21.6
+          },
+          "score": {
+            "kcal": 1.828304805912075,
+            "protein": 3.87838656049626,
+            "price": -6.4158128782193495,
+            "total": -0.7091
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable and white cheese moussaka",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 40.5,
+            "fat_g": 39.6
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 21.15,
+            "carbs_g": 134.25,
+            "fat_g": 18.0
+          },
+          "score": {
+            "kcal": 2.835197307718725,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -2.4805
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Arabic-style couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 94.5,
+            "fat_g": 14.4
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -1.89298241357363,
+            "total": 1.7323
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable and white cheese moussaka",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 40.5,
+            "fat_g": 39.6
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 21.15,
+            "carbs_g": 134.25,
+            "fat_g": 18.0
+          },
+          "score": {
+            "kcal": 2.835197307718725,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -2.4805
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    }
+  },
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Vegetable and white cheese moussaka + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 28.35,
+            "carbs_g": 124.5,
+            "fat_g": 40.5
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 5.020128833095216,
+            "price": 1.6799450476365,
+            "total": 24.6427
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pizza",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Pasta",
+          "counters": [
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Champignons und mariniertem Hirtenkäse",
+              "name_en": "Pizza with mushrooms and marinated shepherd's cheese",
+              "station": "Pizza",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "22034f99a4046487",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 900.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 900.0,
+            "protein_g": 34.0,
+            "carbs_g": 108.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": 16.188814556316,
+            "protein": 6.0206130626186,
+            "price": 1.24440373899,
+            "total": 23.4538
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Rolled roast suckling pig + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Spanferkelrollbraten (1 Scheibe) mit Biersauce",
+              "name_en": "Rolled roast suckling pig (1 slice) with beer sauce",
+              "station": "Fleisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW"
+              ],
+              "additives": [
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "8a34d5e5f93fcb85",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 390.0,
+              "protein_g": 33.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 550,
+            "price_eur": 5.5,
+            "weight_g": 500,
+            "kcal": 780.0,
+            "protein_g": 41.1,
+            "carbs_g": 90.4,
+            "fat_g": 26.5
+          },
+          "score": {
+            "kcal": 14.0303059488072,
+            "protein": 7.27785873157719,
+            "price": 1.368844112889,
+            "total": 22.677
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Grill",
+          "counters": [
+            "Grill"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 53.1,
+            "carbs_g": 24.3,
+            "fat_g": 21.6
+          },
+          "score": {
+            "kcal": 9.3085683698817,
+            "protein": 9.40278098897199,
+            "price": 1.2568477763799,
+            "total": 19.9682
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Grill",
+          "counters": [
+            "Grill"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 53.1,
+            "carbs_g": 24.3,
+            "fat_g": 21.6
+          },
+          "score": {
+            "kcal": -10.468666470069449,
+            "protein": 17.51686230372876,
+            "price": 0.0650034837187,
+            "total": 7.1132
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rolled roast suckling pig",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Spanferkelrollbraten (1 Scheibe) mit Biersauce",
+              "name_en": "Rolled roast suckling pig (1 slice) with beer sauce",
+              "station": "Fleisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW"
+              ],
+              "additives": [
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "8a34d5e5f93fcb85",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 390.0,
+              "protein_g": 33.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 390.0,
+            "protein_g": 33.0,
+            "carbs_g": 6.4,
+            "fat_g": 25.6
+          },
+          "score": {
+            "kcal": -7.8894298035306,
+            "protein": 10.8861856124868,
+            "price": 0.0360415355272,
+            "total": 3.0328
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable and white cheese moussaka",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 40.5,
+            "fat_g": 39.6
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Arabic-style couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 94.5,
+            "fat_g": 14.4
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.01917924569126,
+            "total": -5.59
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Pasta",
+          "counters": [
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Champignons und mariniertem Hirtenkäse",
+              "name_en": "Pizza with mushrooms and marinated shepherd's cheese",
+              "station": "Pizza",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "22034f99a4046487",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 900.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 900.0,
+            "protein_g": 34.0,
+            "carbs_g": 108.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": -18.206376469686,
+            "protein": 11.2160700249864,
+            "price": 0.06435988487000001,
+            "total": -6.9259
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Arabic-style couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 94.5,
+            "fat_g": 14.4
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -1.89298241357363,
+            "total": 1.7323
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rolled roast suckling pig",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Spanferkelrollbraten (1 Scheibe) mit Biersauce",
+              "name_en": "Rolled roast suckling pig (1 slice) with beer sauce",
+              "station": "Fleisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW"
+              ],
+              "additives": [
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "8a34d5e5f93fcb85",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 390.0,
+              "protein_g": 33.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 390.0,
+            "protein_g": 33.0,
+            "carbs_g": 6.4,
+            "fat_g": 25.6
+          },
+          "score": {
+            "kcal": 1.3778528972091002,
+            "protein": 2.4102967325118,
+            "price": -3.5572823879235993,
+            "total": 0.2309
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Pasta",
+          "counters": [
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Champignons und mariniertem Hirtenkäse",
+              "name_en": "Pizza with mushrooms and marinated shepherd's cheese",
+              "station": "Pizza",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "22034f99a4046487",
+              "serving": "1 piece",
+              "price_source": "config",
+              "kcal": 900.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 900.0,
+            "protein_g": 34.0,
+            "carbs_g": 108.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": 3.179660532021,
+            "protein": 2.4833360274364,
+            "price": -6.3522899784349995,
+            "total": -0.6893
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Grill",
+          "counters": [
+            "Grill"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 517.5,
+            "protein_g": 53.1,
+            "carbs_g": 24.3,
+            "fat_g": 21.6
+          },
+          "score": {
+            "kcal": 1.828304805912075,
+            "protein": 3.87838656049626,
+            "price": -6.4158128782193495,
+            "total": -0.7091
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable and white cheese moussaka",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
+              "name_en": "Vegetable and white cheese moussaka with garlic dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "46d79875a0caa055",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 40.5,
+            "fat_g": 39.6
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 25.2,
+            "carbs_g": 176.25,
+            "fat_g": 18.45
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 4.46233674052908,
+            "price": 1.6799450476365,
+            "total": 24.0849
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Arabic-style couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 94.5,
+            "fat_g": 14.4
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.01917924569126,
+            "total": -5.59
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 21.15,
+            "carbs_g": 134.25,
+            "fat_g": 18.0
+          },
+          "score": {
+            "kcal": -16.234019018803348,
+            "protein": 6.977055324366541,
+            "price": 0.0695086756596,
+            "total": -9.1875
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Arabic-style couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 3/4",
+          "counters": [
+            "Warm 3/4"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Warm 3/4"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 94.5,
+            "fat_g": 14.4
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -1.89298241357363,
+            "total": 1.7323
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 802.5,
+            "protein_g": 21.15,
+            "carbs_g": 134.25,
+            "fat_g": 18.0
+          },
+          "score": {
+            "kcal": 2.835197307718725,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -2.4805
           },
           "has_estimated_prices": true
         }
@@ -1502,10 +4733,25 @@
         "price_cents": 270,
         "is_vegan": false,
         "diet": "vegetarian",
+        "meat_types": [],
         "serving": "2 scoops",
         "kcal": 195.0,
         "protein_g": 7.5,
         "price_source": "config"
+      },
+      {
+        "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
+        "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
+        "station": "Süßspeise",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "meat_types": [],
+        "serving": "2 scoops",
+        "kcal": 555.0,
+        "protein_g": 10.5,
+        "price_source": "eat-api"
       },
       {
         "name": "Tiramisu",
@@ -1515,6 +4761,9 @@
         "price_cents": 108,
         "is_vegan": false,
         "diet": "meat",
+        "meat_types": [
+          "unknown"
+        ],
         "serving": "1 piece",
         "kcal": 336.0,
         "protein_g": 5.4,

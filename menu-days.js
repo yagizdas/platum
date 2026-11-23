@@ -6,6 +6,12 @@
   'use strict';
   const validDate=text=>typeof text==='string' && /^\d{4}-\d{2}-\d{2}$/.test(text);
   const berlinDate=(now=new Date())=>new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
+  function menuDateLabel(day) {
+    const date=new Date(day+'T12:00:00Z'),timeZone='Europe/Berlin';
+    const weekday=new Intl.DateTimeFormat('en-GB',{weekday:'long',timeZone}).format(date);
+    const calendarDate=new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',timeZone}).format(date);
+    return weekday+', '+calendarDate;
+  }
   function defaultMenuDay(index,now=new Date()) {
     const today=berlinDate(now);
     const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Berlin',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(now);
@@ -25,5 +31,5 @@
     // Publication age says nothing about validity of individual future menu dates.
     return index.valid_through>=berlinDate(now) || validDate(requestedDate);
   }
-  return {berlinDate,defaultMenuDay,validWeek};
+  return {berlinDate,menuDateLabel,defaultMenuDay,validWeek};
 });

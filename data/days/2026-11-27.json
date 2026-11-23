@@ -6,353 +6,113 @@
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "fetched_at": "2026-11-23T09:36:31.881877+00:00",
   "warnings": [],
+  "campus": "arcisstr",
   "schema_version": 2,
   "menu_count": 7,
   "scoring": {
     "bulk": {
-      "price": {
-        "metric": "price",
-        "weight": -2,
-        "normalizer": 4
-      },
-      "price_over_budget": {
-        "quantity": "price",
-        "pivot": 7,
-        "reverse": true,
-        "up": 0,
-        "down": 1,
-        "normalizer": 1
-      },
-      "energy_value": {
-        "metric": "kcal_per_euro",
-        "weight": 0.25,
-        "normalizer": 250
-      },
-      "protein_value": {
-        "metric": "protein_per_euro",
-        "weight": 0.5,
-        "normalizer": 12
-      },
-      "protein": {
-        "quantity": "protein",
-        "pivot": 0,
-        "up": 1.5,
-        "down": 1.5,
-        "normalizer": 10
-      },
-      "energy": {
-        "quantity": "kcal",
-        "pivot": 500,
-        "up": 0.25,
-        "down": 3,
-        "normalizer": 300
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "bulk",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 148,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 1.798757172924
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 1.770768547829
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.248880747798
+          }
+        ]
       }
     },
     "cut": {
-      "price": {
-        "metric": "price",
-        "weight": -1,
-        "normalizer": 4
-      },
-      "price_over_budget": {
-        "quantity": "price",
-        "pivot": 7,
-        "reverse": true,
-        "up": 0,
-        "down": 1,
-        "normalizer": 1
-      },
-      "protein_density": {
-        "metric": "protein_per_100kcal",
-        "weight": 2,
-        "normalizer": 8
-      },
-      "protein_value": {
-        "metric": "protein_per_euro",
-        "weight": 0.5,
-        "normalizer": 12
-      },
-      "protein": {
-        "quantity": "protein",
-        "pivot": 30,
-        "up": 0.5,
-        "down": 3,
-        "normalizer": 15
-      },
-      "energy": {
-        "quantity": "kcal",
-        "pivot": 700,
-        "reverse": true,
-        "up": 0,
-        "down": 2,
-        "normalizer": 200
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "cut",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 124,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": -2.022930718854
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 3.298844124996
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.012871976974
+          }
+        ]
       }
     },
     "budget": {
-      "price": {
-        "metric": "price",
-        "weight": -2,
-        "normalizer": 4
-      },
-      "price_over_budget": {
-        "quantity": "price",
-        "pivot": 7,
-        "reverse": true,
-        "up": 0,
-        "down": 1,
-        "normalizer": 1
-      },
-      "energy_value": {
-        "metric": "kcal_per_euro",
-        "weight": 1,
-        "normalizer": 250
-      },
-      "energy": {
-        "quantity": "kcal",
-        "pivot": 550,
-        "up": 0.2,
-        "down": 3,
-        "normalizer": 300
-      },
-      "protein": {
-        "quantity": "protein",
-        "pivot": 20,
-        "up": 0.2,
-        "down": 3,
-        "normalizer": 15
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "budget",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 152,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 0.353295614669
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 0.730392949246
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": -1.270457995687
+          }
+        ]
       }
     }
   },
   "default_scoop_g": 150,
   "nutrition_note": "Nutrition values are estimates.",
-  "variants": {
-    "bulk_all": {
+  "filtered_variants": {
+    "bulk_no_pork": {
       "state": "ready",
-      "goal": "bulk",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
       "plates": [
         {
-          "title": "Citrus Pollock with Rice",
-          "reason": "Savory seasoned fish fillet paired with fluffy rice for a solid protein boost",
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
           "picked_by": "rules",
-          "items": [
-            {
-              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
-              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
-              "station": "Fisch",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 285,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Ei",
-                "Fi",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1"
-              ],
-              "standing": false,
-              "diet": "fish",
-              "id": "a1975c48e0f4e6f4",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 27.0
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
           ],
-          "total": {
-            "price_cents": 555,
-            "price_eur": 5.55,
-            "weight_g": 450,
-            "kcal": 577.5,
-            "protein_g": 35.1,
-            "carbs_g": 86.25,
-            "fat_g": 8.4
-          },
-          "score": {
-            "price": -2.775,
-            "price_over_budget": 0.0,
-            "energy_value": 0.10405405405405406,
-            "protein_value": 0.26351351351351354,
-            "protein": 5.265000000000001,
-            "energy": 0.06458333333333334,
-            "total": 2.9222
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Creamy Tomato Pasta Bowl",
-          "reason": "Warm pasta tossed in smooth tomato and cream cheese sauce",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
-              "name_en": "Pasta with tomato and cream cheese sauce",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "1d68dde281d18a14",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 22.5
-          },
-          "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.16111111111111112,
-            "protein_value": 0.20833333333333334,
-            "protein": 3.0375,
-            "energy": 0.12708333333333333,
-            "total": 1.509
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Potato Pepper Goulash with Rice",
-          "reason": "Hearty vegetable goulash served over steamed rice for lasting energy",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Kartoffelgulasch mit Paprika",
-              "name_en": "Potato goulash with bell peppers",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "cc6103f60ba7fd10",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 382.5,
-              "protein_g": 9.9
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 419,
-            "price_eur": 4.19,
-            "weight_g": 750,
-            "kcal": 772.5,
-            "protein_g": 18.0,
-            "carbs_g": 140.25,
-            "fat_g": 13.5
-          },
-          "score": {
-            "price": -2.095,
-            "price_over_budget": 0.0,
-            "energy_value": 0.18436754176610978,
-            "protein_value": 0.1789976133651551,
-            "protein": 2.7,
-            "energy": 0.22708333333333333,
-            "total": 1.1954
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Root Veggie Bake with Rice",
-          "reason": "Baked parsnip and carrot casserole topped with fresh herb dip and rice",
-          "picked_by": "rules",
+          "stations": [],
           "items": [
             {
               "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
               "name_en": "Parsnip and carrot casserole with herb dip",
               "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -372,6 +132,7 @@
               ],
               "standing": false,
               "diet": "vegetarian",
+              "meat_types": [],
               "id": "31eebbc1620d3f5a",
               "serving": "3 scoops",
               "price_source": "eat-api",
@@ -382,6 +143,9 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -396,6 +160,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "meat_types": [],
               "id": "9f0686a5bcd7307e",
               "serving": "2 scoops",
               "price_source": "config",
@@ -413,89 +178,30 @@
             "fat_g": 33.3
           },
           "score": {
-            "price": -3.375,
-            "price_over_budget": 0.0,
-            "energy_value": 0.1411111111111111,
-            "protein_value": 0.15555555555555559,
-            "protein": 3.7800000000000002,
-            "energy": 0.3770833333333333,
-            "total": 1.0788
+            "kcal": 17.1331620721011,
+            "protein": 4.46233674052908,
+            "price": 1.6799450476365,
+            "total": 23.2754
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Sweet Cherry Pancakes",
-          "reason": "Tender dessert pancakes filled with sour cherries and sweet vanilla sauce",
+          "title": "Pollock fillet + Rice",
+          "reason": null,
           "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
-              "name_en": "Pancakes with cherry filling and vanilla sauce",
-              "station": "Süßspeise",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "7288cf290dd775fb",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 787.5,
-              "protein_g": 15.75
-            }
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
           ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 787.5,
-            "protein_g": 15.75,
-            "carbs_g": 126.0,
-            "fat_g": 22.5
-          },
-          "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.19444444444444445,
-            "protein_value": 0.16203703703703703,
-            "protein": 2.3625,
-            "energy": 0.23958333333333334,
-            "total": 0.9336
-          },
-          "has_estimated_prices": false
-        }
-      ]
-    },
-    "cut_all": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Herb Lemon Pollock",
-          "reason": "Lean fish fillet seasoned with zesty lemon and aromatic coriander",
-          "picked_by": "rules",
+          "stations": [],
           "items": [
             {
               "name": "Seelachsfilet Lemon Koriander (1 Stück)",
               "name_en": "Pollock fillet with lemon and coriander (1 piece)",
               "station": "Fisch",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "main",
               "texture": "dry",
               "count": 1,
@@ -519,311 +225,22 @@
               ],
               "standing": false,
               "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
               "id": "a1975c48e0f4e6f4",
               "serving": "1 piece",
               "price_source": "eat-api",
               "kcal": 187.5,
               "protein_g": 27.0
-            }
-          ],
-          "total": {
-            "price_cents": 285,
-            "price_eur": 2.85,
-            "weight_g": 150,
-            "kcal": 187.5,
-            "protein_g": 27.0,
-            "carbs_g": 2.25,
-            "fat_g": 7.5
-          },
-          "score": {
-            "price": -0.7125,
-            "price_over_budget": 0.0,
-            "protein_density": 3.5999999999999996,
-            "protein_value": 0.3947368421052631,
-            "protein": -0.6,
-            "energy": 0.0,
-            "total": 2.6822
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Tomato Herb Pasta",
-          "reason": "Satisfying pasta coated in a rich tomato cream cheese blend",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
-              "name_en": "Pasta with tomato and cream cheese sauce",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "1d68dde281d18a14",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 22.5
-          },
-          "score": {
-            "price": -1.0125,
-            "price_over_budget": 0.0,
-            "protein_density": 0.7758620689655172,
-            "protein_value": 0.20833333333333334,
-            "protein": -1.95,
-            "energy": 0.0,
-            "total": -1.9783
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Parsnip Carrot Bake",
-          "reason": "Wholesome vegetable casserole served with a cool herb dipping sauce",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
-              "name_en": "Parsnip and carrot casserole with herb dip",
-              "station": "Vegetarisch/fleischlos",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "31eebbc1620d3f5a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 17.1
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 562.5,
-            "protein_g": 17.1,
-            "carbs_g": 47.25,
-            "fat_g": 32.4
-          },
-          "score": {
-            "price": -1.0125,
-            "price_over_budget": 0.0,
-            "protein_density": 0.7600000000000001,
-            "protein_value": 0.17592592592592593,
-            "protein": -2.5799999999999996,
-            "energy": 0.0,
-            "total": -2.6566
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Light Goulash and Rice",
-          "reason": "Comforting potato and pepper stew with a small portion of rice",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Kartoffelgulasch mit Paprika",
-              "name_en": "Potato goulash with bell peppers",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "cc6103f60ba7fd10",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 382.5,
-              "protein_g": 9.9
             },
             {
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
+              "counters": [
+                "Warm 1&2"
               ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 284,
-            "price_eur": 2.84,
-            "weight_g": 600,
-            "kcal": 577.5,
-            "protein_g": 13.95,
-            "carbs_g": 98.25,
-            "fat_g": 13.05
-          },
-          "score": {
-            "price": -0.71,
-            "price_over_budget": 0.0,
-            "protein_density": 0.6038961038961039,
-            "protein_value": 0.20466549295774647,
-            "protein": -3.2100000000000004,
-            "energy": 0.0,
-            "total": -3.1114
-          },
-          "has_estimated_prices": true
-        }
-      ]
-    },
-    "budget_all": {
-      "state": "ready",
-      "goal": "budget",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
-        {
-          "title": "Savory Cream Cheese Pasta",
-          "reason": "Affordable pasta dish covered in creamy tomato sauce",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
-              "name_en": "Pasta with tomato and cream cheese sauce",
-              "station": "Pasta",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "1d68dde281d18a14",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 22.5
-          },
-          "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.6444444444444445,
-            "energy": 0.06833333333333333,
-            "protein": 0.0033333333333333335,
-            "total": -1.3089
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Hearty Vegetable Goulash and Rice",
-          "reason": "Budget-friendly potato goulash served with satisfying white rice",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Kartoffelgulasch mit Paprika",
-              "name_en": "Potato goulash with bell peppers",
-              "station": "Studitopf",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "id": "cc6103f60ba7fd10",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 382.5,
-              "protein_g": 9.9
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -838,220 +255,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 419,
-            "price_eur": 4.19,
-            "weight_g": 750,
-            "kcal": 772.5,
-            "protein_g": 18.0,
-            "carbs_g": 140.25,
-            "fat_g": 13.5
-          },
-          "score": {
-            "price": -2.095,
-            "price_over_budget": 0.0,
-            "energy_value": 0.7374701670644391,
-            "energy": 0.14833333333333334,
-            "protein": -0.4,
-            "total": -1.6092
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Vanilla Cherry Pancakes",
-          "reason": "Fluffy sweet pancakes with cherry filling at a very low price",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
-              "name_en": "Pancakes with cherry filling and vanilla sauce",
-              "station": "Süßspeise",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "7288cf290dd775fb",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 787.5,
-              "protein_g": 15.75
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 787.5,
-            "protein_g": 15.75,
-            "carbs_g": 126.0,
-            "fat_g": 22.5
-          },
-          "score": {
-            "price": -2.025,
-            "price_over_budget": 0.0,
-            "energy_value": 0.7777777777777778,
-            "energy": 0.15833333333333333,
-            "protein": -0.85,
-            "total": -1.9389
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Herb Casserole with Rice",
-          "reason": "Nutritious root vegetable casserole served alongside fluffy rice",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
-              "name_en": "Parsnip and carrot casserole with herb dip",
-              "station": "Vegetarisch/fleischlos",
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "id": "31eebbc1620d3f5a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "id": "9f0686a5bcd7307e",
-              "serving": "1 scoop",
-              "price_source": "config",
-              "kcal": 195.0,
-              "protein_g": 4.05
-            }
-          ],
-          "total": {
-            "price_cents": 540,
-            "price_eur": 5.4,
-            "weight_g": 600,
-            "kcal": 757.5,
-            "protein_g": 21.15,
-            "carbs_g": 89.25,
-            "fat_g": 32.85
-          },
-          "score": {
-            "price": -2.7,
-            "price_over_budget": 0.0,
-            "energy_value": 0.5611111111111111,
-            "energy": 0.13833333333333334,
-            "protein": 0.015333333333333362,
-            "total": -1.9852
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Zesty Pollock Fillet with Rice",
-          "reason": "High protein fish fillet served with warm rice on a budget",
-          "picked_by": "rules",
-          "items": [
-            {
-              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
-              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
-              "station": "Fisch",
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 285,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Ei",
-                "Fi",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1"
-              ],
-              "standing": false,
-              "diet": "fish",
-              "id": "a1975c48e0f4e6f4",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 27.0
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
+              "meat_types": [],
               "id": "9f0686a5bcd7307e",
               "serving": "2 scoops",
               "price_source": "config",
@@ -1069,57 +273,69 @@
             "fat_g": 8.4
           },
           "score": {
-            "price": -2.775,
-            "price_over_budget": 0.0,
-            "energy_value": 0.41621621621621624,
-            "energy": 0.018333333333333333,
-            "protein": 0.20133333333333336,
-            "total": -2.1391
+            "kcal": 10.3878226736361,
+            "protein": 6.215397602879791,
+            "price": 1.3812881502789,
+            "total": 17.9845
           },
           "has_estimated_prices": true
         }
       ]
     },
-    "bulk_vegan": {
+    "bulk_no_beef": {
       "state": "ready",
-      "goal": "bulk",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
       "plates": [
         {
-          "title": "Vegan Potato Goulash and Rice",
-          "reason": "Filling plant-based potato and bell pepper stew paired with rice",
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
           "items": [
             {
-              "name": "Kartoffelgulasch mit Paprika",
-              "name_en": "Potato goulash with bell peppers",
-              "station": "Studitopf",
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
+              "price_cents": 405,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
-              "allergens": [],
-              "additives": [],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
               "standing": false,
-              "diet": "vegan",
-              "id": "cc6103f60ba7fd10",
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 382.5,
-              "protein_g": 9.9
+              "kcal": 562.5,
+              "protein_g": 17.1
             },
             {
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -1134,6 +350,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "meat_types": [],
               "id": "9f0686a5bcd7307e",
               "serving": "2 scoops",
               "price_source": "config",
@@ -1142,67 +359,463 @@
             }
           ],
           "total": {
-            "price_cents": 419,
-            "price_eur": 4.19,
+            "price_cents": 675,
+            "price_eur": 6.75,
             "weight_g": 750,
-            "kcal": 772.5,
-            "protein_g": 18.0,
-            "carbs_g": 140.25,
-            "fat_g": 13.5
+            "kcal": 952.5,
+            "protein_g": 25.2,
+            "carbs_g": 131.25,
+            "fat_g": 33.3
           },
           "score": {
-            "price": -2.095,
-            "price_over_budget": 0.0,
-            "energy_value": 0.18436754176610978,
-            "protein_value": 0.1789976133651551,
-            "protein": 2.7,
-            "energy": 0.22708333333333333,
-            "total": 1.1954
+            "kcal": 17.1331620721011,
+            "protein": 4.46233674052908,
+            "price": 1.6799450476365,
+            "total": 23.2754
           },
           "has_estimated_prices": true
-        }
-      ]
-    },
-    "cut_vegan": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
-      "plates": [
+        },
         {
-          "title": "Simple Potato Goulash and Rice",
-          "reason": "Light vegan stew of peppers and potatoes complemented with rice",
+          "title": "Pollock fillet + Rice",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
           "items": [
             {
-              "name": "Kartoffelgulasch mit Paprika",
-              "name_en": "Potato goulash with bell peppers",
-              "station": "Studitopf",
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "main",
-              "texture": "saucy",
-              "count": 3,
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [],
               "additives": [],
-              "standing": false,
+              "standing": true,
               "diet": "vegan",
-              "id": "cc6103f60ba7fd10",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 555,
+            "price_eur": 5.55,
+            "weight_g": 450,
+            "kcal": 577.5,
+            "protein_g": 35.1,
+            "carbs_g": 86.25,
+            "fat_g": 8.4
+          },
+          "score": {
+            "kcal": 10.3878226736361,
+            "protein": 6.215397602879791,
+            "price": 1.3812881502789,
+            "total": 17.9845
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 382.5,
-              "protein_g": 9.9
+              "kcal": 562.5,
+              "protein_g": 17.1
             },
             {
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 952.5,
+            "protein_g": 25.2,
+            "carbs_g": 131.25,
+            "fat_g": 33.3
+          },
+          "score": {
+            "kcal": 17.1331620721011,
+            "protein": 4.46233674052908,
+            "price": 1.6799450476365,
+            "total": 23.2754
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pollock fillet + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 555,
+            "price_eur": 5.55,
+            "weight_g": 450,
+            "kcal": 577.5,
+            "protein_g": 35.1,
+            "carbs_g": 86.25,
+            "fat_g": 8.4
+          },
+          "score": {
+            "kcal": 10.3878226736361,
+            "protein": 6.215397602879791,
+            "price": 1.3812881502789,
+            "total": 17.9845
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 952.5,
+            "protein_g": 25.2,
+            "carbs_g": 131.25,
+            "fat_g": 33.3
+          },
+          "score": {
+            "kcal": 17.1331620721011,
+            "protein": 4.46233674052908,
+            "price": 1.6799450476365,
+            "total": 23.2754
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pollock fillet + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "side",
               "texture": "dry",
               "count": 1,
@@ -1217,6 +830,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "meat_types": [],
               "id": "9f0686a5bcd7307e",
               "serving": "1 scoop",
               "price_source": "config",
@@ -1225,67 +839,1843 @@
             }
           ],
           "total": {
-            "price_cents": 284,
-            "price_eur": 2.84,
-            "weight_g": 600,
-            "kcal": 577.5,
-            "protein_g": 13.95,
-            "carbs_g": 98.25,
-            "fat_g": 13.05
+            "price_cents": 420,
+            "price_eur": 4.2,
+            "weight_g": 300,
+            "kcal": 382.5,
+            "protein_g": 31.05,
+            "carbs_g": 44.25,
+            "fat_g": 7.95
           },
           "score": {
-            "price": -0.71,
-            "price_over_budget": 0.0,
-            "protein_density": 0.6038961038961039,
-            "protein_value": 0.20466549295774647,
-            "protein": -3.2100000000000004,
-            "energy": 0.0,
-            "total": -3.1114
+            "kcal": -7.73770999961655,
+            "protein": 10.24291100811258,
+            "price": 0.05406230329080001,
+            "total": 2.5593
           },
           "has_estimated_prices": true
-        }
-      ]
-    },
-    "budget_vegan": {
-      "state": "ready",
-      "goal": "budget",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
-      "plates": [
+        },
         {
-          "title": "Thrifty Vegan Goulash with Rice",
-          "reason": "Cost-effective and satisfying plant-based potato and pepper stew",
+          "title": "Pasta",
+          "reason": null,
           "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
           "items": [
             {
-              "name": "Kartoffelgulasch mit Paprika",
-              "name_en": "Potato goulash with bell peppers",
-              "station": "Studitopf",
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
-              "price_cents": 149,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [],
               "additives": [],
-              "standing": false,
+              "standing": true,
               "diet": "vegan",
-              "id": "cc6103f60ba7fd10",
-              "serving": "3 scoops",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 757.5,
+            "protein_g": 21.15,
+            "carbs_g": 89.25,
+            "fat_g": 32.85
+          },
+          "score": {
+            "kcal": -15.32370019531905,
+            "protein": 6.977055324366541,
+            "price": 0.0695086756596,
+            "total": -8.2771
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pollock fillet + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 382.5,
-              "protein_g": 9.9
+              "kcal": 187.5,
+              "protein_g": 27.0
             },
             {
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 420,
+            "price_eur": 4.2,
+            "weight_g": 300,
+            "kcal": 382.5,
+            "protein_g": 31.05,
+            "carbs_g": 44.25,
+            "fat_g": 7.95
+          },
+          "score": {
+            "kcal": -7.73770999961655,
+            "protein": 10.24291100811258,
+            "price": 0.05406230329080001,
+            "total": 2.5593
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 757.5,
+            "protein_g": 21.15,
+            "carbs_g": 89.25,
+            "fat_g": 32.85
+          },
+          "score": {
+            "kcal": -15.32370019531905,
+            "protein": 6.977055324366541,
+            "price": 0.0695086756596,
+            "total": -8.2771
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pollock fillet + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 420,
+            "price_eur": 4.2,
+            "weight_g": 300,
+            "kcal": 382.5,
+            "protein_g": 31.05,
+            "carbs_g": 44.25,
+            "fat_g": 7.95
+          },
+          "score": {
+            "kcal": -7.73770999961655,
+            "protein": 10.24291100811258,
+            "price": 0.05406230329080001,
+            "total": 2.5593
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 757.5,
+            "protein_g": 21.15,
+            "carbs_g": 89.25,
+            "fat_g": 32.85
+          },
+          "score": {
+            "kcal": -15.32370019531905,
+            "protein": 6.977055324366541,
+            "price": 0.0695086756596,
+            "total": -8.2771
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 757.5,
+            "protein_g": 21.15,
+            "carbs_g": 89.25,
+            "fat_g": 32.85
+          },
+          "score": {
+            "kcal": -15.32370019531905,
+            "protein": 6.977055324366541,
+            "price": 0.0695086756596,
+            "total": -8.2771
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 420,
+            "price_eur": 4.2,
+            "weight_g": 300,
+            "kcal": 382.5,
+            "protein_g": 31.05,
+            "carbs_g": 44.25,
+            "fat_g": 7.95
+          },
+          "score": {
+            "kcal": 1.3513557261089248,
+            "protein": 2.2678701074088297,
+            "price": -5.3359235818854,
+            "total": -1.7167
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 757.5,
+            "protein_g": 21.15,
+            "carbs_g": 89.25,
+            "fat_g": 32.85
+          },
+          "score": {
+            "kcal": 2.676214281117675,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -2.6395
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 420,
+            "price_eur": 4.2,
+            "weight_g": 300,
+            "kcal": 382.5,
+            "protein_g": 31.05,
+            "carbs_g": 44.25,
+            "fat_g": 7.95
+          },
+          "score": {
+            "kcal": 1.3513557261089248,
+            "protein": 2.2678701074088297,
+            "price": -5.3359235818854,
+            "total": -1.7167
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 757.5,
+            "protein_g": 21.15,
+            "carbs_g": 89.25,
+            "fat_g": 32.85
+          },
+          "score": {
+            "kcal": 2.676214281117675,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -2.6395
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 420,
+            "price_eur": 4.2,
+            "weight_g": 300,
+            "kcal": 382.5,
+            "protein_g": 31.05,
+            "carbs_g": 44.25,
+            "fat_g": 7.95
+          },
+          "score": {
+            "kcal": 1.3513557261089248,
+            "protein": 2.2678701074088297,
+            "price": -5.3359235818854,
+            "total": -1.7167
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 757.5,
+            "protein_g": 21.15,
+            "carbs_g": 89.25,
+            "fat_g": 32.85
+          },
+          "score": {
+            "kcal": 2.676214281117675,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -2.6395
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 757.5,
+            "protein_g": 21.15,
+            "carbs_g": 89.25,
+            "fat_g": 32.85
+          },
+          "score": {
+            "kcal": 2.676214281117675,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -2.6395
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    }
+  },
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pollock fillet + Potato salad + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "73bbe2bb9698caf4",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -1300,6 +2690,7 @@
               "additives": [],
               "standing": true,
               "diet": "vegan",
+              "meat_types": [],
               "id": "9f0686a5bcd7307e",
               "serving": "2 scoops",
               "price_source": "config",
@@ -1308,29 +2699,760 @@
             }
           ],
           "total": {
-            "price_cents": 419,
-            "price_eur": 4.19,
+            "price_cents": 825,
+            "price_eur": 8.25,
             "weight_g": 750,
-            "kcal": 772.5,
-            "protein_g": 18.0,
-            "carbs_g": 140.25,
-            "fat_g": 13.5
+            "kcal": 922.5,
+            "protein_g": 40.5,
+            "carbs_g": 129.75,
+            "fat_g": 24.0
           },
           "score": {
-            "price": -2.095,
-            "price_over_budget": 0.0,
-            "energy_value": 0.7374701670644391,
-            "energy": 0.14833333333333334,
-            "protein": -0.4,
-            "total": -1.6092
+            "kcal": 16.5935349202239,
+            "protein": 7.171612618707451,
+            "price": 2.0532661693335,
+            "total": 25.8184
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pasta + Potato salad",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "73bbe2bb9698caf4",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 25.65,
+            "carbs_g": 133.5,
+            "fat_g": 38.1
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 4.542021325181385,
+            "price": 1.6799450476365,
+            "total": 24.1646
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 952.5,
+            "protein_g": 25.2,
+            "carbs_g": 131.25,
+            "fat_g": 33.3
+          },
+          "score": {
+            "kcal": 17.1331620721011,
+            "protein": 4.46233674052908,
+            "price": 1.6799450476365,
+            "total": 23.2754
           },
           "has_estimated_prices": true
         }
       ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pollock fillet + Potato salad",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "73bbe2bb9698caf4",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 172.5,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 420,
+            "price_eur": 4.2,
+            "weight_g": 300,
+            "kcal": 360.0,
+            "protein_g": 29.7,
+            "carbs_g": 24.0,
+            "fat_g": 15.3
+          },
+          "score": {
+            "kcal": -7.2825505878744,
+            "protein": 9.79756705123812,
+            "price": 0.05406230329080001,
+            "total": 2.5691
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 757.5,
+            "protein_g": 21.15,
+            "carbs_g": 89.25,
+            "fat_g": 32.85
+          },
+          "score": {
+            "kcal": -15.32370019531905,
+            "protein": 6.977055324366541,
+            "price": 0.0695086756596,
+            "total": -8.2771
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2",
+            "Pasta"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 420,
+            "price_eur": 4.2,
+            "weight_g": 300,
+            "kcal": 382.5,
+            "protein_g": 31.05,
+            "carbs_g": 44.25,
+            "fat_g": 7.95
+          },
+          "score": {
+            "kcal": 1.3513557261089248,
+            "protein": 2.2678701074088297,
+            "price": -5.3359235818854,
+            "total": -1.7167
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Parsnip and carrot casserole + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": "Warm 1&2",
+          "counters": [
+            "Warm 1&2"
+          ],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Warm 1&2",
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [
+                "Warm 1&2"
+              ],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 757.5,
+            "protein_g": 21.15,
+            "carbs_g": 89.25,
+            "fat_g": 32.85
+          },
+          "score": {
+            "kcal": 2.676214281117675,
+            "protein": 1.54478108765529,
+            "price": -6.8604731767098,
+            "total": -2.6395
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "unavailable",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [],
+      "message": "No plate fits this goal today."
+    },
+    "cut_vegan": {
+      "state": "unavailable",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [],
+      "message": "No plate fits this goal today."
+    },
+    "budget_vegan": {
+      "state": "unavailable",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [],
+      "message": "No plate fits this goal today."
     }
   },
   "extras": {
-    "all": [],
+    "all": [
+      {
+        "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
+        "name_en": "Pancakes with cherry filling and vanilla sauce",
+        "station": "Süßspeise",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "meat_types": [],
+        "serving": "2 scoops",
+        "kcal": 525.0,
+        "protein_g": 10.5,
+        "price_source": "eat-api"
+      }
+    ],
     "vegan": []
   },
   "generated_on": "2026-11-23"

@@ -20,21 +20,22 @@ def test_golden_lunches(config, fixture_menu, pairing, fixed_caps):
     m, tags = fixture_menu
     result = build_today(m, tags, config, pairing=pairing, no_llm=True, proposals=read_json(FIXTURES / "proposals-v4.json"))
     expected = {
-        "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 2)], 675, 2.5385) if fixed_caps else
-                    ([('Käsekrainer (1 Stück)', 1), ('Reis', 2)], 496, 2.4547),
-        "cut_all": ([('Seelachsfilet (1Stück)', 1)], 285, 3.2649),
-        "budget_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 405, -.9511) if fixed_caps else
-                      ([('Käsekrainer (1 Stück)', 1), ('Reis', 1)], 361, -.9974),
-        "bulk_vegan": ([('Graupen-Gemüse-Eintopf', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 554, 3.4829) if fixed_caps else
-                      ([('Graupen-Gemüse-Eintopf', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 419, 2.6914),
-        "cut_vegan": ([('Graupen-Gemüse-Eintopf', 2), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 369, -1.6983),
-        "budget_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Graupen-Gemüse-Eintopf', 1)], 320, -.726),
+        "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 2)], 675, 29.4867) if fixed_caps else
+                    ([('Fleischpflanzerl (Frikadelle)', 1), ('Reis', 2)], 483, 18.3645),
+        "cut_all": ([('Fleischpflanzerl (Frikadelle)', 1), ('Reis', 1)], 348, -1.7821),
+        "budget_all": ([('Käsekrainer (1 Stück)', 1)], 226, .1448),
+        "bulk_vegan": ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 810, 34.8506) if fixed_caps else
+                      ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 675, 28.0622),
+        "cut_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Asia-Reisbällchen auf Teriyakigemüse', 1)], 405, -8.245),
+        "budget_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 405, -.3964) if fixed_caps else
+                        ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Asia-Reisbällchen auf Teriyakigemüse', 1)], 405, -.9134),
     }
     for key, (items, price, score) in expected.items():
         p = result["variants"][key]["plates"][0]
         assert [(i["name"], i["count"]) for i in p["items"]] == items
         assert p["total"]["price_cents"] == price
         assert p["score"]["total"] == score
+        assert p["counter"] in set.intersection(*(set(i["counters"]) for i in p["items"]))
     assert result["schema_version"] == 2
     for v in result["variants"].values():
         for p in v["plates"]:
@@ -73,11 +74,8 @@ def test_pool_has_one_portioning_per_lunch(config, fixture_menu, pairing):
 
 
 def test_equal_scores_use_price_then_sorted_dish_ids(config, make_dish):
-    for term in config["scoring"]["bulk"].values():
-        if "weight" in term:
-            term["weight"] = 0
-        else:
-            term.update(up=0, down=0)
+    for feature in config["scoring"]["bulk"]["learned_model"]["features"]:
+        feature["weight"] = 0
     dishes, tags = [], {}
     for name, price in [("Main A", 1), ("Main B", 1), ("Main C", 2)]:
         d, t = make_dish(name, base=price, rate=0)
@@ -100,7 +98,7 @@ def test_invalid_single_pairs_and_pizza(config, fixture_menu, pairing):
     r = portion_options(rice, rice, config)[0]
     assert valid_plate([f], config, pairing) # proposals decide completeness, not old pair scores
     assert not valid_plate([r], config, pairing)
-    assert valid_plate([f, p], config, pairing)
+    assert not valid_plate([f, p], config, pairing)  # served at different counters
     assert not valid_plate([f, f], config, pairing)
     assert not valid_plate([f, r, r], config, pairing)
     bad = copy.deepcopy(pairing); bad["pairs"][pair_key(f, r)]["score"] = 1
@@ -112,7 +110,7 @@ def test_invalid_single_pairs_and_pizza(config, fixture_menu, pairing):
     bad["pairs"][pair_key(r, k)] = {"score": 3}
     bad["pairs"][pair_key(f, p)] = {"score": 3}
     assert not valid_plate([r, k], config, bad) # model scores cannot create a main-less plate
-    assert valid_plate([f, p], config, bad)
+    assert not valid_plate([f, p], config, bad)  # pairing scores cannot override counter layout
 
 
 def test_paired_portions_ignore_minimum_but_not_max(config, make_dish):
@@ -154,11 +152,11 @@ def test_invalid_configured_scoop_caps(config, make_dish, maximum):
         portion_options(d, t, config)
 
 
-def test_friday_fish_can_reach_goals_with_two_scoops_of_rice(config, make_dish):
+def test_goal_scoring_chooses_rice_portions_for_fixed_fish_serving(config, make_dish):
     fish, fish_tag = make_dish("Fish fillet", station="Fisch", vegan=False,
                              piece=True, piece_g=140, min_g=120, max_g=160,
                              kcal=115, protein=18.5)
-    rice, rice_tag = make_dish("Rice", role="side", max_g=250, kcal=130, protein=2.7)
+    rice, rice_tag = make_dish("Rice", station="Beilagen", role="side", max_g=250, kcal=130, protein=2.7)
     tags = {normalize(fish["name"]): fish_tag, normalize(rice["name"]): rice_tag}
     values = list(candidates([fish, rice], tags, config))
     # Score each portioning of the same proposed fish + rice tray.
@@ -167,10 +165,10 @@ def test_friday_fish_can_reach_goals_with_two_scoops_of_rice(config, make_dish):
         value = choose(values, goal, config)
         assert value is not None and valid_plate(value["items"], config)
         assert value["items"][0]["weight_g"] == 140
-        count = 1 if goal == "cut" else 2
+        count = 2 if goal == "bulk" else 1
         assert value["items"][1]["count"] == count
-        assert value["kcal"] == (356 if goal == "cut" else 551)
-        assert value["protein"] == (29.95 if goal == "cut" else 34)
+        assert value["kcal"] == (551 if goal == "bulk" else 356)
+        assert value["protein"] == (34 if goal == "bulk" else 29.95)
 def test_candidates_can_exceed_650g_within_individual_portion_limits(config, make_dish):
     a, at = make_dish("Main A")
     b, bt = make_dish("Main B")
@@ -205,11 +203,11 @@ def test_piece_count_is_one_fixed_serving_with_one_surcharge(config, make_dish, 
     assert p["protein"] == 24
 
 
-def test_no_price_cap(config, make_dish):
-    d, t = make_dish("Expensive pasta", protein=20, base=20, rate=5)
+def test_bulk_price_cap_does_not_change_other_goals(config, make_dish):
+    d, t = make_dish("Expensive pasta", protein=20, base=10, rate=0)
     values = list(candidates([d], {normalize(d["name"]): t}, config))
-    config["goals"] = {"bulk_max_eur": 7} # an obsolete field cannot reinstate a cap
-    assert all(choose(values, g, config)["price_cents"] > 700 for g in ("bulk", "cut", "budget"))
+    assert choose(values, "bulk", config) is None
+    assert all(choose(values, goal, config)["price_cents"] == 1000 for goal in ("cut", "budget"))
 
 
 def test_vegan_relaxation_applies_to_all_three_goals(config, fixture_menu, pairing):
@@ -284,3 +282,109 @@ def test_price_rounding_and_piece_portion(config, make_dish):
     d, t = make_dish(piece=True, piece_g=180, min_g=150, max_g=250, base=1.5)
     item = portion_options(d, t, config)[0]
     assert item["count"] == 1 and item["unit"] == "piece" and item["price_cents"] == 312
+
+
+@pytest.mark.parametrize('goal', ['cut', 'budget'])
+def test_meal_minimums_reject_snack_portions_before_ranking(config, make_dish, goal):
+    stew, tag = make_dish("Farmer's stew", kcal=85, protein=4.5, min_g=150)
+    values = list(candidates([stew], {normalize(stew['name']): tag}, config))
+    selected = choose(values, goal, config)
+    assert selected['kcal'] == 382.5
+    assert selected['protein'] == 20.25
+    assert selected['items'][0]['count'] == 3
+    assert choose([p for p in values if p['kcal'] < 300 or p['protein'] < 20], goal, config) is None
+    assert choose(values, 'bulk', config) is None
+    assert choose(values[:1], 'bulk', config) is None
+
+
+def test_bulk_requires_a_substantial_protein_meal(config, make_dish):
+    dish, tag = make_dish('Small cheap stew', kcal=95, protein=5.5)
+    values = list(candidates([dish], {normalize(dish['name']): tag}, config))
+    assert choose([plate for plate in values if plate['kcal'] < 350], 'bulk', config) is None
+    assert choose([plate for plate in values if plate['protein'] < 25], 'bulk', config) is None
+
+
+def test_sweet_counter_dish_cannot_anchor_a_plate(config, make_dish):
+    sweet, tag = make_dish('Kaiserschmarrn', station='Süßspeise', kcal=190, protein=5)
+    side, side_tag = make_dish('Potato salad', station='Beilagen', role='side')
+    sweet_item = food(sweet, {normalize(sweet['name']): tag})
+    assert sweet_item['role'] == 'dessert'
+    tags = {normalize(sweet['name']): tag, normalize(side['name']): side_tag}
+    assert not list(candidates([sweet, side], tags, config,
+                               proposals=[[dish_id(sweet), dish_id(side)]]))
+
+
+def test_model_cannot_omit_real_mains_from_candidate_pool(config, make_dish):
+    dessert, dessert_tag = make_dish('Sweet dish', station='Süßspeise', kcal=190, protein=5)
+    steak, steak_tag = make_dish('Steak', station='Grill', vegan=False, piece=True,
+                                 piece_g=240, min_g=200, max_g=280, kcal=165, protein=16.5,
+                                 base=1)
+    side, side_tag = make_dish('Rice', station='Beilagen', role='side', kcal=130, protein=2.7)
+    tags = {normalize(dessert['name']): dessert_tag, normalize(steak['name']): steak_tag,
+            normalize(side['name']): side_tag}
+    values = list(candidates([dessert, steak, side], tags, config,
+                             proposals=[[dish_id(dessert), dish_id(side)]]))
+    selected = choose(values, 'bulk', config)
+    assert selected is not None
+    assert selected['items'][0]['name'] == 'Steak'
+    assert all(item['name'] != 'Sweet dish' for item in selected['items'])
+
+
+@pytest.mark.parametrize('kcal,protein,qualifies', [(300,20,True),(299.99,20,False),(300,19.99,False)])
+@pytest.mark.parametrize('goal', ['cut', 'budget'])
+def test_meal_minimum_boundaries(config, make_dish, kcal, protein, qualifies, goal):
+    config['portions']['max_scoop_g_by_role']['main'] = 150
+    dish, tag = make_dish('Boundary plate', min_g=150, max_g=150, kcal=kcal/1.5, protein=protein/1.5)
+    values = list(candidates([dish], {normalize(dish['name']): tag}, config))
+    assert bool(choose(values, goal, config)) is qualifies
+
+
+@pytest.mark.parametrize('kcal,qualifies', [(1400, True), (1500, True), (1500.01, False)])
+def test_bulk_calorie_cap_boundaries(config, make_dish, kcal, qualifies):
+    dish, tag = make_dish('Fixed lunch', piece=True, piece_g=300, min_g=300, max_g=300,
+                          kcal=kcal / 3, protein=10)
+    values = list(candidates([dish], {normalize(dish['name']): tag}, config))
+    assert bool(choose(values, 'bulk', config)) is qualifies
+    assert choose(values, 'cut', config) is not None
+    assert choose(values, 'budget', config) is not None
+
+
+@pytest.mark.parametrize('price,qualifies', [(8.99, True), (9, True), (9.01, False)])
+def test_bulk_price_cap_boundaries(config, make_dish, price, qualifies):
+    dish, tag = make_dish('Fixed-price lunch', piece=True, piece_g=300, min_g=300, max_g=300,
+                          base=price, rate=0, protein=10)
+    values = list(candidates([dish], {normalize(dish['name']): tag}, config))
+    assert bool(choose(values, 'bulk', config)) is qualifies
+    assert choose(values, 'cut', config) is not None
+    assert choose(values, 'budget', config) is not None
+
+
+def test_bulk_price_cap_refills_ranking_with_best_eligible_plates(config, make_dish):
+    dishes, tags = [], {}
+    for name, price in [('Too expensive', 10), ('Best eligible', 9), ('Next eligible', 8)]:
+        dish, tag = make_dish(name, piece=True, piece_g=300, min_g=300, max_g=300,
+                              base=price, rate=0, protein=10)
+        dishes.append(dish)
+        tags[normalize(name)] = tag
+    ranked = top_plates(candidates(dishes, tags, config), 'bulk', config)
+    assert [plate['price_cents'] for plate in ranked] == [900, 800]
+
+
+@pytest.mark.parametrize('vegan', [False, True])
+def test_bulk_cap_selects_smaller_eligible_portions(config, make_dish, vegan):
+    dish, tag = make_dish('Calorie dense main', vegan=vegan, kcal=400, protein=15)
+    values = list(candidates([dish], {normalize(dish['name']): tag}, config, vegan=vegan))
+    assert any(plate['kcal'] > 1500 for plate in values)
+    selected = choose(values, 'bulk', config)
+    assert selected['items'][0]['count'] == 2
+    assert selected['kcal'] == 1200
+
+
+def test_bulk_cap_applies_to_the_whole_tray(config, make_dish):
+    first, first_tag = make_dish('First main', kcal=200)
+    second, second_tag = make_dish('Second main', kcal=200)
+    tags = {normalize(first['name']): first_tag, normalize(second['name']): second_tag}
+    values = list(candidates([first, second], tags, config,
+                             proposals=[[dish_id(first), dish_id(second)]]))
+    assert max(plate['kcal'] for plate in values) == 1800
+    assert choose(values, 'bulk', config)['kcal'] == 1500

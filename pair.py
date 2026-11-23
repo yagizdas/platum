@@ -7,6 +7,7 @@ from datetime import date
 from pathlib import Path
 
 from common import ROOT, normalize, read_json, write_json, load_config, today, week_dates
+from counters import counters_for
 from tag import generate_json, validate_tag
 from judge import api_key_value
 
@@ -41,18 +42,18 @@ def load_pairing(path):
 
 def food(dish, cache):
     tag = validate_tag(cache[normalize(dish["name"])], name=dish["name"])
-    if dish.get('counter_policy') == 'published_stations':
-        if dish['station'].casefold().startswith(('dessert', 'süßspeise', 'süssspeise')):
-            tag = {**tag, 'role': 'dessert'}
-        if dish['station'].casefold().startswith('tagessupe') and re.search('suppe', dish['name'], re.I):
-            tag = {**tag, 'role': 'soup', 'texture': 'liquid'}
+    # The official counter is more reliable than a nutrition-model role for
+    # deciding whether something may anchor a lunch.  In particular, sweet
+    # entrees have historically been tagged as mains because they are large.
+    if dish["station"].casefold().startswith(("dessert", "süßspeise", "süssspeise")):
+        tag = {**tag, "role": "dessert"}
+    if dish["station"].casefold().startswith("tagessupe") and re.search("suppe", dish["name"], re.I):
+        tag = {**tag, "role": "soup", "texture": "liquid"}
     if dish.get("standing"):
         tag = {**tag, "role": "side", "is_per_piece": False, "piece_weight_g": None,
                "name_en": dish.get("name_en", tag["name_en"])}
-    result = {**dish, **tag, "standing": dish.get("standing") is True}
-    if dish.get('counter_policy') == 'published_stations':
-        result['counters'] = [dish['station']]
-    return result
+    return {**dish, **tag, "standing": dish.get("standing") is True,
+            "counters": [dish["station"]] if dish.get("counter_policy") == "published_stations" else list(counters_for(dish["station"]))}
 
 
 def pair_key(a, b):

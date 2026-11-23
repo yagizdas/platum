@@ -1,6 +1,6 @@
 # Mensa Plate
 
-A static lunch picker for TUM students at **Mensa Arcisstraße**. Choose Bulk, Cut or Budget, with an independent Vegan option. Each variant offers up to five lunches with different mains. Python computes portions, student prices, nutrition estimates and ranking; models propose plausible trays and describe the final choices.
+A static lunch picker for TUM students at **Mensa Arcisstraße and Mensa Garching**. Switch locations using the top-right campus selector. Choose Bulk, Cut or Budget, with Vegan, Vegetarian, No pork and No beef in the Diet tile. Each variant offers up to five lunches with different mains. Python computes portions, student prices, nutrition estimates and ranking; models propose plausible trays and describe the final choices.
 
 The landing page is `index.html`; the picker is `menu.html`. Both retain the Bricolage Grotesque type, TUM Blue, supplied illustrations and reduced-motion behavior documented in `DESIGN.md`. The site works under a GitHub Pages repository subpath and has no browser API key or service worker.
 
@@ -22,7 +22,19 @@ Open <http://127.0.0.1:8000>. `--date YYYY-MM-DD` fixes the reference date. `--n
 
 ## Staging
 
-Push changes to the `staging` branch, then check them at <https://yagizdas.github.io/platum/staging/>. When the staged site is ready to ship, merge `staging` into `main`; the deployment workflow publishes both sites together with the same daily menu data.
+Push changes to the `staging` branch, then check them at <https://yagizdas.github.io/platum/staging/>. When the staged site is ready to ship, merge `staging` into `main`; the deployment workflow publishes both sites together with the same cached daily menu data. Pushes to either branch run `publish.yml`, which makes no Gemini calls and preserves the saved batch’s exact dates. The picker uses the Classic design; there is no experimental design switch.
+
+The private preference labeler is at <https://yagizdas.github.io/platum/staging/label/>. Select a ranking goal to keep its judgment count, undo, and JSON export separate. Existing browser judgments are preserved and filtered by their recorded goal. **Reset this goal** asks for confirmation and deletes only that goal's browser judgments; export first to keep a copy. Cards show calories from protein as `protein (g) × 4 ÷ kcal × 100`, rounded to a whole percentage.
+
+To fit exported cut judgments without overwriting the bulk model:
+
+```sh
+python train_pairwise_score.py --goal cut --input /path/to/platum-cut-judgments.json --output data/models/cut-score.json
+```
+
+Cut scoring uses `data/models/cut-score.json`, trained from the private 2026-11-12 export. Its 124 decisive choices train the same Bradley–Terry model as Bulk; 46 “both bad” judgments are retained locally but excluded from pairwise fitting. Raw Cut judgments are not committed or published. Leave-one-menu-date-out agreement is 123/124 (99.2%), versus 119/124 (96.0%) for the previous Cut score. This measures agreement with these labels, not nutrition quality or independent-user performance. Both `cut_all` and `cut_vegan` use this model for portions and ordering.
+
+Budget scoring uses `data/models/budget-score.json`, trained from 152 decisive choices in the private 2026-11-12 Budget export. The 14 “both bad” entries are excluded from pairwise fitting. Leave-one-menu-date-out agreement is 117/152 (77.0%), compared with 119/152 (78.3%) for the previous formula on these choices. Both `budget_all` and `budget_vegan` use the fitted weights. The raw export stays outside the repository.
 
 ## Pipeline and history
 
@@ -40,19 +52,21 @@ For every open day there are **six separate proposal calls**: `bulk_all`, `cut_a
 
 Each variant is cached at `data/proposals/YYYY-MM-DD/<variant>.json`. An existing file prevents another call, including after failure or when no key is available. Failed calls cache the fallback: every main alone and every main with each eligible standing side. Unknown IDs, repeated dishes, multiple soups, dessert-only trays and non-vegan items in vegan variants are discarded. Keep these caches committed.
 
+`counters.py` contains the single editable menu-category mapping for the likely Arcisstraße counters. For Arcisstraße, every dish carries its possible counters, combinations without a counter shared by every dish are rejected, and each plate tells the student where to pick it up. These assignments are a heuristic because the daily kitchen layout can change. Garching instead retains the official station categories and does not use this floorplan mapping.
+
 New attempts record their prompt, supplied dishes, schema, visible provider response, parsed response, and each validation decision under `data/proposals/YYYY-MM-DD/audits/<variant>/`. Duplicate combinations are reported explicitly. Caches reference their audit file. To inspect a fresh response, run `python proposals.py --date YYYY-MM-DD --variant budget_vegan --refresh`. A failed refresh retains the previous usable cache and records the failed attempt. Audit records contain no API credentials and are persisted with proposal caches by the daily job.
 
-For each combination, code tries one to three scoops per scoop-served item. Configured role/station scoop caps still apply; pieces retain their cached weight and one-piece count. There is **no whole-plate weight cap** and there are **no hard energy or protein floors**. Price affects ranking through the configured score terms, not a maximum-price filter.
+For each combination, code tries one to three scoops per scoop-served item. Configured role/station scoop caps still apply; pieces retain their cached weight and one-piece count. There is **no whole-plate weight cap**. Both regular and vegan Bulk recommendations are capped at **1,500 kcal**, configured under `plate_maximums.bulk`, before ranking. Cut and Budget plates must provide at least **300 kcal and 20 g protein**, configured under `plate_minimums.<goal>`, before the learned model ranks their portions. This applies to both regular and vegan variants. If none qualify, no plate is recommended for that variant. Bulk has no energy or protein floor. Price affects ranking through the configured score terms, not a maximum-price filter.
 
 With `e` = euros, `k` = kcal, `p` = protein grams and `h(x;u,d) = u*x` for nonnegative `x`, otherwise `d*x`:
 
 ```text
-Bulk   = -2*e/4 - max(0,e-7) + .25*(k/e)/250 + .5*(p/e)/12 + 1.5*p/10 + h(k-500;.25,3)/300
-Cut    = -e/4 - max(0,e-7) + 2*(p/k*100)/8 + .5*(p/e)/12 + h(p-30;.5,3)/15 + h(700-k;0,2)/200
-Budget = -2*e/4 - max(0,e-7) + (k/e)/250 + h(k-550;.2,3)/300 + h(p-20;.2,3)/15
+Bulk   = 1.798757172924*k/100 + 1.770768547829*p/10 + .248880747798*e
+Cut    = -2.022930718854*k/100 + 3.298844124996*p/10 + .012871976974*e
+Budget = .353295614669*k/100 + .730392949246*p/10 - 1.270457995687*e
 ```
 
-Every weight, normalizer, pivot and asymmetric slope lives under `scoring.<goal>` in `config.yaml`. All goals lose an additional point per euro above €7, a soft penalty rather than a hard price cap. Cut also deducts 0.25 points per euro across the entire price; Bulk and Budget deduct 0.5. Bulk rewards total protein linearly at 0.15 points per gram, without a protein target, with smaller value and calorie terms. The [November bulk calibration](docs/bulk-calibration-2026-11-09.md) records the comparison and its limits. Sort by score rounded to four decimals descending, price ascending, then sorted dish IDs. Keep the best portioning and up to five plates, with no repeated main in a variant. Fewer distinct mains means fewer alternatives. Score terms and total are saved under each plate's `score` and never displayed.
+All three goals load learned feature weights from the model paths under `scoring.<goal>` in `config.yaml`. The learned scores have no extra price penalty or calorie target; Cut and Budget minimum meal requirements filter out small portions before scoring. Cut's slight positive price coefficient reflects these judgments rather than a preference rule we added. The [November bulk calibration](docs/bulk-calibration-2026-11-09.md) records the earlier hand-written comparison and its limits. Sort by score rounded to four decimals descending, price ascending, then sorted dish IDs. Keep the best portioning and up to five plates, with no repeated main in a variant. Fewer distinct mains means fewer alternatives. Score terms and total are saved under each plate's `score` and never displayed.
 
 `judge.py` now writes only a short English title and reason for **every final plate**. `data/title_cache.json` caches this optional daily call; IDs apply copy to the existing order. Missing, invalid or failed copy cannot change plates, portions, totals or ranking. Fallback titles use short English item names. The old pairing and judge caches are retained; pairing values no longer constrain plate selection.
 
@@ -62,8 +76,8 @@ Reporting is enabled through the production Worker at `https://mensa-plate-repor
 
 `worker/` contains a Cloudflare Worker with D1 storage. No cookies, accounts, IP addresses or contact data are stored. The browser keeps a random UUID in `localStorage`, with an in-memory fallback when storage is blocked.
 
-- `POST /report`: `{date, variant, plate_dish_ids, tapped_dish_id, device_id}`; the tapped value is an item ID or `"other"`.
-- `GET /broken?date=YYYY-MM-DD`: `{date, broken: [plate_key, ...]}`.
+- `POST /report`: `{date, variant, plate_dish_ids, tapped_dish_id, device_id, campus?}`; campus is `arcisstr` by default or `garching`; the tapped value is an item ID or `"other"`.
+- `GET /broken?date=YYYY-MM-DD&campus=garching` (omitted campus defaults to Arcisstraße): `{date, broken: [plate_key, ...]}`.
 - Keys are sorted dish IDs joined with `|`. Portions and variant do not change a physical tray's key; raw reports retain their variant.
 - Maximum three accepted reports per device per **submission day in Berlin**, across menu dates. A single conditional SQL insert enforces this under concurrent requests.
 - `BROKEN_THRESHOLD` in `worker/wrangler.toml` defaults to two distinct devices. Repeated reports by one device cannot increase its vote.
@@ -100,7 +114,7 @@ Both the landing page and the plate picker load Cloudflare Web Analytics using t
 
 Open [Cloudflare Web Analytics](https://dash.cloudflare.com/26098fbb1b3bb06b1719a1e6fb10684f/web-analytics) and select `yagizdas.github.io` to see visits, page views, referring sites, countries, browsers/devices and page performance. Cloudflare's **visits** count incoming visits, not identified unique people. One visit can include both the landing page and the picker. Counts begin after installation, and new data may take a few minutes to appear; blocked JavaScript or analytics blockers can reduce the measured counts. See [Cloudflare's metric definitions](https://developers.cloudflare.com/web-analytics/data-metrics/high-level-metrics/) and [Web Analytics overview](https://developers.cloudflare.com/web-analytics/about/).
 
-To move to a custom domain later, edit the hostname under Web Analytics → Manage site and keep the same site snippet. Also update `ALLOWED_ORIGINS` in `worker/wrangler.toml` so plate reporting accepts the new origin, update `SITE_URL` in `menu.html` for shared links, and redeploy the Worker and static site. See [Cloudflare's setup guide](https://developers.cloudflare.com/web-analytics/get-started/).
+To move to a custom domain later, edit the hostname under Web Analytics → Manage site and keep the same site snippet. Also update `ALLOWED_ORIGINS` in `worker/wrangler.toml` so plate reporting accepts the new origin. Shared links derive their campus and path from the current page URL. Then redeploy the Worker and static site. See [Cloudflare's setup guide](https://developers.cloudflare.com/web-analytics/get-started/).
 
 ## GitHub Pages and tests
 
@@ -110,7 +124,7 @@ Set repository secret `GEMINI_API_KEY` and select **GitHub Actions** in Settings
 - Saturday prepares only the coming Monday–Friday, using `weekly_batch.py`. A completion record under `data/batches/YYYY-MM-DD.json` makes Sunday skip all source fetches and model calls after a successful Saturday. An incomplete Saturday run preserves successful dish/proposal caches; Sunday retries unfinished work, including failed proposal caches. Missing future source dates or an entirely unpublished week cannot replace the current public batch with false closed days. Explicitly published closed days remain valid.
 - A complete batch publishes a five-date week index. The browser derives its date buttons from that index, so the row rolls to the new week automatically, including month/year boundaries. No dates are hard-coded into the UI. The optional `weekly_batch.py --date YYYY-MM-DD` takes a Monday for a manual recovery batch.
 - `publish.yml` runs on pushes to `main` or `staging`, or manually. It publishes both sites from saved data without scraping, tagging or Gemini access. `rescore_cached.py` recalculates staging recommendations for exactly the saved index’s dates with `no_llm=True`, so a frontend push cannot expand the batch into another week.
-- Both workflows share the Pages deployment lock. Model/source failures are visible in the batch record and workflow result; the previous public batch remains available until a complete replacement is ready. Raw reports, credentials, batch records and private model caches are not packaged into the static site.
+- The weekend workflow refreshes each campus independently with a shared exact-name nutrition cache. Garching menus, proposals and public days are isolated under `data/campuses/garching/`; see [the Garching integration notes](docs/garching-integration.md) for verified source differences and operational commands. Both workflows share the Pages deployment lock. Model/source failures are visible in the batch record and workflow result; the previous public batch remains available until a complete replacement is ready. Raw reports, credentials, batch records and private model caches are not packaged into the static site.
 
 Scheduled workflows use the default branch; the weekend workflow and batch helpers must be present there for the schedule to take effect.
 
@@ -121,6 +135,3 @@ cd worker && npm ci && npm test
 ```
 
 Tests mock model calls. Coverage includes parsing and source authority, immutable existing tags, repair and retry behavior, ten-day failure isolation, exact golden winners for all six variants, hand-computed equations, byte-identical reruns, six independent proposal caches, Berlin default dates, report fail-open behavior, and an actual `wrangler dev`/D1 integration test with concurrent rate limits and distinct-device votes. The existing fixture estimates remain test data, separate from production caches.
-
-
-Garching has an independent official-menu pipeline, cached batches and campus-scoped reports. The selector UI is available on [staging](https://yagizdas.github.io/platum/staging/menu.html?campus=garching). See [the source and integration notes](docs/garching-integration.md).

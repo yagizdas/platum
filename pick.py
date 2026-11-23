@@ -10,10 +10,12 @@ from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
 from common import ROOT, dish_id, load_config, normalize, read_json, today, week_dates, write_json
+from counters import shared_counters
 from judge import choose_variants
 from pair import food, load_pairing
 from proposals import daily_proposals, fallback_proposals, validate_proposals
 from scoring import score_plate
+from diet_filters import FILTERS, allows, meat_types
 
 GOALS = ("bulk", "cut", "budget")
 SCHEMA_VERSION = 2
@@ -84,6 +86,10 @@ def valid_plate(items, config, pairing=None):
         return False
     if all(i.get("standing") for i in items):
         return False
+    if not any(i["role"] == "main" and not i.get("standing") for i in items):
+        return False
+    if config.get("counter_policy") != "published_stations" and not shared_counters(items):
+        return False
     for i in items:
         if i["is_per_piece"]:
             if i["count"] != 1 or i["unit"] != "piece" or i["weight_g"] != i["piece_weight_g"]:
@@ -109,7 +115,18 @@ def plate(items):
 def candidates(dishes, cache, config, vegan=False, pairing=None, proposals=None):
     items = [food(d, cache) for d in dishes if not vegan or d.get("is_vegan") is True]
     by_id = {dish_id(i): i for i in items}
-    combos = fallback_proposals(items) if proposals is None else validate_proposals({"combos": proposals}, items, vegan=vegan)
+    # Model proposals add useful multi-dish trays, but must not decide which
+    # mains enter the candidate pool.  Always include deterministic coverage
+    # for every main so an omitted pasta, grill dish, or pizza can still rank.
+    if proposals is None:
+        combos = fallback_proposals(items)
+    else:
+        suggested = validate_proposals({"combos": proposals}, items, vegan=vegan)
+        # Single-main coverage is deliberately conservative: proposal trays
+        # retain their accompaniments, while omitted dishes still get a chance.
+        mains = [[dish_id(item)] for item in items
+                 if item["role"] == "main" and not item.get("standing")]
+        combos = sorted({tuple(combo) for combo in [*suggested, *mains]})
     for ids in combos:
         options = [portion_options(by_id[key], by_id[key], config, paired=True) for key in ids]
         for combo in itertools.product(*options):
@@ -120,7 +137,11 @@ def candidates(dishes, cache, config, vegan=False, pairing=None, proposals=None)
 def top_plates(plates, goal, config, top_k=5, relax_protein=False):
     if goal not in GOALS:
         raise ValueError(f"Unknown goal: {goal}")
-    scored = [{**p, "score": score_plate(p, goal, config)} for p in plates]
+    minimums = config.get("plate_minimums", {}).get(goal, {})
+    maximums = config.get("plate_maximums", {}).get(goal, {})
+    scored = [{**p, "score": score_plate(p, goal, config)} for p in plates
+              if all(p[metric] >= minimum for metric, minimum in minimums.items())
+              and all(p[metric] <= maximum for metric, maximum in maximums.items())]
     def rank(p):
         return (-p["score"]["total"], p["price_cents"], tuple(sorted(dish_id(i) for i in p["items"])),
                 tuple(sorted((dish_id(i), i["count"]) for i in p["items"])))
@@ -158,13 +179,16 @@ def short_name(name):
 def plate_result(value, goal=None, vegan=None, config=None):
     items = []
     for i in value["items"]:
-        items.append({k: i[k] for k in ("name", "name_en", "station", "role", "texture", "count", "unit", "weight_g",
+        items.append({k: i[k] for k in ("name", "name_en", "station", "counters", "role", "texture", "count", "unit", "weight_g",
                                         "price_cents", "is_vegan", "markers", "allergens", "additives", "standing", "diet")}
-                     | {"id": dish_id(i), "serving": serving(i), "price_source": i["price"]["source"], "kcal": round(i["kcal"], 2), "protein_g": round(i["protein"], 2)})
+                     | {"meat_types": meat_types(i), "id": dish_id(i), "serving": serving(i), "price_source": i["price"]["source"], "kcal": round(i["kcal"], 2), "protein_g": round(i["protein"], 2)})
     total = {"price_cents": value["price_cents"], "price_eur": value["price_cents"] / 100, "weight_g": value["weight_g"],
              "kcal": round(value["kcal"], 2), **{f"{n}_g": round(value[n], 2) for n in ("protein", "carbs", "fat")}}
+    published_stations = any(i.get("counter_policy") == "published_stations" for i in value["items"])
+    stations = list(dict.fromkeys(i["station"] for i in value["items"])) if published_stations else []
+    counters = () if published_stations else shared_counters(value["items"])
     return {"title": " + ".join(re.split(r"\s+(?:with|on|served|in|made from)\s+", re.sub(r"\s*\([^)]*\)", "", i["name_en"]), maxsplit=1, flags=re.I)[0].strip() for i in value["items"]), "reason": None, "picked_by": "rules",
-            "counter": None, "stations": list(dict.fromkeys(i["station"] for i in value["items"])) if any(i.get("counter_policy") == "published_stations" for i in value["items"]) else [],
+            "counter": counters[0] if counters else None, "counters": list(counters), "stations": stations,
             "items": items, "total": total, "score": value.get("score"),
             "has_estimated_prices": any(i["price_source"] == "config" for i in items)}
 
@@ -179,7 +203,7 @@ def extras(dishes, cache, config):
         if options:
             i = options[0]
             all_extras.append({k: i[k] for k in ("name", "name_en", "station", "weight_g", "price_cents", "is_vegan", "diet")}
-                              | {"serving": serving(i), "kcal": round(i["kcal"], 2), "protein_g": round(i["protein"], 2), "price_source": i["price"]["source"]})
+                              | {"meat_types": meat_types(i), "serving": serving(i), "kcal": round(i["kcal"], 2), "protein_g": round(i["protein"], 2), "price_source": i["price"]["source"]})
     return {"all": all_extras, "vegan": [i for i in all_extras if i["is_vegan"] is True]}
 
 
@@ -202,7 +226,7 @@ def build_today(menu, cache, config, allow_missing=False, *, pairing=None, no_ll
     result = {k: menu[k] for k in ("date", "mensa", "state", "source", "source_url", "fetched_at", "warnings")}
     result.update(campus=menu.get("campus", config.get("campus", "arcisstr")), schema_version=SCHEMA_VERSION, menu_count=len(menu["dishes"]), scoring=config["scoring"],
                   default_scoop_g=config["portions"]["default_scoop_g"],
-                  nutrition_note="Nutrition values are estimates.", variants={}, extras={"all": [], "vegan": []})
+                  nutrition_note="Nutrition values are estimates.", filtered_variants={}, variants={}, extras={"all": [], "vegan": []})
     if missing:
         result["warnings"] = [*result["warnings"], f"{len(missing)} untagged dish(es) omitted from plate recommendations."]
         result["missing_tags"] = missing
@@ -231,6 +255,17 @@ def build_today(menu, cache, config, allow_missing=False, *, pairing=None, no_ll
             combos = proposal_sets[key]
             values = list(candidates(menu["dishes"], cache, config, vegan, pairing, proposals=combos)) if foods else []
             pool, relaxed, note = rank_variant(values, goal, vegan, config) if result["state"] == "open" else ([], False, None)
+            if not vegan:
+                vegan_values = list(candidates(menu["dishes"], cache, config, True, pairing,
+                                                proposals=proposal_sets[f"{goal}_vegan"])) if foods else []
+                for profile in FILTERS:
+                    eligible = [value for value in [*values, *vegan_values]
+                                if all(allows(item, profile) for item in value["items"])]
+                    filtered = top_plates(eligible, goal, config)
+                    result["filtered_variants"][f"{goal}_{profile}"] = {
+                        "state": "ready" if filtered else "unavailable",
+                        "plates": [plate_result(value) for value in filtered],
+                    }
             ranked[key] = pool
             state = ("ready" if pool else "unavailable") if result["state"] == "open" else result["state"]
             result["variants"][key] = {"state": state, "goal": goal, "vegan": vegan, "relaxed": relaxed, "note": note,

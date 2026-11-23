@@ -25,7 +25,12 @@ def normalize(name):
 
 
 def load_config(path=None):
-    return yaml.safe_load(Path(path or ROOT / "config.yaml").read_text())
+    config = yaml.safe_load(Path(path or ROOT / "config.yaml").read_text())
+    for settings in config.get("scoring", {}).values():
+        model_path = settings.get("learned_model") if isinstance(settings, dict) else None
+        if model_path:
+            settings["learned_model"] = read_json(ROOT / model_path)
+    return config
 
 
 def today(config):

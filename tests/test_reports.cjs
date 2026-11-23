@@ -42,3 +42,15 @@ test('an unsuccessful submission never hides a plate or pretends to accept it',a
   const client=create('https://reports.example',{storage:storage(),fetcher:async()=>({ok:false,status:429})});
   await assert.rejects(client.report(payload),/limit/);assert.equal(client.isHidden(payload.date,plateKey(ids)),false);
 });
+test('campus-specific hidden plates and requests never affect the other campus',async()=>{
+  const store=storage(),sent=[];
+  const fetcher=async(url,o)=>{sent.push({url,body:o?.body&&JSON.parse(o.body)});return {ok:true,json:async()=>({broken:[]})};};
+  const arcis=create('https://reports.example',{storage:store,fetcher});
+  const garching=create('https://reports.example',{storage:store,fetcher,campus:'garching'});
+  await garching.report(payload);
+  assert(garching.isHidden(payload.date,plateKey(ids)));
+  assert.equal(arcis.isHidden(payload.date,plateKey(ids)),false);
+  assert.equal(sent[0].body.campus,'garching');
+  await garching.broken(payload.date);assert(sent[1].url.endsWith('&campus=garching'));
+  await arcis.report(payload);assert.equal(sent[2].body.device_id,sent[0].body.device_id);
+});

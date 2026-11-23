@@ -1,10 +1,13 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {defaultMenuDay,validWeek}=require('../menu-days.js');
+const {defaultMenuDay,menuDateLabel,validWeek}=require('../menu-days.js');
 function index() {
   const dates=['2026-11-02','2026-11-03','2026-11-04','2026-11-05','2026-11-06','2026-11-09','2026-11-10','2026-11-11','2026-11-12','2026-11-13'];
   return {schema_version:2,generated_on:'2026-11-03',week_start:dates[0],valid_through:dates.at(-1),lunch_cutoff:'14:30',days:dates.map(date=>({date,state:'open',file:'data/days/'+date+'.json'}))};
 }
+test('menu date label merges the weekday and compact date',()=>{
+  assert.equal(menuDateLabel('2026-11-20'),'Friday, 20 Nov');
+});
 for(const [label,now,date] of [
   ['Friday at eleven opens today','2026-11-06T10:00:00Z','2026-11-06'],
   ['Friday at fifteen opens Monday','2026-11-06T14:00:00Z','2026-11-09'],
@@ -31,4 +34,12 @@ test('closed days are skipped and an exhausted week has no fallback meal',()=>{
   const data=index();data.days.find(d=>d.date==='2026-11-06').state='closed';
   assert.equal(defaultMenuDay(data,new Date('2026-11-06T10:00:00Z')).date,'2026-11-09');
   assert.equal(defaultMenuDay(data,new Date('2026-11-13T14:00:00Z')),undefined);
+});
+test('a weekend batch rolls the selector to the following Monday-Friday across months',()=>{
+  const dates=['2026-11-30','2026-12-01','2026-12-02','2026-12-03','2026-12-04'];
+  const batch={schema_version:2,week_start:dates[0],valid_through:dates.at(-1),days:dates.map(date=>({date,state:'open',file:'data/days/'+date+'.json'}))};
+  assert(validWeek(batch,new Date('2026-11-28T10:00:00Z')));
+  assert.equal(defaultMenuDay(batch,new Date('2026-11-28T10:00:00Z')).date,'2026-11-30');
+  assert.equal(defaultMenuDay(batch,new Date('2026-12-02T10:00:00Z')).date,'2026-12-02');
+  assert.deepEqual(batch.days.map(row=>menuDateLabel(row.date)),['Monday, 30 Nov','Tuesday, 1 Dec','Wednesday, 2 Dec','Thursday, 3 Dec','Friday, 4 Dec']);
 });
