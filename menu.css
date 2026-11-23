@@ -462,12 +462,14 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
 .meal-deck > .deck-preview, .meal-deck > .deck-departing { position:absolute; inset:0; height:100%; min-height:0; margin:0; pointer-events:none; }
 .deck-preview[data-depth='1'] { z-index:2; transform:translateY(-14px) scale(.97) rotate(-.7deg); }
 .deck-preview[data-depth='2'] { z-index:1; transform:translateY(-28px) scale(.94) rotate(.7deg); }
+.meal-deck > .deck-revealed { height:500px; bottom:auto; }
 .deck-departing { z-index:4; }
 .ingredient-panel { padding-inline:0; border-radius:0; background:transparent; }
 .details-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px 24px; }
 .details-actions { display:flex; align-items:center; gap:24px; }
 .details-actions .report-button { margin:0; }
 @media(max-width:760px) {
+  .meal-deck > .deck-revealed { height:auto; min-height:570px; }
   .details-heading { align-items:flex-start; }
   .details-heading .ingredients-title { flex-basis:100%; }
   .details-actions { width:100%; justify-content:space-between; gap:12px; }

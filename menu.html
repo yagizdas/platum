@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./menu.css?v=meal-deck-1">
+  <link rel="stylesheet" href="./menu.css?v=meal-deck-2">
 </head>
 <body>
   <div class="shell">
@@ -139,42 +139,64 @@
     const foodAnimations=new Set();
     const deckAnimations=new Set();
     const warmedDeckArt=new Set();
-    let departingCard,deckDragDirection=0;
+    let departingCard,deckDragDirection=0,returnAnimation;
     function clearDeckMotion() {
       for(const animation of deckAnimations) animation.cancel();
-      deckAnimations.clear();departingCard?.remove();departingCard=undefined;
+      deckAnimations.clear();returnAnimation=undefined;departingCard?.remove();departingCard=undefined;
       $('plate').style.transform='';$('plate').style.opacity='';$('plate').style.zIndex='';
-      for(const card of $('meal-deck').querySelectorAll('.deck-preview')) card.style.transform='';
+      for(const card of $('meal-deck').querySelectorAll('.deck-preview')) {
+        card.style.transform='';
+        if(card.classList.contains('deck-revealed')) {
+          card.classList.remove('deck-revealed');card.replaceChildren($('plate').querySelector('.tray-tints').cloneNode(true));
+        }
+      }
       deckDragDirection=0;
     }
-    function copyPlateCard() {
+    function copyPlateCard(plate) {
       const card=$('plate').cloneNode(true);
       card.classList.add('deck-preview');card.style.transform='';card.style.opacity='';card.style.zIndex='';
       card.style.height=$('plate').offsetHeight+'px';
       card.setAttribute('aria-hidden','true');card.inert=true;
       card.removeAttribute('aria-labelledby');card.removeAttribute('aria-roledescription');card.removeAttribute('aria-busy');
+      if(plate) {
+        const part=id=>card.querySelector('#'+id);
+        const main=plate.items.find(item=>item.role==='main') || plate.items[0],title=briefDish(main),total=totals(plate);
+        part('plate-title').textContent=title;part('plate-title').lang=main.name_en?'en':'de';
+        part('plate-title').classList.toggle('is-long',title.length>30);
+        part('plate-counter').textContent=plate.stations?.length?'Stations: '+plate.stations.join(' · '):'Pick up at '+plate.counter;
+        part('plate-counter').hidden=!plate.counter && !plate.stations?.length;
+        part('plate-side').textContent=plate.items.filter(item=>item!==main).map(briefDish).join(' + ');
+        part('plate-side').hidden=plate.items.length<2;
+        part('plate-art').replaceChildren();DishIcons.compose(part('plate-art'),[...plate.items,...activeExtras()]);
+        numberValue(part('price'),'€',(total.price_cents/100).toFixed(2));
+        numberValue(part('kcal'),'~',rounded(total.kcal));numberValue(part('protein'),'~',rounded(total.protein_g));
+      }
       for(const node of [card,...card.querySelectorAll('*')]) {
         node.removeAttribute('id');node.removeAttribute('data-motion-name');node.removeAttribute('data-digit-name');
         node.style.viewTransitionName='none';
       }
       return card;
     }
+    function loopIndex(index,count) { return count?((index%count)+count)%count:0; }
+    function warmDeckPlate(plate) {
+      for(const item of plate.items.slice(0,3)) {
+        const key=DishIcons.classify(item);
+        if(warmedDeckArt.has(key)) continue;
+        warmedDeckArt.add(key);
+        const image=new Image();image.src=DishIcons.assetUrl(key);image.decode().catch(()=>{});
+      }
+    }
     function renderDeck(plates=[],backwards=false) {
       const host=$('meal-deck');host.querySelectorAll('.deck-preview').forEach(card=>card.remove());
       const direction=backwards?-1:1;
-      for(let depth=2;depth>=1;depth--) {
-        const index=plateIndex+depth*direction;
-        if(!plates[index]) continue;
-        for(const item of plates[index].items.slice(0,3)) {
-          const key=DishIcons.classify(item);
-          if(warmedDeckArt.has(key)) continue;
-          warmedDeckArt.add(key);
-          const image=new Image();image.src=DishIcons.assetUrl(key);image.decode().catch(()=>{});
-        }
-        // Only the card edges are exposed at rest. Render the actual meal once,
-        // in the live card as it comes forward, without hidden duplicate content.
+      if(plates.length>1)warmDeckPlate(plates[loopIndex(plateIndex-direction,plates.length)]);
+      for(let depth=Math.min(2,plates.length-1);depth>=1;depth--) {
+        const index=loopIndex(plateIndex+depth*direction,plates.length);
+        warmDeckPlate(plates[index]);
+        // At rest only the edges show. The approaching meal is filled in as soon
+        // as the user starts dragging, before any part of that face is exposed.
         const card=document.createElement('div');card.className='receipt deck-preview';
-        card.setAttribute('aria-hidden','true');card.inert=true;card.dataset.depth=String(depth);
+        card.setAttribute('aria-hidden','true');card.inert=true;card.dataset.depth=String(depth);card.dataset.plateIndex=String(index);
         card.append($('plate').querySelector('.tray-tints').cloneNode(true));
         host.insertBefore(card,$('plate'));
       }
@@ -182,26 +204,29 @@
     }
     function moveDeck(update,direction=1) {
       const front=$('plate'),from=getComputedStyle(front).transform;
+      const revealed=deckDragDirection===direction?$('meal-deck').querySelector('.deck-revealed'):null;
+      const heldPose=revealed?getComputedStyle(revealed).transform:null;
       const outgoing=!front.classList.contains('is-empty') && !$('totals').hidden?copyPlateCard():null;
       clearDeckMotion();clearMotionNames();
       update();syncMotionControls();
       if(!outgoing || reducedMotion.matches || front.classList.contains('is-empty')) return true;
       outgoing.classList.remove('deck-preview');outgoing.classList.add('deck-departing');
       $('meal-deck').append(outgoing);departingCard=outgoing;
-      const distance=front.offsetWidth+front.offsetHeight*.1+20,duration=420;
+      const distance=front.offsetWidth+front.offsetHeight*.1+20,duration=heldPose?320:420;
       const peek='translateY(-14px) scale(.97) rotate(-.7deg)';
       const forward=direction>0;
-      outgoing.style.zIndex=forward?'4':'3';front.style.zIndex=forward?'3':'4';
+      const revealUnderneath=forward || !!heldPose;
+      outgoing.style.zIndex=revealUnderneath?'4':'3';front.style.zIndex=revealUnderneath?'3':'4';
       function track(node,frames) {
         const animation=node.animate(frames,{duration,easing:spring,fill:'both'});deckAnimations.add(animation);
         return animation;
       }
-      track(outgoing,forward?[
+      track(outgoing,revealUnderneath?[
         {transform:from==='none'?'none':from,opacity:1},
-        {transform:`translateX(${-distance}px) rotate(-5deg) scale(.98)`,opacity:1}
+        {transform:`translateX(${-direction*distance}px) rotate(${-direction*5}deg) scale(.98)`,opacity:1}
       ]:[{transform:from==='none'?'none':from,opacity:1},{transform:peek,opacity:1}]);
-      const incoming=track(front,forward?[
-        {transform:peek,opacity:1},{transform:'none',opacity:1}
+      const incoming=track(front,revealUnderneath?[
+        {transform:heldPose || peek,opacity:1},{transform:'none',opacity:1}
       ]:[{transform:`translateX(${-distance}px) rotate(-3deg) scale(.98)`,opacity:1},{transform:'none',opacity:1}]);
       for(const card of $('meal-deck').querySelectorAll('.deck-preview')) {
         if(forward) track(card,card.dataset.depth==='1'?
@@ -339,13 +364,13 @@
       return motionUpdate(()=>{syncControls();renderPlate();},kind,direction);
     }
     function numberValue(id,prefix,text) {
-      const node=$(id);node.replaceChildren();node.setAttribute('aria-label',prefix+text);
+      const node=typeof id==='string'?$(id):id;node.replaceChildren();node.setAttribute('aria-label',prefix+text);
       const fixed=document.createElement('span');fixed.className='number-prefix';fixed.textContent=prefix;fixed.setAttribute('aria-hidden','true');node.append(fixed);
       const digits=document.createElement('span');digits.className='number-digits';digits.setAttribute('aria-hidden','true');
       let index=0;
       for(const char of [...text].reverse()) {
         const cell=document.createElement('span');cell.className=/\d/.test(char)?'digit-cell':'digit-separator';cell.textContent=char;
-        if(/\d/.test(char)) cell.dataset.digitName=`digit-${id}-${index++}`;
+        if(/\d/.test(char)) cell.dataset.digitName=`digit-${node.id}-${index++}`;
         digits.prepend(cell);
       }
       node.append(digits);
@@ -361,7 +386,7 @@
       }
       positionIndicator(host,host.querySelector('[aria-pressed="true"]'),'pager-indicator');
       if(focused)host.querySelector('[aria-pressed="true"]')?.focus({preventScroll:true});
-      $('previous').disabled=plateIndex===0;$('next').disabled=plateIndex===count-1;
+      $('previous').disabled=count<2;$('next').disabled=count<2;
     }
     reducedMotion.addEventListener('change',stopPlateAnimations);
     try {
@@ -439,8 +464,8 @@
       $('empty').hidden=false;$('empty-title').textContent=title;$('empty-text').textContent=text || '';
       $('announcement').textContent=title;
     }
-    function totals() {
-      const total={...currentPlate().total};
+    function totals(plate=currentPlate()) {
+      const total={...plate.total};
       for(const extra of activeExtras()) {
         total.price_cents+=extra.price_cents;total.kcal+=extra.kcal;total.protein_g+=extra.protein_g;total.weight_g+=extra.weight_g;
       }
@@ -537,7 +562,7 @@
       if(!data || stale || variant().state!=='ready') return;
       const count=visiblePlates().length;
       if(count<2) return;
-      const next=Math.max(0,Math.min(count-1,plateIndex+direction));
+      const next=loopIndex(plateIndex+direction,count);
       if(next===plateIndex) return;
       plateIndex=next;render('pager',direction);
     }
@@ -642,17 +667,24 @@
       }
       $('report-sheet').showModal();
     });
-    let drag,returnAnimation,wheelTimer,wheelGesture;
+    let drag,wheelTimer,wheelGesture;
     const dragArea=$('plate');
     function dragOffset(distance) {
       const count=data?visiblePlates().length:0;
-      const edge=distance>0?plateIndex===0:plateIndex>=count-1;
-      return edge?distance*.18:distance;
+      return count>1?distance:distance*.18;
     }
     function paintDrag(distance) {
       if(reducedMotion.matches) return;
       const direction=distance<0?1:-1;
-      if(deckDragDirection!==direction) {renderDeck(visiblePlates(),direction<0);deckDragDirection=direction;}
+      if(deckDragDirection!==direction) {
+        const plates=visiblePlates();renderDeck(plates,direction<0);deckDragDirection=direction;
+        const edge=$('meal-deck').querySelector('[data-depth="1"]');
+        if(edge) {
+          const card=copyPlateCard(plates[Number(edge.dataset.plateIndex)]);
+          card.classList.add('deck-revealed');card.style.height='';
+          card.dataset.depth='1';card.dataset.plateIndex=edge.dataset.plateIndex;edge.replaceWith(card);
+        }
+      }
       const offset=dragOffset(distance),progress=Math.min(Math.abs(offset)/dragArea.clientWidth,1);
       dragArea.style.transform=`translateX(${offset}px) rotate(${offset/dragArea.clientWidth*5}deg)`;
       const next=$('meal-deck').querySelector('[data-depth="1"]');
@@ -660,21 +692,30 @@
     }
     function releaseDrag(distance,velocity,cancelled=false) {
       const direction=distance<0?1:-1,count=data?visiblePlates().length:0;
-      const within=plateIndex+direction>=0 && plateIndex+direction<count;
-      const commit=!cancelled && within && (Math.abs(distance)>dragArea.clientWidth*.25 || (Math.abs(velocity)>.55 && Math.abs(distance)>20));
+      const commit=!cancelled && count>1 && (Math.abs(distance)>dragArea.clientWidth*.25 || (Math.abs(velocity)>.55 && Math.abs(distance)>20));
       if(commit) {
-        plateIndex+=direction;
+        plateIndex=loopIndex(plateIndex+direction,count);
         motionUpdate(()=>{syncControls();renderPlate();},'pager',direction);
       } else {
         const from=getComputedStyle(dragArea).transform;
         dragArea.style.transform='';
-        renderDeck(visiblePlates());deckDragDirection=0;
-        if(!reducedMotion.matches) returnAnimation=dragArea.animate([{transform:from},{transform:'none'}],{duration:260,easing:spring});
+        if(reducedMotion.matches) {renderDeck(visiblePlates());deckDragDirection=0;return;}
+        const revealed=$('meal-deck').querySelector('.deck-revealed');
+        if(revealed) {
+          const animation=revealed.animate([{transform:getComputedStyle(revealed).transform},{transform:'translateY(-14px) scale(.97) rotate(-.7deg)'}],{duration:260,easing:spring,fill:'both'});
+          deckAnimations.add(animation);
+        }
+        const animation=dragArea.animate([{transform:from},{transform:'none'}],{duration:260,easing:spring});
+        returnAnimation=animation;deckAnimations.add(animation);
+        animation.finished.then(()=>{
+          if(returnAnimation!==animation) return;
+          clearDeckMotion();renderDeck(visiblePlates());
+        },()=>{});
       }
     }
     dragArea.addEventListener('dragstart',event=>event.preventDefault());
     dragArea.addEventListener('pointerdown',event=>{
-      if(event.button!==0 || !data || !currentPlate()) return;
+      if(event.button!==0 || !data || stale || !currentPlate() || visiblePlates().length<2) return;
       stopPlateAnimations();returnAnimation?.cancel();
       drag={id:event.pointerId,x:event.clientX,y:event.clientY,lastX:event.clientX,lastTime:event.timeStamp,velocity:0,horizontal:false};
     });
@@ -701,7 +742,7 @@
     dragArea.addEventListener('pointerup',event=>finishPointer(event));
     dragArea.addEventListener('pointercancel',event=>finishPointer(event,true));
     dragArea.addEventListener('wheel',event=>{
-      if(Math.abs(event.deltaX)<=Math.abs(event.deltaY) || !data || !currentPlate()) return;
+      if(Math.abs(event.deltaX)<=Math.abs(event.deltaY) || !data || stale || !currentPlate() || visiblePlates().length<2) return;
       event.preventDefault();returnAnimation?.cancel();
       const now=performance.now(),unit=event.deltaMode===1?16:event.deltaMode===2?dragArea.clientWidth:1;
       if(!wheelGesture) {stopPlateAnimations();wheelGesture={distance:0,time:now,velocity:0};}
