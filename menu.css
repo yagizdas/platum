@@ -408,12 +408,20 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
   .plate-summary { padding-top:0; }
 }
 
-/* The existing location label is the campus selector. */
-.location-picker { flex:none; }
-.location-picker select { max-width:160px; min-height:44px; padding:8px 24px 8px 8px; border:0; border-radius:8px; background-color:transparent; color:var(--muted); font:inherit; cursor:pointer; }
-.location-picker select:hover { background-color:var(--surface); }
-.location-picker select:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
-@media(max-width:760px) { header { gap:12px; } .location-picker select { max-width:145px; font-size:14px; } }
+/* Campus selection uses the same in-page surface as the Diet popover. */
+.location-picker { position:relative; flex:none; }
+.campus-toggle { display:inline-flex; align-items:center; gap:16px; max-width:160px; min-height:44px; padding:8px 12px; border:0; border-radius:12px; background:transparent; color:var(--muted); font:inherit; cursor:pointer; }
+.campus-toggle:hover,.campus-toggle[aria-expanded='true'] { background:var(--surface); color:var(--ink); }
+.campus-chevron { width:7px; height:7px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg); margin-top:-4px; }
+.campus-toggle[aria-expanded='true'] .campus-chevron { transform:rotate(225deg); margin-top:4px; }
+.campus-panel { width:248px; }
+.campus-panel [role='menuitemradio'] { display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; min-height:48px; padding:12px; border:0; border-radius:12px; background:transparent; text-align:left; }
+.campus-panel [role='menuitemradio']:hover { background:var(--surface); }
+.campus-panel [aria-checked='true'] { background:var(--selected); color:var(--accent); }
+.campus-check { width:6px; height:11px; margin-right:4px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg); visibility:hidden; }
+[aria-checked='true'] > .campus-check { visibility:visible; }
+@media(max-width:760px) { header { gap:12px; } .campus-toggle { max-width:145px; font-size:14px; gap:12px; } }
+@media(max-width:520px) { .location-picker .campus-panel { width:min(280px,calc(100vw - 40px)); } }
 @media(max-width:760px) {
   /* Long published station names and multi-item meals must not collide with actions. */
   .receipt { height:auto; min-height:570px; }

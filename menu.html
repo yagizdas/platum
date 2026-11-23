@@ -11,13 +11,20 @@
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./menu.css?v=campus-picker-1">
+  <link rel="stylesheet" href="./menu.css?v=campus-popover-1">
 </head>
 <body>
   <div class="shell">
     <header>
       <a class="brand" href="./">Mensa Plate<span aria-hidden="true">.</span></a>
-      <label class="location-picker"><span class="sr-only">Mensa location</span><select id="campus" class="location" aria-label="Mensa location"><option value="arcisstr">Arcisstraße</option><option value="garching">Garching</option></select></label>
+      <div class="location-picker">
+        <button id="campus" class="location campus-toggle" type="button" aria-label="Mensa location: Arcisstraße" aria-haspopup="menu" aria-expanded="false" aria-controls="campus-panel"><span id="campus-label">Arcisstraße</span><span class="campus-chevron" aria-hidden="true"></span></button>
+        <div id="campus-panel" class="filter-panel campus-panel" role="menu" aria-label="Mensa location" hidden>
+          <h2 role="presentation">Choose a Mensa</h2>
+          <button type="button" role="menuitemradio" data-campus="arcisstr" aria-checked="true" tabindex="-1"><span>Arcisstraße</span><span class="campus-check" aria-hidden="true"></span></button>
+          <button type="button" role="menuitemradio" data-campus="garching" aria-checked="false" tabindex="-1"><span>Garching</span><span class="campus-check" aria-hidden="true"></span></button>
+        </div>
+      </div>
     </header>
     <main>
       <div class="heading">
@@ -485,6 +492,7 @@
     document.querySelectorAll('[data-goal]').forEach(button=>button.addEventListener('click',()=>{selection.goal=button.dataset.goal;saveAndRender();}));
     $('vegan').addEventListener('change',()=>{selection.vegan=$('vegan').checked;if(selection.vegan)selection.noMeat=false;saveAndRender();});
     function setFilterOpen(open) {
+      if(open) setCampusOpen(false);
       if(open) activeTransition?.skipTransition();
       $('filter-panel').hidden=!open;
       $('filter-toggle').setAttribute('aria-expanded',String(open));
@@ -502,7 +510,7 @@
     });
     $('previous').addEventListener('click',()=>cycle(-1));$('next').addEventListener('click',()=>cycle(1));
     document.addEventListener('keydown',event=>{
-      if(event.target.matches?.('input,textarea,select,[contenteditable]') || $('report-sheet').open || !$('filter-panel').hidden) return;
+      if(event.target.matches?.('input,textarea,select,[contenteditable]') || event.target.closest?.('.location-picker') || !$('campus-panel').hidden || $('report-sheet').open || !$('filter-panel').hidden) return;
       if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();cycle(event.key==='ArrowRight'?1:-1);}
     });
     $('share').addEventListener('click',share);
@@ -741,7 +749,11 @@
     function selectCampus(id,initial=false) {
       campus=Campuses.get(id).id;++campusRevision;++loadToken;stopPlateAnimations();
       reports=PlateReports.create(globalThis.MENSA_REPORT_ENDPOINT,{campus});
-      $('campus').value=campus;$('official-menu').href=Campuses.get(campus).official;
+      setCampusOpen(false);
+      $('campus').value=campus;$('campus-label').textContent=Campuses.get(campus).label;
+      $('campus').setAttribute('aria-label','Mensa location: '+Campuses.get(campus).label);
+      document.querySelectorAll('[data-campus]').forEach(button=>button.setAttribute('aria-checked',String(button.dataset.campus===campus)));
+      $('official-menu').href=Campuses.get(campus).official;
       document.title='Mensa Plate — '+Campuses.get(campus).label;
       weekIndex=undefined;data=undefined;selectedDate=undefined;pendingDate=undefined;
       selectedExtras.clear();plateIndex=0;brokenKeys=new Set();$('days').hidden=true;$('notice').textContent='';
@@ -756,7 +768,36 @@
       try {localStorage.setItem('mensa-campus',campus);} catch(_) {}
       return load();
     }
-    $('campus').addEventListener('change',()=>selectCampus($('campus').value));
+    function setCampusOpen(open) {
+      $('campus-panel').hidden=!open;$('campus').setAttribute('aria-expanded',String(open));
+      if(open) {
+        activeTransition?.skipTransition();setFilterOpen(false);
+        document.querySelector('[data-campus][aria-checked="true"]').focus();
+      }
+    }
+    $('campus').addEventListener('click',()=>setCampusOpen($('campus-panel').hidden));
+    document.querySelectorAll('[data-campus]').forEach(button=>button.addEventListener('click',()=>{
+      setCampusOpen(false);$('campus').focus();
+      if(button.dataset.campus!==campus) selectCampus(button.dataset.campus);
+    }));
+    document.querySelector('.location-picker').addEventListener('keydown',event=>{
+      const buttons=[...document.querySelectorAll('[data-campus]')];
+      if(event.target===$('campus') && ['ArrowDown','ArrowUp'].includes(event.key)) {
+        event.preventDefault();setCampusOpen(true);buttons[event.key==='ArrowDown'?0:buttons.length-1].focus();return;
+      }
+      if($('campus-panel').hidden) return;
+      if(['Enter',' '].includes(event.key) && buttons.includes(document.activeElement)) {event.preventDefault();document.activeElement.click();}
+      else if(event.key==='Escape') {event.preventDefault();event.stopPropagation();setCampusOpen(false);$('campus').focus();}
+      else if(event.key==='Tab') {setCampusOpen(false);$('campus').focus();}
+      else if(['ArrowDown','ArrowUp','Home','End'].includes(event.key)) {
+        event.preventDefault();
+        const index=buttons.indexOf(document.activeElement);
+        const next=event.key==='Home'?0:event.key==='End'?buttons.length-1:(index+(event.key==='ArrowDown'?1:-1)+buttons.length)%buttons.length;
+        buttons[next].focus();
+      }
+    });
+    document.addEventListener('click',event=>{if(!$('campus-panel').hidden && !event.target.closest('.location-picker'))setCampusOpen(false);});
+    document.addEventListener('focusin',event=>{if(!$('campus-panel').hidden && !event.target.closest('.location-picker'))setCampusOpen(false);});
     let savedCampus;try {savedCampus=localStorage.getItem('mensa-campus');} catch(_) {}
     selectCampus(requested.get('campus') || (requested.has('date')?'arcisstr':savedCampus) || 'arcisstr',true);
   </script>
