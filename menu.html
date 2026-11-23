@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./menu.css?v=diet-tile-1">
+  <link rel="stylesheet" href="./menu.css?v=live-food-motion-1">
 </head>
 <body>
   <div class="shell">
@@ -127,10 +127,30 @@
     const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
     document.documentElement.classList.toggle('has-view-transitions',typeof document.startViewTransition==='function');
     let activeTransition,motionRevision=0;
-    const foodSnapshotStyle=document.createElement('style');document.head.append(foodSnapshotStyle);
-    function blendFoodSnapshots(parts) {
-      const names=[...parts].filter(name=>name.startsWith('food-') || name==='tray-content');
-      foodSnapshotStyle.textContent=names.map(name=>`::view-transition-group(${name})`).join(',')+(names.length?'{mix-blend-mode:multiply;}':'');
+    const foodAnimations=new Set();
+    function foodPositions() {
+      return new Map([...$('plate-art').querySelectorAll('[data-dish-key]')].map(node=>[node.dataset.dishKey,node.getBoundingClientRect()]));
+    }
+    function animateFood(previous,direction) {
+      for(const animation of foodAnimations) animation.cancel();
+      foodAnimations.clear();
+      if(!$('filter-panel').hidden) return;
+      for(const node of $('plate-art').querySelectorAll('[data-dish-key]')) {
+        const before=previous.get(node.dataset.dishKey),after=node.getBoundingClientRect();
+        const transform=getComputedStyle(node).transform;
+        let frames;
+        if(before && !reducedMotion.matches) {
+          const dx=before.left-after.left,dy=before.top-after.top;
+          if(Math.abs(dx)<.5 && Math.abs(dy)<.5 && Math.abs(before.width-after.width)<.5 && Math.abs(before.height-after.height)<.5) continue;
+          frames=[{transform:`translate(${dx}px,${dy}px) scale(${before.width/after.width},${before.height/after.height}) ${transform}`},{transform}];
+        } else if(!before) {
+          frames=reducedMotion.matches?[{opacity:0},{opacity:1}]:[{opacity:0,transform:`translateX(${direction*24}px) ${transform}`},{opacity:1,transform}];
+        } else continue;
+        // Animate the live artwork inside its blend layer, never a detached snapshot.
+        const animation=node.animate(frames,{duration:reducedMotion.matches?120:280,easing:spring});
+        foodAnimations.add(animation);
+        animation.finished.then(()=>foodAnimations.delete(animation),()=>foodAnimations.delete(animation));
+      }
     }
     function clearMotionNames() {
       document.querySelectorAll('[data-motion-name]').forEach(node=>{node.style.viewTransitionName='none';delete node.dataset.motionName;});
@@ -138,6 +158,8 @@
     const spring='cubic-bezier(.22,1,.36,1)';
     function stopPlateAnimations() {
       ++motionRevision;activeTransition?.skipTransition();
+      for(const animation of foodAnimations) animation.cancel();
+      foodAnimations.clear();
     }
     function positionIndicator(host, selected, className) {
       if(!selected) return;
@@ -164,18 +186,14 @@
       const parts=new Map();
       function name(node,key,value='') {
         if(!node || node.hidden) return;
-        node.style.viewTransitionName=key;node.dataset.motionName=key;const rect=node.getBoundingClientRect(),matrix=new DOMMatrix(getComputedStyle(node).transform==='none'?undefined:getComputedStyle(node).transform);
-        const width=node.offsetWidth,height=node.offsetHeight;
-        matrix.e=rect.x-Math.min(0,matrix.a*width,matrix.c*height,matrix.a*width+matrix.c*height);
-        matrix.f=rect.y-Math.min(0,matrix.b*width,matrix.d*height,matrix.b*width+matrix.d*height);
-        parts.set(key,{value,matrix,width,height});
+        node.style.viewTransitionName=key;node.dataset.motionName=key;
+        parts.set(key,{value});
       }
-      if(reducedMotion.matches) {name($('plate').querySelector('.plate-overview'),'tray-content');if(kind==='day')name($('date'),'menu-date');}
-      else if(kind==='day') {name($('plate').querySelector('.plate-overview'),'tray-content');name($('date'),'menu-date');}
-      else if(kind!=='indicator') {
-        document.querySelectorAll('#plate-art [data-dish-key]').forEach(node=>name(node,'food-'+node.dataset.dishKey,node.dataset.dishKey));
+      if(kind==='day') name($('date'),'menu-date');
+      if(kind!=='indicator') {
         name($('plate-title'),'dish-title',$('plate-title').textContent);
         name($('plate-side'),'dish-subtitle',$('plate-side').textContent);
+        name($('plate-counter'),'dish-counter',$('plate-counter').textContent);
         document.querySelectorAll('[data-digit-name]').forEach(node=>name(node,node.dataset.digitName,node.textContent));
       }
       return parts;
@@ -186,45 +204,28 @@
       function animate(name,side,frames,duration=300,delay=0) {
         track(document.documentElement.animate(frames,{duration,delay,easing:reduced?'ease':spring,fill:'both',pseudoElement:`::view-transition-${side}(${name})`}));
       }
-      let incoming=0;
       for(const name of new Set([...oldParts.keys(),...newParts.keys()])) {
         const old=oldParts.has(name),fresh=newParts.has(name);
-        if(old && fresh && (name.endsWith('-pill') || name.startsWith('food-'))) {
-          const a=oldParts.get(name),b=newParts.get(name);
-          if(a.width && b.width && a.height && b.height) {
-            const target=getComputedStyle(document.documentElement,`::view-transition-group(${name})`).transform;
-            track(document.documentElement.animate([
-              {transform:a.matrix.scale(a.width/b.width,a.height/b.height).toString()},
-              {transform:target}
-            ],{duration:300,easing:spring,fill:'both',pseudoElement:`::view-transition-group(${name})`}));
-          }
-        }
-        if(name.endsWith('-pill')) continue;
         if(reduced) {
           if(old) animate(name,'old',[{opacity:1},{opacity:0}],120);
           if(fresh) animate(name,'new',[{opacity:0},{opacity:1}],120);
           continue;
         }
-        if(name.startsWith('food-')) {
-          if(old && fresh) continue;
-          if(old) animate(name,'old',[{opacity:1,transform:'translateX(0) scale(1)'},{opacity:0,transform:`translateX(${-direction*40}px) scale(.92)`}],220);
-          if(fresh) animate(name,'new',[
-            {opacity:0,transform:`translateX(${direction*40}px) scale(.92)`,offset:0},
-            {opacity:1,transform:`translateX(${-direction*3}px) scale(1.015)`,offset:.75},
-            {opacity:1,transform:'translateX(0) scale(1)',offset:1}
-          ],320,incoming++*40);
-        } else if(name.startsWith('digit-')) {
+        if(name.startsWith('digit-')) {
           if(old && fresh && oldParts.get(name).value===newParts.get(name).value) continue;
           if(old) animate(name,'old',[{transform:'translateY(0)'},{transform:'translateY(-110%)'}],400);
           if(fresh) animate(name,'new',[{transform:'translateY(110%)'},{transform:'translateY(0)'}],400);
         } else {
-          const distance=name==='tray-content'?40:12,duration=kind==='day'?320:240;
+          const distance=12,duration=kind==='day'?320:240;
           if(old) animate(name,'old',[{opacity:1,transform:'translateX(0)'},{opacity:0,transform:`translateX(${-direction*distance}px)`}],duration);
           if(fresh) animate(name,'new',[{opacity:0,transform:`translateX(${direction*distance}px)`},{opacity:1,transform:'translateX(0)'}],duration);
         }
       }
     }
     async function motionUpdate(update,kind='mode',direction=1) {
+      const previousFood=foodPositions();
+      for(const animation of foodAnimations) animation.cancel();
+      foodAnimations.clear();
       const revision=++motionRevision,previous=activeTransition;
       previous?.skipTransition();
       if(kind==='day' || kind==='mode') {
@@ -233,16 +234,16 @@
       }
       if(previous) await previous.updateCallbackDone.catch(()=>{});
       if(revision!==motionRevision) {if(kind==='day'){update();syncMotionControls();}return false;}
-      if(!document.startViewTransition || !$('filter-panel').hidden) {update();syncMotionControls();return true;}
-      const oldParts=transitionParts(kind);blendFoodSnapshots(oldParts.keys());
+      if(!document.startViewTransition || !$('filter-panel').hidden) {update();syncMotionControls();animateFood(previousFood,direction);return true;}
+      const oldParts=transitionParts(kind);
       let newParts;
       const transition=document.startViewTransition(()=>{
         if(revision!==motionRevision) {if(kind==='day'){update();syncMotionControls();}return;}
-        update();syncMotionControls();newParts=transitionParts(kind);blendFoodSnapshots(new Set([...oldParts.keys(),...newParts.keys()]));
+        update();syncMotionControls();newParts=transitionParts(kind);
       });
       activeTransition=transition;
       transition.ready.then(()=>{
-        if(revision===motionRevision && newParts) animateTransition(transition,oldParts,newParts,kind,direction);
+        if(revision===motionRevision && newParts) {animateTransition(transition,oldParts,newParts,kind,direction);animateFood(previousFood,direction);}
       }).catch(()=>{});
       transition.finished.catch(()=>{}).then(()=>{if(activeTransition===transition) {activeTransition=undefined;clearMotionNames();}});
       await transition.updateCallbackDone;
@@ -323,7 +324,9 @@
     function syncControls() {
       document.querySelectorAll('[data-goal]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.goal===selection.goal)));
       $('vegan').checked=selection.vegan;
-      $('no-pork').checked=selection.noPork;$('no-beef').checked=selection.noBeef;$('no-meat').checked=selection.noMeat;
+      const vegetarian=selection.vegan || selection.noMeat;
+      $('no-meat').checked=vegetarian;$('no-meat').disabled=selection.vegan;
+      $('no-pork').checked=vegetarian || selection.noPork;$('no-beef').checked=vegetarian || selection.noBeef;
       $('no-pork').disabled=selection.vegan || selection.noMeat;
       $('no-beef').disabled=selection.vegan || selection.noMeat;
       const labels=selection.vegan?['Vegan']:selection.noMeat?['Vegetarian']:[selection.noPork?'No pork':null,selection.noBeef?'No beef':null].filter(Boolean);
