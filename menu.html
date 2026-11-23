@@ -11,14 +11,13 @@
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./menu.css?v=live-food-motion-1">
+  <link rel="stylesheet" href="./menu.css?v=weekly-mobile-1">
 </head>
 <body>
   <div class="shell">
     <header>
       <a class="brand" href="./">Mensa Plate<span aria-hidden="true">.</span></a>
       <span class="location">Arcisstraße</span>
-      <div id="menu-view-switch" class="menu-view-switch" role="group" aria-label="Staging menu design" hidden></div>
     </header>
     <main>
       <div class="heading">
@@ -113,12 +112,6 @@
     const titles = {bulk:'Bulk',cut:'Cut',budget:'Budget'};
     const dietLabels = {fish:'Fish',meat:'Meat',vegetarian:'Veg',vegan:'Vegan'};
     const SITE_URL = 'https://yagizdas.github.io/platum/';
-    const STAGING_MENU_URL = new URL('staging/menu.html', SITE_URL);
-    const MENU_VIEWS = [
-      {id:'classic', label:'Classic'},
-      {id:'new', label:'New'},
-    ];
-    let menuView = MENU_VIEWS[0];
     let selection = {goal:'bulk',vegan:false,noPork:false,noBeef:false,noMeat:false};
     let data, stale=false, plateIndex=0, selectedExtras=new Set(), shareTimer;
     let weekIndex, selectedDate, loadToken=0;
@@ -615,51 +608,6 @@
       $('date').dateTime=day;
       $('date').textContent=MenuDays.menuDateLabel(day);
     }
-    function initStagingViews() {
-      if(location.origin!==STAGING_MENU_URL.origin || location.pathname!==STAGING_MENU_URL.pathname) return;
-      const storageKey='mensa-plate-staging-menu-view';
-      const switcher=$('menu-view-switch');
-      function applyView(view) {
-        menuView=view;
-        stopPlateAnimations();
-        setFilterOpen(false);
-        document.body.dataset.menuView=view.id;
-        syncMotionControls();
-        if($('date').dateTime) dateLabel($('date').dateTime);
-        $('days').querySelectorAll('button').forEach(labelDayButton);
-        for(const button of switcher.querySelectorAll('button')) {
-          button.setAttribute('aria-pressed',String(button.value===view.id));
-        }
-      }
-      for(const view of MENU_VIEWS) {
-        const button=document.createElement('button');
-        button.type='button';
-        button.value=view.id;
-        button.textContent=view.label;
-        button.addEventListener('click',()=>{
-          if(view===menuView) return;
-          applyView(view);
-          try {localStorage.setItem(storageKey,view.id);} catch(_) {}
-        });
-        switcher.append(button);
-      }
-      let saved;
-      try {saved=localStorage.getItem(storageKey);} catch(_) {}
-      applyView(MENU_VIEWS.find(view=>view.id===saved) || MENU_VIEWS[0]);
-      switcher.hidden=false;
-    }
-    function labelDayButton(button) {
-      const date=button.dataset.date;
-      const description=button.dataset.closed==='true'?'no menu':'menu';
-      if(menuView.weekdayHeading) {
-        button.removeAttribute('aria-label');
-        const month=new Intl.DateTimeFormat('en-GB',{month:'long',year:'numeric',timeZone:'Europe/Berlin'}).format(new Date(date+'T12:00:00Z'));
-        button.setAttribute('aria-description',month+' · '+description);
-      } else {
-        button.removeAttribute('aria-description');
-        button.setAttribute('aria-label',date+' · '+description);
-      }
-    }
     function renderDays() {
       const focusedDate=$('days').contains(document.activeElement)
         ? document.activeElement.dataset.date
@@ -674,7 +622,7 @@
         label.textContent=new Intl.DateTimeFormat('en-GB',{day:'numeric',timeZone:'Europe/Berlin'}).format(date);
         button.append(label);button.setAttribute('aria-pressed',String(row.date===(pendingDate || selectedDate)));button.dataset.date=row.date;
         button.dataset.closed=String(row.state==='closed');
-        labelDayButton(button);
+        button.setAttribute('aria-label',MenuDays.menuDateLabel(row.date)+(row.state==='closed'?' · no menu':''));
         button.addEventListener('click',()=>selectDay(row));$('days').append(button);
         if(row.date===focusedDate) button.focus({preventScroll:true});
       }
@@ -772,7 +720,6 @@
         } catch(_) {data=undefined;empty('A little trouble in the kitchen.','Please reload in a moment, or check the official menu below.','error');}
       } finally {if(!weekIndex) $('plate').setAttribute('aria-busy','false');}
     }
-    initStagingViews();
     load();
   </script>
   <!-- Cloudflare Web Analytics: public site token, not an API credential. -->
