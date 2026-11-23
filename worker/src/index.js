@@ -1,3 +1,4 @@
+const CAMPUSES=new Set(['arcisstr','garching']);
 const VARIANTS=new Set(['bulk_all','cut_all','budget_all','bulk_vegan','cut_vegan','budget_vegan']);
 const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const ID=/^[a-f0-9]{16}$/;
@@ -9,7 +10,7 @@ export function validDate(value) {
 export function validateReport(body) {
   if(!body || typeof body!=='object' || Array.isArray(body)) return false;
   const fields=['date','variant','plate_dish_ids','tapped_dish_id','device_id'];
-  return Object.keys(body).length===fields.length && fields.every(key=>Object.hasOwn(body,key)) &&
+  return Object.keys(body).every(key=>fields.includes(key) || key==='campus') && (!Object.hasOwn(body,'campus') || CAMPUSES.has(body.campus)) && fields.every(key=>Object.hasOwn(body,key)) &&
     validDate(body.date) && VARIANTS.has(body.variant) && typeof body.device_id==='string' && UUID.test(body.device_id) &&
     Array.isArray(body.plate_dish_ids) && body.plate_dish_ids.length>=1 && body.plate_dish_ids.length<=3 &&
     body.plate_dish_ids.every(id=>typeof id==='string' && ID.test(id)) &&
@@ -33,9 +34,9 @@ export default {
     if(!Number.isInteger(threshold) || threshold<1) return json({error:'Invalid report configuration'},503);
     try {
       if(url.pathname==='/broken' && request.method==='GET') {
-        const date=url.searchParams.get('date');
-        if(!validDate(date)) return json({error:'Invalid date'},400);
-        const {results}=await env.DB.prepare('SELECT plate_key FROM reports WHERE date = ? GROUP BY plate_key HAVING COUNT(DISTINCT device_id) >= ? ORDER BY plate_key').bind(date,threshold).all();
+        const date=url.searchParams.get('date'),campus=url.searchParams.get('campus') ?? 'arcisstr';
+        if(!validDate(date) || !CAMPUSES.has(campus)) return json({error:'Invalid date'},400);
+        const {results}=await env.DB.prepare('SELECT plate_key FROM reports WHERE date = ? AND campus = ? GROUP BY plate_key HAVING COUNT(DISTINCT device_id) >= ? ORDER BY plate_key').bind(date,campus,threshold).all();
         return json({date,broken:results.map(row=>row.plate_key)});
       }
       if(url.pathname==='/report' && request.method==='POST') {
@@ -51,10 +52,10 @@ export default {
         const ids=[...body.plate_dish_ids].sort();
         // A single atomic conditional INSERT enforces the limit even for simultaneous requests.
         const result=await env.DB.prepare(`INSERT INTO reports
-          (id,date,report_day,variant,plate_key,plate_dish_ids,tapped_dish_id,device_id,created_at)
-          SELECT ?,?,?,?,?,?,?,?,? WHERE (SELECT COUNT(*) FROM reports WHERE device_id = ? AND report_day = ?) < 3`)
+          (id,date,report_day,variant,plate_key,plate_dish_ids,tapped_dish_id,device_id,created_at,campus)
+          SELECT ?,?,?,?,?,?,?,?,?,? WHERE (SELECT COUNT(*) FROM reports WHERE device_id = ? AND report_day = ?) < 3`)
           .bind(crypto.randomUUID(),body.date,reportDay,body.variant,plateKey(ids),JSON.stringify(ids),body.tapped_dish_id,
-                body.device_id.toLowerCase(),now.toISOString(),body.device_id.toLowerCase(),reportDay).run();
+                body.device_id.toLowerCase(),now.toISOString(),body.campus || 'arcisstr',body.device_id.toLowerCase(),reportDay).run();
         if(result.meta.changes!==1) return json({error:'Daily limit reached'},429);
         return json({ok:true},201);
       }

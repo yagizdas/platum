@@ -1,0 +1,5006 @@
+{
+  "date": "2026-11-25",
+  "mensa": "Mensa Garching",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
+  "fetched_at": "2026-11-23T10:36:32.321421+00:00",
+  "warnings": [],
+  "campus": "garching",
+  "schema_version": 2,
+  "menu_count": 8,
+  "scoring": {
+    "bulk": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "bulk",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 148,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 1.798757172924
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 1.770768547829
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.248880747798
+          }
+        ]
+      }
+    },
+    "cut": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "cut",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 124,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": -2.022930718854
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 3.298844124996
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.012871976974
+          }
+        ]
+      }
+    },
+    "budget": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "budget",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 152,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 0.353295614669
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 0.730392949246
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": -1.270457995687
+          }
+        ]
+      }
+    }
+  },
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "filtered_variants": {
+    "bulk_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Brazilian roast chicken - Frango a Passarinho + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Wok",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Brasilianisches Brathähnchen (1 Stück)- Frango a Passarinho mit Mango-Chili-Dip",
+              "name_en": "Brazilian roast chicken (1 piece) - Frango a Passarinho with mango-chili dip",
+              "station": "Wok",
+              "counters": [
+                "Wok"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "5",
+                "9",
+                "99",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "285c60623be54694",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 645.0,
+              "protein_g": 55.5
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 496,
+            "price_eur": 4.96,
+            "weight_g": 440,
+            "kcal": 806.0,
+            "protein_g": 59.0,
+            "carbs_g": 49.2,
+            "fat_g": 40.9
+          },
+          "score": {
+            "kcal": 14.49798281376744,
+            "protein": 10.447534432191102,
+            "price": 1.2344485090780801,
+            "total": 26.18
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled halloumi + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590,
+            "kcal": 903.5,
+            "protein_g": 41.75,
+            "carbs_g": 47.7,
+            "fat_g": 58.9
+          },
+          "score": {
+            "kcal": 16.25177105736834,
+            "protein": 7.392958687186075,
+            "price": 1.3215567708073799,
+            "total": 24.9663
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato casserole + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fleisch",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Kartoffelnauflaufmit Hackfleisch , Mozzarella und Schnittlauchdip",
+              "name_en": "Potato casserole with minced meat, mozzarella, and chive dip",
+              "station": "Fleisch",
+              "counters": [
+                "Fleisch"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "5aebc5d53d576ac2",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 720.0,
+              "protein_g": 38.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 631,
+            "price_eur": 6.31,
+            "weight_g": 590,
+            "kcal": 881.0,
+            "protein_g": 41.75,
+            "carbs_g": 79.2,
+            "fat_g": 44.5
+          },
+          "score": {
+            "kcal": 15.847050693460439,
+            "protein": 7.392958687186075,
+            "price": 1.57043751860538,
+            "total": 24.8104
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Brazilian roast chicken - Frango a Passarinho + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Wok",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Brasilianisches Brathähnchen (1 Stück)- Frango a Passarinho mit Mango-Chili-Dip",
+              "name_en": "Brazilian roast chicken (1 piece) - Frango a Passarinho with mango-chili dip",
+              "station": "Wok",
+              "counters": [
+                "Wok"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "5",
+                "9",
+                "99",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "285c60623be54694",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 645.0,
+              "protein_g": 55.5
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 496,
+            "price_eur": 4.96,
+            "weight_g": 440,
+            "kcal": 806.0,
+            "protein_g": 59.0,
+            "carbs_g": 49.2,
+            "fat_g": 40.9
+          },
+          "score": {
+            "kcal": 14.49798281376744,
+            "protein": 10.447534432191102,
+            "price": 1.2344485090780801,
+            "total": 26.18
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled halloumi + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590,
+            "kcal": 903.5,
+            "protein_g": 41.75,
+            "carbs_g": 47.7,
+            "fat_g": 58.9
+          },
+          "score": {
+            "kcal": 16.25177105736834,
+            "protein": 7.392958687186075,
+            "price": 1.3215567708073799,
+            "total": 24.9663
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Brazilian roast chicken - Frango a Passarinho + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Wok",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Brasilianisches Brathähnchen (1 Stück)- Frango a Passarinho mit Mango-Chili-Dip",
+              "name_en": "Brazilian roast chicken (1 piece) - Frango a Passarinho with mango-chili dip",
+              "station": "Wok",
+              "counters": [
+                "Wok"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "5",
+                "9",
+                "99",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "285c60623be54694",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 645.0,
+              "protein_g": 55.5
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 496,
+            "price_eur": 4.96,
+            "weight_g": 440,
+            "kcal": 806.0,
+            "protein_g": 59.0,
+            "carbs_g": 49.2,
+            "fat_g": 40.9
+          },
+          "score": {
+            "kcal": 14.49798281376744,
+            "protein": 10.447534432191102,
+            "price": 1.2344485090780801,
+            "total": 26.18
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled halloumi + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590,
+            "kcal": 903.5,
+            "protein_g": 41.75,
+            "carbs_g": 47.7,
+            "fat_g": 58.9
+          },
+          "score": {
+            "kcal": 16.25177105736834,
+            "protein": 7.392958687186075,
+            "price": 1.3215567708073799,
+            "total": 24.9663
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Grilled halloumi + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590,
+            "kcal": 903.5,
+            "protein_g": 41.75,
+            "carbs_g": 47.7,
+            "fat_g": 58.9
+          },
+          "score": {
+            "kcal": 16.25177105736834,
+            "protein": 7.392958687186075,
+            "price": 1.3215567708073799,
+            "total": 24.9663
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Brazilian roast chicken - Frango a Passarinho",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Wok"
+          ],
+          "items": [
+            {
+              "name": "Brasilianisches Brathähnchen (1 Stück)- Frango a Passarinho mit Mango-Chili-Dip",
+              "name_en": "Brazilian roast chicken (1 piece) - Frango a Passarinho with mango-chili dip",
+              "station": "Wok",
+              "counters": [
+                "Wok"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "5",
+                "9",
+                "99",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "285c60623be54694",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 645.0,
+              "protein_g": 55.5
+            }
+          ],
+          "total": {
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300,
+            "kcal": 645.0,
+            "protein_g": 55.5,
+            "carbs_g": 24.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": -13.0479031366083,
+            "protein": 18.3085848937278,
+            "price": 0.0476263148038,
+            "total": 5.3083
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato casserole",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fleisch"
+          ],
+          "items": [
+            {
+              "name": "Kartoffelnauflaufmit Hackfleisch , Mozzarella und Schnittlauchdip",
+              "name_en": "Potato casserole with minced meat, mozzarella, and chive dip",
+              "station": "Fleisch",
+              "counters": [
+                "Fleisch"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "5aebc5d53d576ac2",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 480.0,
+              "protein_g": 25.5
+            }
+          ],
+          "total": {
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300,
+            "kcal": 480.0,
+            "protein_g": 25.5,
+            "carbs_g": 36.0,
+            "fat_g": 26.4
+          },
+          "score": {
+            "kcal": -9.710067450499201,
+            "protein": 8.4120525187398,
+            "price": 0.0476263148038,
+            "total": -1.2504
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled halloumi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 495.0,
+              "protein_g": 25.5
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 495.0,
+            "protein_g": 25.5,
+            "carbs_g": 15.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": -10.0135070583273,
+            "protein": 8.4120525187398,
+            "price": 0.0347543378298,
+            "total": -1.5667
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spaetzle pan",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Spätzlepfanne mit Kraut und Pilzen",
+              "name_en": "Spaetzle pan with cabbage and mushrooms",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "b1a342fa3523f1f9",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 23.4
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Brazilian roast chicken - Frango a Passarinho",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Wok"
+          ],
+          "items": [
+            {
+              "name": "Brasilianisches Brathähnchen (1 Stück)- Frango a Passarinho mit Mango-Chili-Dip",
+              "name_en": "Brazilian roast chicken (1 piece) - Frango a Passarinho with mango-chili dip",
+              "station": "Wok",
+              "counters": [
+                "Wok"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "5",
+                "9",
+                "99",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "285c60623be54694",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 645.0,
+              "protein_g": 55.5
+            }
+          ],
+          "total": {
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300,
+            "kcal": 645.0,
+            "protein_g": 55.5,
+            "carbs_g": 24.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": -13.0479031366083,
+            "protein": 18.3085848937278,
+            "price": 0.0476263148038,
+            "total": 5.3083
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled halloumi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 495.0,
+              "protein_g": 25.5
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 495.0,
+            "protein_g": 25.5,
+            "carbs_g": 15.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": -10.0135070583273,
+            "protein": 8.4120525187398,
+            "price": 0.0347543378298,
+            "total": -1.5667
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spaetzle pan",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Spätzlepfanne mit Kraut und Pilzen",
+              "name_en": "Spaetzle pan with cabbage and mushrooms",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "b1a342fa3523f1f9",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 23.4
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590,
+            "kcal": 678.5,
+            "protein_g": 20.6,
+            "carbs_g": 108.45,
+            "fat_g": 16.6
+          },
+          "score": {
+            "kcal": -13.725584927424391,
+            "protein": 6.795618897491761,
+            "price": 0.035397936678500004,
+            "total": -6.8946
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Brazilian roast chicken - Frango a Passarinho",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Wok"
+          ],
+          "items": [
+            {
+              "name": "Brasilianisches Brathähnchen (1 Stück)- Frango a Passarinho mit Mango-Chili-Dip",
+              "name_en": "Brazilian roast chicken (1 piece) - Frango a Passarinho with mango-chili dip",
+              "station": "Wok",
+              "counters": [
+                "Wok"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "5",
+                "9",
+                "99",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "285c60623be54694",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 645.0,
+              "protein_g": 55.5
+            }
+          ],
+          "total": {
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300,
+            "kcal": 645.0,
+            "protein_g": 55.5,
+            "carbs_g": 24.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": -13.0479031366083,
+            "protein": 18.3085848937278,
+            "price": 0.0476263148038,
+            "total": 5.3083
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled halloumi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 495.0,
+              "protein_g": 25.5
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 495.0,
+            "protein_g": 25.5,
+            "carbs_g": 15.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": -10.0135070583273,
+            "protein": 8.4120525187398,
+            "price": 0.0347543378298,
+            "total": -1.5667
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spaetzle pan",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Spätzlepfanne mit Kraut und Pilzen",
+              "name_en": "Spaetzle pan with cabbage and mushrooms",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "b1a342fa3523f1f9",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 23.4
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590,
+            "kcal": 678.5,
+            "protein_g": 20.6,
+            "carbs_g": 108.45,
+            "fat_g": 16.6
+          },
+          "score": {
+            "kcal": -13.725584927424391,
+            "protein": 6.795618897491761,
+            "price": 0.035397936678500004,
+            "total": -6.8946
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Grilled halloumi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 495.0,
+              "protein_g": 25.5
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 495.0,
+            "protein_g": 25.5,
+            "carbs_g": 15.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": -10.0135070583273,
+            "protein": 8.4120525187398,
+            "price": 0.0347543378298,
+            "total": -1.5667
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spaetzle pan",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Spätzlepfanne mit Kraut und Pilzen",
+              "name_en": "Spaetzle pan with cabbage and mushrooms",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "b1a342fa3523f1f9",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 23.4
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590,
+            "kcal": 678.5,
+            "protein_g": 20.6,
+            "carbs_g": 108.45,
+            "fat_g": 16.6
+          },
+          "score": {
+            "kcal": -13.725584927424391,
+            "protein": 6.795618897491761,
+            "price": 0.035397936678500004,
+            "total": -6.8946
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Brazilian roast chicken - Frango a Passarinho",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Wok"
+          ],
+          "items": [
+            {
+              "name": "Brasilianisches Brathähnchen (1 Stück)- Frango a Passarinho mit Mango-Chili-Dip",
+              "name_en": "Brazilian roast chicken (1 piece) - Frango a Passarinho with mango-chili dip",
+              "station": "Wok",
+              "counters": [
+                "Wok"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "5",
+                "9",
+                "99",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "285c60623be54694",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 645.0,
+              "protein_g": 55.5
+            }
+          ],
+          "total": {
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300,
+            "kcal": 645.0,
+            "protein_g": 55.5,
+            "carbs_g": 24.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": 2.27875671461505,
+            "protein": 4.0536808683153,
+            "price": -4.7006945840419,
+            "total": 1.6317
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590,
+            "kcal": 678.5,
+            "protein_g": 20.6,
+            "carbs_g": 108.45,
+            "fat_g": 16.6
+          },
+          "score": {
+            "kcal": 2.397110745529165,
+            "protein": 1.50460947544676,
+            "price": -3.4937594881392497,
+            "total": 0.408
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled halloumi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 742.5,
+            "protein_g": 38.25,
+            "carbs_g": 22.5,
+            "fat_g": 54.0
+          },
+          "score": {
+            "kcal": 2.623219938917325,
+            "protein": 2.7937530308659495,
+            "price": -5.14535488253235,
+            "total": 0.2716
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato casserole",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fleisch"
+          ],
+          "items": [
+            {
+              "name": "Kartoffelnauflaufmit Hackfleisch , Mozzarella und Schnittlauchdip",
+              "name_en": "Potato casserole with minced meat, mozzarella, and chive dip",
+              "station": "Fleisch",
+              "counters": [
+                "Fleisch"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "5aebc5d53d576ac2",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 720.0,
+              "protein_g": 38.25
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 720.0,
+            "protein_g": 38.25,
+            "carbs_g": 54.0,
+            "fat_g": 39.6
+          },
+          "score": {
+            "kcal": 2.5437284256168,
+            "protein": 2.7937530308659495,
+            "price": -6.4158128782193495,
+            "total": -1.0783
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spaetzle pan",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Spätzlepfanne mit Kraut und Pilzen",
+              "name_en": "Spaetzle pan with cabbage and mushrooms",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "b1a342fa3523f1f9",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 23.4
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Brazilian roast chicken - Frango a Passarinho",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Wok"
+          ],
+          "items": [
+            {
+              "name": "Brasilianisches Brathähnchen (1 Stück)- Frango a Passarinho mit Mango-Chili-Dip",
+              "name_en": "Brazilian roast chicken (1 piece) - Frango a Passarinho with mango-chili dip",
+              "station": "Wok",
+              "counters": [
+                "Wok"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "5",
+                "9",
+                "99",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "285c60623be54694",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 645.0,
+              "protein_g": 55.5
+            }
+          ],
+          "total": {
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300,
+            "kcal": 645.0,
+            "protein_g": 55.5,
+            "carbs_g": 24.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": 2.27875671461505,
+            "protein": 4.0536808683153,
+            "price": -4.7006945840419,
+            "total": 1.6317
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590,
+            "kcal": 678.5,
+            "protein_g": 20.6,
+            "carbs_g": 108.45,
+            "fat_g": 16.6
+          },
+          "score": {
+            "kcal": 2.397110745529165,
+            "protein": 1.50460947544676,
+            "price": -3.4937594881392497,
+            "total": 0.408
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled halloumi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 742.5,
+            "protein_g": 38.25,
+            "carbs_g": 22.5,
+            "fat_g": 54.0
+          },
+          "score": {
+            "kcal": 2.623219938917325,
+            "protein": 2.7937530308659495,
+            "price": -5.14535488253235,
+            "total": 0.2716
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spaetzle pan",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Spätzlepfanne mit Kraut und Pilzen",
+              "name_en": "Spaetzle pan with cabbage and mushrooms",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "b1a342fa3523f1f9",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 23.4
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Brazilian roast chicken - Frango a Passarinho",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Wok"
+          ],
+          "items": [
+            {
+              "name": "Brasilianisches Brathähnchen (1 Stück)- Frango a Passarinho mit Mango-Chili-Dip",
+              "name_en": "Brazilian roast chicken (1 piece) - Frango a Passarinho with mango-chili dip",
+              "station": "Wok",
+              "counters": [
+                "Wok"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "5",
+                "9",
+                "99",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "285c60623be54694",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 645.0,
+              "protein_g": 55.5
+            }
+          ],
+          "total": {
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300,
+            "kcal": 645.0,
+            "protein_g": 55.5,
+            "carbs_g": 24.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": 2.27875671461505,
+            "protein": 4.0536808683153,
+            "price": -4.7006945840419,
+            "total": 1.6317
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590,
+            "kcal": 678.5,
+            "protein_g": 20.6,
+            "carbs_g": 108.45,
+            "fat_g": 16.6
+          },
+          "score": {
+            "kcal": 2.397110745529165,
+            "protein": 1.50460947544676,
+            "price": -3.4937594881392497,
+            "total": 0.408
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled halloumi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 742.5,
+            "protein_g": 38.25,
+            "carbs_g": 22.5,
+            "fat_g": 54.0
+          },
+          "score": {
+            "kcal": 2.623219938917325,
+            "protein": 2.7937530308659495,
+            "price": -5.14535488253235,
+            "total": 0.2716
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spaetzle pan",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Spätzlepfanne mit Kraut und Pilzen",
+              "name_en": "Spaetzle pan with cabbage and mushrooms",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "b1a342fa3523f1f9",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 23.4
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590,
+            "kcal": 678.5,
+            "protein_g": 20.6,
+            "carbs_g": 108.45,
+            "fat_g": 16.6
+          },
+          "score": {
+            "kcal": 2.397110745529165,
+            "protein": 1.50460947544676,
+            "price": -3.4937594881392497,
+            "total": 0.408
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled halloumi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 742.5,
+            "protein_g": 38.25,
+            "carbs_g": 22.5,
+            "fat_g": 54.0
+          },
+          "score": {
+            "kcal": 2.623219938917325,
+            "protein": 2.7937530308659495,
+            "price": -5.14535488253235,
+            "total": 0.2716
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spaetzle pan",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Spätzlepfanne mit Kraut und Pilzen",
+              "name_en": "Spaetzle pan with cabbage and mushrooms",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "b1a342fa3523f1f9",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 23.4
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Chicken Soup and Berry Dessert",
+          "reason": "High protein chicken paired with warm soup and a sweet berry treat",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Wok",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Brasilianisches Brathähnchen (1 Stück)- Frango a Passarinho mit Mango-Chili-Dip",
+              "name_en": "Brazilian roast chicken (1 piece) - Frango a Passarinho with mango-chili dip",
+              "station": "Wok",
+              "counters": [
+                "Wok"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "5",
+                "9",
+                "99",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "285c60623be54694",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 645.0,
+              "protein_g": 55.5
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            },
+            {
+              "name": "Tagessuppe",
+              "name_en": "Soup of the day",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "2a7cca8862da876a",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 144.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 866,
+            "price_eur": 8.66,
+            "weight_g": 740,
+            "kcal": 950.0,
+            "protein_g": 64.4,
+            "carbs_g": 67.8,
+            "fat_g": 45.7
+          },
+          "score": {
+            "kcal": 17.088193142778,
+            "protein": 11.403749448018761,
+            "price": 2.15530727593068,
+            "total": 30.6472
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Meat Casserole with Soup and Pudding",
+          "reason": "Hearty potato casserole rounded out with soup and dessert",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fleisch",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Kartoffelnauflaufmit Hackfleisch , Mozzarella und Schnittlauchdip",
+              "name_en": "Potato casserole with minced meat, mozzarella, and chive dip",
+              "station": "Fleisch",
+              "counters": [
+                "Fleisch"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "5aebc5d53d576ac2",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 720.0,
+              "protein_g": 38.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            },
+            {
+              "name": "Tagessuppe",
+              "name_en": "Soup of the day",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 235,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "2a7cca8862da876a",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 72.0,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 866,
+            "price_eur": 8.66,
+            "weight_g": 740,
+            "kcal": 953.0,
+            "protein_g": 44.45,
+            "carbs_g": 88.5,
+            "fat_g": 46.9
+          },
+          "score": {
+            "kcal": 17.14215585796572,
+            "protein": 7.871066195099905,
+            "price": 2.15530727593068,
+            "total": 27.1685
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled Halloumi and Ratatouille Combo",
+          "reason": "Savory grilled cheese with Mediterranean vegetables and comforting soup",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            },
+            {
+              "name": "Tagessuppe",
+              "name_en": "Soup of the day",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "2a7cca8862da876a",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 144.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750,
+            "kcal": 886.5,
+            "protein_g": 43.65,
+            "carbs_g": 41.1,
+            "fat_g": 58.8
+          },
+          "score": {
+            "kcal": 15.945982337971259,
+            "protein": 7.7294047112735855,
+            "price": 1.9288257954345,
+            "total": 25.6042
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Brazilian Roast Chicken",
+          "reason": "Flavorful roast chicken with fruity dip for a lean protein meal",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Wok"
+          ],
+          "items": [
+            {
+              "name": "Brasilianisches Brathähnchen (1 Stück)- Frango a Passarinho mit Mango-Chili-Dip",
+              "name_en": "Brazilian roast chicken (1 piece) - Frango a Passarinho with mango-chili dip",
+              "station": "Wok",
+              "counters": [
+                "Wok"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "5",
+                "9",
+                "99",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "285c60623be54694",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 645.0,
+              "protein_g": 55.5
+            }
+          ],
+          "total": {
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300,
+            "kcal": 645.0,
+            "protein_g": 55.5,
+            "carbs_g": 24.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": -13.0479031366083,
+            "protein": 18.3085848937278,
+            "price": 0.0476263148038,
+            "total": 5.3083
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Hearty Potato Beef Bake",
+          "reason": "Satisfying portion of meat and potato casserole with dip",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fleisch"
+          ],
+          "items": [
+            {
+              "name": "Kartoffelnauflaufmit Hackfleisch , Mozzarella und Schnittlauchdip",
+              "name_en": "Potato casserole with minced meat, mozzarella, and chive dip",
+              "station": "Fleisch",
+              "counters": [
+                "Fleisch"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "5aebc5d53d576ac2",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 480.0,
+              "protein_g": 25.5
+            }
+          ],
+          "total": {
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300,
+            "kcal": 480.0,
+            "protein_g": 25.5,
+            "carbs_g": 36.0,
+            "fat_g": 26.4
+          },
+          "score": {
+            "kcal": -9.710067450499201,
+            "protein": 8.4120525187398,
+            "price": 0.0476263148038,
+            "total": -1.2504
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled Halloumi Plate",
+          "reason": "Wholesome grilled cheese with stewed vegetables for light dining",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 495.0,
+              "protein_g": 25.5
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 495.0,
+            "protein_g": 25.5,
+            "carbs_g": 15.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": -10.0135070583273,
+            "protein": 8.4120525187398,
+            "price": 0.0347543378298,
+            "total": -1.5667
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spiced Vegetable Couscous",
+          "reason": "Plant-based grain dish packed with chickpeas and veggies",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice Stew and Soup Duo",
+          "reason": "Fiber-rich bean stew served alongside warm daily soup",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Tagessuppe",
+              "name_en": "Soup of the day",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "2a7cca8862da876a",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 144.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 519,
+            "price_eur": 5.19,
+            "weight_g": 750,
+            "kcal": 661.5,
+            "protein_g": 22.5,
+            "carbs_g": 101.85,
+            "fat_g": 16.5
+          },
+          "score": {
+            "kcal": -13.381686705219211,
+            "protein": 7.422399281241001,
+            "price": 0.06680556049506,
+            "total": -5.8925
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Crispy Roast Chicken",
+          "reason": "Great protein value centered on delicious spiced poultry",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Wok"
+          ],
+          "items": [
+            {
+              "name": "Brasilianisches Brathähnchen (1 Stück)- Frango a Passarinho mit Mango-Chili-Dip",
+              "name_en": "Brazilian roast chicken (1 piece) - Frango a Passarinho with mango-chili dip",
+              "station": "Wok",
+              "counters": [
+                "Wok"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "5",
+                "9",
+                "99",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "285c60623be54694",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 645.0,
+              "protein_g": 55.5
+            }
+          ],
+          "total": {
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300,
+            "kcal": 645.0,
+            "protein_g": 55.5,
+            "carbs_g": 24.0,
+            "fat_g": 36.0
+          },
+          "score": {
+            "kcal": 2.27875671461505,
+            "protein": 4.0536808683153,
+            "price": -4.7006945840419,
+            "total": 1.6317
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Bean Rice Bowl with Pudding",
+          "reason": "Economical hearty rice dish followed by sweet almond dessert",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590,
+            "kcal": 678.5,
+            "protein_g": 20.6,
+            "carbs_g": 108.45,
+            "fat_g": 16.6
+          },
+          "score": {
+            "kcal": 2.397110745529165,
+            "protein": 1.50460947544676,
+            "price": -3.4937594881392497,
+            "total": 0.408
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Halloumi Ratatouille Platter",
+          "reason": "Generous serving of grilled cheese and tender vegetables",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 742.5,
+            "protein_g": 38.25,
+            "carbs_g": 22.5,
+            "fat_g": 54.0
+          },
+          "score": {
+            "kcal": 2.623219938917325,
+            "protein": 2.7937530308659495,
+            "price": -5.14535488253235,
+            "total": 0.2716
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Beef and Potato Casserole",
+          "reason": "Filling meat bake topped with cheese for great energy",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fleisch"
+          ],
+          "items": [
+            {
+              "name": "Kartoffelnauflaufmit Hackfleisch , Mozzarella und Schnittlauchdip",
+              "name_en": "Potato casserole with minced meat, mozzarella, and chive dip",
+              "station": "Fleisch",
+              "counters": [
+                "Fleisch"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "5aebc5d53d576ac2",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 720.0,
+              "protein_g": 38.25
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 720.0,
+            "protein_g": 38.25,
+            "carbs_g": 54.0,
+            "fat_g": 39.6
+          },
+          "score": {
+            "kcal": 2.5437284256168,
+            "protein": 2.7937530308659495,
+            "price": -6.4158128782193495,
+            "total": -1.0783
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Mushroom Cabbage Spaetzle",
+          "reason": "Budget-friendly egg noodles tossed with savory vegetables",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Spätzlepfanne mit Kraut und Pilzen",
+              "name_en": "Spaetzle pan with cabbage and mushrooms",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "b1a342fa3523f1f9",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 23.4
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "unavailable",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [],
+      "message": "No plate fits this goal today."
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Chickpea Vegetable Couscous",
+          "reason": "Nutritious and light plant-based couscous plate",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice Stew with Almond Pudding",
+          "reason": "Filling bean-loaded rice with a fruity dessert finish",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590,
+            "kcal": 678.5,
+            "protein_g": 20.6,
+            "carbs_g": 108.45,
+            "fat_g": 16.6
+          },
+          "score": {
+            "kcal": -13.725584927424391,
+            "protein": 6.795618897491761,
+            "price": 0.035397936678500004,
+            "total": -6.8946
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Savory Rice Stew and Berry Dessert",
+          "reason": "Affordable plant-based stew paired with sweet pudding",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            }
+          ],
+          "total": {
+            "price_cents": 275,
+            "price_eur": 2.75,
+            "weight_g": 590,
+            "kcal": 678.5,
+            "protein_g": 20.6,
+            "carbs_g": 108.45,
+            "fat_g": 16.6
+          },
+          "score": {
+            "kcal": 2.397110745529165,
+            "protein": 1.50460947544676,
+            "price": -3.4937594881392497,
+            "total": 0.408
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental Chickpea Couscous",
+          "reason": "Cost-effective fluffy couscous packed with vegetables",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 17.1
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "extras": {
+    "all": [
+      {
+        "name": "Tagessuppe",
+        "name_en": "Soup of the day",
+        "station": "Tagessupe, Brot, Obst",
+        "weight_g": 300,
+        "price_cents": 370,
+        "is_vegan": false,
+        "diet": "meat",
+        "meat_types": [
+          "unknown"
+        ],
+        "serving": "2 scoops",
+        "kcal": 144.0,
+        "protein_g": 5.4,
+        "price_source": "eat-api"
+      },
+      {
+        "name": "Pudding mit Mandelgeschmack und Beeren",
+        "name_en": "Almond-flavored pudding with berries",
+        "station": "Dessert (Glas)",
+        "weight_g": 140,
+        "price_cents": 126,
+        "is_vegan": true,
+        "diet": "vegan",
+        "meat_types": [],
+        "serving": "1 piece",
+        "kcal": 161.0,
+        "protein_g": 3.5,
+        "price_source": "eat-api"
+      }
+    ],
+    "vegan": [
+      {
+        "name": "Pudding mit Mandelgeschmack und Beeren",
+        "name_en": "Almond-flavored pudding with berries",
+        "station": "Dessert (Glas)",
+        "weight_g": 140,
+        "price_cents": 126,
+        "is_vegan": true,
+        "diet": "vegan",
+        "meat_types": [],
+        "serving": "1 piece",
+        "kcal": 161.0,
+        "protein_g": 3.5,
+        "price_source": "eat-api"
+      }
+    ]
+  },
+  "generated_on": "2026-11-23"
+}

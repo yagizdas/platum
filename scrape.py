@@ -1,4 +1,4 @@
-"""Fetch today's official Arcisstraße dishes and enrich with student prices."""
+"""Fetch official campus dishes and enrich conservative exact matches with prices."""
 import argparse
 import json
 import re
@@ -8,6 +8,7 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
+from campuses import CAMPUS_IDS, campus_config, campus_data
 from common import ROOT, fetch, load_config, normalize, read_json, today, week_dates, write_json
 
 
@@ -191,9 +192,19 @@ def scrape(day, config, html=None, api_payload=None, fetcher=fetch):
     if dishes is None:
         dishes = from_api(api)
     enrich_prices(dishes, api, config)
+    price_unavailable = False
+    if config.get('require_matched_prices'):
+        unmatched = [dish for dish in dishes if dish['price']['source'] != 'eat-api']
+        if unmatched:
+            warnings.append(f"{len(unmatched)} published dish(es) omitted: no unambiguous student price match.")
+            dishes = [dish for dish in dishes if dish['price']['source'] == 'eat-api']
+            price_unavailable = not dishes
+    for dish in dishes:
+        dish['campus'] = config.get('campus', 'arcisstr')
+        dish['counter_policy'] = config.get('counter_policy', 'arcis_heuristic')
     append_standing_sides(dishes, config)
-    return {"schema_version": 1, "date": day.isoformat(), "mensa": "Mensa Arcisstraße",
-            "state": "open" if dishes else "closed", "source": "eat-api" if official_error else "official",
+    return {"schema_version": 1, "date": day.isoformat(), "mensa": config.get("mensa", "Mensa Arcisstraße"), "campus": config.get("campus", "arcisstr"),
+            "state": "unavailable" if price_unavailable else "open" if dishes else "closed", "source": "eat-api" if official_error else "official",
             "published": bool(api) if official_error else day.strftime("%d.%m.%Y") in official_html,
             "source_url": config["official_url"], "price_source_url": api_url,
             "fetched_at": datetime.now(timezone.utc).isoformat(), "warnings": warnings, "dishes": dishes}
@@ -231,6 +242,7 @@ def save_menu(path, menu, current_day):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--campus", choices=CAMPUS_IDS, default="arcisstr")
     parser.add_argument("--date", type=date.fromisoformat)
     parser.add_argument("--week", action="store_true", help="Current and following weekdays for lunch/weekend planning")
     parser.add_argument("--html", type=Path, help="Read saved official HTML (offline/replay)")
@@ -239,7 +251,8 @@ def main():
     parser.add_argument("--output", type=Path, default=ROOT / "data/menu.json")
     parser.add_argument("--config", type=Path)
     args = parser.parse_args()
-    config = load_config(args.config)
+    config = campus_config(load_config(args.config), args.campus)
+    data_root = campus_data(ROOT, args.campus)
     html = args.html.read_text() if args.html else None
     if args.save_html:
         html = fetch(config["official_url"])
@@ -251,11 +264,12 @@ def main():
         iso = target.isocalendar()
         menus = scrape_week(target, config, html, {(iso.year, iso.week): payload} if payload is not None else None)
         for day, menu in menus.items():
-            menus[day] = save_menu(ROOT / "data/menus" / f"{day}.json", menu, today(config))
+            menus[day] = save_menu(data_root / "menus" / f"{day}.json", menu, today(config))
         result = menus.get(target.isoformat()) or scrape(target, config, html, payload)
     else:
         result = scrape(target, config, html, payload)
-    result = save_menu(args.output, result, today(config))
+    output = data_root / "menu.json" if args.output == ROOT / "data/menu.json" else args.output
+    result = save_menu(output, result, today(config))
     print(f"{result['date']}: {result['state']}, {len(result['dishes'])} dishes ({result['source']})")
     for warning in result["warnings"]:
         print(warning, file=sys.stderr)

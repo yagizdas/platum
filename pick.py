@@ -88,7 +88,7 @@ def valid_plate(items, config, pairing=None):
         return False
     if not any(i["role"] == "main" and not i.get("standing") for i in items):
         return False
-    if not shared_counters(items):
+    if config.get("counter_policy") != "published_stations" and not shared_counters(items):
         return False
     for i in items:
         if i["is_per_piece"]:
@@ -184,9 +184,11 @@ def plate_result(value, goal=None, vegan=None, config=None):
                      | {"meat_types": meat_types(i), "id": dish_id(i), "serving": serving(i), "price_source": i["price"]["source"], "kcal": round(i["kcal"], 2), "protein_g": round(i["protein"], 2)})
     total = {"price_cents": value["price_cents"], "price_eur": value["price_cents"] / 100, "weight_g": value["weight_g"],
              "kcal": round(value["kcal"], 2), **{f"{n}_g": round(value[n], 2) for n in ("protein", "carbs", "fat")}}
-    counters = shared_counters(value["items"])
+    published_stations = any(i.get("counter_policy") == "published_stations" for i in value["items"])
+    stations = list(dict.fromkeys(i["station"] for i in value["items"])) if published_stations else []
+    counters = () if published_stations else shared_counters(value["items"])
     return {"title": " + ".join(re.split(r"\s+(?:with|on|served|in|made from)\s+", re.sub(r"\s*\([^)]*\)", "", i["name_en"]), maxsplit=1, flags=re.I)[0].strip() for i in value["items"]), "reason": None, "picked_by": "rules",
-            "counter": counters[0], "counters": list(counters),
+            "counter": counters[0] if counters else None, "counters": list(counters), "stations": stations,
             "items": items, "total": total, "score": value.get("score"),
             "has_estimated_prices": any(i["price_source"] == "config" for i in items)}
 
@@ -222,7 +224,7 @@ def build_today(menu, cache, config, allow_missing=False, *, pairing=None, no_ll
     if missing and not allow_missing:
         raise ValueError(f"{len(missing)} dishes need tagging; run tag.py first. Refusing to pick from a partial menu.")
     result = {k: menu[k] for k in ("date", "mensa", "state", "source", "source_url", "fetched_at", "warnings")}
-    result.update(schema_version=SCHEMA_VERSION, menu_count=len(menu["dishes"]), scoring=config["scoring"],
+    result.update(campus=menu.get("campus", config.get("campus", "arcisstr")), schema_version=SCHEMA_VERSION, menu_count=len(menu["dishes"]), scoring=config["scoring"],
                   default_scoop_g=config["portions"]["default_scoop_g"],
                   nutrition_note="Nutrition values are estimates.", filtered_variants={}, variants={}, extras={"all": [], "vegan": []})
     if missing:
@@ -298,7 +300,7 @@ def build_week(reference, menus, cache, config, **options):
         days[name]["generated_on"] = reference.isoformat()
     names = sorted(days)
     index = {"schema_version": SCHEMA_VERSION, "generated_on": reference.isoformat(),
-             "week_start": names[0], "valid_through": names[-1], "lunch_cutoff": "14:30",
+             "week_start": names[0], "valid_through": names[-1], "lunch_cutoff": config.get("lunch_cutoff", "14:30"), "campus": config.get("campus", "arcisstr"),
              "days": [{"date": name, "state": days[name]["state"], "file": f"data/days/{name}.json"} for name in names]}
     return days, index
 

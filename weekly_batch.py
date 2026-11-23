@@ -3,6 +3,7 @@ import argparse
 import sys
 from datetime import date, timedelta
 
+from campuses import CAMPUS_IDS, campus_config, campus_data
 from common import ROOT, load_config, normalize, read_json, today, week_dates, write_json
 from judge import api_key_value
 from pair import food
@@ -16,28 +17,33 @@ def next_monday(day):
     return day + timedelta(days=7 - day.weekday())
 
 
-def batch_ready(root, monday):
-    marker = read_json(root / 'data/batches' / f'{monday}.json', {})
+def batch_ready(root, monday, campus="arcisstr"):
+    data = campus_data(root, campus)
+    marker = read_json(data / 'batches' / f'{monday}.json', {})
     expected = [day.isoformat() for day in week_dates(monday, 1)]
-    index = read_json(root / 'data/week.json', {})
+    index = read_json(data / 'week.json', {})
     return (marker.get('complete') is True and marker.get('dates') == expected
+            and index.get('campus', 'arcisstr') == campus
             and [row['date'] for row in index.get('days', [])] == expected
-            and all(read_json(root / 'data/days' / f'{day}.json', {}).get('date') == day for day in expected))
+            and all(read_json(data / 'days' / f'{day}.json', {}).get('date') == day
+                    and read_json(data / 'days' / f'{day}.json', {}).get('campus', 'arcisstr') == campus for day in expected))
 
 
 def run_batch(monday, config, *, root=ROOT, scraper=scrape_week, tagger=tag_menu, builder=build_week,
               proposer=daily_proposals):
-    if batch_ready(root, monday):
+    campus = config.get("campus", "arcisstr")
+    data = campus_data(root, campus)
+    if batch_ready(root, monday, campus):
         print(f'{monday}: complete batch already saved; no source fetches or model calls.')
         return True
     dates = [day.isoformat() for day in week_dates(monday, 1)]
     cache_path = root / 'data/dish_cache.json'
-    proposals_dir = root / 'data/proposals'
+    proposals_dir = data / 'proposals'
     errors = []
     try:
         menus = scraper(monday, config, weeks=1)
     except (OSError, RuntimeError, ValueError) as exc:
-        write_json(root / 'data/batches' / f'{monday}.json',
+        write_json(data / 'batches' / f'{monday}.json',
                    {'complete': False, 'dates': dates, 'errors': [str(exc)]})
         return False
     # An unpublished future week must not replace the current batch with five closed days.
@@ -49,9 +55,11 @@ def run_batch(monday, config, *, root=ROOT, scraper=scrape_week, tagger=tag_menu
         if not menu:
             errors.append(f'{day}: missing menu')
             continue
+        if menu.get('state') == 'unavailable':
+            errors.append(f'{day}: menu prices or source unavailable')
         if menu.get('published') is False:
             errors.append(f'{day}: source has not published this date yet')
-        write_json(root / 'data/menus' / f'{day}.json', menu)
+        write_json(data / 'menus' / f'{day}.json', menu)
         try:
             failures = []
             tagger(menu, cache_path, config['gemini_model'], api_key_value(), failures=failures)
@@ -81,16 +89,16 @@ def run_batch(monday, config, *, root=ROOT, scraper=scrape_week, tagger=tag_menu
                     errors.append(f'{day}/{variant}: model proposals incomplete')
     if not errors:
         days, index = builder(monday, menus, tags, config,
-                              proposals_dir=proposals_dir, judge_cache_path=root / 'data/title_cache.json')
+                              proposals_dir=proposals_dir, judge_cache_path=data / 'title_cache.json')
         if any(day['state'] == 'unavailable' or day.get('missing_tags') for day in days.values()):
             errors.append('Some dated plates could not be generated.')
         else:
             for day, payload in days.items():
-                write_json(root / 'data/days' / f'{day}.json', payload)
-            write_json(root / 'data/menu.json', menus[dates[0]])
-            write_json(root / 'data/today.json', days[dates[0]])
-            write_json(root / 'data/week.json', index)
-    write_json(root / 'data/batches' / f'{monday}.json',
+                write_json(data / 'days' / f'{day}.json', payload)
+            write_json(data / 'menu.json', menus[dates[0]])
+            write_json(data / 'today.json', days[dates[0]])
+            write_json(data / 'week.json', index)
+    write_json(data / 'batches' / f'{monday}.json',
                {'complete': not errors, 'dates': dates, 'errors': errors})
     for error in errors:
         print(error, file=sys.stderr)
@@ -99,13 +107,21 @@ def run_batch(monday, config, *, root=ROOT, scraper=scrape_week, tagger=tag_menu
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--campus', choices=(*CAMPUS_IDS, 'all'), default='all')
     parser.add_argument('--date', type=date.fromisoformat, help='Batch Monday; defaults to next Monday in Berlin')
     args = parser.parse_args()
     config = load_config()
     monday = args.date or next_monday(today(config))
     if monday.weekday() != 0:
         parser.error('--date must be a Monday')
-    return 0 if run_batch(monday, config) else 1
+    succeeded = []
+    for campus in CAMPUS_IDS if args.campus == 'all' else (args.campus,):
+        try:
+            succeeded.append(run_batch(monday, campus_config(config, campus)))
+        except Exception as exc:
+            print(f'{campus}: batch failed ({type(exc).__name__}); continuing other campus.', file=sys.stderr)
+            succeeded.append(False)
+    return 0 if all(succeeded) else 1
 
 
 if __name__ == '__main__':

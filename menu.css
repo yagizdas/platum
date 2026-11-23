@@ -407,3 +407,15 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
   .plate-art { --dish-height:190px; }
   .plate-summary { padding-top:0; }
 }
+
+/* The existing location label is the campus selector. */
+.location-picker { flex:none; }
+.location-picker select { max-width:160px; min-height:44px; padding:8px 24px 8px 8px; border:0; border-radius:8px; background-color:transparent; color:var(--muted); font:inherit; cursor:pointer; }
+.location-picker select:hover { background-color:var(--surface); }
+.location-picker select:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+@media(max-width:760px) { header { gap:12px; } .location-picker select { max-width:145px; font-size:14px; } }
+@media(max-width:760px) {
+  /* Long published station names and multi-item meals must not collide with actions. */
+  .receipt { height:auto; min-height:570px; }
+  .plate-overview { grid-template-rows:210px auto; }
+}

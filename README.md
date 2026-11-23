@@ -1,6 +1,6 @@
 # Mensa Plate
 
-A static lunch picker for TUM students at **Mensa Arcisstraße**. Choose Bulk, Cut or Budget, with an independent Vegan option. Each variant offers up to five lunches with different mains. Python computes portions, student prices, nutrition estimates and ranking; models propose plausible trays and describe the final choices.
+A static lunch picker for TUM students at **Mensa Arcisstraße and Mensa Garching**. Switch locations using the top-right campus selector. Choose Bulk, Cut or Budget, with Vegan, Vegetarian, No pork and No beef in the Diet tile. Each variant offers up to five lunches with different mains. Python computes portions, student prices, nutrition estimates and ranking; models propose plausible trays and describe the final choices.
 
 The landing page is `index.html`; the picker is `menu.html`. Both retain the Bricolage Grotesque type, TUM Blue, supplied illustrations and reduced-motion behavior documented in `DESIGN.md`. The site works under a GitHub Pages repository subpath and has no browser API key or service worker.
 
@@ -52,7 +52,7 @@ For every open day there are **six separate proposal calls**: `bulk_all`, `cut_a
 
 Each variant is cached at `data/proposals/YYYY-MM-DD/<variant>.json`. An existing file prevents another call, including after failure or when no key is available. Failed calls cache the fallback: every main alone and every main with each eligible standing side. Unknown IDs, repeated dishes, multiple soups, dessert-only trays and non-vegan items in vegan variants are discarded. Keep these caches committed.
 
-`counters.py` contains the single editable menu-category mapping for the likely Arcisstraße counters. Every dish carries its possible counters, combinations without a counter shared by every dish are rejected, and each plate tells the student where to pick it up. These assignments are a heuristic because the daily kitchen layout can change.
+`counters.py` contains the single editable menu-category mapping for the likely Arcisstraße counters. For Arcisstraße, every dish carries its possible counters, combinations without a counter shared by every dish are rejected, and each plate tells the student where to pick it up. These assignments are a heuristic because the daily kitchen layout can change. Garching instead retains the official station categories and does not use this floorplan mapping.
 
 New attempts record their prompt, supplied dishes, schema, visible provider response, parsed response, and each validation decision under `data/proposals/YYYY-MM-DD/audits/<variant>/`. Duplicate combinations are reported explicitly. Caches reference their audit file. To inspect a fresh response, run `python proposals.py --date YYYY-MM-DD --variant budget_vegan --refresh`. A failed refresh retains the previous usable cache and records the failed attempt. Audit records contain no API credentials and are persisted with proposal caches by the daily job.
 
@@ -76,8 +76,8 @@ Reporting is enabled through the production Worker at `https://mensa-plate-repor
 
 `worker/` contains a Cloudflare Worker with D1 storage. No cookies, accounts, IP addresses or contact data are stored. The browser keeps a random UUID in `localStorage`, with an in-memory fallback when storage is blocked.
 
-- `POST /report`: `{date, variant, plate_dish_ids, tapped_dish_id, device_id}`; the tapped value is an item ID or `"other"`.
-- `GET /broken?date=YYYY-MM-DD`: `{date, broken: [plate_key, ...]}`.
+- `POST /report`: `{date, variant, plate_dish_ids, tapped_dish_id, device_id, campus?}`; campus is `arcisstr` by default or `garching`; the tapped value is an item ID or `"other"`.
+- `GET /broken?date=YYYY-MM-DD&campus=garching` (omitted campus defaults to Arcisstraße): `{date, broken: [plate_key, ...]}`.
 - Keys are sorted dish IDs joined with `|`. Portions and variant do not change a physical tray's key; raw reports retain their variant.
 - Maximum three accepted reports per device per **submission day in Berlin**, across menu dates. A single conditional SQL insert enforces this under concurrent requests.
 - `BROKEN_THRESHOLD` in `worker/wrangler.toml` defaults to two distinct devices. Repeated reports by one device cannot increase its vote.
@@ -114,7 +114,7 @@ Both the landing page and the plate picker load Cloudflare Web Analytics using t
 
 Open [Cloudflare Web Analytics](https://dash.cloudflare.com/26098fbb1b3bb06b1719a1e6fb10684f/web-analytics) and select `yagizdas.github.io` to see visits, page views, referring sites, countries, browsers/devices and page performance. Cloudflare's **visits** count incoming visits, not identified unique people. One visit can include both the landing page and the picker. Counts begin after installation, and new data may take a few minutes to appear; blocked JavaScript or analytics blockers can reduce the measured counts. See [Cloudflare's metric definitions](https://developers.cloudflare.com/web-analytics/data-metrics/high-level-metrics/) and [Web Analytics overview](https://developers.cloudflare.com/web-analytics/about/).
 
-To move to a custom domain later, edit the hostname under Web Analytics → Manage site and keep the same site snippet. Also update `ALLOWED_ORIGINS` in `worker/wrangler.toml` so plate reporting accepts the new origin, update `SITE_URL` in `menu.html` for shared links, and redeploy the Worker and static site. See [Cloudflare's setup guide](https://developers.cloudflare.com/web-analytics/get-started/).
+To move to a custom domain later, edit the hostname under Web Analytics → Manage site and keep the same site snippet. Also update `ALLOWED_ORIGINS` in `worker/wrangler.toml` so plate reporting accepts the new origin. Shared links derive their campus and path from the current page URL. Then redeploy the Worker and static site. See [Cloudflare's setup guide](https://developers.cloudflare.com/web-analytics/get-started/).
 
 ## GitHub Pages and tests
 
@@ -124,7 +124,7 @@ Set repository secret `GEMINI_API_KEY` and select **GitHub Actions** in Settings
 - Saturday prepares only the coming Monday–Friday, using `weekly_batch.py`. A completion record under `data/batches/YYYY-MM-DD.json` makes Sunday skip all source fetches and model calls after a successful Saturday. An incomplete Saturday run preserves successful dish/proposal caches; Sunday retries unfinished work, including failed proposal caches. Missing future source dates or an entirely unpublished week cannot replace the current public batch with false closed days. Explicitly published closed days remain valid.
 - A complete batch publishes a five-date week index. The browser derives its date buttons from that index, so the row rolls to the new week automatically, including month/year boundaries. No dates are hard-coded into the UI. The optional `weekly_batch.py --date YYYY-MM-DD` takes a Monday for a manual recovery batch.
 - `publish.yml` runs on pushes to `main` or `staging`, or manually. It publishes both sites from saved data without scraping, tagging or Gemini access. `rescore_cached.py` recalculates staging recommendations for exactly the saved index’s dates with `no_llm=True`, so a frontend push cannot expand the batch into another week.
-- Both workflows share the Pages deployment lock. Model/source failures are visible in the batch record and workflow result; the previous public batch remains available until a complete replacement is ready. Raw reports, credentials, batch records and private model caches are not packaged into the static site.
+- The weekend workflow refreshes each campus independently with a shared exact-name nutrition cache. Garching menus, proposals and public days are isolated under `data/campuses/garching/`; see [the Garching integration notes](docs/garching-integration.md) for verified source differences and operational commands. Both workflows share the Pages deployment lock. Model/source failures are visible in the batch record and workflow result; the previous public batch remains available until a complete replacement is ready. Raw reports, credentials, batch records and private model caches are not packaged into the static site.
 
 Scheduled workflows use the default branch; the weekend workflow and batch helpers must be present there for the schedule to take effect.
 
