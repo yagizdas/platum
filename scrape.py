@@ -175,7 +175,8 @@ def scrape(day, config, html=None, api_payload=None, fetcher=fetch):
     # an official closed day must never be replaced with an API menu.
     official_error = None
     try:
-        dishes = parse_official(html if html is not None else fetcher(config["official_url"]), day)
+        official_html = html if html is not None else fetcher(config["official_url"])
+        dishes = parse_official(official_html, day)
     except (OSError, ValueError) as exc:
         official_error = exc
         dishes = None
@@ -193,6 +194,7 @@ def scrape(day, config, html=None, api_payload=None, fetcher=fetch):
     append_standing_sides(dishes, config)
     return {"schema_version": 1, "date": day.isoformat(), "mensa": "Mensa Arcisstraße",
             "state": "open" if dishes else "closed", "source": "eat-api" if official_error else "official",
+            "published": bool(api) if official_error else day.strftime("%d.%m.%Y") in official_html,
             "source_url": config["official_url"], "price_source_url": api_url,
             "fetched_at": datetime.now(timezone.utc).isoformat(), "warnings": warnings, "dishes": dishes}
 

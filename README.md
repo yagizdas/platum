@@ -104,7 +104,15 @@ To move to a custom domain later, edit the hostname under Web Analytics → Mana
 
 ## GitHub Pages and tests
 
-Set repository secret `GEMINI_API_KEY` and select **GitHub Actions** in Settings → Pages. `daily.yml` runs weekdays at 07:30 UTC. Scrape, tag, optional pair knowledge and pick run independently of previous generation failures. Packaging and artifact upload still run, and the deploy job accepts an uploaded artifact even if generation failed. A final failing generation status keeps partial failures visible. `publish.yml` deploys committed data without model calls. Raw reports, credentials and private model caches are never included in the static artifact.
+Set repository secret `GEMINI_API_KEY` and select **GitHub Actions** in Settings → Pages.
+
+- `daily.yml` is now the **Weekend menu batch and publish** workflow. It runs at 07:30 UTC on Saturday and Sunday (08:30 Berlin in winter, 09:30 in summer), or manually. It never runs on pushes.
+- Saturday prepares only the coming Monday–Friday, using `weekly_batch.py`. A completion record under `data/batches/YYYY-MM-DD.json` makes Sunday skip all source fetches and model calls after a successful Saturday. An incomplete Saturday run preserves successful dish/proposal caches; Sunday retries unfinished work, including failed proposal caches. Missing future source dates or an entirely unpublished week cannot replace the current public batch with false closed days. Explicitly published closed days remain valid.
+- A complete batch publishes a five-date week index. The browser derives its date buttons from that index, so the row rolls to the new week automatically, including month/year boundaries. No dates are hard-coded into the UI. The optional `weekly_batch.py --date YYYY-MM-DD` takes a Monday for a manual recovery batch.
+- `publish.yml` runs on pushes to `main` or `staging`, or manually. It publishes both sites from saved data without scraping, tagging or Gemini access. `rescore_cached.py` recalculates staging recommendations for exactly the saved index’s dates with `no_llm=True`, so a frontend push cannot expand the batch into another week.
+- Both workflows share the Pages deployment lock. Model/source failures are visible in the batch record and workflow result; the previous public batch remains available until a complete replacement is ready. Raw reports, credentials, batch records and private model caches are not packaged into the static site.
+
+Scheduled workflows use the default branch; the weekend workflow and batch helpers must be present there for the schedule to take effect.
 
 ```sh
 python -m pytest -q
