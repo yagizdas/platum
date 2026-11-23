@@ -1,0 +1,3566 @@
+{
+  "date": "2026-11-27",
+  "mensa": "Mensa Garching",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
+  "fetched_at": "2026-11-23T10:36:32.373246+00:00",
+  "warnings": [],
+  "campus": "garching",
+  "schema_version": 2,
+  "menu_count": 7,
+  "scoring": {
+    "bulk": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "bulk",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 148,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 1.798757172924
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 1.770768547829
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.248880747798
+          }
+        ]
+      }
+    },
+    "cut": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "cut",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 124,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": -2.022930718854
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 3.298844124996
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.012871976974
+          }
+        ]
+      }
+    },
+    "budget": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "budget",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 152,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 0.353295614669
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 0.730392949246
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": -1.270457995687
+          }
+        ]
+      }
+    }
+  },
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "filtered_variants": {
+    "bulk_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 841.5,
+            "protein_g": 25.57,
+            "carbs_g": 115.48,
+            "fat_g": 29.64
+          },
+          "score": {
+            "kcal": 15.13654161015546,
+            "protein": 4.527855176798753,
+            "price": 1.3215567708073799,
+            "total": 20.986
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Pancakes",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Süßspeise"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
+              "name_en": "Pancakes with cherry filling and vanilla sauce",
+              "station": "Süßspeise",
+              "counters": [
+                "Süßspeise"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "7288cf290dd775fb",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 525.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 555,
+            "price_eur": 5.55,
+            "weight_g": 450,
+            "kcal": 712.5,
+            "protein_g": 37.5,
+            "carbs_g": 86.25,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 12.8161448570835,
+            "protein": 6.64038205435875,
+            "price": 1.3812881502789,
+            "total": 20.8378
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 841.5,
+            "protein_g": 25.57,
+            "carbs_g": 115.48,
+            "fat_g": 29.64
+          },
+          "score": {
+            "kcal": 15.13654161015546,
+            "protein": 4.527855176798753,
+            "price": 1.3215567708073799,
+            "total": 20.986
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Pancakes",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Süßspeise"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
+              "name_en": "Pancakes with cherry filling and vanilla sauce",
+              "station": "Süßspeise",
+              "counters": [
+                "Süßspeise"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "7288cf290dd775fb",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 525.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 555,
+            "price_eur": 5.55,
+            "weight_g": 450,
+            "kcal": 712.5,
+            "protein_g": 37.5,
+            "carbs_g": 86.25,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 12.8161448570835,
+            "protein": 6.64038205435875,
+            "price": 1.3812881502789,
+            "total": 20.8378
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 841.5,
+            "protein_g": 25.57,
+            "carbs_g": 115.48,
+            "fat_g": 29.64
+          },
+          "score": {
+            "kcal": 15.13654161015546,
+            "protein": 4.527855176798753,
+            "price": 1.3215567708073799,
+            "total": 20.986
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Pancakes",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Süßspeise"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
+              "name_en": "Pancakes with cherry filling and vanilla sauce",
+              "station": "Süßspeise",
+              "counters": [
+                "Süßspeise"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "7288cf290dd775fb",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 525.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 555,
+            "price_eur": 5.55,
+            "weight_g": 450,
+            "kcal": 712.5,
+            "protein_g": 37.5,
+            "carbs_g": 86.25,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 12.8161448570835,
+            "protein": 6.64038205435875,
+            "price": 1.3812881502789,
+            "total": 20.8378
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 841.5,
+            "protein_g": 25.57,
+            "carbs_g": 115.48,
+            "fat_g": 29.64
+          },
+          "score": {
+            "kcal": 15.13654161015546,
+            "protein": 4.527855176798753,
+            "price": 1.3215567708073799,
+            "total": 20.986
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pollock fillet + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 411,
+            "price_eur": 4.11,
+            "weight_g": 290.0,
+            "kcal": 376.5,
+            "protein_g": 32.32,
+            "carbs_g": 27.73,
+            "fat_g": 14.64
+          },
+          "score": {
+            "kcal": -7.61633415648531,
+            "protein": 10.661864211987073,
+            "price": 0.052903825363140006,
+            "total": 3.0984
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 751.5,
+            "protein_g": 22.42,
+            "carbs_g": 72.73,
+            "fat_g": 39.54
+          },
+          "score": {
+            "kcal": -15.202324352187809,
+            "protein": 7.396008528241033,
+            "price": 0.06835019773194,
+            "total": -7.738
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pollock fillet + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 411,
+            "price_eur": 4.11,
+            "weight_g": 290.0,
+            "kcal": 376.5,
+            "protein_g": 32.32,
+            "carbs_g": 27.73,
+            "fat_g": 14.64
+          },
+          "score": {
+            "kcal": -7.61633415648531,
+            "protein": 10.661864211987073,
+            "price": 0.052903825363140006,
+            "total": 3.0984
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 751.5,
+            "protein_g": 22.42,
+            "carbs_g": 72.73,
+            "fat_g": 39.54
+          },
+          "score": {
+            "kcal": -15.202324352187809,
+            "protein": 7.396008528241033,
+            "price": 0.06835019773194,
+            "total": -7.738
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pollock fillet + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 411,
+            "price_eur": 4.11,
+            "weight_g": 290.0,
+            "kcal": 376.5,
+            "protein_g": 32.32,
+            "carbs_g": 27.73,
+            "fat_g": 14.64
+          },
+          "score": {
+            "kcal": -7.61633415648531,
+            "protein": 10.661864211987073,
+            "price": 0.052903825363140006,
+            "total": 3.0984
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 751.5,
+            "protein_g": 22.42,
+            "carbs_g": 72.73,
+            "fat_g": 39.54
+          },
+          "score": {
+            "kcal": -15.202324352187809,
+            "protein": 7.396008528241033,
+            "price": 0.06835019773194,
+            "total": -7.738
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 751.5,
+            "protein_g": 22.42,
+            "carbs_g": 72.73,
+            "fat_g": 39.54
+          },
+          "score": {
+            "kcal": -15.202324352187809,
+            "protein": 7.396008528241033,
+            "price": 0.06835019773194,
+            "total": -7.738
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 411,
+            "price_eur": 4.11,
+            "weight_g": 290.0,
+            "kcal": 376.5,
+            "protein_g": 32.32,
+            "carbs_g": 27.73,
+            "fat_g": 14.64
+          },
+          "score": {
+            "kcal": 1.330157989228785,
+            "protein": 2.360630011963072,
+            "price": -5.22158236227357,
+            "total": -1.5308
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 751.5,
+            "protein_g": 22.42,
+            "carbs_g": 72.73,
+            "fat_g": 39.54
+          },
+          "score": {
+            "kcal": 2.655016544237535,
+            "protein": 1.6375409922095319,
+            "price": -6.746131957097969,
+            "total": -2.4536
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 411,
+            "price_eur": 4.11,
+            "weight_g": 290.0,
+            "kcal": 376.5,
+            "protein_g": 32.32,
+            "carbs_g": 27.73,
+            "fat_g": 14.64
+          },
+          "score": {
+            "kcal": 1.330157989228785,
+            "protein": 2.360630011963072,
+            "price": -5.22158236227357,
+            "total": -1.5308
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 751.5,
+            "protein_g": 22.42,
+            "carbs_g": 72.73,
+            "fat_g": 39.54
+          },
+          "score": {
+            "kcal": 2.655016544237535,
+            "protein": 1.6375409922095319,
+            "price": -6.746131957097969,
+            "total": -2.4536
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 411,
+            "price_eur": 4.11,
+            "weight_g": 290.0,
+            "kcal": 376.5,
+            "protein_g": 32.32,
+            "carbs_g": 27.73,
+            "fat_g": 14.64
+          },
+          "score": {
+            "kcal": 1.330157989228785,
+            "protein": 2.360630011963072,
+            "price": -5.22158236227357,
+            "total": -1.5308
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 751.5,
+            "protein_g": 22.42,
+            "carbs_g": 72.73,
+            "fat_g": 39.54
+          },
+          "score": {
+            "kcal": 2.655016544237535,
+            "protein": 1.6375409922095319,
+            "price": -6.746131957097969,
+            "total": -2.4536
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 751.5,
+            "protein_g": 22.42,
+            "carbs_g": 72.73,
+            "fat_g": 39.54
+          },
+          "score": {
+            "kcal": 2.655016544237535,
+            "protein": 1.6375409922095319,
+            "price": -6.746131957097969,
+            "total": -2.4536
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Creamy Pasta and Dessert Combo",
+          "reason": "Hearty pasta with comforting soup and a sweet vanilla cinnamon finish.",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            },
+            {
+              "name": "Tagessuppe",
+              "name_en": "Soup of the day",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 235,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "2a7cca8862da876a",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 72.0,
+              "protein_g": 2.7
+            }
+          ],
+          "total": {
+            "price_cents": 766,
+            "price_eur": 7.66,
+            "weight_g": 740.0,
+            "kcal": 913.5,
+            "protein_g": 28.27,
+            "carbs_g": 124.78,
+            "fat_g": 32.04
+          },
+          "score": {
+            "kcal": 16.431646774660738,
+            "protein": 5.005962684712584,
+            "price": 1.9064265281326802,
+            "total": 23.344
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Savory Pollock and Sweet Pancakes",
+          "reason": "High protein fish fillet paired with indulgent cherry filled pancakes.",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Süßspeise"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
+              "name_en": "Pancakes with cherry filling and vanilla sauce",
+              "station": "Süßspeise",
+              "counters": [
+                "Süßspeise"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "7288cf290dd775fb",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 525.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 555,
+            "price_eur": 5.55,
+            "weight_g": 450,
+            "kcal": 712.5,
+            "protein_g": 37.5,
+            "carbs_g": 86.25,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 12.8161448570835,
+            "protein": 6.64038205435875,
+            "price": 1.3812881502789,
+            "total": 20.8378
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Herb Pollock with Warm Soup",
+          "reason": "Light and lean fish fillet served with a comforting warm soup.",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Tagessuppe",
+              "name_en": "Soup of the day",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "2a7cca8862da876a",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 144.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 655,
+            "price_eur": 6.55,
+            "weight_g": 450,
+            "kcal": 331.5,
+            "protein_g": 32.4,
+            "carbs_g": 20.85,
+            "fat_g": 12.3
+          },
+          "score": {
+            "kcal": -6.70601533300101,
+            "protein": 10.68825496498704,
+            "price": 0.0843114491797,
+            "total": 4.0666
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Classic Tomato Pasta",
+          "reason": "Simple and satisfying pasta coated in tomato and cream cheese sauce.",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Root Veggie Bake and Soup",
+          "reason": "Wholesome vegetable casserole accompanied by a double portion of soup.",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Tagessuppe",
+              "name_en": "Soup of the day",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "2a7cca8862da876a",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 144.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750,
+            "kcal": 706.5,
+            "protein_g": 22.5,
+            "carbs_g": 65.85,
+            "fat_g": 37.2
+          },
+          "score": {
+            "kcal": -14.292005528703509,
+            "protein": 7.422399281241001,
+            "price": 0.0997578215485,
+            "total": -6.7698
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Simple Tomato Cream Pasta",
+          "reason": "Economical and filling pasta bowl with creamy tomato sauce.",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 20.25,
+            "carbs_g": 90.0,
+            "fat_g": 22.5
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.3611
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Citrus Pollock and Sweet Cream",
+          "reason": "Nutritious fish fillet paired with a budget friendly dessert.",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 411,
+            "price_eur": 4.11,
+            "weight_g": 290.0,
+            "kcal": 376.5,
+            "protein_g": 32.32,
+            "carbs_g": 27.73,
+            "fat_g": 14.64
+          },
+          "score": {
+            "kcal": 1.330157989228785,
+            "protein": 2.360630011963072,
+            "price": -5.22158236227357,
+            "total": -1.5308
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable Bake with Berry Dessert",
+          "reason": "Satisfying veggie casserole complemented by blueberry cinnamon cream.",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            }
+          ],
+          "total": {
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 751.5,
+            "protein_g": 22.42,
+            "carbs_g": 72.73,
+            "fat_g": 39.54
+          },
+          "score": {
+            "kcal": 2.655016544237535,
+            "protein": 1.6375409922095319,
+            "price": -6.746131957097969,
+            "total": -2.4536
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Hearty Goulash and Soup Feast",
+          "reason": "Filling potato goulash served with soup and a sweet creamy treat.",
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Kartoffelgulasch mit Paprika",
+              "name_en": "Potato goulash with bell peppers",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "cc6103f60ba7fd10",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 9.9
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            },
+            {
+              "name": "Tagessuppe",
+              "name_en": "Soup of the day",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "2a7cca8862da876a",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 144.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 645,
+            "price_eur": 6.45,
+            "weight_g": 890.0,
+            "kcal": 715.5,
+            "protein_g": 20.62,
+            "carbs_g": 100.33,
+            "fat_g": 24.54
+          },
+          "score": {
+            "kcal": 2.527830122956695,
+            "protein": 1.506070261345252,
+            "price": -8.19445407218115,
+            "total": -4.1606
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "unavailable",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [],
+      "message": "No plate fits this goal today."
+    },
+    "cut_vegan": {
+      "state": "unavailable",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [],
+      "message": "No plate fits this goal today."
+    },
+    "budget_vegan": {
+      "state": "unavailable",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [],
+      "message": "No plate fits this goal today."
+    }
+  },
+  "extras": {
+    "all": [
+      {
+        "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
+        "name_en": "Pancakes with cherry filling and vanilla sauce",
+        "station": "Süßspeise",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "meat_types": [],
+        "serving": "2 scoops",
+        "kcal": 525.0,
+        "protein_g": 10.5,
+        "price_source": "eat-api"
+      },
+      {
+        "name": "Tagessuppe",
+        "name_en": "Soup of the day",
+        "station": "Tagessupe, Brot, Obst",
+        "weight_g": 300,
+        "price_cents": 370,
+        "is_vegan": false,
+        "diet": "meat",
+        "meat_types": [
+          "unknown"
+        ],
+        "serving": "2 scoops",
+        "kcal": 144.0,
+        "protein_g": 5.4,
+        "price_source": "eat-api"
+      },
+      {
+        "name": "Vanille-Zimtcreme mit Blaubeeren",
+        "name_en": "Vanilla cinnamon cream with blueberries",
+        "station": "Dessert (Glas)",
+        "weight_g": 140.0,
+        "price_cents": 126,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "meat_types": [],
+        "serving": "1 piece",
+        "kcal": 189.0,
+        "protein_g": 5.32,
+        "price_source": "eat-api"
+      }
+    ],
+    "vegan": []
+  },
+  "generated_on": "2026-11-23"
+}

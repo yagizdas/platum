@@ -58,6 +58,10 @@ jobs:
           cp data/{dish_cache.json,pairing_cache.json} staging-source/data/
           cp -R data/{menus,proposals} staging-source/data/
           cp data/week.json staging-source/data/week.json
+          if [[ -d data/campuses ]]; then
+            mkdir -p staging-source/data/campuses
+            cp -R data/campuses/. staging-source/data/campuses/
+          fi
           (cd staging-source && python rescore_cached.py)
       - name: Package only public static files
         id: package
@@ -68,7 +72,7 @@ jobs:
             destination=$2
             mkdir -p "$destination/data" "$destination/icons"
             cp "$source/index.html" "$destination/index.html"
-            static_files=(menu.html menu.css landing.css landing.js dish-icons.js menu-days.js report-config.js report-client.js font-trial.js)
+            static_files=(menu.html menu.css landing.css landing.js dish-icons.js menu-days.js report-config.js report-client.js campus-config.js font-trial.js)
             for file in "${static_files[@]}"; do
               if [[ -f "$source/$file" ]]; then
                 cp "$source/$file" "$destination/$file"
@@ -81,6 +85,13 @@ jobs:
             cp "$source/data/today.json" "$destination/data/today.json"
             cp "$source/data/week.json" "$destination/data/week.json"
             cp -R "$source/data/days" "$destination/data/days"
+            for campus in garching; do
+              if [[ -f "$source/data/campuses/$campus/week.json" ]]; then
+                mkdir -p "$destination/data/campuses/$campus"
+                cp "$source/data/campuses/$campus/"{week,today}.json "$destination/data/campuses/$campus/"
+                cp -R "$source/data/campuses/$campus/days" "$destination/data/campuses/$campus/days"
+              fi
+            done
           }
 
           package_site . dist

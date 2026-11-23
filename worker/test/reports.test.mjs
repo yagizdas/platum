@@ -75,3 +75,22 @@ test('strict validation rejects duplicate dishes, extra fields and invalid UUIDs
   assert(!validateReport({...body(),personal_data:'no'}));
   assert(!validateReport(body('not-a-uuid')));
 });
+
+test('campus reports and broken-plate votes remain isolated even for identical dates and dishes',async()=>{
+  const date='2026-11-12',ids=['cccccccccccccccc'];
+  const garching=body(randomUUID(),{date,campus:'garching',plate_dish_ids:ids,tapped_dish_id:ids[0]});
+  assert.equal((await post(garching)).status,201);
+  assert.equal((await post({...garching,device_id:randomUUID()})).status,201);
+  assert.deepEqual((await (await fetch(endpoint+'/broken?date='+date+'&campus=garching')).json()).broken,ids);
+  assert.deepEqual((await (await fetch(endpoint+'/broken?date='+date)).json()).broken,[]);
+  assert.equal((await post({...garching,campus:'unknown'})).status,400);
+  assert.equal((await post({...garching,campus:null})).status,400);
+  assert.equal((await fetch(endpoint+'/broken?date='+date+'&campus=unknown')).status,400);
+});
+
+test('daily device limit applies across both campuses',async()=>{
+  const device=randomUUID();
+  const responses=await Promise.all(Array.from({length:8},(_,i)=>post(body(device,{campus:i%2?'garching':'arcisstr'}))));
+  assert.equal(responses.filter(r=>r.status===201).length,3);
+  assert.equal(responses.filter(r=>r.status===429).length,5);
+});

@@ -121,3 +121,6 @@ cd worker && npm ci && npm test
 ```
 
 Tests mock model calls. Coverage includes parsing and source authority, immutable existing tags, repair and retry behavior, ten-day failure isolation, exact golden winners for all six variants, hand-computed equations, byte-identical reruns, six independent proposal caches, Berlin default dates, report fail-open behavior, and an actual `wrangler dev`/D1 integration test with concurrent rate limits and distinct-device votes. The existing fixture estimates remain test data, separate from production caches.
+
+
+Garching has an independent official-menu pipeline, cached batches and campus-scoped reports. The selector UI is available on [staging](https://yagizdas.github.io/platum/staging/menu.html?campus=garching). See [the source and integration notes](docs/garching-integration.md).

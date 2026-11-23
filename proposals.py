@@ -19,7 +19,7 @@ dish IDs per combo. Return fewer when the supplied ingredients allow fewer disti
 plausible lunches. Never pad the list with duplicates, reordered combinations, or
 repeated dish IDs. Serving quantities are chosen later by code. Include varied mains
 and plausible vegan trays where available.
-Standing sides (rice and potato salad) can accompany mains. Prefer complete lunches;
+Standing sides can accompany mains only when included in the supplied dishes. Prefer complete lunches;
 avoid two complete pasta dishes or pizza with another main. At most one soup per tray;
 never a dessert alone. Use the supplied calorie and macronutrient estimates to select
 combinations suited to the goal. kcal_per_100g is kcal per 100 grams of prepared food;

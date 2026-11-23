@@ -47,6 +47,13 @@ def test_packaging_allows_a_static_file_to_exist_only_on_staging(tmp_path, workf
     shutil.copytree(ROOT, main, ignore=shutil.ignore_patterns(".git", ".venv", ".taste-skill", "node_modules", "font-trial.js"))
     shutil.copytree(ROOT, main / "staging-source", ignore=shutil.ignore_patterns(".git", ".venv", ".taste-skill", "node_modules"))
 
+    for source in (main, main / "staging-source"):
+        campus = source / "data/campuses/garching"
+        (campus / "days").mkdir(parents=True, exist_ok=True)
+        for name in ("week.json", "today.json", "days/2026-11-23.json"):
+            (campus / name).write_text('{"campus":"garching"}')
+        (campus / "proposals").mkdir(exist_ok=True)
+        (campus / "proposals/private-cache.json").write_text('{}')
     # Optional scripts may exist only on the staging branch.
     (main / "staging-source" / "font-trial.js").write_text("// staging-only fixture\n")
 
@@ -69,6 +76,10 @@ def test_packaging_allows_a_static_file_to_exist_only_on_staging(tmp_path, workf
     for site in (main / "dist", main / "dist" / "staging"):
         for private in (".env", "data/dish_cache.json", "data/proposals", "data/judgments"):
             assert not (site / private).exists()
+        assert (site / 'data/campuses/garching/week.json').is_file()
+        assert (site / 'data/campuses/garching/days/2026-11-23.json').is_file()
+        assert not (site / 'data/campuses/garching/proposals').exists()
+        assert not (site / 'data/campuses/garching/menus').exists()
 
 
 def _workflow(name):
