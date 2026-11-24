@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f5f1">
   <meta name="description" content="A lunch plate for your goal at Mensa Arcisstraße or Mensa Garching. Student prices, simple scoops, and estimated nutrition.">
-  <title>Mensa Plate — Arcisstraße</title>
+  <title>Plato — Arcisstraße</title>
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" type="image/webp" href="./icons/ui/tray.webp">
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
@@ -16,7 +16,7 @@
 <body>
   <div class="shell">
     <header>
-      <a class="brand" href="./">Mensa Plate<span aria-hidden="true">.</span></a>
+      <a class="brand" href="./">Plato<span aria-hidden="true">.</span></a>
       <div class="location-picker">
         <button id="campus" class="location campus-toggle" type="button" aria-label="Mensa location: Arcisstraße" aria-haspopup="menu" aria-expanded="false" aria-controls="campus-panel"><span id="campus-label">Arcisstraße</span><span class="campus-chevron" aria-hidden="true"></span></button>
         <div id="campus-panel" class="filter-panel campus-panel" role="menu" aria-label="Mensa location" hidden>
@@ -865,7 +865,7 @@
       $('campus').setAttribute('aria-label','Mensa location: '+Campuses.get(campus).label);
       document.querySelectorAll('[data-campus]').forEach(button=>button.setAttribute('aria-checked',String(button.dataset.campus===campus)));
       $('official-menu').href=Campuses.get(campus).official;
-      document.title='Mensa Plate — '+Campuses.get(campus).label;
+      document.title='Plato — '+Campuses.get(campus).label;
       weekIndex=undefined;data=undefined;selectedDate=undefined;pendingDate=undefined;
       selectedExtras.clear();plateIndex=0;brokenKeys=new Set();$('days').hidden=true;$('notice').textContent='';
       setFilterOpen(false);$('extras-wrap').open=false;

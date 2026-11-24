@@ -1,4 +1,4 @@
-# Mensa Plate
+# Plato
 
 A static lunch picker for TUM students at **Mensa Arcisstraße and Mensa Garching**. Switch locations using the top-right campus selector. Choose Bulk, Cut or Budget, with Vegan, Vegetarian, No pork and No beef in the Diet tile. Each variant offers up to five lunches with different mains. Python computes portions, student prices, nutrition estimates and ranking; models propose plausible trays and describe the final choices.
 
@@ -135,3 +135,12 @@ cd worker && npm ci && npm test
 ```
 
 Tests mock model calls. Coverage includes parsing and source authority, immutable existing tags, repair and retry behavior, ten-day failure isolation, exact golden winners for all six variants, hand-computed equations, byte-identical reruns, six independent proposal caches, Berlin default dates, report fail-open behavior, and an actual `wrangler dev`/D1 integration test with concurrent rate limits and distinct-device votes. The existing fixture estimates remain test data, separate from production caches.
+
+## Custom domain
+
+Production uses GitHub Pages from `main`. The intended primary domain is `eatplato.de`;
+DNS at Namecheap uses four apex A records (185.199.108.153, 185.199.109.153,
+185.199.110.153, 185.199.111.153) and `www` CNAME `yagizdas.github.io`.
+The custom domain is managed in GitHub Pages settings because this repository deploys
+with Actions. The root serves production and `/staging/` serves staging.
+Plate reporting permits both domain origins as well as the existing GitHub origin.
