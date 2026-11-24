@@ -136,3 +136,38 @@ def test_proposal_validation_does_not_apply_arcis_counter_map_to_garching(config
         item['role'] = 'main'
     combo = [dish_id(item) for item in items]
     assert validate_proposals({'combos': [combo]}, items) == [sorted(combo)]
+
+
+@pytest.mark.parametrize('day,soup_name,count', [
+    (date(2026, 11, 24), 'Vegane Pastinaken-Kartoffel-Suppe', 10),
+    (date(2026, 11, 25), 'Arabische Kichererbsensuppe', 8),
+])
+def test_updated_garching_schedule_preserves_actual_soup_and_every_dish(config, day, soup_name, count):
+    html = (FIXTURES / 'garching-2026-11-25.html').read_text()
+    api = read_json(FIXTURES / 'garching-prices-updated-2026-48.json')
+    official = parse_official(html, day)
+    menu = scrape(day, garching(config), html=html, api_payload=api)
+    assert len(official) == len(menu['dishes']) == count
+    assert not menu['omitted_dishes']
+    soup = next(item for item in menu['dishes'] if item['name'] == soup_name)
+    assert soup['station'] == 'Tagessupe, Brot, Obst'
+    assert soup['is_vegan'] is True
+    assert soup['price']['source'] == 'eat-api'
+    assert not any(item['name'] == 'Tagessuppe' for item in menu['dishes'])
+    if day.day == 24:
+        assert {'Pizza Funghi mit frischen Champignons', 'Fränkische Bratwurst (1 Stück)'} <= {d['name'] for d in menu['dishes']}
+
+
+def test_garching_unnamed_soup_is_recorded_but_never_sent_for_recommendations(config):
+    html = (FIXTURES / 'garching-2026-11-25.html').read_text()
+    api = read_json(FIXTURES / 'garching-prices-updated-2026-48.json')
+    menu = scrape(date(2026, 11, 26), garching(config), html=html, api_payload=api)
+    assert len(menu['dishes']) == 8
+    assert not any(d['name'] == 'Tagessuppe' for d in menu['dishes'])
+    assert [(d['name'], d['omission_reason']) for d in menu['omitted_dishes']] == [('Tagessuppe', 'unspecified_recipe')]
+    assert any('unnamed soup' in warning for warning in menu['warnings'])
+
+
+def test_garching_source_failure_does_not_replace_full_menu_with_secondary_feed(config):
+    with pytest.raises(RuntimeError, match='Official campus menu unavailable'):
+        scrape(date(2026, 11, 24), garching(config), html='<p>Unavailable</p>', api_payload={'days': []})

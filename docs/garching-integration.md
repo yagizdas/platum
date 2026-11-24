@@ -12,7 +12,7 @@ The [operator's venue page](https://www.studierendenwerk-muenchen-oberbayern.de/
 
 The [operator's pricing page](https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/preise-und-bezahlung/) describes weight billing and fixed components. Actual student prices are taken only from unambiguous normalized-name matches in the [Garching eat-api feed](https://tum-dev.github.io/eat-api/mensa-garching/2026/48.json). That feed is secondary: it cannot introduce a dish absent from the official menu or override its dietary status. Its documented canteen identity is in the [eat-api repository](https://github.com/TUM-Dev/eat-api).
 
-For example, the inspected Garching bratwurst has a €0.50 base component. Copying the Arcisstraße meat default would be wrong. Soup rates also differ from a generic assumption, so matched feed prices are retained. If a published dish has no unique price match, it is omitted from recommendations with a visible warning. If all prices are missing, that date is unavailable, never falsely closed. One Tuesday dish in the initial batch lacks an unambiguous price match.
+For example, the inspected Garching bratwurst has a €0.50 base component. Copying the Arcisstraße meat default would be wrong. Soup rates also differ from a generic assumption, so matched feed prices are retained. If a published dish has no unique price match, it is omitted from recommendations with a visible warning and retained in `omitted_dishes` for audit. If all prices are missing, that date is unavailable, never falsely closed. One Tuesday dish lacked an unambiguous price match in the initial snapshot; the 25 November refresh has matched prices for all ten Tuesday entries.
 
 ## Explicit boundaries
 
@@ -36,3 +36,17 @@ python rescore_cached.py                       # both saved batches, no LLM
 ```
 
 Choose Garching in the header, or use `menu.html?campus=garching`. The campus is remembered independently of goal/diet preferences. Campus switches clear extras and active plate state, protect against stale responses, update the official-menu link, and never fall back to the other location. Shared links retain campus, goal, date and Vegan state under the current deployment path.
+
+## Recipe refresh and source audit — 25 November 2026
+
+The parser already read full dish titles. The weekend snapshot contained generic `Tagessuppe` entries before the operator published specific recipes, and completed batches previously skipped subsequent source fetches. A current-source audit found Tuesday's named vegan parsnip–potato soup, Wednesday's Arabic chickpea soup, and Tuesday's pizza and bratwurst absent from the saved recommendation inputs.
+
+The corrected 23–27 November batch accounts for all 42 official entries: 40 named dishes remain recommendation inputs, while the two still-unnamed Thursday/Friday soups are recorded with `omission_reason: unspecified_recipe`. Generic soup placeholders cannot enter plates or extras, even through older caches. Only the two new named recipes received new nutrition/translation estimates; existing cached estimates were unchanged. The source comparison covers names, stations, dietary markers, allergens, additives, and exact-name student-price matches. Monday was checked against its archived official snapshot because it had rolled off the current schedule. See [the source audit](garching-source-audit-2026-11-25.json).
+
+Garching refreshes its current week at 06:30 UTC on weekdays. `--refresh` bypasses a completed batch checkpoint, preserves archived dates missing from the rolling source, and regenerates proposals only when the saved menu signature changes or an earlier attempt failed. A failed refresh retains the prior signature and public batch for retry. Garching now requires the official source; a smaller secondary feed cannot replace its authoritative recipes or metadata.
+
+```sh
+python weekly_batch.py --campus garching --current-week --refresh
+```
+
+Unnamed future soups remain unavailable until their recipes are published; neither the API feed nor nutrition cache may fill in an assumed recipe.

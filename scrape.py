@@ -9,7 +9,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 from campuses import CAMPUS_IDS, campus_config, campus_data
-from common import ROOT, fetch, load_config, normalize, read_json, today, week_dates, write_json
+from common import ROOT, fetch, load_config, normalize, read_json, today, unspecified_soup, week_dates, write_json
 
 
 class MenuParseError(ValueError):
@@ -182,6 +182,8 @@ def scrape(day, config, html=None, api_payload=None, fetcher=fetch):
         official_error = exc
         dishes = None
         warnings.append("Official menu unavailable; using the smaller eat-api menu.")
+    if dishes is None and config.get('require_official'):
+        raise RuntimeError('Official campus menu unavailable; refusing to replace it with a smaller secondary feed') from official_error
     api = []
     try:
         api = api_dishes(api_payload if api_payload is not None else json.loads(fetcher(api_url)), day)
@@ -192,10 +194,18 @@ def scrape(day, config, html=None, api_payload=None, fetcher=fetch):
     if dishes is None:
         dishes = from_api(api)
     enrich_prices(dishes, api, config)
+    omitted = []
+    if config.get('exclude_unspecified_soups'):
+        unnamed = [dish for dish in dishes if unspecified_soup(dish['name'])]
+        if unnamed:
+            warnings.append(f"{len(unnamed)} unnamed soup(s) excluded from recommendations until the official recipe is published.")
+            omitted.extend({**dish, 'omission_reason': 'unspecified_recipe'} for dish in unnamed)
+            dishes = [dish for dish in dishes if not unspecified_soup(dish['name'])]
     price_unavailable = False
     if config.get('require_matched_prices'):
         unmatched = [dish for dish in dishes if dish['price']['source'] != 'eat-api']
         if unmatched:
+            omitted.extend({**dish, 'omission_reason': 'unmatched_student_price'} for dish in unmatched)
             warnings.append(f"{len(unmatched)} published dish(es) omitted: no unambiguous student price match.")
             dishes = [dish for dish in dishes if dish['price']['source'] == 'eat-api']
             price_unavailable = not dishes
@@ -204,10 +214,10 @@ def scrape(day, config, html=None, api_payload=None, fetcher=fetch):
         dish['counter_policy'] = config.get('counter_policy', 'none')
     append_standing_sides(dishes, config)
     return {"schema_version": 1, "date": day.isoformat(), "mensa": config.get("mensa", "Mensa Arcisstraße"), "campus": config.get("campus", "arcisstr"),
-            "state": "unavailable" if price_unavailable else "open" if dishes else "closed", "source": "eat-api" if official_error else "official",
+            "state": "unavailable" if price_unavailable or (omitted and not dishes) else "open" if dishes else "closed", "source": "eat-api" if official_error else "official",
             "published": bool(api) if official_error else day.strftime("%d.%m.%Y") in official_html,
             "source_url": config["official_url"], "price_source_url": api_url,
-            "fetched_at": datetime.now(timezone.utc).isoformat(), "warnings": warnings, "dishes": dishes}
+            "fetched_at": datetime.now(timezone.utc).isoformat(), "warnings": warnings, "omitted_dishes": omitted, "dishes": dishes}
 
 
 def scrape_week(day, config, html=None, api_payloads=None, fetcher=fetch, weeks=2):
