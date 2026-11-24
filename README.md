@@ -114,7 +114,7 @@ Both the landing page and the plate picker load Cloudflare Web Analytics using t
 
 Open [Cloudflare Web Analytics](https://dash.cloudflare.com/26098fbb1b3bb06b1719a1e6fb10684f/web-analytics) and select `yagizdas.github.io` to see visits, page views, referring sites, countries, browsers/devices and page performance. Cloudflare's **visits** count incoming visits, not identified unique people. One visit can include both the landing page and the picker. Counts begin after installation, and new data may take a few minutes to appear; blocked JavaScript or analytics blockers can reduce the measured counts. See [Cloudflare's metric definitions](https://developers.cloudflare.com/web-analytics/data-metrics/high-level-metrics/) and [Web Analytics overview](https://developers.cloudflare.com/web-analytics/about/).
 
-To move to a custom domain later, edit the hostname under Web Analytics → Manage site and keep the same site snippet. Also update `ALLOWED_ORIGINS` in `worker/wrangler.toml` so plate reporting accepts the new origin. Shared links derive their campus and path from the current page URL. Then redeploy the Worker and static site. See [Cloudflare's setup guide](https://developers.cloudflare.com/web-analytics/get-started/).
+To move to a custom domain later, edit the hostname under Web Analytics → Manage site and keep the same site snippet. Also update `ALLOWED_ORIGINS` in `worker/wrangler.toml` so plate reporting accepts the new origin. Then redeploy the Worker and static site. See [Cloudflare's setup guide](https://developers.cloudflare.com/web-analytics/get-started/).
 
 ## GitHub Pages and tests
 

@@ -1,19 +1,39 @@
 @font-face {
-  font-family: 'Bricolage Grotesque';
+  font-family: 'Switzer';
   font-style: normal;
-  font-weight: 400 800;
+  font-weight: 400;
   font-display: swap;
-  src: url('./assets/fonts/bricolage-grotesque-latin.woff2') format('woff2');
+  src: url('./assets/fonts/switzer-400.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Bricolage Grotesque';
+  font-family: 'Switzer';
   font-style: normal;
-  font-weight: 400 800;
+  font-weight: 500;
   font-display: swap;
-  src: url('./assets/fonts/bricolage-grotesque-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url('./assets/fonts/switzer-500.woff2') format('woff2');
 }
-:root { color-scheme: light; --ground: #f5f5f1; --ink: #25282b; --muted: #5e6266; --surface: #eaeae6; --plate: #e9eef3; --paper: #fbfbf8; --accent: #0065bd; --selected: #e0ebf5; --line: #dcdedc; --radius: 28px; --font-body:'Bricolage Grotesque',sans-serif; --font-heading:var(--font-body); --font-numbers:var(--font-heading); }
+@font-face {
+  font-family: 'Switzer';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./assets/fonts/switzer-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Switzer';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./assets/fonts/switzer-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Switzer';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('./assets/fonts/switzer-800.woff2') format('woff2');
+}
+:root { color-scheme: light; --ground: #f5f5f1; --ink: #25282b; --muted: #5e6266; --surface: #eaeae6; --plate: #e9eef3; --paper: #fbfbf8; --accent: #0065bd; --selected: #e0ebf5; --line: #dcdedc; --radius: 28px; --font-body:'Switzer',sans-serif; --font-heading:var(--font-body); --font-numbers:var(--font-heading); }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--ground); color: var(--ink); font: 400 16px/1.45 var(--font-body); -webkit-font-smoothing: antialiased; }
 button, input { font: inherit; }
@@ -336,7 +356,7 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
 .plate-summary { align-self:center; }
 .plate-actions { display:grid; grid-template-columns:1fr auto 1fr; }
 .alternatives { grid-column:2; justify-content:center; }
-#share { grid-column:3; justify-self:end; }
+
 @media (max-width:1050px) and (min-width:761px) {
   .heading { gap:24px; }
   .heading h1 { font-size:40px; }
@@ -353,7 +373,7 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
   .plate-summary { align-self:center; }
   .plate-actions { grid-template-columns:1fr auto; }
   .alternatives { grid-column:1; justify-self:start; }
-  #share { grid-column:2; }
+
 }
 /* Blend the supplied white-backed food artwork into the tray surface. */
 .plate-overview { mix-blend-mode:multiply; }
@@ -448,4 +468,33 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
   /* Long published station names and multi-item meals must not collide with actions. */
   .receipt { height:auto; min-height:570px; }
   .plate-overview { grid-template-rows:210px auto; }
+}
+
+/* The Classic meal stays the same size; alternatives rest just behind it. */
+.deck-navigation { display:flex; justify-content:center; margin:12px 0 0; }
+.deck-navigation .alternatives { justify-content:center; }
+.deck-stage { padding-top:36px; overflow:clip; }
+.meal-deck { position:relative; isolation:isolate; }
+.meal-deck > .receipt { transform-origin:50% 0; }
+.meal-deck > #plate { z-index:3; cursor:grab; }
+.meal-deck > #plate:active { cursor:grabbing; }
+.meal-deck[data-stacked='true'] > .receipt { outline:2px solid var(--ground); }
+.meal-deck > .deck-preview, .meal-deck > .deck-departing { position:absolute; inset:0; height:100%; min-height:0; margin:0; pointer-events:none; }
+.deck-preview[data-depth='1'] { z-index:2; transform:translateY(-14px) scale(.97) rotate(-.7deg); }
+.deck-preview[data-depth='2'] { z-index:1; transform:translateY(-28px) scale(.94) rotate(.7deg); }
+.meal-deck > .deck-revealed { height:500px; bottom:auto; }
+.deck-departing { z-index:4; }
+.ingredient-panel { padding-inline:0; border-radius:0; background:transparent; }
+.details-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px 24px; }
+.details-actions { display:flex; align-items:center; gap:24px; }
+.details-actions .report-button { margin:0; }
+@media(max-width:760px) {
+  .meal-deck > .deck-revealed { height:auto; min-height:570px; }
+  .details-heading { align-items:flex-start; }
+  .details-heading .ingredients-title { flex-basis:100%; }
+  .details-actions { width:100%; justify-content:space-between; gap:12px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .deck-preview[data-depth='1'] { transform:translateY(-14px) scale(.97); }
+  .deck-preview[data-depth='2'] { transform:translateY(-28px) scale(.94); }
 }
