@@ -115,3 +115,31 @@ def test_generation_is_explicit_or_scheduled_and_deployments_share_a_lock():
     assert "secrets.GEMINI_API_KEY" in definition
     assert "python weekly_batch.py" in definition
     assert "python scrape.py" not in definition
+
+
+@pytest.mark.parametrize('filename,job', [('publish.yml', 'publish'), ('daily.yml', 'deploy')])
+@pytest.mark.parametrize('becomes_visible', [True, False])
+def test_pages_deployment_waits_for_visible_artifact_metadata(tmp_path, filename, job, becomes_visible):
+    import os
+    definition = _workflow(filename)
+    steps = definition['jobs'][job]['steps']
+    wait = next(step for step in steps if step.get('name') == 'Wait for Pages artifact metadata')
+    deploy = next(step for step in steps if step.get('uses') == 'actions/deploy-pages@v4')
+    assert steps.index(wait) < steps.index(deploy)
+    assert definition['jobs'][job]['permissions']['actions'] == 'read'
+    upload = next(step for j in definition['jobs'].values() for step in j['steps']
+                  if step.get('uses') == 'actions/upload-pages-artifact@v4')
+    assert upload['with']['name'] == deploy['with']['artifact_name'] == wait['env']['PAGES_ARTIFACT_NAME']
+    bindir = tmp_path / 'bin'
+    bindir.mkdir()
+    counter = tmp_path / 'attempts'
+    # Exercise the workflow's actual shell loop without network calls or delays.
+    (bindir / 'gh').write_text('#!/usr/bin/env python3\nfrom pathlib import Path\np=Path(' + repr(str(counter)) + ')\nn=int(p.read_text())+1 if p.exists() else 1\np.write_text(str(n))\nprint(1 if ' + repr(becomes_visible) + ' and n>=3 else 0)\n')
+    (bindir / 'sleep').write_text('#!/bin/sh\nexit 0\n')
+    for command in bindir.iterdir():
+        command.chmod(0o755)
+    env = {**os.environ, 'PATH': str(bindir) + os.pathsep + os.environ['PATH'],
+           'GITHUB_REPOSITORY': 'fixture/site', 'GITHUB_RUN_ID': '123', 'PAGES_ARTIFACT_NAME': 'fixture-artifact'}
+    result = subprocess.run(['bash', '-euo', 'pipefail', '-c', wait['run']], env=env, text=True, capture_output=True)
+    assert result.returncode == (0 if becomes_visible else 1), result.stderr
+    assert int(counter.read_text()) == (3 if becomes_visible else 12)
