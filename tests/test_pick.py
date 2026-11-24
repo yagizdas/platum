@@ -406,3 +406,13 @@ def test_arcis_chicken_and_rice_are_not_blocked_by_old_counter_labels(config, ma
         assert result['counter'] is None
         assert result['counters'] == result['stations'] == []
         assert all(i['counters'] == [] for i in result['items'])
+
+
+def test_unnamed_soup_from_legacy_cache_cannot_enter_a_plate_or_extras(config, make_dish):
+    from pick import extras
+    main, main_tag = make_dish('Chicken', station='Wok', vegan=False)
+    soup, soup_tag = make_dish('Tagessuppe', role='soup', texture='liquid', kcal=200)
+    tags = {normalize(main['name']): main_tag, normalize(soup['name']): soup_tag}
+    values = list(candidates([main, soup], tags, config, proposals=[[dish_id(main), dish_id(soup)]]))
+    assert all(all(item['name'] != 'Tagessuppe' for item in p['items']) for p in values)
+    assert extras([soup], tags, config) == {'all': [], 'vegan': []}

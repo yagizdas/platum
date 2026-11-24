@@ -108,7 +108,7 @@ def test_generation_is_explicit_or_scheduled_and_deployments_share_a_lock():
     daily = _workflow("daily.yml")
     publish = _workflow("publish.yml")
     assert set(daily["on"]) == {"schedule", "workflow_dispatch"}
-    assert daily["on"]["schedule"] == [{"cron": "30 7 * * 6,0"}]
+    assert daily["on"]["schedule"] == [{"cron": "30 6 * * 1-5"}, {"cron": "30 7 * * 6,0"}]
     assert daily["concurrency"] == publish["concurrency"]
     assert daily["concurrency"]["cancel-in-progress"] == "false"
     definition = (WORKFLOWS / "daily.yml").read_text()

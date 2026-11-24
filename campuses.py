@@ -14,7 +14,8 @@ def campus_config(config, campus='arcisstr'):
     if campus == 'garching':
         result.update(official_url='https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html',
                       eat_api_url='https://tum-dev.github.io/eat-api/mensa-garching/{year}/{week:02d}.json',
-                      standing_sides=[], counter_policy='published_stations', require_matched_prices=True)
+                      standing_sides=[], counter_policy='published_stations', require_matched_prices=True,
+                      require_official=True, exclude_unspecified_soups=True)
         for goal, instruction in result['proposals']['instructions'].items():
             result['proposals']['instructions'][goal] = instruction + ' At Mensa Garching use only supplied, published components. No standing sides are assumed; station labels are menu categories, not a verified shared-counter layout.'
     return result

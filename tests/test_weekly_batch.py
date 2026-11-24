@@ -106,3 +106,39 @@ def test_explicitly_published_holiday_week_is_valid_without_model_proposals(tmp_
     assert batch_ready(tmp_path, monday)
     proposer.assert_not_called()
     assert all(row['state'] == 'closed' for row in read_json(tmp_path / 'data/week.json')['days'])
+
+
+def test_refresh_updates_only_changed_days_and_retries_a_stale_proposal_cache(tmp_path, config, fixture_menu):
+    monday, menus, proposer = batch_fixture(tmp_path, fixture_menu)
+    assert run_batch(monday, config, root=tmp_path, scraper=Mock(return_value=menus), tagger=Mock(), proposer=proposer)
+    original_public = read_json(tmp_path / 'data/week.json')
+    changed = copy.deepcopy(menus)
+    first = str(monday)
+    changed[first]['dishes'][0]['is_vegan'] = not changed[first]['dishes'][0]['is_vegan']
+    # The adapter preserving the prior cache after a failed model refresh must not
+    # allow a stale batch to be marked complete or overwrite the public batch.
+    assert not run_batch(monday, config, root=tmp_path, scraper=Mock(return_value=changed),
+                         tagger=Mock(), proposer=Mock(), refresh=True)
+    assert read_json(tmp_path / 'data/week.json') == original_public
+    proposer.reset_mock()
+    assert run_batch(monday, config, root=tmp_path, scraper=Mock(return_value=changed),
+                     tagger=Mock(), proposer=proposer, refresh=True)
+    assert all(call.kwargs['refresh'] is (call.args[0] == first) for call in proposer.call_args_list)
+    proposer.reset_mock()
+    assert run_batch(monday, config, root=tmp_path, scraper=Mock(return_value=changed),
+                     tagger=Mock(), proposer=proposer, refresh=True)
+    assert all(call.kwargs['refresh'] is False for call in proposer.call_args_list)
+
+
+def test_refresh_keeps_archived_dates_that_have_rolled_off_official_source(tmp_path, config, fixture_menu, monkeypatch):
+    import weekly_batch
+    monday, menus, proposer = batch_fixture(tmp_path, fixture_menu)
+    assert run_batch(monday, config, root=tmp_path, scraper=Mock(return_value=menus), tagger=Mock(), proposer=proposer)
+    monkeypatch.setattr(weekly_batch, 'today', lambda cfg: date(2026, 12, 2))
+    archived = read_json(tmp_path / 'data/menus' / f'{monday}.json')
+    fresh = copy.deepcopy(menus)
+    fresh[str(monday)].update(state='closed', dishes=[], published=False)
+    assert run_batch(monday, config, root=tmp_path, scraper=Mock(return_value=fresh),
+                     tagger=Mock(), proposer=proposer, refresh=True)
+    assert read_json(tmp_path / 'data/menus' / f'{monday}.json') == archived
+    assert read_json(tmp_path / 'data/days' / f'{monday}.json')['state'] == 'open'

@@ -24,6 +24,11 @@ def normalize(name):
     return re.sub(r"\W+", " ", name, flags=re.UNICODE).strip()
 
 
+def unspecified_soup(name):
+    """A category placeholder is not a recipe we can estimate or recommend."""
+    return normalize(name) in {'tagessuppe', 'tagesuppe', 'suppe des tages', 'daily soup', 'soup of the day'}
+
+
 def load_config(path=None):
     config = yaml.safe_load(Path(path or ROOT / "config.yaml").read_text())
     for settings in config.get("scoring", {}).values():

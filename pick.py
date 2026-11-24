@@ -9,7 +9,7 @@ from datetime import date
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
-from common import ROOT, dish_id, load_config, normalize, read_json, today, week_dates, write_json
+from common import ROOT, dish_id, load_config, normalize, read_json, today, unspecified_soup, week_dates, write_json
 from judge import choose_variants
 from pair import food, load_pairing
 from proposals import daily_proposals, fallback_proposals, validate_proposals
@@ -79,6 +79,8 @@ def portion_options(dish, tag, config, paired=False):
 
 
 def valid_plate(items, config, pairing=None):
+    if any(unspecified_soup(item['name']) for item in items):
+        return False
     if not 1 <= len(items) <= 3 or len({dish_id(i) for i in items}) != len(items):
         return False
     if sum(i["role"] == "soup" for i in items) > 1 or all(i["role"] == "dessert" for i in items):
@@ -192,6 +194,8 @@ def plate_result(value, goal=None, vegan=None, config=None):
 def extras(dishes, cache, config):
     all_extras = []
     for d in dishes:
+        if unspecified_soup(d["name"]):
+            continue
         item = food(d, cache)
         if (item["role"] not in {"soup", "dessert"} and item["texture"] != "liquid") or item["standing"]:
             continue
