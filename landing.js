@@ -5,6 +5,18 @@
   const orbits = [...document.querySelectorAll('[data-parallax]')];
   let frame;
 
+  // Shuffle only the meals; fixed slots keep the copy clear at every width.
+  const foods = ['pasta', 'chicken', 'rice', 'fish', 'dumplings', 'meatballs', 'pizza', 'kebabs', 'pork', 'vegetables', 'salad', 'schnitzel', 'stew'];
+  for (let i = foods.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [foods[i], foods[j]] = [foods[j], foods[i]];
+  }
+  if (globalThis.DishIcons) {
+    document.querySelectorAll('[data-random-food] .artwork').forEach((art, index) => {
+      DishIcons.apply(art, foods[index % foods.length]);
+    });
+  }
+
   // Native scrolling stays in charge. Only the decorative illustrations move.
   function moveArtwork() {
     frame = undefined;

@@ -1,3 +1,11 @@
+## Landing page update — November 2026
+
+The landing keeps the existing Colour chapters direction, Switzer, blue actions, and sculpted tray artwork. The hero now explains nutrition goals at the Mensa, with a “Try it out!” action and a quiet downward link. The intro shows eight distinct meal illustrations shuffled on each load, in responsive fixed slots that keep artwork clear of the text. Without JavaScript, the eight supplied fallback meals remain visible.
+
+“How it works” is a native inline details disclosure with a matching pale-blue panel explaining that the walkthrough is in progress. It works with keyboard input and without JavaScript; there is no browser alert or modal. The goal section emphasizes Bulk, Cut, and Budget and explicitly names vegan, vegetarian, no pork, and no beef filters. The closing keeps its food scene with “Ready to try it out?” and a direct link to today’s plate.
+
+The inspector’s decorative image bounds include the white margin cropping inside artwork containers; these intrinsic bounds can be asymmetric even when content containers share equal gutters. The intentionally oversized hero tray and asymmetrical closing scene are retained. All running text is checked independently for overflow and artwork overlap. Existing colours and the hero’s soft tray shadow remain part of the established visual direction; no video is introduced because this page uses its supplied sculpted illustrations.
+
 Mensa Plate keeps its original opening screen: the oversized compartmented tray, “Mensa Plate”, “Your lunch, sorted.”, off-white ground, TUM Blue button, Bricolage Grotesque, and existing float. Both “Your plate” buttons now link directly to `menu.html`.
 
 Below the hero, the landing page explains the daily Arcisstraße menu in three short chapters: lunch ideas with portions, student prices and estimated nutrition; Bulk, Cut, Budget and an independent Vegan option; then a final invitation to open the app. Goals are plain descriptions with the supplied objects, without selection controls. The landing makes no menu requests and reads or writes no preferences. There are no sample dishes, prices, nutrition figures, testimonials, or invented proof.

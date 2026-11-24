@@ -12,62 +12,78 @@
   <link rel="preload" href="./assets/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./icons/ui/tray.webp" as="image" fetchpriority="high">
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./landing.css">
-  <script src="./landing.js" defer></script>
+  <link rel="stylesheet" href="./landing.css?v=landing-goals-2">
+  <script src="./dish-icons.js" defer></script>
+  <script src="./landing.js?v=landing-goals-2" defer></script>
 </head>
 <body>
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <h1 id="hero-title">Plato</h1>
-        <p>Your lunch, sorted.</p>
-        <a class="cta" href="./menu.html">Your plate <span aria-hidden="true">↗</span></a>
+        <p>A simpler path to your nutrition goals at the Mensa.</p>
+        <a class="cta" href="./menu.html">Try it out!</a>
       </div>
       <div class="hero-art">
         <div class="hero-float">
           <span class="artwork art-tray" data-icon="tray"><img src="./icons/ui/tray.webp" width="1254" height="1254" alt="Illustrated canteen tray" decoding="async"></span>
         </div>
       </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll down to discover Plato">
+        <svg viewBox="0 0 24 40" width="24" height="40" fill="none" aria-hidden="true"><path d="M12 3v30M5 26l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </section>
 
     <section class="intro section" id="about" aria-labelledby="about-title">
       <div class="intro-copy">
         <h2 class="story-title" id="about-title" data-reveal="heading">Good lunch.<br>Less guesswork.</h2>
         <p class="story-copy" data-reveal="copy">Plato turns the menus at Arcisstraße and Garching into a few lunch ideas, with portions, student prices and estimated nutrition already worked out.</p>
+        <details class="how-it-works" data-reveal="action">
+          <summary>How it works <span aria-hidden="true">+</span></summary>
+          <div class="how-it-works-panel">
+            <h3>We’re working on it.</h3>
+            <p>A closer look at how Plato builds your lunch is coming soon.</p>
+          </div>
+        </details>
       </div>
-      <div class="orbit intro-pasta" data-parallax="-.035" aria-hidden="true"><div class="float-art"><span class="artwork art-pasta"><img src="./icons/ui/pasta.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
-      <div class="orbit intro-chicken" data-parallax=".045" aria-hidden="true"><div class="float-art"><span class="artwork art-chicken"><img src="./icons/ui/chicken.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
-      <div class="orbit intro-broccoli" data-parallax=".03" aria-hidden="true"><div class="float-art"><span class="artwork art-broccoli"><img src="./icons/ui/broccoli.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
-      <div class="orbit intro-rice" data-parallax="-.04" aria-hidden="true"><div class="float-art"><span class="artwork art-rice"><img src="./icons/ui/rice.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
+      <div class="orbit intro-food intro-food-1" data-parallax="-.035" aria-hidden="true"><div class="float-art" data-random-food><span class="artwork art-pasta" data-icon="pasta"><img src="./icons/ui/pasta.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
+      <div class="orbit intro-food intro-food-2" data-parallax=".045" aria-hidden="true"><div class="float-art" data-random-food><span class="artwork art-chicken" data-icon="chicken"><img src="./icons/ui/chicken.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
+      <div class="orbit intro-food intro-food-3" data-parallax=".03" aria-hidden="true"><div class="float-art" data-random-food><span class="artwork art-dumplings" data-icon="dumplings"><img src="./icons/ui/dumplings.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
+      <div class="orbit intro-food intro-food-4" data-parallax="-.04" aria-hidden="true"><div class="float-art" data-random-food><span class="artwork art-rice" data-icon="rice"><img src="./icons/ui/rice.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
+      <div class="orbit intro-food intro-food-5" data-parallax=".035" aria-hidden="true"><div class="float-art" data-random-food><span class="artwork art-meatballs" data-icon="meatballs"><img src="./icons/ui/meatballs.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
+      <div class="orbit intro-food intro-food-6" data-parallax="-.03" aria-hidden="true"><div class="float-art" data-random-food><span class="artwork art-pizza" data-icon="pizza"><img src="./icons/ui/pizza.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
+      <div class="orbit intro-food intro-food-7" data-parallax=".025" aria-hidden="true"><div class="float-art" data-random-food><span class="artwork art-pork" data-icon="pork"><img src="./icons/ui/pork.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
+      <div class="orbit intro-food intro-food-8" data-parallax="-.045" aria-hidden="true"><div class="float-art" data-random-food><span class="artwork art-salad" data-icon="salad"><img src="./icons/ui/salad.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
     </section>
 
     <section class="goals-story section" aria-labelledby="goals-title">
       <div class="goals-copy">
-        <h2 class="story-title" id="goals-title" data-reveal="heading">Your lunch.<br>Your goal.</h2>
-        <p class="story-copy" data-reveal="copy">More fuel for a busy day, a lighter lunch, or a smaller bill. There’s a plate for the way you eat.</p>
-        <p class="vegan-note" data-reveal="copy"><span class="float-art" aria-hidden="true"><span class="artwork art-leaf"><img src="./icons/ui/leaf.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></span>Vegan works with all three.</p>
+        <h2 class="story-title" id="goals-title" data-reveal="heading">Pick your goal.</h2>
+        <div class="diet-note" data-reveal="copy">
+          <span class="float-art" aria-hidden="true"><span class="artwork art-leaf"><img src="./icons/ui/leaf.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></span>
+          <p><strong>Your lunch, your way.</strong>Vegan, vegetarian, no pork or no beef. Filter any goal to suit the way you eat.</p>
+        </div>
       </div>
       <ul class="goal-notes">
         <li class="goal-note" data-reveal="row">
           <span class="goal-art float-art" aria-hidden="true"><span class="artwork art-dumbbell"><img src="./icons/ui/dumbbell.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></span>
-          <div><h3>Bulk</h3><p>More energy, with protein in mind.</p></div>
+          <div><h3>Bulk</h3><p>More energy. Plenty of protein.</p></div>
         </li>
         <li class="goal-note" data-reveal="row">
           <span class="goal-art float-art" aria-hidden="true"><span class="artwork art-tape"><img src="./icons/ui/tape.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></span>
-          <div><h3>Cut</h3><p>Protein-focused combinations for a lighter lunch.</p></div>
+          <div><h3>Cut</h3><p>A lighter plate, with protein in mind.</p></div>
         </li>
         <li class="goal-note" data-reveal="row">
           <span class="goal-art float-art" aria-hidden="true"><span class="artwork art-coins"><img src="./icons/ui/coins.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></span>
-          <div><h3>Budget</h3><p>A filling plate with a smaller bill.</p></div>
+          <div><h3>Budget</h3><p>A filling lunch for a smaller bill.</p></div>
         </li>
       </ul>
     </section>
 
     <section class="closing section" aria-labelledby="ready-title">
       <div class="closing-copy">
-        <h2 class="story-title" id="ready-title" data-reveal="heading">Know your plate.</h2>
-        <p class="story-copy" data-reveal="copy">See your scoops, student price and estimated nutrition, then take your pick from the day’s menu.</p>
-        <a class="cta" href="./menu.html" data-reveal="action">Your plate <span aria-hidden="true">↗</span></a>
+        <h2 class="story-title" id="ready-title" data-reveal="heading">Ready to try it out?</h2>
+        <a class="cta" href="./menu.html" data-reveal="action">Find today’s plate</a>
       </div>
       <div class="closing-art" aria-hidden="true">
         <div class="orbit closing-fish" data-parallax="-.025"><div class="float-art"><span class="artwork art-fish"><img src="./icons/ui/fish.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></span></div></div>
