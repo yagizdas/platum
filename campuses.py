@@ -10,7 +10,7 @@ def campus_config(config, campus='arcisstr'):
         raise ValueError(f'Unknown campus: {campus}')
     result = deepcopy(config)
     result.update(campus=campus, mensa='Mensa Arcisstraße' if campus == 'arcisstr' else 'Mensa Garching',
-                  lunch_cutoff='14:30' if campus == 'arcisstr' else '14:15')
+                  lunch_cutoff='14:30' if campus == 'arcisstr' else '14:15', counter_policy='none')
     if campus == 'garching':
         result.update(official_url='https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html',
                       eat_api_url='https://tum-dev.github.io/eat-api/mensa-garching/{year}/{week:02d}.json',

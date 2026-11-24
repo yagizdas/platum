@@ -9,7 +9,6 @@ from pathlib import Path
 from uuid import uuid4
 
 from common import ROOT, dish_id, load_config, read_json, write_json
-from counters import shared_counters
 from pair import food
 from judge import api_key_value
 from tag import generate_json
@@ -61,8 +60,6 @@ def rejection_reason(combo, by_id, vegan):
         return "standing_sides_only"
     if not any(item["role"] == "main" and not item.get("standing") for item in dishes):
         return "missing_main"
-    if not any(item.get("counter_policy") == "published_stations" for item in dishes) and not shared_counters(dishes):
-        return "no_shared_counter"
     return None
 
 
@@ -99,9 +96,7 @@ def validate_proposals(response, items, *, vegan=False, audit=None):
 def fallback_proposals(items):
     mains = sorted(dish_id(i) for i in items if i["role"] == "main" and not i.get("standing"))
     sides = sorted(dish_id(i) for i in items if i.get("standing"))
-    by_id = {dish_id(item): item for item in items}
-    pairs = [sorted(pair) for pair in itertools.product(mains, sides)
-             if shared_counters([by_id[key] for key in pair])]
+    pairs = [sorted(pair) for pair in itertools.product(mains, sides)]
     return sorted([[key] for key in mains] + pairs)
 
 

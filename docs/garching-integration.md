@@ -17,7 +17,7 @@ For example, the inspected Garching bratwurst has a €0.50 base component. Copy
 ## Explicit boundaries
 
 - No permanent rice or potato-salad sides are added to Garching: their presence was not established by the source.
-- Arcisstraße's heuristic **Warm 1&2 / Pasta / Warm 3/4 / Grill** floorplan is not applied. Garching displays the published station categories and does not enforce an unverified shared-counter intersection.
+- Garching displays the published station categories and does not enforce a shared-counter restriction. Arcisstraße has no counter assignments or pickup labels.
 - Portions and nutrition remain estimates. Exact normalized dish names share cached nutrition/translation estimates; official diet, price, station and campus data remain local to each menu.
 - Garching's source menus, proposals, response audits, titles, public dates and completion records live under `data/campuses/garching/`. The shared nutrition cache remains `data/dish_cache.json`.
 - Saturdays prepare each campus independently. Sunday skips complete campus batches and retries incomplete ones. A source failure at one campus cannot substitute the other campus's dishes.

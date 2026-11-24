@@ -21,21 +21,21 @@ def test_golden_lunches(config, fixture_menu, pairing, fixed_caps):
     result = build_today(m, tags, config, pairing=pairing, no_llm=True, proposals=read_json(FIXTURES / "proposals-v4.json"))
     expected = {
         "bulk_all": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3), ('Reis', 2)], 675, 29.4867) if fixed_caps else
-                    ([('Fleischpflanzerl (Frikadelle)', 1), ('Reis', 2)], 483, 18.3645),
+                    ([('PINSA Funghi mit frischen Champignons', 1), ('Reis', 2)], 770, 27.0205),
         "cut_all": ([('Fleischpflanzerl (Frikadelle)', 1), ('Reis', 1)], 348, -1.7821),
         "budget_all": ([('Käsekrainer (1 Stück)', 1)], 226, .1448),
         "bulk_vegan": ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 810, 34.8506) if fixed_caps else
                       ([('Asia-Reisbällchen auf Teriyakigemüse', 3), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 675, 28.0622),
-        "cut_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Asia-Reisbällchen auf Teriyakigemüse', 1)], 405, -8.245),
-        "budget_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 3)], 405, -.3964) if fixed_caps else
-                        ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Asia-Reisbällchen auf Teriyakigemüse', 1)], 405, -.9134),
+        "cut_vegan": ([('Vegane Maultaschen mit Zwiebelmarmelade', 2), ('Gemüsecurry aus Blumenkohl und Broccoli', 1)], 405, -7.0742),
+        "budget_vegan": ([('Graupen-Gemüse-Eintopf', 2), ('Vegane Maultaschen mit Zwiebelmarmelade', 2)], 369, -.3292),
     }
     for key, (items, price, score) in expected.items():
         p = result["variants"][key]["plates"][0]
         assert [(i["name"], i["count"]) for i in p["items"]] == items
         assert p["total"]["price_cents"] == price
         assert p["score"]["total"] == score
-        assert p["counter"] in set.intersection(*(set(i["counters"]) for i in p["items"]))
+        assert p["counter"] is None and p["counters"] == []
+        assert all(i["counters"] == [] for i in p["items"])
     assert result["schema_version"] == 2
     for v in result["variants"].values():
         for p in v["plates"]:
@@ -98,7 +98,7 @@ def test_invalid_single_pairs_and_pizza(config, fixture_menu, pairing):
     r = portion_options(rice, rice, config)[0]
     assert valid_plate([f], config, pairing) # proposals decide completeness, not old pair scores
     assert not valid_plate([r], config, pairing)
-    assert not valid_plate([f, p], config, pairing)  # served at different counters
+    assert valid_plate([f, p], config, pairing)  # station categories do not restrict combinations
     assert not valid_plate([f, f], config, pairing)
     assert not valid_plate([f, r, r], config, pairing)
     bad = copy.deepcopy(pairing); bad["pairs"][pair_key(f, r)]["score"] = 1
@@ -110,7 +110,7 @@ def test_invalid_single_pairs_and_pizza(config, fixture_menu, pairing):
     bad["pairs"][pair_key(r, k)] = {"score": 3}
     bad["pairs"][pair_key(f, p)] = {"score": 3}
     assert not valid_plate([r, k], config, bad) # model scores cannot create a main-less plate
-    assert not valid_plate([f, p], config, bad)  # pairing scores cannot override counter layout
+    assert valid_plate([f, p], config, bad)  # no inferred counter layout
 
 
 def test_paired_portions_ignore_minimum_but_not_max(config, make_dish):
@@ -388,3 +388,21 @@ def test_bulk_cap_applies_to_the_whole_tray(config, make_dish):
                              proposals=[[dish_id(first), dish_id(second)]]))
     assert max(plate['kcal'] for plate in values) == 1800
     assert choose(values, 'bulk', config)['kcal'] == 1500
+
+
+def test_arcis_chicken_and_rice_are_not_blocked_by_old_counter_labels(config, make_dish):
+    chicken, chicken_tag = make_dish('Zurich-style chicken', station='Wok', vegan=False, kcal=135, protein=12.5)
+    rice, rice_tag = make_dish('Rice', station='Beilagen', role='side', kcal=130, protein=2.7, max_g=300)
+    chicken['counters'] = ['Warm 3/4']
+    rice['counters'] = ['Warm 1&2']
+    dishes = [chicken, rice]
+    tags = {normalize(d['name']): t for d, t in [(chicken, chicken_tag), (rice, rice_tag)]}
+    combo = [dish_id(d) for d in dishes]
+    for proposals in [None, [combo]]:
+        values = list(candidates(dishes, tags, config, proposals=proposals))
+        winner = choose(values, 'bulk', config)
+        assert {i['name'] for i in winner['items']} == {'Zurich-style chicken', 'Rice'}
+        result = plate_result(winner)
+        assert result['counter'] is None
+        assert result['counters'] == result['stations'] == []
+        assert all(i['counters'] == [] for i in result['items'])
