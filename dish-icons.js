@@ -10,6 +10,8 @@
 
   function classify(item = {}) {
     item = item || {};
+    // Dish-specific artwork selected for Di Manzo.
+    if (/^di manzo\s*[-–—]\s*rindfleisch in balsamico$/.test(normalize(item.name).trim())) return 'meatballs';
     // A sauce or side mentioned after "with" must not override the dish itself.
     const identity = [item.name, item.name_en].map(value => normalize(value).split(/\s+(?:mit|with|auf|on|in|served)\s+/)[0]).join(' ');
     const station = normalize(item.station);
