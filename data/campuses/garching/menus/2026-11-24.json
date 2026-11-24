@@ -8,10 +8,9 @@
   "published": true,
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-garching/2026/48.json",
-  "fetched_at": "2026-11-23T10:36:32.298000+00:00",
-  "warnings": [
-    "1 published dish(es) omitted: no unambiguous student price match."
-  ],
+  "fetched_at": "2026-11-24T23:51:42.852261+00:00",
+  "warnings": [],
+  "omitted_dishes": [],
   "dishes": [
     {
       "name": "Pasta Verdura",
@@ -35,7 +34,11 @@
       "source": "official",
       "api_labels": [
         "CEREAL",
+        "CHICKEN_EGGS",
+        "GARLIC",
         "GLUTEN",
+        "LACTOSE",
+        "MILK",
         "VEGAN",
         "VEGETARIAN",
         "WHEAT"
@@ -43,6 +46,43 @@
       "price": {
         "base_eur": 0.0,
         "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Pizza Funghi mit frischen Champignons",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "BARLEY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "SOY",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 4.5,
+        "per_100g_eur": 0,
         "source": "eat-api"
       },
       "campus": "garching",
@@ -77,6 +117,44 @@
       ],
       "price": {
         "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Fränkische Bratwurst (1 Stück)",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [
+        "R",
+        "S"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [
+        "3",
+        "8"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "BEEF",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "PHOSPHATES",
+        "PORK",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.5,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       },
@@ -135,8 +213,8 @@
       ],
       "additives": [
         "1",
-        "9",
-        "Kn"
+        "Kn",
+        "9"
       ],
       "is_vegan": false,
       "is_vegetarian": true,
@@ -239,21 +317,24 @@
       "counter_policy": "published_stations"
     },
     {
-      "name": "Tagessuppe",
+      "name": "Vegane Pastinaken-Kartoffel-Suppe",
       "station": "Tagessupe, Brot, Obst",
       "station_raw": "Tagessupe, Brot, Obst",
-      "markers": [],
+      "markers": [
+        "v"
+      ],
       "allergens": [],
       "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": false,
+      "is_vegan": true,
+      "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "MEAT"
+        "VEGAN",
+        "VEGETARIAN"
       ],
       "price": {
-        "base_eur": 1.0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       },

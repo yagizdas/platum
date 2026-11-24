@@ -4,11 +4,13 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
-  "fetched_at": "2026-11-23T10:36:32.373246+00:00",
-  "warnings": [],
+  "fetched_at": "2026-11-24T23:51:42.920756+00:00",
+  "warnings": [
+    "1 unnamed soup(s) excluded from recommendations until the official recipe is published."
+  ],
   "campus": "garching",
   "schema_version": 2,
-  "menu_count": 7,
+  "menu_count": 6,
   "scoring": {
     "bulk": {
       "learned_model": {
@@ -96,16 +98,56 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pasta + Vanilla cinnamon cream",
+          "title": "Pollock fillet + Pasta + Vanilla cinnamon cream",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
+            "Fisch",
             "Pasta",
             "Dessert (Glas)"
           ],
           "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
             {
               "name": "Pasta mit Tomaten-Frischkäse-Sauce",
               "name_en": "Pasta with tomato and cream cheese sauce",
@@ -170,71 +212,65 @@
             }
           ],
           "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590.0,
-            "kcal": 841.5,
-            "protein_g": 25.57,
-            "carbs_g": 115.48,
-            "fat_g": 29.64
+            "price_cents": 816,
+            "price_eur": 8.16,
+            "weight_g": 740.0,
+            "kcal": 1029.0,
+            "protein_g": 52.57,
+            "carbs_g": 117.73,
+            "fat_g": 37.14
           },
           "score": {
-            "kcal": 15.13654161015546,
-            "protein": 4.527855176798753,
-            "price": 1.3215567708073799,
-            "total": 20.986
+            "kcal": 18.509211309387958,
+            "protein": 9.308930255937053,
+            "price": 2.03086690203168,
+            "total": 29.849
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Pollock fillet + Pancakes",
+          "title": "Parsnip and carrot casserole + Pancakes",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Fisch",
+            "Vegetarisch/fleischlos",
             "Süßspeise"
           ],
           "items": [
             {
-              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
-              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
-              "station": "Fisch",
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
               "counters": [
-                "Fisch"
+                "Vegetarisch/fleischlos"
               ],
               "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 285,
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": false,
-              "markers": [],
+              "markers": [
+                "f"
+              ],
               "allergens": [
                 "Ei",
-                "Fi",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
+                "Mi"
               ],
               "additives": [
-                "1"
+                "Kn"
               ],
               "standing": false,
-              "diet": "fish",
-              "meat_types": [
-                "fish"
-              ],
-              "id": "a1975c48e0f4e6f4",
-              "serving": "1 piece",
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 27.0
+              "kcal": 562.5,
+              "protein_g": 17.1
             },
             {
               "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
@@ -271,19 +307,19 @@
             }
           ],
           "total": {
-            "price_cents": 555,
-            "price_eur": 5.55,
-            "weight_g": 450,
-            "kcal": 712.5,
-            "protein_g": 37.5,
-            "carbs_g": 86.25,
-            "fat_g": 22.5
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1087.5,
+            "protein_g": 27.6,
+            "carbs_g": 131.25,
+            "fat_g": 47.4
           },
           "score": {
-            "kcal": 12.8161448570835,
-            "protein": 6.64038205435875,
-            "price": 1.3812881502789,
-            "total": 20.8378
+            "kcal": 19.5614842555485,
+            "protein": 4.88732119200804,
+            "price": 1.6799450476365,
+            "total": 26.1288
           },
           "has_estimated_prices": false
         }
@@ -293,16 +329,56 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pasta + Vanilla cinnamon cream",
+          "title": "Pollock fillet + Pasta + Vanilla cinnamon cream",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
+            "Fisch",
             "Pasta",
             "Dessert (Glas)"
           ],
           "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
             {
               "name": "Pasta mit Tomaten-Frischkäse-Sauce",
               "name_en": "Pasta with tomato and cream cheese sauce",
@@ -367,71 +443,65 @@
             }
           ],
           "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590.0,
-            "kcal": 841.5,
-            "protein_g": 25.57,
-            "carbs_g": 115.48,
-            "fat_g": 29.64
+            "price_cents": 816,
+            "price_eur": 8.16,
+            "weight_g": 740.0,
+            "kcal": 1029.0,
+            "protein_g": 52.57,
+            "carbs_g": 117.73,
+            "fat_g": 37.14
           },
           "score": {
-            "kcal": 15.13654161015546,
-            "protein": 4.527855176798753,
-            "price": 1.3215567708073799,
-            "total": 20.986
+            "kcal": 18.509211309387958,
+            "protein": 9.308930255937053,
+            "price": 2.03086690203168,
+            "total": 29.849
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Pollock fillet + Pancakes",
+          "title": "Parsnip and carrot casserole + Pancakes",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Fisch",
+            "Vegetarisch/fleischlos",
             "Süßspeise"
           ],
           "items": [
             {
-              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
-              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
-              "station": "Fisch",
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
               "counters": [
-                "Fisch"
+                "Vegetarisch/fleischlos"
               ],
               "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 285,
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": false,
-              "markers": [],
+              "markers": [
+                "f"
+              ],
               "allergens": [
                 "Ei",
-                "Fi",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
+                "Mi"
               ],
               "additives": [
-                "1"
+                "Kn"
               ],
               "standing": false,
-              "diet": "fish",
-              "meat_types": [
-                "fish"
-              ],
-              "id": "a1975c48e0f4e6f4",
-              "serving": "1 piece",
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 27.0
+              "kcal": 562.5,
+              "protein_g": 17.1
             },
             {
               "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
@@ -468,19 +538,19 @@
             }
           ],
           "total": {
-            "price_cents": 555,
-            "price_eur": 5.55,
-            "weight_g": 450,
-            "kcal": 712.5,
-            "protein_g": 37.5,
-            "carbs_g": 86.25,
-            "fat_g": 22.5
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1087.5,
+            "protein_g": 27.6,
+            "carbs_g": 131.25,
+            "fat_g": 47.4
           },
           "score": {
-            "kcal": 12.8161448570835,
-            "protein": 6.64038205435875,
-            "price": 1.3812881502789,
-            "total": 20.8378
+            "kcal": 19.5614842555485,
+            "protein": 4.88732119200804,
+            "price": 1.6799450476365,
+            "total": 26.1288
           },
           "has_estimated_prices": false
         }
@@ -490,16 +560,56 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pasta + Vanilla cinnamon cream",
+          "title": "Pollock fillet + Pasta + Vanilla cinnamon cream",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
+            "Fisch",
             "Pasta",
             "Dessert (Glas)"
           ],
           "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
             {
               "name": "Pasta mit Tomaten-Frischkäse-Sauce",
               "name_en": "Pasta with tomato and cream cheese sauce",
@@ -564,71 +674,65 @@
             }
           ],
           "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590.0,
-            "kcal": 841.5,
-            "protein_g": 25.57,
-            "carbs_g": 115.48,
-            "fat_g": 29.64
+            "price_cents": 816,
+            "price_eur": 8.16,
+            "weight_g": 740.0,
+            "kcal": 1029.0,
+            "protein_g": 52.57,
+            "carbs_g": 117.73,
+            "fat_g": 37.14
           },
           "score": {
-            "kcal": 15.13654161015546,
-            "protein": 4.527855176798753,
-            "price": 1.3215567708073799,
-            "total": 20.986
+            "kcal": 18.509211309387958,
+            "protein": 9.308930255937053,
+            "price": 2.03086690203168,
+            "total": 29.849
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Pollock fillet + Pancakes",
+          "title": "Parsnip and carrot casserole + Pancakes",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Fisch",
+            "Vegetarisch/fleischlos",
             "Süßspeise"
           ],
           "items": [
             {
-              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
-              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
-              "station": "Fisch",
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
               "counters": [
-                "Fisch"
+                "Vegetarisch/fleischlos"
               ],
               "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 285,
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": false,
-              "markers": [],
+              "markers": [
+                "f"
+              ],
               "allergens": [
                 "Ei",
-                "Fi",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
+                "Mi"
               ],
               "additives": [
-                "1"
+                "Kn"
               ],
               "standing": false,
-              "diet": "fish",
-              "meat_types": [
-                "fish"
-              ],
-              "id": "a1975c48e0f4e6f4",
-              "serving": "1 piece",
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 27.0
+              "kcal": 562.5,
+              "protein_g": 17.1
             },
             {
               "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
@@ -665,19 +769,19 @@
             }
           ],
           "total": {
-            "price_cents": 555,
-            "price_eur": 5.55,
-            "weight_g": 450,
-            "kcal": 712.5,
-            "protein_g": 37.5,
-            "carbs_g": 86.25,
-            "fat_g": 22.5
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1087.5,
+            "protein_g": 27.6,
+            "carbs_g": 131.25,
+            "fat_g": 47.4
           },
           "score": {
-            "kcal": 12.8161448570835,
-            "protein": 6.64038205435875,
-            "price": 1.3812881502789,
-            "total": 20.8378
+            "kcal": 19.5614842555485,
+            "protein": 4.88732119200804,
+            "price": 1.6799450476365,
+            "total": 26.1288
           },
           "has_estimated_prices": false
         }
@@ -687,14 +791,14 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pasta + Vanilla cinnamon cream",
+          "title": "Pasta + Pancakes",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Pasta",
-            "Dessert (Glas)"
+            "Süßspeise"
           ],
           "items": [
             {
@@ -730,50 +834,148 @@
               "protein_g": 20.25
             },
             {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
+              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
+              "name_en": "Pancakes with cherry filling and vanilla sauce",
+              "station": "Süßspeise",
               "counters": [
-                "Dessert (Glas)"
+                "Süßspeise"
               ],
               "role": "dessert",
               "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
                 "Mi"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
+              "id": "7288cf290dd775fb",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
+              "kcal": 525.0,
+              "protein_g": 10.5
             }
           ],
           "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590.0,
-            "kcal": 841.5,
-            "protein_g": 25.57,
-            "carbs_g": 115.48,
-            "fat_g": 29.64
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1177.5,
+            "protein_g": 30.75,
+            "carbs_g": 174.0,
+            "fat_g": 37.5
           },
           "score": {
-            "kcal": 15.13654161015546,
-            "protein": 4.527855176798753,
-            "price": 1.3215567708073799,
-            "total": 20.986
+            "kcal": 21.180365711180098,
+            "protein": 5.445113284574175,
+            "price": 1.6799450476365,
+            "total": 28.3054
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Pancakes",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Süßspeise"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
+              "name_en": "Pancakes with cherry filling and vanilla sauce",
+              "station": "Süßspeise",
+              "counters": [
+                "Süßspeise"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "7288cf290dd775fb",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 525.0,
+              "protein_g": 10.5
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1087.5,
+            "protein_g": 27.6,
+            "carbs_g": 131.25,
+            "fat_g": 47.4
+          },
+          "score": {
+            "kcal": 19.5614842555485,
+            "protein": 4.88732119200804,
+            "price": 1.6799450476365,
+            "total": 26.1288
           },
           "has_estimated_prices": false
         }
@@ -783,14 +985,14 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pollock fillet + Vanilla cinnamon cream",
+          "title": "Pollock fillet + Potato goulash",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fisch",
-            "Dessert (Glas)"
+            "Studitopf"
           ],
           "items": [
             {
@@ -833,50 +1035,48 @@
               "protein_g": 27.0
             },
             {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
+              "name": "Kartoffelgulasch mit Paprika",
+              "name_en": "Potato goulash with bell peppers",
+              "station": "Studitopf",
               "counters": [
-                "Dessert (Glas)"
+                "Studitopf"
               ],
-              "role": "dessert",
+              "role": "main",
               "texture": "saucy",
               "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 50,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
-              "allergens": [
-                "Mi"
-              ],
+              "allergens": [],
               "additives": [],
               "standing": false,
-              "diet": "vegetarian",
+              "diet": "vegan",
               "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
+              "id": "cc6103f60ba7fd10",
+              "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
+              "kcal": 127.5,
+              "protein_g": 3.3
             }
           ],
           "total": {
-            "price_cents": 411,
-            "price_eur": 4.11,
-            "weight_g": 290.0,
-            "kcal": 376.5,
-            "protein_g": 32.32,
-            "carbs_g": 27.73,
-            "fat_g": 14.64
+            "price_cents": 335,
+            "price_eur": 3.35,
+            "weight_g": 300,
+            "kcal": 315.0,
+            "protein_g": 30.3,
+            "carbs_g": 21.0,
+            "fat_g": 11.7
           },
           "score": {
-            "kcal": -7.61633415648531,
-            "protein": 10.661864211987073,
-            "price": 0.052903825363140006,
-            "total": 3.0984
+            "kcal": -6.3722317643901,
+            "protein": 9.99549769873788,
+            "price": 0.043121122862900006,
+            "total": 3.6664
           },
           "has_estimated_prices": false
         },
@@ -1038,14 +1238,14 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pollock fillet + Vanilla cinnamon cream",
+          "title": "Pollock fillet + Potato goulash",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fisch",
-            "Dessert (Glas)"
+            "Studitopf"
           ],
           "items": [
             {
@@ -1088,50 +1288,48 @@
               "protein_g": 27.0
             },
             {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
+              "name": "Kartoffelgulasch mit Paprika",
+              "name_en": "Potato goulash with bell peppers",
+              "station": "Studitopf",
               "counters": [
-                "Dessert (Glas)"
+                "Studitopf"
               ],
-              "role": "dessert",
+              "role": "main",
               "texture": "saucy",
               "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 50,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
-              "allergens": [
-                "Mi"
-              ],
+              "allergens": [],
               "additives": [],
               "standing": false,
-              "diet": "vegetarian",
+              "diet": "vegan",
               "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
+              "id": "cc6103f60ba7fd10",
+              "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
+              "kcal": 127.5,
+              "protein_g": 3.3
             }
           ],
           "total": {
-            "price_cents": 411,
-            "price_eur": 4.11,
-            "weight_g": 290.0,
-            "kcal": 376.5,
-            "protein_g": 32.32,
-            "carbs_g": 27.73,
-            "fat_g": 14.64
+            "price_cents": 335,
+            "price_eur": 3.35,
+            "weight_g": 300,
+            "kcal": 315.0,
+            "protein_g": 30.3,
+            "carbs_g": 21.0,
+            "fat_g": 11.7
           },
           "score": {
-            "kcal": -7.61633415648531,
-            "protein": 10.661864211987073,
-            "price": 0.052903825363140006,
-            "total": 3.0984
+            "kcal": -6.3722317643901,
+            "protein": 9.99549769873788,
+            "price": 0.043121122862900006,
+            "total": 3.6664
           },
           "has_estimated_prices": false
         },
@@ -1293,14 +1491,14 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pollock fillet + Vanilla cinnamon cream",
+          "title": "Pollock fillet + Potato goulash",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fisch",
-            "Dessert (Glas)"
+            "Studitopf"
           ],
           "items": [
             {
@@ -1343,50 +1541,48 @@
               "protein_g": 27.0
             },
             {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
+              "name": "Kartoffelgulasch mit Paprika",
+              "name_en": "Potato goulash with bell peppers",
+              "station": "Studitopf",
               "counters": [
-                "Dessert (Glas)"
+                "Studitopf"
               ],
-              "role": "dessert",
+              "role": "main",
               "texture": "saucy",
               "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 50,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
-              "allergens": [
-                "Mi"
-              ],
+              "allergens": [],
               "additives": [],
               "standing": false,
-              "diet": "vegetarian",
+              "diet": "vegan",
               "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
+              "id": "cc6103f60ba7fd10",
+              "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
+              "kcal": 127.5,
+              "protein_g": 3.3
             }
           ],
           "total": {
-            "price_cents": 411,
-            "price_eur": 4.11,
-            "weight_g": 290.0,
-            "kcal": 376.5,
-            "protein_g": 32.32,
-            "carbs_g": 27.73,
-            "fat_g": 14.64
+            "price_cents": 335,
+            "price_eur": 3.35,
+            "weight_g": 300,
+            "kcal": 315.0,
+            "protein_g": 30.3,
+            "carbs_g": 21.0,
+            "fat_g": 11.7
           },
           "score": {
-            "kcal": -7.61633415648531,
-            "protein": 10.661864211987073,
-            "price": 0.052903825363140006,
-            "total": 3.0984
+            "kcal": -6.3722317643901,
+            "protein": 9.99549769873788,
+            "price": 0.043121122862900006,
+            "total": 3.6664
           },
           "has_estimated_prices": false
         },
@@ -1705,6 +1901,102 @@
       "state": "ready",
       "plates": [
         {
+          "title": "Pollock fillet + Potato goulash",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Studitopf"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Kartoffelgulasch mit Paprika",
+              "name_en": "Potato goulash with bell peppers",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "cc6103f60ba7fd10",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 9.9
+            }
+          ],
+          "total": {
+            "price_cents": 434,
+            "price_eur": 4.34,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 36.9,
+            "carbs_g": 58.5,
+            "fat_g": 20.1
+          },
+          "score": {
+            "kcal": 2.0137850036133,
+            "protein": 2.69514998271774,
+            "price": -5.513787701281579,
+            "total": -0.8049
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
@@ -1761,104 +2053,6 @@
             "protein": 1.47904572222315,
             "price": -5.14535488253235,
             "total": -1.3611
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pollock fillet + Vanilla cinnamon cream",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Fisch",
-            "Dessert (Glas)"
-          ],
-          "items": [
-            {
-              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
-              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
-              "station": "Fisch",
-              "counters": [
-                "Fisch"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 285,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Ei",
-                "Fi",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1"
-              ],
-              "standing": false,
-              "diet": "fish",
-              "meat_types": [
-                "fish"
-              ],
-              "id": "a1975c48e0f4e6f4",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 27.0
-            },
-            {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
-            }
-          ],
-          "total": {
-            "price_cents": 411,
-            "price_eur": 4.11,
-            "weight_g": 290.0,
-            "kcal": 376.5,
-            "protein_g": 32.32,
-            "carbs_g": 27.73,
-            "fat_g": 14.64
-          },
-          "score": {
-            "kcal": 1.330157989228785,
-            "protein": 2.360630011963072,
-            "price": -5.22158236227357,
-            "total": -1.5308
           },
           "has_estimated_prices": false
         },
@@ -1960,6 +2154,102 @@
       "state": "ready",
       "plates": [
         {
+          "title": "Pollock fillet + Potato goulash",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Studitopf"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Kartoffelgulasch mit Paprika",
+              "name_en": "Potato goulash with bell peppers",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "cc6103f60ba7fd10",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 9.9
+            }
+          ],
+          "total": {
+            "price_cents": 434,
+            "price_eur": 4.34,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 36.9,
+            "carbs_g": 58.5,
+            "fat_g": 20.1
+          },
+          "score": {
+            "kcal": 2.0137850036133,
+            "protein": 2.69514998271774,
+            "price": -5.513787701281579,
+            "total": -0.8049
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
@@ -2016,104 +2306,6 @@
             "protein": 1.47904572222315,
             "price": -5.14535488253235,
             "total": -1.3611
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pollock fillet + Vanilla cinnamon cream",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Fisch",
-            "Dessert (Glas)"
-          ],
-          "items": [
-            {
-              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
-              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
-              "station": "Fisch",
-              "counters": [
-                "Fisch"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 285,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Ei",
-                "Fi",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1"
-              ],
-              "standing": false,
-              "diet": "fish",
-              "meat_types": [
-                "fish"
-              ],
-              "id": "a1975c48e0f4e6f4",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 27.0
-            },
-            {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
-            }
-          ],
-          "total": {
-            "price_cents": 411,
-            "price_eur": 4.11,
-            "weight_g": 290.0,
-            "kcal": 376.5,
-            "protein_g": 32.32,
-            "carbs_g": 27.73,
-            "fat_g": 14.64
-          },
-          "score": {
-            "kcal": 1.330157989228785,
-            "protein": 2.360630011963072,
-            "price": -5.22158236227357,
-            "total": -1.5308
           },
           "has_estimated_prices": false
         },
@@ -2215,6 +2407,102 @@
       "state": "ready",
       "plates": [
         {
+          "title": "Pollock fillet + Potato goulash",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Studitopf"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Kartoffelgulasch mit Paprika",
+              "name_en": "Potato goulash with bell peppers",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "cc6103f60ba7fd10",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 9.9
+            }
+          ],
+          "total": {
+            "price_cents": 434,
+            "price_eur": 4.34,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 36.9,
+            "carbs_g": 58.5,
+            "fat_g": 20.1
+          },
+          "score": {
+            "kcal": 2.0137850036133,
+            "protein": 2.69514998271774,
+            "price": -5.513787701281579,
+            "total": -0.8049
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
@@ -2271,104 +2559,6 @@
             "protein": 1.47904572222315,
             "price": -5.14535488253235,
             "total": -1.3611
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pollock fillet + Vanilla cinnamon cream",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Fisch",
-            "Dessert (Glas)"
-          ],
-          "items": [
-            {
-              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
-              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
-              "station": "Fisch",
-              "counters": [
-                "Fisch"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 285,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Ei",
-                "Fi",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1"
-              ],
-              "standing": false,
-              "diet": "fish",
-              "meat_types": [
-                "fish"
-              ],
-              "id": "a1975c48e0f4e6f4",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 27.0
-            },
-            {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
-            }
-          ],
-          "total": {
-            "price_cents": 411,
-            "price_eur": 4.11,
-            "weight_g": 290.0,
-            "kcal": 376.5,
-            "protein_g": 32.32,
-            "carbs_g": 27.73,
-            "fat_g": 14.64
-          },
-          "score": {
-            "kcal": 1.330157989228785,
-            "protein": 2.360630011963072,
-            "price": -5.22158236227357,
-            "total": -1.5308
           },
           "has_estimated_prices": false
         },
@@ -2633,17 +2823,56 @@
       "note": null,
       "plates": [
         {
-          "title": "Pasta + Vanilla cinnamon cream + Soup of the day",
+          "title": "Pollock fillet + Pasta + Vanilla cinnamon cream",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
+            "Fisch",
             "Pasta",
-            "Dessert (Glas)",
-            "Tagessupe, Brot, Obst"
+            "Dessert (Glas)"
           ],
           "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
             {
               "name": "Pasta mit Tomaten-Frischkäse-Sauce",
               "name_en": "Pasta with tomato and cream cheese sauce",
@@ -2705,102 +2934,68 @@
               "price_source": "eat-api",
               "kcal": 189.0,
               "protein_g": 5.32
-            },
-            {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
-              "station": "Tagessupe, Brot, Obst",
-              "counters": [
-                "Tagessupe, Brot, Obst"
-              ],
-              "role": "soup",
-              "texture": "liquid",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 235,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
-              ],
-              "id": "2a7cca8862da876a",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 72.0,
-              "protein_g": 2.7
             }
           ],
           "total": {
-            "price_cents": 766,
-            "price_eur": 7.66,
+            "price_cents": 816,
+            "price_eur": 8.16,
             "weight_g": 740.0,
-            "kcal": 913.5,
-            "protein_g": 28.27,
-            "carbs_g": 124.78,
-            "fat_g": 32.04
+            "kcal": 1029.0,
+            "protein_g": 52.57,
+            "carbs_g": 117.73,
+            "fat_g": 37.14
           },
           "score": {
-            "kcal": 16.431646774660738,
-            "protein": 5.005962684712584,
-            "price": 1.9064265281326802,
-            "total": 23.344
+            "kcal": 18.509211309387958,
+            "protein": 9.308930255937053,
+            "price": 2.03086690203168,
+            "total": 29.849
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Pollock fillet + Pancakes",
+          "title": "Parsnip and carrot casserole + Pancakes",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Fisch",
+            "Vegetarisch/fleischlos",
             "Süßspeise"
           ],
           "items": [
             {
-              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
-              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
-              "station": "Fisch",
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
               "counters": [
-                "Fisch"
+                "Vegetarisch/fleischlos"
               ],
               "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 285,
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
               "is_vegan": false,
-              "markers": [],
+              "markers": [
+                "f"
+              ],
               "allergens": [
                 "Ei",
-                "Fi",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
+                "Mi"
               ],
               "additives": [
-                "1"
+                "Kn"
               ],
               "standing": false,
-              "diet": "fish",
-              "meat_types": [
-                "fish"
-              ],
-              "id": "a1975c48e0f4e6f4",
-              "serving": "1 piece",
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 27.0
+              "kcal": 562.5,
+              "protein_g": 17.1
             },
             {
               "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
@@ -2837,19 +3032,19 @@
             }
           ],
           "total": {
-            "price_cents": 555,
-            "price_eur": 5.55,
-            "weight_g": 450,
-            "kcal": 712.5,
-            "protein_g": 37.5,
-            "carbs_g": 86.25,
-            "fat_g": 22.5
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1087.5,
+            "protein_g": 27.6,
+            "carbs_g": 131.25,
+            "fat_g": 47.4
           },
           "score": {
-            "kcal": 12.8161448570835,
-            "protein": 6.64038205435875,
-            "price": 1.3812881502789,
-            "total": 20.8378
+            "kcal": 19.5614842555485,
+            "protein": 4.88732119200804,
+            "price": 1.6799450476365,
+            "total": 26.1288
           },
           "has_estimated_prices": false
         }
@@ -2863,14 +3058,14 @@
       "note": null,
       "plates": [
         {
-          "title": "Pollock fillet + Soup of the day",
+          "title": "Pollock fillet + Potato goulash",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fisch",
-            "Tagessupe, Brot, Obst"
+            "Studitopf"
           ],
           "items": [
             {
@@ -2913,48 +3108,48 @@
               "protein_g": 27.0
             },
             {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
-              "station": "Tagessupe, Brot, Obst",
+              "name": "Kartoffelgulasch mit Paprika",
+              "name_en": "Potato goulash with bell peppers",
+              "station": "Studitopf",
               "counters": [
-                "Tagessupe, Brot, Obst"
+                "Studitopf"
               ],
-              "role": "soup",
-              "texture": "liquid",
-              "count": 2,
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
+              "weight_g": 150,
+              "price_cents": 50,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
               "allergens": [],
               "additives": [],
               "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
-              ],
-              "id": "2a7cca8862da876a",
-              "serving": "2 scoops",
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "cc6103f60ba7fd10",
+              "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 144.0,
-              "protein_g": 5.4
+              "kcal": 127.5,
+              "protein_g": 3.3
             }
           ],
           "total": {
-            "price_cents": 655,
-            "price_eur": 6.55,
-            "weight_g": 450,
-            "kcal": 331.5,
-            "protein_g": 32.4,
-            "carbs_g": 20.85,
-            "fat_g": 12.3
+            "price_cents": 335,
+            "price_eur": 3.35,
+            "weight_g": 300,
+            "kcal": 315.0,
+            "protein_g": 30.3,
+            "carbs_g": 21.0,
+            "fat_g": 11.7
           },
           "score": {
-            "kcal": -6.70601533300101,
-            "protein": 10.68825496498704,
-            "price": 0.0843114491797,
-            "total": 4.0666
+            "kcal": -6.3722317643901,
+            "protein": 9.99549769873788,
+            "price": 0.043121122862900006,
+            "total": 3.6664
           },
           "has_estimated_prices": false
         },
@@ -3019,14 +3214,14 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Parsnip and carrot casserole + Soup of the day",
+          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Vegetarisch/fleischlos",
-            "Tagessupe, Brot, Obst"
+            "Dessert (Glas)"
           ],
           "items": [
             {
@@ -3063,48 +3258,50 @@
               "protein_g": 17.1
             },
             {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
-              "station": "Tagessupe, Brot, Obst",
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
               "counters": [
-                "Tagessupe, Brot, Obst"
+                "Dessert (Glas)"
               ],
-              "role": "soup",
-              "texture": "liquid",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
               "is_vegan": false,
-              "markers": [],
-              "allergens": [],
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
               "additives": [],
               "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
-              ],
-              "id": "2a7cca8862da876a",
-              "serving": "2 scoops",
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 144.0,
-              "protein_g": 5.4
+              "kcal": 189.0,
+              "protein_g": 5.32
             }
           ],
           "total": {
-            "price_cents": 775,
-            "price_eur": 7.75,
-            "weight_g": 750,
-            "kcal": 706.5,
-            "protein_g": 22.5,
-            "carbs_g": 65.85,
-            "fat_g": 37.2
+            "price_cents": 531,
+            "price_eur": 5.31,
+            "weight_g": 590.0,
+            "kcal": 751.5,
+            "protein_g": 22.42,
+            "carbs_g": 72.73,
+            "fat_g": 39.54
           },
           "score": {
-            "kcal": -14.292005528703509,
-            "protein": 7.422399281241001,
-            "price": 0.0997578215485,
-            "total": -6.7698
+            "kcal": -15.202324352187809,
+            "protein": 7.396008528241033,
+            "price": 0.06835019773194,
+            "total": -7.738
           },
           "has_estimated_prices": false
         }
@@ -3117,6 +3314,102 @@
       "relaxed": false,
       "note": null,
       "plates": [
+        {
+          "title": "Pollock fillet + Potato goulash",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Studitopf"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Kartoffelgulasch mit Paprika",
+              "name_en": "Potato goulash with bell peppers",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "cc6103f60ba7fd10",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 9.9
+            }
+          ],
+          "total": {
+            "price_cents": 434,
+            "price_eur": 4.34,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 36.9,
+            "carbs_g": 58.5,
+            "fat_g": 20.1
+          },
+          "score": {
+            "kcal": 2.0137850036133,
+            "protein": 2.69514998271774,
+            "price": -5.513787701281579,
+            "total": -0.8049
+          },
+          "has_estimated_prices": false
+        },
         {
           "title": "Pasta",
           "reason": null,
@@ -3174,104 +3467,6 @@
             "protein": 1.47904572222315,
             "price": -5.14535488253235,
             "total": -1.3611
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pollock fillet + Vanilla cinnamon cream",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Fisch",
-            "Dessert (Glas)"
-          ],
-          "items": [
-            {
-              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
-              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
-              "station": "Fisch",
-              "counters": [
-                "Fisch"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 285,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Ei",
-                "Fi",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1"
-              ],
-              "standing": false,
-              "diet": "fish",
-              "meat_types": [
-                "fish"
-              ],
-              "id": "a1975c48e0f4e6f4",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 27.0
-            },
-            {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
-            }
-          ],
-          "total": {
-            "price_cents": 411,
-            "price_eur": 4.11,
-            "weight_g": 290.0,
-            "kcal": 376.5,
-            "protein_g": 32.32,
-            "carbs_g": 27.73,
-            "fat_g": 14.64
-          },
-          "score": {
-            "kcal": 1.330157989228785,
-            "protein": 2.360630011963072,
-            "price": -5.22158236227357,
-            "total": -1.5308
           },
           "has_estimated_prices": false
         },
@@ -3366,122 +3561,6 @@
             "total": -2.4536
           },
           "has_estimated_prices": false
-        },
-        {
-          "title": "Potato goulash + Vanilla cinnamon cream + Soup of the day",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Studitopf",
-            "Dessert (Glas)",
-            "Tagessupe, Brot, Obst"
-          ],
-          "items": [
-            {
-              "name": "Kartoffelgulasch mit Paprika",
-              "name_en": "Potato goulash with bell peppers",
-              "station": "Studitopf",
-              "counters": [
-                "Studitopf"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "cc6103f60ba7fd10",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 382.5,
-              "protein_g": 9.9
-            },
-            {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
-            },
-            {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
-              "station": "Tagessupe, Brot, Obst",
-              "counters": [
-                "Tagessupe, Brot, Obst"
-              ],
-              "role": "soup",
-              "texture": "liquid",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
-              ],
-              "id": "2a7cca8862da876a",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 144.0,
-              "protein_g": 5.4
-            }
-          ],
-          "total": {
-            "price_cents": 645,
-            "price_eur": 6.45,
-            "weight_g": 890.0,
-            "kcal": 715.5,
-            "protein_g": 20.62,
-            "carbs_g": 100.33,
-            "fat_g": 24.54
-          },
-          "score": {
-            "kcal": 2.527830122956695,
-            "protein": 1.506070261345252,
-            "price": -8.19445407218115,
-            "total": -4.1606
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -3527,22 +3606,6 @@
         "serving": "2 scoops",
         "kcal": 525.0,
         "protein_g": 10.5,
-        "price_source": "eat-api"
-      },
-      {
-        "name": "Tagessuppe",
-        "name_en": "Soup of the day",
-        "station": "Tagessupe, Brot, Obst",
-        "weight_g": 300,
-        "price_cents": 370,
-        "is_vegan": false,
-        "diet": "meat",
-        "meat_types": [
-          "unknown"
-        ],
-        "serving": "2 scoops",
-        "kcal": 144.0,
-        "protein_g": 5.4,
         "price_source": "eat-api"
       },
       {

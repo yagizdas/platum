@@ -4,11 +4,13 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
-  "fetched_at": "2026-11-23T10:36:32.349616+00:00",
-  "warnings": [],
+  "fetched_at": "2026-11-24T23:51:42.898818+00:00",
+  "warnings": [
+    "1 unnamed soup(s) excluded from recommendations until the official recipe is published."
+  ],
   "campus": "garching",
   "schema_version": 2,
-  "menu_count": 9,
+  "menu_count": 8,
   "scoring": {
     "bulk": {
       "learned_model": {
@@ -381,6 +383,95 @@
             "total": 20.7358
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Green pea stew + Chocolate pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Schokopudding mit Vanillesauce",
+              "name_en": "Chocolate pudding with vanilla sauce",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150.0,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "d25a6d2a7a3f51f1",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 4.5
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600.0,
+            "kcal": 615.0,
+            "protein_g": 27.0,
+            "carbs_g": 81.75,
+            "fat_g": 17.85
+          },
+          "score": {
+            "kcal": 11.0623566134826,
+            "protein": 4.7810750791383,
+            "price": 0.70682132374632,
+            "total": 16.5503
+          },
+          "has_estimated_prices": false
         }
       ]
     },
@@ -477,6 +568,95 @@
             "protein": 8.94238116653645,
             "price": 1.5803927485173,
             "total": 30.0843
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Green pea stew + Chocolate pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Schokopudding mit Vanillesauce",
+              "name_en": "Chocolate pudding with vanilla sauce",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150.0,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "d25a6d2a7a3f51f1",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 4.5
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600.0,
+            "kcal": 615.0,
+            "protein_g": 27.0,
+            "carbs_g": 81.75,
+            "fat_g": 17.85
+          },
+          "score": {
+            "kcal": 11.0623566134826,
+            "protein": 4.7810750791383,
+            "price": 0.70682132374632,
+            "total": 16.5503
           },
           "has_estimated_prices": false
         }
@@ -577,12 +757,191 @@
             "total": 30.0843
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Green pea stew + Chocolate pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Schokopudding mit Vanillesauce",
+              "name_en": "Chocolate pudding with vanilla sauce",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150.0,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "d25a6d2a7a3f51f1",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 4.5
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600.0,
+            "kcal": 615.0,
+            "protein_g": 27.0,
+            "carbs_g": 81.75,
+            "fat_g": 17.85
+          },
+          "score": {
+            "kcal": 11.0623566134826,
+            "protein": 4.7810750791383,
+            "price": 0.70682132374632,
+            "total": 16.5503
+          },
+          "has_estimated_prices": false
         }
       ]
     },
     "bulk_vegetarian": {
-      "state": "unavailable",
-      "plates": []
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Green pea stew + Chocolate pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Schokopudding mit Vanillesauce",
+              "name_en": "Chocolate pudding with vanilla sauce",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150.0,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "d25a6d2a7a3f51f1",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 4.5
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600.0,
+            "kcal": 615.0,
+            "protein_g": 27.0,
+            "carbs_g": 81.75,
+            "fat_g": 17.85
+          },
+          "score": {
+            "kcal": 11.0623566134826,
+            "protein": 4.7810750791383,
+            "price": 0.70682132374632,
+            "total": 16.5503
+          },
+          "has_estimated_prices": false
+        }
+      ]
     },
     "cut_no_pork": {
       "state": "ready",
@@ -2909,15 +3268,14 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Greek-style baked minced meat steak + Chocolate pudding + Soup of the day",
+          "title": "Greek-style baked minced meat steak + Chocolate pudding",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Grill",
-            "Dessert (Glas)",
-            "Tagessupe, Brot, Obst"
+            "Dessert (Glas)"
           ],
           "items": [
             {
@@ -2988,50 +3346,111 @@
               "price_source": "eat-api",
               "kcal": 187.5,
               "protein_g": 4.5
-            },
-            {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
-              "station": "Tagessupe, Brot, Obst",
-              "counters": [
-                "Tagessupe, Brot, Obst"
-              ],
-              "role": "soup",
-              "texture": "liquid",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
-              ],
-              "id": "2a7cca8862da876a",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 144.0,
-              "protein_g": 5.4
             }
           ],
           "total": {
-            "price_cents": 821,
-            "price_eur": 8.21,
-            "weight_g": 690.0,
-            "kcal": 847.5,
-            "protein_g": 44.7,
-            "carbs_g": 59.4,
-            "fat_g": 47.25
+            "price_cents": 451,
+            "price_eur": 4.51,
+            "weight_g": 390.0,
+            "kcal": 703.5,
+            "protein_g": 39.3,
+            "carbs_g": 40.8,
+            "fat_g": 42.45
           },
           "score": {
-            "kcal": 15.2444670405309,
-            "protein": 7.91533540879563,
-            "price": 2.0433109394215805,
-            "total": 25.2031
+            "kcal": 12.65425671152034,
+            "protein": 6.95912039296797,
+            "price": 1.12245217256898,
+            "total": 20.7358
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Green pea stew + Chocolate pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)"
+          ],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Schokopudding mit Vanillesauce",
+              "name_en": "Chocolate pudding with vanilla sauce",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150.0,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "d25a6d2a7a3f51f1",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 4.5
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600.0,
+            "kcal": 615.0,
+            "protein_g": 27.0,
+            "carbs_g": 81.75,
+            "fat_g": 17.85
+          },
+          "score": {
+            "kcal": 11.0623566134826,
+            "protein": 4.7810750791383,
+            "price": 0.70682132374632,
+            "total": 16.5503
           },
           "has_estimated_prices": false
         }
@@ -3963,22 +4382,6 @@
   },
   "extras": {
     "all": [
-      {
-        "name": "Tagessuppe",
-        "name_en": "Soup of the day",
-        "station": "Tagessupe, Brot, Obst",
-        "weight_g": 300,
-        "price_cents": 370,
-        "is_vegan": false,
-        "diet": "meat",
-        "meat_types": [
-          "unknown"
-        ],
-        "serving": "2 scoops",
-        "kcal": 144.0,
-        "protein_g": 5.4,
-        "price_source": "eat-api"
-      },
       {
         "name": "Schokopudding mit Vanillesauce",
         "name_en": "Chocolate pudding with vanilla sauce",
