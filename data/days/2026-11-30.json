@@ -93,29 +93,233 @@
   "nutrition_note": "Nutrition values are estimates.",
   "filtered_variants": {
     "bulk_no_pork": {
-      "state": "unavailable",
-      "plates": []
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Grilled beef sausage + Coconut curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Rindsbratwurst vom Grill (1 Stück)",
+              "name_en": "Grilled beef sausage (1 piece)",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 120,
+              "price_cents": 158,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "435612acd192dcfa",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 318.0,
+              "protein_g": 17.4
+            },
+            {
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 833,
+            "price_eur": 8.33,
+            "weight_g": 870,
+            "kcal": 1315.5,
+            "protein_g": 50.25,
+            "carbs_g": 121.44,
+            "fat_g": 68.76
+          },
+          "score": {
+            "kcal": 23.66265060981522,
+            "protein": 8.898111952840726,
+            "price": 2.07317662915734,
+            "total": 34.6339
+          },
+          "has_estimated_prices": true
+        }
+      ]
     },
     "bulk_no_beef": {
       "state": "ready",
       "plates": [
         {
+          "title": "Coconut curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 32.85,
+            "carbs_g": 120.0,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 5.816974679618266,
+            "price": 1.6799450476365,
+            "total": 25.4395
+          },
+          "has_estimated_prices": true
+        },
+        {
           "title": "Pork cordon bleu + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
               "name_en": "Pork cordon bleu (1 piece) (with reconstituted ham)",
               "station": "Fleisch",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "dry",
               "count": 1,
@@ -151,9 +355,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -196,33 +398,21 @@
       ]
     },
     "bulk_no_pork_beef": {
-      "state": "unavailable",
-      "plates": []
-    },
-    "bulk_vegetarian": {
-      "state": "unavailable",
-      "plates": []
-    },
-    "cut_no_pork": {
       "state": "ready",
       "plates": [
         {
-          "title": "Coconut curry",
+          "title": "Coconut curry + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -251,22 +441,239 @@
               "price_source": "eat-api",
               "kcal": 607.5,
               "protein_g": 24.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 24.75,
-            "carbs_g": 36.0,
-            "fat_g": 40.5
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 32.85,
+            "carbs_g": 120.0,
+            "fat_g": 41.4
           },
           "score": {
-            "kcal": -12.28930411703805,
-            "protein": 8.1646392093651,
-            "price": 0.0521315067447,
-            "total": -4.0725
+            "kcal": 17.942602799916898,
+            "protein": 5.816974679618266,
+            "price": 1.6799450476365,
+            "total": 25.4395
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Coconut curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 32.85,
+            "carbs_g": 120.0,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 5.816974679618266,
+            "price": 1.6799450476365,
+            "total": 25.4395
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Grilled beef sausage + Coconut curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Rindsbratwurst vom Grill (1 Stück)",
+              "name_en": "Grilled beef sausage (1 piece)",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 120,
+              "price_cents": 158,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "435612acd192dcfa",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 318.0,
+              "protein_g": 17.4
+            },
+            {
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 202.5,
+              "protein_g": 8.25
+            }
+          ],
+          "total": {
+            "price_cents": 293,
+            "price_eur": 2.93,
+            "weight_g": 270,
+            "kcal": 520.5,
+            "protein_g": 25.65,
+            "carbs_g": 13.44,
+            "fat_g": 40.86
+          },
+          "score": {
+            "kcal": -10.52935439163507,
+            "protein": 8.46153518061474,
+            "price": 0.03771489253382,
+            "total": -2.0301
           },
           "has_estimated_prices": false
         },
@@ -274,21 +681,15 @@
           "title": "Tomato-basil filled ravioli",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
               "name_en": "Tomato-basil filled ravioli with tomato sauce",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -342,19 +743,15 @@
           "title": "Pork cordon bleu",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
               "name_en": "Pork cordon bleu (1 piece) (with reconstituted ham)",
               "station": "Fleisch",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "dry",
               "count": 1,
@@ -408,19 +805,15 @@
           "title": "Coconut curry",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -472,21 +865,15 @@
           "title": "Tomato-basil filled ravioli",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
               "name_en": "Tomato-basil filled ravioli with tomato sauce",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -540,19 +927,15 @@
           "title": "Coconut curry",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -604,21 +987,15 @@
           "title": "Tomato-basil filled ravioli",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
               "name_en": "Tomato-basil filled ravioli with tomato sauce",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -672,19 +1049,15 @@
           "title": "Coconut curry",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -736,21 +1109,15 @@
           "title": "Tomato-basil filled ravioli",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
               "name_en": "Tomato-basil filled ravioli with tomato sauce",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -801,22 +1168,105 @@
       "state": "ready",
       "plates": [
         {
+          "title": "Grilled beef sausage + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Rindsbratwurst vom Grill (1 Stück)",
+              "name_en": "Grilled beef sausage (1 piece)",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 120,
+              "price_cents": 158,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "435612acd192dcfa",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 318.0,
+              "protein_g": 17.4
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 293,
+            "price_eur": 2.93,
+            "weight_g": 270,
+            "kcal": 513.0,
+            "protein_g": 21.45,
+            "carbs_g": 43.44,
+            "fat_g": 27.81
+          },
+          "score": {
+            "kcal": 1.81240650325197,
+            "protein": 1.5666928761326697,
+            "price": -3.72244192736291,
+            "total": -0.3433
+          },
+          "has_estimated_prices": true
+        },
+        {
           "title": "Coconut curry",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -868,21 +1318,15 @@
           "title": "Tomato-basil filled ravioli",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
               "name_en": "Tomato-basil filled ravioli with tomato sauce",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -931,20 +1375,15 @@
           "title": "Potato pockets filled + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kartoffeltaschen mit Kräuterfrischkäse und Sauerrahmdip",
               "name_en": "Potato pockets filled with herb cream cheese served with sour cream dip",
               "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -978,9 +1417,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 1,
@@ -1029,19 +1466,15 @@
           "title": "Pork cordon bleu",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
               "name_en": "Pork cordon bleu (1 piece) (with reconstituted ham)",
               "station": "Fleisch",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "dry",
               "count": 1,
@@ -1095,19 +1528,15 @@
           "title": "Coconut curry",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1159,21 +1588,15 @@
           "title": "Tomato-basil filled ravioli",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
               "name_en": "Tomato-basil filled ravioli with tomato sauce",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1222,20 +1645,15 @@
           "title": "Potato pockets filled + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kartoffeltaschen mit Kräuterfrischkäse und Sauerrahmdip",
               "name_en": "Potato pockets filled with herb cream cheese served with sour cream dip",
               "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1269,9 +1687,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 1,
@@ -1320,19 +1736,15 @@
           "title": "Coconut curry",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1384,21 +1796,15 @@
           "title": "Tomato-basil filled ravioli",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
               "name_en": "Tomato-basil filled ravioli with tomato sauce",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1447,20 +1853,15 @@
           "title": "Potato pockets filled + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kartoffeltaschen mit Kräuterfrischkäse und Sauerrahmdip",
               "name_en": "Potato pockets filled with herb cream cheese served with sour cream dip",
               "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1494,9 +1895,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 1,
@@ -1545,19 +1944,15 @@
           "title": "Coconut curry",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1609,21 +2004,15 @@
           "title": "Tomato-basil filled ravioli",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
               "name_en": "Tomato-basil filled ravioli with tomato sauce",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1672,20 +2061,15 @@
           "title": "Potato pockets filled + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kartoffeltaschen mit Kräuterfrischkäse und Sauerrahmdip",
               "name_en": "Potato pockets filled with herb cream cheese served with sour cream dip",
               "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1719,9 +2103,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 1,
@@ -1773,22 +2155,139 @@
       "note": null,
       "plates": [
         {
+          "title": "Grilled beef sausage + Coconut curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Rindsbratwurst vom Grill (1 Stück)",
+              "name_en": "Grilled beef sausage (1 piece)",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 120,
+              "price_cents": 158,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "435612acd192dcfa",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 318.0,
+              "protein_g": 17.4
+            },
+            {
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 833,
+            "price_eur": 8.33,
+            "weight_g": 870,
+            "kcal": 1315.5,
+            "protein_g": 50.25,
+            "carbs_g": 121.44,
+            "fat_g": 68.76
+          },
+          "score": {
+            "kcal": 23.66265060981522,
+            "protein": 8.898111952840726,
+            "price": 2.07317662915734,
+            "total": 34.6339
+          },
+          "has_estimated_prices": true
+        },
+        {
           "title": "Pork cordon bleu + Potato salad + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
               "name_en": "Pork cordon bleu (1 piece) (with reconstituted ham)",
               "station": "Fleisch",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "dry",
               "count": 1,
@@ -1824,9 +2323,7 @@
               "name": "Kartoffelsalat",
               "name_en": "Potato salad",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "saucy",
               "count": 2,
@@ -1852,9 +2349,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -1907,19 +2402,15 @@
           "title": "Pork cordon bleu",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
               "name_en": "Pork cordon bleu (1 piece) (with reconstituted ham)",
               "station": "Fleisch",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "dry",
               "count": 1,
@@ -1970,28 +2461,59 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Coconut curry",
+          "title": "Grilled beef sausage + Coconut curry",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
+            {
+              "name": "Rindsbratwurst vom Grill (1 Stück)",
+              "name_en": "Grilled beef sausage (1 piece)",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 120,
+              "price_cents": 158,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "435612acd192dcfa",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 318.0,
+              "protein_g": 17.4
+            },
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 1,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -2010,26 +2532,26 @@
               "diet": "vegan",
               "meat_types": [],
               "id": "65ca5e1db9855101",
-              "serving": "3 scoops",
+              "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 24.75
+              "kcal": 202.5,
+              "protein_g": 8.25
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 24.75,
-            "carbs_g": 36.0,
-            "fat_g": 40.5
+            "price_cents": 293,
+            "price_eur": 2.93,
+            "weight_g": 270,
+            "kcal": 520.5,
+            "protein_g": 25.65,
+            "carbs_g": 13.44,
+            "fat_g": 40.86
           },
           "score": {
-            "kcal": -12.28930411703805,
-            "protein": 8.1646392093651,
-            "price": 0.0521315067447,
-            "total": -4.0725
+            "kcal": -10.52935439163507,
+            "protein": 8.46153518061474,
+            "price": 0.03771489253382,
+            "total": -2.0301
           },
           "has_estimated_prices": false
         },
@@ -2037,21 +2559,15 @@
           "title": "Tomato-basil filled ravioli",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
               "name_en": "Tomato-basil filled ravioli with tomato sauce",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2109,19 +2625,15 @@
           "title": "Pork cordon bleu",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
               "name_en": "Pork cordon bleu (1 piece) (with reconstituted ham)",
               "station": "Fleisch",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "dry",
               "count": 1,
@@ -2172,22 +2684,105 @@
           "has_estimated_prices": false
         },
         {
+          "title": "Grilled beef sausage + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Rindsbratwurst vom Grill (1 Stück)",
+              "name_en": "Grilled beef sausage (1 piece)",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 120,
+              "price_cents": 158,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "435612acd192dcfa",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 318.0,
+              "protein_g": 17.4
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 293,
+            "price_eur": 2.93,
+            "weight_g": 270,
+            "kcal": 513.0,
+            "protein_g": 21.45,
+            "carbs_g": 43.44,
+            "fat_g": 27.81
+          },
+          "score": {
+            "kcal": 1.81240650325197,
+            "protein": 1.5666928761326697,
+            "price": -3.72244192736291,
+            "total": -0.3433
+          },
+          "has_estimated_prices": true
+        },
+        {
           "title": "Coconut curry",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2239,21 +2834,15 @@
           "title": "Tomato-basil filled ravioli",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
               "name_en": "Tomato-basil filled ravioli with tomato sauce",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2302,20 +2891,15 @@
           "title": "Potato pockets filled + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kartoffeltaschen mit Kräuterfrischkäse und Sauerrahmdip",
               "name_en": "Potato pockets filled with herb cream cheese served with sour cream dip",
               "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2349,9 +2933,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 1,
@@ -2394,13 +2976,99 @@
       ]
     },
     "bulk_vegan": {
-      "state": "unavailable",
+      "state": "ready",
       "goal": "bulk",
       "vegan": true,
       "relaxed": false,
       "note": null,
-      "plates": [],
-      "message": "No plate fits this goal today."
+      "plates": [
+        {
+          "title": "Coconut curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
+              "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "65ca5e1db9855101",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 32.85,
+            "carbs_g": 120.0,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 5.816974679618266,
+            "price": 1.6799450476365,
+            "total": 25.4395
+          },
+          "has_estimated_prices": true
+        }
+      ]
     },
     "cut_vegan": {
       "state": "ready",
@@ -2413,19 +3081,15 @@
           "title": "Coconut curry",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2486,19 +3150,15 @@
           "title": "Coconut curry",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
               "name_en": "Coconut curry with soy and vegetables, served with roasted peanuts",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,

@@ -96,57 +96,48 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pasta + Almond-flavored pudding + Rice",
+          "title": "Grilled halloumi + Almond-flavored pudding + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
-              "name": "Pasta mit getrockneten Tomaten und Kürbis",
-              "name_en": "Pasta with sun-dried tomatoes and pumpkin",
-              "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
               "price_cents": 405,
-              "is_vegan": true,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
               "allergens": [
-                "Gl",
-                "GlW"
+                "Mi"
               ],
               "additives": [
-                "3",
                 "Kn"
               ],
               "standing": false,
-              "diet": "vegan",
+              "diet": "vegetarian",
               "meat_types": [],
-              "id": "e2971c0dc7502c65",
+              "id": "e282d55f766d09fa",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
+              "kcal": 742.5,
+              "protein_g": 38.25
             },
             {
               "name": "Pudding mit Mandelgeschmack und Trauben",
               "name_en": "Almond-flavored pudding with grapes",
               "station": "Dessert (Glas)",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "dessert",
               "texture": "saucy",
               "count": 1,
@@ -178,9 +169,209 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
               ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1300.5,
+            "protein_g": 50.25,
+            "carbs_g": 133.8,
+            "fat_g": 59.55
+          },
+          "score": {
+            "kcal": 23.392837033876617,
+            "protein": 8.898111952840726,
+            "price": 2.0159340571638,
+            "total": 34.3069
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Zurich-style sliced chicken + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchengeschnetzeltes Züricher Art",
+              "name_en": "Zurich-style sliced chicken in cream sauce",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "882cc4ef1902bd58",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 56.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 64.35,
+            "carbs_g": 97.5,
+            "fat_g": 36.9
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 11.394895605279615,
+            "price": 1.9288257954345,
+            "total": 31.2663
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pasta + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit getrockneten Tomaten und Kürbis",
+              "name_en": "Pasta with sun-dried tomatoes and pumpkin",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "e2971c0dc7502c65",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -224,20 +415,15 @@
           "title": "Oriental vegetable couscous + Almond-flavored pudding + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -269,9 +455,7 @@
               "name": "Pudding mit Mandelgeschmack und Trauben",
               "name_en": "Almond-flavored pudding with grapes",
               "station": "Dessert (Glas)",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "dessert",
               "texture": "saucy",
               "count": 1,
@@ -303,9 +487,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -344,130 +526,6 @@
             "total": 28.6912
           },
           "has_estimated_prices": true
-        },
-        {
-          "title": "Zurich-style sliced chicken",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
-          "stations": [],
-          "items": [
-            {
-              "name": "Hähnchengeschnetzeltes Züricher Art",
-              "name_en": "Zurich-style sliced chicken in cream sauce",
-              "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "Sw"
-              ],
-              "additives": [
-                "5",
-                "99"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "882cc4ef1902bd58",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 56.25
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 56.25,
-            "carbs_g": 13.5,
-            "fat_g": 36.0
-          },
-          "score": {
-            "kcal": 10.9274498255133,
-            "protein": 9.960573081538126,
-            "price": 1.2568477763799,
-            "total": 22.1449
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Grilled halloumi",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
-          "stations": [],
-          "items": [
-            {
-              "name": "Halloumi vom Grill mit Ratatouille",
-              "name_en": "Grilled halloumi with ratatouille",
-              "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e282d55f766d09fa",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 742.5,
-              "protein_g": 38.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 742.5,
-            "protein_g": 38.25,
-            "carbs_g": 22.5,
-            "fat_g": 54.0
-          },
-          "score": {
-            "kcal": 13.3557720089607,
-            "protein": 6.773189695445926,
-            "price": 1.0079670285819,
-            "total": 21.1369
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -478,19 +536,15 @@
           "title": "Pan-fried pork gyros + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pfannengyros vom Schwein (S vom Strohschwein) mit Tsatsiki",
               "name_en": "Pan-fried pork gyros (straw pork) with tzatziki",
               "station": "Fleisch",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -524,9 +578,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -567,57 +619,48 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Pasta + Almond-flavored pudding + Rice",
+          "title": "Grilled halloumi + Almond-flavored pudding + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
-              "name": "Pasta mit getrockneten Tomaten und Kürbis",
-              "name_en": "Pasta with sun-dried tomatoes and pumpkin",
-              "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
               "price_cents": 405,
-              "is_vegan": true,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
               "allergens": [
-                "Gl",
-                "GlW"
+                "Mi"
               ],
               "additives": [
-                "3",
                 "Kn"
               ],
               "standing": false,
-              "diet": "vegan",
+              "diet": "vegetarian",
               "meat_types": [],
-              "id": "e2971c0dc7502c65",
+              "id": "e282d55f766d09fa",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
+              "kcal": 742.5,
+              "protein_g": 38.25
             },
             {
               "name": "Pudding mit Mandelgeschmack und Trauben",
               "name_en": "Almond-flavored pudding with grapes",
               "station": "Dessert (Glas)",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "dessert",
               "texture": "saucy",
               "count": 1,
@@ -649,9 +692,209 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
               ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1300.5,
+            "protein_g": 50.25,
+            "carbs_g": 133.8,
+            "fat_g": 59.55
+          },
+          "score": {
+            "kcal": 23.392837033876617,
+            "protein": 8.898111952840726,
+            "price": 2.0159340571638,
+            "total": 34.3069
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Zurich-style sliced chicken + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchengeschnetzeltes Züricher Art",
+              "name_en": "Zurich-style sliced chicken in cream sauce",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "882cc4ef1902bd58",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 56.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 64.35,
+            "carbs_g": 97.5,
+            "fat_g": 36.9
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 11.394895605279615,
+            "price": 1.9288257954345,
+            "total": 31.2663
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pasta + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit getrockneten Tomaten und Kürbis",
+              "name_en": "Pasta with sun-dried tomatoes and pumpkin",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "e2971c0dc7502c65",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -695,20 +938,15 @@
           "title": "Oriental vegetable couscous + Almond-flavored pudding + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -740,9 +978,7 @@
               "name": "Pudding mit Mandelgeschmack und Trauben",
               "name_en": "Almond-flavored pudding with grapes",
               "station": "Dessert (Glas)",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "dessert",
               "texture": "saucy",
               "count": 1,
@@ -774,9 +1010,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -815,130 +1049,6 @@
             "total": 28.6912
           },
           "has_estimated_prices": true
-        },
-        {
-          "title": "Zurich-style sliced chicken",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
-          "stations": [],
-          "items": [
-            {
-              "name": "Hähnchengeschnetzeltes Züricher Art",
-              "name_en": "Zurich-style sliced chicken in cream sauce",
-              "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi",
-                "Sw"
-              ],
-              "additives": [
-                "5",
-                "99"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "882cc4ef1902bd58",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 56.25
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 56.25,
-            "carbs_g": 13.5,
-            "fat_g": 36.0
-          },
-          "score": {
-            "kcal": 10.9274498255133,
-            "protein": 9.960573081538126,
-            "price": 1.2568477763799,
-            "total": 22.1449
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Grilled halloumi",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
-          "stations": [],
-          "items": [
-            {
-              "name": "Halloumi vom Grill mit Ratatouille",
-              "name_en": "Grilled halloumi with ratatouille",
-              "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e282d55f766d09fa",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 742.5,
-              "protein_g": 38.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 742.5,
-            "protein_g": 38.25,
-            "carbs_g": 22.5,
-            "fat_g": 54.0
-          },
-          "score": {
-            "kcal": 13.3557720089607,
-            "protein": 6.773189695445926,
-            "price": 1.0079670285819,
-            "total": 21.1369
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -946,57 +1056,48 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pasta + Almond-flavored pudding + Rice",
+          "title": "Grilled halloumi + Almond-flavored pudding + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
-              "name": "Pasta mit getrockneten Tomaten und Kürbis",
-              "name_en": "Pasta with sun-dried tomatoes and pumpkin",
-              "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
               "unit": "scoop",
               "weight_g": 450,
               "price_cents": 405,
-              "is_vegan": true,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
               "allergens": [
-                "Gl",
-                "GlW"
+                "Mi"
               ],
               "additives": [
-                "3",
                 "Kn"
               ],
               "standing": false,
-              "diet": "vegan",
+              "diet": "vegetarian",
               "meat_types": [],
-              "id": "e2971c0dc7502c65",
+              "id": "e282d55f766d09fa",
               "serving": "3 scoops",
               "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
+              "kcal": 742.5,
+              "protein_g": 38.25
             },
             {
               "name": "Pudding mit Mandelgeschmack und Trauben",
               "name_en": "Almond-flavored pudding with grapes",
               "station": "Dessert (Glas)",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "dessert",
               "texture": "saucy",
               "count": 1,
@@ -1028,9 +1129,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -1057,161 +1156,32 @@
             "price_cents": 810,
             "price_eur": 8.1,
             "weight_g": 900,
-            "kcal": 1210.5,
-            "protein_g": 32.25,
-            "carbs_g": 210.3,
-            "fat_g": 24.45
+            "kcal": 1300.5,
+            "protein_g": 50.25,
+            "carbs_g": 133.8,
+            "fat_g": 59.55
           },
           "score": {
-            "kcal": 21.77395557824502,
-            "protein": 5.710728566748525,
+            "kcal": 23.392837033876617,
+            "protein": 8.898111952840726,
             "price": 2.0159340571638,
-            "total": 29.5006
+            "total": 34.3069
           },
           "has_estimated_prices": true
         },
         {
-          "title": "Oriental vegetable couscous + Almond-flavored pudding + Rice",
+          "title": "Zurich-style sliced chicken + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
-          "stations": [],
-          "items": [
-            {
-              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
-              "name_en": "Oriental vegetable couscous with chickpeas",
-              "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "bd11e2c5a741e9a4",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Pudding mit Mandelgeschmack und Trauben",
-              "name_en": "Almond-flavored pudding with grapes",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Warm 1&2"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 135,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlH",
-                "Sc",
-                "ScM",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "ff83345aa5ae58ad",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 168.0,
-              "protein_g": 3.9
-            },
-            {
-              "name": "Reis",
-              "name_en": "Rice",
-              "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
-              "role": "side",
-              "texture": "dry",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [],
-              "additives": [],
-              "standing": true,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "9f0686a5bcd7307e",
-              "serving": "2 scoops",
-              "price_source": "config",
-              "kcal": 390.0,
-              "protein_g": 8.1
-            }
-          ],
-          "total": {
-            "price_cents": 810,
-            "price_eur": 8.1,
-            "weight_g": 900,
-            "kcal": 1165.5,
-            "protein_g": 32.25,
-            "carbs_g": 201.3,
-            "fat_g": 22.65
-          },
-          "score": {
-            "kcal": 20.964514850429218,
-            "protein": 5.710728566748525,
-            "price": 2.0159340571638,
-            "total": 28.6912
-          },
-          "has_estimated_prices": true
-        },
-        {
-          "title": "Zurich-style sliced chicken",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Hähnchengeschnetzeltes Züricher Art",
               "name_en": "Zurich-style sliced chicken in cream sauce",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1240,108 +1210,64 @@
               "price_source": "eat-api",
               "kcal": 607.5,
               "protein_g": 56.25
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 56.25,
-            "carbs_g": 13.5,
-            "fat_g": 36.0
-          },
-          "score": {
-            "kcal": 10.9274498255133,
-            "protein": 9.960573081538126,
-            "price": 1.2568477763799,
-            "total": 22.1449
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Grilled halloumi",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
-          "stations": [],
-          "items": [
+            },
             {
-              "name": "Halloumi vom Grill mit Ratatouille",
-              "name_en": "Grilled halloumi with ratatouille",
-              "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
               "meat_types": [],
-              "id": "e282d55f766d09fa",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 742.5,
-              "protein_g": 38.25
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 742.5,
-            "protein_g": 38.25,
-            "carbs_g": 22.5,
-            "fat_g": 54.0
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 64.35,
+            "carbs_g": 97.5,
+            "fat_g": 36.9
           },
           "score": {
-            "kcal": 13.3557720089607,
-            "protein": 6.773189695445926,
-            "price": 1.0079670285819,
-            "total": 21.1369
+            "kcal": 17.942602799916898,
+            "protein": 11.394895605279615,
+            "price": 1.9288257954345,
+            "total": 31.2663
           },
-          "has_estimated_prices": false
-        }
-      ]
-    },
-    "bulk_vegetarian": {
-      "state": "ready",
-      "plates": [
+          "has_estimated_prices": true
+        },
         {
           "title": "Pasta + Almond-flavored pudding + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1373,9 +1299,7 @@
               "name": "Pudding mit Mandelgeschmack und Trauben",
               "name_en": "Almond-flavored pudding with grapes",
               "station": "Dessert (Glas)",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "dessert",
               "texture": "saucy",
               "count": 1,
@@ -1407,9 +1331,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -1453,20 +1375,15 @@
           "title": "Oriental vegetable couscous + Almond-flavored pudding + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1498,9 +1415,7 @@
               "name": "Pudding mit Mandelgeschmack und Trauben",
               "name_en": "Almond-flavored pudding with grapes",
               "station": "Dessert (Glas)",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "dessert",
               "texture": "saucy",
               "count": 1,
@@ -1532,9 +1447,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -1573,24 +1486,25 @@
             "total": 28.6912
           },
           "has_estimated_prices": true
-        },
+        }
+      ]
+    },
+    "bulk_vegetarian": {
+      "state": "ready",
+      "plates": [
         {
-          "title": "Grilled halloumi",
+          "title": "Grilled halloumi + Almond-flavored pudding + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Halloumi vom Grill mit Ratatouille",
               "name_en": "Grilled halloumi with ratatouille",
               "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1615,24 +1529,314 @@
               "price_source": "eat-api",
               "kcal": 742.5,
               "protein_g": 38.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 742.5,
-            "protein_g": 38.25,
-            "carbs_g": 22.5,
-            "fat_g": 54.0
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1300.5,
+            "protein_g": 50.25,
+            "carbs_g": 133.8,
+            "fat_g": 59.55
           },
           "score": {
-            "kcal": 13.3557720089607,
-            "protein": 6.773189695445926,
-            "price": 1.0079670285819,
-            "total": 21.1369
+            "kcal": 23.392837033876617,
+            "protein": 8.898111952840726,
+            "price": 2.0159340571638,
+            "total": 34.3069
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pasta + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit getrockneten Tomaten und Kürbis",
+              "name_en": "Pasta with sun-dried tomatoes and pumpkin",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "e2971c0dc7502c65",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1210.5,
+            "protein_g": 32.25,
+            "carbs_g": 210.3,
+            "fat_g": 24.45
+          },
+          "score": {
+            "kcal": 21.77395557824502,
+            "protein": 5.710728566748525,
+            "price": 2.0159340571638,
+            "total": 29.5006
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Oriental vegetable couscous + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1165.5,
+            "protein_g": 32.25,
+            "carbs_g": 201.3,
+            "fat_g": 22.65
+          },
+          "score": {
+            "kcal": 20.964514850429218,
+            "protein": 5.710728566748525,
+            "price": 2.0159340571638,
+            "total": 28.6912
+          },
+          "has_estimated_prices": true
         }
       ]
     },
@@ -1643,19 +1847,15 @@
           "title": "Zurich-style sliced chicken",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Hähnchengeschnetzeltes Züricher Art",
               "name_en": "Zurich-style sliced chicken in cream sauce",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1707,19 +1907,15 @@
           "title": "Grilled halloumi",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Halloumi vom Grill mit Ratatouille",
               "name_en": "Grilled halloumi with ratatouille",
               "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 2,
@@ -1767,21 +1963,15 @@
           "title": "Oriental vegetable couscous",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1831,21 +2021,15 @@
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1890,6 +2074,90 @@
             "total": -6.4673
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": -13.86719007774417,
+            "protein": 6.927572662491601,
+            "price": 0.03655641460616,
+            "total": -6.9031
+          },
+          "has_estimated_prices": false
         }
       ]
     },
@@ -1900,19 +2168,15 @@
           "title": "Zurich-style sliced chicken",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Hähnchengeschnetzeltes Züricher Art",
               "name_en": "Zurich-style sliced chicken in cream sauce",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -1964,19 +2228,15 @@
           "title": "Pan-fried pork gyros",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pfannengyros vom Schwein (S vom Strohschwein) mit Tsatsiki",
               "name_en": "Pan-fried pork gyros (straw pork) with tzatziki",
               "station": "Fleisch",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2028,19 +2288,15 @@
           "title": "Grilled halloumi",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Halloumi vom Grill mit Ratatouille",
               "name_en": "Grilled halloumi with ratatouille",
               "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 2,
@@ -2088,21 +2344,15 @@
           "title": "Oriental vegetable couscous",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2152,21 +2402,15 @@
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2221,19 +2465,15 @@
           "title": "Zurich-style sliced chicken",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Hähnchengeschnetzeltes Züricher Art",
               "name_en": "Zurich-style sliced chicken in cream sauce",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2285,19 +2525,15 @@
           "title": "Grilled halloumi",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Halloumi vom Grill mit Ratatouille",
               "name_en": "Grilled halloumi with ratatouille",
               "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 2,
@@ -2345,21 +2581,15 @@
           "title": "Oriental vegetable couscous",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2409,21 +2639,15 @@
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2466,6 +2690,90 @@
             "protein": 6.680159353116901,
             "price": 0.0521315067447,
             "total": -6.4673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": -13.86719007774417,
+            "protein": 6.927572662491601,
+            "price": 0.03655641460616,
+            "total": -6.9031
           },
           "has_estimated_prices": false
         }
@@ -2478,19 +2786,15 @@
           "title": "Grilled halloumi",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Halloumi vom Grill mit Ratatouille",
               "name_en": "Grilled halloumi with ratatouille",
               "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 2,
@@ -2538,21 +2842,15 @@
           "title": "Oriental vegetable couscous",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2602,21 +2900,15 @@
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2661,6 +2953,90 @@
             "total": -6.4673
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": -13.86719007774417,
+            "protein": 6.927572662491601,
+            "price": 0.03655641460616,
+            "total": -6.9031
+          },
+          "has_estimated_prices": false
         }
       ]
     },
@@ -2668,22 +3044,102 @@
       "state": "ready",
       "plates": [
         {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": 2.421841438555995,
+            "protein": 1.5338251934165998,
+            "price": -3.6081007077510794,
+            "total": 0.3476
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Grilled halloumi",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Halloumi vom Grill mit Ratatouille",
               "name_en": "Grilled halloumi with ratatouille",
               "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2731,19 +3187,15 @@
           "title": "Zurich-style sliced chicken",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Hähnchengeschnetzeltes Züricher Art",
               "name_en": "Zurich-style sliced chicken in cream sauce",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2795,21 +3247,15 @@
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2859,21 +3305,15 @@
           "title": "Oriental vegetable couscous",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2928,19 +3368,15 @@
           "title": "Pan-fried pork gyros",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pfannengyros vom Schwein (S vom Strohschwein) mit Tsatsiki",
               "name_en": "Pan-fried pork gyros (straw pork) with tzatziki",
               "station": "Fleisch",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -2989,22 +3425,102 @@
           "has_estimated_prices": false
         },
         {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": 2.421841438555995,
+            "protein": 1.5338251934165998,
+            "price": -3.6081007077510794,
+            "total": 0.3476
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Grilled halloumi",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Halloumi vom Grill mit Ratatouille",
               "name_en": "Grilled halloumi with ratatouille",
               "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3052,19 +3568,15 @@
           "title": "Zurich-style sliced chicken",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Hähnchengeschnetzeltes Züricher Art",
               "name_en": "Zurich-style sliced chicken in cream sauce",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3116,21 +3628,15 @@
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3173,70 +3679,6 @@
             "protein": 1.47904572222315,
             "price": -5.14535488253235,
             "total": -1.3611
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Oriental vegetable couscous",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Warm 3/4"
-          ],
-          "stations": [],
-          "items": [
-            {
-              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
-              "name_en": "Oriental vegetable couscous with chickpeas",
-              "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "bd11e2c5a741e9a4",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 17.1
-          },
-          "score": {
-            "kcal": 2.1462708591141753,
-            "protein": 1.47904572222315,
-            "price": -5.14535488253235,
-            "total": -1.52
           },
           "has_estimated_prices": false
         }
@@ -3246,22 +3688,102 @@
       "state": "ready",
       "plates": [
         {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": 2.421841438555995,
+            "protein": 1.5338251934165998,
+            "price": -3.6081007077510794,
+            "total": 0.3476
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Grilled halloumi",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Halloumi vom Grill mit Ratatouille",
               "name_en": "Grilled halloumi with ratatouille",
               "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3309,19 +3831,15 @@
           "title": "Zurich-style sliced chicken",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Hähnchengeschnetzeltes Züricher Art",
               "name_en": "Zurich-style sliced chicken in cream sauce",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3373,21 +3891,15 @@
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3437,21 +3949,15 @@
           "title": "Oriental vegetable couscous",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3503,22 +4009,102 @@
       "state": "ready",
       "plates": [
         {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": 2.421841438555995,
+            "protein": 1.5338251934165998,
+            "price": -3.6081007077510794,
+            "total": 0.3476
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Grilled halloumi",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Halloumi vom Grill mit Ratatouille",
               "name_en": "Grilled halloumi with ratatouille",
               "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3566,21 +4152,15 @@
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3630,21 +4210,15 @@
           "title": "Oriental vegetable couscous",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3705,19 +4279,15 @@
           "title": "Pan-fried pork gyros + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pfannengyros vom Schwein (S vom Strohschwein) mit Tsatsiki",
               "name_en": "Pan-fried pork gyros (straw pork) with tzatziki",
               "station": "Fleisch",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3751,9 +4321,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -3794,22 +4362,132 @@
           "has_estimated_prices": true
         },
         {
-          "title": "Zurich-style sliced chicken",
+          "title": "Grilled halloumi + Almond-flavored pudding + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
           ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1300.5,
+            "protein_g": 50.25,
+            "carbs_g": 133.8,
+            "fat_g": 59.55
+          },
+          "score": {
+            "kcal": 23.392837033876617,
+            "protein": 8.898111952840726,
+            "price": 2.0159340571638,
+            "total": 34.3069
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Zurich-style sliced chicken + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Hähnchengeschnetzeltes Züricher Art",
               "name_en": "Zurich-style sliced chicken in cream sauce",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3838,84 +4516,50 @@
               "price_source": "eat-api",
               "kcal": 607.5,
               "protein_g": 56.25
-            }
-          ],
-          "total": {
-            "price_cents": 505,
-            "price_eur": 5.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 56.25,
-            "carbs_g": 13.5,
-            "fat_g": 36.0
-          },
-          "score": {
-            "kcal": 10.9274498255133,
-            "protein": 9.960573081538126,
-            "price": 1.2568477763799,
-            "total": 22.1449
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Grilled halloumi",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
-          "stations": [],
-          "items": [
+            },
             {
-              "name": "Halloumi vom Grill mit Ratatouille",
-              "name_en": "Grilled halloumi with ratatouille",
-              "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
               "meat_types": [],
-              "id": "e282d55f766d09fa",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 742.5,
-              "protein_g": 38.25
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 742.5,
-            "protein_g": 38.25,
-            "carbs_g": 22.5,
-            "fat_g": 54.0
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 64.35,
+            "carbs_g": 97.5,
+            "fat_g": 36.9
           },
           "score": {
-            "kcal": 13.3557720089607,
-            "protein": 6.773189695445926,
-            "price": 1.0079670285819,
-            "total": 21.1369
+            "kcal": 17.942602799916898,
+            "protein": 11.394895605279615,
+            "price": 1.9288257954345,
+            "total": 31.2663
           },
-          "has_estimated_prices": false
+          "has_estimated_prices": true
         }
       ]
     },
@@ -3930,19 +4574,15 @@
           "title": "Zurich-style sliced chicken",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Hähnchengeschnetzeltes Züricher Art",
               "name_en": "Zurich-style sliced chicken in cream sauce",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -3994,19 +4634,15 @@
           "title": "Pan-fried pork gyros",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pfannengyros vom Schwein (S vom Strohschwein) mit Tsatsiki",
               "name_en": "Pan-fried pork gyros (straw pork) with tzatziki",
               "station": "Fleisch",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -4058,19 +4694,15 @@
           "title": "Grilled halloumi",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Halloumi vom Grill mit Ratatouille",
               "name_en": "Grilled halloumi with ratatouille",
               "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 2,
@@ -4118,21 +4750,15 @@
           "title": "Oriental vegetable couscous",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -4182,21 +4808,15 @@
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -4255,19 +4875,15 @@
           "title": "Pan-fried pork gyros",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pfannengyros vom Schwein (S vom Strohschwein) mit Tsatsiki",
               "name_en": "Pan-fried pork gyros (straw pork) with tzatziki",
               "station": "Fleisch",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -4316,22 +4932,102 @@
           "has_estimated_prices": false
         },
         {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": 2.421841438555995,
+            "protein": 1.5338251934165998,
+            "price": -3.6081007077510794,
+            "total": 0.3476
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Grilled halloumi",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Grill",
-          "counters": [
-            "Grill"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Halloumi vom Grill mit Ratatouille",
               "name_en": "Grilled halloumi with ratatouille",
               "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -4379,19 +5075,15 @@
           "title": "Zurich-style sliced chicken",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 3/4",
-          "counters": [
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Hähnchengeschnetzeltes Züricher Art",
               "name_en": "Zurich-style sliced chicken in cream sauce",
               "station": "Wok",
-              "counters": [
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -4443,21 +5135,15 @@
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -4502,70 +5188,6 @@
             "total": -1.3611
           },
           "has_estimated_prices": false
-        },
-        {
-          "title": "Oriental vegetable couscous",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Warm 3/4"
-          ],
-          "stations": [],
-          "items": [
-            {
-              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
-              "name_en": "Oriental vegetable couscous with chickpeas",
-              "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "bd11e2c5a741e9a4",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 17.1
-          },
-          "score": {
-            "kcal": 2.1462708591141753,
-            "protein": 1.47904572222315,
-            "price": -5.14535488253235,
-            "total": -1.52
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -4580,20 +5202,15 @@
           "title": "Pasta + Almond-flavored pudding + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -4625,9 +5242,7 @@
               "name": "Pudding mit Mandelgeschmack und Trauben",
               "name_en": "Almond-flavored pudding with grapes",
               "station": "Dessert (Glas)",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "dessert",
               "texture": "saucy",
               "count": 1,
@@ -4659,9 +5274,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -4705,20 +5318,15 @@
           "title": "Oriental vegetable couscous + Almond-flavored pudding + Rice",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -4750,9 +5358,7 @@
               "name": "Pudding mit Mandelgeschmack und Trauben",
               "name_en": "Almond-flavored pudding with grapes",
               "station": "Dessert (Glas)",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "dessert",
               "texture": "saucy",
               "count": 1,
@@ -4784,9 +5390,7 @@
               "name": "Reis",
               "name_en": "Rice",
               "station": "Beilagen",
-              "counters": [
-                "Warm 1&2"
-              ],
+              "counters": [],
               "role": "side",
               "texture": "dry",
               "count": 2,
@@ -4839,21 +5443,15 @@
           "title": "Oriental vegetable couscous",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -4903,21 +5501,15 @@
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -4962,6 +5554,90 @@
             "total": -6.4673
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": -13.86719007774417,
+            "protein": 6.927572662491601,
+            "price": 0.03655641460616,
+            "total": -6.9031
+          },
+          "has_estimated_prices": false
         }
       ]
     },
@@ -4973,24 +5649,102 @@
       "note": null,
       "plates": [
         {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": 2.421841438555995,
+            "protein": 1.5338251934165998,
+            "price": -3.6081007077510794,
+            "total": 0.3476
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Pasta"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Pasta mit getrockneten Tomaten und Kürbis",
               "name_en": "Pasta with sun-dried tomatoes and pumpkin",
               "station": "Pasta",
-              "counters": [
-                "Warm 1&2",
-                "Pasta"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
@@ -5040,21 +5794,15 @@
           "title": "Oriental vegetable couscous",
           "reason": null,
           "picked_by": "rules",
-          "counter": "Warm 1&2",
-          "counters": [
-            "Warm 1&2",
-            "Warm 3/4"
-          ],
+          "counter": null,
+          "counters": [],
           "stations": [],
           "items": [
             {
               "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
               "name_en": "Oriental vegetable couscous with chickpeas",
               "station": "Vegan",
-              "counters": [
-                "Warm 1&2",
-                "Warm 3/4"
-              ],
+              "counters": [],
               "role": "main",
               "texture": "saucy",
               "count": 3,
