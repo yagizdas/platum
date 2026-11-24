@@ -9,9 +9,9 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" type="image/webp" href="./icons/ui/tray.webp">
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
-  <link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./menu.css?v=meal-deck-3">
+  <link rel="stylesheet" href="./menu.css?v=switzer-pork-1">
 </head>
 <body>
   <div class="shell">
@@ -95,7 +95,6 @@
             <h2 class="ingredients-title" id="ingredients-title">Details</h2>
             <div class="details-actions">
               <button class="text-button report-button" id="report-plate" type="button" aria-haspopup="dialog" aria-controls="report-sheet" hidden>Can't get this plate?</button>
-              <button class="text-button" id="share" type="button">Share plate <span aria-hidden="true">↗</span></button>
             </div>
           </div>
           <div class="ingredient-content">
@@ -112,7 +111,6 @@
       <noscript><p>Enable JavaScript to choose a plate, or visit the official menu below.</p></noscript>
     </main>
     <footer>
-      <p>Nutrition values are estimates.</p>
       <a id="official-menu" href="https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html" target="_blank" rel="noopener noreferrer">Official menu ↗</a>
     </footer>
   </div>
@@ -128,7 +126,7 @@
     const titles = {bulk:'Bulk',cut:'Cut',budget:'Budget'};
     const dietLabels = {fish:'Fish',meat:'Meat',vegetarian:'Veg',vegan:'Vegan'};
     let selection = {goal:'bulk',vegan:false,noPork:false,noBeef:false,noMeat:false};
-    let data, stale=false, plateIndex=0, selectedExtras=new Set(), shareTimer;
+    let data, stale=false, plateIndex=0, selectedExtras=new Set();
     let weekIndex, selectedDate, loadToken=0;
     let campus='arcisstr',campusRevision=0;
     let reports=PlateReports.create(globalThis.MENSA_REPORT_ENDPOINT);
@@ -555,7 +553,7 @@
       renderPager(plates.length);
       $('announcement').textContent='Option '+(plateIndex+1)+' of '+plates.length+': '+p.title;
       $('report-plate').hidden=!reports.enabled || p.items.some(i=>!i.id);
-      $('share').textContent='Share plate';renderExtras();renderTotals();
+      renderExtras();renderTotals();
       renderDeck(plates);
     }
     function cycle(direction) {
@@ -566,32 +564,8 @@
       if(next===plateIndex) return;
       plateIndex=next;render('pager',direction);
     }
-    function shortName(name) {return name.replace(/\s*\(1\s*Stück\)/gi,'').split(/\s+(?:mit|auf|aus|in|an)\s+/i)[0];}
     function briefDish(item) {
       return (item.name_en || item.name).replace(/\s*\([^)]*\)/g,'').split(/\s+(?:with|on|served|in|made from)\s+/i)[0].trim();
-    }
-    function shareText() {
-      const entries=currentPlate().items.map(item=>(item.unit==='piece'?'':item.count+' scoop'+(item.count===1?'':'s')+' ')+shortName(item.name));
-      for(const extra of activeExtras()) entries.push(extra.serving+' '+shortName(extra.name));
-      const t=totals();
-      const exclusions=[selection.noMeat?'vegetarian':null,!selection.noMeat&&selection.noPork?'no pork':null,!selection.noMeat&&selection.noBeef?'no beef':null].filter(Boolean).join(', ');
-      return (exclusions?'Filters: '+exclusions+' · ':'')+'Lunch at '+Campuses.get(campus).label+' ('+(selection.vegan?'Vegan ':'')+titles[selection.goal]+'): '+entries.join(' + ')+' · '+money(t.price_cents)+' · ~'+rounded(t.kcal)+' kcal · ~'+rounded(t.protein_g)+'g protein · '+shareURL();
-    }
-    function shareURL() {
-      const url=new URL('./menu.html',location.href);
-      url.searchParams.set('campus',campus);url.searchParams.set('goal',selection.goal);
-      if(selectedDate) url.searchParams.set('date',selectedDate);
-      if(selection.vegan) url.searchParams.set('vegan','1');
-      return url.href;
-    }
-    async function share() {
-      const text=shareText();
-      if(navigator.share) {
-        try {await navigator.share({title:'Mensa Plate',text});return;} catch(error) {if(error.name==='AbortError') return;}
-      }
-      try {await navigator.clipboard.writeText(text);$('share').textContent='Copied';}
-      catch(_) {$('share').textContent='Copy unavailable';}
-      clearTimeout(shareTimer);shareTimer=setTimeout(()=>{$('share').textContent='Share plate';},2000);
     }
     function validateDay(payload,expectedCampus=campus) {
       if((payload.campus || "arcisstr")!==expectedCampus) throw Error("Wrong campus menu");
@@ -628,7 +602,6 @@
       if(event.target.matches?.('input,textarea,select,[contenteditable]') || event.target.closest?.('.location-picker') || !$('campus-panel').hidden || $('report-sheet').open || !$('filter-panel').hidden) return;
       if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();cycle(event.key==='ArrowRight'?1:-1);}
     });
-    $('share').addEventListener('click',share);
     $('report-close').addEventListener('click',()=>$('report-sheet').close());
     $('report-sheet').addEventListener('keydown',event=>{
       if(event.key==='Escape') {event.preventDefault();$('report-sheet').close();return;}

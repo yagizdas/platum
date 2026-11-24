@@ -1,8 +1,8 @@
-The 28 original PNGs are retained in `new_icons/`. Their matching web assets are in `ui/`; the old illustrations and install icons have been replaced.
+The 29 original PNGs are retained in `new_icons/`. Their matching web assets are in `ui/`; the old illustrations and install icons have been replaced.
 
 The browser receives WebP copies at 640px, with the hero tray at 1254px. They preserve the white background. `artwork.json` records the original sources and content bounds; `artwork.css` clips the white margins at display time and blends the white into the page surface. The complete dish scene also uses multiply blending, so opacity on an error state or menu transition cannot expose a white rectangle. Install PNGs derive from the new tray.
 
-`dish-icons.js` selects food categories from German and English dish identities. It ignores a sauce or side introduced by “mit” or “with”, so schnitzel with mushroom sauce remains schnitzel, and chicken soup is soup. No menu, diet, or nutrition data is changed. Pizza and pinsa, kebabs and skewers, steaks and roasts, and sweet and savory pastries use their supplied illustrations; unknown future dishes receive a category or generic fallback. Poultry steaks retain the chicken illustration, and minced steaks use meatballs.
+`dish-icons.js` selects food categories from German and English dish identities. It ignores a sauce or side introduced by “mit” or “with”, so schnitzel with mushroom sauce remains schnitzel, and chicken soup is soup. No menu, diet, or nutrition data is changed. Pizza and pinsa, kebabs and skewers, steaks and roasts, and sweet and savory pastries use their supplied illustrations; unknown future dishes receive a category or generic fallback. Poultry steaks retain the chicken illustration, and minced steaks use meatballs. Pork chops, steaks, and roasts use the pork illustration throughout the menu loop; schnitzel, sausages, soups, and stews keep their preparation-specific illustrations.
 
 | Artwork | Use |
 | --- | --- |

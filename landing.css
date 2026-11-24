@@ -1,17 +1,37 @@
 @font-face {
-  font-family: 'Bricolage Grotesque';
+  font-family: 'Switzer';
   font-style: normal;
-  font-weight: 400 800;
+  font-weight: 400;
   font-display: swap;
-  src: url('./assets/fonts/bricolage-grotesque-latin.woff2') format('woff2');
+  src: url('./assets/fonts/switzer-400.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Bricolage Grotesque';
+  font-family: 'Switzer';
   font-style: normal;
-  font-weight: 400 800;
+  font-weight: 500;
   font-display: swap;
-  src: url('./assets/fonts/bricolage-grotesque-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url('./assets/fonts/switzer-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Switzer';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./assets/fonts/switzer-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Switzer';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./assets/fonts/switzer-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Switzer';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('./assets/fonts/switzer-800.woff2') format('woff2');
 }
 :root {
   color-scheme: light;
@@ -25,7 +45,7 @@
   --pick-surface: #e9eef3;
   --page-gutter: clamp(20px, 4.5vw, 80px);
   --radius: 32px;
-  --display: 'Bricolage Grotesque', sans-serif;
+  --display: 'Switzer', sans-serif;
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--display); -webkit-font-smoothing: antialiased; }

@@ -4,7 +4,7 @@
   // Keep shared artwork relative to this script, even when a nested page loads it.
   const scriptUrl = typeof document !== 'undefined' && document.currentScript && document.currentScript.src;
   const assetUrl = (key, source = scriptUrl) => source ? new URL('./icons/ui/' + key + '.webp', source).href : './icons/ui/' + key + '.webp';
-  const keys = Object.freeze(['dumplings','broccoli','cake','coins','dumbbell','fish','fries','chicken','leaf','tape','meatballs','pasta','rice','empty','error','salad','sausage','schnitzel','soup','dessert','stew','tray','vegetables','pizza','kebabs','steak','sweet-pastry','savory-pastry']);
+  const keys = Object.freeze(['dumplings','broccoli','cake','coins','dumbbell','fish','fries','chicken','leaf','tape','meatballs','pasta','rice','empty','error','salad','sausage','schnitzel','soup','dessert','stew','tray','vegetables','pizza','kebabs','pork','steak','sweet-pastry','savory-pastry']);
   const known = new Set(keys);
   const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ß/g, 'ss').toLowerCase();
 
@@ -36,6 +36,7 @@
     if (/knodel|knoedel|kloss|kloess|dumpling|dim sum|falafel|reisballchen|rice balls/.test(identity)) return 'dumplings';
     if (/pasta|nudel|spaghetti|tortellin|raviol|cannellon|gnocchi|spatzle|spaetzle|knopf|knoepf|maultasch|lasagn/.test(identity)) return 'pasta';
     if (/huhn|hahnchen|huehn|chicken|pute|turkey|enten|duck|poultry|geflugel|gefluegel/.test(identity)) return 'chicken';
+    if (/schwein|\bpork\b|kassel[ea]r|\bham\b|schinken|\bkotelett\b/.test(identity) && !/lamm|lamb|kalb|veal|vegan|vegetar|plant.based/.test(identity)) return 'pork';
     if (/steak|rinderbraten|schweinebraten|roast beef|roast pork|roast lamb|roast veal|rinderschmorbraten|schweinenacken|kotelett|pork chop|lamb chop/.test(identity)) return 'steak';
     if (/\breis\b|rice|reispfanne|bulgur|couscous|hirse|millet|zartweizen|ebly|quinoa|grain|barley/.test(identity)) return 'rice';
     if (/broccoli|brokkoli|brocoli/.test(identity)) return 'broccoli';
