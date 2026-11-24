@@ -109,6 +109,7 @@ jobs:
         if: always() && steps.package.outcome == 'success'
         with:
           path: dist
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Surface generation failures after packaging
         if: always() && steps.batch.outcome == 'failure'
         run: exit 1
@@ -119,11 +120,28 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pages: write
+      actions: read
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Wait for Pages artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          for attempt in {1..12}; do
+            count=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts?per_page=100" --jq '[.artifacts[] | select(.name == env.PAGES_ARTIFACT_NAME and .expired == false)] | length')
+            if [[ "$count" == '1' ]]; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo '::error::Pages artifact metadata did not become available.'
+          exit 1
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
