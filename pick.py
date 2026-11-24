@@ -10,7 +10,6 @@ from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
 from common import ROOT, dish_id, load_config, normalize, read_json, today, week_dates, write_json
-from counters import shared_counters
 from judge import choose_variants
 from pair import food, load_pairing
 from proposals import daily_proposals, fallback_proposals, validate_proposals
@@ -87,8 +86,6 @@ def valid_plate(items, config, pairing=None):
     if all(i.get("standing") for i in items):
         return False
     if not any(i["role"] == "main" and not i.get("standing") for i in items):
-        return False
-    if config.get("counter_policy") != "published_stations" and not shared_counters(items):
         return False
     for i in items:
         if i["is_per_piece"]:
@@ -186,9 +183,8 @@ def plate_result(value, goal=None, vegan=None, config=None):
              "kcal": round(value["kcal"], 2), **{f"{n}_g": round(value[n], 2) for n in ("protein", "carbs", "fat")}}
     published_stations = any(i.get("counter_policy") == "published_stations" for i in value["items"])
     stations = list(dict.fromkeys(i["station"] for i in value["items"])) if published_stations else []
-    counters = () if published_stations else shared_counters(value["items"])
     return {"title": " + ".join(re.split(r"\s+(?:with|on|served|in|made from)\s+", re.sub(r"\s*\([^)]*\)", "", i["name_en"]), maxsplit=1, flags=re.I)[0].strip() for i in value["items"]), "reason": None, "picked_by": "rules",
-            "counter": counters[0] if counters else None, "counters": list(counters), "stations": stations,
+            "counter": None, "counters": [], "stations": stations,
             "items": items, "total": total, "score": value.get("score"),
             "has_estimated_prices": any(i["price_source"] == "config" for i in items)}
 

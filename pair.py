@@ -7,7 +7,6 @@ from datetime import date
 from pathlib import Path
 
 from common import ROOT, normalize, read_json, write_json, load_config, today, week_dates
-from counters import counters_for
 from tag import generate_json, validate_tag
 from judge import api_key_value
 
@@ -53,7 +52,7 @@ def food(dish, cache):
         tag = {**tag, "role": "side", "is_per_piece": False, "piece_weight_g": None,
                "name_en": dish.get("name_en", tag["name_en"])}
     return {**dish, **tag, "standing": dish.get("standing") is True,
-            "counters": [dish["station"]] if dish.get("counter_policy") == "published_stations" else list(counters_for(dish["station"]))}
+            "counters": [dish["station"]] if dish.get("counter_policy") == "published_stations" else []}
 
 
 def pair_key(a, b):

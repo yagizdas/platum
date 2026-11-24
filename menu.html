@@ -84,7 +84,7 @@
         </div>
       </div>
       <dialog id="report-sheet" class="report-sheet" aria-labelledby="report-title">
-        <h2 id="report-title">Which dish was at another counter?</h2>
+        <h2 id="report-title">Which dish couldn’t you get?</h2>
         <div id="report-dishes" class="report-dishes"></div>
         <p id="report-error" class="details" role="status"></p>
         <button class="text-button" id="report-close" type="button">Cancel</button>
@@ -161,8 +161,8 @@
         const main=plate.items.find(item=>item.role==='main') || plate.items[0],title=briefDish(main),total=totals(plate);
         part('plate-title').textContent=title;part('plate-title').lang=main.name_en?'en':'de';
         part('plate-title').classList.toggle('is-long',title.length>30);
-        part('plate-counter').textContent=plate.stations?.length?'Stations: '+plate.stations.join(' · '):'Pick up at '+plate.counter;
-        part('plate-counter').hidden=!plate.counter && !plate.stations?.length;
+        part('plate-counter').textContent=campus==='garching' && plate.stations?.length?'Stations: '+plate.stations.join(' · '):'';
+        part('plate-counter').hidden=campus!=='garching' || !plate.stations?.length;
         part('plate-side').textContent=plate.items.filter(item=>item!==main).map(briefDish).join(' + ');
         part('plate-side').hidden=plate.items.length<2;
         part('plate-art').replaceChildren();DishIcons.compose(part('plate-art'),[...plate.items,...activeExtras()]);
@@ -544,7 +544,7 @@
       renderIllustration();
       $('plate-title').textContent=title;$('plate-title').lang=main.name_en?'en':'de';
       $('plate-title').classList.toggle('is-long',title.length>30);
-      $('plate-counter').textContent=p.stations?.length?'Stations: '+p.stations.join(' · '):'Pick up at '+p.counter;$('plate-counter').hidden=!p.counter && !p.stations?.length;
+      $('plate-counter').textContent=campus==='garching' && p.stations?.length?'Stations: '+p.stations.join(' · '):'';$('plate-counter').hidden=campus!=='garching' || !p.stations?.length;
       $('plate-side').textContent=p.items.filter(item=>item!==main).map(briefDish).join(' + ');$('plate-side').hidden=p.items.length<2;
       renderItems();
       $('totals').hidden=false;

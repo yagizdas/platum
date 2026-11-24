@@ -201,7 +201,7 @@ def scrape(day, config, html=None, api_payload=None, fetcher=fetch):
             price_unavailable = not dishes
     for dish in dishes:
         dish['campus'] = config.get('campus', 'arcisstr')
-        dish['counter_policy'] = config.get('counter_policy', 'arcis_heuristic')
+        dish['counter_policy'] = config.get('counter_policy', 'none')
     append_standing_sides(dishes, config)
     return {"schema_version": 1, "date": day.isoformat(), "mensa": config.get("mensa", "Mensa Arcisstraße"), "campus": config.get("campus", "arcisstr"),
             "state": "unavailable" if price_unavailable else "open" if dishes else "closed", "source": "eat-api" if official_error else "official",

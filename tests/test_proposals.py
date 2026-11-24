@@ -82,12 +82,13 @@ def test_validation_unknown_duplicates_soups_dessert_and_vegan(make_dish):
     assert all(meat not in combo for combo in validate_proposals(response, items, vegan=True))
 
 
-def test_validation_rejects_dishes_without_a_shared_counter(make_dish):
+def test_validation_accepts_dishes_despite_legacy_counter_assignments(make_dish):
     grill, grill_tag = make_dish("Grill dish", station="Grill", vegan=False)
     side, side_tag = make_dish("Pasta dish", station="Pasta")
     items = [{**grill, **grill_tag, "counters": ["Grill"]},
              {**side, **side_tag, "counters": ["Warm 1&2", "Pasta"]}]
-    assert validate_proposals({"combos": [[dish_id(items[0]), dish_id(items[1])]]}, items) == []
+    combo = sorted(dish_id(item) for item in items)
+    assert validate_proposals({"combos": [combo]}, items) == [combo]
 
 
 def test_proposal_adapter_sends_existing_macros_and_requests_up_to_15_combinations(monkeypatch, fixture_menu):
