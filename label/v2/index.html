@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f5f5f2">
+  <title>Bulk v2 preferences · Plato</title>
+  <link rel="stylesheet" href="../../icons/artwork.css">
+  <link rel="stylesheet" href="./label.css?v=1">
+</head>
+<body>
+<main>
+  <nav class="topbar" aria-label="Plato"><a class="brand" href="../../">Plato.</a><span>Arcisstraße / Bulk v2</span><a href="../">Original labeler</a></nav>
+  <header class="heading"><div><h1>Which lunch would you choose?</h1><p>Choose a plate you’d actually eat. If neither works, mark both bad.</p></div><div class="progress"><strong id="count">0</strong><span>choices saved</span></div></header>
+  <div class="session"><p id="scope">Loading comparisons…</p><div class="utilities"><button id="undo" type="button" disabled>Undo <kbd>U</kbd></button><button id="pass" type="button" disabled>Skip for now</button><button id="export" type="button" aria-label="Export backup" disabled>Export</button><button id="import" type="button" aria-label="Restore backup" disabled>Restore</button><input id="import-file" type="file" accept="application/json,.json" hidden></div></div>
+  <p id="notice" class="notice" role="alert" hidden></p>
+  <p id="status" role="status" aria-live="polite">Your progress stays in this browser. Come back whenever you like.</p>
+  <section id="pair" class="pair" aria-label="Compare lunch plates" aria-busy="true"><p class="loading">Preparing your two plates…</p></section>
+  <div class="choice-bar" aria-label="Choose a lunch"><button id="choose-a" type="button" disabled>Choose A <kbd>←</kbd></button><button id="both-bad" type="button" disabled>Both bad <kbd>↓</kbd></button><button id="choose-b" type="button" disabled>Choose B <kbd>→</kbd></button></div>
+  <footer><p id="remaining"></p><details><summary>About these comparisons</summary><p>These are combinations of 1–4 dishes from saved Arcisstraße menus, with varied portions and nutrition. Judge the whole lunch: what you’d enjoy eating, its size, macros and price. There is no correct answer.</p><p>“Both bad” means you wouldn’t choose either lunch. It records two rejected plates. Choosing A or B records your preference and that you would eat the chosen plate; it does not mark the other plate as bad. Skip if you’re unsure.</p><p>Nutrition is estimated. Meat-dish weight includes sauce and accompaniments; it is not the amount of pure meat. Dishes with unclear dietary labels are reported separately. Calories from fat are calculated as fat grams × 9 ÷ calories.</p><p>Choices are stored on this device, with no account or automatic sync. Export a backup to keep a copy or restore it on another device. Your original labeler’s progress is kept separately.</p></details></footer>
+</main>
+<script src="../../dish-icons.js"></script><script src="./label.js?v=1"></script>
+</body></html>
