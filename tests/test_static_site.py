@@ -124,7 +124,7 @@ def test_pages_deployment_waits_for_visible_artifact_metadata(tmp_path, filename
     definition = _workflow(filename)
     steps = definition['jobs'][job]['steps']
     wait = next(step for step in steps if step.get('name') == 'Wait for Pages artifact metadata')
-    deploy = next(step for step in steps if step.get('uses') == 'actions/deploy-pages@v4')
+    deploy = next(step for step in steps if step.get('uses') == 'actions/deploy-pages@v4.0.0')
     assert steps.index(wait) < steps.index(deploy)
     assert definition['jobs'][job]['permissions']['actions'] == 'read'
     upload = next(step for j in definition['jobs'].values() for step in j['steps']
