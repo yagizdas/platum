@@ -4,6 +4,7 @@ from datetime import date
 from campuses import CAMPUS_IDS, campus_config, campus_data
 from common import ROOT, load_config, read_json, write_json
 from pick import build_week
+from bulk_experiment import attach_experiment
 
 
 def rescore(root=ROOT, campus="arcisstr"):
@@ -14,10 +15,14 @@ def rescore(root=ROOT, campus="arcisstr"):
     days, updated = build_week(reference, menus, read_json(root / 'data/dish_cache.json', {}), campus_config(load_config(), campus),
                                no_llm=True, proposals_dir=data / 'proposals',
                                judge_cache_path=data / 'title_cache.json')
+    cache = read_json(root / 'data/dish_cache.json', {})
+    config = campus_config(load_config(), campus)
     for day, payload in days.items():
+        if campus == 'arcisstr' and payload.get('schema_version') == 2:
+            payload = attach_experiment(payload, menus[day], cache, config)
         write_json(data / 'days' / f'{day}.json', payload)
     write_json(data / 'week.json', updated)
-    write_json(data / 'today.json', days[index['week_start']])
+    write_json(data / 'today.json', read_json(data / 'days' / f"{index['week_start']}.json"))
 
 
 if __name__ == '__main__':

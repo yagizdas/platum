@@ -77,7 +77,7 @@
     if (!primary) { primary = create('tray'); target.append(primary); }
     apply(primary, main ? classify(main) : options.fallback);
     target.querySelectorAll('.dish-companion').forEach(art => art.remove());
-    const companions = items.filter(item => item !== main).slice(0, 2);
+    const companions = items.filter(item => item !== main).slice(0, options.maxItems === 4 ? 3 : 2);
     target.dataset.companions = String(companions.length);
     for (const item of companions) {
       const art = create(classify(item));

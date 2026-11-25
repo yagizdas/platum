@@ -1,0 +1,11 @@
+# Staging Arcisstraße Bulk A/B comparison
+
+Open `/staging/menu.html?campus=arcisstr&goal=bulk`. The buttons below the dietary controls switch between **A · Usual picks** and **B · All combinations**. A is the default; `&bulkMethod=b` opens B directly. The choice stays active across date changes in the current visit. The switch is hidden for Garching, Cut, Budget, and production URLs.
+
+A's existing variants, filtered variants, extras, portions, scores, and ranking are preserved. No production branch change is required. Staging's cached rescore adds a separate `experiments.bulk_ab` field; it runs without model calls and is also used by future scheduled publishing.
+
+B enumerates every unordered set of one, two, three, or four distinct menu items, including the same standing sides available to A. Each set is expanded over exactly A's permitted scoop counts and fixed servings. It uses the same structural validity rules (a real main, no duplicated dishes, at most one soup, no unnamed soup), dietary exclusions, Bulk minimums/maximums, learned score, tie-breaking, and main-diversity rule. It does not use LLM meal proposals or pairing judgments. Nutrition estimates remain shared with A. The diversity rule can return fewer than five cards when a winning combination consumes several mains.
+
+For 23–27 November, there are 36,248 raw portion combinations across five dates. The largest menu contains 13 items: 1,092 distinct sets and 12,861 portion combinations. Local measured search time including all dietary views was about 0.1–1.1 seconds per date; the browser only switches precomputed results. See `bulk-ab-benchmark.json` for all saved dates. The search is complete, with no sampling; if a future menu exceeds 200,000 portion assignments, only B becomes unavailable. Missing nutrition similarly leaves A working while B waits for estimates.
+
+Four-dish B cards display four illustrations and all details. The existing report API accepts up to three item IDs, so the report action is hidden on four-dish experimental cards; the production Worker is unchanged. Manually selected extras remain available as in A and are cleared when switching methods.

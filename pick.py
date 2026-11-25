@@ -78,10 +78,10 @@ def portion_options(dish, tag, config, paired=False):
     return options
 
 
-def valid_plate(items, config, pairing=None):
+def valid_plate(items, config, pairing=None, *, max_items=3):
     if any(unspecified_soup(item['name']) for item in items):
         return False
-    if not 1 <= len(items) <= 3 or len({dish_id(i) for i in items}) != len(items):
+    if not 1 <= len(items) <= max_items or len({dish_id(i) for i in items}) != len(items):
         return False
     if sum(i["role"] == "soup" for i in items) > 1 or all(i["role"] == "dessert" for i in items):
         return False

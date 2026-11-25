@@ -498,3 +498,12 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
   .deck-preview[data-depth='1'] { transform:translateY(-14px) scale(.97); }
   .deck-preview[data-depth='2'] { transform:translateY(-28px) scale(.94); }
 }
+
+.bulk-experiment { margin-top:24px; }
+.bulk-methods { display:inline-flex; gap:4px; max-width:100%; padding:5px; border-radius:18px; background:var(--surface); }
+.bulk-methods button { min-height:44px; padding:10px 18px; border:0; border-radius:13px; background:transparent; color:var(--muted); cursor:pointer; font:inherit; font-size:16px; }
+.bulk-methods button[aria-pressed='true'] { background:var(--ink); color:var(--paper); }
+.bulk-methods button:hover { color:var(--ink); }
+.bulk-methods button[aria-pressed='true']:hover { color:var(--paper); }
+.bulk-method-note { max-width:65ch; margin-top:10px; color:var(--muted); font-size:14px; line-height:1.5; }
+@media(max-width:600px) { .bulk-methods { display:flex; } .bulk-methods button { flex:1; padding:10px 8px; font-size:14px; } }
