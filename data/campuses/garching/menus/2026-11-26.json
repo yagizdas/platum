@@ -8,31 +8,65 @@
   "published": true,
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-garching/2026/48.json",
-  "fetched_at": "2026-11-24T23:51:42.898818+00:00",
+  "fetched_at": "2026-11-25T17:29:47.722172+00:00",
   "warnings": [
-    "1 unnamed soup(s) excluded from recommendations until the official recipe is published."
+    "2 published dish(es) omitted: no unambiguous student price match."
   ],
   "omitted_dishes": [
     {
-      "name": "Tagessuppe",
-      "station": "Tagessupe, Brot, Obst",
-      "station_raw": "Tagessupe, Brot, Obst",
-      "markers": [],
-      "allergens": [],
-      "additives": [],
+      "name": "Pizza Salami",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [
+        "1",
+        "2",
+        "Kn",
+        "3"
+      ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "MEAT"
-      ],
+      "api_labels": [],
       "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "config"
       },
-      "omission_reason": "unspecified_recipe"
+      "omission_reason": "unmatched_student_price"
+    },
+    {
+      "name": "Maiscremesuppe",
+      "station": "Tagessupe, Brot, Obst",
+      "station_raw": "Tagessupe, Brot, Obst",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      },
+      "omission_reason": "unmatched_student_price"
     }
   ],
   "dishes": [
@@ -126,8 +160,8 @@
       "additives": [
         "1",
         "3",
-        "Kn",
-        "5"
+        "5",
+        "Kn"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
@@ -182,44 +216,6 @@
       "counter_policy": "published_stations"
     },
     {
-      "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
-      "station": "Vegetarisch/fleischlos",
-      "station_raw": "Vegetarisch/fleischlos",
-      "markers": [
-        "f"
-      ],
-      "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
-        "Mi"
-      ],
-      "additives": [
-        "2"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "CHICKEN_EGGS",
-        "GLUTEN",
-        "LACTOSE",
-        "MILK",
-        "PRESERVATIVES",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      },
-      "campus": "garching",
-      "counter_policy": "published_stations"
-    },
-    {
       "name": "Spinatknödel mit Bergkäsesauce",
       "station": "Vegetarisch/fleischlos",
       "station_raw": "Vegetarisch/fleischlos",
@@ -254,6 +250,44 @@
       ],
       "price": {
         "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+      "station": "Vegetarisch/fleischlos",
+      "station_raw": "Vegetarisch/fleischlos",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [
+        "2"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "PRESERVATIVES",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       },
