@@ -49,7 +49,8 @@ def build_experiment(menu, cache, config, *, max_combinations=MAX_PORTION_COMBIN
                      for profile in FILTERS})
     variants = {}
     for profile, eligible in profiles.items():
-        pool = top_plates((value for value in values if eligible(value)), 'bulk', config)
+        pool = top_plates((value for value in values if eligible(value)), 'bulk', config,
+                          distinct_dish_sets=True)
         state = 'ready' if pool else ('unavailable' if menu['state'] == 'open' else menu['state'])
         variants['bulk_' + profile] = {
             'state': state, 'plates': [plate_result(value) for value in pool],

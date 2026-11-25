@@ -133,7 +133,7 @@ def candidates(dishes, cache, config, vegan=False, pairing=None, proposals=None)
                 yield plate(combo)
 
 
-def top_plates(plates, goal, config, top_k=5, relax_protein=False):
+def top_plates(plates, goal, config, top_k=5, relax_protein=False, *, distinct_dish_sets=False):
     if goal not in GOALS:
         raise ValueError(f"Unknown goal: {goal}")
     minimums = config.get("plate_minimums", {}).get(goal, {})
@@ -144,13 +144,20 @@ def top_plates(plates, goal, config, top_k=5, relax_protein=False):
     def rank(p):
         return (-p["score"]["total"], p["price_cents"], tuple(sorted(dish_id(i) for i in p["items"])),
                 tuple(sorted((dish_id(i), i["count"]) for i in p["items"])))
-    seen_mains, result = set(), []
+    seen_mains, seen_sets, result = set(), set(), []
     for p in sorted(scored, key=rank):
-        mains = {dish_id(i) for i in p["items"] if i["role"] == "main" and not i.get("standing")}
-        mains = mains or {dish_id(p["items"][0])}
-        if mains & seen_mains:
-            continue
-        seen_mains.update(mains)
+        if distinct_dish_sets:
+            # B may reuse mains, but only keeps the best portioning of each dish set.
+            dishes = frozenset(dish_id(i) for i in p["items"])
+            if dishes in seen_sets:
+                continue
+            seen_sets.add(dishes)
+        else:
+            mains = {dish_id(i) for i in p["items"] if i["role"] == "main" and not i.get("standing")}
+            mains = mains or {dish_id(p["items"][0])}
+            if mains & seen_mains:
+                continue
+            seen_mains.update(mains)
         result.append(p)
         if len(result) >= top_k:
             break

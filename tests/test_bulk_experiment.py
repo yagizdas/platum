@@ -4,7 +4,7 @@ import itertools
 from bulk_experiment import attach_experiment, build_experiment, exhaustive_candidates, search_space
 from common import dish_id, normalize
 from pair import food
-from pick import portion_options, valid_plate
+from pick import portion_options, top_plates, valid_plate
 
 
 def four_mains(make_dish):
@@ -37,7 +37,12 @@ def test_b_ranks_with_existing_score_limits_and_diet_filters(config, make_dish, 
     monkeypatch.setattr('proposals.daily_proposals', no_model)
     monkeypatch.setattr('judge.choose_variants', no_model)
     b = build_experiment(menu, cache, config)
-    first = b['variants']['bulk_all']['plates'][0]
+    plates = b['variants']['bulk_all']['plates']
+    assert len(plates) == 5
+    dish_sets = [frozenset(i['id'] for i in p['items']) for p in plates]
+    assert len(set(dish_sets)) == 5
+    assert any(dish_sets[0] & other for other in dish_sets[1:])
+    first = plates[0]
     assert len(first['items']) == 4  # This fixture's optimum is all four mains.
     assert first['total']['kcal'] == 800
     assert first['total']['protein_g'] == 80
@@ -49,6 +54,27 @@ def test_b_ranks_with_existing_score_limits_and_diet_filters(config, make_dish, 
             assert len({i['id'] for i in plate['items']}) == len(plate['items']) <= 4
             if profile in {'bulk_vegan', 'bulk_vegetarian'}:
                 assert all(i['is_vegan'] for i in plate['items'])
+
+
+def test_b_reuses_mains_but_only_keeps_best_portions_for_each_dish_set(config, make_dish):
+    dishes, cache = [], {}
+    for name in ('Chicken', 'Chili'):
+        d, t = make_dish(name, kcal=100, protein=10)
+        dishes.append(d)
+        cache[normalize(name)] = t
+    menu = {'state': 'open', 'dishes': dishes, 'campus': 'arcisstr'}
+    b = build_experiment(menu, cache, config)['variants']['bulk_all']['plates']
+    assert len(b) == 3  # Chicken, chili, and chicken + chili; no scoop-only duplicates.
+    assert {frozenset(i['name'] for i in p['items']) for p in b} == {
+        frozenset(['Chicken']), frozenset(['Chili']), frozenset(['Chicken', 'Chili'])}
+    assert all(i['count'] == 3 for p in b for i in p['items'])
+    assert len(b[0]['items']) == 2
+    # The original picker still excludes mains already used in a preceding card.
+    foods = [food(d, cache) for d in dishes]
+    candidates = list(exhaustive_candidates([portion_options(i, i, config, paired=True) for i in foods], config))
+    a = top_plates(candidates, 'bulk', config)
+    assert len(a) == 1
+    assert len(a[0]['items']) == 2
 
 
 def test_attaching_b_preserves_every_a_field_and_does_not_modify_garching(config, make_dish):
