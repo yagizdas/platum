@@ -35,3 +35,13 @@ Available features include kcal, protein, price, fat/carbs grams, total weight, 
 ## Design and verification
 
 Achromatic ledger, seed 2067332202, with Plato's Switzer type, neutral ground and food artwork. One question: which of these two actual lunches would you eat? The signature elements are the paired trays and explicit scoop/weight rows. A centered comparison workspace replaces a sidebar because there are only two labeling destinations. On phones the plates stack, with persistent A/B/neither controls. No invented/sample meals or users are used.
+
+## Review the assistant's 150 decisions
+
+Open `/staging/label/v2/review/`, linked from the v2 labeler. It shows the two original plates, portions and macros, the original AI decision and its reason. **Agree & next** confirms the suggestion and opens the next unreviewed case. **Choose A**, **Choose B** and **Both bad** save an explicit human decision while keeping the case open for inspection. You can switch the choice repeatedly, add a note, mark it unreviewed, or jump to any case. Filters show pending, changed, agreed, or all cases; the case browser indicates which have been reviewed. Arrow left/right/down choose A/B/neither; Enter outside controls confirms the AI choice.
+
+The committed `label/v2/review/data.json` contains the 150 assistant judgments from the frozen queue, with their AI provenance and data-quality flags: 54 A, 53 B, 43 both bad. It contains no user reviews. Browser review storage has its own key, independent of v1 and v2 direct labeling. Ordinary publishing copies this snapshot unchanged.
+
+**Export reviews** contains only explicit human reviews, with full original plate snapshots, the original AI choice and reason, the human choice, acceptability values, timestamps and notes. **Download full audit** also includes untouched AI judgments, which stay marked `is_human_judgment: false`. Confirmed and corrected cases are marked `human_review_of_ai`, not blind human judgments. **Restore** merges review files by latest timestamp and does not count unreviewed AI rows as reviewed. The direct v2 labeler rejects AI/review imports so it cannot erase provenance. No ranking model is trained or changed by reviewing.
+
+Design continues Achromatic ledger (review seed 1883000294), with the existing centered comparison workspace rather than an extra icon rail: only two labeling destinations need navigation. The paired trays remain the primary evidence; original reasoning and pending/reviewed state are explicit. Shared plate rendering keeps the direct labeler and review screen aligned. Desktop, tablet and phone layouts are checked, alongside save/resume, all decision transitions, notes, filtering, backup/restore, provenance, completion and storage failures.

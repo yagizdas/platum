@@ -72,6 +72,7 @@
   function defer(state,ref){const key=refKey(ref);return {...state,deferred:[...state.deferred.filter(value=>value!==key),key],resume:null};}
   function backup(data,state){return {schema_version:VERSION,experiment:EXPERIMENT,dataset_id:data.dataset_id,campus:'arcisstr',goal:'bulk',exported_at:new Date().toISOString(),records:state.records};}
   function mergeBackup(data,index,state,value){
+    if(value?.review_experiment||(Array.isArray(value?.records)&&value.records.some(row=>row.is_human_judgment===false||row.annotation_source==='ai_proxy'))) throw Error('Restore AI review files on the AI review page to keep their provenance separate.');
     if(value?.schema_version!==VERSION||value.experiment!==EXPERIMENT||value.dataset_id!==data.dataset_id) throw Error('Choose a backup from this Bulk v2 dataset.');
     const imported=restoreRecords(data,index,value.records),merged=new Map(state.records.map(row=>[refKey(row),row]));
     for(const row of imported){const key=refKey(row),old=merged.get(key);if(!old||row.timestamp>old.timestamp)merged.set(key,row);}
@@ -87,23 +88,7 @@
       $('undo').disabled=!state.records.length;$('export').disabled=!state.records.length;
     };
     const element=(tag,className,text)=>{const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el;};
-    function drawPlate(plate,side){
-      const card=element('article','plate');card.tabIndex=0;card.dataset.choice=side;card.setAttribute('role','button');card.setAttribute('aria-label',`Choose plate ${side.toUpperCase()}`);
-      const top=element('div','plate-top');top.append(element('h2','',`Plate ${side.toUpperCase()}`),element('span','plate-size',`${plate.dish_count} ${plate.dish_count===1?'dish':'dishes'} · ${plate.weight_g.toLocaleString()} g total`));card.append(top);
-      const art=element('div','plate-art dish-scene');art.setAttribute('aria-hidden','true');DishIcons.compose(art,plate.items,{fallback:'tray',maxItems:4});card.append(art);
-      const list=element('ul','dish-rows');
-      for(const item of plate.items){
-        const row=element('li'),name=element('span','dish-name',item.name_en||item.name);
-        name.title=item.name;
-        const portion=element('span','portion',`${item.weight_g.toLocaleString()} g`);portion.append(element('small','',item.unit==='piece'?'1 serving':item.serving));row.append(name,portion);list.append(row);
-      }
-      card.append(list);const metrics=element('dl','metrics');
-      for(const [label,value,unit] of [['Student price',`€${plate.price.toFixed(2)}`,''],['Calories',Math.round(plate.kcal).toLocaleString(),'kcal'],['Protein',plate.protein.toFixed(1),'g'],['Fat',plate.fat_g.toFixed(1),'g'],['Calories from fat',plate.fat_energy_pct.toFixed(1),'%'],['Carbs',plate.carbs_g.toFixed(1),'g']]){
-        const metric=element('div','metric'),dd=element('dd','',value);if(unit)dd.append(element('small','',` ${unit}`));metric.append(element('dt','',label),dd);metrics.append(metric);
-      }
-      card.append(metrics,element('p','meat-weight',`Identified meat dishes: ${plate.meat_dish_weight_g.toLocaleString()} g, including sauces.${plate.unknown_diet_weight_g?` Unclear dietary labels: ${plate.unknown_diet_weight_g.toLocaleString()} g.`:''}${plate.has_estimated_prices?' Includes an estimated price.':''}`));
-      card.addEventListener('click',()=>save(side));card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();save(side);}});return card;
-    }
+    const drawPlate=(plate,side)=>BulkPlateCard.render(plate,side,save);
     function draw(){
       ref=nextRef(data,state);updateCount();$('pair').setAttribute('aria-busy','false');
       for(const id of ['choose-a','choose-b','both-bad','pass'])$(id).disabled=!ref;
