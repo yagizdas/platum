@@ -29,6 +29,30 @@ def test_workflows_package_every_local_menu_script():
         assert not missing, f"{workflow} does not package: {sorted(missing)}"
 
 
+def test_pwa_assets_and_relative_scope_support_root_and_staging():
+    manifest = yaml.safe_load((ROOT / "manifest.webmanifest").read_text())
+    assert manifest["display"] == "standalone"
+    assert manifest["id"] == manifest["start_url"] == manifest["scope"] == "./"
+    assert {icon["sizes"] for icon in manifest["icons"]} >= {"192x192", "512x512"}
+    for icon in manifest["icons"]:
+        assert (ROOT / icon["src"].removeprefix("./")).is_file()
+
+    installer = (ROOT / "pwa-install.js").read_text()
+    assert "register('./service-worker.js')" in installer
+    assert "beforeinstallprompt" in installer
+    assert "display-mode: standalone" in installer
+    assert "sessionStorage" in installer
+    for page in ("index.html", "menu.html"):
+        html = (ROOT / page).read_text()
+        assert './manifest.webmanifest' in html
+        assert './pwa-install.js' in html
+
+    for workflow in ("daily.yml", "publish.yml"):
+        definition = (WORKFLOWS / workflow).read_text()
+        for asset in ("service-worker.js", "pwa-install.js", "pwa-install.css"):
+            assert asset in definition
+
+
 def _packaging_script(workflow) -> str:
     lines = (WORKFLOWS / workflow).read_text().splitlines()
     step = lines.index("      - name: Package only public static files")
