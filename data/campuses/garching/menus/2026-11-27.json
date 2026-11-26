@@ -8,31 +8,122 @@
   "published": true,
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-garching/2026/48.json",
-  "fetched_at": "2026-11-25T17:29:47.770194+00:00",
+  "fetched_at": "2026-11-26T17:12:05.601994+00:00",
   "warnings": [
-    "1 unnamed soup(s) excluded from recommendations until the official recipe is published."
+    "4 published dish(es) omitted: no unambiguous student price match."
   ],
   "omitted_dishes": [
     {
-      "name": "Tagessuppe",
-      "station": "Tagessupe, Brot, Obst",
-      "station_raw": "Tagessupe, Brot, Obst",
+      "name": "Pizza Salami",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [
+        "Kn",
+        "1",
+        "2",
+        "3"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "config"
+      },
+      "omission_reason": "unmatched_student_price"
+    },
+    {
+      "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+      "station": "Pizza",
+      "station_raw": "Pizza",
       "markers": [],
-      "allergens": [],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
       "additives": [],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
-      "api_labels": [
-        "MEAT"
+      "api_labels": [],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "config"
+      },
+      "omission_reason": "unmatched_student_price"
+    },
+    {
+      "name": "Schaschlik (1 Stück) mit Honig-Currysauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "S"
       ],
+      "allergens": [
+        "Sf",
+        "Sl"
+      ],
+      "additives": [
+        "11"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
       "price": {
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
+        "source": "config"
       },
-      "omission_reason": "unspecified_recipe"
+      "omission_reason": "unmatched_student_price"
+    },
+    {
+      "name": "Tiroler Käsesuppe",
+      "station": "Tagessupe, Brot, Obst",
+      "station_raw": "Tagessupe, Brot, Obst",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sw"
+      ],
+      "additives": [
+        "5",
+        "99"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      },
+      "omission_reason": "unmatched_student_price"
     }
   ],
   "dishes": [

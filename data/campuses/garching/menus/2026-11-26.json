@@ -8,67 +8,9 @@
   "published": true,
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-garching/2026/48.json",
-  "fetched_at": "2026-11-25T17:29:47.722172+00:00",
-  "warnings": [
-    "2 published dish(es) omitted: no unambiguous student price match."
-  ],
-  "omitted_dishes": [
-    {
-      "name": "Pizza Salami",
-      "station": "Pizza",
-      "station_raw": "Pizza",
-      "markers": [
-        "S"
-      ],
-      "allergens": [
-        "Gl",
-        "GlG",
-        "GlW",
-        "Mi",
-        "So"
-      ],
-      "additives": [
-        "1",
-        "2",
-        "Kn",
-        "3"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 5.0,
-        "per_100g_eur": 0,
-        "source": "config"
-      },
-      "omission_reason": "unmatched_student_price"
-    },
-    {
-      "name": "Maiscremesuppe",
-      "station": "Tagessupe, Brot, Obst",
-      "station_raw": "Tagessupe, Brot, Obst",
-      "markers": [
-        "f"
-      ],
-      "allergens": [
-        "Mi"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      },
-      "omission_reason": "unmatched_student_price"
-    }
-  ],
+  "fetched_at": "2026-11-26T17:12:05.521237+00:00",
+  "warnings": [],
+  "omitted_dishes": [],
   "dishes": [
     {
       "name": "Pasta mit Steinpilzen",
@@ -105,41 +47,6 @@
       "price": {
         "base_eur": 0.0,
         "per_100g_eur": 0.9,
-        "source": "eat-api"
-      },
-      "campus": "garching",
-      "counter_policy": "published_stations"
-    },
-    {
-      "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-      "station": "Pizza",
-      "station_raw": "Pizza",
-      "markers": [],
-      "allergens": [
-        "Gl",
-        "GlG",
-        "GlW",
-        "Mi",
-        "So"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "BARLEY",
-        "CEREAL",
-        "GLUTEN",
-        "LACTOSE",
-        "MEAT",
-        "MILK",
-        "SOY",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 5.0,
-        "per_100g_eur": 0,
         "source": "eat-api"
       },
       "campus": "garching",
@@ -216,6 +123,44 @@
       "counter_policy": "published_stations"
     },
     {
+      "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+      "station": "Vegetarisch/fleischlos",
+      "station_raw": "Vegetarisch/fleischlos",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [
+        "2"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "PRESERVATIVES",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
       "name": "Spinatknödel mit Bergkäsesauce",
       "station": "Vegetarisch/fleischlos",
       "station_raw": "Vegetarisch/fleischlos",
@@ -257,44 +202,6 @@
       "counter_policy": "published_stations"
     },
     {
-      "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
-      "station": "Vegetarisch/fleischlos",
-      "station_raw": "Vegetarisch/fleischlos",
-      "markers": [
-        "f"
-      ],
-      "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
-        "Mi"
-      ],
-      "additives": [
-        "2"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "CHICKEN_EGGS",
-        "GLUTEN",
-        "LACTOSE",
-        "MILK",
-        "PRESERVATIVES",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      },
-      "campus": "garching",
-      "counter_policy": "published_stations"
-    },
-    {
       "name": "Di Manzo - Rindfleisch in Balsamico",
       "station": "Fleisch",
       "station_raw": "Fleisch",
@@ -326,6 +233,34 @@
       ],
       "price": {
         "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Maiscremesuppe",
+      "station": "Tagessupe, Brot, Obst",
+      "station_raw": "Tagessupe, Brot, Obst",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       },

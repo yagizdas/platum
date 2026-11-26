@@ -4,10 +4,8 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
-  "fetched_at": "2026-11-25T17:29:47.722172+00:00",
-  "warnings": [
-    "2 published dish(es) omitted: no unambiguous student price match."
-  ],
+  "fetched_at": "2026-11-26T17:12:05.521237+00:00",
+  "warnings": [],
   "campus": "garching",
   "schema_version": 2,
   "menu_count": 8,
@@ -98,107 +96,15 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pizza Pollo + Chocolate pudding",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pizza",
-            "Dessert (Glas)"
-          ],
-          "items": [
-            {
-              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-              "name_en": "Pizza Pollo (with chicken breast fillet)",
-              "station": "Pizza",
-              "counters": [
-                "Pizza"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "205573d76f296f35",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 900.0,
-              "protein_g": 46.0
-            },
-            {
-              "name": "Schokopudding mit Vanillesauce",
-              "name_en": "Chocolate pudding with vanilla sauce",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150.0,
-              "price_cents": 135,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "d25a6d2a7a3f51f1",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 4.5
-            }
-          ],
-          "total": {
-            "price_cents": 635,
-            "price_eur": 6.35,
-            "weight_g": 550.0,
-            "kcal": 1087.5,
-            "protein_g": 50.5,
-            "carbs_g": 142.0,
-            "fat_g": 35.25
-          },
-          "score": {
-            "kcal": 19.5614842555485,
-            "protein": 8.94238116653645,
-            "price": 1.5803927485173,
-            "total": 30.0843
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Beef + Chocolate pudding",
+          "title": "Beef + Chocolate pudding + Cream of corn soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fleisch",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -267,34 +173,65 @@
               "price_source": "eat-api",
               "kcal": 187.5,
               "protein_g": 4.5
+            },
+            {
+              "name": "Maiscremesuppe",
+              "name_en": "Cream of corn soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "5bb380c945b85c66",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 97.5,
+              "protein_g": 2.7
             }
           ],
           "total": {
-            "price_cents": 640,
-            "price_eur": 6.4,
-            "weight_g": 600.0,
-            "kcal": 795.0,
-            "protein_g": 69.75,
-            "carbs_g": 50.25,
-            "fat_g": 34.5
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750.0,
+            "kcal": 892.5,
+            "protein_g": 72.45,
+            "carbs_g": 64.05,
+            "fat_g": 38.1
           },
           "score": {
-            "kcal": 14.3001195247458,
-            "protein": 12.351110621107276,
-            "price": 1.5928367859072001,
-            "total": 28.2441
+            "kcal": 16.053907768346697,
+            "protein": 12.829218129021106,
+            "price": 1.9288257954345,
+            "total": 30.812
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Greek-style baked minced meat steak + Chocolate pudding",
+          "title": "Greek-style baked minced meat steak + Chocolate pudding + Cream of corn soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Grill",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -365,22 +302,52 @@
               "price_source": "eat-api",
               "kcal": 187.5,
               "protein_g": 4.5
+            },
+            {
+              "name": "Maiscremesuppe",
+              "name_en": "Cream of corn soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "5bb380c945b85c66",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 195.0,
+              "protein_g": 5.4
             }
           ],
           "total": {
-            "price_cents": 451,
-            "price_eur": 4.51,
-            "weight_g": 390.0,
-            "kcal": 703.5,
-            "protein_g": 39.3,
-            "carbs_g": 40.8,
-            "fat_g": 42.45
+            "price_cents": 721,
+            "price_eur": 7.21,
+            "weight_g": 690.0,
+            "kcal": 898.5,
+            "protein_g": 44.7,
+            "carbs_g": 68.4,
+            "fat_g": 49.65
           },
           "score": {
-            "kcal": 12.65425671152034,
-            "protein": 6.95912039296797,
-            "price": 1.12245217256898,
-            "total": 20.7358
+            "kcal": 16.16183319872214,
+            "protein": 7.91533540879563,
+            "price": 1.79443019162358,
+            "total": 25.8716
           },
           "has_estimated_prices": false
         },
@@ -479,99 +446,6 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pizza Pollo + Chocolate pudding",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pizza",
-            "Dessert (Glas)"
-          ],
-          "items": [
-            {
-              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-              "name_en": "Pizza Pollo (with chicken breast fillet)",
-              "station": "Pizza",
-              "counters": [
-                "Pizza"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "205573d76f296f35",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 900.0,
-              "protein_g": 46.0
-            },
-            {
-              "name": "Schokopudding mit Vanillesauce",
-              "name_en": "Chocolate pudding with vanilla sauce",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150.0,
-              "price_cents": 135,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "d25a6d2a7a3f51f1",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 4.5
-            }
-          ],
-          "total": {
-            "price_cents": 635,
-            "price_eur": 6.35,
-            "weight_g": 550.0,
-            "kcal": 1087.5,
-            "protein_g": 50.5,
-            "carbs_g": 142.0,
-            "fat_g": 35.25
-          },
-          "score": {
-            "kcal": 19.5614842555485,
-            "protein": 8.94238116653645,
-            "price": 1.5803927485173,
-            "total": 30.0843
-          },
-          "has_estimated_prices": false
-        },
-        {
           "title": "Green pea stew + Chocolate pudding",
           "reason": null,
           "picked_by": "rules",
@@ -665,99 +539,6 @@
     "bulk_no_pork_beef": {
       "state": "ready",
       "plates": [
-        {
-          "title": "Pizza Pollo + Chocolate pudding",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pizza",
-            "Dessert (Glas)"
-          ],
-          "items": [
-            {
-              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-              "name_en": "Pizza Pollo (with chicken breast fillet)",
-              "station": "Pizza",
-              "counters": [
-                "Pizza"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "205573d76f296f35",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 900.0,
-              "protein_g": 46.0
-            },
-            {
-              "name": "Schokopudding mit Vanillesauce",
-              "name_en": "Chocolate pudding with vanilla sauce",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150.0,
-              "price_cents": 135,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "d25a6d2a7a3f51f1",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 4.5
-            }
-          ],
-          "total": {
-            "price_cents": 635,
-            "price_eur": 6.35,
-            "weight_g": 550.0,
-            "kcal": 1087.5,
-            "protein_g": 50.5,
-            "carbs_g": 142.0,
-            "fat_g": 35.25
-          },
-          "score": {
-            "kcal": 19.5614842555485,
-            "protein": 8.94238116653645,
-            "price": 1.5803927485173,
-            "total": 30.0843
-          },
-          "has_estimated_prices": false
-        },
         {
           "title": "Green pea stew + Chocolate pudding",
           "reason": null,
@@ -1137,68 +918,6 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Pizza Pollo",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pizza"
-          ],
-          "items": [
-            {
-              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-              "name_en": "Pizza Pollo (with chicken breast fillet)",
-              "station": "Pizza",
-              "counters": [
-                "Pizza"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "205573d76f296f35",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 900.0,
-              "protein_g": 46.0
-            }
-          ],
-          "total": {
-            "price_cents": 500,
-            "price_eur": 5.0,
-            "weight_g": 400,
-            "kcal": 900.0,
-            "protein_g": 46.0,
-            "carbs_g": 112.0,
-            "fat_g": 30.0
-          },
-          "score": {
-            "kcal": -18.206376469686,
-            "protein": 15.174682974981602,
-            "price": 0.06435988487000001,
-            "total": -2.9673
-          },
-          "has_estimated_prices": false
-        },
-        {
           "title": "Potato tortilla",
           "reason": null,
           "picked_by": "rules",
@@ -1258,6 +977,70 @@
             "protein": 6.680159353116901,
             "price": 0.0521315067447,
             "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Steinpilzen",
+              "name_en": "Pasta with porcini mushrooms",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "13bbaa94f9babeb5",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 20.25,
+            "carbs_g": 96.75,
+            "fat_g": 24.75
+          },
+          "score": {
+            "kcal": -14.109941764006651,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -7.3777
           },
           "has_estimated_prices": false
         }
@@ -1321,68 +1104,6 @@
             "protein": 7.422399281241001,
             "price": 0.01917924569126,
             "total": -1.2065
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pizza Pollo",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pizza"
-          ],
-          "items": [
-            {
-              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-              "name_en": "Pizza Pollo (with chicken breast fillet)",
-              "station": "Pizza",
-              "counters": [
-                "Pizza"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "205573d76f296f35",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 900.0,
-              "protein_g": 46.0
-            }
-          ],
-          "total": {
-            "price_cents": 500,
-            "price_eur": 5.0,
-            "weight_g": 400,
-            "kcal": 900.0,
-            "protein_g": 46.0,
-            "carbs_g": 112.0,
-            "fat_g": 30.0
-          },
-          "score": {
-            "kcal": -18.206376469686,
-            "protein": 15.174682974981602,
-            "price": 0.06435988487000001,
-            "total": -2.9673
           },
           "has_estimated_prices": false
         },
@@ -1573,68 +1294,6 @@
             "protein": 7.422399281241001,
             "price": 0.01917924569126,
             "total": -1.2065
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pizza Pollo",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pizza"
-          ],
-          "items": [
-            {
-              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-              "name_en": "Pizza Pollo (with chicken breast fillet)",
-              "station": "Pizza",
-              "counters": [
-                "Pizza"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "205573d76f296f35",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 900.0,
-              "protein_g": 46.0
-            }
-          ],
-          "total": {
-            "price_cents": 500,
-            "price_eur": 5.0,
-            "weight_g": 400,
-            "kcal": 900.0,
-            "protein_g": 46.0,
-            "carbs_g": 112.0,
-            "fat_g": 30.0
-          },
-          "score": {
-            "kcal": -18.206376469686,
-            "protein": 15.174682974981602,
-            "price": 0.06435988487000001,
-            "total": -2.9673
           },
           "has_estimated_prices": false
         },
@@ -2151,68 +1810,6 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Pizza Pollo",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pizza"
-          ],
-          "items": [
-            {
-              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-              "name_en": "Pizza Pollo (with chicken breast fillet)",
-              "station": "Pizza",
-              "counters": [
-                "Pizza"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "205573d76f296f35",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 900.0,
-              "protein_g": 46.0
-            }
-          ],
-          "total": {
-            "price_cents": 500,
-            "price_eur": 5.0,
-            "weight_g": 400,
-            "kcal": 900.0,
-            "protein_g": 46.0,
-            "carbs_g": 112.0,
-            "fat_g": 30.0
-          },
-          "score": {
-            "kcal": 3.179660532021,
-            "protein": 3.3598075665315994,
-            "price": -6.3522899784349995,
-            "total": 0.1872
-          },
-          "has_estimated_prices": false
-        },
-        {
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
@@ -2273,6 +1870,69 @@
             "protein": 1.47904572222315,
             "price": -5.14535488253235,
             "total": -1.2021
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato tortilla",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos"
+          ],
+          "items": [
+            {
+              "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+              "name_en": "Potato tortilla with Mediterranean vegetables and bell pepper sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0ad10b9cd04b25a7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 54.0,
+            "fat_g": 33.75
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
           },
           "has_estimated_prices": false
         }
@@ -2336,68 +1996,6 @@
             "protein": 1.6433841358035,
             "price": -1.89298241357363,
             "total": 1.2607
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pizza Pollo",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pizza"
-          ],
-          "items": [
-            {
-              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-              "name_en": "Pizza Pollo (with chicken breast fillet)",
-              "station": "Pizza",
-              "counters": [
-                "Pizza"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "205573d76f296f35",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 900.0,
-              "protein_g": 46.0
-            }
-          ],
-          "total": {
-            "price_cents": 500,
-            "price_eur": 5.0,
-            "weight_g": 400,
-            "kcal": 900.0,
-            "protein_g": 46.0,
-            "carbs_g": 112.0,
-            "fat_g": 30.0
-          },
-          "score": {
-            "kcal": 3.179660532021,
-            "protein": 3.3598075665315994,
-            "price": -6.3522899784349995,
-            "total": 0.1872
           },
           "has_estimated_prices": false
         },
@@ -2588,68 +2186,6 @@
             "protein": 1.6433841358035,
             "price": -1.89298241357363,
             "total": 1.2607
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pizza Pollo",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pizza"
-          ],
-          "items": [
-            {
-              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-              "name_en": "Pizza Pollo (with chicken breast fillet)",
-              "station": "Pizza",
-              "counters": [
-                "Pizza"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "205573d76f296f35",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 900.0,
-              "protein_g": 46.0
-            }
-          ],
-          "total": {
-            "price_cents": 500,
-            "price_eur": 5.0,
-            "weight_g": 400,
-            "kcal": 900.0,
-            "protein_g": 46.0,
-            "carbs_g": 112.0,
-            "fat_g": 30.0
-          },
-          "score": {
-            "kcal": 3.179660532021,
-            "protein": 3.3598075665315994,
-            "price": -6.3522899784349995,
-            "total": 0.1872
           },
           "has_estimated_prices": false
         },
@@ -2982,107 +2518,15 @@
       "note": null,
       "plates": [
         {
-          "title": "Pizza Pollo + Chocolate pudding",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pizza",
-            "Dessert (Glas)"
-          ],
-          "items": [
-            {
-              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-              "name_en": "Pizza Pollo (with chicken breast fillet)",
-              "station": "Pizza",
-              "counters": [
-                "Pizza"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "205573d76f296f35",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 900.0,
-              "protein_g": 46.0
-            },
-            {
-              "name": "Schokopudding mit Vanillesauce",
-              "name_en": "Chocolate pudding with vanilla sauce",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 150.0,
-              "price_cents": 135,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "d25a6d2a7a3f51f1",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 4.5
-            }
-          ],
-          "total": {
-            "price_cents": 635,
-            "price_eur": 6.35,
-            "weight_g": 550.0,
-            "kcal": 1087.5,
-            "protein_g": 50.5,
-            "carbs_g": 142.0,
-            "fat_g": 35.25
-          },
-          "score": {
-            "kcal": 19.5614842555485,
-            "protein": 8.94238116653645,
-            "price": 1.5803927485173,
-            "total": 30.0843
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Beef + Chocolate pudding",
+          "title": "Beef + Chocolate pudding + Cream of corn soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fleisch",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -3151,34 +2595,65 @@
               "price_source": "eat-api",
               "kcal": 187.5,
               "protein_g": 4.5
+            },
+            {
+              "name": "Maiscremesuppe",
+              "name_en": "Cream of corn soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "5bb380c945b85c66",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 97.5,
+              "protein_g": 2.7
             }
           ],
           "total": {
-            "price_cents": 640,
-            "price_eur": 6.4,
-            "weight_g": 600.0,
-            "kcal": 795.0,
-            "protein_g": 69.75,
-            "carbs_g": 50.25,
-            "fat_g": 34.5
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750.0,
+            "kcal": 892.5,
+            "protein_g": 72.45,
+            "carbs_g": 64.05,
+            "fat_g": 38.1
           },
           "score": {
-            "kcal": 14.3001195247458,
-            "protein": 12.351110621107276,
-            "price": 1.5928367859072001,
-            "total": 28.2441
+            "kcal": 16.053907768346697,
+            "protein": 12.829218129021106,
+            "price": 1.9288257954345,
+            "total": 30.812
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Spinach dumplings + Chocolate pudding",
+          "title": "Spinach dumplings + Chocolate pudding + Cream of corn soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Vegetarisch/fleischlos",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -3248,34 +2723,65 @@
               "price_source": "eat-api",
               "kcal": 187.5,
               "protein_g": 4.5
+            },
+            {
+              "name": "Maiscremesuppe",
+              "name_en": "Cream of corn soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "5bb380c945b85c66",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 97.5,
+              "protein_g": 2.7
             }
           ],
           "total": {
-            "price_cents": 640,
-            "price_eur": 6.4,
-            "weight_g": 600.0,
-            "kcal": 1020.0,
-            "protein_g": 35.1,
-            "carbs_g": 113.25,
-            "fat_g": 47.55
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750.0,
+            "kcal": 1117.5,
+            "protein_g": 37.8,
+            "carbs_g": 127.05,
+            "fat_g": 51.15
           },
           "score": {
-            "kcal": 18.3473231638248,
-            "protein": 6.215397602879791,
-            "price": 1.5928367859072001,
-            "total": 26.1556
+            "kcal": 20.101111407425698,
+            "protein": 6.6935051107936205,
+            "price": 1.9288257954345,
+            "total": 28.7234
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Greek-style baked minced meat steak + Chocolate pudding",
+          "title": "Greek-style baked minced meat steak + Chocolate pudding + Cream of corn soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Grill",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -3346,22 +2852,52 @@
               "price_source": "eat-api",
               "kcal": 187.5,
               "protein_g": 4.5
+            },
+            {
+              "name": "Maiscremesuppe",
+              "name_en": "Cream of corn soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "5bb380c945b85c66",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 195.0,
+              "protein_g": 5.4
             }
           ],
           "total": {
-            "price_cents": 451,
-            "price_eur": 4.51,
-            "weight_g": 390.0,
-            "kcal": 703.5,
-            "protein_g": 39.3,
-            "carbs_g": 40.8,
-            "fat_g": 42.45
+            "price_cents": 721,
+            "price_eur": 7.21,
+            "weight_g": 690.0,
+            "kcal": 898.5,
+            "protein_g": 44.7,
+            "carbs_g": 68.4,
+            "fat_g": 49.65
           },
           "score": {
-            "kcal": 12.65425671152034,
-            "protein": 6.95912039296797,
-            "price": 1.12245217256898,
-            "total": 20.7358
+            "kcal": 16.16183319872214,
+            "protein": 7.91533540879563,
+            "price": 1.79443019162358,
+            "total": 25.8716
           },
           "has_estimated_prices": false
         },
@@ -3654,68 +3190,6 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Pizza Pollo",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pizza"
-          ],
-          "items": [
-            {
-              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-              "name_en": "Pizza Pollo (with chicken breast fillet)",
-              "station": "Pizza",
-              "counters": [
-                "Pizza"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "205573d76f296f35",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 900.0,
-              "protein_g": 46.0
-            }
-          ],
-          "total": {
-            "price_cents": 500,
-            "price_eur": 5.0,
-            "weight_g": 400,
-            "kcal": 900.0,
-            "protein_g": 46.0,
-            "carbs_g": 112.0,
-            "fat_g": 30.0
-          },
-          "score": {
-            "kcal": -18.206376469686,
-            "protein": 15.174682974981602,
-            "price": 0.06435988487000001,
-            "total": -2.9673
-          },
-          "has_estimated_prices": false
-        },
-        {
           "title": "Spinach dumplings",
           "reason": null,
           "picked_by": "rules",
@@ -3778,6 +3252,69 @@
             "protein": 6.729642014991841,
             "price": 0.0476263148038,
             "total": -4.45
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato tortilla",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos"
+          ],
+          "items": [
+            {
+              "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+              "name_en": "Potato tortilla with Mediterranean vegetables and bell pepper sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0ad10b9cd04b25a7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 54.0,
+            "fat_g": 33.75
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
           },
           "has_estimated_prices": false
         }
@@ -3981,68 +3518,6 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Pizza Pollo",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pizza"
-          ],
-          "items": [
-            {
-              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
-              "name_en": "Pizza Pollo (with chicken breast fillet)",
-              "station": "Pizza",
-              "counters": [
-                "Pizza"
-              ],
-              "role": "main",
-              "texture": "dry",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 400,
-              "price_cents": 500,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "205573d76f296f35",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 900.0,
-              "protein_g": 46.0
-            }
-          ],
-          "total": {
-            "price_cents": 500,
-            "price_eur": 5.0,
-            "weight_g": 400,
-            "kcal": 900.0,
-            "protein_g": 46.0,
-            "carbs_g": 112.0,
-            "fat_g": 30.0
-          },
-          "score": {
-            "kcal": 3.179660532021,
-            "protein": 3.3598075665315994,
-            "price": -6.3522899784349995,
-            "total": 0.1872
-          },
-          "has_estimated_prices": false
-        },
-        {
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
@@ -4103,6 +3578,72 @@
             "protein": 1.47904572222315,
             "price": -5.14535488253235,
             "total": -1.2021
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spinach dumplings",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos"
+          ],
+          "items": [
+            {
+              "name": "Spinatknödel mit Bergkäsesauce",
+              "name_en": "Spinach dumplings with alpine cheese sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "15",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "ba4d3018847a213c",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 30.6,
+            "carbs_g": 83.25,
+            "fat_g": 42.3
+          },
+          "score": {
+            "kcal": 2.941185992119425,
+            "protein": 2.23500242469276,
+            "price": -6.4158128782193495,
+            "total": -1.2396
           },
           "has_estimated_prices": false
         }
@@ -4382,6 +3923,20 @@
   },
   "extras": {
     "all": [
+      {
+        "name": "Maiscremesuppe",
+        "name_en": "Cream of corn soup",
+        "station": "Tagessupe, Brot, Obst",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "meat_types": [],
+        "serving": "2 scoops",
+        "kcal": 195.0,
+        "protein_g": 5.4,
+        "price_source": "eat-api"
+      },
       {
         "name": "Schokopudding mit Vanillesauce",
         "name_en": "Chocolate pudding with vanilla sauce",
