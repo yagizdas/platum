@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./menu.css?v=bulk-ab-1">
+  <link rel="stylesheet" href="./menu.css?v=abc-1">
   <link rel="stylesheet" href="./pwa-install.css">
   <script src="./pwa-install.js" defer></script>
 </head>
@@ -57,11 +57,13 @@
         </div>
       </div>
       <div id="bulk-experiment" class="bulk-experiment" hidden>
-        <div class="bulk-methods" role="group" aria-label="Bulk recommendation method">
+        <div class="bulk-methods" role="group" aria-label="Recommendation method">
           <button type="button" data-bulk-method="a" aria-pressed="true">A · Usual picks</button>
-          <button type="button" data-bulk-method="b" aria-pressed="false">B · All combinations</button>
+          <button type="button" data-bulk-method="b" aria-pressed="false">B · Ranked</button>
+          <button type="button" data-bulk-method="c" aria-pressed="false">C · LLM picks</button>
         </div>
-        <p id="bulk-method-note" class="bulk-method-note">Compare the usual picks with every combination of 1–4 dishes. B allows up to 900 g excluding soup.</p>
+        <p id="bulk-method-note" class="bulk-method-note">Compare the usual picks, exhaustive ranking, and LLM selections from the top 20.</p>
+        <a id="c-audit" class="ranking-audit-link" href="./label/c/" hidden>See the top 20 and C’s choices →</a>
       </div>
       <div class="deck-stage">
       <div class="meal-deck" id="meal-deck" role="region" aria-roledescription="carousel" aria-label="Lunch options">
@@ -174,7 +176,7 @@
         part('plate-counter').hidden=campus!=='garching' || !plate.stations?.length;
         part('plate-side').textContent=plate.items.filter(item=>item!==main).map(briefDish).join(' + ');
         part('plate-side').hidden=plate.items.length<2;
-        part('plate-art').replaceChildren();DishIcons.compose(part('plate-art'),[...plate.items,...activeExtras()],{maxItems:usingBulkB()?4:3});
+        part('plate-art').replaceChildren();DishIcons.compose(part('plate-art'),[...plate.items,...activeExtras()],{maxItems:usingExpandedSearch()?4:3});
         numberValue(part('price'),'€',(total.price_cents/100).toFixed(2));
         numberValue(part('kcal'),'~',rounded(total.kcal));numberValue(part('protein'),'~',rounded(total.protein_g));
       }
@@ -186,7 +188,7 @@
     }
     function loopIndex(index,count) { return count?((index%count)+count)%count:0; }
     function warmDeckPlate(plate) {
-      for(const item of plate.items.slice(0,usingBulkB()?4:3)) {
+      for(const item of plate.items.slice(0,usingExpandedSearch()?4:3)) {
         const key=DishIcons.classify(item);
         if(warmedDeckArt.has(key)) continue;
         warmedDeckArt.add(key);
@@ -401,9 +403,12 @@
       if(saved && goals.includes(saved.goal) && typeof saved.vegan==='boolean') selection={goal:saved.goal,vegan:saved.vegan,noPork:saved.noPork===true,noBeef:saved.noBeef===true,noMeat:saved.noMeat===true};
     } catch(_) {}
     const requested=new URLSearchParams(location.search);
-    let bulkMethod=requested.get('bulkMethod')==='b'?'b':'a';
+    const requestedMethod=requested.get('method') || requested.get('bulkMethod');
+    let bulkMethod=['b','c'].includes(requestedMethod)?requestedMethod:'a';
     const comparisonSite=location.pathname.split('/').includes('staging') || ['localhost','127.0.0.1'].includes(location.hostname);
     if(goals.includes(requested.get('goal'))) selection={...selection,goal:requested.get('goal'),vegan:requested.get('vegan')==='1'};
+    const requestedProfile=requested.get('profile');
+    if(['all','vegan','vegetarian','no_pork','no_beef','no_pork_beef'].includes(requestedProfile)) selection={...selection,vegan:requestedProfile==='vegan',noMeat:requestedProfile==='vegetarian',noPork:['no_pork','no_pork_beef'].includes(requestedProfile),noBeef:['no_beef','no_pork_beef'].includes(requestedProfile)};
     if(selection.vegan) selection.noMeat=false;
     const money=cents=>'€'+(cents/100).toFixed(2);
     const rounded=value=>Math.round(value).toLocaleString('en-GB');
@@ -432,11 +437,15 @@
       }
       return !types.includes('unknown') && !(selection.noPork && types.includes('pork')) && !(selection.noBeef && types.includes('beef'));
     }
-    function bulkComparisonAvailable() {return comparisonSite && campus==='arcisstr' && selection.goal==='bulk' && !!data?.experiments?.bulk_ab;}
+    function bulkComparisonAvailable() {return comparisonSite && campus==='arcisstr' && !!data?.experiments?.bulk_ab;}
     function usingBulkB() {return bulkComparisonAvailable() && bulkMethod==='b';}
+    function usingC() {return bulkComparisonAvailable() && bulkMethod==='c';}
+    function usingExpandedSearch() {return usingBulkB() || usingC();}
     function variant() {
       const profile=filterProfile();
-      if(usingBulkB()) return data.experiments.bulk_ab.variants['bulk_'+(selection.vegan?'vegan':profile || 'all')];
+      const key=selection.goal+'_'+(selection.vegan?'vegan':profile || 'all');
+      if(usingC()) return data.experiments.combination_c?.variants[key] || {state:'unavailable',plates:[],message:'C is waiting for its LLM selection.'};
+      if(usingBulkB()) return data.experiments.bulk_ab.variants[key];
       if(profile && !selection.vegan && data.filtered_variants?.[selection.goal+'_'+profile]) return data.filtered_variants[selection.goal+'_'+profile];
       return data.variants[selection.goal+(selection.vegan?'_vegan':'_all')];
     }
@@ -450,7 +459,9 @@
     function syncControls() {
       $('bulk-experiment').hidden=!bulkComparisonAvailable();
       document.querySelectorAll('[data-bulk-method]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.bulkMethod===bulkMethod)));
-      $('bulk-method-note').textContent=usingBulkB()?'B searches every combination of 1–4 dishes, up to 900 g excluding soup. Same nutrition scoring and dietary filters.':'A keeps the usual recommendations. B compares all combinations of 1–4 dishes, up to 900 g excluding soup.';
+      $('bulk-method-note').textContent=usingC()?'C lets an LLM choose up to five practical Mensa lunches from the preference model’s top 20. Up to 900 g excluding soup.':usingBulkB()?'B ranks every combination of 1–4 dishes using this goal’s preference model, up to 900 g excluding soup.':'A keeps the usual recommendations. Compare with exhaustive ranking in B or LLM selections in C.';
+      $('c-audit').hidden=!bulkComparisonAvailable() || bulkMethod==='a';
+      $('c-audit').href='./label/c/?'+new URLSearchParams({date:selectedDate || '',goal:selection.goal,profile:selection.vegan?'vegan':filterProfile() || 'all'});
       document.querySelectorAll('[data-goal]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.goal===selection.goal)));
       $('vegan').checked=selection.vegan;
       const vegetarian=selection.vegan || selection.noMeat;
@@ -533,7 +544,7 @@
     function renderIllustration() {
       const items=[...currentPlate().items,...activeExtras()];
       const main=items.find(item=>item.role==='main') || items[0];
-      const ordered=[main,...items.filter(item=>item!==main).slice(0,usingBulkB()?3:2)];
+      const ordered=[main,...items.filter(item=>item!==main).slice(0,usingExpandedSearch()?3:2)];
       const host=$('plate-art'),previous=new Map([...host.querySelectorAll('[data-dish-key]')].map(node=>[node.dataset.dishKey,node]));
       host.dataset.companions=String(ordered.length-1);
       const seen=new Map();
@@ -553,6 +564,7 @@
       const v=variant();
       if(data.state==='closed') return empty('No menu today.',v.message);
       if(data.state==='unavailable') return empty('Plates are on the way.',data.reason || v.message);
+      if(usingC() && v.state!=='ready') return empty('No C picks for this context.',v.message);
       const plates=visiblePlates();
       if(v.state!=='ready' || !plates.length) return empty(filterProfile()?'No plates match your filters.':'No plate fits this goal today.',filterProfile()?'Try another goal or adjust your dietary filters.':v.message);
       plateIndex=Math.min(plateIndex,plates.length-1);
@@ -565,11 +577,11 @@
       $('plate-side').textContent=p.items.filter(item=>item!==main).map(briefDish).join(' + ');$('plate-side').hidden=p.items.length<2;
       renderItems();
       $('totals').hidden=false;
-      $('relaxed-note').textContent=v.note || '';$('relaxed-note').hidden=!v.relaxed || !v.note;
+      $('relaxed-note').textContent=usingC()?p.reason || '':v.note || '';$('relaxed-note').hidden=usingC()?!p.reason:!v.relaxed || !v.note;
       $('plate-actions').hidden=plates.length<2;$('alternatives').hidden=plates.length<2;
       renderPager(plates.length);
       $('announcement').textContent='Option '+(plateIndex+1)+' of '+plates.length+': '+p.title;
-      $('report-plate').hidden=!reports.enabled || p.items.some(i=>!i.id) || (usingBulkB() && p.items.length>3);
+      $('report-plate').hidden=!reports.enabled || p.items.some(i=>!i.id) || (usingExpandedSearch() && p.items.length>3);
       renderExtras();renderTotals();
       renderDeck(plates);
     }
@@ -779,7 +791,7 @@
     }
     const menuRequests=new Map(),artworkRequests=new Map();
     function warmArtwork(payload) {
-      const variants=[...Object.values(payload.variants),...Object.values(payload.filtered_variants || {}),...Object.values(payload.experiments?.bulk_ab?.variants || {})];
+      const variants=[...Object.values(payload.variants),...Object.values(payload.filtered_variants || {}),...Object.values(payload.experiments?.bulk_ab?.variants || {}),...Object.values(payload.experiments?.combination_c?.variants || {})];
       const items=variants.flatMap(variant=>variant.plates.flatMap(plate=>plate.items));
       items.push(...payload.extras.all);
       const keys=new Set(items.map(item=>DishIcons.classify(item)));

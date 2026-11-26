@@ -40,7 +40,8 @@ def exhaustive_candidates(options, config):
                     yield plate(items)
 
 
-def build_experiment(menu, cache, config, *, max_combinations=MAX_PORTION_COMBINATIONS):
+def build_experiment(menu, cache, config, *, max_combinations=MAX_PORTION_COMBINATIONS,
+                     goals=('bulk',), top_k=5):
     started = perf_counter()
     missing = [dish['name'] for dish in menu['dishes'] if normalize(dish['name']) not in cache]
     foods = [food(dish, cache) for dish in menu['dishes']] if menu['state'] == 'open' and not missing else []
@@ -57,31 +58,34 @@ def build_experiment(menu, cache, config, *, max_combinations=MAX_PORTION_COMBIN
     profiles.update({profile: lambda p, profile=profile: all(allows(item, profile) for item in p['items'])
                      for profile in FILTERS})
     variants = {}
-    for profile, eligible in profiles.items():
-        pool = top_plates((value for value in values if eligible(value)), 'bulk', config,
-                          distinct_dish_sets=True)
-        state = 'ready' if pool else ('unavailable' if menu['state'] == 'open' else menu['state'])
-        plates = []
-        for value in pool:
-            result = plate_result(value)
-            result['total']['non_soup_weight_g'] = non_soup_weight_g(value)
-            result['total']['soup_weight_g'] = value['weight_g'] - non_soup_weight_g(value)
-            plates.append(result)
-        variants['bulk_' + profile] = {
-            'state': state, 'plates': plates,
-            'message': ('This comparison is waiting for nutrition estimates.' if missing else 'This menu is too large for the exhaustive comparison.' if too_large
-                        else 'No exhaustive-search plate fits these filters and Bulk limits.')}
+    for goal in goals:
+        for profile, eligible in profiles.items():
+            pool = top_plates((value for value in values if eligible(value)), goal, config,
+                              top_k=top_k, distinct_dish_sets=True)
+            state = 'ready' if pool else ('unavailable' if menu['state'] == 'open' else menu['state'])
+            plates = []
+            for value in pool:
+                result = plate_result(value)
+                result['total']['non_soup_weight_g'] = non_soup_weight_g(value)
+                result['total']['soup_weight_g'] = value['weight_g'] - non_soup_weight_g(value)
+                plates.append(result)
+            variants[goal + '_' + profile] = {
+                'state': state, 'plates': plates,
+                'message': ('This comparison is waiting for nutrition estimates.' if missing else 'This menu is too large for the exhaustive comparison.' if too_large
+                            else 'No exhaustive-search plate fits these filters and goal limits.')}
     stats['elapsed_ms'] = round((perf_counter() - started) * 1000, 1)
     return {'method': 'exhaustive', 'max_dishes': MAX_ITEMS,
             'max_non_soup_weight_g': MAX_NON_SOUP_WEIGHT_G, 'stats': stats, 'variants': variants}
 
 
-def attach_experiment(payload, menu, cache, config):
+def attach_experiment(payload, menu, cache, config, *, ranking=None):
     """Only add B; preserve every baseline field and recommendation."""
     if payload.get('campus', config.get('campus', 'arcisstr')) != 'arcisstr':
         return payload
-    return {**payload, 'experiments': {**payload.get('experiments', {}),
-                                      'bulk_ab': build_experiment(menu, cache, config)}}
+    ranking = ranking or build_experiment(menu, cache, config)
+    b = {**ranking, 'variants': {key: {**variant, 'plates': variant['plates'][:5]}
+                                for key, variant in ranking['variants'].items()}}
+    return {**payload, 'experiments': {**payload.get('experiments', {}), 'bulk_ab': b}}
 
 
 def main():

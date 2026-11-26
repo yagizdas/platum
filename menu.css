@@ -507,3 +507,5 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
 .bulk-methods button[aria-pressed='true']:hover { color:var(--paper); }
 .bulk-method-note { max-width:65ch; margin-top:10px; color:var(--muted); font-size:14px; line-height:1.5; }
 @media(max-width:600px) { .bulk-methods { display:flex; } .bulk-methods button { flex:1; padding:10px 8px; font-size:14px; } }
+
+.ranking-audit-link{display:inline-block;margin-top:8px;font-size:14px;color:var(--ink);text-underline-offset:4px}.ranking-audit-link[hidden]{display:none}
