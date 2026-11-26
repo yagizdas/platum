@@ -61,7 +61,7 @@
           <button type="button" data-bulk-method="a" aria-pressed="true">A · Usual picks</button>
           <button type="button" data-bulk-method="b" aria-pressed="false">B · All combinations</button>
         </div>
-        <p id="bulk-method-note" class="bulk-method-note">Compare the usual picks with every combination of 1–4 dishes. Same scoring and portion limits.</p>
+        <p id="bulk-method-note" class="bulk-method-note">Compare the usual picks with every combination of 1–4 dishes. B allows up to 900 g excluding soup.</p>
       </div>
       <div class="deck-stage">
       <div class="meal-deck" id="meal-deck" role="region" aria-roledescription="carousel" aria-label="Lunch options">
@@ -450,7 +450,7 @@
     function syncControls() {
       $('bulk-experiment').hidden=!bulkComparisonAvailable();
       document.querySelectorAll('[data-bulk-method]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.bulkMethod===bulkMethod)));
-      $('bulk-method-note').textContent=usingBulkB()?'B searches every combination of 1–4 dishes. Same scoring, portion limits and dietary filters.':'A keeps the usual recommendations. Switch to B to compare all combinations of 1–4 dishes.';
+      $('bulk-method-note').textContent=usingBulkB()?'B searches every combination of 1–4 dishes, up to 900 g excluding soup. Same nutrition scoring and dietary filters.':'A keeps the usual recommendations. B compares all combinations of 1–4 dishes, up to 900 g excluding soup.';
       document.querySelectorAll('[data-goal]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.goal===selection.goal)));
       $('vegan').checked=selection.vegan;
       const vegetarian=selection.vegan || selection.noMeat;

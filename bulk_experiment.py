@@ -12,6 +12,12 @@ from pick import plate, plate_result, portion_options, top_plates, valid_plate
 
 MAX_ITEMS = 4
 MAX_PORTION_COMBINATIONS = 200_000
+MAX_NON_SOUP_WEIGHT_G = 900
+
+
+def non_soup_weight_g(value):
+    """Food on the tray, excluding only explicitly classified soups."""
+    return sum(item['weight_g'] for item in value['items'] if item['role'] != 'soup')
 
 
 def search_space(options):
@@ -41,7 +47,10 @@ def build_experiment(menu, cache, config, *, max_combinations=MAX_PORTION_COMBIN
     options = [portion_options(item, item, config, paired=True) for item in foods]
     stats = search_space(options)
     too_large = stats['portion_combinations'] > max_combinations
-    values = list(exhaustive_candidates(options, config)) if not too_large else []
+    structural = list(exhaustive_candidates(options, config)) if not too_large else []
+    values = [value for value in structural if non_soup_weight_g(value) <= MAX_NON_SOUP_WEIGHT_G]
+    stats['structural_candidates'] = len(structural)
+    stats['weight_limit_excluded'] = len(structural) - len(values)
     stats['valid_candidates'] = len(values)
     profiles = {'all': lambda p: True,
                 'vegan': lambda p: all(item.get('is_vegan') is True for item in p['items'])}
@@ -52,12 +61,19 @@ def build_experiment(menu, cache, config, *, max_combinations=MAX_PORTION_COMBIN
         pool = top_plates((value for value in values if eligible(value)), 'bulk', config,
                           distinct_dish_sets=True)
         state = 'ready' if pool else ('unavailable' if menu['state'] == 'open' else menu['state'])
+        plates = []
+        for value in pool:
+            result = plate_result(value)
+            result['total']['non_soup_weight_g'] = non_soup_weight_g(value)
+            result['total']['soup_weight_g'] = value['weight_g'] - non_soup_weight_g(value)
+            plates.append(result)
         variants['bulk_' + profile] = {
-            'state': state, 'plates': [plate_result(value) for value in pool],
+            'state': state, 'plates': plates,
             'message': ('This comparison is waiting for nutrition estimates.' if missing else 'This menu is too large for the exhaustive comparison.' if too_large
                         else 'No exhaustive-search plate fits these filters and Bulk limits.')}
     stats['elapsed_ms'] = round((perf_counter() - started) * 1000, 1)
-    return {'method': 'exhaustive', 'max_dishes': MAX_ITEMS, 'stats': stats, 'variants': variants}
+    return {'method': 'exhaustive', 'max_dishes': MAX_ITEMS,
+            'max_non_soup_weight_g': MAX_NON_SOUP_WEIGHT_G, 'stats': stats, 'variants': variants}
 
 
 def attach_experiment(payload, menu, cache, config):

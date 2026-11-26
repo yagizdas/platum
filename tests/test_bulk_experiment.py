@@ -1,7 +1,7 @@
 import copy
 import itertools
 
-from bulk_experiment import attach_experiment, build_experiment, exhaustive_candidates, search_space
+from bulk_experiment import attach_experiment, build_experiment, exhaustive_candidates, non_soup_weight_g, search_space
 from common import dish_id, normalize
 from pair import food
 from pick import portion_options, top_plates, valid_plate
@@ -87,6 +87,37 @@ def test_attaching_b_preserves_every_a_field_and_does_not_modify_garching(config
     assert {k: v for k, v in attached.items() if k != 'experiments'} == original
     garching = {**a, 'campus': 'garching'}
     assert attach_experiment(garching, menu, cache, config) is garching
+
+
+def test_b_caps_food_at_900g_but_counts_soup_nutrition(config, make_dish):
+    dishes, cache = [], {}
+    for name in ('Main A', 'Main B', 'Main C', 'Lentil soup'):
+        soup = name == 'Lentil soup'
+        d, t = make_dish(name, piece=True, piece_g=250 if soup else 450,
+                         role='soup' if soup else 'main', kcal=20 if soup else 100,
+                         protein=2 if soup else 10, rate=.1)
+        dishes.append(d);cache[normalize(name)] = t
+    menu = {'state': 'open', 'dishes': dishes, 'campus': 'arcisstr'}
+    b = build_experiment(menu, cache, config)
+    assert b['max_non_soup_weight_g'] == 900
+    assert b['stats']['weight_limit_excluded'] > 0
+    for variant in b['variants'].values():
+        for p in variant['plates']:
+            assert non_soup_weight_g(p) <= 900
+    first = b['variants']['bulk_all']['plates'][0]
+    assert first['total']['non_soup_weight_g'] == 900
+    assert first['total']['soup_weight_g'] == 250
+    assert first['total']['weight_g'] == 1150
+    assert first['total']['kcal'] == 950
+    assert first['total']['protein_g'] == 95
+
+
+def test_only_soup_is_excluded_from_the_food_weight_limit():
+    p = {'items': [{'role': 'main', 'weight_g': 450}, {'role': 'side', 'weight_g': 300},
+                   {'role': 'dessert', 'weight_g': 150}, {'role': 'soup', 'weight_g': 300}]}
+    assert non_soup_weight_g(p) == 900
+    p['items'][0]['weight_g'] += 1
+    assert non_soup_weight_g(p) == 901
 
 
 def test_large_or_incomplete_search_does_not_break_a(config, make_dish):

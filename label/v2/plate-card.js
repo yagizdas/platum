@@ -7,6 +7,8 @@
   function render(plate,side,onChoose){
       const card=element('article','plate');card.tabIndex=0;card.dataset.choice=side;card.setAttribute('role','button');card.setAttribute('aria-label',`Choose plate ${side.toUpperCase()}`);
       const top=element('div','plate-top');top.append(element('h2','',`Plate ${side.toUpperCase()}`),element('span','plate-size',`${plate.dish_count} ${plate.dish_count===1?'dish':'dishes'} · ${plate.weight_g.toLocaleString()} g total`));card.append(top);
+      const soupWeight=plate.items.filter(item=>item.role==='soup').reduce((sum,item)=>sum+item.weight_g,0);
+      if(soupWeight)top.querySelector('.plate-size').append(element('small','weight-breakdown',`${(plate.weight_g-soupWeight).toLocaleString()} g excluding soup · ${soupWeight.toLocaleString()} g soup`));
       const art=element('div','plate-art dish-scene');art.setAttribute('aria-hidden','true');DishIcons.compose(art,plate.items,{fallback:'tray',maxItems:4});card.append(art);
       const list=element('ul','dish-rows');
       for(const item of plate.items){

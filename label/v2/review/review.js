@@ -162,7 +162,7 @@
       data=validateSource(value);$('restore').disabled=false;
       try{state=readState(localStorage,data);}catch{notice('Saved reviews could not be read. Restore an exported review file to protect your existing choices.');return;}
       const requested=Number(new URL(location.href).searchParams.get('case'));if(Number.isInteger(requested)&&requested>=1&&requested<=data.records.length)state.position=requested-1;
-      ready=true;enable();draw();status('Your reviews save in this browser.');
+      ready=true;enable();draw();status('A smaller plate is not automatically a good Bulk lunch. Choose Both bad when neither fits.');
     }).catch(error=>{$('pair').setAttribute('aria-busy','false');$('pair').replaceChildren(element('p','empty',error.message+' Reload to try again.'));notice(error.message);});
   }
   return {EXPERIMENT,BASE,key,label,storageKey,blank,validateSource,normalizeState,readState,setChoice,unreview,visibleIndices,counts,reviewedRecord,exportReviews,mergeBackup,start};
