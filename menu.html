@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="./icons/ui/app-180.png">
   <link rel="preload" href="./assets/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./icons/artwork.css">
-  <link rel="stylesheet" href="./menu.css?v=abcd-1">
+  <link rel="stylesheet" href="./menu.css?v=abcde-1">
   <link rel="stylesheet" href="./pwa-install.css">
   <script src="./pwa-install.js" defer></script>
 </head>
@@ -62,7 +62,9 @@
           <button type="button" data-bulk-method="b" aria-pressed="false">B · Ranked</button>
           <button type="button" data-bulk-method="c" aria-pressed="false">C · LLM picks</button>
           <button type="button" data-bulk-method="d" aria-pressed="false">D · Distinct</button>
+          <button type="button" data-bulk-method="e" aria-pressed="false">E · MMR</button>
         </div>
+        <label id="mmr-controls" class="mmr-controls" hidden>Balance <select id="mmr-balance"><option value="quality">Quality first</option><option value="balanced" selected>Balanced</option><option value="variety">More variety</option></select></label>
         <p id="bulk-method-note" class="bulk-method-note">Compare the usual picks, exhaustive ranking, and LLM selections from the top 20.</p>
         <a id="c-audit" class="ranking-audit-link" href="./label/c/" hidden>See the top 20 and C’s choices →</a>
       </div>
@@ -405,7 +407,8 @@
     } catch(_) {}
     const requested=new URLSearchParams(location.search);
     const requestedMethod=requested.get('method') || requested.get('bulkMethod');
-    let bulkMethod=['b','c','d'].includes(requestedMethod)?requestedMethod:'a';
+    let bulkMethod=['b','c','d','e'].includes(requestedMethod)?requestedMethod:'a';
+    let mmrBalance=['quality','balanced','variety'].includes(requested.get('balance'))?requested.get('balance'):'balanced';
     const comparisonSite=location.pathname.split('/').includes('staging') || ['localhost','127.0.0.1'].includes(location.hostname);
     if(goals.includes(requested.get('goal'))) selection={...selection,goal:requested.get('goal'),vegan:requested.get('vegan')==='1'};
     const requestedProfile=requested.get('profile');
@@ -442,10 +445,12 @@
     function usingBulkB() {return bulkComparisonAvailable() && bulkMethod==='b';}
     function usingC() {return bulkComparisonAvailable() && bulkMethod==='c';}
     function usingD() {return bulkComparisonAvailable() && bulkMethod==='d';}
-    function usingExpandedSearch() {return usingBulkB() || usingC() || usingD();}
+    function usingE() {return bulkComparisonAvailable() && bulkMethod==='e';}
+    function usingExpandedSearch() {return usingBulkB() || usingC() || usingD() || usingE();}
     function variant() {
       const profile=filterProfile();
       const key=selection.goal+'_'+(selection.vegan?'vegan':profile || 'all');
+      if(usingE()) return data.experiments.combination_e?.balances[mmrBalance]?.variants[key] || {state:'unavailable',plates:[],message:'E is waiting for its ranked combinations.'};
       if(usingD()) return data.experiments.combination_d?.variants[key] || {state:'unavailable',plates:[],message:'D is waiting for its ranked combinations.'};
       if(usingC()) return data.experiments.combination_c?.variants[key] || {state:'unavailable',plates:[],message:'C is waiting for its LLM selection.'};
       if(usingBulkB()) return data.experiments.bulk_ab.variants[key];
@@ -462,10 +467,11 @@
     function syncControls() {
       $('bulk-experiment').hidden=!bulkComparisonAvailable();
       document.querySelectorAll('[data-bulk-method]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.bulkMethod===bulkMethod)));
-      $('bulk-method-note').textContent=usingD()?'D skips combinations that are 65% or more similar to an earlier pick: core dishes count 80%, accompaniments 20%. Searches up to 100 ranked options, with no LLM curation.':usingC()?'C lets an LLM choose up to five practical Mensa lunches from the preference model’s top 20. Up to 900 g excluding soup.':usingBulkB()?'B ranks every combination of 1–4 dishes using this goal’s preference model, up to 900 g excluding soup.':'A keeps the usual recommendations. Compare B’s ranking, C’s LLM picks, and D’s distinct picks.';
+      $('mmr-controls').hidden=!usingE();$('mmr-balance').value=mmrBalance;
+      $('bulk-method-note').textContent=usingE()?'E balances preference quality with variety. Similar lunches can still earn a place; choose how much variety you want.':usingD()?'D skips combinations that are 65% or more similar to an earlier pick: core dishes count 80%, accompaniments 20%. Searches up to 100 ranked options, with no LLM curation.':usingC()?'C lets an LLM choose up to five practical Mensa lunches from the preference model’s top 20. Up to 900 g excluding soup.':usingBulkB()?'B ranks every combination of 1–4 dishes using this goal’s preference model, up to 900 g excluding soup.':'A keeps the usual recommendations. Compare B’s ranking, C’s LLM picks, D’s distinct picks and E’s quality/variety balance.';
       $('c-audit').hidden=!bulkComparisonAvailable() || bulkMethod==='a';
-      $('c-audit').textContent=usingD()?'Review D’s picks and skipped lookalikes →':'See the top 20 and C’s choices →';
-      $('c-audit').href=(usingD()?'./label/d/?':'./label/c/?')+new URLSearchParams({date:selectedDate || '',goal:selection.goal,profile:selection.vegan?'vegan':filterProfile() || 'all'});
+      $('c-audit').textContent=usingE()?'Review E’s picks and all ranked alternatives →':usingD()?'Review D’s picks and skipped lookalikes →':'See the top 20 and C’s choices →';
+      $('c-audit').href=(usingE()?'./label/e/?':usingD()?'./label/d/?':'./label/c/?')+new URLSearchParams({date:selectedDate || '',goal:selection.goal,profile:selection.vegan?'vegan':filterProfile() || 'all',...(usingE()?{balance:mmrBalance}:{})});
       document.querySelectorAll('[data-goal]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.goal===selection.goal)));
       $('vegan').checked=selection.vegan;
       const vegetarian=selection.vegan || selection.noMeat;
@@ -568,7 +574,7 @@
       const v=variant();
       if(data.state==='closed') return empty('No menu today.',v.message);
       if(data.state==='unavailable') return empty('Plates are on the way.',data.reason || v.message);
-      if((usingC() || usingD()) && v.state!=='ready') return empty('No '+(usingD()?'D':'C')+' picks for this context.',v.message);
+      if((usingC() || usingD() || usingE()) && v.state!=='ready') return empty('No '+(usingE()?'E':usingD()?'D':'C')+' picks for this context.',v.message);
       const plates=visiblePlates();
       if(v.state!=='ready' || !plates.length) return empty(filterProfile()?'No plates match your filters.':'No plate fits this goal today.',filterProfile()?'Try another goal or adjust your dietary filters.':v.message);
       plateIndex=Math.min(plateIndex,plates.length-1);
@@ -581,7 +587,7 @@
       $('plate-side').textContent=p.items.filter(item=>item!==main).map(briefDish).join(' + ');$('plate-side').hidden=p.items.length<2;
       renderItems();
       $('totals').hidden=false;
-      $('relaxed-note').textContent=usingD()?[p.reason,v.message].filter(Boolean).join(' '):usingC()?p.reason || '':v.note || '';$('relaxed-note').hidden=(usingC() || usingD())?!$('relaxed-note').textContent:!v.relaxed || !v.note;
+      $('relaxed-note').textContent=(usingD() || usingE())?[p.reason,v.message].filter(Boolean).join(' '):usingC()?p.reason || '':v.note || '';$('relaxed-note').hidden=(usingC() || usingD() || usingE())?!$('relaxed-note').textContent:!v.relaxed || !v.note;
       $('plate-actions').hidden=plates.length<2;$('alternatives').hidden=plates.length<2;
       renderPager(plates.length);
       $('announcement').textContent='Option '+(plateIndex+1)+' of '+plates.length+': '+p.title;
@@ -611,6 +617,7 @@
       if(!Array.isArray(payload.extras.all) || !Array.isArray(payload.extras.vegan)) throw new Error('Invalid extras');
       return payload;
     }
+    $('mmr-balance').addEventListener('change',()=>{mmrBalance=$('mmr-balance').value;saveAndRender();});
     document.querySelectorAll('[data-bulk-method]').forEach(button=>button.addEventListener('click',()=>{
       if(!bulkComparisonAvailable() || button.dataset.bulkMethod===bulkMethod) return;
       bulkMethod=button.dataset.bulkMethod;saveAndRender();
@@ -795,7 +802,7 @@
     }
     const menuRequests=new Map(),artworkRequests=new Map();
     function warmArtwork(payload) {
-      const variants=[...Object.values(payload.variants),...Object.values(payload.filtered_variants || {}),...Object.values(payload.experiments?.bulk_ab?.variants || {}),...Object.values(payload.experiments?.combination_c?.variants || {}),...Object.values(payload.experiments?.combination_d?.variants || {})];
+      const variants=[...Object.values(payload.variants),...Object.values(payload.filtered_variants || {}),...Object.values(payload.experiments?.bulk_ab?.variants || {}),...Object.values(payload.experiments?.combination_c?.variants || {}),...Object.values(payload.experiments?.combination_d?.variants || {}),...Object.values(payload.experiments?.combination_e?.balances || {}).flatMap(b=>Object.values(b.variants))];
       const items=variants.flatMap(variant=>variant.plates.flatMap(plate=>plate.items));
       items.push(...payload.extras.all);
       const keys=new Set(items.map(item=>DishIcons.classify(item)));

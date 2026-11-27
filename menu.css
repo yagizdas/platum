@@ -511,3 +511,6 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
 .ranking-audit-link{display:inline-block;margin-top:8px;font-size:14px;color:var(--ink);text-underline-offset:4px}.ranking-audit-link[hidden]{display:none}
 
 @media(max-width:600px) { .bulk-methods { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+.mmr-controls{display:flex;align-items:center;gap:12px;font-size:14px;margin-top:12px}.mmr-controls[hidden]{display:none}.mmr-controls select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--muted);border-radius:8px;padding:8px 12px;min-height:44px}.mmr-controls select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(max-width:600px){.bulk-methods{grid-template-columns:repeat(6,minmax(0,1fr))}.bulk-methods button{grid-column:span 2;font-size:13px}.bulk-methods button:nth-child(n+4){grid-column:span 3}}

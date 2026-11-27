@@ -7,6 +7,7 @@ from pick import GOALS, build_week
 from bulk_experiment import attach_experiment, build_experiment
 from combination_c import TOP_K, attach_c_experiment
 from combination_d import SCAN_K, attach_d_experiment
+from combination_e import attach_e_experiment
 
 
 def rescore(root=ROOT, campus="arcisstr"):
@@ -32,6 +33,8 @@ def rescore(root=ROOT, campus="arcisstr"):
                        'stats': ranking['stats'], **audit})
             payload, d_audit = attach_d_experiment(payload, ranking)
             write_json(root / 'label/d/data' / f'{day}.json', {'date': day, 'campus': campus, **d_audit})
+            payload, e_audit = attach_e_experiment(payload, ranking)
+            write_json(root / 'label/e/data' / f'{day}.json', {'date': day, 'campus': campus, **e_audit})
             audit_days.append({'date': day, 'file': f'{day}.json'})
         write_json(data / 'days' / f'{day}.json', payload)
     write_json(data / 'week.json', updated)
@@ -40,6 +43,8 @@ def rescore(root=ROOT, campus="arcisstr"):
         write_json(root / 'label/c/data/index.json', {'schema_version': 1, 'campus': campus,
                    'top_k': TOP_K, 'days': audit_days})
         write_json(root / 'label/d/data/index.json', {'schema_version': 1, 'campus': campus,
+                   'scan_k': SCAN_K, 'days': audit_days})
+        write_json(root / 'label/e/data/index.json', {'schema_version': 1, 'campus': campus,
                    'scan_k': SCAN_K, 'days': audit_days})
 
 
