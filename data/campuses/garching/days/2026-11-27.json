@@ -4,13 +4,13 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
-  "fetched_at": "2026-11-26T17:12:05.601994+00:00",
+  "fetched_at": "2026-11-27T16:53:58.916214+00:00",
   "warnings": [
-    "4 published dish(es) omitted: no unambiguous student price match."
+    "1 published dish(es) omitted: no unambiguous student price match."
   ],
   "campus": "garching",
   "schema_version": 2,
-  "menu_count": 6,
+  "menu_count": 9,
   "scoring": {
     "bulk": {
       "learned_model": {
@@ -98,15 +98,309 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pollock fillet + Pasta + Vanilla cinnamon cream",
+          "title": "Pizza Pollo + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+              "name_en": "Pizza Pollo (with chicken breast fillet)",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "205573d76f296f35",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 900.0,
+              "protein_g": 46.0
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 770,
+            "price_eur": 7.7,
+            "weight_g": 700,
+            "kcal": 1245.0,
+            "protein_g": 59.5,
+            "carbs_g": 124.0,
+            "fat_g": 56.4
+          },
+          "score": {
+            "kcal": 22.3945268029038,
+            "protein": 10.53607285958255,
+            "price": 1.9163817580446,
+            "total": 34.847
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 33.75,
+            "carbs_g": 102.0,
+            "fat_g": 48.9
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 5.976343848922875,
+            "price": 1.6799450476365,
+            "total": 25.5989
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 907.5,
+            "protein_g": 30.6,
+            "carbs_g": 59.25,
+            "fat_g": 58.8
+          },
+          "score": {
+            "kcal": 16.3237213442853,
+            "protein": 5.41855175635674,
+            "price": 1.6799450476365,
+            "total": 23.4222
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Vanilla cinnamon cream + Tyrolean cheese soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fisch",
-            "Pasta",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -149,38 +443,6 @@
               "protein_g": 27.0
             },
             {
-              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
-              "name_en": "Pasta with tomato and cream cheese sauce",
-              "station": "Pasta",
-              "counters": [
-                "Pasta"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "1d68dde281d18a14",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
-            },
-            {
               "name": "Vanille-Zimtcreme mit Blaubeeren",
               "name_en": "Vanilla cinnamon cream with blueberries",
               "station": "Dessert (Glas)",
@@ -209,78 +471,16 @@
               "price_source": "eat-api",
               "kcal": 189.0,
               "protein_g": 5.32
-            }
-          ],
-          "total": {
-            "price_cents": 816,
-            "price_eur": 8.16,
-            "weight_g": 740.0,
-            "kcal": 1029.0,
-            "protein_g": 52.57,
-            "carbs_g": 117.73,
-            "fat_g": 37.14
-          },
-          "score": {
-            "kcal": 18.509211309387958,
-            "protein": 9.308930255937053,
-            "price": 2.03086690203168,
-            "total": 29.849
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Parsnip and carrot casserole + Pancakes",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Vegetarisch/fleischlos",
-            "Süßspeise"
-          ],
-          "items": [
-            {
-              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
-              "name_en": "Parsnip and carrot casserole with herb dip",
-              "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Vegetarisch/fleischlos"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "31eebbc1620d3f5a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 17.1
             },
             {
-              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
-              "name_en": "Pancakes with cherry filling and vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Süßspeise"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "dessert",
-              "texture": "saucy",
+              "role": "soup",
+              "texture": "liquid",
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
@@ -290,36 +490,39 @@
                 "f"
               ],
               "allergens": [
-                "Ei",
                 "Gl",
                 "GlW",
-                "Mi"
+                "Mi",
+                "Sw"
               ],
-              "additives": [],
+              "additives": [
+                "5",
+                "99"
+              ],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "7288cf290dd775fb",
+              "id": "2b51fb29505a4ad7",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 525.0,
-              "protein_g": 10.5
+              "kcal": 345.0,
+              "protein_g": 13.5
             }
           ],
           "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1087.5,
-            "protein_g": 27.6,
-            "carbs_g": 131.25,
-            "fat_g": 47.4
+            "price_cents": 681,
+            "price_eur": 6.81,
+            "weight_g": 590.0,
+            "kcal": 721.5,
+            "protein_g": 45.82,
+            "carbs_g": 39.73,
+            "fat_g": 41.04
           },
           "score": {
-            "kcal": 19.5614842555485,
-            "protein": 4.88732119200804,
-            "price": 1.6799450476365,
-            "total": 26.1288
+            "kcal": 12.97803300264666,
+            "protein": 8.113661486152477,
+            "price": 1.69487789250438,
+            "total": 22.7866
           },
           "has_estimated_prices": false
         }
@@ -329,15 +532,415 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pollock fillet + Pasta + Vanilla cinnamon cream",
+          "title": "Salami Pizza + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pizza Salami",
+              "name_en": "Salami Pizza",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "3",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "ec4bc949aeeec7f1",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 1060.0,
+              "protein_g": 44.0
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 770,
+            "price_eur": 7.7,
+            "weight_g": 700,
+            "kcal": 1405.0,
+            "protein_g": 57.5,
+            "carbs_g": 134.0,
+            "fat_g": 69.6
+          },
+          "score": {
+            "kcal": 25.2725382795822,
+            "protein": 10.18191915001675,
+            "price": 1.9163817580446,
+            "total": 37.3708
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Pollo + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+              "name_en": "Pizza Pollo (with chicken breast fillet)",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "205573d76f296f35",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 900.0,
+              "protein_g": 46.0
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 770,
+            "price_eur": 7.7,
+            "weight_g": 700,
+            "kcal": 1245.0,
+            "protein_g": 59.5,
+            "carbs_g": 124.0,
+            "fat_g": 56.4
+          },
+          "score": {
+            "kcal": 22.3945268029038,
+            "protein": 10.53607285958255,
+            "price": 1.9163817580446,
+            "total": 34.847
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 33.75,
+            "carbs_g": 102.0,
+            "fat_g": 48.9
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 5.976343848922875,
+            "price": 1.6799450476365,
+            "total": 25.5989
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 907.5,
+            "protein_g": 30.6,
+            "carbs_g": 59.25,
+            "fat_g": 58.8
+          },
+          "score": {
+            "kcal": 16.3237213442853,
+            "protein": 5.41855175635674,
+            "price": 1.6799450476365,
+            "total": 23.4222
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Vanilla cinnamon cream + Tyrolean cheese soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fisch",
-            "Pasta",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -380,38 +983,6 @@
               "protein_g": 27.0
             },
             {
-              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
-              "name_en": "Pasta with tomato and cream cheese sauce",
-              "station": "Pasta",
-              "counters": [
-                "Pasta"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "1d68dde281d18a14",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
-            },
-            {
               "name": "Vanille-Zimtcreme mit Blaubeeren",
               "name_en": "Vanilla cinnamon cream with blueberries",
               "station": "Dessert (Glas)",
@@ -440,78 +1011,16 @@
               "price_source": "eat-api",
               "kcal": 189.0,
               "protein_g": 5.32
-            }
-          ],
-          "total": {
-            "price_cents": 816,
-            "price_eur": 8.16,
-            "weight_g": 740.0,
-            "kcal": 1029.0,
-            "protein_g": 52.57,
-            "carbs_g": 117.73,
-            "fat_g": 37.14
-          },
-          "score": {
-            "kcal": 18.509211309387958,
-            "protein": 9.308930255937053,
-            "price": 2.03086690203168,
-            "total": 29.849
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Parsnip and carrot casserole + Pancakes",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Vegetarisch/fleischlos",
-            "Süßspeise"
-          ],
-          "items": [
-            {
-              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
-              "name_en": "Parsnip and carrot casserole with herb dip",
-              "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Vegetarisch/fleischlos"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "31eebbc1620d3f5a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 17.1
             },
             {
-              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
-              "name_en": "Pancakes with cherry filling and vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Süßspeise"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "dessert",
-              "texture": "saucy",
+              "role": "soup",
+              "texture": "liquid",
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
@@ -521,36 +1030,39 @@
                 "f"
               ],
               "allergens": [
-                "Ei",
                 "Gl",
                 "GlW",
-                "Mi"
+                "Mi",
+                "Sw"
               ],
-              "additives": [],
+              "additives": [
+                "5",
+                "99"
+              ],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "7288cf290dd775fb",
+              "id": "2b51fb29505a4ad7",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 525.0,
-              "protein_g": 10.5
+              "kcal": 345.0,
+              "protein_g": 13.5
             }
           ],
           "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1087.5,
-            "protein_g": 27.6,
-            "carbs_g": 131.25,
-            "fat_g": 47.4
+            "price_cents": 681,
+            "price_eur": 6.81,
+            "weight_g": 590.0,
+            "kcal": 721.5,
+            "protein_g": 45.82,
+            "carbs_g": 39.73,
+            "fat_g": 41.04
           },
           "score": {
-            "kcal": 19.5614842555485,
-            "protein": 4.88732119200804,
-            "price": 1.6799450476365,
-            "total": 26.1288
+            "kcal": 12.97803300264666,
+            "protein": 8.113661486152477,
+            "price": 1.69487789250438,
+            "total": 22.7866
           },
           "has_estimated_prices": false
         }
@@ -560,15 +1072,309 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pollock fillet + Pasta + Vanilla cinnamon cream",
+          "title": "Pizza Pollo + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+              "name_en": "Pizza Pollo (with chicken breast fillet)",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "205573d76f296f35",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 900.0,
+              "protein_g": 46.0
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 770,
+            "price_eur": 7.7,
+            "weight_g": 700,
+            "kcal": 1245.0,
+            "protein_g": 59.5,
+            "carbs_g": 124.0,
+            "fat_g": 56.4
+          },
+          "score": {
+            "kcal": 22.3945268029038,
+            "protein": 10.53607285958255,
+            "price": 1.9163817580446,
+            "total": 34.847
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
+              "name_en": "Pasta with tomato and cream cheese sauce",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "1d68dde281d18a14",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 33.75,
+            "carbs_g": 102.0,
+            "fat_g": 48.9
+          },
+          "score": {
+            "kcal": 17.942602799916898,
+            "protein": 5.976343848922875,
+            "price": 1.6799450476365,
+            "total": 25.5989
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 907.5,
+            "protein_g": 30.6,
+            "carbs_g": 59.25,
+            "fat_g": 58.8
+          },
+          "score": {
+            "kcal": 16.3237213442853,
+            "protein": 5.41855175635674,
+            "price": 1.6799450476365,
+            "total": 23.4222
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pollock fillet + Vanilla cinnamon cream + Tyrolean cheese soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fisch",
-            "Pasta",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -611,38 +1417,6 @@
               "protein_g": 27.0
             },
             {
-              "name": "Pasta mit Tomaten-Frischkäse-Sauce",
-              "name_en": "Pasta with tomato and cream cheese sauce",
-              "station": "Pasta",
-              "counters": [
-                "Pasta"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "1d68dde281d18a14",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
-            },
-            {
               "name": "Vanille-Zimtcreme mit Blaubeeren",
               "name_en": "Vanilla cinnamon cream with blueberries",
               "station": "Dessert (Glas)",
@@ -671,78 +1445,16 @@
               "price_source": "eat-api",
               "kcal": 189.0,
               "protein_g": 5.32
-            }
-          ],
-          "total": {
-            "price_cents": 816,
-            "price_eur": 8.16,
-            "weight_g": 740.0,
-            "kcal": 1029.0,
-            "protein_g": 52.57,
-            "carbs_g": 117.73,
-            "fat_g": 37.14
-          },
-          "score": {
-            "kcal": 18.509211309387958,
-            "protein": 9.308930255937053,
-            "price": 2.03086690203168,
-            "total": 29.849
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Parsnip and carrot casserole + Pancakes",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Vegetarisch/fleischlos",
-            "Süßspeise"
-          ],
-          "items": [
-            {
-              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
-              "name_en": "Parsnip and carrot casserole with herb dip",
-              "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Vegetarisch/fleischlos"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "31eebbc1620d3f5a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 17.1
             },
             {
-              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
-              "name_en": "Pancakes with cherry filling and vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Süßspeise"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "dessert",
-              "texture": "saucy",
+              "role": "soup",
+              "texture": "liquid",
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
@@ -752,36 +1464,39 @@
                 "f"
               ],
               "allergens": [
-                "Ei",
                 "Gl",
                 "GlW",
-                "Mi"
+                "Mi",
+                "Sw"
               ],
-              "additives": [],
+              "additives": [
+                "5",
+                "99"
+              ],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "7288cf290dd775fb",
+              "id": "2b51fb29505a4ad7",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 525.0,
-              "protein_g": 10.5
+              "kcal": 345.0,
+              "protein_g": 13.5
             }
           ],
           "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1087.5,
-            "protein_g": 27.6,
-            "carbs_g": 131.25,
-            "fat_g": 47.4
+            "price_cents": 681,
+            "price_eur": 6.81,
+            "weight_g": 590.0,
+            "kcal": 721.5,
+            "protein_g": 45.82,
+            "carbs_g": 39.73,
+            "fat_g": 41.04
           },
           "score": {
-            "kcal": 19.5614842555485,
-            "protein": 4.88732119200804,
-            "price": 1.6799450476365,
-            "total": 26.1288
+            "kcal": 12.97803300264666,
+            "protein": 8.113661486152477,
+            "price": 1.69487789250438,
+            "total": 22.7866
           },
           "has_estimated_prices": false
         }
@@ -791,14 +1506,14 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pasta + Pancakes",
+          "title": "Pasta + Tyrolean cheese soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Pasta",
-            "Süßspeise"
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -834,14 +1549,14 @@
               "protein_g": 20.25
             },
             {
-              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
-              "name_en": "Pancakes with cherry filling and vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Süßspeise"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "dessert",
-              "texture": "saucy",
+              "role": "soup",
+              "texture": "liquid",
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
@@ -851,48 +1566,51 @@
                 "f"
               ],
               "allergens": [
-                "Ei",
                 "Gl",
                 "GlW",
-                "Mi"
+                "Mi",
+                "Sw"
               ],
-              "additives": [],
+              "additives": [
+                "5",
+                "99"
+              ],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "7288cf290dd775fb",
+              "id": "2b51fb29505a4ad7",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 525.0,
-              "protein_g": 10.5
+              "kcal": 345.0,
+              "protein_g": 13.5
             }
           ],
           "total": {
             "price_cents": 675,
             "price_eur": 6.75,
             "weight_g": 750,
-            "kcal": 1177.5,
-            "protein_g": 30.75,
-            "carbs_g": 174.0,
-            "fat_g": 37.5
+            "kcal": 997.5,
+            "protein_g": 33.75,
+            "carbs_g": 102.0,
+            "fat_g": 48.9
           },
           "score": {
-            "kcal": 21.180365711180098,
-            "protein": 5.445113284574175,
+            "kcal": 17.942602799916898,
+            "protein": 5.976343848922875,
             "price": 1.6799450476365,
-            "total": 28.3054
+            "total": 25.5989
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Parsnip and carrot casserole + Pancakes",
+          "title": "Parsnip and carrot casserole + Tyrolean cheese soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Vegetarisch/fleischlos",
-            "Süßspeise"
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -929,14 +1647,14 @@
               "protein_g": 17.1
             },
             {
-              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
-              "name_en": "Pancakes with cherry filling and vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Süßspeise"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "dessert",
-              "texture": "saucy",
+              "role": "soup",
+              "texture": "liquid",
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
@@ -946,36 +1664,39 @@
                 "f"
               ],
               "allergens": [
-                "Ei",
                 "Gl",
                 "GlW",
-                "Mi"
+                "Mi",
+                "Sw"
               ],
-              "additives": [],
+              "additives": [
+                "5",
+                "99"
+              ],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "7288cf290dd775fb",
+              "id": "2b51fb29505a4ad7",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 525.0,
-              "protein_g": 10.5
+              "kcal": 345.0,
+              "protein_g": 13.5
             }
           ],
           "total": {
             "price_cents": 675,
             "price_eur": 6.75,
             "weight_g": 750,
-            "kcal": 1087.5,
-            "protein_g": 27.6,
-            "carbs_g": 131.25,
-            "fat_g": 47.4
+            "kcal": 907.5,
+            "protein_g": 30.6,
+            "carbs_g": 59.25,
+            "fat_g": 58.8
           },
           "score": {
-            "kcal": 19.5614842555485,
-            "protein": 4.88732119200804,
+            "kcal": 16.3237213442853,
+            "protein": 5.41855175635674,
             "price": 1.6799450476365,
-            "total": 26.1288
+            "total": 23.4222
           },
           "has_estimated_prices": false
         }
@@ -985,14 +1706,14 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pollock fillet + Potato goulash",
+          "title": "Pollock fillet + Tyrolean cheese soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fisch",
-            "Studitopf"
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -1035,48 +1756,216 @@
               "protein_g": 27.0
             },
             {
-              "name": "Kartoffelgulasch mit Paprika",
-              "name_en": "Potato goulash with bell peppers",
-              "station": "Studitopf",
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Studitopf"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "main",
-              "texture": "saucy",
+              "role": "soup",
+              "texture": "liquid",
               "count": 1,
               "unit": "scoop",
               "weight_g": 150,
-              "price_cents": 50,
-              "is_vegan": true,
+              "price_cents": 135,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
-              "allergens": [],
-              "additives": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
               "standing": false,
-              "diet": "vegan",
+              "diet": "vegetarian",
               "meat_types": [],
-              "id": "cc6103f60ba7fd10",
+              "id": "2b51fb29505a4ad7",
               "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 127.5,
-              "protein_g": 3.3
+              "kcal": 172.5,
+              "protein_g": 6.75
             }
           ],
           "total": {
-            "price_cents": 335,
-            "price_eur": 3.35,
+            "price_cents": 420,
+            "price_eur": 4.2,
             "weight_g": 300,
-            "kcal": 315.0,
-            "protein_g": 30.3,
-            "carbs_g": 21.0,
-            "fat_g": 11.7
+            "kcal": 360.0,
+            "protein_g": 33.75,
+            "carbs_g": 8.25,
+            "fat_g": 20.7
           },
           "score": {
-            "kcal": -6.3722317643901,
-            "protein": 9.99549769873788,
-            "price": 0.043121122862900006,
-            "total": 3.6664
+            "kcal": -7.2825505878744,
+            "protein": 11.1335989218615,
+            "price": 0.05406230329080001,
+            "total": 3.9051
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Pollo",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+              "name_en": "Pizza Pollo (with chicken breast fillet)",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "205573d76f296f35",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 900.0,
+              "protein_g": 46.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 900.0,
+            "protein_g": 46.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": -18.206376469686,
+            "protein": 15.174682974981602,
+            "price": 0.06435988487000001,
+            "total": -2.9673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 375.0,
+              "protein_g": 11.4
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 720.0,
+            "protein_g": 24.9,
+            "carbs_g": 43.5,
+            "fat_g": 48.0
+          },
+          "score": {
+            "kcal": -14.5651011757488,
+            "protein": 8.21412187124004,
+            "price": 0.0695086756596,
+            "total": -6.2815
           },
           "has_estimated_prices": false
         },
@@ -1137,98 +2026,6 @@
             "protein": 6.680159353116901,
             "price": 0.0521315067447,
             "total": -6.4673
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Vegetarisch/fleischlos",
-            "Dessert (Glas)"
-          ],
-          "items": [
-            {
-              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
-              "name_en": "Parsnip and carrot casserole with herb dip",
-              "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Vegetarisch/fleischlos"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "31eebbc1620d3f5a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
-            }
-          ],
-          "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590.0,
-            "kcal": 751.5,
-            "protein_g": 22.42,
-            "carbs_g": 72.73,
-            "fat_g": 39.54
-          },
-          "score": {
-            "kcal": -15.202324352187809,
-            "protein": 7.396008528241033,
-            "price": 0.06835019773194,
-            "total": -7.738
           },
           "has_estimated_prices": false
         }
@@ -1238,14 +2035,14 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pollock fillet + Potato goulash",
+          "title": "Pollock fillet + Tyrolean cheese soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fisch",
-            "Studitopf"
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -1288,48 +2085,216 @@
               "protein_g": 27.0
             },
             {
-              "name": "Kartoffelgulasch mit Paprika",
-              "name_en": "Potato goulash with bell peppers",
-              "station": "Studitopf",
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Studitopf"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "main",
-              "texture": "saucy",
+              "role": "soup",
+              "texture": "liquid",
               "count": 1,
               "unit": "scoop",
               "weight_g": 150,
-              "price_cents": 50,
-              "is_vegan": true,
+              "price_cents": 135,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
-              "allergens": [],
-              "additives": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
               "standing": false,
-              "diet": "vegan",
+              "diet": "vegetarian",
               "meat_types": [],
-              "id": "cc6103f60ba7fd10",
+              "id": "2b51fb29505a4ad7",
               "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 127.5,
-              "protein_g": 3.3
+              "kcal": 172.5,
+              "protein_g": 6.75
             }
           ],
           "total": {
-            "price_cents": 335,
-            "price_eur": 3.35,
+            "price_cents": 420,
+            "price_eur": 4.2,
             "weight_g": 300,
-            "kcal": 315.0,
-            "protein_g": 30.3,
-            "carbs_g": 21.0,
-            "fat_g": 11.7
+            "kcal": 360.0,
+            "protein_g": 33.75,
+            "carbs_g": 8.25,
+            "fat_g": 20.7
           },
           "score": {
-            "kcal": -6.3722317643901,
-            "protein": 9.99549769873788,
-            "price": 0.043121122862900006,
-            "total": 3.6664
+            "kcal": -7.2825505878744,
+            "protein": 11.1335989218615,
+            "price": 0.05406230329080001,
+            "total": 3.9051
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Pollo",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+              "name_en": "Pizza Pollo (with chicken breast fillet)",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "205573d76f296f35",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 900.0,
+              "protein_g": 46.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 900.0,
+            "protein_g": 46.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": -18.206376469686,
+            "protein": 15.174682974981602,
+            "price": 0.06435988487000001,
+            "total": -2.9673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 375.0,
+              "protein_g": 11.4
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 720.0,
+            "protein_g": 24.9,
+            "carbs_g": 43.5,
+            "fat_g": 48.0
+          },
+          "score": {
+            "kcal": -14.5651011757488,
+            "protein": 8.21412187124004,
+            "price": 0.0695086756596,
+            "total": -6.2815
           },
           "has_estimated_prices": false
         },
@@ -1394,94 +2359,71 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
+          "title": "Salami Pizza",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Vegetarisch/fleischlos",
-            "Dessert (Glas)"
+            "Pizza"
           ],
           "items": [
             {
-              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
-              "name_en": "Parsnip and carrot casserole with herb dip",
-              "station": "Vegetarisch/fleischlos",
+              "name": "Pizza Salami",
+              "name_en": "Salami Pizza",
+              "station": "Pizza",
               "counters": [
-                "Vegetarisch/fleischlos"
+                "Pizza"
               ],
               "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
               "is_vegan": false,
               "markers": [
-                "f"
+                "S"
               ],
               "allergens": [
-                "Ei",
-                "Mi"
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
               ],
               "additives": [
+                "1",
+                "2",
+                "3",
                 "Kn"
               ],
               "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "31eebbc1620d3f5a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
+              "diet": "meat",
+              "meat_types": [
+                "pork"
               ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e3f3d1570f31d444",
+              "id": "ec4bc949aeeec7f1",
               "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
+              "kcal": 1060.0,
+              "protein_g": 44.0
             }
           ],
           "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590.0,
-            "kcal": 751.5,
-            "protein_g": 22.42,
-            "carbs_g": 72.73,
-            "fat_g": 39.54
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 1060.0,
+            "protein_g": 44.0,
+            "carbs_g": 122.0,
+            "fat_g": 43.2
           },
           "score": {
-            "kcal": -15.202324352187809,
-            "protein": 7.396008528241033,
-            "price": 0.06835019773194,
-            "total": -7.738
+            "kcal": -21.4430656198524,
+            "protein": 14.514914149982399,
+            "price": 0.06435988487000001,
+            "total": -6.8638
           },
           "has_estimated_prices": false
         }
@@ -1491,14 +2433,14 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Pollock fillet + Potato goulash",
+          "title": "Pollock fillet + Tyrolean cheese soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fisch",
-            "Studitopf"
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -1541,48 +2483,216 @@
               "protein_g": 27.0
             },
             {
-              "name": "Kartoffelgulasch mit Paprika",
-              "name_en": "Potato goulash with bell peppers",
-              "station": "Studitopf",
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Studitopf"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "main",
-              "texture": "saucy",
+              "role": "soup",
+              "texture": "liquid",
               "count": 1,
               "unit": "scoop",
               "weight_g": 150,
-              "price_cents": 50,
-              "is_vegan": true,
+              "price_cents": 135,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
-              "allergens": [],
-              "additives": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
               "standing": false,
-              "diet": "vegan",
+              "diet": "vegetarian",
               "meat_types": [],
-              "id": "cc6103f60ba7fd10",
+              "id": "2b51fb29505a4ad7",
               "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 127.5,
-              "protein_g": 3.3
+              "kcal": 172.5,
+              "protein_g": 6.75
             }
           ],
           "total": {
-            "price_cents": 335,
-            "price_eur": 3.35,
+            "price_cents": 420,
+            "price_eur": 4.2,
             "weight_g": 300,
-            "kcal": 315.0,
-            "protein_g": 30.3,
-            "carbs_g": 21.0,
-            "fat_g": 11.7
+            "kcal": 360.0,
+            "protein_g": 33.75,
+            "carbs_g": 8.25,
+            "fat_g": 20.7
           },
           "score": {
-            "kcal": -6.3722317643901,
-            "protein": 9.99549769873788,
-            "price": 0.043121122862900006,
-            "total": 3.6664
+            "kcal": -7.2825505878744,
+            "protein": 11.1335989218615,
+            "price": 0.05406230329080001,
+            "total": 3.9051
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Pollo",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+              "name_en": "Pizza Pollo (with chicken breast fillet)",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "205573d76f296f35",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 900.0,
+              "protein_g": 46.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 900.0,
+            "protein_g": 46.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": -18.206376469686,
+            "protein": 15.174682974981602,
+            "price": 0.06435988487000001,
+            "total": -2.9673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 375.0,
+              "protein_g": 11.4
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 720.0,
+            "protein_g": 24.9,
+            "carbs_g": 43.5,
+            "fat_g": 48.0
+          },
+          "score": {
+            "kcal": -14.5651011757488,
+            "protein": 8.21412187124004,
+            "price": 0.0695086756596,
+            "total": -6.2815
           },
           "has_estimated_prices": false
         },
@@ -1643,98 +2753,6 @@
             "protein": 6.680159353116901,
             "price": 0.0521315067447,
             "total": -6.4673
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Vegetarisch/fleischlos",
-            "Dessert (Glas)"
-          ],
-          "items": [
-            {
-              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
-              "name_en": "Parsnip and carrot casserole with herb dip",
-              "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Vegetarisch/fleischlos"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "31eebbc1620d3f5a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
-            }
-          ],
-          "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590.0,
-            "kcal": 751.5,
-            "protein_g": 22.42,
-            "carbs_g": 72.73,
-            "fat_g": 39.54
-          },
-          "score": {
-            "kcal": -15.202324352187809,
-            "protein": 7.396008528241033,
-            "price": 0.06835019773194,
-            "total": -7.738
           },
           "has_estimated_prices": false
         }
@@ -1744,6 +2762,104 @@
       "state": "ready",
       "plates": [
         {
+          "title": "Parsnip and carrot casserole + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 375.0,
+              "protein_g": 11.4
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 720.0,
+            "protein_g": 24.9,
+            "carbs_g": 43.5,
+            "fat_g": 48.0
+          },
+          "score": {
+            "kcal": -14.5651011757488,
+            "protein": 8.21412187124004,
+            "price": 0.0695086756596,
+            "total": -6.2815
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
@@ -1802,104 +2918,74 @@
             "total": -6.4673
           },
           "has_estimated_prices": false
-        },
-        {
-          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Vegetarisch/fleischlos",
-            "Dessert (Glas)"
-          ],
-          "items": [
-            {
-              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
-              "name_en": "Parsnip and carrot casserole with herb dip",
-              "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Vegetarisch/fleischlos"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "31eebbc1620d3f5a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
-            }
-          ],
-          "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590.0,
-            "kcal": 751.5,
-            "protein_g": 22.42,
-            "carbs_g": 72.73,
-            "fat_g": 39.54
-          },
-          "score": {
-            "kcal": -15.202324352187809,
-            "protein": 7.396008528241033,
-            "price": 0.06835019773194,
-            "total": -7.738
-          },
-          "has_estimated_prices": false
         }
       ]
     },
     "budget_no_pork": {
       "state": "ready",
       "plates": [
+        {
+          "title": "Pizza Pollo",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+              "name_en": "Pizza Pollo (with chicken breast fillet)",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "205573d76f296f35",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 900.0,
+              "protein_g": 46.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 900.0,
+            "protein_g": 46.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": 3.179660532021,
+            "protein": 3.3598075665315994,
+            "price": -6.3522899784349995,
+            "total": 0.1872
+          },
+          "has_estimated_prices": false
+        },
         {
           "title": "Pollock fillet + Potato goulash",
           "reason": null,
@@ -2154,6 +3240,137 @@
       "state": "ready",
       "plates": [
         {
+          "title": "Salami Pizza",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Salami",
+              "name_en": "Salami Pizza",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "3",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "ec4bc949aeeec7f1",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 1060.0,
+              "protein_g": 44.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 1060.0,
+            "protein_g": 44.0,
+            "carbs_g": 122.0,
+            "fat_g": 43.2
+          },
+          "score": {
+            "kcal": 3.7449335154914003,
+            "protein": 3.2137289766823995,
+            "price": -6.3522899784349995,
+            "total": 0.6064
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Pollo",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+              "name_en": "Pizza Pollo (with chicken breast fillet)",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "205573d76f296f35",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 900.0,
+              "protein_g": 46.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 900.0,
+            "protein_g": 46.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": 3.179660532021,
+            "protein": 3.3598075665315994,
+            "price": -6.3522899784349995,
+            "total": 0.1872
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Pollock fillet + Potato goulash",
           "reason": null,
           "picked_by": "rules",
@@ -2406,6 +3623,68 @@
     "budget_no_pork_beef": {
       "state": "ready",
       "plates": [
+        {
+          "title": "Pizza Pollo",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+              "name_en": "Pizza Pollo (with chicken breast fillet)",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "205573d76f296f35",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 900.0,
+              "protein_g": 46.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 900.0,
+            "protein_g": 46.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": 3.179660532021,
+            "protein": 3.3598075665315994,
+            "price": -6.3522899784349995,
+            "total": 0.1872
+          },
+          "has_estimated_prices": false
+        },
         {
           "title": "Pollock fillet + Potato goulash",
           "reason": null,
@@ -2660,6 +3939,130 @@
       "state": "ready",
       "plates": [
         {
+          "title": "Potato goulash + Vanilla cinnamon cream + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Kartoffelgulasch mit Paprika",
+              "name_en": "Potato goulash with bell peppers",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "cc6103f60ba7fd10",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 9.9
+            },
+            {
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 189.0,
+              "protein_g": 5.32
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 172.5,
+              "protein_g": 6.75
+            }
+          ],
+          "total": {
+            "price_cents": 410,
+            "price_eur": 4.1,
+            "weight_g": 740.0,
+            "kcal": 744.0,
+            "protein_g": 21.97,
+            "carbs_g": 87.73,
+            "fat_g": 32.94
+          },
+          "score": {
+            "kcal": 2.62851937313736,
+            "protein": 1.604673309493462,
+            "price": -5.208877782316699,
+            "total": -0.9757
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Pasta",
           "reason": null,
           "picked_by": "rules",
@@ -2823,56 +4226,221 @@
       "note": null,
       "plates": [
         {
-          "title": "Pollock fillet + Pasta + Vanilla cinnamon cream",
+          "title": "Salami Pizza + Tyrolean cheese soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Fisch",
-            "Pasta",
-            "Dessert (Glas)"
+            "Pizza",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
-              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
-              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
-              "station": "Fisch",
+              "name": "Pizza Salami",
+              "name_en": "Salami Pizza",
+              "station": "Pizza",
               "counters": [
-                "Fisch"
+                "Pizza"
               ],
               "role": "main",
               "texture": "dry",
               "count": 1,
               "unit": "piece",
-              "weight_g": 150,
-              "price_cents": 285,
+              "weight_g": 400,
+              "price_cents": 500,
               "is_vegan": false,
-              "markers": [],
+              "markers": [
+                "S"
+              ],
               "allergens": [
-                "Ei",
-                "Fi",
                 "Gl",
                 "GlG",
                 "GlW",
                 "Mi",
-                "Sf",
-                "Sl"
+                "So"
               ],
               "additives": [
-                "1"
+                "1",
+                "2",
+                "3",
+                "Kn"
               ],
               "standing": false,
-              "diet": "fish",
+              "diet": "meat",
               "meat_types": [
-                "fish"
+                "pork"
               ],
-              "id": "a1975c48e0f4e6f4",
+              "id": "ec4bc949aeeec7f1",
               "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 187.5,
-              "protein_g": 27.0
+              "kcal": 1060.0,
+              "protein_g": 44.0
             },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 770,
+            "price_eur": 7.7,
+            "weight_g": 700,
+            "kcal": 1405.0,
+            "protein_g": 57.5,
+            "carbs_g": 134.0,
+            "fat_g": 69.6
+          },
+          "score": {
+            "kcal": 25.2725382795822,
+            "protein": 10.18191915001675,
+            "price": 1.9163817580446,
+            "total": 37.3708
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Pollo + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+              "name_en": "Pizza Pollo (with chicken breast fillet)",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "205573d76f296f35",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 900.0,
+              "protein_g": 46.0
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 770,
+            "price_eur": 7.7,
+            "weight_g": 700,
+            "kcal": 1245.0,
+            "protein_g": 59.5,
+            "carbs_g": 124.0,
+            "fat_g": 56.4
+          },
+          "score": {
+            "kcal": 22.3945268029038,
+            "protein": 10.53607285958255,
+            "price": 1.9163817580446,
+            "total": 34.847
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
             {
               "name": "Pasta mit Tomaten-Frischkäse-Sauce",
               "name_en": "Pasta with tomato and cream cheese sauce",
@@ -2906,62 +4474,68 @@
               "protein_g": 20.25
             },
             {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Dessert (Glas)"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
-                "Mi"
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
               ],
-              "additives": [],
+              "additives": [
+                "5",
+                "99"
+              ],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "e3f3d1570f31d444",
-              "serving": "1 piece",
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
+              "kcal": 345.0,
+              "protein_g": 13.5
             }
           ],
           "total": {
-            "price_cents": 816,
-            "price_eur": 8.16,
-            "weight_g": 740.0,
-            "kcal": 1029.0,
-            "protein_g": 52.57,
-            "carbs_g": 117.73,
-            "fat_g": 37.14
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 997.5,
+            "protein_g": 33.75,
+            "carbs_g": 102.0,
+            "fat_g": 48.9
           },
           "score": {
-            "kcal": 18.509211309387958,
-            "protein": 9.308930255937053,
-            "price": 2.03086690203168,
-            "total": 29.849
+            "kcal": 17.942602799916898,
+            "protein": 5.976343848922875,
+            "price": 1.6799450476365,
+            "total": 25.5989
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Parsnip and carrot casserole + Pancakes",
+          "title": "Parsnip and carrot casserole + Tyrolean cheese soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Vegetarisch/fleischlos",
-            "Süßspeise"
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -2998,14 +4572,14 @@
               "protein_g": 17.1
             },
             {
-              "name": "Pfannkuchen mit Kirschfüllung und Vanillesauce",
-              "name_en": "Pancakes with cherry filling and vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Süßspeise"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "dessert",
-              "texture": "saucy",
+              "role": "soup",
+              "texture": "liquid",
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
@@ -3015,57 +4589,52 @@
                 "f"
               ],
               "allergens": [
-                "Ei",
                 "Gl",
                 "GlW",
-                "Mi"
+                "Mi",
+                "Sw"
               ],
-              "additives": [],
+              "additives": [
+                "5",
+                "99"
+              ],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "7288cf290dd775fb",
+              "id": "2b51fb29505a4ad7",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 525.0,
-              "protein_g": 10.5
+              "kcal": 345.0,
+              "protein_g": 13.5
             }
           ],
           "total": {
             "price_cents": 675,
             "price_eur": 6.75,
             "weight_g": 750,
-            "kcal": 1087.5,
-            "protein_g": 27.6,
-            "carbs_g": 131.25,
-            "fat_g": 47.4
+            "kcal": 907.5,
+            "protein_g": 30.6,
+            "carbs_g": 59.25,
+            "fat_g": 58.8
           },
           "score": {
-            "kcal": 19.5614842555485,
-            "protein": 4.88732119200804,
+            "kcal": 16.3237213442853,
+            "protein": 5.41855175635674,
             "price": 1.6799450476365,
-            "total": 26.1288
+            "total": 23.4222
           },
           "has_estimated_prices": false
-        }
-      ]
-    },
-    "cut_all": {
-      "state": "ready",
-      "goal": "cut",
-      "vegan": false,
-      "relaxed": false,
-      "note": null,
-      "plates": [
+        },
         {
-          "title": "Pollock fillet + Potato goulash",
+          "title": "Pollock fillet + Vanilla cinnamon cream + Tyrolean cheese soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fisch",
-            "Studitopf"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -3108,48 +4677,359 @@
               "protein_g": 27.0
             },
             {
-              "name": "Kartoffelgulasch mit Paprika",
-              "name_en": "Potato goulash with bell peppers",
-              "station": "Studitopf",
+              "name": "Vanille-Zimtcreme mit Blaubeeren",
+              "name_en": "Vanilla cinnamon cream with blueberries",
+              "station": "Dessert (Glas)",
               "counters": [
-                "Studitopf"
+                "Dessert (Glas)"
               ],
-              "role": "main",
+              "role": "dessert",
               "texture": "saucy",
               "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 50,
-              "is_vegan": true,
+              "unit": "piece",
+              "weight_g": 140.0,
+              "price_cents": 126,
+              "is_vegan": false,
               "markers": [
-                "v"
+                "f"
               ],
-              "allergens": [],
+              "allergens": [
+                "Mi"
+              ],
               "additives": [],
               "standing": false,
-              "diet": "vegan",
+              "diet": "vegetarian",
               "meat_types": [],
-              "id": "cc6103f60ba7fd10",
-              "serving": "1 scoop",
+              "id": "e3f3d1570f31d444",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 127.5,
-              "protein_g": 3.3
+              "kcal": 189.0,
+              "protein_g": 5.32
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
             }
           ],
           "total": {
-            "price_cents": 335,
-            "price_eur": 3.35,
-            "weight_g": 300,
-            "kcal": 315.0,
-            "protein_g": 30.3,
-            "carbs_g": 21.0,
-            "fat_g": 11.7
+            "price_cents": 681,
+            "price_eur": 6.81,
+            "weight_g": 590.0,
+            "kcal": 721.5,
+            "protein_g": 45.82,
+            "carbs_g": 39.73,
+            "fat_g": 41.04
           },
           "score": {
-            "kcal": -6.3722317643901,
-            "protein": 9.99549769873788,
-            "price": 0.043121122862900006,
-            "total": 3.6664
+            "kcal": 12.97803300264666,
+            "protein": 8.113661486152477,
+            "price": 1.69487789250438,
+            "total": 22.7866
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pollock fillet + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Fisch",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Seelachsfilet Lemon Koriander (1 Stück)",
+              "name_en": "Pollock fillet with lemon and coriander (1 piece)",
+              "station": "Fisch",
+              "counters": [
+                "Fisch"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 285,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Fi",
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "Sf",
+                "Sl"
+              ],
+              "additives": [
+                "1"
+              ],
+              "standing": false,
+              "diet": "fish",
+              "meat_types": [
+                "fish"
+              ],
+              "id": "a1975c48e0f4e6f4",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 187.5,
+              "protein_g": 27.0
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 172.5,
+              "protein_g": 6.75
+            }
+          ],
+          "total": {
+            "price_cents": 420,
+            "price_eur": 4.2,
+            "weight_g": 300,
+            "kcal": 360.0,
+            "protein_g": 33.75,
+            "carbs_g": 8.25,
+            "fat_g": 20.7
+          },
+          "score": {
+            "kcal": -7.2825505878744,
+            "protein": 11.1335989218615,
+            "price": 0.05406230329080001,
+            "total": 3.9051
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Pollo",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+              "name_en": "Pizza Pollo (with chicken breast fillet)",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "205573d76f296f35",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 900.0,
+              "protein_g": 46.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 900.0,
+            "protein_g": 46.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": -18.206376469686,
+            "protein": 15.174682974981602,
+            "price": 0.06435988487000001,
+            "total": -2.9673
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Parsnip and carrot casserole + Tyrolean cheese soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegetarisch/fleischlos",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
+              "name_en": "Parsnip and carrot casserole with herb dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [
+                "Vegetarisch/fleischlos"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "31eebbc1620d3f5a",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 375.0,
+              "protein_g": 11.4
+            },
+            {
+              "name": "Tiroler Käsesuppe",
+              "name_en": "Tyrolean cheese soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "2b51fb29505a4ad7",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 13.5
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 720.0,
+            "protein_g": 24.9,
+            "carbs_g": 43.5,
+            "fat_g": 48.0
+          },
+          "score": {
+            "kcal": -14.5651011757488,
+            "protein": 8.21412187124004,
+            "price": 0.0695086756596,
+            "total": -6.2815
           },
           "has_estimated_prices": false
         },
@@ -3214,94 +5094,71 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Parsnip and carrot casserole + Vanilla cinnamon cream",
+          "title": "Salami Pizza",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Vegetarisch/fleischlos",
-            "Dessert (Glas)"
+            "Pizza"
           ],
           "items": [
             {
-              "name": "Pastinaken-Karotten-Auflauf mit Kräuterdip",
-              "name_en": "Parsnip and carrot casserole with herb dip",
-              "station": "Vegetarisch/fleischlos",
+              "name": "Pizza Salami",
+              "name_en": "Salami Pizza",
+              "station": "Pizza",
               "counters": [
-                "Vegetarisch/fleischlos"
+                "Pizza"
               ],
               "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
               "is_vegan": false,
               "markers": [
-                "f"
+                "S"
               ],
               "allergens": [
-                "Ei",
-                "Mi"
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
               ],
               "additives": [
+                "1",
+                "2",
+                "3",
                 "Kn"
               ],
               "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "31eebbc1620d3f5a",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 562.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Vanille-Zimtcreme mit Blaubeeren",
-              "name_en": "Vanilla cinnamon cream with blueberries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
+              "diet": "meat",
+              "meat_types": [
+                "pork"
               ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140.0,
-              "price_cents": 126,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e3f3d1570f31d444",
+              "id": "ec4bc949aeeec7f1",
               "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 189.0,
-              "protein_g": 5.32
+              "kcal": 1060.0,
+              "protein_g": 44.0
             }
           ],
           "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590.0,
-            "kcal": 751.5,
-            "protein_g": 22.42,
-            "carbs_g": 72.73,
-            "fat_g": 39.54
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 1060.0,
+            "protein_g": 44.0,
+            "carbs_g": 122.0,
+            "fat_g": 43.2
           },
           "score": {
-            "kcal": -15.202324352187809,
-            "protein": 7.396008528241033,
-            "price": 0.06835019773194,
-            "total": -7.738
+            "kcal": -21.4430656198524,
+            "protein": 14.514914149982399,
+            "price": 0.06435988487000001,
+            "total": -6.8638
           },
           "has_estimated_prices": false
         }
@@ -3314,6 +5171,137 @@
       "relaxed": false,
       "note": null,
       "plates": [
+        {
+          "title": "Salami Pizza",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Salami",
+              "name_en": "Salami Pizza",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [
+                "1",
+                "2",
+                "3",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "ec4bc949aeeec7f1",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 1060.0,
+              "protein_g": 44.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 1060.0,
+            "protein_g": 44.0,
+            "carbs_g": 122.0,
+            "fat_g": 43.2
+          },
+          "score": {
+            "kcal": 3.7449335154914003,
+            "protein": 3.2137289766823995,
+            "price": -6.3522899784349995,
+            "total": 0.6064
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Pollo",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+              "name_en": "Pizza Pollo (with chicken breast fillet)",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "205573d76f296f35",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 900.0,
+              "protein_g": 46.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400,
+            "kcal": 900.0,
+            "protein_g": 46.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": 3.179660532021,
+            "protein": 3.3598075665315994,
+            "price": -6.3522899784349995,
+            "total": 0.1872
+          },
+          "has_estimated_prices": false
+        },
         {
           "title": "Pollock fillet + Potato goulash",
           "reason": null,
@@ -3606,6 +5594,20 @@
         "serving": "2 scoops",
         "kcal": 525.0,
         "protein_g": 10.5,
+        "price_source": "eat-api"
+      },
+      {
+        "name": "Tiroler Käsesuppe",
+        "name_en": "Tyrolean cheese soup",
+        "station": "Tagessupe, Brot, Obst",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "meat_types": [],
+        "serving": "2 scoops",
+        "kcal": 345.0,
+        "protein_g": 13.5,
         "price_source": "eat-api"
       },
       {
