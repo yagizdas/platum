@@ -509,3 +509,5 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
 @media(max-width:600px) { .bulk-methods { display:flex; } .bulk-methods button { flex:1; padding:10px 8px; font-size:14px; } }
 
 .ranking-audit-link{display:inline-block;margin-top:8px;font-size:14px;color:var(--ink);text-underline-offset:4px}.ranking-audit-link[hidden]{display:none}
+
+@media(max-width:600px) { .bulk-methods { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); } }
