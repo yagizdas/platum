@@ -1,0 +1,4 @@
+-r requirements.txt
+# Offline training only. Generation and the deployed website do not import these.
+numpy==2.5.5
+scikit-learn==1.9.1

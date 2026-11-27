@@ -8,6 +8,7 @@ from bulk_experiment import attach_experiment, build_experiment
 from combination_c import TOP_K, attach_c_experiment
 from combination_d import SCAN_K, attach_d_experiment
 from combination_e import attach_e_experiment
+from combination_f import attach_f_experiment
 
 
 def rescore(root=ROOT, campus="arcisstr"):
@@ -36,6 +37,7 @@ def rescore(root=ROOT, campus="arcisstr"):
             payload, e_audit = attach_e_experiment(payload, ranking)
             write_json(root / 'label/e/data' / f'{day}.json', {'date': day, 'campus': campus, **e_audit})
             audit_days.append({'date': day, 'file': f'{day}.json'})
+            payload = attach_f_experiment(payload, menus[day], cache, config)
         write_json(data / 'days' / f'{day}.json', payload)
     write_json(data / 'week.json', updated)
     write_json(data / 'today.json', read_json(data / 'days' / f"{index['week_start']}.json"))

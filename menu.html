@@ -63,6 +63,7 @@
           <button type="button" data-bulk-method="c" aria-pressed="false">C · LLM picks</button>
           <button type="button" data-bulk-method="d" aria-pressed="false">D · Distinct</button>
           <button type="button" data-bulk-method="e" aria-pressed="false">E · MMR</button>
+          <button type="button" data-bulk-method="f" aria-pressed="false" hidden>F · Goal fit</button>
         </div>
         <label id="mmr-controls" class="mmr-controls" hidden>Balance <select id="mmr-balance"><option value="quality">Quality first</option><option value="balanced" selected>Balanced</option><option value="variety">More variety</option></select></label>
         <p id="bulk-method-note" class="bulk-method-note">Compare the usual picks, exhaustive ranking, and LLM selections from the top 20.</p>
@@ -407,7 +408,7 @@
     } catch(_) {}
     const requested=new URLSearchParams(location.search);
     const requestedMethod=requested.get('method') || requested.get('bulkMethod');
-    let bulkMethod=['b','c','d','e'].includes(requestedMethod)?requestedMethod:'a';
+    let bulkMethod=['b','c','d','e','f'].includes(requestedMethod)?requestedMethod:'a';
     let mmrBalance=['quality','balanced','variety'].includes(requested.get('balance'))?requested.get('balance'):'balanced';
     const comparisonSite=location.pathname.split('/').includes('staging') || ['localhost','127.0.0.1'].includes(location.hostname);
     if(goals.includes(requested.get('goal'))) selection={...selection,goal:requested.get('goal'),vegan:requested.get('vegan')==='1'};
@@ -446,10 +447,12 @@
     function usingC() {return bulkComparisonAvailable() && bulkMethod==='c';}
     function usingD() {return bulkComparisonAvailable() && bulkMethod==='d';}
     function usingE() {return bulkComparisonAvailable() && bulkMethod==='e';}
-    function usingExpandedSearch() {return usingBulkB() || usingC() || usingD() || usingE();}
+    function usingF() {return bulkComparisonAvailable() && bulkMethod==='f' && ['cut','budget'].includes(selection.goal);}
+    function usingExpandedSearch() {return usingBulkB() || usingC() || usingD() || usingE() || usingF();}
     function variant() {
       const profile=filterProfile();
       const key=selection.goal+'_'+(selection.vegan?'vegan':profile || 'all');
+      if(usingF()) return data.experiments.combination_f?.variants[key] || {state:'unavailable',plates:[],message:'F is waiting for its goal-fit combinations.'};
       if(usingE()) return data.experiments.combination_e?.balances[mmrBalance]?.variants[key] || {state:'unavailable',plates:[],message:'E is waiting for its ranked combinations.'};
       if(usingD()) return data.experiments.combination_d?.variants[key] || {state:'unavailable',plates:[],message:'D is waiting for its ranked combinations.'};
       if(usingC()) return data.experiments.combination_c?.variants[key] || {state:'unavailable',plates:[],message:'C is waiting for its LLM selection.'};
@@ -465,13 +468,16 @@
     const availableExtras=()=>data.extras[selection.vegan?'vegan':'all'].filter(allowedItem);
     const activeExtras=()=>availableExtras().filter((_,index)=>selectedExtras.has(index));
     function syncControls() {
+      if(bulkMethod==='f' && !['cut','budget'].includes(selection.goal)) bulkMethod='b';
       $('bulk-experiment').hidden=!bulkComparisonAvailable();
+      document.querySelector('[data-bulk-method="f"]').hidden=!['cut','budget'].includes(selection.goal);
       document.querySelectorAll('[data-bulk-method]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.bulkMethod===bulkMethod)));
       $('mmr-controls').hidden=!usingE();$('mmr-balance').value=mmrBalance;
       const ePlates=usingE()?variant().plates:[];
       const eChange=usingE()&&ePlates.length?` ${ePlates.filter(p=>p.preference_rank>5).length} of ${ePlates.length} picks differ from the plain top five.`:'';
       $('bulk-method-note').textContent=usingE()?'E balances preference quality with variety. Similarity is a soft penalty.'+eChange:usingD()?'D skips combinations that are 65% or more similar to an earlier pick: core dishes count 80%, accompaniments 20%. Searches up to 100 ranked options, with no LLM curation.':usingC()?'C lets an LLM choose up to five practical Mensa lunches from the preference model’s top 20. Up to 900 g excluding soup.':usingBulkB()?'B ranks every combination of 1–4 dishes using this goal’s preference model, up to 900 g excluding soup.':'A keeps the usual recommendations. Compare B’s ranking, C’s LLM picks, D’s distinct picks and E’s quality/variety balance.';
-      $('c-audit').hidden=!bulkComparisonAvailable() || bulkMethod==='a';
+      if(usingF()) $('bulk-method-note').textContent='F learns preference and when to reject a plate from the new Cut/Budget labels. Searches 1–4 dishes, up to 900 g excluding soup. Experimental; Budget uses AI labels.';
+      $('c-audit').hidden=!bulkComparisonAvailable() || bulkMethod==='a' || usingF();
       $('c-audit').textContent=usingE()?'Review E’s picks and all ranked alternatives →':usingD()?'Review D’s picks and skipped lookalikes →':'See the top 20 and C’s choices →';
       $('c-audit').href=(usingE()?'./label/e/?':usingD()?'./label/d/?':'./label/c/?')+new URLSearchParams({date:selectedDate || '',goal:selection.goal,profile:selection.vegan?'vegan':filterProfile() || 'all',...(usingE()?{balance:mmrBalance}:{})});
       document.querySelectorAll('[data-goal]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.goal===selection.goal)));
@@ -804,7 +810,7 @@
     }
     const menuRequests=new Map(),artworkRequests=new Map();
     function warmArtwork(payload) {
-      const variants=[...Object.values(payload.variants),...Object.values(payload.filtered_variants || {}),...Object.values(payload.experiments?.bulk_ab?.variants || {}),...Object.values(payload.experiments?.combination_c?.variants || {}),...Object.values(payload.experiments?.combination_d?.variants || {}),...Object.values(payload.experiments?.combination_e?.balances || {}).flatMap(b=>Object.values(b.variants))];
+      const variants=[...Object.values(payload.variants),...Object.values(payload.filtered_variants || {}),...Object.values(payload.experiments?.bulk_ab?.variants || {}),...Object.values(payload.experiments?.combination_c?.variants || {}),...Object.values(payload.experiments?.combination_d?.variants || {}),...Object.values(payload.experiments?.combination_f?.variants || {}),...Object.values(payload.experiments?.combination_e?.balances || {}).flatMap(b=>Object.values(b.variants))];
       const items=variants.flatMap(variant=>variant.plates.flatMap(plate=>plate.items));
       items.push(...payload.extras.all);
       const keys=new Set(items.map(item=>DishIcons.classify(item)));
