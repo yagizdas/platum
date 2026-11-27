@@ -31,7 +31,7 @@ def quality(score, best, scale=1.):
     return max(0., 1 - (best - score) / scale)
 
 
-def select_mmr(plates, weight):
+def select_mmr(plates, weight, *, candidate_prefix='e', picked_by='mmr'):
     if not math.isfinite(weight) or not 0 <= weight <= 1:
         raise ValueError('MMR lambda must be between zero and one')
     pool = plates[:SCAN_K]
@@ -62,7 +62,7 @@ def select_mmr(plates, weight):
     for slot, (index, step) in enumerate(zip(selected, steps), 1):
         p = deepcopy(pool[index])
         mmr = {k: v for k, v in step.items() if k != 'closest_competitors'}
-        p.update(picked_by='mmr', preference_rank=index + 1, candidate_id=f'e{index + 1:03}',
+        p.update(picked_by=picked_by, preference_rank=index + 1, candidate_id=f'{candidate_prefix}{index + 1:03}',
                  mmr={'lambda': weight, **mmr}, reason='Highest-ranked eligible combination.' if slot == 1 else
                  f"MMR choice {slot}; original preference rank #{index + 1}. "
                  f"{step['max_similarity']:.0%} similarity to its closest earlier pick; similarity is a soft penalty.")
@@ -70,15 +70,15 @@ def select_mmr(plates, weight):
     return results, steps
 
 
-def build_e_experiment(ranking):
+def build_e_experiment(ranking, *, candidate_prefix='e', picked_by='mmr'):
     balances = {name: {**setting, 'variants': {}} for name, setting in BALANCES.items()}
     audit_variants = {}
     for key, ranked in ranking['variants'].items():
         pool = ranked['plates'][:SCAN_K]
-        audit_variants[key] = {'candidates': [{**p, 'candidate_id': f'e{i:03}', 'preference_rank': i}
+        audit_variants[key] = {'candidates': [{**p, 'candidate_id': f'{candidate_prefix}{i:03}', 'preference_rank': i}
                                              for i, p in enumerate(pool, 1)], 'balances': {}}
         for name, setting in BALANCES.items():
-            plates, steps = select_mmr(pool, setting['lambda'])
+            plates, steps = select_mmr(pool, setting['lambda'], candidate_prefix=candidate_prefix, picked_by=picked_by)
             v = {'state': 'ready' if plates else ranked['state'], 'plates': plates, 'pool_count': len(pool),
                  'message': (f'Only {len(pool)} eligible dish combinations are available.' if plates and len(pool) < PICK_K
                              else '' if plates else ranked.get('message', 'No eligible combinations.'))}

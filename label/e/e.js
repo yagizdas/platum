@@ -31,10 +31,12 @@
     return data;
   }
   function start() {
+    const method=document.documentElement.dataset.experiment==='g'?'g':'e', name=method.toUpperCase();
+    const goals=method==='g'?['cut','budget']:GOALS;
     const $ = id=>document.getElementById(id), query = new URLSearchParams(location.search);
     const element = (tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=text;return node;};
     let data, index, requestId=0, previousContext='';
-    $('goal').value=GOALS.includes(query.get('goal'))?query.get('goal'):'bulk';
+    $('goal').value=goals.includes(query.get('goal'))?query.get('goal'):goals[0];
     $('profile').value=PROFILES.includes(query.get('profile'))?query.get('profile'):'all';
     $('balance').value=BALANCES.includes(query.get('balance'))?query.get('balance'):'balanced';
     function card(p,pick) {
@@ -42,7 +44,7 @@
       for(const attr of ['role','tabindex','aria-label'])node.removeAttribute(attr);
       node.querySelector('h2').textContent=`Preference #${p.preference_rank}`;
       node.dataset.picked=String(!!pick);
-      node.prepend(element('p','pick-label',pick?`E choice ${pick.mmr.pick}`:'Ranked alternative'));
+      node.prepend(element('p','pick-label',pick?`${name} choice ${pick.mmr.pick}`:'Ranked alternative'));
       if(pick)node.append(element('p','selection-note',pick.reason));
       node.append(element('p','candidate-score',`Original preference score ${p.score.total.toFixed(3)}`));
       return node;
@@ -61,7 +63,7 @@
       const balance=$('balance').value,selection=v.balances[balance],plates=selectedPlates(v,balance);
       $('candidates').replaceChildren(...(plates.length?plates.map(p=>card(p,p)):[element('p','empty',selection.message||'No eligible combinations.')]));
       $('candidates').setAttribute('aria-busy','false');$('selected-count').textContent=String(plates.length);
-      $('status').textContent=selection.state==='ready'?`${plates.length} MMR picks from ${v.candidates.length} ranked combinations · ${data.settings.balances[balance].label}. ${plates.filter(p=>p.preference_rank>5).length} of ${plates.length} picks differ from the plain top five. ${selection.message||''}`.trim():selection.message;
+      $('status').textContent=selection.state==='ready'?`${plates.length} MMR picks from ${v.candidates.length} ranked combinations · ${data.settings.balances[balance].label}. ${plates.filter(p=>p.preference_rank>5).length} of ${plates.length} picks differ from ${method==='g'?'F’s':'the plain'} top five. ${selection.message||''}`.trim():selection.message;
       const context=data.date+key,old=previousContext===context?$('alternative').value:'';previousContext=context;
       $('alternative').replaceChildren(new Option('Choose a ranked alternative',''),...v.candidates.map(p=>new Option(`#${p.preference_rank} · ${p.title}`,p.candidate_id)));
       $('alternative').value=v.candidates.some(p=>p.candidate_id===old)?old:'';
@@ -78,9 +80,9 @@
       }));
       const params=new URLSearchParams({date:data.date,goal:$('goal').value,profile:$('profile').value,balance});
       history.replaceState(null,'','?'+params);
-      const menu=new URL('../../menu.html',document.baseURI);menu.search=new URLSearchParams({...Object.fromEntries(params),campus:'arcisstr',method:'e'});
+      const menu=new URL('../../menu.html',document.baseURI);menu.search=new URLSearchParams({...Object.fromEntries(params),campus:'arcisstr',method});
       $('menu-link').href=menu.href;$('menu-link').hidden=false;
-      $('d-link').href='../d/?'+new URLSearchParams({date:data.date,goal:$('goal').value,profile:$('profile').value});$('d-link').hidden=false;
+      $('d-link').href=(method==='g'?'../../menu.html?method=f&':'../d/?')+new URLSearchParams({date:data.date,goal:$('goal').value,profile:$('profile').value});$('d-link').hidden=false;
     }
     async function load() {
       const id=++requestId;data=null;$('candidates').setAttribute('aria-busy','true');$('status').textContent='Loading MMR choices…';
@@ -93,14 +95,14 @@
       } catch(error) {
         if(id!==requestId)return;$('candidates').setAttribute('aria-busy','false');
         $('candidates').replaceChildren(element('p','empty',error.message+' Try another date or reload.'));
-        $('status').textContent='E selections unavailable.';$('selected-count').textContent='—';
+        $('status').textContent=name+' selections unavailable.';$('selected-count').textContent='—';
         $('steps').replaceChildren();$('alternative-preview').replaceChildren();$('alternative').disabled=true;$('alternative-count').textContent='Ranked alternatives unavailable';$('weights').textContent='';$('menu-link').hidden=$('d-link').hidden=true;
       }
     }
     $('date').onchange=load;$('alternative').onchange=renderAlternative;
     for(const id of ['goal','profile','balance'])$(id).onchange=()=>{try{render();}catch(error){$('status').textContent=error.message;}};
     fetch(new URL('./data/index.json',document.baseURI),{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error(`HTTP ${r.status}`);return r.json();}).then(value=>{
-      if(value.schema_version!==1||!value.days?.length)throw Error('No generated E ranking data.');index=value;
+      if(value.schema_version!==1||!value.days?.length)throw Error('No generated '+name+' ranking data.');index=value;
       const today=new Date().toLocaleDateString('en-CA',{timeZone:'Europe/Berlin'});
       for(const row of value.days)$('date').append(new Option(new Date(row.date+'T12:00:00Z').toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',timeZone:'Europe/Berlin'}),row.date));
       $('date').value=value.days.some(d=>d.date===query.get('date'))?query.get('date'):value.days.some(d=>d.date===today)?today:value.days[0].date;

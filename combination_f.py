@@ -9,7 +9,8 @@ from pick import plate_result, portion_options
 GOALS = ('cut', 'budget')
 
 
-def build_f_experiment(menu, cache, config):
+def build_f_experiment(menu, cache, config, *, top_k=5):
+    if type(top_k) is not int or top_k < 1:raise ValueError('top_k must be a positive integer')
     missing = [d['name'] for d in menu['dishes'] if normalize(d['name']) not in cache]
     foods = [food(d, cache) for d in menu['dishes']] if menu['state']=='open' and not missing else []
     options = [portion_options(i, i, config, paired=True) for i in foods]
@@ -42,7 +43,7 @@ def build_f_experiment(menu, cache, config):
             result['total'].update(non_soup_weight_g=non_soup_weight_g(p),soup_weight_g=p['weight_g']-non_soup_weight_g(p))
             result.update(picked_by='goal_fit_v2',reason=None)
             selected.append(result)
-            if len(selected)==5:break
+            if len(selected)==top_k:break
         state='ready' if selected else menu['state'] if menu['state']!='open' else 'unavailable'
         variants[key]={'state':state,'plates':selected,'message':'' if selected else
                        'F is waiting for nutrition estimates.' if missing else 'This menu exceeds the exhaustive search limit.' if too_large else
@@ -51,6 +52,8 @@ def build_f_experiment(menu, cache, config):
             'max_non_soup_weight_g':900,'stats':stats,'variants':variants}
 
 
-def attach_f_experiment(payload,menu,cache,config):
+def attach_f_experiment(payload,menu,cache,config, *, ranking=None):
     if payload.get('campus','arcisstr')!='arcisstr':return payload
-    return {**payload,'experiments':{**payload.get('experiments',{}),'combination_f':build_f_experiment(menu,cache,config)}}
+    ranking = ranking if ranking is not None else build_f_experiment(menu,cache,config)
+    shortlist = {**ranking,'variants':{key:{**v,'plates':v['plates'][:5]} for key,v in ranking['variants'].items()}}
+    return {**payload,'experiments':{**payload.get('experiments',{}),'combination_f':shortlist}}
