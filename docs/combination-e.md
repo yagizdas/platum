@@ -12,7 +12,7 @@ lambda * quality - (1 - lambda) * max_similarity_to_earlier_picks
 
 Retain up to five candidates, with no hard similarity rejection. Break ties by higher quality and then the original preference rank, which already incorporates the scorer's deterministic price/identity tie-breaks. Original items, portions, totals, raw scores and rank are preserved. All existing feasibility limits, dietary filters and the 900 g cap excluding soup remain in place. A short pool is not padded.
 
-Three initial settings are available in both the menu and report: Quality first (lambda 0.95), Balanced (0.80, default), and More variety (0.65). These settings are explicit experiment choices, not learned optimal parameters. A lambda of one reproduces the plain preference ordering; a lambda of zero chooses by diversity after the fixed first pick.
+Three initial settings are available in both the menu and report: Quality first (lambda 0.80), Balanced (0.50, default), and More variety (0.35). These settings are explicit experiment choices, not learned optimal parameters. The menu and report show how many selected plates differ from the plain top five, counting replacements rather than order changes. On the ten saved dates across all-meal Bulk/Cut/Budget (30 contexts with more than five candidates), Balanced changes the actual selected set in 25 contexts and replaces 1.8 slots on average; More variety changes all 30 and replaces 3.37 slots on average. This measures composition changes, not whether users prefer the resulting lunches. Stronger diversity can select lower preference-ranked plates. A lambda of one reproduces the plain preference ordering; a lambda of zero chooses by diversity after the fixed first pick.
 
 ## Quality scale
 

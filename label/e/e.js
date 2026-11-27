@@ -61,7 +61,7 @@
       const balance=$('balance').value,selection=v.balances[balance],plates=selectedPlates(v,balance);
       $('candidates').replaceChildren(...(plates.length?plates.map(p=>card(p,p)):[element('p','empty',selection.message||'No eligible combinations.')]));
       $('candidates').setAttribute('aria-busy','false');$('selected-count').textContent=String(plates.length);
-      $('status').textContent=selection.state==='ready'?`${plates.length} MMR picks from ${v.candidates.length} ranked combinations · ${data.settings.balances[balance].label}. ${selection.message||''}`.trim():selection.message;
+      $('status').textContent=selection.state==='ready'?`${plates.length} MMR picks from ${v.candidates.length} ranked combinations · ${data.settings.balances[balance].label}. ${plates.filter(p=>p.preference_rank>5).length} of ${plates.length} picks differ from the plain top five. ${selection.message||''}`.trim():selection.message;
       const context=data.date+key,old=previousContext===context?$('alternative').value:'';previousContext=context;
       $('alternative').replaceChildren(new Option('Choose a ranked alternative',''),...v.candidates.map(p=>new Option(`#${p.preference_rank} · ${p.title}`,p.candidate_id)));
       $('alternative').value=v.candidates.some(p=>p.candidate_id===old)?old:'';
@@ -87,7 +87,7 @@
       try {
         const day=index.days.find(d=>d.date===$('date').value);
         if(!day||!/^\d{4}-\d{2}-\d{2}\.json$/.test(day.file))throw Error('No ranking is available for this date.');
-        const response=await fetch(new URL('./data/'+day.file,document.baseURI));
+        const response=await fetch(new URL('./data/'+day.file,document.baseURI),{cache:'no-cache'});
         if(!response.ok)throw Error(`HTTP ${response.status}`);
         const value=validateDay(await response.json());if(id!==requestId)return;data=value;render();
       } catch(error) {

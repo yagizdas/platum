@@ -4,9 +4,9 @@ import math
 
 from combination_d import SCAN_K, PICK_K, component_weights, dice
 
-BALANCES = {'quality': {'label': 'Quality first', 'lambda': .95},
-            'balanced': {'label': 'Balanced', 'lambda': .8},
-            'variety': {'label': 'More variety', 'lambda': .65}}
+BALANCES = {'quality': {'label': 'Quality first', 'lambda': .8},
+            'balanced': {'label': 'Balanced', 'lambda': .5},
+            'variety': {'label': 'More variety', 'lambda': .35}}
 DEFAULT_BALANCE = 'balanced'
 QUALITY_TRANSFORM = '1 - (best_score - candidate_score) / max(1, best_score - pool_worst_score)'
 

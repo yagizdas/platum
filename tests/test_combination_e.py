@@ -87,6 +87,18 @@ def test_every_step_maximizes_mmr_against_all_previously_selected_plates():
     assert select_mmr([], .8) == ([], [])
 
 
+def test_balanced_preset_changes_the_actual_five_when_quality_first_only_reorders():
+    pool = [plate(1 - i * .01, item('Chicken'), item(f'Side {i}', 'side')) for i in range(5)]
+    pool += [plate(.6, item('Kofte'), item('Side 0', 'side')),
+             plate(.5, item('Tofu'), item('New side', 'side')), plate(.4, item('Chili'))]
+    high = select_mmr(pool, BALANCES['quality']['lambda'])[0]
+    balanced = select_mmr(pool, BALANCES['balanced']['lambda'])[0]
+    assert {p['preference_rank'] for p in high} == set(range(1, 6))
+    assert {p['preference_rank'] for p in balanced} != set(range(1, 6))
+    assert balanced[0]['preference_rank'] == 1
+    assert sum(p['preference_rank'] > 5 for p in balanced) >= 2
+
+
 def test_e_preserves_all_goal_diet_candidates_and_a_to_d(config, fixture_menu, monkeypatch):
     def bomb(*args, **kwargs):raise AssertionError('E must not call a model')
     monkeypatch.setattr('combination_c.generate_json', bomb)
