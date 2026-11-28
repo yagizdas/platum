@@ -115,7 +115,7 @@ def test_rescore_writes_d_and_preserves_the_same_b_c_shortlists(tmp_path, fixtur
     write_json(tmp_path / 'data/menus' / f'{day}.json', menu)
     write_json(tmp_path / 'data/dish_cache.json', cache)
     old = build_experiment(menu, cache, config, goals=GOALS, top_k=20)
-    rescore(tmp_path)
+    rescore(tmp_path, experiments=True)
     public = read_json(tmp_path / 'data/days' / f'{day}.json')
     for key, v in old['variants'].items():
         assert public['experiments']['bulk_ab']['variants'][key]['plates'] == v['plates'][:5]

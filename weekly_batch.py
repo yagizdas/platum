@@ -13,13 +13,14 @@ from pick import build_week
 from proposals import daily_proposals, fallback_proposals
 from scrape import scrape_week, save_menu
 from tag import tag_menu
+from recommendations import apply_recommendations, EMPTY_PROPOSALS
 
 
 def next_monday(day):
     return day + timedelta(days=7 - day.weekday())
 
 
-def batch_ready(root, monday, campus="arcisstr"):
+def batch_ready(root, monday, campus="arcisstr", *, policy=None):
     data = campus_data(root, campus)
     marker = read_json(data / 'batches' / f'{monday}.json', {})
     expected = [day.isoformat() for day in week_dates(monday, 1)]
@@ -27,6 +28,7 @@ def batch_ready(root, monday, campus="arcisstr"):
     return (marker.get('complete') is True and marker.get('dates') == expected
             and index.get('campus', 'arcisstr') == campus
             and [row['date'] for row in index.get('days', [])] == expected
+            and (not policy or all(read_json(data / 'days' / f'{day}.json', {}).get('recommendation_policy') == policy for day in expected))
             and all(read_json(data / 'days' / f'{day}.json', {}).get('date') == day
                     and read_json(data / 'days' / f'{day}.json', {}).get('campus', 'arcisstr') == campus for day in expected))
 
@@ -41,7 +43,7 @@ def run_batch(monday, config, *, root=ROOT, scraper=scrape_week, tagger=tag_menu
               proposer=daily_proposals, refresh=False):
     campus = config.get("campus", "arcisstr")
     data = campus_data(root, campus)
-    if not refresh and batch_ready(root, monday, campus):
+    if not refresh and batch_ready(root, monday, campus, policy=config.get('recommendations')):
         print(f'{monday}: complete batch already saved; no source fetches or model calls.')
         return True
     dates = [day.isoformat() for day in week_dates(monday, 1)]
@@ -86,6 +88,8 @@ def run_batch(monday, config, *, root=ROOT, scraper=scrape_week, tagger=tag_menu
         if any(normalize(item['name']) not in tags for item in menu['dishes']):
             errors.append(f'{day}: incomplete nutrition cache')
             continue
+        if config.get('recommendations'):
+            continue  # Fixed exhaustive methods need nutrition tags, not LLM meal proposals.
         foods = [food(item, tags) for item in menu['dishes']]
         for goal in ('bulk', 'cut', 'budget'):
             for diet in ('all', 'vegan'):
@@ -112,7 +116,10 @@ def run_batch(monday, config, *, root=ROOT, scraper=scrape_week, tagger=tag_menu
                     write_json(path, current)
     if not errors:
         days, index = builder(monday, menus, tags, config,
-                              proposals_dir=proposals_dir, judge_cache_path=data / 'title_cache.json')
+                              proposals_dir=proposals_dir, judge_cache_path=data / 'title_cache.json',
+                              **({'no_llm': True, 'proposals': EMPTY_PROPOSALS} if config.get('recommendations') else {}))
+        if config.get('recommendations'):
+            days = {day:apply_recommendations(payload, menus[day], tags, config) for day,payload in days.items()}
         if any(day['state'] == 'unavailable' or day.get('missing_tags') for day in days.values()):
             errors.append('Some dated plates could not be generated.')
         else:

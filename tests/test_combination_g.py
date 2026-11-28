@@ -65,7 +65,7 @@ def test_rescore_generates_g_audit_for_all_f_contexts(tmp_path, config, fixture_
     write_json(tmp_path / 'data/week.json', {'week_start': day, 'days': [{'date': day}]})
     write_json(tmp_path / 'data/menus' / f'{day}.json', menu)
     write_json(tmp_path / 'data/dish_cache.json', cache)
-    rescore(tmp_path)
+    rescore(tmp_path, experiments=True)
     payload = read_json(tmp_path / 'data/days' / f'{day}.json')
     assert 'combination_g' in payload['experiments']
     audit = read_json(tmp_path / 'label/g/data' / f'{day}.json')

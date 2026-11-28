@@ -1,10 +1,17 @@
 import copy
 from datetime import date
 from unittest.mock import Mock
+import pytest
 
 from common import read_json, week_dates, write_json
 from proposals import fallback_proposals
 from weekly_batch import batch_ready, next_monday, run_batch
+
+
+@pytest.fixture(autouse=True)
+def legacy_proposal_config(config):
+    """These regression cases exercise the archived LLM-proposal batch workflow."""
+    config.pop('recommendations', None)
 
 
 def batch_fixture(root, fixture_menu):

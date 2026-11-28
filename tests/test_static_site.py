@@ -95,6 +95,8 @@ def test_packaging_allows_a_static_file_to_exist_only_on_staging(tmp_path, workf
     assert (main / "dist" / "menu.html").read_bytes() == (ROOT / "menu.html").read_bytes()
     assert (main / "dist" / "staging" / "menu.html").is_file()
     assert (main / "dist" / "staging" / "label" / "index.html").is_file()
+    for obsolete in ('c', 'd', 'e', 'g'):
+        assert not (main / 'dist/staging/label' / obsolete).exists()
     assert (main / "dist" / "data" / "today.json").is_file()
     assert (main / "dist" / "staging" / "data" / "today.json").is_file()
     for site in (main / "dist", main / "dist" / "staging"):

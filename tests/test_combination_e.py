@@ -133,7 +133,7 @@ def test_rescore_generates_mmr_choices_and_audit_without_new_models(tmp_path, fi
     write_json(tmp_path / 'data/week.json', {'week_start': day, 'days': [{'date': day}]})
     write_json(tmp_path / 'data/menus' / f'{day}.json', menu)
     write_json(tmp_path / 'data/dish_cache.json', tags)
-    rescore(tmp_path)
+    rescore(tmp_path, experiments=True)
     v = read_json(tmp_path / 'data/days' / f'{day}.json')
     assert v['experiments']['combination_e']['method'] == 'mmr_simple_overlap'
     assert read_json(tmp_path / 'label/e/data/index.json')['days'] == [{'date': day, 'file': day + '.json'}]

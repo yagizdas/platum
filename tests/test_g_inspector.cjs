@@ -6,7 +6,7 @@ test('G audit reuses the MMR inspector and links to G and F with Cut/Budget scop
  for(const ref of [...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map(m=>m[1]))assert.ok(existsSync(resolve(dirname(file),ref.split('?')[0])),ref);
  assert.match(html,/data-experiment="g"/);assert.match(html,/method=g/);assert.match(html,/method=f/);
  assert.match(html,/<option value="cut">/);assert.match(html,/<option value="budget">/);assert.doesNotMatch(html,/<option value="bulk">/);
- const menu=readFileSync(resolve(__dirname,'../menu.html'),'utf8');assert.match(menu,/data-bulk-method="g"/);assert.match(menu,/usingG\(\)/);assert.match(menu,/label\/g\/\?/);
+ const menu=readFileSync(resolve(__dirname,'../menu.html'),'utf8');assert.doesNotMatch(menu,/data-bulk-method|usingG\(\)/);
 });
 test('G reconstructs exactly the selected F candidates in MMR order',()=>{
  const candidates=[1,2,3].map(i=>({candidate_id:`g00${i}`,preference_rank:i,score:{total:1-i/10},items:[],total:{}}));

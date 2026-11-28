@@ -124,7 +124,7 @@ def test_rescore_publishes_c_audit_and_all_goal_b_without_model_calls(tmp_path, 
     write_json(tmp_path / 'data/dish_cache.json', tags)
     def bomb(*args, **kwargs):raise AssertionError('Publishing must not call an LLM')
     monkeypatch.setattr('combination_c.generate_json', bomb)
-    rescore(tmp_path)
+    rescore(tmp_path, experiments=True)
     public = read_json(tmp_path / 'data/days' / f'{day}.json')
     assert len(public['experiments']['bulk_ab']['variants']) == 18
     assert len(public['experiments']['combination_c']['variants']) == 18

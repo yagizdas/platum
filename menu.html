@@ -56,20 +56,6 @@
           </section>
         </div>
       </div>
-      <div id="bulk-experiment" class="bulk-experiment" hidden>
-        <div class="bulk-methods" role="group" aria-label="Recommendation method">
-          <button type="button" data-bulk-method="a" aria-pressed="true">A · Usual picks</button>
-          <button type="button" data-bulk-method="b" aria-pressed="false">B · Ranked</button>
-          <button type="button" data-bulk-method="c" aria-pressed="false">C · LLM picks</button>
-          <button type="button" data-bulk-method="d" aria-pressed="false">D · Distinct</button>
-          <button type="button" data-bulk-method="e" aria-pressed="false">E · MMR</button>
-          <button type="button" data-bulk-method="f" aria-pressed="false" hidden>F · Goal fit</button>
-          <button type="button" data-bulk-method="g" aria-pressed="false" hidden>G · Fit + variety</button>
-        </div>
-        <label id="mmr-controls" class="mmr-controls" hidden>Balance <select id="mmr-balance"><option value="quality">Quality first</option><option value="balanced" selected>Balanced</option><option value="variety">More variety</option></select></label>
-        <p id="bulk-method-note" class="bulk-method-note">Compare the usual picks, exhaustive ranking, and LLM selections from the top 20.</p>
-        <a id="c-audit" class="ranking-audit-link" href="./label/c/" hidden>See the top 20 and C’s choices →</a>
-      </div>
       <div class="deck-stage">
       <div class="meal-deck" id="meal-deck" role="region" aria-roledescription="carousel" aria-label="Lunch options">
       <section class="receipt" aria-labelledby="plate-title" aria-roledescription="slide" aria-busy="true" id="plate">
@@ -181,7 +167,7 @@
         part('plate-counter').hidden=campus!=='garching' || !plate.stations?.length;
         part('plate-side').textContent=plate.items.filter(item=>item!==main).map(briefDish).join(' + ');
         part('plate-side').hidden=plate.items.length<2;
-        part('plate-art').replaceChildren();DishIcons.compose(part('plate-art'),[...plate.items,...activeExtras()],{maxItems:usingExpandedSearch()?4:3});
+        part('plate-art').replaceChildren();DishIcons.compose(part('plate-art'),[...plate.items,...activeExtras()],{maxItems:4});
         numberValue(part('price'),'€',(total.price_cents/100).toFixed(2));
         numberValue(part('kcal'),'~',rounded(total.kcal));numberValue(part('protein'),'~',rounded(total.protein_g));
       }
@@ -193,7 +179,7 @@
     }
     function loopIndex(index,count) { return count?((index%count)+count)%count:0; }
     function warmDeckPlate(plate) {
-      for(const item of plate.items.slice(0,usingExpandedSearch()?4:3)) {
+      for(const item of plate.items.slice(0,4)) {
         const key=DishIcons.classify(item);
         if(warmedDeckArt.has(key)) continue;
         warmedDeckArt.add(key);
@@ -408,10 +394,6 @@
       if(saved && goals.includes(saved.goal) && typeof saved.vegan==='boolean') selection={goal:saved.goal,vegan:saved.vegan,noPork:saved.noPork===true,noBeef:saved.noBeef===true,noMeat:saved.noMeat===true};
     } catch(_) {}
     const requested=new URLSearchParams(location.search);
-    const requestedMethod=requested.get('method') || requested.get('bulkMethod');
-    let bulkMethod=['b','c','d','e','f','g'].includes(requestedMethod)?requestedMethod:'a';
-    let mmrBalance=['quality','balanced','variety'].includes(requested.get('balance'))?requested.get('balance'):'balanced';
-    const comparisonSite=location.pathname.split('/').includes('staging') || ['localhost','127.0.0.1'].includes(location.hostname);
     if(goals.includes(requested.get('goal'))) selection={...selection,goal:requested.get('goal'),vegan:requested.get('vegan')==='1'};
     const requestedProfile=requested.get('profile');
     if(['all','vegan','vegetarian','no_pork','no_beef','no_pork_beef'].includes(requestedProfile)) selection={...selection,vegan:requestedProfile==='vegan',noMeat:requestedProfile==='vegetarian',noPork:['no_pork','no_pork_beef'].includes(requestedProfile),noBeef:['no_beef','no_pork_beef'].includes(requestedProfile)};
@@ -443,23 +425,9 @@
       }
       return !types.includes('unknown') && !(selection.noPork && types.includes('pork')) && !(selection.noBeef && types.includes('beef'));
     }
-    function bulkComparisonAvailable() {return comparisonSite && campus==='arcisstr' && !!data?.experiments?.bulk_ab;}
-    function usingBulkB() {return bulkComparisonAvailable() && bulkMethod==='b';}
-    function usingC() {return bulkComparisonAvailable() && bulkMethod==='c';}
-    function usingD() {return bulkComparisonAvailable() && bulkMethod==='d';}
-    function usingE() {return bulkComparisonAvailable() && bulkMethod==='e';}
-    function usingF() {return bulkComparisonAvailable() && bulkMethod==='f' && ['cut','budget'].includes(selection.goal);}
-    function usingG() {return bulkComparisonAvailable() && bulkMethod==='g' && ['cut','budget'].includes(selection.goal);}
-    function usingExpandedSearch() {return usingBulkB() || usingC() || usingD() || usingE() || usingF() || usingG();}
     function variant() {
       const profile=filterProfile();
       const key=selection.goal+'_'+(selection.vegan?'vegan':profile || 'all');
-      if(usingG()) return data.experiments.combination_g?.balances[mmrBalance]?.variants[key] || {state:'unavailable',plates:[],message:'G is waiting for its goal-fit combinations.'};
-      if(usingF()) return data.experiments.combination_f?.variants[key] || {state:'unavailable',plates:[],message:'F is waiting for its goal-fit combinations.'};
-      if(usingE()) return data.experiments.combination_e?.balances[mmrBalance]?.variants[key] || {state:'unavailable',plates:[],message:'E is waiting for its ranked combinations.'};
-      if(usingD()) return data.experiments.combination_d?.variants[key] || {state:'unavailable',plates:[],message:'D is waiting for its ranked combinations.'};
-      if(usingC()) return data.experiments.combination_c?.variants[key] || {state:'unavailable',plates:[],message:'C is waiting for its LLM selection.'};
-      if(usingBulkB()) return data.experiments.bulk_ab.variants[key];
       if(profile && !selection.vegan && data.filtered_variants?.[selection.goal+'_'+profile]) return data.filtered_variants[selection.goal+'_'+profile];
       return data.variants[selection.goal+(selection.vegan?'_vegan':'_all')];
     }
@@ -471,20 +439,6 @@
     const availableExtras=()=>data.extras[selection.vegan?'vegan':'all'].filter(allowedItem);
     const activeExtras=()=>availableExtras().filter((_,index)=>selectedExtras.has(index));
     function syncControls() {
-      if(['f','g'].includes(bulkMethod) && !['cut','budget'].includes(selection.goal)) bulkMethod='b';
-      $('bulk-experiment').hidden=!bulkComparisonAvailable();
-      document.querySelector('[data-bulk-method="f"]').hidden=!['cut','budget'].includes(selection.goal);
-      document.querySelector('[data-bulk-method="g"]').hidden=!['cut','budget'].includes(selection.goal);
-      document.querySelectorAll('[data-bulk-method]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.bulkMethod===bulkMethod)));
-      $('mmr-controls').hidden=!(usingE() || usingG());$('mmr-balance').value=mmrBalance;
-      const ePlates=(usingE() || usingG())?variant().plates:[];
-      const eChange=ePlates.length?` ${ePlates.filter(p=>p.preference_rank>5).length} of ${ePlates.length} picks differ from ${usingG()?'F’s':'the plain'} top five.`:'';
-      $('bulk-method-note').textContent=usingE()?'E balances preference quality with variety. Similarity is a soft penalty.'+eChange:usingD()?'D skips combinations that are 65% or more similar to an earlier pick: core dishes count 80%, accompaniments 20%. Searches up to 100 ranked options, with no LLM curation.':usingC()?'C lets an LLM choose up to five practical Mensa lunches from the preference model’s top 20. Up to 900 g excluding soup.':usingBulkB()?'B ranks every combination of 1–4 dishes using this goal’s preference model, up to 900 g excluding soup.':'A keeps the usual recommendations. Compare B’s ranking, C’s LLM picks, D’s distinct picks and E’s quality/variety balance.';
-      if(usingF()) $('bulk-method-note').textContent='F learns preference and when to reject a plate from the new Cut/Budget labels. Searches 1–4 dishes, up to 900 g excluding soup. Experimental; Budget uses AI labels.';
-      if(usingG()) $('bulk-method-note').textContent='G adds variety among F’s accepted lunches, keeping its first choice.'+eChange;
-      $('c-audit').hidden=!bulkComparisonAvailable() || bulkMethod==='a' || usingF();
-      $('c-audit').textContent=usingG()?'Review G’s picks and F’s ranked alternatives →':usingE()?'Review E’s picks and all ranked alternatives →':usingD()?'Review D’s picks and skipped lookalikes →':'See the top 20 and C’s choices →';
-      $('c-audit').href=(usingG()?'./label/g/?':usingE()?'./label/e/?':usingD()?'./label/d/?':'./label/c/?')+new URLSearchParams({date:selectedDate || '',goal:selection.goal,profile:selection.vegan?'vegan':filterProfile() || 'all',...((usingE() || usingG())?{balance:mmrBalance}:{})});
       document.querySelectorAll('[data-goal]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.goal===selection.goal)));
       $('vegan').checked=selection.vegan;
       const vegetarian=selection.vegan || selection.noMeat;
@@ -567,7 +521,7 @@
     function renderIllustration() {
       const items=[...currentPlate().items,...activeExtras()];
       const main=items.find(item=>item.role==='main') || items[0];
-      const ordered=[main,...items.filter(item=>item!==main).slice(0,usingExpandedSearch()?3:2)];
+      const ordered=[main,...items.filter(item=>item!==main).slice(0,3)];
       const host=$('plate-art'),previous=new Map([...host.querySelectorAll('[data-dish-key]')].map(node=>[node.dataset.dishKey,node]));
       host.dataset.companions=String(ordered.length-1);
       const seen=new Map();
@@ -587,7 +541,6 @@
       const v=variant();
       if(data.state==='closed') return empty('No menu today.',v.message);
       if(data.state==='unavailable') return empty('Plates are on the way.',data.reason || v.message);
-      if((usingC() || usingD() || usingE() || usingG()) && v.state!=='ready') return empty('No '+(usingG()?'G':usingE()?'E':usingD()?'D':'C')+' picks for this context.',v.message);
       const plates=visiblePlates();
       if(v.state!=='ready' || !plates.length) return empty(filterProfile()?'No plates match your filters.':'No plate fits this goal today.',filterProfile()?'Try another goal or adjust your dietary filters.':v.message);
       plateIndex=Math.min(plateIndex,plates.length-1);
@@ -600,11 +553,11 @@
       $('plate-side').textContent=p.items.filter(item=>item!==main).map(briefDish).join(' + ');$('plate-side').hidden=p.items.length<2;
       renderItems();
       $('totals').hidden=false;
-      $('relaxed-note').textContent=(usingD() || usingE())?[p.reason,v.message].filter(Boolean).join(' '):usingG()?v.message || '':usingC()?p.reason || '':v.note || '';$('relaxed-note').hidden=(usingC() || usingD() || usingE() || usingG())?!$('relaxed-note').textContent:!v.relaxed || !v.note;
+      $('relaxed-note').textContent=v.note || '';$('relaxed-note').hidden=!v.relaxed || !v.note;
       $('plate-actions').hidden=plates.length<2;$('alternatives').hidden=plates.length<2;
       renderPager(plates.length);
       $('announcement').textContent='Option '+(plateIndex+1)+' of '+plates.length+': '+p.title;
-      $('report-plate').hidden=!reports.enabled || p.items.some(i=>!i.id) || (usingExpandedSearch() && p.items.length>3);
+      $('report-plate').hidden=!reports.enabled || p.items.some(i=>!i.id) || p.items.length>3;
       renderExtras();renderTotals();
       renderDeck(plates);
     }
@@ -630,11 +583,6 @@
       if(!Array.isArray(payload.extras.all) || !Array.isArray(payload.extras.vegan)) throw new Error('Invalid extras');
       return payload;
     }
-    $('mmr-balance').addEventListener('change',()=>{mmrBalance=$('mmr-balance').value;saveAndRender();});
-    document.querySelectorAll('[data-bulk-method]').forEach(button=>button.addEventListener('click',()=>{
-      if(!bulkComparisonAvailable() || button.dataset.bulkMethod===bulkMethod) return;
-      bulkMethod=button.dataset.bulkMethod;saveAndRender();
-    }));
     document.querySelectorAll('[data-goal]').forEach(button=>button.addEventListener('click',()=>{selection.goal=button.dataset.goal;saveAndRender();}));
     $('vegan').addEventListener('change',()=>{selection.vegan=$('vegan').checked;if(selection.vegan)selection.noMeat=false;saveAndRender();});
     function setFilterOpen(open) {
@@ -815,7 +763,7 @@
     }
     const menuRequests=new Map(),artworkRequests=new Map();
     function warmArtwork(payload) {
-      const variants=[...Object.values(payload.variants),...Object.values(payload.filtered_variants || {}),...Object.values(payload.experiments?.bulk_ab?.variants || {}),...Object.values(payload.experiments?.combination_c?.variants || {}),...Object.values(payload.experiments?.combination_d?.variants || {}),...Object.values(payload.experiments?.combination_f?.variants || {}),...Object.values(payload.experiments?.combination_e?.balances || {}).flatMap(b=>Object.values(b.variants)),...Object.values(payload.experiments?.combination_g?.balances || {}).flatMap(b=>Object.values(b.variants))];
+      const variants=[...Object.values(payload.variants),...Object.values(payload.filtered_variants || {})];
       const items=variants.flatMap(variant=>variant.plates.flatMap(plate=>plate.items));
       items.push(...payload.extras.all);
       const keys=new Set(items.map(item=>DishIcons.classify(item)));
@@ -923,7 +871,6 @@
       document.querySelectorAll('[data-campus]').forEach(button=>button.setAttribute('aria-checked',String(button.dataset.campus===campus)));
       $('official-menu').href=Campuses.get(campus).official;
       document.title='Plato — '+Campuses.get(campus).label;
-      $('bulk-experiment').hidden=true;
       weekIndex=undefined;data=undefined;selectedDate=undefined;pendingDate=undefined;
       selectedExtras.clear();plateIndex=0;brokenKeys=new Set();$('days').hidden=true;$('notice').textContent='';
       setFilterOpen(false);$('extras-wrap').open=false;

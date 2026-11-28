@@ -20,7 +20,5 @@ test('D page assets and menu switch are available', () => {
   assert.deepEqual(api.GOALS, ['bulk','cut','budget']);
   assert.ok(api.PROFILES.includes('vegan'));
   const menu = readFileSync(resolve(__dirname,'../menu.html'),'utf8');
-  assert.match(menu, /data-bulk-method="d"/);
-  assert.match(menu, /combination_d/);
-  assert.match(menu, /usingBulkB\(\) \|\| usingC\(\) \|\| usingD\(\)/);
+  assert.doesNotMatch(menu, /data-bulk-method|combination_d/);
 });

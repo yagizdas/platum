@@ -40,6 +40,7 @@ jobs:
           path: staging-source
       - name: Rescore cached proposals without model calls
         run: |
+          python rescore_cached.py
           cp data/{dish_cache.json,pairing_cache.json} staging-source/data/
           cp -R data/{menus,proposals} staging-source/data/
           cp data/week.json staging-source/data/week.json
@@ -80,6 +81,7 @@ jobs:
           package_site . dist
           package_site staging-source dist/staging
           cp -R staging-source/label dist/staging/label
+          rm -rf dist/staging/label/c dist/staging/label/d dist/staging/label/e dist/staging/label/g
           touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v4
         with:

@@ -144,7 +144,7 @@ def test_staging_rescore_adds_b_and_preserves_a_recommendations(tmp_path, fixtur
     write_json(tmp_path / 'data/week.json', {'week_start': day, 'days': [{'date': day}]})
     write_json(tmp_path / 'data/menus' / f'{day}.json', menu)
     write_json(tmp_path / 'data/dish_cache.json', cache)
-    rescore(tmp_path)
+    rescore(tmp_path, experiments=True)
     updated = read_json(tmp_path / 'data/days' / f'{day}.json')
     assert updated['variants'] == baseline['variants']
     assert updated['filtered_variants'] == baseline['filtered_variants']

@@ -4,6 +4,10 @@ eat_api_url: https://tum-dev.github.io/eat-api/mensa-arcisstr/{year}/{week:02d}.
 gemini_model: gemini-3.8-flash
 llm:
   enabled: true
+recommendations:
+  bulk: {method: e, balance: balanced}
+  cut: {method: g, balance: quality}
+  budget: {method: g, balance: quality}
 proposals:
   instructions:
     bulk: Filling, calorie-dense, high-protein trays.

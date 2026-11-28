@@ -498,21 +498,3 @@ button:active:not(:disabled), .toggle:active .vegan-face { transform:scale(.97);
   .deck-preview[data-depth='1'] { transform:translateY(-14px) scale(.97); }
   .deck-preview[data-depth='2'] { transform:translateY(-28px) scale(.94); }
 }
-
-.bulk-experiment { margin-top:24px; }
-.bulk-methods { display:inline-flex; flex-wrap:wrap; gap:4px; max-width:100%; padding:5px; border-radius:18px; background:var(--surface); }
-.bulk-methods button { min-height:44px; padding:10px 18px; border:0; border-radius:13px; background:transparent; color:var(--muted); cursor:pointer; font:inherit; font-size:16px; }
-.bulk-methods button[aria-pressed='true'] { background:var(--ink); color:var(--paper); }
-.bulk-methods button:hover { color:var(--ink); }
-.bulk-methods button[aria-pressed='true']:hover { color:var(--paper); }
-.bulk-method-note { max-width:65ch; margin-top:10px; color:var(--muted); font-size:14px; line-height:1.5; }
-@media(max-width:600px) { .bulk-methods { display:flex; } .bulk-methods button { flex:1; padding:10px 8px; font-size:14px; } }
-
-.ranking-audit-link{display:inline-block;margin-top:8px;font-size:14px;color:var(--ink);text-underline-offset:4px}.ranking-audit-link[hidden]{display:none}
-
-@media(max-width:600px) { .bulk-methods { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); } }
-
-.mmr-controls{display:flex;align-items:center;gap:12px;font-size:14px;margin-top:12px}.mmr-controls[hidden]{display:none}.mmr-controls select{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--muted);border-radius:8px;padding:8px 12px;min-height:44px}.mmr-controls select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-@media(max-width:600px){.bulk-methods{grid-template-columns:repeat(6,minmax(0,1fr))}.bulk-methods button{grid-column:span 2;font-size:13px}.bulk-methods button:nth-child(n+4){grid-column:span 3}}
-@media(max-width:600px){.bulk-methods:has([data-bulk-method="f"]:not([hidden])) button{grid-column:span 2}}
-@media(max-width:600px){.bulk-methods:has([data-bulk-method="g"]:not([hidden])) [data-bulk-method="g"]{grid-column:1 / -1}}
