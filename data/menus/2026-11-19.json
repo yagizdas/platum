@@ -6,9 +6,33 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-11T15:32:58.171042+00:00",
+  "fetched_at": "2026-11-19T16:44:26.348940+00:00",
   "warnings": [],
   "dishes": [
+    {
+      "name": "Lasagne Bolognese (hausgemacht)",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
     {
       "name": "Pasta Bolognese",
       "station": "Pasta",
@@ -41,6 +65,51 @@
       }
     },
     {
+      "name": "Pizza Salami",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [
+        "1",
+        "2",
+        "3",
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "BARLEY",
+        "CEREAL",
+        "DYESTUFF",
+        "GARLIC",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "PORK",
+        "PRESERVATIVES",
+        "SOY",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "eat-api"
+      }
+    },
+    {
       "name": "Schweinesteak (1 Stück) vom Grill (S vom Strohschwein) mit Champignonsauce",
       "station": "Grill",
       "station_raw": "Grill",
@@ -49,9 +118,12 @@
         "Gl",
         "GlW",
         "Mi",
+        "So",
         "Sw"
       ],
       "additives": [
+        "Kn",
+        "2",
         "5",
         "99"
       ],
@@ -89,8 +161,8 @@
         "Sl"
       ],
       "additives": [
-        "Kn",
-        "11"
+        "11",
+        "Kn"
       ],
       "is_vegan": true,
       "is_vegetarian": true,
@@ -124,10 +196,13 @@
         "GlW",
         "Se",
         "Sf",
-        "So"
+        "So",
+        "Sw"
       ],
       "additives": [
-        "2"
+        "2",
+        "Kn",
+        "5"
       ],
       "is_vegan": true,
       "is_vegetarian": true,
@@ -175,20 +250,129 @@
       }
     },
     {
-      "name": "Polenta mit frischem Pfannengemüse",
-      "station": "Vegan",
-      "station_raw": "Vegan",
+      "name": "Vegane Gulaschsuppe mit Soja, Kartoffeln und Paprika",
+      "station": "Unspecified",
+      "station_raw": "",
       "markers": [
         "v"
       ],
-      "allergens": [],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "So"
+      ],
       "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "SOY",
         "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Rinderroulade in Rotweinsauce (1 Stück)",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "R",
+        "S"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sf",
+        "Sw"
+      ],
+      "additives": [
+        "2",
+        "5",
+        "99"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ALCOHOL",
+        "BEEF",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "MUSTARD",
+        "PORK",
+        "PRESERVATIVES",
+        "SULFITES",
+        "SULPHURS",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Schaschlik (1 Stück) mit Honig-Currysauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Sf",
+        "Sl"
+      ],
+      "additives": [
+        "11"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CELERY",
+        "MEAT",
+        "MUSTARD",
+        "PORK",
+        "SWEETENERS"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Kartoffelauflauf mit Kürbis mit Kräuterdip",
+      "station": "Vegan",
+      "station_raw": "Vegan",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CHICKEN_EGGS",
+        "LACTOSE",
+        "MILK",
         "VEGETARIAN"
       ],
       "price": {
@@ -198,19 +382,39 @@
       }
     },
     {
-      "name": "Panna Cotta mit Amarettini",
+      "name": "Gegrillte Zucchini mit Kräuterdip",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "LACTOSE",
+        "MEAT",
+        "MILK"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Weiße Schokoladenmousse mit Heidelbeeren",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
       "markers": [],
       "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
         "Mi",
-        "Sw"
+        "So"
       ],
       "additives": [
-        "5",
         "14"
       ],
       "is_vegan": false,
@@ -218,16 +422,11 @@
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CEREAL",
-        "CHICKEN_EGGS",
         "GELATIN",
-        "GLUTEN",
         "LACTOSE",
         "MEAT",
         "MILK",
-        "SULFITES",
-        "SULPHURS",
-        "WHEAT"
+        "SOY"
       ],
       "price": {
         "base_eur": 1.0,

@@ -1,0 +1,3262 @@
+{
+  "date": "2026-11-23",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "fetched_at": "2026-11-23T09:36:31.583700+00:00",
+  "warnings": [],
+  "campus": "arcisstr",
+  "schema_version": 2,
+  "menu_count": 13,
+  "scoring": {
+    "bulk": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "bulk",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 148,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 1.798757172924
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 1.770768547829
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.248880747798
+          }
+        ]
+      }
+    },
+    "cut": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "cut",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 124,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": -2.022930718854
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 3.298844124996
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.012871976974
+          }
+        ]
+      }
+    },
+    "budget": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "budget",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 152,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 0.353295614669
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 0.730392949246
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": -1.270457995687
+          }
+        ]
+      }
+    }
+  },
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "filtered_variants": {
+    "bulk_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Massaman curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1042.5,
+            "protein_g": 37.35,
+            "carbs_g": 124.5,
+            "fat_g": 43.65
+          },
+          "score": {
+            "kcal": 18.7520435277327,
+            "protein": 6.613820526141315,
+            "price": 1.6799450476365,
+            "total": 27.0458
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pizza Mexico",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+              "name_en": "Pizza Mexico with chicken strips, corn, bell pepper cubes and kidney beans",
+              "station": "Pizza",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "5b9bbdb7d2e452ff",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 42.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400.0,
+            "kcal": 860.0,
+            "protein_g": 42.0,
+            "carbs_g": 106.0,
+            "fat_g": 28.0
+          },
+          "score": {
+            "kcal": 15.469311687146398,
+            "protein": 7.437227900881799,
+            "price": 1.24440373899,
+            "total": 24.1509
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Chicken schnitzel + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 550,
+            "price_eur": 5.5,
+            "weight_g": 500,
+            "kcal": 840.0,
+            "protein_g": 39.1,
+            "carbs_g": 112.0,
+            "fat_g": 23.9
+          },
+          "score": {
+            "kcal": 15.1095602525616,
+            "protein": 6.92370502201139,
+            "price": 1.368844112889,
+            "total": 23.4021
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Massaman curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1042.5,
+            "protein_g": 37.35,
+            "carbs_g": 124.5,
+            "fat_g": 43.65
+          },
+          "score": {
+            "kcal": 18.7520435277327,
+            "protein": 6.613820526141315,
+            "price": 1.6799450476365,
+            "total": 27.0458
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pizza Mexico",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+              "name_en": "Pizza Mexico with chicken strips, corn, bell pepper cubes and kidney beans",
+              "station": "Pizza",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "5b9bbdb7d2e452ff",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 42.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400.0,
+            "kcal": 860.0,
+            "protein_g": 42.0,
+            "carbs_g": 106.0,
+            "fat_g": 28.0
+          },
+          "score": {
+            "kcal": 15.469311687146398,
+            "protein": 7.437227900881799,
+            "price": 1.24440373899,
+            "total": 24.1509
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Chicken schnitzel + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 550,
+            "price_eur": 5.5,
+            "weight_g": 500,
+            "kcal": 840.0,
+            "protein_g": 39.1,
+            "carbs_g": 112.0,
+            "fat_g": 23.9
+          },
+          "score": {
+            "kcal": 15.1095602525616,
+            "protein": 6.92370502201139,
+            "price": 1.368844112889,
+            "total": 23.4021
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Massaman curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1042.5,
+            "protein_g": 37.35,
+            "carbs_g": 124.5,
+            "fat_g": 43.65
+          },
+          "score": {
+            "kcal": 18.7520435277327,
+            "protein": 6.613820526141315,
+            "price": 1.6799450476365,
+            "total": 27.0458
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pizza Mexico",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+              "name_en": "Pizza Mexico with chicken strips, corn, bell pepper cubes and kidney beans",
+              "station": "Pizza",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "5b9bbdb7d2e452ff",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 42.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400.0,
+            "kcal": 860.0,
+            "protein_g": 42.0,
+            "carbs_g": 106.0,
+            "fat_g": 28.0
+          },
+          "score": {
+            "kcal": 15.469311687146398,
+            "protein": 7.437227900881799,
+            "price": 1.24440373899,
+            "total": 24.1509
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Chicken schnitzel + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 550,
+            "price_eur": 5.5,
+            "weight_g": 500,
+            "kcal": 840.0,
+            "protein_g": 39.1,
+            "carbs_g": 112.0,
+            "fat_g": 23.9
+          },
+          "score": {
+            "kcal": 15.1095602525616,
+            "protein": 6.92370502201139,
+            "price": 1.368844112889,
+            "total": 23.4021
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Massaman curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1042.5,
+            "protein_g": 37.35,
+            "carbs_g": 124.5,
+            "fat_g": 43.65
+          },
+          "score": {
+            "kcal": 18.7520435277327,
+            "protein": 6.613820526141315,
+            "price": 1.6799450476365,
+            "total": 27.0458
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Chicken schnitzel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 450.0,
+            "protein_g": 31.0,
+            "carbs_g": 28.0,
+            "fat_g": 23.0
+          },
+          "score": {
+            "kcal": -9.103188234843,
+            "protein": 10.2264167874876,
+            "price": 0.0360415355272,
+            "total": 1.1593
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Mexico",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+              "name_en": "Pizza Mexico with chicken strips, corn, bell pepper cubes and kidney beans",
+              "station": "Pizza",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "5b9bbdb7d2e452ff",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 42.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400.0,
+            "kcal": 860.0,
+            "protein_g": 42.0,
+            "carbs_g": 106.0,
+            "fat_g": 28.0
+          },
+          "score": {
+            "kcal": -17.3972041821444,
+            "protein": 13.855145324983202,
+            "price": 0.06435988487000001,
+            "total": -3.4777
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 9.6491190656133,
+            "price": 0.0521315067447,
+            "total": -3.4984
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Chicken schnitzel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 450.0,
+            "protein_g": 31.0,
+            "carbs_g": 28.0,
+            "fat_g": 23.0
+          },
+          "score": {
+            "kcal": -9.103188234843,
+            "protein": 10.2264167874876,
+            "price": 0.0360415355272,
+            "total": 1.1593
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Mexico",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+              "name_en": "Pizza Mexico with chicken strips, corn, bell pepper cubes and kidney beans",
+              "station": "Pizza",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "5b9bbdb7d2e452ff",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 42.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400.0,
+            "kcal": 860.0,
+            "protein_g": 42.0,
+            "carbs_g": 106.0,
+            "fat_g": 28.0
+          },
+          "score": {
+            "kcal": -17.3972041821444,
+            "protein": 13.855145324983202,
+            "price": 0.06435988487000001,
+            "total": -3.4777
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 9.6491190656133,
+            "price": 0.0521315067447,
+            "total": -3.4984
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Chicken schnitzel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 450.0,
+            "protein_g": 31.0,
+            "carbs_g": 28.0,
+            "fat_g": 23.0
+          },
+          "score": {
+            "kcal": -9.103188234843,
+            "protein": 10.2264167874876,
+            "price": 0.0360415355272,
+            "total": 1.1593
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Mexico",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+              "name_en": "Pizza Mexico with chicken strips, corn, bell pepper cubes and kidney beans",
+              "station": "Pizza",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "5b9bbdb7d2e452ff",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 42.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400.0,
+            "kcal": 860.0,
+            "protein_g": 42.0,
+            "carbs_g": 106.0,
+            "fat_g": 28.0
+          },
+          "score": {
+            "kcal": -17.3972041821444,
+            "protein": 13.855145324983202,
+            "price": 0.06435988487000001,
+            "total": -3.4777
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 9.6491190656133,
+            "price": 0.0521315067447,
+            "total": -3.4984
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 9.6491190656133,
+            "price": 0.0521315067447,
+            "total": -3.4984
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Chicken schnitzel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 450.0,
+            "protein_g": 31.0,
+            "carbs_g": 28.0,
+            "fat_g": 23.0
+          },
+          "score": {
+            "kcal": 1.5898302660105,
+            "protein": 2.2642181426626,
+            "price": -3.5572823879235993,
+            "total": 0.2968
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Mexico",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+              "name_en": "Pizza Mexico with chicken strips, corn, bell pepper cubes and kidney beans",
+              "station": "Pizza",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "5b9bbdb7d2e452ff",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 42.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400.0,
+            "kcal": 860.0,
+            "protein_g": 42.0,
+            "carbs_g": 106.0,
+            "fat_g": 28.0
+          },
+          "score": {
+            "kcal": 3.0383422861534,
+            "protein": 3.0676503868331997,
+            "price": -6.3522899784349995,
+            "total": -0.2463
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 2.13639937654455,
+            "price": -5.14535488253235,
+            "total": -0.7037
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Chicken schnitzel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 450.0,
+            "protein_g": 31.0,
+            "carbs_g": 28.0,
+            "fat_g": 23.0
+          },
+          "score": {
+            "kcal": 1.5898302660105,
+            "protein": 2.2642181426626,
+            "price": -3.5572823879235993,
+            "total": 0.2968
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Mexico",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+              "name_en": "Pizza Mexico with chicken strips, corn, bell pepper cubes and kidney beans",
+              "station": "Pizza",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "5b9bbdb7d2e452ff",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 42.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400.0,
+            "kcal": 860.0,
+            "protein_g": 42.0,
+            "carbs_g": 106.0,
+            "fat_g": 28.0
+          },
+          "score": {
+            "kcal": 3.0383422861534,
+            "protein": 3.0676503868331997,
+            "price": -6.3522899784349995,
+            "total": -0.2463
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 2.13639937654455,
+            "price": -5.14535488253235,
+            "total": -0.7037
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Chicken schnitzel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 450.0,
+            "protein_g": 31.0,
+            "carbs_g": 28.0,
+            "fat_g": 23.0
+          },
+          "score": {
+            "kcal": 1.5898302660105,
+            "protein": 2.2642181426626,
+            "price": -3.5572823879235993,
+            "total": 0.2968
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Mexico",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+              "name_en": "Pizza Mexico with chicken strips, corn, bell pepper cubes and kidney beans",
+              "station": "Pizza",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "5b9bbdb7d2e452ff",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 42.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400.0,
+            "kcal": 860.0,
+            "protein_g": 42.0,
+            "carbs_g": 106.0,
+            "fat_g": 28.0
+          },
+          "score": {
+            "kcal": 3.0383422861534,
+            "protein": 3.0676503868331997,
+            "price": -6.3522899784349995,
+            "total": -0.2463
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 2.13639937654455,
+            "price": -5.14535488253235,
+            "total": -0.7037
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 2.13639937654455,
+            "price": -5.14535488253235,
+            "total": -0.7037
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Massaman curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1042.5,
+            "protein_g": 37.35,
+            "carbs_g": 124.5,
+            "fat_g": 43.65
+          },
+          "score": {
+            "kcal": 18.7520435277327,
+            "protein": 6.613820526141315,
+            "price": 1.6799450476365,
+            "total": 27.0458
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pizza Mexico",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+              "name_en": "Pizza Mexico with chicken strips, corn, bell pepper cubes and kidney beans",
+              "station": "Pizza",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "5b9bbdb7d2e452ff",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 42.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400.0,
+            "kcal": 860.0,
+            "protein_g": 42.0,
+            "carbs_g": 106.0,
+            "fat_g": 28.0
+          },
+          "score": {
+            "kcal": 15.469311687146398,
+            "protein": 7.437227900881799,
+            "price": 1.24440373899,
+            "total": 24.1509
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Chicken schnitzel + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 550,
+            "price_eur": 5.5,
+            "weight_g": 500,
+            "kcal": 840.0,
+            "protein_g": 39.1,
+            "carbs_g": 112.0,
+            "fat_g": 23.9
+          },
+          "score": {
+            "kcal": 15.1095602525616,
+            "protein": 6.92370502201139,
+            "price": 1.368844112889,
+            "total": 23.4021
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Chicken schnitzel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 450.0,
+            "protein_g": 31.0,
+            "carbs_g": 28.0,
+            "fat_g": 23.0
+          },
+          "score": {
+            "kcal": -9.103188234843,
+            "protein": 10.2264167874876,
+            "price": 0.0360415355272,
+            "total": 1.1593
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Mexico",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+              "name_en": "Pizza Mexico with chicken strips, corn, bell pepper cubes and kidney beans",
+              "station": "Pizza",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "5b9bbdb7d2e452ff",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 42.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400.0,
+            "kcal": 860.0,
+            "protein_g": 42.0,
+            "carbs_g": 106.0,
+            "fat_g": 28.0
+          },
+          "score": {
+            "kcal": -17.3972041821444,
+            "protein": 13.855145324983202,
+            "price": 0.06435988487000001,
+            "total": -3.4777
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 9.6491190656133,
+            "price": 0.0521315067447,
+            "total": -3.4984
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Franconian bratwurst + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Fränkische Bratwurst (1 Stück)",
+              "name_en": "Franconian bratwurst (1 piece)",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 115,
+              "price_cents": 154,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef",
+                "pork"
+              ],
+              "id": "bc974b42022b1458",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 339.25,
+              "protein_g": 16.68
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 289,
+            "price_eur": 2.89,
+            "weight_g": 265,
+            "kcal": 534.25,
+            "protein_g": 20.73,
+            "carbs_g": 42.92,
+            "fat_g": 30.58
+          },
+          "score": {
+            "kcal": -10.807507365477495,
+            "protein": 6.8368544490542105,
+            "price": 0.03720001345486,
+            "total": -3.9335
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Gorgonzolasauce",
+              "name_en": "Pasta with Gorgonzola sauce",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "15"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "f23e69f713da6394",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 24.75,
+            "carbs_g": 94.5,
+            "fat_g": 38.25
+          },
+          "score": {
+            "kcal": -16.84089823445955,
+            "protein": 8.1646392093651,
+            "price": 0.0650034837187,
+            "total": -8.6113
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Chicken schnitzel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+              "name_en": "Chicken schnitzel with pumpkin seed breading (1 piece) and herb dip",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "bbc3f185cf6f4e9f",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 450.0,
+              "protein_g": 31.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 450.0,
+            "protein_g": 31.0,
+            "carbs_g": 28.0,
+            "fat_g": 23.0
+          },
+          "score": {
+            "kcal": 1.5898302660105,
+            "protein": 2.2642181426626,
+            "price": -3.5572823879235993,
+            "total": 0.2968
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Mexico",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
+              "name_en": "Pizza Mexico with chicken strips, corn, bell pepper cubes and kidney beans",
+              "station": "Pizza",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400.0,
+              "price_cents": 500,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "5b9bbdb7d2e452ff",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 42.0
+            }
+          ],
+          "total": {
+            "price_cents": 500,
+            "price_eur": 5.0,
+            "weight_g": 400.0,
+            "kcal": 860.0,
+            "protein_g": 42.0,
+            "carbs_g": 106.0,
+            "fat_g": 28.0
+          },
+          "score": {
+            "kcal": 3.0383422861534,
+            "protein": 3.0676503868331997,
+            "price": -6.3522899784349995,
+            "total": -0.2463
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Franconian bratwurst + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Fränkische Bratwurst (1 Stück)",
+              "name_en": "Franconian bratwurst (1 piece)",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 115,
+              "price_cents": 154,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef",
+                "pork"
+              ],
+              "id": "bc974b42022b1458",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 339.25,
+              "protein_g": 16.68
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 289,
+            "price_eur": 2.89,
+            "weight_g": 265,
+            "kcal": 534.25,
+            "protein_g": 20.73,
+            "carbs_g": 42.92,
+            "fat_g": 30.58
+          },
+          "score": {
+            "kcal": 1.8874818213691325,
+            "protein": 1.513739387312335,
+            "price": -3.67162360753543,
+            "total": -0.2704
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 2.13639937654455,
+            "price": -5.14535488253235,
+            "total": -0.7037
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Gorgonzolasauce",
+              "name_en": "Pasta with Gorgonzola sauce",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "15"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "f23e69f713da6394",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 24.75,
+            "carbs_g": 94.5,
+            "fat_g": 38.25
+          },
+          "score": {
+            "kcal": 2.941185992119425,
+            "protein": 1.8077225493838498,
+            "price": -6.4158128782193495,
+            "total": -1.6669
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Massaman curry + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1042.5,
+            "protein_g": 37.35,
+            "carbs_g": 124.5,
+            "fat_g": 43.65
+          },
+          "score": {
+            "kcal": 18.7520435277327,
+            "protein": 6.613820526141315,
+            "price": 1.6799450476365,
+            "total": 27.0458
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 9.6491190656133,
+            "price": 0.0521315067447,
+            "total": -3.4984
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 2.13639937654455,
+            "price": -5.14535488253235,
+            "total": -0.7037
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "extras": {
+    "all": [
+      {
+        "name": "Blumenkohlcremesuppe",
+        "name_en": "Cream of cauliflower soup",
+        "station": "Unspecified",
+        "weight_g": 300,
+        "price_cents": 99,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "meat_types": [],
+        "serving": "2 scoops",
+        "kcal": 144.0,
+        "protein_g": 4.5,
+        "price_source": "eat-api"
+      },
+      {
+        "name": "Panna Cotta mit Erdbeersauce",
+        "name_en": "Panna cotta with strawberry sauce",
+        "station": "Dessert (Glas)",
+        "weight_g": 140,
+        "price_cents": 226,
+        "is_vegan": false,
+        "diet": "meat",
+        "meat_types": [
+          "unknown"
+        ],
+        "serving": "1 piece",
+        "kcal": 294.0,
+        "protein_g": 4.34,
+        "price_source": "eat-api"
+      },
+      {
+        "name": "Cappuccinocreme auf Kirschgelee mit Beerensauce",
+        "name_en": "Cappuccino cream on cherry jelly with berry sauce",
+        "station": "Dessert (Glas)",
+        "weight_g": 140,
+        "price_cents": 126,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "meat_types": [],
+        "serving": "1 piece",
+        "kcal": 224.0,
+        "protein_g": 3.5,
+        "price_source": "eat-api"
+      }
+    ],
+    "vegan": []
+  },
+  "generated_on": "2026-11-23"
+}

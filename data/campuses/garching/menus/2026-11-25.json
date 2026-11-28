@@ -8,8 +8,9 @@
   "published": true,
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-garching/2026/48.json",
-  "fetched_at": "2026-11-23T10:36:32.321421+00:00",
+  "fetched_at": "2026-11-25T17:29:47.661546+00:00",
   "warnings": [],
+  "omitted_dishes": [],
   "dishes": [
     {
       "name": "Spätzlepfanne mit Kraut und Pilzen",
@@ -230,21 +231,27 @@
       "counter_policy": "published_stations"
     },
     {
-      "name": "Tagessuppe",
+      "name": "Arabische Kichererbsensuppe",
       "station": "Tagessupe, Brot, Obst",
       "station_raw": "Tagessupe, Brot, Obst",
-      "markers": [],
+      "markers": [
+        "v"
+      ],
       "allergens": [],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": false,
+      "additives": [
+        "2"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "MEAT"
+        "PRESERVATIVES",
+        "VEGAN",
+        "VEGETARIAN"
       ],
       "price": {
-        "base_eur": 1.0,
+        "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       },

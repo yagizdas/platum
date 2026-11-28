@@ -1,45 +1,41 @@
 {
   "schema_version": 1,
-  "date": "2026-11-11",
+  "date": "2026-11-23",
   "mensa": "Mensa Arcisstraße",
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/46.json",
-  "fetched_at": "2026-11-11T15:32:57.633563+00:00",
+  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/48.json",
+  "fetched_at": "2026-11-23T09:36:31.583700+00:00",
   "warnings": [],
   "dishes": [
     {
-      "name": "Dim Sum: Asian Dumplings mit Asiagemüse",
+      "name": "Teigtaschen aus Rote Beete und Süßkartoffeln auf Blattspinat",
       "station": "Pasta",
       "station_raw": "Pasta",
       "markers": [
-        "v"
+        "f"
       ],
       "allergens": [
+        "Ei",
         "Gl",
         "GlW",
-        "Se",
-        "So",
-        "Sw"
+        "Mi"
       ],
       "additives": [
-        "Kn",
-        "2",
-        "5"
+        "Kn"
       ],
-      "is_vegan": true,
+      "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
         "CEREAL",
+        "CHICKEN_EGGS",
         "GARLIC",
         "GLUTEN",
-        "SESAME",
-        "SHELL_FRUITS",
-        "SOY",
-        "VEGAN",
+        "LACTOSE",
+        "MILK",
         "VEGETARIAN",
         "WHEAT"
       ],
@@ -50,7 +46,38 @@
       }
     },
     {
-      "name": "Pizza quattro formaggi",
+      "name": "Pasta mit Gorgonzolasauce",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [
+        "15"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Pizza Mexiko mit Hähnchenstreifen, Mais, Paprikawürfeln und Kidneybohnen",
       "station": "Pizza",
       "station_raw": "Pizza",
       "markers": [],
@@ -61,9 +88,7 @@
         "Mi",
         "So"
       ],
-      "additives": [
-        "15"
-      ],
+      "additives": [],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
@@ -85,58 +110,65 @@
       }
     },
     {
-      "name": "Gegrillte Zucchini mit Tomaten-Paprika-Ragout",
+      "name": "Fränkische Bratwurst (1 Stück)",
       "station": "Grill",
       "station_raw": "Grill",
       "markers": [
-        "v"
+        "R",
+        "S"
       ],
       "allergens": [
-        "Mi",
-        "Sf"
+        "Gl",
+        "GlW"
       ],
       "additives": [
-        "1"
+        "3",
+        "8"
       ],
-      "is_vegan": true,
-      "is_vegetarian": true,
+      "is_vegan": false,
+      "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "VEGAN",
-        "VEGETARIAN"
+        "ANTIOXIDANTS",
+        "BEEF",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "PHOSPHATES",
+        "PORK",
+        "WHEAT"
       ],
       "price": {
-        "base_eur": 0.0,
+        "base_eur": 0.5,
         "per_100g_eur": 0.9,
         "source": "eat-api"
       }
     },
     {
-      "name": "Makhani - Butter Chunks",
+      "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
       "station": "Wok",
       "station_raw": "Wok",
       "markers": [
         "v"
       ],
       "allergens": [
+        "En",
         "Gl",
         "GlW",
+        "Sf",
         "So"
       ],
-      "additives": [
-        "1",
-        "3"
-      ],
+      "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "ANTIOXIDANTS",
         "CEREAL",
-        "DYESTUFF",
         "GLUTEN",
+        "MUSTARD",
+        "PEANUTS",
         "SOY",
         "VEGAN",
         "VEGETARIAN",
@@ -149,200 +181,44 @@
       }
     },
     {
-      "name": "Grießnockerlsuppe",
+      "name": "Asiatischer Reis-Gemüse-Topf",
       "station": "Studitopf",
       "station_raw": "Studitopf",
       "markers": [
-        "f"
-      ],
-      "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
-        "Mi",
-        "Sl"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "CELERY",
-        "CEREAL",
-        "CHICKEN_EGGS",
-        "GLUTEN",
-        "LACTOSE",
-        "MILK",
-        "VEGETARIAN",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.33,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Linseneintopf mit Gemüse",
-      "station": "Unspecified",
-      "station_raw": "",
-      "markers": [
         "v"
       ],
       "allergens": [
-        "Sl",
-        "Sw"
-      ],
-      "additives": [
-        "1",
-        "3",
-        "5"
-      ],
-      "is_vegan": true,
-      "is_vegetarian": true,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "ANTIOXIDANTS",
-        "CELERY",
-        "DYESTUFF",
-        "SULFITES",
-        "SULPHURS",
-        "VEGAN",
-        "VEGETARIAN"
-      ],
-      "price": {
-        "base_eur": 0.0,
-        "per_100g_eur": 0.33,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Cevapcici (5 Stück) mit Ajvar",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [
-        "R"
-      ],
-      "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
-        "Sf",
-        "Sl",
         "So"
       ],
       "additives": [
-        "Kn"
+        "Kn",
+        "2"
       ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "config"
-      }
-    },
-    {
-      "name": "Fleischpflanzerl (1 Stück) mit Kümmelsauce",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [
-        "R",
-        "S"
-      ],
-      "allergens": [
-        "Ei",
-        "Gl",
-        "GlW",
-        "Sf"
-      ],
-      "additives": [
-        "Kn"
-      ],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "BEEF",
-        "CEREAL",
-        "CHICKEN_EGGS",
-        "GARLIC",
-        "GLUTEN",
-        "MEAT",
-        "MUSTARD",
-        "PORK",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Entenkeule (1 Stück) mit Bratenssauce",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [],
-      "allergens": [
-        "Gl",
-        "GlW"
-      ],
-      "additives": [],
-      "is_vegan": false,
-      "is_vegetarian": false,
-      "dietary_source": "official",
-      "source": "official",
-      "api_labels": [
-        "CEREAL",
-        "GLUTEN",
-        "MEAT",
-        "WHEAT"
-      ],
-      "price": {
-        "base_eur": 1.0,
-        "per_100g_eur": 0.9,
-        "source": "eat-api"
-      }
-    },
-    {
-      "name": "Veganer Chiapudding mit Kokosmilch und Mangospiegel",
-      "station": "Dessert (Glas)",
-      "station_raw": "Dessert (Glas)",
-      "markers": [
-        "v"
-      ],
-      "allergens": [],
-      "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "GARLIC",
+        "PRESERVATIVES",
+        "SOY",
         "VEGAN",
         "VEGETARIAN"
       ],
       "price": {
         "base_eur": 0.0,
-        "per_100g_eur": 0.9,
+        "per_100g_eur": 0.33,
         "source": "eat-api"
       }
     },
     {
-      "name": "Faschingskrapfen mit Vierfruchtfüllung",
-      "station": "Dessert (Glas)",
-      "station_raw": "Dessert (Glas)",
+      "name": "Blumenkohlcremesuppe",
+      "station": "Unspecified",
+      "station_raw": "",
       "markers": [
         "f"
       ],
       "allergens": [
-        "Ei",
         "Gl",
         "GlW",
         "Mi"
@@ -354,12 +230,129 @@
       "source": "official",
       "api_labels": [
         "CEREAL",
-        "CHICKEN_EGGS",
         "GLUTEN",
         "LACTOSE",
         "MILK",
         "VEGETARIAN",
         "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Kartoffel-Zucchini-Auflauf mit Paprikasauce",
+      "station": "Vegetarisch/fleischlos",
+      "station_raw": "Vegetarisch/fleischlos",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Ei",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CHICKEN_EGGS",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GARLIC",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Panna Cotta mit Erdbeersauce",
+      "station": "Dessert (Glas)",
+      "station_raw": "Dessert (Glas)",
+      "markers": [],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [
+        "14"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "GELATIN",
+        "LACTOSE",
+        "MEAT",
+        "MILK"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Cappuccinocreme auf Kirschgelee mit Beerensauce",
+      "station": "Dessert (Glas)",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [
+        "14"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "GELATIN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN"
       ],
       "price": {
         "base_eur": 0.0,

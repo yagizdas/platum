@@ -1,0 +1,3726 @@
+{
+  "date": "2026-11-26",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "fetched_at": "2026-11-23T09:36:31.815202+00:00",
+  "warnings": [],
+  "campus": "arcisstr",
+  "schema_version": 2,
+  "menu_count": 9,
+  "scoring": {
+    "bulk": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "bulk",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 148,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 1.798757172924
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 1.770768547829
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.248880747798
+          }
+        ]
+      }
+    },
+    "cut": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "cut",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 124,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": -2.022930718854
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 3.298844124996
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.012871976974
+          }
+        ]
+      }
+    },
+    "budget": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "budget",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 152,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 0.353295614669
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 0.730392949246
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": -1.270457995687
+          }
+        ]
+      }
+    }
+  },
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "filtered_variants": {
+    "bulk_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Beef + Chocolate pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Di Manzo - Rindfleisch in Balsamico",
+              "name_en": "Beef in Balsamic Sauce",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "307cf5c4da7372d6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 65.25
+            },
+            {
+              "name": "Schokopudding mit Sahne",
+              "name_en": "Chocolate pudding with whipped cream",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "a0b1100861cec86d",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 203.0,
+              "protein_g": 4.2
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 766,
+            "price_eur": 7.66,
+            "weight_g": 740,
+            "kcal": 1005.5,
+            "protein_g": 73.5,
+            "carbs_g": 88.15,
+            "fat_g": 38.8
+          },
+          "score": {
+            "kcal": 18.08650337375082,
+            "protein": 13.01514882654315,
+            "price": 1.9064265281326802,
+            "total": 33.0081
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Cheeseburger + Chocolate pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Cheese-Burger mit hausgemachter Burgersauce",
+              "name_en": "Cheeseburger with homemade burger sauce",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 240,
+              "price_cents": 316,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Se",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5",
+                "9",
+                "11"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "b0d2b23771aed09d",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 600.0,
+              "protein_g": 32.4
+            },
+            {
+              "name": "Schokopudding mit Sahne",
+              "name_en": "Chocolate pudding with whipped cream",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "a0b1100861cec86d",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 203.0,
+              "protein_g": 4.2
+            }
+          ],
+          "total": {
+            "price_cents": 442,
+            "price_eur": 4.42,
+            "weight_g": 380,
+            "kcal": 803.0,
+            "protein_g": 36.6,
+            "carbs_g": 76.3,
+            "fat_g": 37.9
+          },
+          "score": {
+            "kcal": 14.44402009857972,
+            "protein": 6.48101288505414,
+            "price": 1.10005290526716,
+            "total": 22.0251
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Green pea stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 817.5,
+            "protein_g": 30.6,
+            "carbs_g": 135.75,
+            "fat_g": 13.5
+          },
+          "score": {
+            "kcal": 14.704839888653702,
+            "protein": 5.41855175635674,
+            "price": 1.04281033327362,
+            "total": 21.1662
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Green pea stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 817.5,
+            "protein_g": 30.6,
+            "carbs_g": 135.75,
+            "fat_g": 13.5
+          },
+          "score": {
+            "kcal": 14.704839888653702,
+            "protein": 5.41855175635674,
+            "price": 1.04281033327362,
+            "total": 21.1662
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Green pea stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 817.5,
+            "protein_g": 30.6,
+            "carbs_g": 135.75,
+            "fat_g": 13.5
+          },
+          "score": {
+            "kcal": 14.704839888653702,
+            "protein": 5.41855175635674,
+            "price": 1.04281033327362,
+            "total": 21.1662
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Green pea stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 817.5,
+            "protein_g": 30.6,
+            "carbs_g": 135.75,
+            "fat_g": 13.5
+          },
+          "score": {
+            "kcal": 14.704839888653702,
+            "protein": 5.41855175635674,
+            "price": 1.04281033327362,
+            "total": 21.1662
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Beef",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Di Manzo - Rindfleisch in Balsamico",
+              "name_en": "Beef in Balsamic Sauce",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "307cf5c4da7372d6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 65.25
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 65.25,
+            "carbs_g": 20.25,
+            "fat_g": 29.25
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 21.5249579155989,
+            "price": 0.0650034837187,
+            "total": 9.3007
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Green pea stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 22.5,
+            "carbs_g": 51.75,
+            "fat_g": 12.6
+          },
+          "score": {
+            "kcal": -8.64802882310085,
+            "protein": 7.422399281241001,
+            "price": 0.01917924569126,
+            "total": -1.2065
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Cheeseburger",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Cheese-Burger mit hausgemachter Burgersauce",
+              "name_en": "Cheeseburger with homemade burger sauce",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 240,
+              "price_cents": 316,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Se",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5",
+                "9",
+                "11"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "b0d2b23771aed09d",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 600.0,
+              "protein_g": 32.4
+            }
+          ],
+          "total": {
+            "price_cents": 316,
+            "price_eur": 3.16,
+            "weight_g": 240,
+            "kcal": 600.0,
+            "protein_g": 32.4,
+            "carbs_g": 50.4,
+            "fat_g": 28.8
+          },
+          "score": {
+            "kcal": -12.137584313124,
+            "protein": 10.68825496498704,
+            "price": 0.04067544723784,
+            "total": -1.4087
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato tortilla",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+              "name_en": "Potato tortilla with Mediterranean vegetables and bell pepper sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0ad10b9cd04b25a7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 54.0,
+            "fat_g": 33.75
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Steinpilzen",
+              "name_en": "Pasta with porcini mushrooms",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "13bbaa94f9babeb5",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 20.25,
+            "carbs_g": 96.75,
+            "fat_g": 24.75
+          },
+          "score": {
+            "kcal": -14.109941764006651,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -7.3777
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Green pea stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 22.5,
+            "carbs_g": 51.75,
+            "fat_g": 12.6
+          },
+          "score": {
+            "kcal": -8.64802882310085,
+            "protein": 7.422399281241001,
+            "price": 0.01917924569126,
+            "total": -1.2065
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato tortilla",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+              "name_en": "Potato tortilla with Mediterranean vegetables and bell pepper sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0ad10b9cd04b25a7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 54.0,
+            "fat_g": 33.75
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Steinpilzen",
+              "name_en": "Pasta with porcini mushrooms",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "13bbaa94f9babeb5",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 20.25,
+            "carbs_g": 96.75,
+            "fat_g": 24.75
+          },
+          "score": {
+            "kcal": -14.109941764006651,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -7.3777
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Green pea stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 22.5,
+            "carbs_g": 51.75,
+            "fat_g": 12.6
+          },
+          "score": {
+            "kcal": -8.64802882310085,
+            "protein": 7.422399281241001,
+            "price": 0.01917924569126,
+            "total": -1.2065
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato tortilla",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+              "name_en": "Potato tortilla with Mediterranean vegetables and bell pepper sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0ad10b9cd04b25a7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 54.0,
+            "fat_g": 33.75
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Steinpilzen",
+              "name_en": "Pasta with porcini mushrooms",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "13bbaa94f9babeb5",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 20.25,
+            "carbs_g": 96.75,
+            "fat_g": 24.75
+          },
+          "score": {
+            "kcal": -14.109941764006651,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -7.3777
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Green pea stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 22.5,
+            "carbs_g": 51.75,
+            "fat_g": 12.6
+          },
+          "score": {
+            "kcal": -8.64802882310085,
+            "protein": 7.422399281241001,
+            "price": 0.01917924569126,
+            "total": -1.2065
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato tortilla",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+              "name_en": "Potato tortilla with Mediterranean vegetables and bell pepper sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0ad10b9cd04b25a7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 54.0,
+            "fat_g": 33.75
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Steinpilzen",
+              "name_en": "Pasta with porcini mushrooms",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "13bbaa94f9babeb5",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 20.25,
+            "carbs_g": 96.75,
+            "fat_g": 24.75
+          },
+          "score": {
+            "kcal": -14.109941764006651,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -7.3777
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Green pea stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 22.5,
+            "carbs_g": 51.75,
+            "fat_g": 12.6
+          },
+          "score": {
+            "kcal": 1.510338752709975,
+            "protein": 1.6433841358035,
+            "price": -1.89298241357363,
+            "total": 1.2607
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Beef",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Di Manzo - Rindfleisch in Balsamico",
+              "name_en": "Beef in Balsamic Sauce",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "307cf5c4da7372d6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 65.25
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 65.25,
+            "carbs_g": 20.25,
+            "fat_g": 29.25
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 4.765813993830149,
+            "price": -6.4158128782193495,
+            "total": 0.4963
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Cheeseburger",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Cheese-Burger mit hausgemachter Burgersauce",
+              "name_en": "Cheeseburger with homemade burger sauce",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 240,
+              "price_cents": 316,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Se",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5",
+                "9",
+                "11"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "b0d2b23771aed09d",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 600.0,
+              "protein_g": 32.4
+            }
+          ],
+          "total": {
+            "price_cents": 316,
+            "price_eur": 3.16,
+            "weight_g": 240,
+            "kcal": 600.0,
+            "protein_g": 32.4,
+            "carbs_g": 50.4,
+            "fat_g": 28.8
+          },
+          "score": {
+            "kcal": 2.119773688014,
+            "protein": 2.3664731555570397,
+            "price": -4.01464726637092,
+            "total": 0.4716
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Steinpilzen",
+              "name_en": "Pasta with porcini mushrooms",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "13bbaa94f9babeb5",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 20.25,
+            "carbs_g": 96.75,
+            "fat_g": 24.75
+          },
+          "score": {
+            "kcal": 2.464236912316275,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.2021
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato tortilla",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+              "name_en": "Potato tortilla with Mediterranean vegetables and bell pepper sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0ad10b9cd04b25a7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 54.0,
+            "fat_g": 33.75
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Green pea stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 22.5,
+            "carbs_g": 51.75,
+            "fat_g": 12.6
+          },
+          "score": {
+            "kcal": 1.510338752709975,
+            "protein": 1.6433841358035,
+            "price": -1.89298241357363,
+            "total": 1.2607
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Steinpilzen",
+              "name_en": "Pasta with porcini mushrooms",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "13bbaa94f9babeb5",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 20.25,
+            "carbs_g": 96.75,
+            "fat_g": 24.75
+          },
+          "score": {
+            "kcal": 2.464236912316275,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.2021
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato tortilla",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+              "name_en": "Potato tortilla with Mediterranean vegetables and bell pepper sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0ad10b9cd04b25a7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 54.0,
+            "fat_g": 33.75
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Green pea stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 22.5,
+            "carbs_g": 51.75,
+            "fat_g": 12.6
+          },
+          "score": {
+            "kcal": 1.510338752709975,
+            "protein": 1.6433841358035,
+            "price": -1.89298241357363,
+            "total": 1.2607
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Steinpilzen",
+              "name_en": "Pasta with porcini mushrooms",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "13bbaa94f9babeb5",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 20.25,
+            "carbs_g": 96.75,
+            "fat_g": 24.75
+          },
+          "score": {
+            "kcal": 2.464236912316275,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.2021
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato tortilla",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+              "name_en": "Potato tortilla with Mediterranean vegetables and bell pepper sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0ad10b9cd04b25a7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 54.0,
+            "fat_g": 33.75
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Green pea stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 22.5,
+            "carbs_g": 51.75,
+            "fat_g": 12.6
+          },
+          "score": {
+            "kcal": 1.510338752709975,
+            "protein": 1.6433841358035,
+            "price": -1.89298241357363,
+            "total": 1.2607
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Steinpilzen",
+              "name_en": "Pasta with porcini mushrooms",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "13bbaa94f9babeb5",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 20.25,
+            "carbs_g": 96.75,
+            "fat_g": 24.75
+          },
+          "score": {
+            "kcal": 2.464236912316275,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.2021
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato tortilla",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+              "name_en": "Potato tortilla with Mediterranean vegetables and bell pepper sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0ad10b9cd04b25a7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 54.0,
+            "fat_g": 33.75
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Beef + Chocolate pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Di Manzo - Rindfleisch in Balsamico",
+              "name_en": "Beef in Balsamic Sauce",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "307cf5c4da7372d6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 65.25
+            },
+            {
+              "name": "Schokopudding mit Sahne",
+              "name_en": "Chocolate pudding with whipped cream",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "a0b1100861cec86d",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 203.0,
+              "protein_g": 4.2
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "1 scoop",
+              "price_source": "config",
+              "kcal": 195.0,
+              "protein_g": 4.05
+            }
+          ],
+          "total": {
+            "price_cents": 766,
+            "price_eur": 7.66,
+            "weight_g": 740,
+            "kcal": 1005.5,
+            "protein_g": 73.5,
+            "carbs_g": 88.15,
+            "fat_g": 38.8
+          },
+          "score": {
+            "kcal": 18.08650337375082,
+            "protein": 13.01514882654315,
+            "price": 1.9064265281326802,
+            "total": 33.0081
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Cheeseburger + Chocolate pudding + Potato salad",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Cheese-Burger mit hausgemachter Burgersauce",
+              "name_en": "Cheeseburger with homemade burger sauce",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 240,
+              "price_cents": 316,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Se",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5",
+                "9",
+                "11"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "b0d2b23771aed09d",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 600.0,
+              "protein_g": 32.4
+            },
+            {
+              "name": "Schokopudding mit Sahne",
+              "name_en": "Chocolate pudding with whipped cream",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "a0b1100861cec86d",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 203.0,
+              "protein_g": 4.2
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "73bbe2bb9698caf4",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
+            }
+          ],
+          "total": {
+            "price_cents": 712,
+            "price_eur": 7.12,
+            "weight_g": 680,
+            "kcal": 1148.0,
+            "protein_g": 42.0,
+            "carbs_g": 119.8,
+            "fat_g": 53.5
+          },
+          "score": {
+            "kcal": 20.649732345167518,
+            "protein": 7.437227900881799,
+            "price": 1.77203092432176,
+            "total": 29.859
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Tyrolean-style spinach dumplings + Chocolate pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Spinatknödel Tiroler Art mit Bergkäse und Tomatensauce",
+              "name_en": "Tyrolean-style spinach dumplings with mountain cheese and tomato sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "15"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "bf00c40b3d4f409d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 27.9
+            },
+            {
+              "name": "Schokopudding mit Sahne",
+              "name_en": "Chocolate pudding with whipped cream",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "a0b1100861cec86d",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 203.0,
+              "protein_g": 4.2
+            }
+          ],
+          "total": {
+            "price_cents": 631,
+            "price_eur": 6.31,
+            "weight_g": 590,
+            "kcal": 945.5,
+            "protein_g": 32.1,
+            "carbs_g": 109.15,
+            "fat_g": 41.05
+          },
+          "score": {
+            "kcal": 17.00724906999642,
+            "protein": 5.684167038531091,
+            "price": 1.57043751860538,
+            "total": 24.2619
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Green pea stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 817.5,
+            "protein_g": 30.6,
+            "carbs_g": 135.75,
+            "fat_g": 13.5
+          },
+          "score": {
+            "kcal": 14.704839888653702,
+            "protein": 5.41855175635674,
+            "price": 1.04281033327362,
+            "total": 21.1662
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Beef",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Di Manzo - Rindfleisch in Balsamico",
+              "name_en": "Beef in Balsamic Sauce",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "307cf5c4da7372d6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 65.25
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 65.25,
+            "carbs_g": 20.25,
+            "fat_g": 29.25
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 21.5249579155989,
+            "price": 0.0650034837187,
+            "total": 9.3007
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Green pea stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 22.5,
+            "carbs_g": 51.75,
+            "fat_g": 12.6
+          },
+          "score": {
+            "kcal": -8.64802882310085,
+            "protein": 7.422399281241001,
+            "price": 0.01917924569126,
+            "total": -1.2065
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Cheeseburger",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Cheese-Burger mit hausgemachter Burgersauce",
+              "name_en": "Cheeseburger with homemade burger sauce",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 240,
+              "price_cents": 316,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Se",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5",
+                "9",
+                "11"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "b0d2b23771aed09d",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 600.0,
+              "protein_g": 32.4
+            }
+          ],
+          "total": {
+            "price_cents": 316,
+            "price_eur": 3.16,
+            "weight_g": 240,
+            "kcal": 600.0,
+            "protein_g": 32.4,
+            "carbs_g": 50.4,
+            "fat_g": 28.8
+          },
+          "score": {
+            "kcal": -12.137584313124,
+            "protein": 10.68825496498704,
+            "price": 0.04067544723784,
+            "total": -1.4087
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato tortilla",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+              "name_en": "Potato tortilla with Mediterranean vegetables and bell pepper sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0ad10b9cd04b25a7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 54.0,
+            "fat_g": 33.75
+          },
+          "score": {
+            "kcal": -12.28930411703805,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -5.557
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Tyrolean-style spinach dumplings",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Spinatknödel Tiroler Art mit Bergkäse und Tomatensauce",
+              "name_en": "Tyrolean-style spinach dumplings with mountain cheese and tomato sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "15"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "bf00c40b3d4f409d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 27.9
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 742.5,
+            "protein_g": 27.9,
+            "carbs_g": 83.25,
+            "fat_g": 31.95
+          },
+          "score": {
+            "kcal": -15.02026058749095,
+            "protein": 9.20377510873884,
+            "price": 0.0650034837187,
+            "total": -5.7515
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Green pea stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 22.5,
+            "carbs_g": 51.75,
+            "fat_g": 12.6
+          },
+          "score": {
+            "kcal": 1.510338752709975,
+            "protein": 1.6433841358035,
+            "price": -1.89298241357363,
+            "total": 1.2607
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Beef",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Di Manzo - Rindfleisch in Balsamico",
+              "name_en": "Beef in Balsamic Sauce",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "307cf5c4da7372d6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 65.25
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 65.25,
+            "carbs_g": 20.25,
+            "fat_g": 29.25
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 4.765813993830149,
+            "price": -6.4158128782193495,
+            "total": 0.4963
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Cheeseburger",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Cheese-Burger mit hausgemachter Burgersauce",
+              "name_en": "Cheeseburger with homemade burger sauce",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 240,
+              "price_cents": 316,
+              "is_vegan": false,
+              "markers": [
+                "R"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi",
+                "Se",
+                "Sf",
+                "Sl",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "3",
+                "5",
+                "9",
+                "11"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef"
+              ],
+              "id": "b0d2b23771aed09d",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 600.0,
+              "protein_g": 32.4
+            }
+          ],
+          "total": {
+            "price_cents": 316,
+            "price_eur": 3.16,
+            "weight_g": 240,
+            "kcal": 600.0,
+            "protein_g": 32.4,
+            "carbs_g": 50.4,
+            "fat_g": 28.8
+          },
+          "score": {
+            "kcal": 2.119773688014,
+            "protein": 2.3664731555570397,
+            "price": -4.01464726637092,
+            "total": 0.4716
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Steinpilzen",
+              "name_en": "Pasta with porcini mushrooms",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "13bbaa94f9babeb5",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 20.25,
+            "carbs_g": 96.75,
+            "fat_g": 24.75
+          },
+          "score": {
+            "kcal": 2.464236912316275,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.2021
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato tortilla",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kartoffeltortilla mit mediterranem Gemüse und Paprikasauce",
+              "name_en": "Potato tortilla with Mediterranean vegetables and bell pepper sauce",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0ad10b9cd04b25a7",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 607.5,
+            "protein_g": 20.25,
+            "carbs_g": 54.0,
+            "fat_g": 33.75
+          },
+          "score": {
+            "kcal": 2.1462708591141753,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.52
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Green pea stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 817.5,
+            "protein_g": 30.6,
+            "carbs_g": 135.75,
+            "fat_g": 13.5
+          },
+          "score": {
+            "kcal": 14.704839888653702,
+            "protein": 5.41855175635674,
+            "price": 1.04281033327362,
+            "total": 21.1662
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Green pea stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 22.5,
+            "carbs_g": 51.75,
+            "fat_g": 12.6
+          },
+          "score": {
+            "kcal": -8.64802882310085,
+            "protein": 7.422399281241001,
+            "price": 0.01917924569126,
+            "total": -1.2065
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Steinpilzen",
+              "name_en": "Pasta with porcini mushrooms",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "13bbaa94f9babeb5",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 20.25,
+            "carbs_g": 96.75,
+            "fat_g": 24.75
+          },
+          "score": {
+            "kcal": -14.109941764006651,
+            "protein": 6.680159353116901,
+            "price": 0.0521315067447,
+            "total": -7.3777
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Green pea stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Grüner Erbseneintopf",
+              "name_en": "Green pea stew",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Sl"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "2de6307d74baf36e",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 427.5,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 427.5,
+            "protein_g": 22.5,
+            "carbs_g": 51.75,
+            "fat_g": 12.6
+          },
+          "score": {
+            "kcal": 1.510338752709975,
+            "protein": 1.6433841358035,
+            "price": -1.89298241357363,
+            "total": 1.2607
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Pasta mit Steinpilzen",
+              "name_en": "Pasta with porcini mushrooms",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "1",
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "13bbaa94f9babeb5",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 697.5,
+            "protein_g": 20.25,
+            "carbs_g": 96.75,
+            "fat_g": 24.75
+          },
+          "score": {
+            "kcal": 2.464236912316275,
+            "protein": 1.47904572222315,
+            "price": -5.14535488253235,
+            "total": -1.2021
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "extras": {
+    "all": [
+      {
+        "name": "Schokopudding mit Sahne",
+        "name_en": "Chocolate pudding with whipped cream",
+        "station": "Dessert (Glas)",
+        "weight_g": 140,
+        "price_cents": 126,
+        "is_vegan": false,
+        "diet": "vegetarian",
+        "meat_types": [],
+        "serving": "1 piece",
+        "kcal": 203.0,
+        "protein_g": 4.2,
+        "price_source": "eat-api"
+      }
+    ],
+    "vegan": []
+  },
+  "generated_on": "2026-11-23"
+}

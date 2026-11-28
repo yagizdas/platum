@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-11T15:32:58.030061+00:00",
+  "fetched_at": "2026-11-17T17:00:43.867570+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -39,6 +39,42 @@
       }
     },
     {
+      "name": "Pizza Pollo (mit Hähnchenbrustfilet)",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "BARLEY",
+        "CEREAL",
+        "GARLIC",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "SOY",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "eat-api"
+      }
+    },
+    {
       "name": "Tandoori Chicken (1 Stück) in Joghurtmarinade und Gurken-Minz-Dip",
       "station": "Grill",
       "station_raw": "Grill",
@@ -65,6 +101,63 @@
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
+      }
+    },
+    {
+      "name": "Prager Bratwurst (1 Stück) mit Sauerkraut und Kartoffelpürree",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [
+        "R",
+        "S"
+      ],
+      "allergens": [
+        "Mi",
+        "Sw"
+      ],
+      "additives": [
+        "2",
+        "3",
+        "5",
+        "8"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Lasagne Bolognese",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Gl",
+        "GlD",
+        "GlW",
+        "Mi",
+        "Sl"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {
@@ -117,6 +210,34 @@
         "CEREAL",
         "GLUTEN",
         "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Türkische Linsensuppe mit Kreuzkümmel",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
         "VEGETARIAN",
         "WHEAT"
       ],

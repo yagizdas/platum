@@ -1,0 +1,6269 @@
+{
+  "date": "2026-12-02",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "fetched_at": "2026-11-23T09:36:32.346782+00:00",
+  "warnings": [],
+  "campus": "arcisstr",
+  "schema_version": 2,
+  "menu_count": 9,
+  "scoring": {
+    "bulk": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "bulk",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 148,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 1.798757172924
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 1.770768547829
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.248880747798
+          }
+        ]
+      }
+    },
+    "cut": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "cut",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 124,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": -2.022930718854
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 3.298844124996
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.012871976974
+          }
+        ]
+      }
+    },
+    "budget": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "budget",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 152,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 0.353295614669
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 0.730392949246
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": -1.270457995687
+          }
+        ]
+      }
+    }
+  },
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "filtered_variants": {
+    "bulk_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Yufka pastry spiral + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1390.5,
+            "protein_g": 36.75,
+            "carbs_g": 199.05,
+            "fat_g": 46.95
+          },
+          "score": {
+            "kcal": 25.011718489508223,
+            "protein": 6.507574413271575,
+            "price": 2.0159340571638,
+            "total": 33.5352
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Venison goulash + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hirschgulasch",
+              "name_en": "Venison goulash",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "game"
+              ],
+              "id": "166dbd287c55796d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 60.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750,
+            "kcal": 952.5,
+            "protein_g": 68.85,
+            "carbs_g": 104.25,
+            "fat_g": 27.9
+          },
+          "score": {
+            "kcal": 17.1331620721011,
+            "protein": 12.191741451802665,
+            "price": 1.9288257954345,
+            "total": 31.2537
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Massaman curry + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1210.5,
+            "protein_g": 41.25,
+            "carbs_g": 151.8,
+            "fat_g": 48.3
+          },
+          "score": {
+            "kcal": 21.77395557824502,
+            "protein": 7.304420259794625,
+            "price": 2.0159340571638,
+            "total": 31.0943
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Vegan pasta + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 865.5,
+            "protein_g": 34.5,
+            "carbs_g": 122.7,
+            "fat_g": 25.35
+          },
+          "score": {
+            "kcal": 15.56824333165722,
+            "protein": 6.10915149001005,
+            "price": 1.3439560381092002,
+            "total": 23.0214
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Yufka pastry spiral + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1390.5,
+            "protein_g": 36.75,
+            "carbs_g": 199.05,
+            "fat_g": 46.95
+          },
+          "score": {
+            "kcal": 25.011718489508223,
+            "protein": 6.507574413271575,
+            "price": 2.0159340571638,
+            "total": 33.5352
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Venison goulash + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hirschgulasch",
+              "name_en": "Venison goulash",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "game"
+              ],
+              "id": "166dbd287c55796d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 60.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750,
+            "kcal": 952.5,
+            "protein_g": 68.85,
+            "carbs_g": 104.25,
+            "fat_g": 27.9
+          },
+          "score": {
+            "kcal": 17.1331620721011,
+            "protein": 12.191741451802665,
+            "price": 1.9288257954345,
+            "total": 31.2537
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Massaman curry + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1210.5,
+            "protein_g": 41.25,
+            "carbs_g": 151.8,
+            "fat_g": 48.3
+          },
+          "score": {
+            "kcal": 21.77395557824502,
+            "protein": 7.304420259794625,
+            "price": 2.0159340571638,
+            "total": 31.0943
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Vegan pasta + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 865.5,
+            "protein_g": 34.5,
+            "carbs_g": 122.7,
+            "fat_g": 25.35
+          },
+          "score": {
+            "kcal": 15.56824333165722,
+            "protein": 6.10915149001005,
+            "price": 1.3439560381092002,
+            "total": 23.0214
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Yufka pastry spiral + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1390.5,
+            "protein_g": 36.75,
+            "carbs_g": 199.05,
+            "fat_g": 46.95
+          },
+          "score": {
+            "kcal": 25.011718489508223,
+            "protein": 6.507574413271575,
+            "price": 2.0159340571638,
+            "total": 33.5352
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Venison goulash + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hirschgulasch",
+              "name_en": "Venison goulash",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "game"
+              ],
+              "id": "166dbd287c55796d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 60.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750,
+            "kcal": 952.5,
+            "protein_g": 68.85,
+            "carbs_g": 104.25,
+            "fat_g": 27.9
+          },
+          "score": {
+            "kcal": 17.1331620721011,
+            "protein": 12.191741451802665,
+            "price": 1.9288257954345,
+            "total": 31.2537
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Massaman curry + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1210.5,
+            "protein_g": 41.25,
+            "carbs_g": 151.8,
+            "fat_g": 48.3
+          },
+          "score": {
+            "kcal": 21.77395557824502,
+            "protein": 7.304420259794625,
+            "price": 2.0159340571638,
+            "total": 31.0943
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Vegan pasta + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 865.5,
+            "protein_g": 34.5,
+            "carbs_g": 122.7,
+            "fat_g": 25.35
+          },
+          "score": {
+            "kcal": 15.56824333165722,
+            "protein": 6.10915149001005,
+            "price": 1.3439560381092002,
+            "total": 23.0214
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Yufka pastry spiral + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1390.5,
+            "protein_g": 36.75,
+            "carbs_g": 199.05,
+            "fat_g": 46.95
+          },
+          "score": {
+            "kcal": 25.011718489508223,
+            "protein": 6.507574413271575,
+            "price": 2.0159340571638,
+            "total": 33.5352
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Massaman curry + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1210.5,
+            "protein_g": 41.25,
+            "carbs_g": 151.8,
+            "fat_g": 48.3
+          },
+          "score": {
+            "kcal": 21.77395557824502,
+            "protein": 7.304420259794625,
+            "price": 2.0159340571638,
+            "total": 31.0943
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Vegan pasta + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 865.5,
+            "protein_g": 34.5,
+            "carbs_g": 122.7,
+            "fat_g": 25.35
+          },
+          "score": {
+            "kcal": 15.56824333165722,
+            "protein": 6.10915149001005,
+            "price": 1.3439560381092002,
+            "total": 23.0214
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Venison goulash",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hirschgulasch",
+              "name_en": "Venison goulash",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "game"
+              ],
+              "id": "166dbd287c55796d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 60.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 562.5,
+            "protein_g": 60.75,
+            "carbs_g": 20.25,
+            "fat_g": 27.0
+          },
+          "score": {
+            "kcal": -11.37898529355375,
+            "protein": 20.0404780593507,
+            "price": 0.0650034837187,
+            "total": 8.7265
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegan pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 465.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 465.0,
+            "protein_g": 20.4,
+            "carbs_g": 63.6,
+            "fat_g": 13.8
+          },
+          "score": {
+            "kcal": -9.406627842671101,
+            "protein": 6.729642014991841,
+            "price": 0.0347543378298,
+            "total": -2.6422
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 9.6491190656133,
+            "price": 0.0521315067447,
+            "total": -3.4984
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": -13.86719007774417,
+            "protein": 6.927572662491601,
+            "price": 0.03655641460616,
+            "total": -6.9031
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Yufka pastry spiral + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 16.5
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 723.0,
+            "protein_g": 20.4,
+            "carbs_g": 85.8,
+            "fat_g": 32.25
+          },
+          "score": {
+            "kcal": -14.62578909731442,
+            "protein": 6.729642014991841,
+            "price": 0.0521315067447,
+            "total": -7.844
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Venison goulash",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hirschgulasch",
+              "name_en": "Venison goulash",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "game"
+              ],
+              "id": "166dbd287c55796d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 60.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 562.5,
+            "protein_g": 60.75,
+            "carbs_g": 20.25,
+            "fat_g": 27.0
+          },
+          "score": {
+            "kcal": -11.37898529355375,
+            "protein": 20.0404780593507,
+            "price": 0.0650034837187,
+            "total": 8.7265
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegan pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 465.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 465.0,
+            "protein_g": 20.4,
+            "carbs_g": 63.6,
+            "fat_g": 13.8
+          },
+          "score": {
+            "kcal": -9.406627842671101,
+            "protein": 6.729642014991841,
+            "price": 0.0347543378298,
+            "total": -2.6422
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 9.6491190656133,
+            "price": 0.0521315067447,
+            "total": -3.4984
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": -13.86719007774417,
+            "protein": 6.927572662491601,
+            "price": 0.03655641460616,
+            "total": -6.9031
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Yufka pastry spiral + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 16.5
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 723.0,
+            "protein_g": 20.4,
+            "carbs_g": 85.8,
+            "fat_g": 32.25
+          },
+          "score": {
+            "kcal": -14.62578909731442,
+            "protein": 6.729642014991841,
+            "price": 0.0521315067447,
+            "total": -7.844
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Venison goulash",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hirschgulasch",
+              "name_en": "Venison goulash",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "game"
+              ],
+              "id": "166dbd287c55796d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 60.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 562.5,
+            "protein_g": 60.75,
+            "carbs_g": 20.25,
+            "fat_g": 27.0
+          },
+          "score": {
+            "kcal": -11.37898529355375,
+            "protein": 20.0404780593507,
+            "price": 0.0650034837187,
+            "total": 8.7265
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegan pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 465.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 465.0,
+            "protein_g": 20.4,
+            "carbs_g": 63.6,
+            "fat_g": 13.8
+          },
+          "score": {
+            "kcal": -9.406627842671101,
+            "protein": 6.729642014991841,
+            "price": 0.0347543378298,
+            "total": -2.6422
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 9.6491190656133,
+            "price": 0.0521315067447,
+            "total": -3.4984
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": -13.86719007774417,
+            "protein": 6.927572662491601,
+            "price": 0.03655641460616,
+            "total": -6.9031
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Yufka pastry spiral + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 16.5
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 723.0,
+            "protein_g": 20.4,
+            "carbs_g": 85.8,
+            "fat_g": 32.25
+          },
+          "score": {
+            "kcal": -14.62578909731442,
+            "protein": 6.729642014991841,
+            "price": 0.0521315067447,
+            "total": -7.844
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Vegan pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 465.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 465.0,
+            "protein_g": 20.4,
+            "carbs_g": 63.6,
+            "fat_g": 13.8
+          },
+          "score": {
+            "kcal": -9.406627842671101,
+            "protein": 6.729642014991841,
+            "price": 0.0347543378298,
+            "total": -2.6422
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 9.6491190656133,
+            "price": 0.0521315067447,
+            "total": -3.4984
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": -13.86719007774417,
+            "protein": 6.927572662491601,
+            "price": 0.03655641460616,
+            "total": -6.9031
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Yufka pastry spiral + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 16.5
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 723.0,
+            "protein_g": 20.4,
+            "carbs_g": 85.8,
+            "fat_g": 32.25
+          },
+          "score": {
+            "kcal": -14.62578909731442,
+            "protein": 6.729642014991841,
+            "price": 0.0521315067447,
+            "total": -7.844
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": 2.421841438555995,
+            "protein": 1.5338251934165998,
+            "price": -3.6081007077510794,
+            "total": 0.3476
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Venison goulash",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hirschgulasch",
+              "name_en": "Venison goulash",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "game"
+              ],
+              "id": "166dbd287c55796d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 60.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 562.5,
+            "protein_g": 60.75,
+            "carbs_g": 20.25,
+            "fat_g": 27.0
+          },
+          "score": {
+            "kcal": 1.9872878325131251,
+            "protein": 4.43713716666945,
+            "price": -6.4158128782193495,
+            "total": 0.0086
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegan pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 465.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 465.0,
+            "protein_g": 20.4,
+            "carbs_g": 63.6,
+            "fat_g": 13.8
+          },
+          "score": {
+            "kcal": 1.6428246082108502,
+            "protein": 1.4900016164618397,
+            "price": -3.4302365883549,
+            "total": -0.2974
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Yufka pastry spiral",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 24.75,
+            "carbs_g": 87.75,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 2.941185992119425,
+            "protein": 1.8077225493838498,
+            "price": -5.14535488253235,
+            "total": -0.3964
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 2.13639937654455,
+            "price": -5.14535488253235,
+            "total": -0.7037
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": 2.421841438555995,
+            "protein": 1.5338251934165998,
+            "price": -3.6081007077510794,
+            "total": 0.3476
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Venison goulash",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hirschgulasch",
+              "name_en": "Venison goulash",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "game"
+              ],
+              "id": "166dbd287c55796d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 60.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 562.5,
+            "protein_g": 60.75,
+            "carbs_g": 20.25,
+            "fat_g": 27.0
+          },
+          "score": {
+            "kcal": 1.9872878325131251,
+            "protein": 4.43713716666945,
+            "price": -6.4158128782193495,
+            "total": 0.0086
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegan pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 465.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 465.0,
+            "protein_g": 20.4,
+            "carbs_g": 63.6,
+            "fat_g": 13.8
+          },
+          "score": {
+            "kcal": 1.6428246082108502,
+            "protein": 1.4900016164618397,
+            "price": -3.4302365883549,
+            "total": -0.2974
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Yufka pastry spiral",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 24.75,
+            "carbs_g": 87.75,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 2.941185992119425,
+            "protein": 1.8077225493838498,
+            "price": -5.14535488253235,
+            "total": -0.3964
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 2.13639937654455,
+            "price": -5.14535488253235,
+            "total": -0.7037
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": 2.421841438555995,
+            "protein": 1.5338251934165998,
+            "price": -3.6081007077510794,
+            "total": 0.3476
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Venison goulash",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hirschgulasch",
+              "name_en": "Venison goulash",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "game"
+              ],
+              "id": "166dbd287c55796d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 60.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 562.5,
+            "protein_g": 60.75,
+            "carbs_g": 20.25,
+            "fat_g": 27.0
+          },
+          "score": {
+            "kcal": 1.9872878325131251,
+            "protein": 4.43713716666945,
+            "price": -6.4158128782193495,
+            "total": 0.0086
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegan pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 465.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 465.0,
+            "protein_g": 20.4,
+            "carbs_g": 63.6,
+            "fat_g": 13.8
+          },
+          "score": {
+            "kcal": 1.6428246082108502,
+            "protein": 1.4900016164618397,
+            "price": -3.4302365883549,
+            "total": -0.2974
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Yufka pastry spiral",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 24.75,
+            "carbs_g": 87.75,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 2.941185992119425,
+            "protein": 1.8077225493838498,
+            "price": -5.14535488253235,
+            "total": -0.3964
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 2.13639937654455,
+            "price": -5.14535488253235,
+            "total": -0.7037
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": 2.421841438555995,
+            "protein": 1.5338251934165998,
+            "price": -3.6081007077510794,
+            "total": 0.3476
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegan pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 465.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 465.0,
+            "protein_g": 20.4,
+            "carbs_g": 63.6,
+            "fat_g": 13.8
+          },
+          "score": {
+            "kcal": 1.6428246082108502,
+            "protein": 1.4900016164618397,
+            "price": -3.4302365883549,
+            "total": -0.2974
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Yufka pastry spiral",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 24.75,
+            "carbs_g": 87.75,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 2.941185992119425,
+            "protein": 1.8077225493838498,
+            "price": -5.14535488253235,
+            "total": -0.3964
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 2.13639937654455,
+            "price": -5.14535488253235,
+            "total": -0.7037
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Venison goulash + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hirschgulasch",
+              "name_en": "Venison goulash",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "game"
+              ],
+              "id": "166dbd287c55796d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 60.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750,
+            "kcal": 952.5,
+            "protein_g": 68.85,
+            "carbs_g": 104.25,
+            "fat_g": 27.9
+          },
+          "score": {
+            "kcal": 17.1331620721011,
+            "protein": 12.191741451802665,
+            "price": 1.9288257954345,
+            "total": 31.2537
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Massaman curry + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1210.5,
+            "protein_g": 41.25,
+            "carbs_g": 151.8,
+            "fat_g": 48.3
+          },
+          "score": {
+            "kcal": 21.77395557824502,
+            "protein": 7.304420259794625,
+            "price": 2.0159340571638,
+            "total": 31.0943
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Yufka pastry spiral + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1222.5,
+            "protein_g": 32.85,
+            "carbs_g": 171.75,
+            "fat_g": 42.3
+          },
+          "score": {
+            "kcal": 21.9898064389959,
+            "protein": 5.816974679618266,
+            "price": 1.6799450476365,
+            "total": 29.4867
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Vegan pasta + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 865.5,
+            "protein_g": 34.5,
+            "carbs_g": 122.7,
+            "fat_g": 25.35
+          },
+          "score": {
+            "kcal": 15.56824333165722,
+            "protein": 6.10915149001005,
+            "price": 1.3439560381092002,
+            "total": 23.0214
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Venison goulash",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hirschgulasch",
+              "name_en": "Venison goulash",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "game"
+              ],
+              "id": "166dbd287c55796d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 60.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 562.5,
+            "protein_g": 60.75,
+            "carbs_g": 20.25,
+            "fat_g": 27.0
+          },
+          "score": {
+            "kcal": -11.37898529355375,
+            "protein": 20.0404780593507,
+            "price": 0.0650034837187,
+            "total": 8.7265
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegan pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 465.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 465.0,
+            "protein_g": 20.4,
+            "carbs_g": 63.6,
+            "fat_g": 13.8
+          },
+          "score": {
+            "kcal": -9.406627842671101,
+            "protein": 6.729642014991841,
+            "price": 0.0347543378298,
+            "total": -2.6422
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 9.6491190656133,
+            "price": 0.0521315067447,
+            "total": -3.4984
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": -13.86719007774417,
+            "protein": 6.927572662491601,
+            "price": 0.03655641460616,
+            "total": -6.9031
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Yufka pastry spiral",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 24.75,
+            "carbs_g": 87.75,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": -16.84089823445955,
+            "protein": 8.1646392093651,
+            "price": 0.0521315067447,
+            "total": -8.6241
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": 2.421841438555995,
+            "protein": 1.5338251934165998,
+            "price": -3.6081007077510794,
+            "total": 0.3476
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Venison goulash",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Hirschgulasch",
+              "name_en": "Venison goulash",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sw"
+              ],
+              "additives": [
+                "5",
+                "99"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "game"
+              ],
+              "id": "166dbd287c55796d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 562.5,
+              "protein_g": 60.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 562.5,
+            "protein_g": 60.75,
+            "carbs_g": 20.25,
+            "fat_g": 27.0
+          },
+          "score": {
+            "kcal": 1.9872878325131251,
+            "protein": 4.43713716666945,
+            "price": -6.4158128782193495,
+            "total": 0.0086
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegan pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 465.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 465.0,
+            "protein_g": 20.4,
+            "carbs_g": 63.6,
+            "fat_g": 13.8
+          },
+          "score": {
+            "kcal": 1.6428246082108502,
+            "protein": 1.4900016164618397,
+            "price": -3.4302365883549,
+            "total": -0.2974
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Yufka pastry spiral",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 24.75,
+            "carbs_g": 87.75,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 2.941185992119425,
+            "protein": 1.8077225493838498,
+            "price": -5.14535488253235,
+            "total": -0.3964
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 2.13639937654455,
+            "price": -5.14535488253235,
+            "total": -0.7037
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Yufka pastry spiral + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1390.5,
+            "protein_g": 36.75,
+            "carbs_g": 199.05,
+            "fat_g": 46.95
+          },
+          "score": {
+            "kcal": 25.011718489508223,
+            "protein": 6.507574413271575,
+            "price": 2.0159340571638,
+            "total": 33.5352
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Massaman curry + Almond-flavored pudding + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 810,
+            "price_eur": 8.1,
+            "weight_g": 900,
+            "kcal": 1210.5,
+            "protein_g": 41.25,
+            "carbs_g": 151.8,
+            "fat_g": 48.3
+          },
+          "score": {
+            "kcal": 21.77395557824502,
+            "protein": 7.304420259794625,
+            "price": 2.0159340571638,
+            "total": 31.0943
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Vegan pasta + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 697.5,
+              "protein_g": 30.6
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 865.5,
+            "protein_g": 34.5,
+            "carbs_g": 122.7,
+            "fat_g": 25.35
+          },
+          "score": {
+            "kcal": 15.56824333165722,
+            "protein": 6.10915149001005,
+            "price": 1.3439560381092002,
+            "total": 23.0214
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Vegan pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 465.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 465.0,
+            "protein_g": 20.4,
+            "carbs_g": 63.6,
+            "fat_g": 13.8
+          },
+          "score": {
+            "kcal": -9.406627842671101,
+            "protein": 6.729642014991841,
+            "price": 0.0347543378298,
+            "total": -2.6422
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": -13.19962294052235,
+            "protein": 9.6491190656133,
+            "price": 0.0521315067447,
+            "total": -3.4984
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": -13.86719007774417,
+            "protein": 6.927572662491601,
+            "price": 0.03655641460616,
+            "total": -6.9031
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Yufka pastry spiral + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 555.0,
+              "protein_g": 16.5
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 723.0,
+            "protein_g": 20.4,
+            "carbs_g": 85.8,
+            "fat_g": 32.25
+          },
+          "score": {
+            "kcal": -14.62578909731442,
+            "protein": 6.729642014991841,
+            "price": 0.0521315067447,
+            "total": -7.844
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Trauben",
+              "name_en": "Almond-flavored pudding with grapes",
+              "station": "Dessert (Glas)",
+              "counters": [],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "ff83345aa5ae58ad",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 168.0,
+              "protein_g": 3.9
+            }
+          ],
+          "total": {
+            "price_cents": 284,
+            "price_eur": 2.84,
+            "weight_g": 600,
+            "kcal": 685.5,
+            "protein_g": 21.0,
+            "carbs_g": 110.55,
+            "fat_g": 16.35
+          },
+          "score": {
+            "kcal": 2.421841438555995,
+            "protein": 1.5338251934165998,
+            "price": -3.6081007077510794,
+            "total": 0.3476
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegan pasta",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Vegane Pasta mit Räuchertofu",
+              "name_en": "Vegan pasta with smoked tofu",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "69a95c68d4adfda1",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 465.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 465.0,
+            "protein_g": 20.4,
+            "carbs_g": 63.6,
+            "fat_g": 13.8
+          },
+          "score": {
+            "kcal": 1.6428246082108502,
+            "protein": 1.4900016164618397,
+            "price": -3.4302365883549,
+            "total": -0.2974
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Yufka pastry spiral",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+              "name_en": "Yufka pastry spiral with spinach filling and soy yogurt dip",
+              "station": "Vegetarisch/fleischlos",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Sl",
+                "So",
+                "Sw"
+              ],
+              "additives": [
+                "2",
+                "3",
+                "4"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "80a164fc1220e6a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 832.5,
+              "protein_g": 24.75
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 832.5,
+            "protein_g": 24.75,
+            "carbs_g": 87.75,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 2.941185992119425,
+            "protein": 1.8077225493838498,
+            "price": -5.14535488253235,
+            "total": -0.3964
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Massaman curry",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+              "name_en": "Massaman curry with pea protein chunks and peanuts",
+              "station": "Wok",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "En",
+                "Gl",
+                "GlW",
+                "Sf",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "31444aba540c945f",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 652.5,
+              "protein_g": 29.25
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 652.5,
+            "protein_g": 29.25,
+            "carbs_g": 40.5,
+            "fat_g": 42.75
+          },
+          "score": {
+            "kcal": 2.305253885715225,
+            "protein": 2.13639937654455,
+            "price": -5.14535488253235,
+            "total": -0.7037
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "extras": {
+    "all": [
+      {
+        "name": "Pudding mit Mandelgeschmack und Trauben",
+        "name_en": "Almond-flavored pudding with grapes",
+        "station": "Dessert (Glas)",
+        "weight_g": 150,
+        "price_cents": 135,
+        "is_vegan": true,
+        "diet": "vegan",
+        "meat_types": [],
+        "serving": "1 piece",
+        "kcal": 168.0,
+        "protein_g": 3.9,
+        "price_source": "eat-api"
+      }
+    ],
+    "vegan": [
+      {
+        "name": "Pudding mit Mandelgeschmack und Trauben",
+        "name_en": "Almond-flavored pudding with grapes",
+        "station": "Dessert (Glas)",
+        "weight_g": 150,
+        "price_cents": 135,
+        "is_vegan": true,
+        "diet": "vegan",
+        "meat_types": [],
+        "serving": "1 piece",
+        "kcal": 168.0,
+        "protein_g": 3.9,
+        "price_source": "eat-api"
+      }
+    ]
+  },
+  "generated_on": "2026-11-23"
+}

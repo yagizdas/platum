@@ -1,0 +1,2818 @@
+{
+  "date": "2026-12-03",
+  "mensa": "Mensa Arcisstraße",
+  "state": "open",
+  "source": "official",
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
+  "fetched_at": "2026-11-23T09:36:32.418243+00:00",
+  "warnings": [],
+  "campus": "arcisstr",
+  "schema_version": 2,
+  "menu_count": 8,
+  "scoring": {
+    "bulk": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "bulk",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 148,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 1.798757172924
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 1.770768547829
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.248880747798
+          }
+        ]
+      }
+    },
+    "cut": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "cut",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 124,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": -2.022930718854
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 3.298844124996
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": 0.012871976974
+          }
+        ]
+      }
+    },
+    "budget": {
+      "learned_model": {
+        "type": "bradley-terry",
+        "goal": "budget",
+        "intercept": 0,
+        "regularization": 0.5,
+        "training_rows": 152,
+        "features": [
+          {
+            "name": "kcal",
+            "scale": 100,
+            "weight": 0.353295614669
+          },
+          {
+            "name": "protein",
+            "scale": 10,
+            "weight": 0.730392949246
+          },
+          {
+            "name": "price",
+            "scale": 1,
+            "weight": -1.270457995687
+          }
+        ]
+      }
+    }
+  },
+  "default_scoop_g": 150,
+  "nutrition_note": "Nutrition values are estimates.",
+  "filtered_variants": {
+    "bulk_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pumpkin falafel + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 30.6
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1267.5,
+            "protein_g": 38.7,
+            "carbs_g": 176.25,
+            "fat_g": 42.3
+          },
+          "score": {
+            "kcal": 22.7992471668117,
+            "protein": 6.85287428009823,
+            "price": 1.6799450476365,
+            "total": 31.3321
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Grilled turkey steak topped + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+              "name_en": "Grilled turkey steak (1 piece) topped with tomato and cheese",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "8eb57798110a9d07",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 330.0,
+              "protein_g": 44.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 550,
+            "price_eur": 5.5,
+            "weight_g": 500,
+            "kcal": 720.0,
+            "protein_g": 52.1,
+            "carbs_g": 88.0,
+            "fat_g": 15.9
+          },
+          "score": {
+            "kcal": 12.9510516450528,
+            "protein": 9.22570413418909,
+            "price": 1.368844112889,
+            "total": 23.5456
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Sliced pork + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Schweinegeschnetzeltes (S vom Strohschwein) in Rahmsauce",
+              "name_en": "Sliced pork (straw pork) in cream sauce",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "ee675687444a58e2",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 60.75
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 775,
+            "price_eur": 7.75,
+            "weight_g": 750,
+            "kcal": 1132.5,
+            "protein_g": 68.85,
+            "carbs_g": 97.5,
+            "fat_g": 50.4
+          },
+          "score": {
+            "kcal": 20.3709249833643,
+            "protein": 12.191741451802665,
+            "price": 1.9288257954345,
+            "total": 34.4915
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pumpkin falafel + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 30.6
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1267.5,
+            "protein_g": 38.7,
+            "carbs_g": 176.25,
+            "fat_g": 42.3
+          },
+          "score": {
+            "kcal": 22.7992471668117,
+            "protein": 6.85287428009823,
+            "price": 1.6799450476365,
+            "total": 31.3321
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Grilled turkey steak topped + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+              "name_en": "Grilled turkey steak (1 piece) topped with tomato and cheese",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "8eb57798110a9d07",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 330.0,
+              "protein_g": 44.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 550,
+            "price_eur": 5.5,
+            "weight_g": 500,
+            "kcal": 720.0,
+            "protein_g": 52.1,
+            "carbs_g": 88.0,
+            "fat_g": 15.9
+          },
+          "score": {
+            "kcal": 12.9510516450528,
+            "protein": 9.22570413418909,
+            "price": 1.368844112889,
+            "total": 23.5456
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pumpkin falafel + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 30.6
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1267.5,
+            "protein_g": 38.7,
+            "carbs_g": 176.25,
+            "fat_g": 42.3
+          },
+          "score": {
+            "kcal": 22.7992471668117,
+            "protein": 6.85287428009823,
+            "price": 1.6799450476365,
+            "total": 31.3321
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Grilled turkey steak topped + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+              "name_en": "Grilled turkey steak (1 piece) topped with tomato and cheese",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "8eb57798110a9d07",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 330.0,
+              "protein_g": 44.0
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 550,
+            "price_eur": 5.5,
+            "weight_g": 500,
+            "kcal": 720.0,
+            "protein_g": 52.1,
+            "carbs_g": 88.0,
+            "fat_g": 15.9
+          },
+          "score": {
+            "kcal": 12.9510516450528,
+            "protein": 9.22570413418909,
+            "price": 1.368844112889,
+            "total": 23.5456
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "bulk_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pumpkin falafel + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 30.6
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1267.5,
+            "protein_g": 38.7,
+            "carbs_g": 176.25,
+            "fat_g": 42.3
+          },
+          "score": {
+            "kcal": 22.7992471668117,
+            "protein": 6.85287428009823,
+            "price": 1.6799450476365,
+            "total": 31.3321
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Grilled turkey steak topped",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+              "name_en": "Grilled turkey steak (1 piece) topped with tomato and cheese",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "8eb57798110a9d07",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 330.0,
+              "protein_g": 44.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 330.0,
+            "protein_g": 44.0,
+            "carbs_g": 4.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": -6.6756713722182,
+            "protein": 14.514914149982399,
+            "price": 0.0360415355272,
+            "total": 7.8753
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pumpkin falafel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 585.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 585.0,
+            "protein_g": 20.4,
+            "carbs_g": 61.5,
+            "fat_g": 27.6
+          },
+          "score": {
+            "kcal": -11.8341447052959,
+            "protein": 6.729642014991841,
+            "price": 0.0347543378298,
+            "total": -5.0697
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Grilled turkey steak topped",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+              "name_en": "Grilled turkey steak (1 piece) topped with tomato and cheese",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "8eb57798110a9d07",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 330.0,
+              "protein_g": 44.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 330.0,
+            "protein_g": 44.0,
+            "carbs_g": 4.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": -6.6756713722182,
+            "protein": 14.514914149982399,
+            "price": 0.0360415355272,
+            "total": 7.8753
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Sliced pork",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Schweinegeschnetzeltes (S vom Strohschwein) in Rahmsauce",
+              "name_en": "Sliced pork (straw pork) in cream sauce",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "ee675687444a58e2",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 60.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 742.5,
+            "protein_g": 60.75,
+            "carbs_g": 13.5,
+            "fat_g": 49.5
+          },
+          "score": {
+            "kcal": -15.02026058749095,
+            "protein": 20.0404780593507,
+            "price": 0.0650034837187,
+            "total": 5.0852
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pumpkin falafel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 585.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 585.0,
+            "protein_g": 20.4,
+            "carbs_g": 61.5,
+            "fat_g": 27.6
+          },
+          "score": {
+            "kcal": -11.8341447052959,
+            "protein": 6.729642014991841,
+            "price": 0.0347543378298,
+            "total": -5.0697
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Grilled turkey steak topped",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+              "name_en": "Grilled turkey steak (1 piece) topped with tomato and cheese",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "8eb57798110a9d07",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 330.0,
+              "protein_g": 44.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 330.0,
+            "protein_g": 44.0,
+            "carbs_g": 4.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": -6.6756713722182,
+            "protein": 14.514914149982399,
+            "price": 0.0360415355272,
+            "total": 7.8753
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pumpkin falafel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 585.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 585.0,
+            "protein_g": 20.4,
+            "carbs_g": 61.5,
+            "fat_g": 27.6
+          },
+          "score": {
+            "kcal": -11.8341447052959,
+            "protein": 6.729642014991841,
+            "price": 0.0347543378298,
+            "total": -5.0697
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pumpkin falafel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 585.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 585.0,
+            "protein_g": 20.4,
+            "carbs_g": 61.5,
+            "fat_g": 27.6
+          },
+          "score": {
+            "kcal": -11.8341447052959,
+            "protein": 6.729642014991841,
+            "price": 0.0347543378298,
+            "total": -5.0697
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Grilled turkey steak topped",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+              "name_en": "Grilled turkey steak (1 piece) topped with tomato and cheese",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "8eb57798110a9d07",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 330.0,
+              "protein_g": 44.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 330.0,
+            "protein_g": 44.0,
+            "carbs_g": 4.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": 1.1658755284077,
+            "protein": 3.2137289766823995,
+            "price": -3.5572823879235993,
+            "total": 0.8223
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pumpkin falafel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 877.5,
+            "protein_g": 30.6,
+            "carbs_g": 92.25,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 3.100169018720475,
+            "protein": 2.23500242469276,
+            "price": -5.14535488253235,
+            "total": 0.1898
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Grilled turkey steak topped",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+              "name_en": "Grilled turkey steak (1 piece) topped with tomato and cheese",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "8eb57798110a9d07",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 330.0,
+              "protein_g": 44.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 330.0,
+            "protein_g": 44.0,
+            "carbs_g": 4.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": 1.1658755284077,
+            "protein": 3.2137289766823995,
+            "price": -3.5572823879235993,
+            "total": 0.8223
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Sliced pork",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Schweinegeschnetzeltes (S vom Strohschwein) in Rahmsauce",
+              "name_en": "Sliced pork (straw pork) in cream sauce",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "ee675687444a58e2",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 60.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 742.5,
+            "protein_g": 60.75,
+            "carbs_g": 13.5,
+            "fat_g": 49.5
+          },
+          "score": {
+            "kcal": 2.623219938917325,
+            "protein": 4.43713716666945,
+            "price": -6.4158128782193495,
+            "total": 0.6445
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pumpkin falafel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 877.5,
+            "protein_g": 30.6,
+            "carbs_g": 92.25,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 3.100169018720475,
+            "protein": 2.23500242469276,
+            "price": -5.14535488253235,
+            "total": 0.1898
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_no_pork_beef": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Grilled turkey steak topped",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+              "name_en": "Grilled turkey steak (1 piece) topped with tomato and cheese",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "8eb57798110a9d07",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 330.0,
+              "protein_g": 44.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 330.0,
+            "protein_g": 44.0,
+            "carbs_g": 4.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": 1.1658755284077,
+            "protein": 3.2137289766823995,
+            "price": -3.5572823879235993,
+            "total": 0.8223
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pumpkin falafel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 877.5,
+            "protein_g": 30.6,
+            "carbs_g": 92.25,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 3.100169018720475,
+            "protein": 2.23500242469276,
+            "price": -5.14535488253235,
+            "total": 0.1898
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegetarian": {
+      "state": "ready",
+      "plates": [
+        {
+          "title": "Pumpkin falafel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 877.5,
+            "protein_g": 30.6,
+            "carbs_g": 92.25,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 3.100169018720475,
+            "protein": 2.23500242469276,
+            "price": -5.14535488253235,
+            "total": 0.1898
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "variants": {
+    "bulk_all": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Sliced pork + Spinach spaetzle pan",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Schweinegeschnetzeltes (S vom Strohschwein) in Rahmsauce",
+              "name_en": "Sliced pork (straw pork) in cream sauce",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "ee675687444a58e2",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 60.75
+            },
+            {
+              "name": "Spinatspätzlepfanne mit Bergkäse und abgeschmelzten Zwiebeln",
+              "name_en": "Spinach spaetzle pan with mountain cheese and melted onions",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "15"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "539b81b201808965",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 585.0,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 875,
+            "price_eur": 8.75,
+            "weight_g": 750,
+            "kcal": 1327.5,
+            "protein_g": 83.25,
+            "carbs_g": 76.5,
+            "fat_g": 76.5
+          },
+          "score": {
+            "kcal": 23.878501470566096,
+            "protein": 14.741648160676425,
+            "price": 2.1777065432325,
+            "total": 40.7979
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled turkey steak topped + Potato salad + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+              "name_en": "Grilled turkey steak (1 piece) topped with tomato and cheese",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "8eb57798110a9d07",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 330.0,
+              "protein_g": 44.0
+            },
+            {
+              "name": "Kartoffelsalat",
+              "name_en": "Potato salad",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "73bbe2bb9698caf4",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 345.0,
+              "protein_g": 5.4
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 820,
+            "price_eur": 8.2,
+            "weight_g": 800,
+            "kcal": 1065.0,
+            "protein_g": 57.5,
+            "carbs_g": 131.5,
+            "fat_g": 31.5
+          },
+          "score": {
+            "kcal": 19.156763891640598,
+            "protein": 10.18191915001675,
+            "price": 2.0408221319436,
+            "total": 31.3795
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Pumpkin falafel + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 30.6
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1267.5,
+            "protein_g": 38.7,
+            "carbs_g": 176.25,
+            "fat_g": 42.3
+          },
+          "score": {
+            "kcal": 22.7992471668117,
+            "protein": 6.85287428009823,
+            "price": 1.6799450476365,
+            "total": 31.3321
+          },
+          "has_estimated_prices": true
+        },
+        {
+          "title": "Stew + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Eintopf mit roten Linsen, Möhren und Blumenkohl",
+              "name_en": "Stew with red lentils, carrots, and cauliflower",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "8acfcf5f2d13bb53",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 419,
+            "price_eur": 4.19,
+            "weight_g": 750,
+            "kcal": 772.5,
+            "protein_g": 28.35,
+            "carbs_g": 133.5,
+            "fat_g": 10.8
+          },
+          "score": {
+            "kcal": 13.895399160837899,
+            "protein": 5.020128833095216,
+            "price": 1.04281033327362,
+            "total": 19.9583
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_all": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Grilled turkey steak topped",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+              "name_en": "Grilled turkey steak (1 piece) topped with tomato and cheese",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "8eb57798110a9d07",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 330.0,
+              "protein_g": 44.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 330.0,
+            "protein_g": 44.0,
+            "carbs_g": 4.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": -6.6756713722182,
+            "protein": 14.514914149982399,
+            "price": 0.0360415355272,
+            "total": 7.8753
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Sliced pork",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Schweinegeschnetzeltes (S vom Strohschwein) in Rahmsauce",
+              "name_en": "Sliced pork (straw pork) in cream sauce",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "ee675687444a58e2",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 60.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 742.5,
+            "protein_g": 60.75,
+            "carbs_g": 13.5,
+            "fat_g": 49.5
+          },
+          "score": {
+            "kcal": -15.02026058749095,
+            "protein": 20.0404780593507,
+            "price": 0.0650034837187,
+            "total": 5.0852
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Eintopf mit roten Linsen, Möhren und Blumenkohl",
+              "name_en": "Stew with red lentils, carrots, and cauliflower",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "8acfcf5f2d13bb53",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 382.5,
+            "protein_g": 20.25,
+            "carbs_g": 49.5,
+            "fat_g": 9.9
+          },
+          "score": {
+            "kcal": -7.73770999961655,
+            "protein": 6.680159353116901,
+            "price": 0.01917924569126,
+            "total": -1.0384
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spinach spaetzle pan",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Spinatspätzlepfanne mit Bergkäse und abgeschmelzten Zwiebeln",
+              "name_en": "Spinach spaetzle pan with mountain cheese and melted onions",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 370,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "15"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "539b81b201808965",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 585.0,
+              "protein_g": 22.5
+            }
+          ],
+          "total": {
+            "price_cents": 370,
+            "price_eur": 3.7,
+            "weight_g": 300,
+            "kcal": 585.0,
+            "protein_g": 22.5,
+            "carbs_g": 63.0,
+            "fat_g": 27.0
+          },
+          "score": {
+            "kcal": -11.8341447052959,
+            "protein": 7.422399281241001,
+            "price": 0.0476263148038,
+            "total": -4.3641
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pumpkin falafel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 585.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 585.0,
+            "protein_g": 20.4,
+            "carbs_g": 61.5,
+            "fat_g": 27.6
+          },
+          "score": {
+            "kcal": -11.8341447052959,
+            "protein": 6.729642014991841,
+            "price": 0.0347543378298,
+            "total": -5.0697
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_all": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": false,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Stew",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Eintopf mit roten Linsen, Möhren und Blumenkohl",
+              "name_en": "Stew with red lentils, carrots, and cauliflower",
+              "station": "Studitopf",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "8acfcf5f2d13bb53",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 382.5,
+              "protein_g": 20.25
+            }
+          ],
+          "total": {
+            "price_cents": 149,
+            "price_eur": 1.49,
+            "weight_g": 450,
+            "kcal": 382.5,
+            "protein_g": 20.25,
+            "carbs_g": 49.5,
+            "fat_g": 9.9
+          },
+          "score": {
+            "kcal": 1.3513557261089248,
+            "protein": 1.47904572222315,
+            "price": -1.89298241357363,
+            "total": 0.9374
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Grilled turkey steak topped",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+              "name_en": "Grilled turkey steak (1 piece) topped with tomato and cheese",
+              "station": "Grill",
+              "counters": [],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 200,
+              "price_cents": 280,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "8eb57798110a9d07",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 330.0,
+              "protein_g": 44.0
+            }
+          ],
+          "total": {
+            "price_cents": 280,
+            "price_eur": 2.8,
+            "weight_g": 200,
+            "kcal": 330.0,
+            "protein_g": 44.0,
+            "carbs_g": 4.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": 1.1658755284077,
+            "protein": 3.2137289766823995,
+            "price": -3.5572823879235993,
+            "total": 0.8223
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Sliced pork",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Schweinegeschnetzeltes (S vom Strohschwein) in Rahmsauce",
+              "name_en": "Sliced pork (straw pork) in cream sauce",
+              "station": "Fleisch",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "pork"
+              ],
+              "id": "ee675687444a58e2",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 60.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 742.5,
+            "protein_g": 60.75,
+            "carbs_g": 13.5,
+            "fat_g": 49.5
+          },
+          "score": {
+            "kcal": 2.623219938917325,
+            "protein": 4.43713716666945,
+            "price": -6.4158128782193495,
+            "total": 0.6445
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pumpkin falafel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 877.5,
+            "protein_g": 30.6,
+            "carbs_g": 92.25,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 3.100169018720475,
+            "protein": 2.23500242469276,
+            "price": -5.14535488253235,
+            "total": 0.1898
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Spinach spaetzle pan",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Spinatspätzlepfanne mit Bergkäse und abgeschmelzten Zwiebeln",
+              "name_en": "Spinach spaetzle pan with mountain cheese and melted onions",
+              "station": "Pasta",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "15"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "unknown"
+              ],
+              "id": "539b81b201808965",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 33.75
+            }
+          ],
+          "total": {
+            "price_cents": 505,
+            "price_eur": 5.05,
+            "weight_g": 450,
+            "kcal": 877.5,
+            "protein_g": 33.75,
+            "carbs_g": 94.5,
+            "fat_g": 40.5
+          },
+          "score": {
+            "kcal": 3.100169018720475,
+            "protein": 2.46507620370525,
+            "price": -6.4158128782193495,
+            "total": -0.8506
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "bulk_vegan": {
+      "state": "ready",
+      "goal": "bulk",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pumpkin falafel + Rice",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 30.6
+            },
+            {
+              "name": "Reis",
+              "name_en": "Rice",
+              "station": "Beilagen",
+              "counters": [],
+              "role": "side",
+              "texture": "dry",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": true,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "9f0686a5bcd7307e",
+              "serving": "2 scoops",
+              "price_source": "config",
+              "kcal": 390.0,
+              "protein_g": 8.1
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 1267.5,
+            "protein_g": 38.7,
+            "carbs_g": 176.25,
+            "fat_g": 42.3
+          },
+          "score": {
+            "kcal": 22.7992471668117,
+            "protein": 6.85287428009823,
+            "price": 1.6799450476365,
+            "total": 31.3321
+          },
+          "has_estimated_prices": true
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pumpkin falafel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 585.0,
+              "protein_g": 20.4
+            }
+          ],
+          "total": {
+            "price_cents": 270,
+            "price_eur": 2.7,
+            "weight_g": 300,
+            "kcal": 585.0,
+            "protein_g": 20.4,
+            "carbs_g": 61.5,
+            "fat_g": 27.6
+          },
+          "score": {
+            "kcal": -11.8341447052959,
+            "protein": 6.729642014991841,
+            "price": 0.0347543378298,
+            "total": -5.0697
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "budget_vegan": {
+      "state": "ready",
+      "goal": "budget",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Pumpkin falafel",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [],
+          "items": [
+            {
+              "name": "Kürbisfalafel mit Zucchini-Hummus",
+              "name_en": "Pumpkin falafel with zucchini hummus",
+              "station": "Vegan",
+              "counters": [],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Se"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7ec67d989cd6a5a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 877.5,
+              "protein_g": 30.6
+            }
+          ],
+          "total": {
+            "price_cents": 405,
+            "price_eur": 4.05,
+            "weight_g": 450,
+            "kcal": 877.5,
+            "protein_g": 30.6,
+            "carbs_g": 92.25,
+            "fat_g": 41.4
+          },
+          "score": {
+            "kcal": 3.100169018720475,
+            "protein": 2.23500242469276,
+            "price": -5.14535488253235,
+            "total": 0.1898
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    }
+  },
+  "extras": {
+    "all": [],
+    "vegan": []
+  },
+  "generated_on": "2026-11-23"
+}

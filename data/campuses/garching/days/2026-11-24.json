@@ -4,13 +4,11 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
-  "fetched_at": "2026-11-23T10:36:32.298000+00:00",
-  "warnings": [
-    "1 published dish(es) omitted: no unambiguous student price match."
-  ],
+  "fetched_at": "2026-11-24T23:51:42.852261+00:00",
+  "warnings": [],
   "campus": "garching",
   "schema_version": 2,
-  "menu_count": 8,
+  "menu_count": 10,
   "scoring": {
     "bulk": {
       "learned_model": {
@@ -98,310 +96,15 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Thai-style chicken breast strips + Mini yeast dumplings",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Grill",
-            "Süßspeise"
-          ],
-          "items": [
-            {
-              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
-              "name_en": "Thai-style chicken breast strips with vegetables",
-              "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "So"
-              ],
-              "additives": [
-                "2",
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "a147997598d3306d",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 517.5,
-              "protein_g": 53.1
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 775,
-            "price_eur": 7.75,
-            "weight_g": 750,
-            "kcal": 1072.5,
-            "protein_g": 63.6,
-            "carbs_g": 120.3,
-            "fat_g": 35.1
-          },
-          "score": {
-            "kcal": 19.2916706796099,
-            "protein": 11.26208796419244,
-            "price": 1.9288257954345,
-            "total": 32.4826
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Vegetable and white cheese moussaka + Mini yeast dumplings",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Vegetarisch/fleischlos",
-            "Süßspeise"
-          ],
-          "items": [
-            {
-              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
-              "name_en": "Vegetable and white cheese moussaka with garlic dip",
-              "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Vegetarisch/fleischlos"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1",
-                "9",
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "46d79875a0caa055",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 30.75,
-            "carbs_g": 136.5,
-            "fat_g": 53.1
-          },
-          "score": {
-            "kcal": 20.910552135241502,
-            "protein": 5.445113284574175,
-            "price": 1.6799450476365,
-            "total": 28.0356
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pasta + Mini yeast dumplings",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pasta",
-            "Süßspeise"
-          ],
-          "items": [
-            {
-              "name": "Pasta Verdura",
-              "name_en": "Pasta with vegetables",
-              "station": "Pasta",
-              "counters": [
-                "Pasta"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "4961ce657aa212a6",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 27.6,
-            "carbs_g": 188.25,
-            "fat_g": 31.05
-          },
-          "score": {
-            "kcal": 20.910552135241502,
-            "protein": 4.88732119200804,
-            "price": 1.6799450476365,
-            "total": 27.4778
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Arabic-style couscous + Mini yeast dumplings",
+          "title": "Arabic-style couscous + Thai-style chicken breast strips + Red berry compote",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Studitopf",
-            "Süßspeise"
+            "Grill",
+            "Dessert (Glas)"
           ],
           "items": [
             {
@@ -438,53 +141,176 @@
               "protein_g": 20.25
             },
             {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
               "counters": [
-                "Süßspeise"
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            },
+            {
+              "name": "Rote Grütze mit Vanillesauce",
+              "name_en": "Red berry compote with vanilla sauce",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
               ],
               "role": "dessert",
               "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
                 "Mi"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
+              "id": "673de79c0a3e5dee",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
+              "kcal": 172.5,
+              "protein_g": 2.25
             }
           ],
           "total": {
-            "price_cents": 419,
-            "price_eur": 4.19,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 30.75,
-            "carbs_g": 190.5,
-            "fat_g": 27.9
+            "price_cents": 789,
+            "price_eur": 7.89,
+            "weight_g": 1050,
+            "kcal": 1297.5,
+            "protein_g": 75.6,
+            "carbs_g": 151.8,
+            "fat_g": 39.0
           },
           "score": {
-            "kcal": 20.910552135241502,
-            "protein": 5.445113284574175,
-            "price": 1.04281033327362,
-            "total": 27.3985
+            "kcal": 23.338874318688898,
+            "protein": 13.387010221587241,
+            "price": 1.96366910012622,
+            "total": 38.6896
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Funghi + Vegan parsnip and potato soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 156.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 720,
+            "price_eur": 7.2,
+            "weight_g": 700,
+            "kcal": 1016.0,
+            "protein_g": 37.6,
+            "carbs_g": 134.5,
+            "fat_g": 35.4
+          },
+          "score": {
+            "kcal": 18.275372876907838,
+            "protein": 6.658089739837041,
+            "price": 1.7919413841456002,
+            "total": 26.7254
           },
           "has_estimated_prices": false
         }
@@ -494,310 +320,15 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Thai-style chicken breast strips + Mini yeast dumplings",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Grill",
-            "Süßspeise"
-          ],
-          "items": [
-            {
-              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
-              "name_en": "Thai-style chicken breast strips with vegetables",
-              "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 505,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "So"
-              ],
-              "additives": [
-                "2",
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "poultry"
-              ],
-              "id": "a147997598d3306d",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 517.5,
-              "protein_g": 53.1
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 775,
-            "price_eur": 7.75,
-            "weight_g": 750,
-            "kcal": 1072.5,
-            "protein_g": 63.6,
-            "carbs_g": 120.3,
-            "fat_g": 35.1
-          },
-          "score": {
-            "kcal": 19.2916706796099,
-            "protein": 11.26208796419244,
-            "price": 1.9288257954345,
-            "total": 32.4826
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Vegetable and white cheese moussaka + Mini yeast dumplings",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Vegetarisch/fleischlos",
-            "Süßspeise"
-          ],
-          "items": [
-            {
-              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
-              "name_en": "Vegetable and white cheese moussaka with garlic dip",
-              "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Vegetarisch/fleischlos"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1",
-                "9",
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "46d79875a0caa055",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 30.75,
-            "carbs_g": 136.5,
-            "fat_g": 53.1
-          },
-          "score": {
-            "kcal": 20.910552135241502,
-            "protein": 5.445113284574175,
-            "price": 1.6799450476365,
-            "total": 28.0356
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pasta + Mini yeast dumplings",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pasta",
-            "Süßspeise"
-          ],
-          "items": [
-            {
-              "name": "Pasta Verdura",
-              "name_en": "Pasta with vegetables",
-              "station": "Pasta",
-              "counters": [
-                "Pasta"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "4961ce657aa212a6",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 27.6,
-            "carbs_g": 188.25,
-            "fat_g": 31.05
-          },
-          "score": {
-            "kcal": 20.910552135241502,
-            "protein": 4.88732119200804,
-            "price": 1.6799450476365,
-            "total": 27.4778
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Arabic-style couscous + Mini yeast dumplings",
+          "title": "Arabic-style couscous + Thai-style chicken breast strips + Red berry compote",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Studitopf",
-            "Süßspeise"
+            "Grill",
+            "Dessert (Glas)"
           ],
           "items": [
             {
@@ -834,65 +365,98 @@
               "protein_g": 20.25
             },
             {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
+              "name_en": "Thai-style chicken breast strips with vegetables",
+              "station": "Grill",
               "counters": [
-                "Süßspeise"
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 505,
+              "is_vegan": false,
+              "markers": [],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "So"
+              ],
+              "additives": [
+                "2",
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "poultry"
+              ],
+              "id": "a147997598d3306d",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 53.1
+            },
+            {
+              "name": "Rote Grütze mit Vanillesauce",
+              "name_en": "Red berry compote with vanilla sauce",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
               ],
               "role": "dessert",
               "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
                 "Mi"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
+              "id": "673de79c0a3e5dee",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
+              "kcal": 172.5,
+              "protein_g": 2.25
             }
           ],
           "total": {
-            "price_cents": 419,
-            "price_eur": 4.19,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 30.75,
-            "carbs_g": 190.5,
-            "fat_g": 27.9
+            "price_cents": 789,
+            "price_eur": 7.89,
+            "weight_g": 1050,
+            "kcal": 1297.5,
+            "protein_g": 75.6,
+            "carbs_g": 151.8,
+            "fat_g": 39.0
           },
           "score": {
-            "kcal": 20.910552135241502,
-            "protein": 5.445113284574175,
-            "price": 1.04281033327362,
-            "total": 27.3985
+            "kcal": 23.338874318688898,
+            "protein": 13.387010221587241,
+            "price": 1.96366910012622,
+            "total": 38.6896
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Florentine-style roast pork + Mini yeast dumplings",
+          "title": "Florentine-style roast pork + Pasta + Red berry compote",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fleisch",
-            "Süßspeise"
+            "Pasta",
+            "Dessert (Glas)"
           ],
           "items": [
             {
@@ -933,21 +497,21 @@
               "protein_g": 32.8
             },
             {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
               "counters": [
-                "Süßspeise"
+                "Pasta"
               ],
-              "role": "dessert",
+              "role": "main",
               "texture": "saucy",
-              "count": 2,
+              "count": 3,
               "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
               "allergens": [
                 "Ei",
@@ -955,31 +519,154 @@
                 "GlW",
                 "Mi"
               ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Rote Grütze mit Vanillesauce",
+              "name_en": "Red berry compote with vanilla sauce",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
+              "id": "673de79c0a3e5dee",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
+              "kcal": 172.5,
+              "protein_g": 2.25
             }
           ],
           "total": {
-            "price_cents": 514,
-            "price_eur": 5.14,
-            "weight_g": 460,
-            "kcal": 851.0,
-            "protein_g": 43.3,
-            "carbs_g": 98.4,
-            "fat_g": 30.78
+            "price_cents": 784,
+            "price_eur": 7.84,
+            "weight_g": 760,
+            "kcal": 1076.0,
+            "protein_g": 52.15,
+            "carbs_g": 127.65,
+            "fat_g": 37.83
           },
           "score": {
-            "kcal": 15.307423541583239,
-            "protein": 7.66742781209957,
-            "price": 1.27924704368172,
-            "total": 24.2541
+            "kcal": 19.354627180662238,
+            "protein": 9.234557976928235,
+            "price": 1.9512250627363201,
+            "total": 30.5404
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Funghi + Vegan parsnip and potato soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 156.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 720,
+            "price_eur": 7.2,
+            "weight_g": 700,
+            "kcal": 1016.0,
+            "protein_g": 37.6,
+            "carbs_g": 134.5,
+            "fat_g": 35.4
+          },
+          "score": {
+            "kcal": 18.275372876907838,
+            "protein": 6.658089739837041,
+            "price": 1.7919413841456002,
+            "total": 26.7254
           },
           "has_estimated_prices": false
         }
@@ -989,16 +676,50 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Thai-style chicken breast strips + Mini yeast dumplings",
+          "title": "Arabic-style couscous + Thai-style chicken breast strips + Red berry compote",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
+            "Studitopf",
             "Grill",
-            "Süßspeise"
+            "Dessert (Glas)"
           ],
           "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            },
             {
               "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
               "name_en": "Thai-style chicken breast strips with vegetables",
@@ -1035,347 +756,141 @@
               "protein_g": 53.1
             },
             {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Rote Grütze mit Vanillesauce",
+              "name_en": "Red berry compote with vanilla sauce",
+              "station": "Dessert (Glas)",
               "counters": [
-                "Süßspeise"
+                "Dessert (Glas)"
               ],
               "role": "dessert",
               "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
                 "Mi"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
+              "id": "673de79c0a3e5dee",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
+              "kcal": 172.5,
+              "protein_g": 2.25
             }
           ],
           "total": {
-            "price_cents": 775,
-            "price_eur": 7.75,
-            "weight_g": 750,
-            "kcal": 1072.5,
-            "protein_g": 63.6,
-            "carbs_g": 120.3,
-            "fat_g": 35.1
+            "price_cents": 789,
+            "price_eur": 7.89,
+            "weight_g": 1050,
+            "kcal": 1297.5,
+            "protein_g": 75.6,
+            "carbs_g": 151.8,
+            "fat_g": 39.0
           },
           "score": {
-            "kcal": 19.2916706796099,
-            "protein": 11.26208796419244,
-            "price": 1.9288257954345,
-            "total": 32.4826
+            "kcal": 23.338874318688898,
+            "protein": 13.387010221587241,
+            "price": 1.96366910012622,
+            "total": 38.6896
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Vegetable and white cheese moussaka + Mini yeast dumplings",
+          "title": "Pizza Funghi + Vegan parsnip and potato soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Vegetarisch/fleischlos",
-            "Süßspeise"
+            "Pizza",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
-              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
-              "name_en": "Vegetable and white cheese moussaka with garlic dip",
-              "station": "Vegetarisch/fleischlos",
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
               "counters": [
-                "Vegetarisch/fleischlos"
+                "Pizza"
               ],
               "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
-                "Ei",
                 "Gl",
                 "GlG",
                 "GlW",
                 "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1",
-                "9",
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "46d79875a0caa055",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
+                "So"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 30.75,
-            "carbs_g": 136.5,
-            "fat_g": 53.1
-          },
-          "score": {
-            "kcal": 20.910552135241502,
-            "protein": 5.445113284574175,
-            "price": 1.6799450476365,
-            "total": 28.0356
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pasta + Mini yeast dumplings",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pasta",
-            "Süßspeise"
-          ],
-          "items": [
+              "kcal": 860.0,
+              "protein_g": 34.0
+            },
             {
-              "name": "Pasta Verdura",
-              "name_en": "Pasta with vegetables",
-              "station": "Pasta",
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Pasta"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
+              "allergens": [],
+              "additives": [],
               "standing": false,
               "diet": "vegan",
               "meat_types": [],
-              "id": "4961ce657aa212a6",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "da0820fe88930dff",
+              "id": "b58825f5a4fe212d",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
+              "kcal": 156.0,
+              "protein_g": 3.6
             }
           ],
           "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 27.6,
-            "carbs_g": 188.25,
-            "fat_g": 31.05
+            "price_cents": 720,
+            "price_eur": 7.2,
+            "weight_g": 700,
+            "kcal": 1016.0,
+            "protein_g": 37.6,
+            "carbs_g": 134.5,
+            "fat_g": 35.4
           },
           "score": {
-            "kcal": 20.910552135241502,
-            "protein": 4.88732119200804,
-            "price": 1.6799450476365,
-            "total": 27.4778
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Arabic-style couscous + Mini yeast dumplings",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Studitopf",
-            "Süßspeise"
-          ],
-          "items": [
-            {
-              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
-              "name_en": "Arabic-style couscous with carrots and chickpeas",
-              "station": "Studitopf",
-              "counters": [
-                "Studitopf"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "310500cfec7d466b",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 419,
-            "price_eur": 4.19,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 30.75,
-            "carbs_g": 190.5,
-            "fat_g": 27.9
-          },
-          "score": {
-            "kcal": 20.910552135241502,
-            "protein": 5.445113284574175,
-            "price": 1.04281033327362,
-            "total": 27.3985
+            "kcal": 18.275372876907838,
+            "protein": 6.658089739837041,
+            "price": 1.7919413841456002,
+            "total": 26.7254
           },
           "has_estimated_prices": false
         }
@@ -1385,296 +900,93 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Vegetable and white cheese moussaka + Mini yeast dumplings",
+          "title": "Pizza Funghi + Vegan parsnip and potato soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Vegetarisch/fleischlos",
-            "Süßspeise"
+            "Pizza",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
-              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
-              "name_en": "Vegetable and white cheese moussaka with garlic dip",
-              "station": "Vegetarisch/fleischlos",
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
               "counters": [
-                "Vegetarisch/fleischlos"
+                "Pizza"
               ],
               "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
-                "Ei",
                 "Gl",
                 "GlG",
                 "GlW",
                 "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1",
-                "9",
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "46d79875a0caa055",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
+                "So"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 30.75,
-            "carbs_g": 136.5,
-            "fat_g": 53.1
-          },
-          "score": {
-            "kcal": 20.910552135241502,
-            "protein": 5.445113284574175,
-            "price": 1.6799450476365,
-            "total": 28.0356
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pasta + Mini yeast dumplings",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pasta",
-            "Süßspeise"
-          ],
-          "items": [
+              "kcal": 860.0,
+              "protein_g": 34.0
+            },
             {
-              "name": "Pasta Verdura",
-              "name_en": "Pasta with vegetables",
-              "station": "Pasta",
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Pasta"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
+              "allergens": [],
+              "additives": [],
               "standing": false,
               "diet": "vegan",
               "meat_types": [],
-              "id": "4961ce657aa212a6",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "da0820fe88930dff",
+              "id": "b58825f5a4fe212d",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
+              "kcal": 156.0,
+              "protein_g": 3.6
             }
           ],
           "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 27.6,
-            "carbs_g": 188.25,
-            "fat_g": 31.05
+            "price_cents": 720,
+            "price_eur": 7.2,
+            "weight_g": 700,
+            "kcal": 1016.0,
+            "protein_g": 37.6,
+            "carbs_g": 134.5,
+            "fat_g": 35.4
           },
           "score": {
-            "kcal": 20.910552135241502,
-            "protein": 4.88732119200804,
-            "price": 1.6799450476365,
-            "total": 27.4778
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Arabic-style couscous + Mini yeast dumplings",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Studitopf",
-            "Süßspeise"
-          ],
-          "items": [
-            {
-              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
-              "name_en": "Arabic-style couscous with carrots and chickpeas",
-              "station": "Studitopf",
-              "counters": [
-                "Studitopf"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "310500cfec7d466b",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 419,
-            "price_eur": 4.19,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 30.75,
-            "carbs_g": 190.5,
-            "fat_g": 27.9
-          },
-          "score": {
-            "kcal": 20.910552135241502,
-            "protein": 5.445113284574175,
-            "price": 1.04281033327362,
-            "total": 27.3985
+            "kcal": 18.275372876907838,
+            "protein": 6.658089739837041,
+            "price": 1.7919413841456002,
+            "total": 26.7254
           },
           "has_estimated_prices": false
         }
@@ -1784,8 +1096,8 @@
               ],
               "additives": [
                 "1",
-                "9",
-                "Kn"
+                "Kn",
+                "9"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -1872,6 +1184,160 @@
             "protein": 6.680159353116901,
             "price": 0.01917924569126,
             "total": -5.59
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Funghi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 450,
+            "price_eur": 4.5,
+            "weight_g": 400,
+            "kcal": 860.0,
+            "protein_g": 34.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": -17.3972041821444,
+            "protein": 11.2160700249864,
+            "price": 0.057923896383,
+            "total": -6.1232
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Vegan parsnip and potato soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 156.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 763.5,
+            "protein_g": 20.7,
+            "carbs_g": 114.75,
+            "fat_g": 22.95
+          },
+          "score": {
+            "kcal": -15.44507603845029,
+            "protein": 6.828607338741722,
+            "price": 0.0868858445745,
+            "total": -8.5296
           },
           "has_estimated_prices": false
         }
@@ -1944,14 +1410,14 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Florentine-style roast pork + Red berry compote",
+          "title": "Florentine-style roast pork + Vegan parsnip and potato soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fleisch",
-            "Dessert (Glas)"
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -1992,50 +1458,48 @@
               "protein_g": 32.8
             },
             {
-              "name": "Rote Grütze mit Vanillesauce",
-              "name_en": "Red berry compote with vanilla sauce",
-              "station": "Dessert (Glas)",
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Dessert (Glas)"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "dessert",
-              "texture": "saucy",
+              "role": "soup",
+              "texture": "liquid",
               "count": 1,
-              "unit": "piece",
+              "unit": "scoop",
               "weight_g": 150,
               "price_cents": 135,
-              "is_vegan": false,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
-              "allergens": [
-                "Mi"
-              ],
+              "allergens": [],
               "additives": [],
               "standing": false,
-              "diet": "vegetarian",
+              "diet": "vegan",
               "meat_types": [],
-              "id": "673de79c0a3e5dee",
-              "serving": "1 piece",
+              "id": "b58825f5a4fe212d",
+              "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 172.5,
-              "protein_g": 2.25
+              "kcal": 78.0,
+              "protein_g": 1.8
             }
           ],
           "total": {
             "price_cents": 379,
             "price_eur": 3.79,
             "weight_g": 310,
-            "kcal": 468.5,
-            "protein_g": 35.05,
-            "carbs_g": 35.4,
-            "fat_g": 20.28
+            "kcal": 374.0,
+            "protein_g": 34.6,
+            "carbs_g": 13.65,
+            "fat_g": 19.98
           },
           "score": {
-            "kcal": -9.47743041783099,
-            "protein": 11.562448658110979,
+            "kcal": -7.56576088851396,
+            "protein": 11.414000672486157,
             "price": 0.048784792731460004,
-            "total": 2.1338
+            "total": 3.897
           },
           "has_estimated_prices": false
         },
@@ -2077,8 +1541,8 @@
               ],
               "additives": [
                 "1",
-                "9",
-                "Kn"
+                "Kn",
+                "9"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -2165,6 +1629,68 @@
             "protein": 6.680159353116901,
             "price": 0.01917924569126,
             "total": -5.59
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Funghi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 450,
+            "price_eur": 4.5,
+            "weight_g": 400,
+            "kcal": 860.0,
+            "protein_g": 34.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": -17.3972041821444,
+            "protein": 11.2160700249864,
+            "price": 0.057923896383,
+            "total": -6.1232
           },
           "has_estimated_prices": false
         }
@@ -2274,8 +1800,8 @@
               ],
               "additives": [
                 "1",
-                "9",
-                "Kn"
+                "Kn",
+                "9"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -2362,6 +1888,160 @@
             "protein": 6.680159353116901,
             "price": 0.01917924569126,
             "total": -5.59
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Funghi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 450,
+            "price_eur": 4.5,
+            "weight_g": 400,
+            "kcal": 860.0,
+            "protein_g": 34.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": -17.3972041821444,
+            "protein": 11.2160700249864,
+            "price": 0.057923896383,
+            "total": -6.1232
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Vegan parsnip and potato soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 156.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 763.5,
+            "protein_g": 20.7,
+            "carbs_g": 114.75,
+            "fat_g": 22.95
+          },
+          "score": {
+            "kcal": -15.44507603845029,
+            "protein": 6.828607338741722,
+            "price": 0.0868858445745,
+            "total": -8.5296
           },
           "has_estimated_prices": false
         }
@@ -2408,8 +2088,8 @@
               ],
               "additives": [
                 "1",
-                "9",
-                "Kn"
+                "Kn",
+                "9"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -2496,6 +2176,160 @@
             "protein": 6.680159353116901,
             "price": 0.01917924569126,
             "total": -5.59
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pizza Funghi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 450,
+            "price_eur": 4.5,
+            "weight_g": 400,
+            "kcal": 860.0,
+            "protein_g": 34.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": -17.3972041821444,
+            "protein": 11.2160700249864,
+            "price": 0.057923896383,
+            "total": -6.1232
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Vegan parsnip and potato soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 156.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 763.5,
+            "protein_g": 20.7,
+            "carbs_g": 114.75,
+            "fat_g": 22.95
+          },
+          "score": {
+            "kcal": -15.44507603845029,
+            "protein": 6.828607338741722,
+            "price": 0.0868858445745,
+            "total": -8.5296
           },
           "has_estimated_prices": false
         }
@@ -2566,6 +2400,68 @@
           "has_estimated_prices": false
         },
         {
+          "title": "Pizza Funghi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 450,
+            "price_eur": 4.5,
+            "weight_g": 400,
+            "kcal": 860.0,
+            "protein_g": 34.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": 3.0383422861534,
+            "protein": 2.4833360274364,
+            "price": -5.7170609805915,
+            "total": -0.1954
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Thai-style chicken breast strips",
           "reason": null,
           "picked_by": "rules",
@@ -2666,8 +2562,8 @@
               ],
               "additives": [
                 "1",
-                "9",
-                "Kn"
+                "Kn",
+                "9"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -2693,6 +2589,98 @@
             "protein": 1.47904572222315,
             "price": -5.14535488253235,
             "total": -1.52
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Vegan parsnip and potato soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 156.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 763.5,
+            "protein_g": 20.7,
+            "carbs_g": 114.75,
+            "fat_g": 22.95
+          },
+          "score": {
+            "kcal": 2.6974120179978147,
+            "protein": 1.5119134049392202,
+            "price": -8.57559147088725,
+            "total": -4.3663
           },
           "has_estimated_prices": false
         }
@@ -2763,6 +2751,68 @@
           "has_estimated_prices": false
         },
         {
+          "title": "Pizza Funghi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 450,
+            "price_eur": 4.5,
+            "weight_g": 400,
+            "kcal": 860.0,
+            "protein_g": 34.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": 3.0383422861534,
+            "protein": 2.4833360274364,
+            "price": -5.7170609805915,
+            "total": -0.1954
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Thai-style chicken breast strips",
           "reason": null,
           "picked_by": "rules",
@@ -2863,8 +2913,8 @@
               ],
               "additives": [
                 "1",
-                "9",
-                "Kn"
+                "Kn",
+                "9"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -2890,6 +2940,98 @@
             "protein": 1.47904572222315,
             "price": -5.14535488253235,
             "total": -1.52
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Vegan parsnip and potato soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 156.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 763.5,
+            "protein_g": 20.7,
+            "carbs_g": 114.75,
+            "fat_g": 22.95
+          },
+          "score": {
+            "kcal": 2.6974120179978147,
+            "protein": 1.5119134049392202,
+            "price": -8.57559147088725,
+            "total": -4.3663
           },
           "has_estimated_prices": false
         }
@@ -2960,6 +3102,68 @@
           "has_estimated_prices": false
         },
         {
+          "title": "Pizza Funghi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 450,
+            "price_eur": 4.5,
+            "weight_g": 400,
+            "kcal": 860.0,
+            "protein_g": 34.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": 3.0383422861534,
+            "protein": 2.4833360274364,
+            "price": -5.7170609805915,
+            "total": -0.1954
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Thai-style chicken breast strips",
           "reason": null,
           "picked_by": "rules",
@@ -3060,8 +3264,8 @@
               ],
               "additives": [
                 "1",
-                "9",
-                "Kn"
+                "Kn",
+                "9"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -3087,6 +3291,98 @@
             "protein": 1.47904572222315,
             "price": -5.14535488253235,
             "total": -1.52
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Vegan parsnip and potato soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 156.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 763.5,
+            "protein_g": 20.7,
+            "carbs_g": 114.75,
+            "fat_g": 22.95
+          },
+          "score": {
+            "kcal": 2.6974120179978147,
+            "protein": 1.5119134049392202,
+            "price": -8.57559147088725,
+            "total": -4.3663
           },
           "has_estimated_prices": false
         }
@@ -3157,6 +3453,68 @@
           "has_estimated_prices": false
         },
         {
+          "title": "Pizza Funghi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 450,
+            "price_eur": 4.5,
+            "weight_g": 400,
+            "kcal": 860.0,
+            "protein_g": 34.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": 3.0383422861534,
+            "protein": 2.4833360274364,
+            "price": -5.7170609805915,
+            "total": -0.1954
+          },
+          "has_estimated_prices": false
+        },
+        {
           "title": "Vegetable and white cheese moussaka",
           "reason": null,
           "picked_by": "rules",
@@ -3194,8 +3552,8 @@
               ],
               "additives": [
                 "1",
-                "9",
-                "Kn"
+                "Kn",
+                "9"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -3223,6 +3581,98 @@
             "total": -1.52
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Vegan parsnip and potato soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 156.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 763.5,
+            "protein_g": 20.7,
+            "carbs_g": 114.75,
+            "fat_g": 22.95
+          },
+          "score": {
+            "kcal": 2.6974120179978147,
+            "protein": 1.5119134049392202,
+            "price": -8.57559147088725,
+            "total": -4.3663
+          },
+          "has_estimated_prices": false
         }
       ]
     }
@@ -3236,16 +3686,50 @@
       "note": null,
       "plates": [
         {
-          "title": "Thai Chicken and Dumplings",
-          "reason": "High protein chicken paired with sweet cherry dumplings for full energy",
+          "title": "Arabic-style couscous + Thai-style chicken breast strips + Red berry compote",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
+            "Studitopf",
             "Grill",
-            "Süßspeise"
+            "Dessert (Glas)"
           ],
           "items": [
+            {
+              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
+              "name_en": "Arabic-style couscous with carrots and chickpeas",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "310500cfec7d466b",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            },
             {
               "name": "Hähnchenbruststreifen Thai-Style mit Gemüse",
               "name_en": "Thai-style chicken breast strips with vegetables",
@@ -3282,66 +3766,63 @@
               "protein_g": 53.1
             },
             {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Rote Grütze mit Vanillesauce",
+              "name_en": "Red berry compote with vanilla sauce",
+              "station": "Dessert (Glas)",
               "counters": [
-                "Süßspeise"
+                "Dessert (Glas)"
               ],
               "role": "dessert",
               "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
                 "Mi"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
+              "id": "673de79c0a3e5dee",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
+              "kcal": 172.5,
+              "protein_g": 2.25
             }
           ],
           "total": {
-            "price_cents": 775,
-            "price_eur": 7.75,
-            "weight_g": 750,
-            "kcal": 1072.5,
-            "protein_g": 63.6,
-            "carbs_g": 120.3,
-            "fat_g": 35.1
+            "price_cents": 789,
+            "price_eur": 7.89,
+            "weight_g": 1050,
+            "kcal": 1297.5,
+            "protein_g": 75.6,
+            "carbs_g": 151.8,
+            "fat_g": 39.0
           },
           "score": {
-            "kcal": 19.2916706796099,
-            "protein": 11.26208796419244,
-            "price": 1.9288257954345,
-            "total": 32.4826
+            "kcal": 23.338874318688898,
+            "protein": 13.387010221587241,
+            "price": 1.96366910012622,
+            "total": 38.6896
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Pork Roast and Sweet Dumplings",
-          "reason": "Tender Florentine pork with comforting soup and sweet cherry dumplings",
+          "title": "Florentine-style roast pork + Pasta + Red berry compote",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fleisch",
-            "Tagessupe, Brot, Obst",
-            "Süßspeise"
+            "Pasta",
+            "Dessert (Glas)"
           ],
           "items": [
             {
@@ -3382,198 +3863,6 @@
               "protein_g": 32.8
             },
             {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
-              "station": "Tagessupe, Brot, Obst",
-              "counters": [
-                "Tagessupe, Brot, Obst"
-              ],
-              "role": "soup",
-              "texture": "liquid",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
-              ],
-              "id": "2a7cca8862da876a",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 144.0,
-              "protein_g": 5.4
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 884,
-            "price_eur": 8.84,
-            "weight_g": 760,
-            "kcal": 995.0,
-            "protein_g": 48.7,
-            "carbs_g": 117.0,
-            "fat_g": 35.58
-          },
-          "score": {
-            "kcal": 17.8976338705938,
-            "protein": 8.62364282792723,
-            "price": 2.20010581053432,
-            "total": 28.7214
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Vegetable Moussaka and Dessert",
-          "reason": "Savory baked moussaka balanced with sweet vanilla cherry dumplings",
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Vegetarisch/fleischlos",
-            "Süßspeise"
-          ],
-          "items": [
-            {
-              "name": "Moussaka mit Gemüse und Weißkäse , dazu Knoblauchdip",
-              "name_en": "Vegetable and white cheese moussaka with garlic dip",
-              "station": "Vegetarisch/fleischlos",
-              "counters": [
-                "Vegetarisch/fleischlos"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlG",
-                "GlW",
-                "Mi",
-                "Sf",
-                "Sl"
-              ],
-              "additives": [
-                "1",
-                "9",
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "46d79875a0caa055",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
-            }
-          ],
-          "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 30.75,
-            "carbs_g": 136.5,
-            "fat_g": 53.1
-          },
-          "score": {
-            "kcal": 20.910552135241502,
-            "protein": 5.445113284574175,
-            "price": 1.6799450476365,
-            "total": 28.0356
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Pasta Verdura and Sweet Treat",
-          "reason": "Hearty vegetable pasta combined with rich cherry yeast dumplings",
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pasta",
-            "Süßspeise"
-          ],
-          "items": [
-            {
               "name": "Pasta Verdura",
               "name_en": "Pasta with vegetables",
               "station": "Pasta",
@@ -3609,148 +3898,141 @@
               "protein_g": 17.1
             },
             {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
+              "name": "Rote Grütze mit Vanillesauce",
+              "name_en": "Red berry compote with vanilla sauce",
+              "station": "Dessert (Glas)",
               "counters": [
-                "Süßspeise"
+                "Dessert (Glas)"
               ],
               "role": "dessert",
               "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 150,
+              "price_cents": 135,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
                 "Mi"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "da0820fe88930dff",
-              "serving": "2 scoops",
+              "id": "673de79c0a3e5dee",
+              "serving": "1 piece",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
+              "kcal": 172.5,
+              "protein_g": 2.25
             }
           ],
           "total": {
-            "price_cents": 675,
-            "price_eur": 6.75,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 27.6,
-            "carbs_g": 188.25,
-            "fat_g": 31.05
+            "price_cents": 784,
+            "price_eur": 7.84,
+            "weight_g": 760,
+            "kcal": 1076.0,
+            "protein_g": 52.15,
+            "carbs_g": 127.65,
+            "fat_g": 37.83
           },
           "score": {
-            "kcal": 20.910552135241502,
-            "protein": 4.88732119200804,
-            "price": 1.6799450476365,
-            "total": 27.4778
+            "kcal": 19.354627180662238,
+            "protein": 9.234557976928235,
+            "price": 1.9512250627363201,
+            "total": 30.5404
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Arabic Couscous with Dumplings",
-          "reason": "Spiced chickpea couscous alongside warm cherry dumplings and sauce",
+          "title": "Pizza Funghi + Vegan parsnip and potato soup",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Studitopf",
-            "Süßspeise"
+            "Pizza",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
-              "name": "Couscous arabische Art mit Karotten und Kichererbsen",
-              "name_en": "Arabic-style couscous with carrots and chickpeas",
-              "station": "Studitopf",
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
               "counters": [
-                "Studitopf"
+                "Pizza"
               ],
               "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "310500cfec7d466b",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            },
-            {
-              "name": "Mini-Germknödel mit Kirschfüllung, dazu Vanillesauce",
-              "name_en": "Mini yeast dumplings with cherry filling served with vanilla sauce",
-              "station": "Süßspeise",
-              "counters": [
-                "Süßspeise"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 270,
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
               "is_vegan": false,
               "markers": [
                 "f"
               ],
               "allergens": [
-                "Ei",
                 "Gl",
+                "GlG",
                 "GlW",
-                "Mi"
+                "Mi",
+                "So"
               ],
               "additives": [],
               "standing": false,
               "diet": "vegetarian",
               "meat_types": [],
-              "id": "da0820fe88930dff",
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 555.0,
-              "protein_g": 10.5
+              "kcal": 156.0,
+              "protein_g": 3.6
             }
           ],
           "total": {
-            "price_cents": 419,
-            "price_eur": 4.19,
-            "weight_g": 750,
-            "kcal": 1162.5,
-            "protein_g": 30.75,
-            "carbs_g": 190.5,
-            "fat_g": 27.9
+            "price_cents": 720,
+            "price_eur": 7.2,
+            "weight_g": 700,
+            "kcal": 1016.0,
+            "protein_g": 37.6,
+            "carbs_g": 134.5,
+            "fat_g": 35.4
           },
           "score": {
-            "kcal": 20.910552135241502,
-            "protein": 5.445113284574175,
-            "price": 1.04281033327362,
-            "total": 27.3985
+            "kcal": 18.275372876907838,
+            "protein": 6.658089739837041,
+            "price": 1.7919413841456002,
+            "total": 26.7254
           },
           "has_estimated_prices": false
         }
@@ -3764,8 +4046,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Thai Chicken Breast",
-          "reason": "Lean chicken breast strips packed with protein and fresh vegetables",
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -3827,8 +4109,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Roast Pork and Soup",
-          "reason": "Savory slice of Florentine pork served with a light soup of the day",
+          "title": "Florentine-style roast pork + Vegan parsnip and potato soup",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -3875,8 +4157,8 @@
               "protein_g": 32.8
             },
             {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
               "station": "Tagessupe, Brot, Obst",
               "counters": [
                 "Tagessupe, Brot, Obst"
@@ -3886,43 +4168,138 @@
               "count": 1,
               "unit": "scoop",
               "weight_g": 150,
-              "price_cents": 235,
-              "is_vegan": false,
-              "markers": [],
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
               "allergens": [],
               "additives": [],
               "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
-              ],
-              "id": "2a7cca8862da876a",
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
               "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 72.0,
-              "protein_g": 2.7
+              "kcal": 78.0,
+              "protein_g": 1.8
             }
           ],
           "total": {
-            "price_cents": 479,
-            "price_eur": 4.79,
+            "price_cents": 379,
+            "price_eur": 3.79,
             "weight_g": 310,
-            "kcal": 368.0,
-            "protein_g": 35.5,
-            "carbs_g": 11.7,
-            "fat_g": 19.68
+            "kcal": 374.0,
+            "protein_g": 34.6,
+            "carbs_g": 13.65,
+            "fat_g": 19.98
           },
           "score": {
-            "kcal": -7.44438504538272,
-            "protein": 11.7108966437358,
-            "price": 0.06165676970546,
-            "total": 4.3282
+            "kcal": -7.56576088851396,
+            "protein": 11.414000672486157,
+            "price": 0.048784792731460004,
+            "total": 3.897
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Vegetable Moussaka",
-          "reason": "Flavorful layered vegetables and cheese served with garlic dip",
+          "title": "Franconian bratwurst + Vegan parsnip and potato soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Fränkische Bratwurst (1 Stück)",
+              "name_en": "Franconian bratwurst (1 piece)",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 115,
+              "price_cents": 154,
+              "is_vegan": false,
+              "markers": [
+                "R",
+                "S"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW"
+              ],
+              "additives": [
+                "3",
+                "8"
+              ],
+              "standing": false,
+              "diet": "meat",
+              "meat_types": [
+                "beef",
+                "pork"
+              ],
+              "id": "bc974b42022b1458",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 339.25,
+              "protein_g": 16.68
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 156.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 424,
+            "price_eur": 4.24,
+            "weight_g": 415,
+            "kcal": 495.25,
+            "protein_g": 20.28,
+            "carbs_g": 23.42,
+            "fat_g": 35.53
+          },
+          "score": {
+            "kcal": -10.018564385124435,
+            "protein": 6.6884064634293905,
+            "price": 0.05457718236976,
+            "total": -3.2756
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Vegetable and white cheese moussaka",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -3958,8 +4335,8 @@
               ],
               "additives": [
                 "1",
-                "9",
-                "Kn"
+                "Kn",
+                "9"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -3989,8 +4366,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Arabic Spiced Couscous",
-          "reason": "Light plant-based couscous tossed with carrots and hearty chickpeas",
+          "title": "Arabic-style couscous",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4048,98 +4425,6 @@
             "total": -5.59
           },
           "has_estimated_prices": false
-        },
-        {
-          "title": "Pasta Verdura and Soup",
-          "reason": "Classic vegetable pasta paired with a warm bowl of soup",
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pasta",
-            "Tagessupe, Brot, Obst"
-          ],
-          "items": [
-            {
-              "name": "Pasta Verdura",
-              "name_en": "Pasta with vegetables",
-              "station": "Pasta",
-              "counters": [
-                "Pasta"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "4961ce657aa212a6",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
-              "station": "Tagessupe, Brot, Obst",
-              "counters": [
-                "Tagessupe, Brot, Obst"
-              ],
-              "role": "soup",
-              "texture": "liquid",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
-              ],
-              "id": "2a7cca8862da876a",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 144.0,
-              "protein_g": 5.4
-            }
-          ],
-          "total": {
-            "price_cents": 775,
-            "price_eur": 7.75,
-            "weight_g": 750,
-            "kcal": 751.5,
-            "protein_g": 22.5,
-            "carbs_g": 110.85,
-            "fat_g": 22.35
-          },
-          "score": {
-            "kcal": -15.202324352187809,
-            "protein": 7.422399281241001,
-            "price": 0.0997578215485,
-            "total": -7.6802
-          },
-          "has_estimated_prices": false
         }
       ]
     },
@@ -4151,8 +4436,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Chickpea Couscous",
-          "reason": "Extremely affordable and filling dish of couscous and chickpeas",
+          "title": "Arabic-style couscous",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4212,8 +4497,70 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Thai Chicken Strips",
-          "reason": "Nutritious and protein-packed chicken breast with mixed vegetables",
+          "title": "Pizza Funghi",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pizza"
+          ],
+          "items": [
+            {
+              "name": "Pizza Funghi mit frischen Champignons",
+              "name_en": "Pizza Funghi with fresh mushrooms",
+              "station": "Pizza",
+              "counters": [
+                "Pizza"
+              ],
+              "role": "main",
+              "texture": "dry",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 400,
+              "price_cents": 450,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Gl",
+                "GlG",
+                "GlW",
+                "Mi",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "0bf0f539fa194ad6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 860.0,
+              "protein_g": 34.0
+            }
+          ],
+          "total": {
+            "price_cents": 450,
+            "price_eur": 4.5,
+            "weight_g": 400,
+            "kcal": 860.0,
+            "protein_g": 34.0,
+            "carbs_g": 112.0,
+            "fat_g": 30.0
+          },
+          "score": {
+            "kcal": 3.0383422861534,
+            "protein": 2.4833360274364,
+            "price": -5.7170609805915,
+            "total": -0.1954
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Thai-style chicken breast strips",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4275,8 +4622,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Greek Style Moussaka",
-          "reason": "Budget-friendly vegetarian bake with creamy cheese and garlic sauce",
+          "title": "Vegetable and white cheese moussaka",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4312,8 +4659,8 @@
               ],
               "additives": [
                 "1",
-                "9",
-                "Kn"
+                "Kn",
+                "9"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -4343,102 +4690,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Tuscan Pork with Soup",
-          "reason": "Flavorful roast pork paired neatly with comforting warm soup",
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Fleisch",
-            "Tagessupe, Brot, Obst"
-          ],
-          "items": [
-            {
-              "name": "Arista al fiorentina - Schweinebraten toskanische Art (1 Scheibe)",
-              "name_en": "Florentine-style roast pork (1 slice)",
-              "station": "Fleisch",
-              "counters": [
-                "Fleisch"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 160,
-              "price_cents": 244,
-              "is_vegan": false,
-              "markers": [
-                "S"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Sw"
-              ],
-              "additives": [
-                "5",
-                "99"
-              ],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "pork"
-              ],
-              "id": "5f56143389c04364",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 296.0,
-              "protein_g": 32.8
-            },
-            {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
-              "station": "Tagessupe, Brot, Obst",
-              "counters": [
-                "Tagessupe, Brot, Obst"
-              ],
-              "role": "soup",
-              "texture": "liquid",
-              "count": 1,
-              "unit": "scoop",
-              "weight_g": 150,
-              "price_cents": 235,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
-              ],
-              "id": "2a7cca8862da876a",
-              "serving": "1 scoop",
-              "price_source": "eat-api",
-              "kcal": 72.0,
-              "protein_g": 2.7
-            }
-          ],
-          "total": {
-            "price_cents": 479,
-            "price_eur": 4.79,
-            "weight_g": 310,
-            "kcal": 368.0,
-            "protein_g": 35.5,
-            "carbs_g": 11.7,
-            "fat_g": 19.68
-          },
-          "score": {
-            "kcal": 1.30012786198192,
-            "protein": 2.5928949698232997,
-            "price": -6.085493799340729,
-            "total": -2.1925
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Vegetable Pasta with Soup",
-          "reason": "Hearty pasta dish accompanied by a generous portion of daily soup",
+          "title": "Pasta + Vegan parsnip and potato soup",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4483,8 +4736,8 @@
               "protein_g": 17.1
             },
             {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
               "station": "Tagessupe, Brot, Obst",
               "counters": [
                 "Tagessupe, Brot, Obst"
@@ -4494,37 +4747,37 @@
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
               "allergens": [],
               "additives": [],
               "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
-              ],
-              "id": "2a7cca8862da876a",
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 144.0,
-              "protein_g": 5.4
+              "kcal": 156.0,
+              "protein_g": 3.6
             }
           ],
           "total": {
-            "price_cents": 775,
-            "price_eur": 7.75,
+            "price_cents": 675,
+            "price_eur": 6.75,
             "weight_g": 750,
-            "kcal": 751.5,
-            "protein_g": 22.5,
-            "carbs_g": 110.85,
-            "fat_g": 22.35
+            "kcal": 763.5,
+            "protein_g": 20.7,
+            "carbs_g": 114.75,
+            "fat_g": 22.95
           },
           "score": {
-            "kcal": 2.655016544237535,
-            "protein": 1.6433841358035,
-            "price": -9.84604946657425,
-            "total": -5.5476
+            "kcal": 2.6974120179978147,
+            "protein": 1.5119134049392202,
+            "price": -8.57559147088725,
+            "total": -4.3663
           },
           "has_estimated_prices": false
         }
@@ -4547,8 +4800,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Arabic Spiced Couscous",
-          "reason": "Wholesome vegan couscous prepared with sweet carrots and chickpeas",
+          "title": "Arabic-style couscous",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4606,6 +4859,98 @@
             "total": -5.59
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Vegan parsnip and potato soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 156.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 763.5,
+            "protein_g": 20.7,
+            "carbs_g": 114.75,
+            "fat_g": 22.95
+          },
+          "score": {
+            "kcal": -15.44507603845029,
+            "protein": 6.828607338741722,
+            "price": 0.0868858445745,
+            "total": -8.5296
+          },
+          "has_estimated_prices": false
         }
       ]
     },
@@ -4617,8 +4962,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Spiced Chickpea Couscous",
-          "reason": "Great value vegan staple loaded with hearty grains and vegetables",
+          "title": "Arabic-style couscous",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4676,6 +5021,98 @@
             "total": 1.7323
           },
           "has_estimated_prices": false
+        },
+        {
+          "title": "Pasta + Vegan parsnip and potato soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Pasta",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Pasta Verdura",
+              "name_en": "Pasta with vegetables",
+              "station": "Pasta",
+              "counters": [
+                "Pasta"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Ei",
+                "Gl",
+                "GlW",
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "4961ce657aa212a6",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Vegane Pastinaken-Kartoffel-Suppe",
+              "name_en": "Vegan parsnip and potato soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "b58825f5a4fe212d",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 156.0,
+              "protein_g": 3.6
+            }
+          ],
+          "total": {
+            "price_cents": 675,
+            "price_eur": 6.75,
+            "weight_g": 750,
+            "kcal": 763.5,
+            "protein_g": 20.7,
+            "carbs_g": 114.75,
+            "fat_g": 22.95
+          },
+          "score": {
+            "kcal": 2.6974120179978147,
+            "protein": 1.5119134049392202,
+            "price": -8.57559147088725,
+            "total": -4.3663
+          },
+          "has_estimated_prices": false
         }
       ]
     }
@@ -4697,19 +5134,17 @@
         "price_source": "eat-api"
       },
       {
-        "name": "Tagessuppe",
-        "name_en": "Soup of the day",
+        "name": "Vegane Pastinaken-Kartoffel-Suppe",
+        "name_en": "Vegan parsnip and potato soup",
         "station": "Tagessupe, Brot, Obst",
         "weight_g": 300,
-        "price_cents": 370,
-        "is_vegan": false,
-        "diet": "meat",
-        "meat_types": [
-          "unknown"
-        ],
+        "price_cents": 270,
+        "is_vegan": true,
+        "diet": "vegan",
+        "meat_types": [],
         "serving": "2 scoops",
-        "kcal": 144.0,
-        "protein_g": 5.4,
+        "kcal": 156.0,
+        "protein_g": 3.6,
         "price_source": "eat-api"
       },
       {
@@ -4727,7 +5162,22 @@
         "price_source": "eat-api"
       }
     ],
-    "vegan": []
+    "vegan": [
+      {
+        "name": "Vegane Pastinaken-Kartoffel-Suppe",
+        "name_en": "Vegan parsnip and potato soup",
+        "station": "Tagessupe, Brot, Obst",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": true,
+        "diet": "vegan",
+        "meat_types": [],
+        "serving": "2 scoops",
+        "kcal": 156.0,
+        "protein_g": 3.6,
+        "price_source": "eat-api"
+      }
+    ]
   },
   "generated_on": "2026-11-23"
 }

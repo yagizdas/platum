@@ -4,7 +4,7 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
-  "fetched_at": "2026-11-23T10:36:32.321421+00:00",
+  "fetched_at": "2026-11-25T17:29:47.661546+00:00",
   "warnings": [],
   "campus": "garching",
   "schema_version": 2,
@@ -96,14 +96,15 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Brazilian roast chicken - Frango a Passarinho + Almond-flavored pudding",
+          "title": "Brazilian roast chicken - Frango a Passarinho + Almond-flavored pudding + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Wok",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -183,34 +184,65 @@
               "price_source": "eat-api",
               "kcal": 161.0,
               "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 496,
-            "price_eur": 4.96,
-            "weight_g": 440,
-            "kcal": 806.0,
-            "protein_g": 59.0,
-            "carbs_g": 49.2,
-            "fat_g": 40.9
+            "price_cents": 766,
+            "price_eur": 7.66,
+            "weight_g": 740,
+            "kcal": 1031.0,
+            "protein_g": 68.6,
+            "carbs_g": 77.7,
+            "fat_g": 48.1
           },
           "score": {
-            "kcal": 14.49798281376744,
-            "protein": 10.447534432191102,
-            "price": 1.2344485090780801,
-            "total": 26.18
+            "kcal": 18.54518645284644,
+            "protein": 12.147472238106939,
+            "price": 1.9064265281326802,
+            "total": 32.5991
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Grilled halloumi + Almond-flavored pudding",
+          "title": "Grilled halloumi + Almond-flavored pudding + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Grill",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -278,34 +310,65 @@
               "price_source": "eat-api",
               "kcal": 161.0,
               "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590,
-            "kcal": 903.5,
-            "protein_g": 41.75,
-            "carbs_g": 47.7,
-            "fat_g": 58.9
+            "price_cents": 801,
+            "price_eur": 8.01,
+            "weight_g": 890,
+            "kcal": 1128.5,
+            "protein_g": 51.35,
+            "carbs_g": 76.2,
+            "fat_g": 66.1
           },
           "score": {
-            "kcal": 16.25177105736834,
-            "protein": 7.392958687186075,
-            "price": 1.3215567708073799,
-            "total": 24.9663
+            "kcal": 20.29897469644734,
+            "protein": 9.092896493101915,
+            "price": 1.99353478986198,
+            "total": 31.3854
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Potato casserole + Almond-flavored pudding",
+          "title": "Potato casserole + Almond-flavored pudding + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Fleisch",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -376,22 +439,302 @@
               "price_source": "eat-api",
               "kcal": 161.0,
               "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 1,
+              "unit": "scoop",
+              "weight_g": 150,
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "1 scoop",
+              "price_source": "eat-api",
+              "kcal": 112.5,
+              "protein_g": 4.8
             }
           ],
           "total": {
-            "price_cents": 631,
-            "price_eur": 6.31,
-            "weight_g": 590,
-            "kcal": 881.0,
-            "protein_g": 41.75,
-            "carbs_g": 79.2,
-            "fat_g": 44.5
+            "price_cents": 766,
+            "price_eur": 7.66,
+            "weight_g": 740,
+            "kcal": 993.5,
+            "protein_g": 46.55,
+            "carbs_g": 93.45,
+            "fat_g": 48.1
           },
           "score": {
-            "kcal": 15.847050693460439,
-            "protein": 7.392958687186075,
-            "price": 1.57043751860538,
-            "total": 24.8104
+            "kcal": 17.87065251299994,
+            "protein": 8.242927590143996,
+            "price": 1.9064265281326802,
+            "total": 28.02
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 801,
+            "price_eur": 8.01,
+            "weight_g": 890,
+            "kcal": 993.5,
+            "protein_g": 33.35,
+            "carbs_g": 143.7,
+            "fat_g": 29.2
+          },
+          "score": {
+            "kcal": 17.87065251299994,
+            "protein": 5.905513107009716,
+            "price": 1.99353478986198,
+            "total": 25.7697
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 545,
+            "price_eur": 5.45,
+            "weight_g": 890,
+            "kcal": 903.5,
+            "protein_g": 30.2,
+            "carbs_g": 136.95,
+            "fat_g": 23.8
+          },
+          "score": {
+            "kcal": 16.25177105736834,
+            "protein": 5.3477210144435805,
+            "price": 1.3564000754991001,
+            "total": 22.9559
           },
           "has_estimated_prices": false
         }
@@ -401,14 +744,15 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Brazilian roast chicken - Frango a Passarinho + Almond-flavored pudding",
+          "title": "Brazilian roast chicken - Frango a Passarinho + Almond-flavored pudding + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Wok",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -488,34 +832,65 @@
               "price_source": "eat-api",
               "kcal": 161.0,
               "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 496,
-            "price_eur": 4.96,
-            "weight_g": 440,
-            "kcal": 806.0,
-            "protein_g": 59.0,
-            "carbs_g": 49.2,
-            "fat_g": 40.9
+            "price_cents": 766,
+            "price_eur": 7.66,
+            "weight_g": 740,
+            "kcal": 1031.0,
+            "protein_g": 68.6,
+            "carbs_g": 77.7,
+            "fat_g": 48.1
           },
           "score": {
-            "kcal": 14.49798281376744,
-            "protein": 10.447534432191102,
-            "price": 1.2344485090780801,
-            "total": 26.18
+            "kcal": 18.54518645284644,
+            "protein": 12.147472238106939,
+            "price": 1.9064265281326802,
+            "total": 32.5991
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Grilled halloumi + Almond-flavored pudding",
+          "title": "Grilled halloumi + Almond-flavored pudding + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Grill",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -583,22 +958,302 @@
               "price_source": "eat-api",
               "kcal": 161.0,
               "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590,
+            "price_cents": 801,
+            "price_eur": 8.01,
+            "weight_g": 890,
+            "kcal": 1128.5,
+            "protein_g": 51.35,
+            "carbs_g": 76.2,
+            "fat_g": 66.1
+          },
+          "score": {
+            "kcal": 20.29897469644734,
+            "protein": 9.092896493101915,
+            "price": 1.99353478986198,
+            "total": 31.3854
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 801,
+            "price_eur": 8.01,
+            "weight_g": 890,
+            "kcal": 993.5,
+            "protein_g": 33.35,
+            "carbs_g": 143.7,
+            "fat_g": 29.2
+          },
+          "score": {
+            "kcal": 17.87065251299994,
+            "protein": 5.905513107009716,
+            "price": 1.99353478986198,
+            "total": 25.7697
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 545,
+            "price_eur": 5.45,
+            "weight_g": 890,
             "kcal": 903.5,
-            "protein_g": 41.75,
-            "carbs_g": 47.7,
-            "fat_g": 58.9
+            "protein_g": 30.2,
+            "carbs_g": 136.95,
+            "fat_g": 23.8
           },
           "score": {
             "kcal": 16.25177105736834,
-            "protein": 7.392958687186075,
-            "price": 1.3215567708073799,
-            "total": 24.9663
+            "protein": 5.3477210144435805,
+            "price": 1.3564000754991001,
+            "total": 22.9559
           },
           "has_estimated_prices": false
         }
@@ -608,14 +1263,15 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Brazilian roast chicken - Frango a Passarinho + Almond-flavored pudding",
+          "title": "Brazilian roast chicken - Frango a Passarinho + Almond-flavored pudding + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Wok",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -695,34 +1351,65 @@
               "price_source": "eat-api",
               "kcal": 161.0,
               "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 496,
-            "price_eur": 4.96,
-            "weight_g": 440,
-            "kcal": 806.0,
-            "protein_g": 59.0,
-            "carbs_g": 49.2,
-            "fat_g": 40.9
+            "price_cents": 766,
+            "price_eur": 7.66,
+            "weight_g": 740,
+            "kcal": 1031.0,
+            "protein_g": 68.6,
+            "carbs_g": 77.7,
+            "fat_g": 48.1
           },
           "score": {
-            "kcal": 14.49798281376744,
-            "protein": 10.447534432191102,
-            "price": 1.2344485090780801,
-            "total": 26.18
+            "kcal": 18.54518645284644,
+            "protein": 12.147472238106939,
+            "price": 1.9064265281326802,
+            "total": 32.5991
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Grilled halloumi + Almond-flavored pudding",
+          "title": "Grilled halloumi + Almond-flavored pudding + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Grill",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -790,22 +1477,302 @@
               "price_source": "eat-api",
               "kcal": 161.0,
               "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590,
+            "price_cents": 801,
+            "price_eur": 8.01,
+            "weight_g": 890,
+            "kcal": 1128.5,
+            "protein_g": 51.35,
+            "carbs_g": 76.2,
+            "fat_g": 66.1
+          },
+          "score": {
+            "kcal": 20.29897469644734,
+            "protein": 9.092896493101915,
+            "price": 1.99353478986198,
+            "total": 31.3854
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 801,
+            "price_eur": 8.01,
+            "weight_g": 890,
+            "kcal": 993.5,
+            "protein_g": 33.35,
+            "carbs_g": 143.7,
+            "fat_g": 29.2
+          },
+          "score": {
+            "kcal": 17.87065251299994,
+            "protein": 5.905513107009716,
+            "price": 1.99353478986198,
+            "total": 25.7697
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 545,
+            "price_eur": 5.45,
+            "weight_g": 890,
             "kcal": 903.5,
-            "protein_g": 41.75,
-            "carbs_g": 47.7,
-            "fat_g": 58.9
+            "protein_g": 30.2,
+            "carbs_g": 136.95,
+            "fat_g": 23.8
           },
           "score": {
             "kcal": 16.25177105736834,
-            "protein": 7.392958687186075,
-            "price": 1.3215567708073799,
-            "total": 24.9663
+            "protein": 5.3477210144435805,
+            "price": 1.3564000754991001,
+            "total": 22.9559
           },
           "has_estimated_prices": false
         }
@@ -815,14 +1782,15 @@
       "state": "ready",
       "plates": [
         {
-          "title": "Grilled halloumi + Almond-flavored pudding",
+          "title": "Grilled halloumi + Almond-flavored pudding + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Grill",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -890,22 +1858,302 @@
               "price_source": "eat-api",
               "kcal": 161.0,
               "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 531,
-            "price_eur": 5.31,
-            "weight_g": 590,
+            "price_cents": 801,
+            "price_eur": 8.01,
+            "weight_g": 890,
+            "kcal": 1128.5,
+            "protein_g": 51.35,
+            "carbs_g": 76.2,
+            "fat_g": 66.1
+          },
+          "score": {
+            "kcal": 20.29897469644734,
+            "protein": 9.092896493101915,
+            "price": 1.99353478986198,
+            "total": 31.3854
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 607.5,
+              "protein_g": 20.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 801,
+            "price_eur": 8.01,
+            "weight_g": 890,
+            "kcal": 993.5,
+            "protein_g": 33.35,
+            "carbs_g": 143.7,
+            "fat_g": 29.2
+          },
+          "score": {
+            "kcal": 17.87065251299994,
+            "protein": 5.905513107009716,
+            "price": 1.99353478986198,
+            "total": 25.7697
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Rice stew + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 149,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 517.5,
+              "protein_g": 17.1
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 545,
+            "price_eur": 5.45,
+            "weight_g": 890,
             "kcal": 903.5,
-            "protein_g": 41.75,
-            "carbs_g": 47.7,
-            "fat_g": 58.9
+            "protein_g": 30.2,
+            "carbs_g": 136.95,
+            "fat_g": 23.8
           },
           "score": {
             "kcal": 16.25177105736834,
-            "protein": 7.392958687186075,
-            "price": 1.3215567708073799,
-            "total": 24.9663
+            "protein": 5.3477210144435805,
+            "price": 1.3564000754991001,
+            "total": 22.9559
           },
           "has_estimated_prices": false
         }
@@ -1110,13 +2358,101 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Oriental vegetable couscous",
+          "title": "Rice stew + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Vegan"
+            "Studitopf",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 11.4
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 369,
+            "price_eur": 3.69,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 21.0,
+            "carbs_g": 84.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": -11.5307050974678,
+            "protein": 6.927572662491601,
+            "price": 0.04749759503406,
+            "total": -4.5556
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -1128,10 +2464,10 @@
               ],
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -1148,87 +2484,56 @@
               "diet": "vegan",
               "meat_types": [],
               "id": "bd11e2c5a741e9a4",
-              "serving": "3 scoops",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 17.1
-          },
-          "score": {
-            "kcal": -12.28930411703805,
-            "protein": 6.680159353116901,
-            "price": 0.0521315067447,
-            "total": -5.557
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Spaetzle pan",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Pasta"
-          ],
-          "items": [
+              "kcal": 405.0,
+              "protein_g": 13.5
+            },
             {
-              "name": "Spätzlepfanne mit Kraut und Pilzen",
-              "name_en": "Spaetzle pan with cabbage and mushrooms",
-              "station": "Pasta",
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Pasta"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
               "markers": [
-                "f"
+                "v"
               ],
-              "allergens": [
-                "Ei",
-                "Gl",
-                "GlW",
-                "Mi"
+              "allergens": [],
+              "additives": [
+                "2"
               ],
-              "additives": [],
               "standing": false,
-              "diet": "vegetarian",
+              "diet": "vegan",
               "meat_types": [],
-              "id": "b1a342fa3523f1f9",
-              "serving": "3 scoops",
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 23.4
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 630.0,
+            "protein_g": 23.1,
+            "carbs_g": 88.5,
+            "fat_g": 18.6
           },
           "score": {
-            "kcal": -13.19962294052235,
-            "protein": 6.680159353116901,
-            "price": 0.0521315067447,
-            "total": -6.4673
+            "kcal": -12.7444635287802,
+            "protein": 7.620329928740761,
+            "price": 0.0695086756596,
+            "total": -5.0546
           },
           "has_estimated_prices": false
         }
@@ -1370,13 +2675,101 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Oriental vegetable couscous",
+          "title": "Rice stew + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Vegan"
+            "Studitopf",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 11.4
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 369,
+            "price_eur": 3.69,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 21.0,
+            "carbs_g": 84.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": -11.5307050974678,
+            "protein": 6.927572662491601,
+            "price": 0.04749759503406,
+            "total": -4.5556
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -1388,10 +2781,10 @@
               ],
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -1408,37 +2801,68 @@
               "diet": "vegan",
               "meat_types": [],
               "id": "bd11e2c5a741e9a4",
-              "serving": "3 scoops",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
+              "kcal": 405.0,
+              "protein_g": 13.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 17.1
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 630.0,
+            "protein_g": 23.1,
+            "carbs_g": 88.5,
+            "fat_g": 18.6
           },
           "score": {
-            "kcal": -12.28930411703805,
-            "protein": 6.680159353116901,
-            "price": 0.0521315067447,
-            "total": -5.557
+            "kcal": -12.7444635287802,
+            "protein": 7.620329928740761,
+            "price": 0.0695086756596,
+            "total": -5.0546
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Spaetzle pan",
+          "title": "Spaetzle pan + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Pasta"
+            "Pasta",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -1450,10 +2874,10 @@
               ],
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": false,
               "markers": [
                 "f"
@@ -1469,117 +2893,56 @@
               "diet": "vegetarian",
               "meat_types": [],
               "id": "b1a342fa3523f1f9",
-              "serving": "3 scoops",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 23.4
-          },
-          "score": {
-            "kcal": -13.19962294052235,
-            "protein": 6.680159353116901,
-            "price": 0.0521315067447,
-            "total": -6.4673
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Rice stew + Almond-flavored pudding",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Studitopf",
-            "Dessert (Glas)"
-          ],
-          "items": [
+              "kcal": 435.0,
+              "protein_g": 13.5
+            },
             {
-              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
-              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
-              "station": "Studitopf",
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Studitopf"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [],
-              "additives": [],
+              "additives": [
+                "2"
+              ],
               "standing": false,
               "diet": "vegan",
               "meat_types": [],
-              "id": "11b70b1c6dbe66f8",
-              "serving": "3 scoops",
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 517.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Pudding mit Mandelgeschmack und Beeren",
-              "name_en": "Almond-flavored pudding with berries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140,
-              "price_cents": 126,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlH",
-                "Sc",
-                "ScM",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "7d822a66181c14b6",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 161.0,
-              "protein_g": 3.5
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 275,
-            "price_eur": 2.75,
-            "weight_g": 590,
-            "kcal": 678.5,
-            "protein_g": 20.6,
-            "carbs_g": 108.45,
-            "fat_g": 16.6
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 660.0,
+            "protein_g": 23.1,
+            "carbs_g": 88.5,
+            "fat_g": 22.8
           },
           "score": {
-            "kcal": -13.725584927424391,
-            "protein": 6.795618897491761,
-            "price": 0.035397936678500004,
-            "total": -6.8946
+            "kcal": -13.3513427444364,
+            "protein": 7.620329928740761,
+            "price": 0.0695086756596,
+            "total": -5.6615
           },
           "has_estimated_prices": false
         }
@@ -1721,13 +3084,101 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Oriental vegetable couscous",
+          "title": "Rice stew + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Vegan"
+            "Studitopf",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 11.4
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 369,
+            "price_eur": 3.69,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 21.0,
+            "carbs_g": 84.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": -11.5307050974678,
+            "protein": 6.927572662491601,
+            "price": 0.04749759503406,
+            "total": -4.5556
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -1739,10 +3190,10 @@
               ],
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -1759,37 +3210,68 @@
               "diet": "vegan",
               "meat_types": [],
               "id": "bd11e2c5a741e9a4",
-              "serving": "3 scoops",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
+              "kcal": 405.0,
+              "protein_g": 13.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 17.1
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 630.0,
+            "protein_g": 23.1,
+            "carbs_g": 88.5,
+            "fat_g": 18.6
           },
           "score": {
-            "kcal": -12.28930411703805,
-            "protein": 6.680159353116901,
-            "price": 0.0521315067447,
-            "total": -5.557
+            "kcal": -12.7444635287802,
+            "protein": 7.620329928740761,
+            "price": 0.0695086756596,
+            "total": -5.0546
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Spaetzle pan",
+          "title": "Spaetzle pan + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Pasta"
+            "Pasta",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -1801,10 +3283,10 @@
               ],
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": false,
               "markers": [
                 "f"
@@ -1820,117 +3302,56 @@
               "diet": "vegetarian",
               "meat_types": [],
               "id": "b1a342fa3523f1f9",
-              "serving": "3 scoops",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 23.4
-          },
-          "score": {
-            "kcal": -13.19962294052235,
-            "protein": 6.680159353116901,
-            "price": 0.0521315067447,
-            "total": -6.4673
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Rice stew + Almond-flavored pudding",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Studitopf",
-            "Dessert (Glas)"
-          ],
-          "items": [
+              "kcal": 435.0,
+              "protein_g": 13.5
+            },
             {
-              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
-              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
-              "station": "Studitopf",
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Studitopf"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [],
-              "additives": [],
+              "additives": [
+                "2"
+              ],
               "standing": false,
               "diet": "vegan",
               "meat_types": [],
-              "id": "11b70b1c6dbe66f8",
-              "serving": "3 scoops",
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 517.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Pudding mit Mandelgeschmack und Beeren",
-              "name_en": "Almond-flavored pudding with berries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140,
-              "price_cents": 126,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlH",
-                "Sc",
-                "ScM",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "7d822a66181c14b6",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 161.0,
-              "protein_g": 3.5
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 275,
-            "price_eur": 2.75,
-            "weight_g": 590,
-            "kcal": 678.5,
-            "protein_g": 20.6,
-            "carbs_g": 108.45,
-            "fat_g": 16.6
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 660.0,
+            "protein_g": 23.1,
+            "carbs_g": 88.5,
+            "fat_g": 22.8
           },
           "score": {
-            "kcal": -13.725584927424391,
-            "protein": 6.795618897491761,
-            "price": 0.035397936678500004,
-            "total": -6.8946
+            "kcal": -13.3513427444364,
+            "protein": 7.620329928740761,
+            "price": 0.0695086756596,
+            "total": -5.6615
           },
           "has_estimated_prices": false
         }
@@ -2000,13 +3421,101 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Oriental vegetable couscous",
+          "title": "Rice stew + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Vegan"
+            "Studitopf",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 11.4
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 369,
+            "price_eur": 3.69,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 21.0,
+            "carbs_g": 84.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": -11.5307050974678,
+            "protein": 6.927572662491601,
+            "price": 0.04749759503406,
+            "total": -4.5556
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -2018,10 +3527,10 @@
               ],
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -2038,37 +3547,68 @@
               "diet": "vegan",
               "meat_types": [],
               "id": "bd11e2c5a741e9a4",
-              "serving": "3 scoops",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
+              "kcal": 405.0,
+              "protein_g": 13.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 17.1
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 630.0,
+            "protein_g": 23.1,
+            "carbs_g": 88.5,
+            "fat_g": 18.6
           },
           "score": {
-            "kcal": -12.28930411703805,
-            "protein": 6.680159353116901,
-            "price": 0.0521315067447,
-            "total": -5.557
+            "kcal": -12.7444635287802,
+            "protein": 7.620329928740761,
+            "price": 0.0695086756596,
+            "total": -5.0546
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Spaetzle pan",
+          "title": "Spaetzle pan + Arabic chickpea soup",
           "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Pasta"
+            "Pasta",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -2080,10 +3620,10 @@
               ],
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": false,
               "markers": [
                 "f"
@@ -2099,117 +3639,56 @@
               "diet": "vegetarian",
               "meat_types": [],
               "id": "b1a342fa3523f1f9",
-              "serving": "3 scoops",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 652.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 652.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 23.4
-          },
-          "score": {
-            "kcal": -13.19962294052235,
-            "protein": 6.680159353116901,
-            "price": 0.0521315067447,
-            "total": -6.4673
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Rice stew + Almond-flavored pudding",
-          "reason": null,
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Studitopf",
-            "Dessert (Glas)"
-          ],
-          "items": [
+              "kcal": 435.0,
+              "protein_g": 13.5
+            },
             {
-              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
-              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
-              "station": "Studitopf",
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
               "counters": [
-                "Studitopf"
+                "Tagessupe, Brot, Obst"
               ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
+              "weight_g": 300,
+              "price_cents": 270,
               "is_vegan": true,
               "markers": [
                 "v"
               ],
               "allergens": [],
-              "additives": [],
+              "additives": [
+                "2"
+              ],
               "standing": false,
               "diet": "vegan",
               "meat_types": [],
-              "id": "11b70b1c6dbe66f8",
-              "serving": "3 scoops",
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 517.5,
-              "protein_g": 17.1
-            },
-            {
-              "name": "Pudding mit Mandelgeschmack und Beeren",
-              "name_en": "Almond-flavored pudding with berries",
-              "station": "Dessert (Glas)",
-              "counters": [
-                "Dessert (Glas)"
-              ],
-              "role": "dessert",
-              "texture": "saucy",
-              "count": 1,
-              "unit": "piece",
-              "weight_g": 140,
-              "price_cents": 126,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlH",
-                "Sc",
-                "ScM",
-                "So"
-              ],
-              "additives": [],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "7d822a66181c14b6",
-              "serving": "1 piece",
-              "price_source": "eat-api",
-              "kcal": 161.0,
-              "protein_g": 3.5
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 275,
-            "price_eur": 2.75,
-            "weight_g": 590,
-            "kcal": 678.5,
-            "protein_g": 20.6,
-            "carbs_g": 108.45,
-            "fat_g": 16.6
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 660.0,
+            "protein_g": 23.1,
+            "carbs_g": 88.5,
+            "fat_g": 22.8
           },
           "score": {
-            "kcal": -13.725584927424391,
-            "protein": 6.795618897491761,
-            "price": 0.035397936678500004,
-            "total": -6.8946
+            "kcal": -13.3513427444364,
+            "protein": 7.620329928740761,
+            "price": 0.0695086756596,
+            "total": -5.6615
           },
           "has_estimated_prices": false
         }
@@ -3558,8 +5037,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Chicken Soup and Berry Dessert",
-          "reason": "High protein chicken paired with warm soup and a sweet berry treat",
+          "title": "Brazilian roast chicken - Frango a Passarinho + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -3648,8 +5127,8 @@
               "protein_g": 3.5
             },
             {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
               "station": "Tagessupe, Brot, Obst",
               "counters": [
                 "Tagessupe, Brot, Obst"
@@ -3659,43 +5138,171 @@
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
               ],
-              "id": "2a7cca8862da876a",
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 144.0,
-              "protein_g": 5.4
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 866,
-            "price_eur": 8.66,
+            "price_cents": 766,
+            "price_eur": 7.66,
             "weight_g": 740,
-            "kcal": 950.0,
-            "protein_g": 64.4,
-            "carbs_g": 67.8,
-            "fat_g": 45.7
+            "kcal": 1031.0,
+            "protein_g": 68.6,
+            "carbs_g": 77.7,
+            "fat_g": 48.1
           },
           "score": {
-            "kcal": 17.088193142778,
-            "protein": 11.403749448018761,
-            "price": 2.15530727593068,
-            "total": 30.6472
+            "kcal": 18.54518645284644,
+            "protein": 12.147472238106939,
+            "price": 1.9064265281326802,
+            "total": 32.5991
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Meat Casserole with Soup and Pudding",
-          "reason": "Hearty potato casserole rounded out with soup and dessert",
+          "title": "Grilled halloumi + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Grill",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Halloumi vom Grill mit Ratatouille",
+              "name_en": "Grilled halloumi with ratatouille",
+              "station": "Grill",
+              "counters": [
+                "Grill"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 3,
+              "unit": "scoop",
+              "weight_g": 450,
+              "price_cents": 405,
+              "is_vegan": false,
+              "markers": [
+                "f"
+              ],
+              "allergens": [
+                "Mi"
+              ],
+              "additives": [
+                "Kn"
+              ],
+              "standing": false,
+              "diet": "vegetarian",
+              "meat_types": [],
+              "id": "e282d55f766d09fa",
+              "serving": "3 scoops",
+              "price_source": "eat-api",
+              "kcal": 742.5,
+              "protein_g": 38.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 801,
+            "price_eur": 8.01,
+            "weight_g": 890,
+            "kcal": 1128.5,
+            "protein_g": 51.35,
+            "carbs_g": 76.2,
+            "fat_g": 66.1
+          },
+          "score": {
+            "kcal": 20.29897469644734,
+            "protein": 9.092896493101915,
+            "price": 1.99353478986198,
+            "total": 31.3854
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Potato casserole + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -3775,8 +5382,8 @@
               "protein_g": 3.5
             },
             {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
               "station": "Tagessupe, Brot, Obst",
               "counters": [
                 "Tagessupe, Brot, Obst"
@@ -3786,126 +5393,39 @@
               "count": 1,
               "unit": "scoop",
               "weight_g": 150,
-              "price_cents": 235,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
+              "price_cents": 135,
+              "is_vegan": true,
+              "markers": [
+                "v"
               ],
-              "id": "2a7cca8862da876a",
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
               "serving": "1 scoop",
               "price_source": "eat-api",
-              "kcal": 72.0,
-              "protein_g": 2.7
+              "kcal": 112.5,
+              "protein_g": 4.8
             }
           ],
           "total": {
-            "price_cents": 866,
-            "price_eur": 8.66,
+            "price_cents": 766,
+            "price_eur": 7.66,
             "weight_g": 740,
-            "kcal": 953.0,
-            "protein_g": 44.45,
-            "carbs_g": 88.5,
-            "fat_g": 46.9
+            "kcal": 993.5,
+            "protein_g": 46.55,
+            "carbs_g": 93.45,
+            "fat_g": 48.1
           },
           "score": {
-            "kcal": 17.14215585796572,
-            "protein": 7.871066195099905,
-            "price": 2.15530727593068,
-            "total": 27.1685
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Grilled Halloumi and Ratatouille Combo",
-          "reason": "Savory grilled cheese with Mediterranean vegetables and comforting soup",
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Grill",
-            "Tagessupe, Brot, Obst"
-          ],
-          "items": [
-            {
-              "name": "Halloumi vom Grill mit Ratatouille",
-              "name_en": "Grilled halloumi with ratatouille",
-              "station": "Grill",
-              "counters": [
-                "Grill"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": false,
-              "markers": [
-                "f"
-              ],
-              "allergens": [
-                "Mi"
-              ],
-              "additives": [
-                "Kn"
-              ],
-              "standing": false,
-              "diet": "vegetarian",
-              "meat_types": [],
-              "id": "e282d55f766d09fa",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 742.5,
-              "protein_g": 38.25
-            },
-            {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
-              "station": "Tagessupe, Brot, Obst",
-              "counters": [
-                "Tagessupe, Brot, Obst"
-              ],
-              "role": "soup",
-              "texture": "liquid",
-              "count": 2,
-              "unit": "scoop",
-              "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
-              ],
-              "id": "2a7cca8862da876a",
-              "serving": "2 scoops",
-              "price_source": "eat-api",
-              "kcal": 144.0,
-              "protein_g": 5.4
-            }
-          ],
-          "total": {
-            "price_cents": 775,
-            "price_eur": 7.75,
-            "weight_g": 750,
-            "kcal": 886.5,
-            "protein_g": 43.65,
-            "carbs_g": 41.1,
-            "fat_g": 58.8
-          },
-          "score": {
-            "kcal": 15.945982337971259,
-            "protein": 7.7294047112735855,
-            "price": 1.9288257954345,
-            "total": 25.6042
+            "kcal": 17.87065251299994,
+            "protein": 8.242927590143996,
+            "price": 1.9064265281326802,
+            "total": 28.02
           },
           "has_estimated_prices": false
         }
@@ -3919,8 +5439,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Brazilian Roast Chicken",
-          "reason": "Flavorful roast chicken with fruity dip for a lean protein meal",
+          "title": "Brazilian roast chicken - Frango a Passarinho",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -3991,8 +5511,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Hearty Potato Beef Bake",
-          "reason": "Satisfying portion of meat and potato casserole with dip",
+          "title": "Potato casserole",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4054,8 +5574,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Grilled Halloumi Plate",
-          "reason": "Wholesome grilled cheese with stewed vegetables for light dining",
+          "title": "Grilled halloumi",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4114,70 +5634,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Spiced Vegetable Couscous",
-          "reason": "Plant-based grain dish packed with chickpeas and veggies",
-          "picked_by": "rules",
-          "counter": null,
-          "counters": [],
-          "stations": [
-            "Vegan"
-          ],
-          "items": [
-            {
-              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
-              "name_en": "Oriental vegetable couscous with chickpeas",
-              "station": "Vegan",
-              "counters": [
-                "Vegan"
-              ],
-              "role": "main",
-              "texture": "saucy",
-              "count": 3,
-              "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 405,
-              "is_vegan": true,
-              "markers": [
-                "v"
-              ],
-              "allergens": [
-                "Gl",
-                "GlW",
-                "Se"
-              ],
-              "additives": [
-                "2"
-              ],
-              "standing": false,
-              "diet": "vegan",
-              "meat_types": [],
-              "id": "bd11e2c5a741e9a4",
-              "serving": "3 scoops",
-              "price_source": "eat-api",
-              "kcal": 607.5,
-              "protein_g": 20.25
-            }
-          ],
-          "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 17.1
-          },
-          "score": {
-            "kcal": -12.28930411703805,
-            "protein": 6.680159353116901,
-            "price": 0.0521315067447,
-            "total": -5.557
-          },
-          "has_estimated_prices": false
-        },
-        {
-          "title": "Rice Stew and Soup Duo",
-          "reason": "Fiber-rich bean stew served alongside warm daily soup",
+          "title": "Rice stew + Arabic chickpea soup",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4195,10 +5653,10 @@
               ],
               "role": "main",
               "texture": "saucy",
-              "count": 3,
+              "count": 2,
               "unit": "scoop",
-              "weight_g": 450,
-              "price_cents": 149,
+              "weight_g": 300,
+              "price_cents": 99,
               "is_vegan": true,
               "markers": [
                 "v"
@@ -4209,14 +5667,14 @@
               "diet": "vegan",
               "meat_types": [],
               "id": "11b70b1c6dbe66f8",
-              "serving": "3 scoops",
+              "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 517.5,
-              "protein_g": 17.1
+              "kcal": 345.0,
+              "protein_g": 11.4
             },
             {
-              "name": "Tagessuppe",
-              "name_en": "Soup of the day",
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
               "station": "Tagessupe, Brot, Obst",
               "counters": [
                 "Tagessupe, Brot, Obst"
@@ -4226,37 +5684,132 @@
               "count": 2,
               "unit": "scoop",
               "weight_g": 300,
-              "price_cents": 370,
-              "is_vegan": false,
-              "markers": [],
-              "allergens": [],
-              "additives": [],
-              "standing": false,
-              "diet": "meat",
-              "meat_types": [
-                "unknown"
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
               ],
-              "id": "2a7cca8862da876a",
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
               "serving": "2 scoops",
               "price_source": "eat-api",
-              "kcal": 144.0,
-              "protein_g": 5.4
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 519,
-            "price_eur": 5.19,
-            "weight_g": 750,
-            "kcal": 661.5,
-            "protein_g": 22.5,
-            "carbs_g": 101.85,
-            "fat_g": 16.5
+            "price_cents": 369,
+            "price_eur": 3.69,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 21.0,
+            "carbs_g": 84.0,
+            "fat_g": 15.0
           },
           "score": {
-            "kcal": -13.381686705219211,
-            "protein": 7.422399281241001,
-            "price": 0.06680556049506,
-            "total": -5.8925
+            "kcal": -11.5307050974678,
+            "protein": 6.927572662491601,
+            "price": 0.04749759503406,
+            "total": -4.5556
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 405.0,
+              "protein_g": 13.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 630.0,
+            "protein_g": 23.1,
+            "carbs_g": 88.5,
+            "fat_g": 18.6
+          },
+          "score": {
+            "kcal": -12.7444635287802,
+            "protein": 7.620329928740761,
+            "price": 0.0695086756596,
+            "total": -5.0546
           },
           "has_estimated_prices": false
         }
@@ -4270,8 +5823,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Crispy Roast Chicken",
-          "reason": "Great protein value centered on delicious spiced poultry",
+          "title": "Brazilian roast chicken - Frango a Passarinho",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4342,8 +5895,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Bean Rice Bowl with Pudding",
-          "reason": "Economical hearty rice dish followed by sweet almond dessert",
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4433,8 +5986,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Halloumi Ratatouille Platter",
-          "reason": "Generous serving of grilled cheese and tender vegetables",
+          "title": "Grilled halloumi",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4493,8 +6046,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Beef and Potato Casserole",
-          "reason": "Filling meat bake topped with cheese for great energy",
+          "title": "Potato casserole",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4556,8 +6109,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Mushroom Cabbage Spaetzle",
-          "reason": "Budget-friendly egg noodles tossed with savory vegetables",
+          "title": "Spaetzle pan",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4619,29 +6172,22 @@
       ]
     },
     "bulk_vegan": {
-      "state": "unavailable",
-      "goal": "bulk",
-      "vegan": true,
-      "relaxed": false,
-      "note": null,
-      "plates": [],
-      "message": "No plate fits this goal today."
-    },
-    "cut_vegan": {
       "state": "ready",
-      "goal": "cut",
+      "goal": "bulk",
       "vegan": true,
       "relaxed": false,
       "note": null,
       "plates": [
         {
-          "title": "Chickpea Vegetable Couscous",
-          "reason": "Nutritious and light plant-based couscous plate",
+          "title": "Oriental vegetable couscous + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
-            "Vegan"
+            "Vegan",
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -4677,34 +6223,99 @@
               "price_source": "eat-api",
               "kcal": 607.5,
               "protein_g": 20.25
+            },
+            {
+              "name": "Pudding mit Mandelgeschmack und Beeren",
+              "name_en": "Almond-flavored pudding with berries",
+              "station": "Dessert (Glas)",
+              "counters": [
+                "Dessert (Glas)"
+              ],
+              "role": "dessert",
+              "texture": "saucy",
+              "count": 1,
+              "unit": "piece",
+              "weight_g": 140,
+              "price_cents": 126,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlH",
+                "Sc",
+                "ScM",
+                "So"
+              ],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "7d822a66181c14b6",
+              "serving": "1 piece",
+              "price_source": "eat-api",
+              "kcal": 161.0,
+              "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 405,
-            "price_eur": 4.05,
-            "weight_g": 450,
-            "kcal": 607.5,
-            "protein_g": 20.25,
-            "carbs_g": 90.0,
-            "fat_g": 17.1
+            "price_cents": 801,
+            "price_eur": 8.01,
+            "weight_g": 890,
+            "kcal": 993.5,
+            "protein_g": 33.35,
+            "carbs_g": 143.7,
+            "fat_g": 29.2
           },
           "score": {
-            "kcal": -12.28930411703805,
-            "protein": 6.680159353116901,
-            "price": 0.0521315067447,
-            "total": -5.557
+            "kcal": 17.87065251299994,
+            "protein": 5.905513107009716,
+            "price": 1.99353478986198,
+            "total": 25.7697
           },
           "has_estimated_prices": false
         },
         {
-          "title": "Rice Stew with Almond Pudding",
-          "reason": "Filling bean-loaded rice with a fruity dessert finish",
+          "title": "Rice stew + Almond-flavored pudding + Arabic chickpea soup",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
           "stations": [
             "Studitopf",
-            "Dessert (Glas)"
+            "Dessert (Glas)",
+            "Tagessupe, Brot, Obst"
           ],
           "items": [
             {
@@ -4768,22 +6379,241 @@
               "price_source": "eat-api",
               "kcal": 161.0,
               "protein_g": 3.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
             }
           ],
           "total": {
-            "price_cents": 275,
-            "price_eur": 2.75,
-            "weight_g": 590,
-            "kcal": 678.5,
-            "protein_g": 20.6,
-            "carbs_g": 108.45,
-            "fat_g": 16.6
+            "price_cents": 545,
+            "price_eur": 5.45,
+            "weight_g": 890,
+            "kcal": 903.5,
+            "protein_g": 30.2,
+            "carbs_g": 136.95,
+            "fat_g": 23.8
           },
           "score": {
-            "kcal": -13.725584927424391,
-            "protein": 6.795618897491761,
-            "price": 0.035397936678500004,
-            "total": -6.8946
+            "kcal": 16.25177105736834,
+            "protein": 5.3477210144435805,
+            "price": 1.3564000754991001,
+            "total": 22.9559
+          },
+          "has_estimated_prices": false
+        }
+      ]
+    },
+    "cut_vegan": {
+      "state": "ready",
+      "goal": "cut",
+      "vegan": true,
+      "relaxed": false,
+      "note": null,
+      "plates": [
+        {
+          "title": "Rice stew + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Studitopf",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+              "name_en": "Rice stew with kidney beans, bell pepper, and corn",
+              "station": "Studitopf",
+              "counters": [
+                "Studitopf"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 99,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "11b70b1c6dbe66f8",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 345.0,
+              "protein_g": 11.4
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 369,
+            "price_eur": 3.69,
+            "weight_g": 600,
+            "kcal": 570.0,
+            "protein_g": 21.0,
+            "carbs_g": 84.0,
+            "fat_g": 15.0
+          },
+          "score": {
+            "kcal": -11.5307050974678,
+            "protein": 6.927572662491601,
+            "price": 0.04749759503406,
+            "total": -4.5556
+          },
+          "has_estimated_prices": false
+        },
+        {
+          "title": "Oriental vegetable couscous + Arabic chickpea soup",
+          "reason": null,
+          "picked_by": "rules",
+          "counter": null,
+          "counters": [],
+          "stations": [
+            "Vegan",
+            "Tagessupe, Brot, Obst"
+          ],
+          "items": [
+            {
+              "name": "Orientalischer Gemüse-Couscous mit Kichererbsen",
+              "name_en": "Oriental vegetable couscous with chickpeas",
+              "station": "Vegan",
+              "counters": [
+                "Vegan"
+              ],
+              "role": "main",
+              "texture": "saucy",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [
+                "Gl",
+                "GlW",
+                "Se"
+              ],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "bd11e2c5a741e9a4",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 405.0,
+              "protein_g": 13.5
+            },
+            {
+              "name": "Arabische Kichererbsensuppe",
+              "name_en": "Arabic chickpea soup",
+              "station": "Tagessupe, Brot, Obst",
+              "counters": [
+                "Tagessupe, Brot, Obst"
+              ],
+              "role": "soup",
+              "texture": "liquid",
+              "count": 2,
+              "unit": "scoop",
+              "weight_g": 300,
+              "price_cents": 270,
+              "is_vegan": true,
+              "markers": [
+                "v"
+              ],
+              "allergens": [],
+              "additives": [
+                "2"
+              ],
+              "standing": false,
+              "diet": "vegan",
+              "meat_types": [],
+              "id": "615ed0254b1fae8f",
+              "serving": "2 scoops",
+              "price_source": "eat-api",
+              "kcal": 225.0,
+              "protein_g": 9.6
+            }
+          ],
+          "total": {
+            "price_cents": 540,
+            "price_eur": 5.4,
+            "weight_g": 600,
+            "kcal": 630.0,
+            "protein_g": 23.1,
+            "carbs_g": 88.5,
+            "fat_g": 18.6
+          },
+          "score": {
+            "kcal": -12.7444635287802,
+            "protein": 7.620329928740761,
+            "price": 0.0695086756596,
+            "total": -5.0546
           },
           "has_estimated_prices": false
         }
@@ -4797,8 +6627,8 @@
       "note": null,
       "plates": [
         {
-          "title": "Savory Rice Stew and Berry Dessert",
-          "reason": "Affordable plant-based stew paired with sweet pudding",
+          "title": "Rice stew + Almond-flavored pudding",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4888,8 +6718,8 @@
           "has_estimated_prices": false
         },
         {
-          "title": "Oriental Chickpea Couscous",
-          "reason": "Cost-effective fluffy couscous packed with vegetables",
+          "title": "Oriental vegetable couscous",
+          "reason": null,
           "picked_by": "rules",
           "counter": null,
           "counters": [],
@@ -4955,19 +6785,17 @@
   "extras": {
     "all": [
       {
-        "name": "Tagessuppe",
-        "name_en": "Soup of the day",
+        "name": "Arabische Kichererbsensuppe",
+        "name_en": "Arabic chickpea soup",
         "station": "Tagessupe, Brot, Obst",
         "weight_g": 300,
-        "price_cents": 370,
-        "is_vegan": false,
-        "diet": "meat",
-        "meat_types": [
-          "unknown"
-        ],
+        "price_cents": 270,
+        "is_vegan": true,
+        "diet": "vegan",
+        "meat_types": [],
         "serving": "2 scoops",
-        "kcal": 144.0,
-        "protein_g": 5.4,
+        "kcal": 225.0,
+        "protein_g": 9.6,
         "price_source": "eat-api"
       },
       {
@@ -4986,6 +6814,20 @@
       }
     ],
     "vegan": [
+      {
+        "name": "Arabische Kichererbsensuppe",
+        "name_en": "Arabic chickpea soup",
+        "station": "Tagessupe, Brot, Obst",
+        "weight_g": 300,
+        "price_cents": 270,
+        "is_vegan": true,
+        "diet": "vegan",
+        "meat_types": [],
+        "serving": "2 scoops",
+        "kcal": 225.0,
+        "protein_g": 9.6,
+        "price_source": "eat-api"
+      },
       {
         "name": "Pudding mit Mandelgeschmack und Beeren",
         "name_en": "Almond-flavored pudding with berries",

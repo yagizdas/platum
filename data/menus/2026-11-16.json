@@ -6,7 +6,7 @@
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/47.json",
-  "fetched_at": "2026-11-11T15:32:57.958167+00:00",
+  "fetched_at": "2026-11-16T17:20:37.691023+00:00",
   "warnings": [],
   "dishes": [
     {
@@ -46,17 +46,84 @@
       }
     },
     {
-      "name": "Bratwurstschnecke (1 Stück)",
+      "name": "Lasagne Bolognese",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Gl",
+        "GlD",
+        "GlW",
+        "Mi",
+        "Sl"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
+      }
+    },
+    {
+      "name": "Pizza Vegetariana mit Grillgemüse und Mozzarella",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "BARLEY",
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "SOY",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 4.5,
+        "per_100g_eur": 0,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Prager Bratwurst (1 Stück) mit Sauerkraut und Kartoffelpürree",
       "station": "Grill",
       "station_raw": "Grill",
       "markers": [
         "R",
         "S"
       ],
-      "allergens": [],
+      "allergens": [
+        "Mi",
+        "Sw"
+      ],
       "additives": [
         "2",
         "3",
+        "5",
         "8"
       ],
       "is_vegan": false,
@@ -66,15 +133,47 @@
       "api_labels": [
         "ANTIOXIDANTS",
         "BEEF",
+        "LACTOSE",
         "MEAT",
+        "MILK",
         "PHOSPHATES",
         "PORK",
-        "PRESERVATIVES"
+        "PRESERVATIVES",
+        "SULFITES",
+        "SULPHURS"
       ],
       "price": {
         "base_eur": 0.5,
         "per_100g_eur": 0.9,
         "source": "eat-api"
+      }
+    },
+    {
+      "name": "Lasagne Bolognese",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "R"
+      ],
+      "allergens": [
+        "Gl",
+        "GlD",
+        "GlW",
+        "Mi",
+        "Sl"
+      ],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "config"
       }
     },
     {
@@ -147,41 +246,58 @@
       }
     },
     {
-      "name": "Hähnchenknusperfilet (1 Stück) mit Mango-Chili-Dip",
-      "station": "Fleisch",
-      "station_raw": "Fleisch",
-      "markers": [],
+      "name": "Leberspätzlesuppe",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "S"
+      ],
       "allergens": [
         "Ei",
         "Gl",
-        "GlG",
         "GlW",
-        "Mi",
-        "Sf",
         "Sl"
       ],
-      "additives": [
-        "1",
-        "2",
-        "9"
-      ],
+      "additives": [],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "BARLEY",
         "CELERY",
         "CEREAL",
         "CHICKEN_EGGS",
-        "DYESTUFF",
         "GLUTEN",
-        "LACTOSE",
         "MEAT",
-        "MILK",
-        "MUSTARD",
-        "PRESERVATIVES",
-        "SWEETENERS",
+        "PORK",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Hähnchenknusperfilet (1 Stück) mit Barbecuesauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CELERY",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
         "WHEAT"
       ],
       "price": {
@@ -222,9 +338,70 @@
       }
     },
     {
-      "name": "Topfencreme mit Himbeeren",
+      "name": "Vegetarisches Butter Chicken (mit Chunks aus Erbsenprotein)",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "SOY",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Vanillecreme mit Erdnusstoffee",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "En",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "LACTOSE",
+        "MILK",
+        "PEANUTS",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      }
+    },
+    {
+      "name": "Schokopudding mit Brombeersauce",
+      "station": "Dessert (Glas)",
+      "station_raw": "",
       "markers": [
         "f"
       ],

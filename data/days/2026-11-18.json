@@ -4,10 +4,10 @@
   "state": "open",
   "source": "official",
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
-  "fetched_at": "2026-11-11T15:32:58.100242+00:00",
+  "fetched_at": "2026-11-18T16:41:03.362908+00:00",
   "warnings": [],
   "schema_version": 2,
-  "menu_count": 8,
+  "menu_count": 13,
   "scoring": {
     "bulk": {
       "price": {
@@ -155,6 +155,7 @@
               "allergens": [
                 "Ei",
                 "Gl",
+                "GlD",
                 "GlW",
                 "Mi"
               ],
@@ -449,8 +450,8 @@
                 "So"
               ],
               "additives": [
-                "1",
-                "Kn"
+                "Kn",
+                "1"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -696,6 +697,7 @@
               "allergens": [
                 "Ei",
                 "Gl",
+                "GlD",
                 "GlW",
                 "Mi"
               ],
@@ -758,8 +760,8 @@
                 "So"
               ],
               "additives": [
-                "1",
-                "Kn"
+                "Kn",
+                "1"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -821,6 +823,7 @@
               "allergens": [
                 "Ei",
                 "Gl",
+                "GlD",
                 "GlW",
                 "Mi"
               ],
@@ -882,8 +885,8 @@
                 "So"
               ],
               "additives": [
-                "1",
-                "Kn"
+                "Kn",
+                "1"
               ],
               "standing": false,
               "diet": "vegetarian",
@@ -1456,8 +1459,62 @@
     }
   },
   "extras": {
-    "all": [],
-    "vegan": []
+    "all": [
+      {
+        "name": "Tomaten-Kokos-Suppe",
+        "name_en": "Tomato coconut soup",
+        "station": "Unspecified",
+        "weight_g": 300,
+        "price_cents": 99,
+        "is_vegan": true,
+        "diet": "vegan",
+        "serving": "2 scoops",
+        "kcal": 186.0,
+        "protein_g": 3.3,
+        "price_source": "eat-api"
+      },
+      {
+        "name": "Veganes Mousse au Chocolat mit Himbeersauce",
+        "name_en": "Vegan chocolate mousse with raspberry sauce",
+        "station": "Dessert (Glas)",
+        "weight_g": 130.0,
+        "price_cents": 117,
+        "is_vegan": true,
+        "diet": "vegan",
+        "serving": "1 piece",
+        "kcal": 279.5,
+        "protein_g": 4.16,
+        "price_source": "eat-api"
+      }
+    ],
+    "vegan": [
+      {
+        "name": "Tomaten-Kokos-Suppe",
+        "name_en": "Tomato coconut soup",
+        "station": "Unspecified",
+        "weight_g": 300,
+        "price_cents": 99,
+        "is_vegan": true,
+        "diet": "vegan",
+        "serving": "2 scoops",
+        "kcal": 186.0,
+        "protein_g": 3.3,
+        "price_source": "eat-api"
+      },
+      {
+        "name": "Veganes Mousse au Chocolat mit Himbeersauce",
+        "name_en": "Vegan chocolate mousse with raspberry sauce",
+        "station": "Dessert (Glas)",
+        "weight_g": 130.0,
+        "price_cents": 117,
+        "is_vegan": true,
+        "diet": "vegan",
+        "serving": "1 piece",
+        "kcal": 279.5,
+        "protein_g": 4.16,
+        "price_source": "eat-api"
+      }
+    ]
   },
-  "generated_on": "2026-11-11"
+  "generated_on": "2026-11-22"
 }
