@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "date": "2026-12-02",
+  "mensa": "Mensa Garching",
+  "campus": "garching",
+  "state": "open",
+  "source": "official",
+  "published": true,
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
+  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-garching/2026/49.json",
+  "fetched_at": "2026-11-28T16:22:11.886217+00:00",
+  "warnings": [
+    "1 unnamed soup(s) excluded from recommendations until the official recipe is published."
+  ],
+  "omitted_dishes": [
+    {
+      "name": "Tagessuppe",
+      "station": "Tagessupe, Brot, Obst",
+      "station_raw": "Tagessupe, Brot, Obst",
+      "markers": [],
+      "allergens": [],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "MEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "omission_reason": "unspecified_recipe"
+    }
+  ],
+  "dishes": [
+    {
+      "name": "Vegane Pasta mit Räuchertofu",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sl",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CELERY",
+        "CEREAL",
+        "GLUTEN",
+        "SOY",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Gegrillte Zucchini mit Tomaten-Paprika-Ragout",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+      "station": "Wok",
+      "station_raw": "Wok",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "En",
+        "Gl",
+        "GlW",
+        "Sf",
+        "So"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "MUSTARD",
+        "PEANUTS",
+        "SOY",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Reistopf mit Kidneybohnen, Paprika und Mais",
+      "station": "Studitopf",
+      "station_raw": "Studitopf",
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Yufkateigschnecke mit Spinatfüllung mit Sojajoghurtdip",
+      "station": "Vegetarisch/fleischlos",
+      "station_raw": "Vegetarisch/fleischlos",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sl",
+        "So",
+        "Sw"
+      ],
+      "additives": [
+        "2",
+        "3",
+        "4"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "CELERY",
+        "CEREAL",
+        "FLAVOR_ENHANCER",
+        "GLUTEN",
+        "PRESERVATIVES",
+        "SOY",
+        "SULFITES",
+        "SULPHURS",
+        "VEGAN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Hirschgulasch",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sw"
+      ],
+      "additives": [
+        "5",
+        "99"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ALCOHOL",
+        "CEREAL",
+        "GLUTEN",
+        "MEAT",
+        "SULFITES",
+        "SULPHURS",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Sahne-Pudding mit Mandelgeschmack mit Schokosauce",
+      "station": "Dessert (Glas)",
+      "station_raw": "Dessert (Glas)",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    }
+  ]
+}

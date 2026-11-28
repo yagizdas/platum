@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "date": "2026-12-03",
+  "mensa": "Mensa Garching",
+  "campus": "garching",
+  "state": "open",
+  "source": "official",
+  "published": true,
+  "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
+  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-garching/2026/49.json",
+  "fetched_at": "2026-11-28T16:22:11.949864+00:00",
+  "warnings": [
+    "1 unnamed soup(s) excluded from recommendations until the official recipe is published."
+  ],
+  "omitted_dishes": [
+    {
+      "name": "Tagessuppe",
+      "station": "Tagessupe, Brot, Obst",
+      "station_raw": "Tagessupe, Brot, Obst",
+      "markers": [],
+      "allergens": [],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "MEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "omission_reason": "unspecified_recipe"
+    }
+  ],
+  "dishes": [
+    {
+      "name": "Spinatspätzlepfanne mit Bergkäse und abgeschmelzten Zwiebeln",
+      "station": "Pasta",
+      "station_raw": "Pasta",
+      "markers": [],
+      "allergens": [
+        "Ei",
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [
+        "15"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "CHICKEN_EGGS",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Gegrilltes Putensteak (1 Stück) mit Tomate und Käse",
+      "station": "Grill",
+      "station_raw": "Grill",
+      "markers": [],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "LACTOSE",
+        "MEAT",
+        "MILK"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Broccolicurry mit roter Paprika in Kokosmilch",
+      "station": "Wok",
+      "station_raw": "Wok",
+      "markers": [
+        "v"
+      ],
+      "allergens": [],
+      "additives": [
+        "Kn"
+      ],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "GARLIC",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Eintopf mit roten Linsen, Möhren und Blumenkohl",
+      "station": "Studitopf",
+      "station_raw": "Studitopf",
+      "markers": [],
+      "allergens": [],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "MEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Schweinegeschnetzeltes (S vom Strohschwein) in Rahmsauce",
+      "station": "Fleisch",
+      "station_raw": "Fleisch",
+      "markers": [],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 1.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Kürbisfalafel mit Zucchini-Hummus",
+      "station": "Vegan",
+      "station_raw": "Vegan",
+      "markers": [
+        "v"
+      ],
+      "allergens": [
+        "Se"
+      ],
+      "additives": [],
+      "is_vegan": true,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "SESAME",
+        "SHELL_FRUITS",
+        "VEGAN",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    },
+    {
+      "name": "Bratapfelcreme mit Mascarpone",
+      "station": "Dessert (Glas)",
+      "station_raw": "Dessert (Glas)",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Mi",
+        "Sc",
+        "ScM"
+      ],
+      "additives": [
+        "3"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ALMONDS",
+        "ANTIOXIDANTS",
+        "LACTOSE",
+        "MILK",
+        "SHELLFISH",
+        "SHELL_FRUITS",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "garching",
+      "counter_policy": "published_stations"
+    }
+  ]
+}

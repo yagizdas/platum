@@ -1,41 +1,41 @@
 {
   "schema_version": 1,
-  "date": "2026-11-23",
+  "date": "2026-11-30",
   "mensa": "Mensa Garching",
   "campus": "garching",
   "state": "open",
   "source": "official",
   "published": true,
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_422_-de.html",
-  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-garching/2026/48.json",
-  "fetched_at": "2026-11-23T10:36:32.272828+00:00",
+  "price_source_url": "https://tum-dev.github.io/eat-api/mensa-garching/2026/49.json",
+  "fetched_at": "2026-11-28T16:22:11.788200+00:00",
   "warnings": [],
+  "omitted_dishes": [],
   "dishes": [
     {
-      "name": "Tortellini mit Kürbis-Tomatensauce",
+      "name": "Ravioli mit Tomate-Basilikumfüllung , dazu Tomatensauce",
       "station": "Pasta",
       "station_raw": "Pasta",
       "markers": [
-        "v"
+        "f"
       ],
       "allergens": [
+        "Ei",
         "Gl",
         "GlW",
-        "Sl"
+        "Mi"
       ],
-      "additives": [
-        "Kn"
-      ],
-      "is_vegan": true,
+      "additives": [],
+      "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "CELERY",
         "CEREAL",
-        "GARLIC",
+        "CHICKEN_EGGS",
         "GLUTEN",
-        "VEGAN",
+        "LACTOSE",
+        "MILK",
         "VEGETARIAN",
         "WHEAT"
       ],
@@ -48,18 +48,18 @@
       "counter_policy": "published_stations"
     },
     {
-      "name": "Fränkische Bratwurst (1 Stück)",
+      "name": "Rindsbratwurst vom Grill (1 Stück)",
       "station": "Grill",
       "station_raw": "Grill",
       "markers": [
-        "R",
-        "S"
+        "R"
       ],
       "allergens": [
         "Gl",
         "GlW"
       ],
       "additives": [
+        "2",
         "3",
         "8"
       ],
@@ -74,7 +74,7 @@
         "GLUTEN",
         "MEAT",
         "PHOSPHATES",
-        "PORK",
+        "PRESERVATIVES",
         "WHEAT"
       ],
       "price": {
@@ -86,7 +86,7 @@
       "counter_policy": "published_stations"
     },
     {
-      "name": "Massaman-Curry mit Chunks aus Erbsenprotein und Erdnüssen",
+      "name": "Kokoscurry mit Soja und Gemüse , dazu geröstete Erdnüsse",
       "station": "Wok",
       "station_raw": "Wok",
       "markers": [
@@ -99,7 +99,9 @@
         "Sf",
         "So"
       ],
-      "additives": [],
+      "additives": [
+        "2"
+      ],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
@@ -109,6 +111,7 @@
         "GLUTEN",
         "MUSTARD",
         "PEANUTS",
+        "PRESERVATIVES",
         "SOY",
         "VEGAN",
         "VEGETARIAN",
@@ -123,27 +126,22 @@
       "counter_policy": "published_stations"
     },
     {
-      "name": "Asiatischer Reis-Gemüse-Topf",
+      "name": "Polenta mit Wurzelgemüse",
       "station": "Studitopf",
       "station_raw": "Studitopf",
       "markers": [
         "v"
       ],
       "allergens": [
-        "So"
+        "Sl"
       ],
-      "additives": [
-        "2",
-        "Kn"
-      ],
+      "additives": [],
       "is_vegan": true,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "GARLIC",
-        "PRESERVATIVES",
-        "SOY",
+        "CELERY",
         "VEGAN",
         "VEGETARIAN"
       ],
@@ -156,20 +154,35 @@
       "counter_policy": "published_stations"
     },
     {
-      "name": "Veganes Pastinaken-Kartoffel-Gulasch",
+      "name": "Kartoffeltaschen mit Kräuterfrischkäse und Sauerrahmdip",
       "station": "Vegetarisch/fleischlos",
       "station_raw": "Vegetarisch/fleischlos",
       "markers": [
-        "v"
+        "f"
       ],
-      "allergens": [],
-      "additives": [],
-      "is_vegan": true,
+      "allergens": [
+        "Gl",
+        "GlG",
+        "Mi",
+        "Sf",
+        "Sl"
+      ],
+      "additives": [
+        "1"
+      ],
+      "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "VEGAN",
+        "BARLEY",
+        "CELERY",
+        "CEREAL",
+        "DYESTUFF",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "MUSTARD",
         "VEGETARIAN"
       ],
       "price": {
@@ -181,31 +194,36 @@
       "counter_policy": "published_stations"
     },
     {
-      "name": "Hähnchenschnitzel mit Kürbiskernpanade (1 Stück) und Kräuterdip",
+      "name": "Cordon bleu vom Schwein (1 Stück) (mit Formfleisch Kochschinken)",
       "station": "Fleisch",
       "station_raw": "Fleisch",
-      "markers": [],
+      "markers": [
+        "S"
+      ],
       "allergens": [
-        "Ei",
         "Gl",
         "GlW",
         "Mi"
       ],
       "additives": [
-        "Kn"
+        "2",
+        "3",
+        "8"
       ],
       "is_vegan": false,
       "is_vegetarian": false,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
+        "ANTIOXIDANTS",
         "CEREAL",
-        "CHICKEN_EGGS",
-        "GARLIC",
         "GLUTEN",
         "LACTOSE",
         "MEAT",
         "MILK",
+        "PHOSPHATES",
+        "PORK",
+        "PRESERVATIVES",
         "WHEAT"
       ],
       "price": {
@@ -217,33 +235,31 @@
       "counter_policy": "published_stations"
     },
     {
-      "name": "Linsensuppe mit Gemüse",
+      "name": "Gemüsecremesuppe",
       "station": "Tagessupe, Brot, Obst",
       "station_raw": "Tagessupe, Brot, Obst",
       "markers": [
-        "v"
+        "f"
       ],
       "allergens": [
-        "Sl",
-        "Sw"
+        "Gl",
+        "GlW",
+        "Mi",
+        "Sl"
       ],
-      "additives": [
-        "1",
-        "3",
-        "5"
-      ],
-      "is_vegan": true,
+      "additives": [],
+      "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "ANTIOXIDANTS",
         "CELERY",
-        "DYESTUFF",
-        "SULFITES",
-        "SULPHURS",
-        "VEGAN",
-        "VEGETARIAN"
+        "CEREAL",
+        "GLUTEN",
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN",
+        "WHEAT"
       ],
       "price": {
         "base_eur": 0.0,
@@ -254,29 +270,32 @@
       "counter_policy": "published_stations"
     },
     {
-      "name": "Kirsch-Mascarpone-Creme",
+      "name": "Lebkuchenmousse mit Brombeeren",
       "station": "Dessert (Glas)",
       "station_raw": "Dessert (Glas)",
       "markers": [
         "f"
       ],
       "allergens": [
-        "Mi",
-        "Sc",
-        "ScM"
+        "Gl",
+        "GlW",
+        "Mi"
       ],
-      "additives": [],
+      "additives": [
+        "14"
+      ],
       "is_vegan": false,
       "is_vegetarian": true,
       "dietary_source": "official",
       "source": "official",
       "api_labels": [
-        "ALMONDS",
+        "CEREAL",
+        "GELATIN",
+        "GLUTEN",
         "LACTOSE",
         "MILK",
-        "SHELLFISH",
-        "SHELL_FRUITS",
-        "VEGETARIAN"
+        "VEGETARIAN",
+        "WHEAT"
       ],
       "price": {
         "base_eur": 0.0,

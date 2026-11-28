@@ -2,12 +2,15 @@
   "schema_version": 1,
   "date": "2026-12-01",
   "mensa": "Mensa Arcisstraße",
+  "campus": "arcisstr",
   "state": "open",
   "source": "official",
+  "published": true,
   "source_url": "https://www.studierendenwerk-muenchen-oberbayern.de/gastronomie/speiseplan/speiseplan_421_-de.html",
   "price_source_url": "https://tum-dev.github.io/eat-api/mensa-arcisstr/2026/49.json",
-  "fetched_at": "2026-11-23T09:36:32.271044+00:00",
+  "fetched_at": "2026-11-28T16:21:43.687944+00:00",
   "warnings": [],
+  "omitted_dishes": [],
   "dishes": [
     {
       "name": "Pasta mit mediterraner Tomatensauce",
@@ -36,7 +39,56 @@
         "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
-      }
+      },
+      "campus": "arcisstr",
+      "counter_policy": "none"
+    },
+    {
+      "name": "Pizza Salami",
+      "station": "Pizza",
+      "station_raw": "Pizza",
+      "markers": [
+        "S"
+      ],
+      "allergens": [
+        "Gl",
+        "GlG",
+        "GlW",
+        "Mi",
+        "Sf",
+        "So"
+      ],
+      "additives": [
+        "1",
+        "2",
+        "3"
+      ],
+      "is_vegan": false,
+      "is_vegetarian": false,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "ANTIOXIDANTS",
+        "BARLEY",
+        "CEREAL",
+        "DYESTUFF",
+        "GLUTEN",
+        "LACTOSE",
+        "MEAT",
+        "MILK",
+        "MUSTARD",
+        "PORK",
+        "PRESERVATIVES",
+        "SOY",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 5.0,
+        "per_100g_eur": 0,
+        "source": "eat-api"
+      },
+      "campus": "arcisstr",
+      "counter_policy": "none"
     },
     {
       "name": "Schweinesteak (1 Stück) vom Grill (S vom Strohschwein) mit Champignonsauce",
@@ -72,7 +124,9 @@
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
-      }
+      },
+      "campus": "arcisstr",
+      "counter_policy": "none"
     },
     {
       "name": "Gersteneintopf",
@@ -103,7 +157,41 @@
         "base_eur": 0.0,
         "per_100g_eur": 0.33,
         "source": "eat-api"
-      }
+      },
+      "campus": "arcisstr",
+      "counter_policy": "none"
+    },
+    {
+      "name": "Türkische Linsensuppe mit Kreuzkümmel",
+      "station": "Unspecified",
+      "station_raw": "",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Gl",
+        "GlW",
+        "Sl"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "CELERY",
+        "CEREAL",
+        "GLUTEN",
+        "VEGETARIAN",
+        "WHEAT"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.33,
+        "source": "eat-api"
+      },
+      "campus": "arcisstr",
+      "counter_policy": "none"
     },
     {
       "name": "Frische Rahmschwammerl",
@@ -134,7 +222,9 @@
         "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
-      }
+      },
+      "campus": "arcisstr",
+      "counter_policy": "none"
     },
     {
       "name": "Rahm-Kartoffelgratin mit Romanescoröschen mit Kräuterdip",
@@ -170,7 +260,9 @@
         "base_eur": 0.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
-      }
+      },
+      "campus": "arcisstr",
+      "counter_policy": "none"
     },
     {
       "name": "Münchner Biergulasch vom Rind",
@@ -204,7 +296,37 @@
         "base_eur": 1.0,
         "per_100g_eur": 0.9,
         "source": "eat-api"
-      }
+      },
+      "campus": "arcisstr",
+      "counter_policy": "none"
+    },
+    {
+      "name": "Schokopudding mit Sahne und Kirschen",
+      "station": "Dessert (Glas)",
+      "station_raw": "Dessert (Glas)",
+      "markers": [
+        "f"
+      ],
+      "allergens": [
+        "Mi"
+      ],
+      "additives": [],
+      "is_vegan": false,
+      "is_vegetarian": true,
+      "dietary_source": "official",
+      "source": "official",
+      "api_labels": [
+        "LACTOSE",
+        "MILK",
+        "VEGETARIAN"
+      ],
+      "price": {
+        "base_eur": 0.0,
+        "per_100g_eur": 0.9,
+        "source": "eat-api"
+      },
+      "campus": "arcisstr",
+      "counter_policy": "none"
     },
     {
       "name": "Reis",
